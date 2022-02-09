@@ -1,0 +1,14 @@
+rule passiveAgt {
+  pattern {
+    V [cat=V, m=pastp];
+    V -[aux.pass]-> AUX;
+    e: V -[suj]-> SUJ;
+    P [phon=par]; V -[p_obj.agt]-> P;
+    P -[obj.p]-> A;
+} commands {
+    del_node P;
+    del_node AUX;
+    add_edge V -[suj]-> A;
+    add_edge V -[obj]-> SUJ;
+    del_edge e;
+} }
