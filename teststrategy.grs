@@ -1,0 +1,23 @@
+package verbrules {
+    rule verbnonsense {
+          pattern {
+            V [upos=VERB, Tense=Pres];
+            V -[advcl]-> ADV;
+            e: V -[nsubj]-> SUJ;
+            P [upos=PROPN]; V -[obl]-> P;
+            P -[nmod]-> A;
+        } commands {
+            del_node P;
+            del_node ADV;
+            add_edge V -[suj]-> A;
+            add_edge V -[obj]-> SUJ;
+            del_edge e;
+        }
+      }
+}
+
+% can also just import the rule(s), which is interpreted as a package: 
+% import "verbrules.grs"
+
+
+strat s_1 { Onf (verbrules) }  % all normal forms with package p_1
