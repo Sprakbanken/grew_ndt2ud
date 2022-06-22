@@ -1,0 +1,9 @@
+
+
+% import the rule(s), which is interpreted as a package: 
+import "func_dep_rel.grs"
+
+
+strat main { Onf (func_dep_rel) }  
+
+
