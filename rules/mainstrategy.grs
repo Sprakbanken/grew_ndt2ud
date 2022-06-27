@@ -4,6 +4,11 @@
 import "func_dep_rel.grs"
 
 
-strat main { Onf (func_dep_rel) }  
+package all_rules {
+    func_dep_rel
+
+}
+
+strat main { Onf (all_rules) }  
 
 
