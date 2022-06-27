@@ -1,0 +1,3 @@
+% Change NDT dependency relation "IP" to UD deprel "punct"
+
+rule punctuation { pattern { e: N -[IP]-> P } commands { del_edge e; add_edge N -[punct]-> P } }

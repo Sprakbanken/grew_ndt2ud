@@ -1,0 +1,32 @@
+% Examples of more complex rule syntax
+
+rule passiveAgt {
+  pattern {
+    V [cat=V, m=pastp];
+    V -[aux.pass]-> AUX;
+    e: V -[suj]-> SUJ;
+    P [phon=par]; V -[p_obj.agt]-> P;
+    P -[obj.p]-> A;
+} commands {
+    del_node P;
+    del_node AUX;
+    add_edge V -[suj]-> A;
+    add_edge V -[obj]-> SUJ;
+    del_edge e;
+} }
+
+rule verbnonsense {
+      pattern {
+        V [upos=VERB, Tense=Pres];
+        V -[advcl]-> ADV;
+        e: V -[nsubj]-> SUJ;
+        P [upos=PROPN]; V -[obl]-> P;
+        P -[nmod]-> A;
+    } commands {
+        del_node P;
+        del_node ADV;
+        add_edge V -[suj]-> A;
+        add_edge V -[obj]-> SUJ;
+        del_edge e;
+    }
+  }
