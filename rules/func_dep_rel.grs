@@ -1,3 +1,24 @@
-% Change NDT dependency relation "IP" to UD deprel "punct"
+% Change NDT dependency relation to UD deprel with 1 to 1 mappings 
 
-rule punctuation { pattern { e: N -[IP]-> P } commands { del_edge e; add_edge N -[punct]-> P } }
+rule punctuation_sentence_end { pattern { e: N -[ IP ]-> P } commands { del_edge e; add_edge N -[ punct ]-> P } }
+
+rule expletive_subj { pattern { e: GOV -[ FSUBJ ]-> DEP } commands { del_edge e; add_edge GOV -[ expl ]-> DEP  } }
+
+rule expletive_obj { pattern { e: GOV -[ FOBJ ]-> DEP } commands { del_edge e; add_edge GOV -[ expl ]-> DEP  } }
+
+rule indirect_obj { pattern { e: GOV -[ IOBJ ]-> DEP } commands { del_edge e; add_edge GOV -[ iobj ]-> DEP  } }
+
+rule obj_predicative { pattern { e: GOV -[ OPRED ]-> DEP } commands { del_edge e; add_edge GOV -[ xcomp ]-> DEP  } }
+
+rule interjection { pattern { e: GOV -[ INTERJ ]-> DEP } commands { del_edge e; add_edge GOV -[ discourse ]-> DEP  } }
+
+rule coordinating_conjuction { pattern { e: GOV -[ KONJ ]-> DEP } commands { del_edge e; add_edge GOV -[ cc ]-> DEP  } }
+
+rule conjunct { pattern { e: GOV -[ KOORD ]-> DEP } commands { del_edge e; add_edge GOV -[ conj ]-> DEP  } }
+
+rule coordination_verbal_ellipsis { pattern { e: GOV -[ KOORD-ELL ]-> DEP } commands { del_edge e; add_edge GOV -[ orphan ]-> DEP  } }
+
+rule subj_predicative { pattern { e: GOV -[ SPRED ]-> DEP } commands { del_edge e; add_edge GOV -[ xcomp ]-> DEP  } }  % Non-copula 
+
+% Will need further modification: NDT attaches UKJENT to main verb, UD attaches reparandum to the word that is being corrected
+rule ungrammatical_repair { pattern { e: GOV -[ UKJENT ]-> DEP } commands { del_edge e; add_edge GOV -[ reparandum ]-> DEP  } } 
