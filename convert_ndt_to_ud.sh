@@ -3,11 +3,14 @@
 
 TODAY=$(date +%d-%m-%y)
 
-DATA_DIR="data"
-ORIGINAL_TREEBANK="$DATA_DIR/dev_fixed_UDfeats.conll"  # or test_fixed_UDfeats.conll or training_fixed_UDfeats.conll
-CONVERTED_TREEBANK="$DATA_DIR/ud2-9_conversion_output_${TODAY}.conllu"
+#DATA_DIR="../trebankdatabase/data/SUD/SUD_Norwegian-Bokmaal/no_bokmaal-sud-train.conllu "
+#ORIGINAL_TREEBANK="$DATA_DIR/no_bokmaal-sud-train.conllu "  # or test_fixed_UDfeats.conll or training_fixed_UDfeats.conll
+#CONVERTED_TREEBANK="$DATA_DIR/sud2ud_conversion_output_${TODAY}.conllu"
 
-RULES_DIR="rules"
+ORIGINAL_TREEBANK = "/home/ingeridd/Prosjekter/NDT_konvertering/grew-testing/data/dev_fixed_UDfeats.conll"
+CONVERTED_TREEBANK = "/home/ingeridd/Prosjekter/NDT_konvertering/grew-testing/data/adhoc_conversion_output_${TODAY}.conllu"
+
+RULES_DIR="/home/ingeridd/Prosjekter/NDT_konvertering/grew-testing/rules"
 GRS_FILE="$RULES_DIR/mainstrategy.grs"
 STRATEGY="main"
 

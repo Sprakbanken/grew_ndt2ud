@@ -2,6 +2,8 @@
 
 rule punctuation_sentence_end { pattern { e: N -[ IP ]-> P } commands { del_edge e; add_edge N -[ punct ]-> P } }
 
+rule punctuation_mid_sentence { pattern { e: N -[ IK ]-> P;  } commands { del_edge e; add_edge N -[ punct ]-> P } }
+
 rule expletive_subj { pattern { e: GOV -[ FSUBJ ]-> DEP } commands { del_edge e; add_edge GOV -[ expl ]-> DEP  } }
 
 rule expletive_obj { pattern { e: GOV -[ FOBJ ]-> DEP } commands { del_edge e; add_edge GOV -[ expl ]-> DEP  } }
