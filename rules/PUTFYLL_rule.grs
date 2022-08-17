@@ -4,5 +4,6 @@ rule PUTFYLL_rule {
       e.rev=y;
       add_edge f:D -> H; f.label = e.label;
       del_edge e;
+      shift H ==> D;
   }
 }
