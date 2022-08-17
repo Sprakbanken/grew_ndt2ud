@@ -1,0 +1,5 @@
+% import the rule(s), which is interpreted as a package: 
+import "PUTFYLL_rule.grs"
+
+strat main { Onf (PUTFYLL_rule)}  
+

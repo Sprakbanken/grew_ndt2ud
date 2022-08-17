@@ -1,0 +1,8 @@
+rule PUTFYLL_rule {
+	pattern {e:H -[PUTFYLL]-> D;}
+    commands {
+      e.rev=y;
+      add_edge f:D -> H; f.label = e.label;
+      del_edge e;
+  }
+}
