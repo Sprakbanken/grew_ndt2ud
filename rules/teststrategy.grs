@@ -1,5 +1,5 @@
 % import the rule(s), which is interpreted as a package: 
-import "PUTFYLL_rule.grs"
+import "test_rules.grs"
 
-strat main { Onf (PUTFYLL_rule)}  
+strat main { Onf (test_rules)}  
 

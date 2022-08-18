@@ -1,0 +1,20 @@
+rule PUTFYLL_rule {
+	pattern {e:H -[PUTFYLL]-> D;}
+    commands {
+      e.rev=y;
+      add_edge f:D -> H; f.label = case;
+      del_edge e;
+      shift H ==> D;
+  }
+}
+
+rule lex_verb_head_rule {
+        pattern { H[upos=AUX]; D[upos=VERB]; e:H -[INFV]-> D; AT[form=at]}
+    commands {
+      e.rev=y;
+      add_edge f:D -> H; f.label = e.label;
+      del_edge e;
+      shift H ==> D;
+      
+  }
+}
