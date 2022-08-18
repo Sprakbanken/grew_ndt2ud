@@ -9,7 +9,7 @@ rule PUTFYLL_rule {
 }
 
 rule lex_verb_head_rule {
-        pattern { H[upos=AUX]; D[upos=VERB]; e:H -[INFV]-> D; AT[form=at]}
+        pattern { H[upos=AUX]; D[upos=VERB]; e:H -[INFV]-> D;}
     commands {
       e.rev=y;
       add_edge f:D -> H; f.label = e.label;
@@ -17,4 +17,18 @@ rule lex_verb_head_rule {
       shift H ==> D;
       
   }
+}
+
+rule lex_verb_head_passive_rule {
+    pattern { H[upos=AUX, lemma=bli]; D[upos=VERB]; e:D -[rev=y]-> H; }
+    commands {
+      e.label = "aux:pass";
+  }
+}
+
+rule subclause_at {
+    pattern { AT[form="at"]; e: V -[SBU]-> AT;}
+    commands { 
+      e.label = mark;
+     }
 }
