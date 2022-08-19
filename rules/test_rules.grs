@@ -1,3 +1,5 @@
+% graph tranformation 
+
 rule PUTFYLL_rule {
 	pattern {e:H -[PUTFYLL]-> D;}
     commands {
@@ -9,7 +11,7 @@ rule PUTFYLL_rule {
 }
 
 rule lex_verb_head_rule {
-        pattern { H[upos=AUX]; D[upos=VERB]; e:H -[INFV]-> D;}
+    pattern { H[upos=AUX]; D[upos=VERB]; e:H -[INFV]-> D;}
     commands {
       e.rev=y;
       add_edge f:D -> H; f.label = e.label;
@@ -18,6 +20,9 @@ rule lex_verb_head_rule {
       
   }
 }
+
+
+% relabelling 
 
 rule lex_verb_head_passive_rule {
     pattern { H[upos=AUX, lemma=bli]; D[upos=VERB]; e:D -[rev=y]-> H; }
@@ -31,4 +36,10 @@ rule subclause_at {
     commands { 
       e.label = mark;
      }
+}
+
+
+rule relabel_root {
+    pattern {e: R -[FINV]-> V;}
+    commands {e.label = root;}
 }
