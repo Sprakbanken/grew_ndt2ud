@@ -1,5 +1,6 @@
 % import the rule(s), which is interpreted as a package: 
-import "test_rules.grs"
+%import "test_rules.grs"
+import "testrule.grs"
 
-strat main { Onf (test_rules)}  
+strat main { Onf (testrule)}  
 

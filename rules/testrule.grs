@@ -1,32 +1,25 @@
 % Examples of more complex rule syntax
 
-rule passiveAgt {
-  pattern {
-    V [cat=V, m=pastp];
-    V -[aux.pass]-> AUX;
-    e: V -[suj]-> SUJ;
-    P [phon=par]; V -[p_obj.agt]-> P;
-    P -[obj.p]-> A;
-} commands {
-    del_node P;
-    del_node AUX;
-    add_edge V -[suj]-> A;
-    add_edge V -[obj]-> SUJ;
-    del_edge e;
-} }
 
-rule verbnonsense {
-      pattern {
-        V [upos=VERB, Tense=Pres];
-        V -[advcl]-> ADV;
-        e: V -[nsubj]-> SUJ;
-        P [upos=PROPN]; V -[obl]-> P;
-        P -[nmod]-> A;
-    } commands {
-        del_node P;
-        del_node ADV;
-        add_edge V -[suj]-> A;
-        add_edge V -[obj]-> SUJ;
-        del_edge e;
+
+rule subclause_infinitive {
+    pattern {
+      PP[upos=ADP]; 
+      AA[upos=PART]; 
+      V[VerbForm=Inf];
+      LEXV [upos=VERB];
+      e: LEXV -[ADV]-> PP; 
+      e1: PP -[PUTFYLL]-> AA;
+      e2: AA -[INFV]-> V; 
     }
-  }
+    commands {
+   %   del_edge e2; 
+   %   del_edge e1; 
+      shift V ==> PP;
+     % shift AA ==> V;
+    %  add_edge f: LEXV -> V; f.label = leddsetning;
+    %  add_edge f1: V -> AA; f.label = mark; 
+%     add_edge f2: PP -> V; f1.label = case;
+%     add_edge f3: AA -> V; f2.label = mark;
+     }
+}

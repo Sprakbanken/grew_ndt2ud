@@ -1,0 +1,14 @@
+# global.columns = ID FORM LEMMA UPOS XPOS FEATS HEAD DEPREL DEPS MISC
+1	I	i	ADP	_	_	2	case	_	_
+2	dag	dag	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	6	ADV	_	_
+3	skal	skulle	AUX	_	Mood=Ind|Tense=Pres|VerbForm=Fin	6	rev=y,1=INFV	_	_
+4	ElBaradei	ElBaradei	PROPN	_	_	6	SUBJ	_	_
+5	ha	ha	AUX	_	VerbForm=Inf	6	rev=y,1=INFV	_	_
+6	snakket	snakke	VERB	_	VerbForm=Part	0	root	_	_
+7	med	med	ADP	_	_	10	case	_	_
+8	USAs	USA	PROPN	_	Abbr=Yes|Case=Gen	9	DET	_	_
+9	utenriksminister	utenriksminister	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	10	APP	_	_
+10	Condoleezza	Condoleezza	PROPN	_	_	6	ADV	_	_
+11	Rice	Rice	PROPN	_	_	10	FLAT	_	_
+12	.	$.	PUNCT	_	_	6	IP	_	_
+
