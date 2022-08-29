@@ -6,20 +6,19 @@ rule subclause_infinitive {
     pattern {
       PP[upos=ADP]; 
       AA[upos=PART]; 
-      V[VerbForm=Inf];
+      V[upos=VERB, VerbForm=Inf];
       LEXV [upos=VERB];
+      * -[FINV]-> LEXV;
       e: LEXV -[ADV]-> PP; 
       e1: PP -[PUTFYLL]-> AA;
       e2: AA -[INFV]-> V; 
     }
     commands {
-   %   del_edge e2; 
-   %   del_edge e1; 
-      shift V ==> PP;
-     % shift AA ==> V;
-    %  add_edge f: LEXV -> V; f.label = leddsetning;
-    %  add_edge f1: V -> AA; f.label = mark; 
-%     add_edge f2: PP -> V; f1.label = case;
-%     add_edge f3: AA -> V; f2.label = mark;
+      del_edge e;
+      del_edge e1;
+      add_edge f: V -> PP; f.label = case; 
+      del_edge e2;
+      add_edge f1: V -> AA; f1.label = mark; 
+      add_edge cl: LEXV -> V; cl.label = advcl;
      }
 }
