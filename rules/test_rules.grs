@@ -1,42 +1,28 @@
 % graph tranformation 
 
-rule PUTFYLL_rule {
-	pattern {e:H -[PUTFYLL]-> D;}
+
+
+rule subclause_infinitive {
+    pattern {
+      PP[upos=ADP]; 
+      AA[upos=PART]; 
+      V[upos=VERB, VerbForm=Inf];
+      LEXV [upos=VERB];
+      * -[FINV]-> LEXV;
+      e: LEXV -[ADV]-> PP; 
+      e1: PP -[PUTFYLL]-> AA;
+      e2: AA -[INFV]-> V; 
+    }
     commands {
-      e.rev=y;
-      add_edge f:D -> H; f.label = case;
       del_edge e;
-      shift H ==> D;
+      del_edge e1;
+      add_edge f: V -> PP; f.label = case; 
+      del_edge e2;
+      add_edge f1: V -> AA; f1.label = mark; 
+      add_edge cl: LEXV -> V; cl.label = advcl;
+    }
   }
-}
 
-rule lex_verb_head_rule {
-    pattern { H[upos=AUX]; D[upos=VERB]; e:H -[INFV]-> D;}
-    commands {
-      e.rev=y;
-      add_edge f:D -> H; f.label = e.label;
-      del_edge e;
-      shift H ==> D;
-      
-  }
-}
-
-
-% relabelling 
-
-rule lex_verb_head_passive_rule {
-    pattern { H[upos=AUX, lemma=bli]; D[upos=VERB]; e:D -[rev=y]-> H; }
-    commands {
-      e.label = "aux:pass";
-  }
-}
-
-rule subclause_at {
-    pattern { AT[form="at"]; e: V -[SBU]-> AT;}
-    commands { 
-      e.label = mark;
-     }
-}
 
 rule subclause_aa {
     pattern { 
@@ -60,6 +46,46 @@ rule subclause_aa {
      }
 }
 
+
+
+rule PUTFYLL_rule {
+	pattern {e:H -[PUTFYLL]-> D; H[upos=ADP]; }
+    commands {
+      e.rev=y;
+      add_edge f:D -> H; f.label = case;
+      del_edge e;
+      shift H ==> D;
+  }
+}
+
+rule lex_verb_head_rule {
+    pattern { H[upos=AUX]; D[upos=VERB]; e:H -[INFV]-> D;}
+    commands {
+      e.rev=y;
+      add_edge f:D -> H; f.label = e.label;
+      del_edge e;
+      shift H ==> D;
+  }
+}
+
+
+
+
+% relabelling 
+
+rule lex_verb_head_passive_rule {
+    pattern { H[upos=AUX, lemma=bli]; D[upos=VERB]; e:D -[rev=y]-> H; }
+    commands {
+      e.label = "aux:pass";
+  }
+}
+
+rule subclause_at {
+    pattern { AT[form="at"]; e: V -[SBU]-> AT;}
+    commands { 
+      e.label = mark;
+     }
+}
 
 
 rule relabel_root {
