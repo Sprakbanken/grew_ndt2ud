@@ -1,0 +1,19 @@
+# global.columns = ID FORM LEMMA UPOS XPOS FEATS HEAD DEPREL DEPS MISC
+1	Det	det	PRON	_	Gender=Neut|Number=Sing|Person=3|PronType=Prs	2	FSUBJ	_	_
+2	er	være	AUX	_	Mood=Ind|Tense=Pres|VerbForm=Fin	0	FINV	_	_
+3	ikke	ikke	PART	_	Polarity=Neg	2	ADV	_	_
+4	hverdagskost	hverdagskost	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	2	SPRED	_	_
+5	at	at	SCONJ	_	_	12	SBU	_	_
+6	monarkene	monark	NOUN	_	Definite=Def|Gender=Masc|Number=Plur	12	SUBJ	_	_
+7	i	i	ADP	_	_	10	case	_	_
+8	våre	vår	PRON	_	Number=Plur|Poss=Yes	10	DET	_	_
+9	to	to	NUM	_	Number=Plur	10	DET	_	_
+10	naboland	naboland	NOUN	_	Definite=Ind|Gender=Neut|Number=Plur	6	ATR	_	_
+11	blir	bli	AUX	_	Mood=Ind|Tense=Pres|VerbForm=Fin	12	rev=y,1=INFV	_	_
+12	rangert	rangere	VERB	_	VerbForm=Part	2	PSUBJ	_	_
+13	bak	bak	ADP	_	_	16	case	_	_
+14	vanlige	vanlig	ADJ	_	Degree=Pos|Number=Plur	16	ATR	_	_
+15	norske	norsk	ADJ	_	Degree=Pos|Number=Plur	16	ATR	_	_
+16	statsborgere	statsborger	NOUN	_	Definite=Ind|Gender=Masc|Number=Plur	12	ADV	_	_
+17	.	$.	PUNCT	_	_	2	IP	_	_
+

@@ -1,0 +1,34 @@
+# global.columns = ID FORM LEMMA UPOS XPOS FEATS HEAD DEPREL DEPS MISC
+1	Aftenposten	Aftenposten	PROPN	_	Gender=Masc	4	SUBJ	_	_
+2	fikk	få	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	4	aux	_	_
+3	være	være	AUX	_	VerbForm=Inf	2|4	INFV|SPRED	_	_
+4	med	med	ADP	_	_	0	FINV	_	_
+5	på	på	ADP	_	_	3	ADV	_	_
+6	en	en	DET	_	Gender=Masc|Number=Sing	8	DET	_	_
+7	liten	liten	ADJ	_	Definite=Ind|Degree=Pos|Number=Sing	8	ATR	_	_
+8	prøveseilas	prøveseilas	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	5	PUTFYLL	_	_
+9	i	i	ADP	_	_	3	ADV	_	_
+10	går	går	NOUN	_	_	9	PUTFYLL	_	_
+11	kveld	kveld	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	10	ATR	_	_
+12	,	$,	PUNCT	_	_	3	IK	_	_
+13	sammen	sammen	ADV	_	_	14	ADV	_	_
+14	med	med	ADP	_	_	3	ADV	_	_
+15	de	de	DET	_	Number=Plur|PronType=Dem	17	DET	_	_
+16	seks	seks	NUM	_	Number=Plur	17	DET	_	_
+17	gutta	gutt	NOUN	_	Definite=Def|Gender=Masc|Number=Plur	14	PUTFYLL	_	_
+18	som	som	PRON	_	_	19	SBU	_	_
+19	er	være	AUX	_	Mood=Ind|Tense=Pres|VerbForm=Fin	17	ATR	_	_
+20	plukket	plukke	VERB	_	VerbForm=Part	19	INFV	_	_
+21	ut	ut	ADP	_	_	20	ADV	_	_
+22	til	til	ADP	_	_	20	ADV	_	_
+23	å	å	PART	_	_	22	PUTFYLL	_	_
+24	være	være	AUX	_	VerbForm=Inf	23	INFV	_	_
+25	med	med	ADP	_	_	24	SPRED	_	_
+26	i	i	ADP	_	_	24	ADV	_	_
+27	NORsteam	NORsteam	PROPN	_	_	26	PUTFYLL	_	_
+28	-	$-	PUNCT	_	_	27	IK	_	_
+29	navnet	navn	NOUN	_	Definite=Def|Gender=Neut|Number=Sing	27	APP	_	_
+30	på	på	ADP	_	_	29	ATR	_	_
+31	storbåtsatsingen	storbåtsatsing	NOUN	_	Definite=Def|Gender=Masc|Number=Sing	30	PUTFYLL	_	_
+32	.	$.	PUNCT	_	_	4	IP	_	_
+

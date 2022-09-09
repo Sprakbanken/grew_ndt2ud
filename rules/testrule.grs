@@ -1,32 +1,43 @@
-% Examples of more complex rule syntax
 
-rule passiveAgt {
-  pattern {
-    V [cat=V, m=pastp];
-    V -[aux.pass]-> AUX;
-    e: V -[suj]-> SUJ;
-    P [phon=par]; V -[p_obj.agt]-> P;
-    P -[obj.p]-> A;
-} commands {
-    del_node P;
-    del_node AUX;
-    add_edge V -[suj]-> A;
-    add_edge V -[obj]-> SUJ;
+rule reverse {
+  pattern { N[VerbForm=Fin]; M [VerbForm=Inf]; N -[FINV]-> M; e: M -[INFV]-> O;  }
+  commands {
+    add_edge new_e: M -> N;
+    new_e.label = e.label;
     del_edge e;
-} }
+  }
+}
 
-rule verbnonsense {
-      pattern {
-        V [upos=VERB, Tense=Pres];
-        V -[advcl]-> ADV;
-        e: V -[nsubj]-> SUJ;
-        P [upos=PROPN]; V -[obl]-> P;
-        P -[nmod]-> A;
-    } commands {
-        del_node P;
-        del_node ADV;
-        add_edge V -[suj]-> A;
-        add_edge V -[obj]-> SUJ;
-        del_edge e;
+
+package test_package {
+
+rule subclause_infinitive_copula {
+    pattern {
+
+      % nodes
+      H[upos=AUX]; 
+      AUX[upos=AUX]; 
+      PRED[upos=ADP];
+
+      % dependencies
+      * -[FINV]-> H;  % sjekk om det finnes "lavere dependent" søkeuttrykk 
+      e: H -[INFV]-> AUX; 
+      e1: AUX -[SPRED]-> PRED;
+
+    }
+    commands {
+
+      shift H ==> PRED;
+      add_edge f1: PRED -> H; f1.label = aux;
+      add_edge re1: PRED -> AUX; re1.label = e1.label; 
+      del_edge e1;
+
     }
   }
+
+
+
+}
+
+
+strat main { Onf (test_package)}

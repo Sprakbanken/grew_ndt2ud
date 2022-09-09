@@ -1,0 +1,6 @@
+% import the rule(s), which is interpreted as a package: 
+
+import "test_rules.grs"
+
+strat main { Onf (test_rules)}  
+
