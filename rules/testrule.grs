@@ -1,28 +1,43 @@
 
+rule reverse {
+  pattern { N[VerbForm=Fin]; M [VerbForm=Inf]; N -[FINV]-> M; e: M -[INFV]-> O;  }
+  commands {
+    add_edge new_e: M -> N;
+    new_e.label = e.label;
+    del_edge e;
+  }
+}
+
+
 package test_package {
 
-  rule subclause_aa {
-    pattern { 
-      TIL[form="til"]; 
-      AA[form="å"]; 
-      V[form="være"]; 
-      MED[form="med"]; 
-      e1: TIL -> AA; 
-      e2: AA -> V; 
-      e3: V -> MED;
+rule subclause_infinitive_copula {
+    pattern {
+
+      % nodes
+      H[upos=AUX]; 
+      AUX[upos=AUX]; 
+      PRED[upos=ADP];
+
+      % dependencies
+      * -[FINV]-> H;  % sjekk om det finnes "lavere dependent" søkeuttrykk 
+      e: H -[INFV]-> AUX; 
+      e1: AUX -[SPRED]-> PRED;
+
     }
-    commands { 
-      del_edge e3;
-      del_edge e2; 
-      del_edge e1; 
-      add_edge f1: MED -> TIL ; f1.label = case; 
-      add_edge f2: MED -> AA; f2.label = mark; 
-      add_edge f3: MED -> V; f3.label = cop; 
-      shift_in TIL ==> MED; 
-      shift_out V ==> MED; 
+    commands {
+
+      shift H ==> PRED;
+      add_edge f1: PRED -> H; f1.label = aux;
+      add_edge re1: PRED -> AUX; re1.label = e1.label; 
+      del_edge e1;
+
     }
   }
 
+
+
 }
+
 
 strat main { Onf (test_package)}
