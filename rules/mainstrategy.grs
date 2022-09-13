@@ -6,14 +6,14 @@ import "reverse_heads.grs"
 import "NDT_to_UD.grs"
 
 
-strat rules { 
+strat rules {
   Seq (
     Onf(test_rules),
-    %Onf(reverse_heads), 
+    %Onf(reverse_heads),
     %Onf(func_dep_rel),
     %NDT_to_UD
   )
-}  
+}
 
 
 strat main { rules }
