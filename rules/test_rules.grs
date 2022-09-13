@@ -1,7 +1,6 @@
 % graph tranformation 
 
 
-
 rule subclause_infinitive {
     pattern {
       PP[upos=ADP]; 

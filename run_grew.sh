@@ -7,11 +7,10 @@ TODAY=$(date +%d-%m-%y)
 #ORIGINAL_TREEBANK="$DATA_DIR/no_bokmaal-sud-train.conllu "  # or test_fixed_UDfeats.conll or training_fixed_UDfeats.conll
 #CONVERTED_TREEBANK="$DATA_DIR/sud2ud_conversion_output_${TODAY}.conllu"
 
-ORIGINAL_TREEBANK = "/home/ingeridd/Prosjekter/NDT_konvertering/grew-testing/data/dev_fixed_UDfeats.conll"
-CONVERTED_TREEBANK = "/home/ingeridd/Prosjekter/NDT_konvertering/grew-testing/data/adhoc_conversion_output_${TODAY}.conllu"
+ORIGINAL_TREEBANK="data/sentences/even_one_more_sentence.conll"
+CONVERTED_TREEBANK="data/output_${TODAY}.conll"
 
-RULES_DIR="/home/ingeridd/Prosjekter/NDT_konvertering/grew-testing/rules"
-GRS_FILE="$RULES_DIR/mainstrategy.grs"
+GRS_FILE="rules/mainstrategy.grs"
 STRATEGY="main"
 
 
@@ -19,5 +18,5 @@ grew transform \
   -i  $ORIGINAL_TREEBANK \
   -o  $CONVERTED_TREEBANK \
   -grs  $GRS_FILE \
-  -strat $STRATEGY \
+  -strat main \
   -safe_commands

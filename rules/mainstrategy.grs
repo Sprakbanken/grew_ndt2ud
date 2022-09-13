@@ -1,9 +1,9 @@
 
 
-% import the rule(s), which is interpreted as a package: 
-import "func_dep_rel.grs"
-import "rev_heads.grs"
+package rules {
+    import "test_rules.grs"
+    %import "func_dep_rel.grs"
+}
 
-
-strat main { Onf (func_dep_rel), Onf ( rev_heads) }  
+strat main { Onf (rules) }  
 

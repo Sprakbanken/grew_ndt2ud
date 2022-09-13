@@ -158,4 +158,5 @@ dmypy.json
 cython_debug/
 
 .python-version
-Lesenotater.ipynb
+**/Lesenotater.ipynb
+**/adhoc*.conll

@@ -9,7 +9,7 @@ rule reverse {
 }
 
 
-package test_package {
+
 
 rule subclause_infinitive_copula {
     pattern {
