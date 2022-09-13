@@ -4,16 +4,14 @@
 
 
 ```
-
 TODAY=$(date +%d-%m-%y_%H%M%S)
 
 grew transform \
   -i  "data/sentences/one_sentence.conll" \
-  -o  "data/output/${TODAY}.conll" \     
+  -o  "data/output/${TODAY}.conll" \
   -grs  mainstrategy.grs \
   -strat main \
   -safe_commands
-
 ```
 
 ## Repo-struktur
@@ -63,6 +61,4 @@ grew-testing
 ## Referanser
 * [Starting a new treebank? Go SUD!](https://aclanthology.org/2021.depling-1.4) (Gerdes et al., DepLing 2021)
 * [Graph Matching and Graph Rewriting: GREW tools for corpus exploration, maintenance and conversion](https://aclanthology.org/2021.eacl-demos.21) (Guillaume, EACL 2021)
-
-
 
