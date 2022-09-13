@@ -160,3 +160,4 @@ cython_debug/
 .python-version
 **/Lesenotater.ipynb
 **/adhoc*.conll
+**/output*.conll
