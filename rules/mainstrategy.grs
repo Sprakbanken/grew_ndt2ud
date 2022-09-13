@@ -1,9 +1,20 @@
 
 
-package rules {
-    import "test_rules.grs"
-    %import "func_dep_rel.grs"
-}
+import "test_rules.grs"
+import "func_dep_rel.grs"
+import "reverse_heads.grs"
+import "NDT_to_UD.grs"
 
-strat main { Onf (rules) }  
+
+strat rules { 
+  Seq (
+    Onf(test_rules),
+    %Onf(reverse_heads), 
+    %Onf(func_dep_rel),
+    %NDT_to_UD
+  )
+}  
+
+
+strat main { rules }
 

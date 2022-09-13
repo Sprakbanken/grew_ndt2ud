@@ -6,11 +6,63 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SUD to UD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % The "irregular_expr.grs" file includes packages applying a specific treatment to idioms, titles and converted words. What they have in common is the fact that their syntactic behaviour towards the outside world is not regular.
-include "utils/irregular_expr.grs"
+%include "utils/irregular_expr.grs"
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % The "UD_flatten_idioms.grs" file contains a GRS for flattening all continuous idioms in UD. The head of each continuous idiom becomes its left-most element. All the elements are linked in a left-right chain with UNK relations.
-include "utils/UD_flatten_idioms.grs"
+%include "utils/UD_flatten_idioms.grs"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some SUD native corpora contain additional anntations specific to spoken language (SUD_Beja-NSC, SUD_French-Spoken and SUD_Naija-NSC)
+% NB: this package can be applied to non-spoken data on which it will have no effect.
+package spoken {
+  % Remove `scrap` deep extension
+  rule scrap {
+    pattern { e: N -[deep=scrap]-> M; }
+    commands { del_feat e.deep; M.Scrap=Yes }
+  }
+
+  rule conjcoord {
+    pattern { e: N -[conj:coord]-> M; }
+    commands { del_edge e; add_edge N -[conj]-> M; }
+  }
+
+  rule conjappos {
+    pattern { e: N -[conj:appos]-> M; }
+    commands { del_edge e; add_edge N -[appos]-> M; }
+  }
+
+  rule modappos {
+    pattern { e: N -[mod:appos]-> M; }
+    commands { del_edge e; add_edge N -[appos]-> M; }
+  }
+
+
+  rule conjdicto {
+    pattern { e: N -[conj:dicto]-> M; }
+    commands { del_edge e; add_edge N -[reparandum]-> M; }
+  }
+
+  % TODO: conj:dicto should be reverserd when change into reparandum: the rule below builds non projective punct, it should be refined!
+  %  rule conjdicto {
+  %    pattern { e: N -[conj:dicto]-> M; }
+  %    commands { 
+  %      del_edge e; 
+  %      shift_in N ==> M;   % reparandum should be reversed (see: https://surfacesyntacticud.github.io/guidelines/u/oral_language/conj_dicto/)
+  %      shift_out N =[punct]=> M;
+  %      add_edge M -[reparandum]-> N; }
+  %  }
+  
+  rule no_dep_on_cc {
+    pattern { H -[cc]-> C; e:  C -[^reparandum|conj:dicto|conj]-> N }
+    without { e.label = unk; N.InIdiom=Yes } % Except UD "fixed"
+    commands {
+      add_edge f: H -> N; f.label = e.label;
+      del_edge e
+    }
+  }
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Dependencies of coordinations to their right  are marked in SUD with feature Shared=Yes and they are attached at the rightmost conjunct. In UD, they are attached at the head of the coordination and feature  Shared=Yes is useless.
