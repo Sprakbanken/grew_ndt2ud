@@ -1,11 +1,18 @@
 # Konvertering av NDT til UD med GREW
 
-## Kjør grew med shell-skript 
+## Kjør grew fra kommandolinjen
 
-I skriptet kan du endre regel-filen (`*.grs`) og datasettet du bruker. 
 
 ```
-./run_grew.sh
+
+TODAY=$(date +%d-%m-%y_%H%M%S)
+
+grew transform \
+  -i  "data/sentences/one_sentence.conll" \
+  -o  "data/output/${TODAY}.conll" \     
+  -grs  mainstrategy.grs \
+  -strat main \
+  -safe_commands
 
 ```
 
