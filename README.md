@@ -57,6 +57,11 @@ grew transform \
 
 5 directories, 30 files
 ```
+## MaltEval diff
+
+```
+java -jar MaltEval_dist-20141005/lib/MaltEval.jar -s 2019_gullkorpus_ud_før_annotasjon_uten-hash.conllu -g 2019_gullkorpus_ud_uten-hash.conllu -v 1
+```
 
 ## Referanser
 * [Starting a new treebank? Go SUD!](https://aclanthology.org/2021.depling-1.4) (Gerdes et al., DepLing 2021)
