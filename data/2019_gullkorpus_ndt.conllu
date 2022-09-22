@@ -1,4 +1,3 @@
-
 # sent_id = 005326
 # text = Ville historien min vært annerledes da?
 1	Ville	ville	verb	verb	pret	0	FINV	_	_
@@ -8,7 +7,6 @@
 5	annerledes	annerledes	adj	adj	ub|m/f|ent|pos	4	SPRED	_	_
 6	da	da	adv	adv	_	4	ADV	_	_
 7	?	$?	clb	clb	<spm>	1	IP	_	_
-
 
 # sent_id = 007530
 # text = Sammen med Maria hører hun på Slipknot, Satyricon, Korn.
@@ -25,7 +23,6 @@
 11	Korn	Korn	subst	subst	prop	7	KOORD	_	_
 12	.	$.	clb	clb	<punkt>	4	IP	_	_
 
-
 # sent_id = 000972
 # text = Det må være rom for kontinuerlig forbedring.
 1	Det	det	pron	pron	nøyt|ent|pers|3	2	FSUBJ	_	_
@@ -36,7 +33,6 @@
 6	kontinuerlig	kontinuerlig	adj	adj	ub|m/f|ent|pos	7	ATR	_	_
 7	forbedring	forbedring	subst	subst	appell|fem|ub|ent	5	PUTFYLL	_	_
 8	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 010570
 # text = Han tar en røyk ut av Pall Mall-pakka.
@@ -49,7 +45,6 @@
 7	Pall	Pall	subst	subst	prop	8	FLAT	_	_
 8	Mall-pakka	Mall-pakke	subst	subst	appell|fem|be|ent|samset	6	PUTFYLL	_	_
 9	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 013283
 # text = Jeg har drevet med fotball hele livet mitt, og føler et sterkt behov for å gjøre noe annet akkurat nå.
@@ -76,7 +71,6 @@
 21	nå	nå	adv	adv	_	17	ADV	_	_
 22	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 002670
 # text = Den pågående krigen i Gaza kan gi de ekstreme elementene ytterligere vind i seilene.
 1	Den	den	det	det	dem|mask|ent	3	DET	_	_
@@ -95,7 +89,6 @@
 14	seilene	seil	subst	subst	appell|nøyt|be|fl	13	PUTFYLL	_	_
 15	.	$.	clb	clb	<punkt>	6	IP	_	_
 
-
 # sent_id = 000544
 # text = Det er vanskelig å fylle hennes sko, sier Lee til Aftenposten.
 1	Det	det	pron	pron	nøyt|ent|pers|3	2	FSUBJ	_	_
@@ -111,7 +104,6 @@
 11	til	til	prep	prep	_	9	ADV	_	_
 12	Aftenposten	Aftenposten	subst	subst	prop|mask	11	PUTFYLL	_	_
 13	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 017876
 # text = Kultur og kunst, medier, frivillige organisasjoner, idrett, kirke- og livssynssamfunn kan tilby berikende opplevelser og arenaer for engasjement.
@@ -139,7 +131,6 @@
 22	engasjement	engasjement	subst	subst	appell|nøyt|ub|ent	21	PUTFYLL	_	_
 23	.	$.	clb	clb	<punkt>	15	IP	_	_
 
-
 # sent_id = 016346
 # text = I noen årtier har miljøverntanken rettet stadig sterkere søkelys mot forurensning, ressursbruk og rovdrift på naturen.
 1	I	i	prep	prep	_	6	ADV	_	_
@@ -160,7 +151,6 @@
 16	på	på	prep	prep	_	15	ATR	_	_
 17	naturen	natur	subst	subst	appell|mask|be|ent	16	PUTFYLL	_	_
 18	.	$.	clb	clb	<punkt>	4	IP	_	_
-
 
 # sent_id = 010751
 # text = «Adrenalinet jeg kjente da jeg dro på meg Interdrakta gjorde at jeg kunne løpe til solnedgangen om det var så.»
@@ -188,7 +178,6 @@
 22	.	$.	clb	clb	<punkt>	11	IP	_	_
 23	»	$"	<anf>	<anf>	_	11	IK	_	_
 
-
 # sent_id = 015594
 # text = Foto: Karin Beate Nøsterud.
 1	Foto	foto	subst	subst	appell|nøyt|ub|ent	0	FRAG	_	_
@@ -198,7 +187,6 @@
 5	Nøsterud	Nøsterud	subst	subst	prop	3	FLAT	_	_
 6	.	$.	clb	clb	<punkt>	1	IP	_	_
 
-
 # sent_id = 007074
 # text = Bodø, september 2012.
 1	Bodø	Bodø	subst	subst	prop	0	FRAG	_	_
@@ -206,7 +194,6 @@
 3	september	september	subst	subst	appell|mask|ubøy	1	ADV	_	_
 4	2012	2012	det	det	fl|kvant	3	ATR	_	_
 5	.	$.	clb	clb	<punkt>	1	IP	_	_
-
 
 # sent_id = 017625
 # text = Både den tiltalte, en mann fra Serbia, og den fornærma, ei kvinne fra Storbritannia, er ansatt om bord på cruiseskipet.
@@ -236,7 +223,6 @@
 24	cruiseskipet	cruiseskip	subst	subst	appell|nøyt|be|ent	23	PUTFYLL	_	_
 25	.	$.	clb	clb	<punkt>	19	IP	_	_
 
-
 # sent_id = 004864
 # text = Å kalle dette jorda rundt er, for alle som har sett et verdenskart, en hysterisk spøk.
 1	Å	å	inf-merke	inf-merke	_	6	SUBJ	_	_
@@ -259,7 +245,6 @@
 18	spøk	spøk	subst	subst	appell|mask|ub|ent	6	SPRED	_	_
 19	.	$.	clb	clb	<punkt>	6	IP	_	_
 
-
 # sent_id = 014642
 # text = Etter mitt syn er vår privatskolelovgivning nettopp også et utslag av respekt for menneskerettigheter, inklusiv foreldreretten.
 1	Etter	etter	prep	prep	_	4	ADV	_	_
@@ -281,7 +266,6 @@
 17	foreldreretten	foreldrerett	subst	subst	appell|mask|be|ent	16	PUTFYLL	_	_
 18	.	$.	clb	clb	<punkt>	4	IP	_	_
 
-
 # sent_id = 015177
 # text = Kidnapperne skal ha brakt Dedieu til nabolandet Somalia.
 1	Kidnapperne	kidnapper	subst	subst	appell|mask|be|fl	2	SUBJ	_	_
@@ -293,7 +277,6 @@
 7	nabolandet	naboland	subst	subst	appell|nøyt|be|ent	8	APP	_	_
 8	Somalia	Somalia	subst	subst	prop	6	PUTFYLL	_	_
 9	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 009396
 # text = Hun ønsket ikke å dø, men hun ville ikke leve med en annens person hjerte.
@@ -315,7 +298,6 @@
 16	hjerte	hjerte	subst	subst	appell|nøyt|ub|ent	12	PUTFYLL	_	_
 17	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 006658
 # text = Men hun var for sent ute, og har ikke kølapp.
 1	Men	men	konj	konj	clb	3	KONJ	_	_
@@ -331,7 +313,6 @@
 11	kølapp	kølapp	subst	subst	appell|mask|ub|ent	9	DOBJ	_	_
 12	.	$.	clb	clb	<punkt>	3	IP	_	_
 
-
 # sent_id = 003249
 # text = Spleiselaget vil begge fortsatt holde seg langt borte fra.
 1	Spleiselaget	spleiselag	subst	subst	appell|nøyt|be|ent	9	PUTFYLL	_	_
@@ -344,7 +325,6 @@
 8	borte	borte	prep	prep	_	5	ADV	_	_
 9	fra	fra	prep	prep	_	8	PUTFYLL	_	_
 10	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 001071
 # text = Byplansjef Ellen de Vibe har allerede uttalt at den planlagte ambassadebygningen blir for stygg.
@@ -363,7 +343,6 @@
 13	for	for	adv	adv	_	14	ADV	_	_
 14	stygg	stygg	adj	adj	ub|m/f|ent|pos	12	SPRED	_	_
 15	.	$.	clb	clb	<punkt>	5	IP	_	_
-
 
 # sent_id = 006168
 # text = - Spørsmålet er om de personene som har deltatt i meningsmålingene på delstatsnivå virkelig møter opp i valglokalene, sier Melby.
@@ -390,7 +369,6 @@
 21	Melby	Melby	subst	subst	prop	20	SUBJ	_	_
 22	.	$.	clb	clb	<punkt>	3	IP	_	_
 
-
 # sent_id = 004617
 # text = Et spark.
 1	Et	en	det	det	nøyt|ent|kvant	2	DET	_	_
@@ -398,7 +376,6 @@
 3	.	$.	clb	clb	<punkt>	2	IP	_	_
 
 # newpar
-
 # sent_id = 016537
 # text = Samtidig som jeg kjente at noen sparket inni meg.
 1	Samtidig	samtidig	adj	adj	nøyt|ub|ent|pos	0	FRAG	_	_
@@ -412,7 +389,6 @@
 9	meg	jeg	pron	pron	ent|pers|hum|akk|1	8	PUTFYLL	_	_
 10	.	$.	clb	clb	<punkt>	1	IP	_	_
 
-
 # sent_id = 006120
 # text = BT-journalist Christina Pletten rapporterer fra Chicago:
 1	BT-journalist	BT-journalist	subst	subst	prop	2	APP	_	_
@@ -422,7 +398,6 @@
 5	fra	fra	prep	prep	_	4	ADV	_	_
 6	Chicago	Chicago	subst	subst	prop	5	PUTFYLL	_	_
 7	:	$:	clb	clb	<kolon>	4	IP	_	_
-
 
 # sent_id = 006496
 # text = På øya arrangeres hvert år det både legendariske og halsbrekkende motorsykkelløpet Isle of Man TT.
@@ -443,7 +418,6 @@
 15	TT	TT	subst	subst	prop	12	FLAT	_	_
 16	.	$.	clb	clb	<punkt>	3	IP	_	_
 
-
 # sent_id = 003930
 # text = Glad i samtidslitteratur.
 1	Glad	glad	adj	adj	ub|m/f|ent|pos	0	FRAG	_	_
@@ -452,7 +426,6 @@
 4	.	$.	clb	clb	<punkt>	1	IP	_	_
 
 # newpar
-
 # sent_id = 002992
 # text = En kul hobby.
 1	En	en	det	det	mask|ent|kvant	3	DET	_	_
@@ -461,7 +434,6 @@
 4	.	$.	clb	clb	<punkt>	3	IP	_	_
 
 # newpar
-
 # sent_id = 007745
 # text = Hva ville barnevernet gjort hvis nabokvinnen som Cathrine søkte trøst hos hadde sendt inn en bekymringsmelding?
 1	Hva	hva	pron	pron	sp	4	DOBJ	_	_
@@ -482,7 +454,6 @@
 16	bekymringsmelding	bekymringsmelding	subst	subst	appell|mask|ub|ent|samset	13	DOBJ	_	_
 17	?	$?	clb	clb	<spm>	2	IP	_	_
 
-
 # sent_id = 007082
 # text = For to år siden var det 50-årstreff for norske Kongo-veteraner.
 1	For	for	prep	prep	_	5	ADV	_	_
@@ -497,13 +468,11 @@
 10	Kongo-veteraner	Kongo-veteran	subst	subst	appell|mask|ub|fl|samset	8	PUTFYLL	_	_
 11	.	$.	clb	clb	<punkt>	5	IP	_	_
 
-
 # sent_id = 009794
 # text = Effektivt mot røyking
 1	Effektivt	effektiv	adj	adj	nøyt|ub|ent|pos	0	FRAG	_	_
 2	mot	mot	prep	prep	_	1	ADV	_	_
 3	røyking	røyking	subst	subst	appell|fem|ub|ent	2	PUTFYLL	_	_
-
 
 # sent_id = 000433
 # text = Biblioteket skal i følge lovverket ta vare på all informasjon som er offentliggjort, også den som viste seg å være feilaktig.
@@ -532,7 +501,6 @@
 23	.	$.	clb	clb	<punkt>	2	IP	_	_
 
 # newpar
-
 # sent_id = 008648
 # text = - Samtidig finnes det regler for hva man kan ha på seg og ikke.
 1	-	$-	<strek>	<strek>	_	3	IK	_	_
@@ -551,7 +519,6 @@
 14	ikke	ikke	adv	adv	_	10	KOORD-ELL	_	_
 15	.	$.	clb	clb	<punkt>	3	IP	_	_
 
-
 # sent_id = 010303
 # text = Rolig kveld, gjerne tv eller kino.
 1	Rolig	rolig	adj	adj	ub|m/f|ent|pos	2	ATR	_	_
@@ -562,7 +529,6 @@
 6	eller	eller	konj	konj	<ikke-clb>	7	KONJ	_	_
 7	kino	kino	subst	subst	appell|mask|ub|ent	2	KOORD	_	_
 8	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 014171
 # text = Og det mener jeg at jeg gav et godt svar på.
@@ -578,7 +544,6 @@
 10	svar	svar	subst	subst	appell|nøyt|ub|ent	7	DOBJ	_	_
 11	på	på	prep	prep	_	10	ATR	_	_
 12	.	$.	clb	clb	<punkt>	3	IP	_	_
-
 
 # sent_id = 005747
 # text = Et sted i fjellet i Sør-Norge herjer en bande fredløse, anført av Dagmar (Ingrid Bolsø Berdal).
@@ -603,7 +568,6 @@
 19	)	$)	<parentes-slutt>	<parentes-slutt>	_	16	IK	_	_
 20	.	$.	clb	clb	<punkt>	7	IP	_	_
 
-
 # sent_id = 003417
 # text = SVs fremste minoritetspolitiker, Akhtar Chaudhry, tilhører foreldregenerasjonen og skiller seg således fra de andre minoritetspolitikerne.
 1	SVs	SV	subst	subst	prop|gen	3	DET	_	_
@@ -624,7 +588,6 @@
 16	andre	annen	det	det	dem|fl|<adj>	17	DET	_	_
 17	minoritetspolitikerne	minoritetspolitiker	subst	subst	appell|mask|be|fl|samset	14	PUTFYLL	_	_
 18	.	$.	clb	clb	<punkt>	8	IP	_	_
-
 
 # sent_id = 005696
 # text = At vi ikke har hatt en omfattende tradisjon for dubbing har bidratt til språkforståelsen vår, sier daglig leder for EF i Norge, Morten Davidsen.
@@ -656,7 +619,6 @@
 26	Davidsen	Davidsen	subst	subst	prop	25	FLAT	_	_
 27	.	$.	clb	clb	<punkt>	11	IP	_	_
 
-
 # sent_id = 013110
 # text = Sommerstid kan imidlertid enkelte turister ta seg i land fra båter når værforholdene tillater det.
 1	Sommerstid	sommerstid	adv	adv	_	6	ADV	_	_
@@ -675,7 +637,6 @@
 14	tillater	tillate	verb	verb	pres	6	ADV	_	_
 15	det	det	pron	pron	nøyt|ent|pers|3	14	DOBJ	_	_
 16	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 006766
 # text = Tidligere Unibuss-ansatte i lederstillinger er blant annet siktet for å ha tatt imot bestikkelser på til sammen over fire millioner kroner fra den tyske bussprodusenten MAN.
@@ -707,7 +668,6 @@
 26	MAN	MAN	subst	subst	prop	22	PUTFYLL	_	_
 27	.	$.	clb	clb	<punkt>	5	IP	_	_
 
-
 # sent_id = 000519
 # text = Statsministeren sier det var en tankevekkende opplevelse å være i en begravelse når et nytt barn blir født.
 1	Statsministeren	statsminister	subst	subst	appell|mask|be|ent	2	SUBJ	_	_
@@ -730,7 +690,6 @@
 18	født	føde	verb	verb	perf-part	17	INFV	_	_
 19	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 015537
 # text = Forsvarer Siv Jensen
 1	Forsvarer	forsvare	verb	verb	pres	0	FINV	_	_
@@ -738,7 +697,6 @@
 3	Jensen	Jensen	subst	subst	prop	2	FLAT	_	_
 
 # newpar
-
 # sent_id = 007430
 # text = I voksen alder spør Cathrine barnevernet på Askøy om de visste noe om situasjonen.
 1	I	i	prep	prep	_	4	ADV	_	_
@@ -756,7 +714,6 @@
 13	om	om	prep	prep	_	12	ATR	_	_
 14	situasjonen	situasjon	subst	subst	appell|mask|be|ent	13	PUTFYLL	_	_
 15	.	$.	clb	clb	<punkt>	4	IP	_	_
-
 
 # sent_id = 015933
 # text = Høyre håper i det lengste å vinne på å være eneste parti som kan samarbeide med alle de partier som etter alt å dømme trenges for å fravriste de rødgrønne flertallet ved valget 14. september.
@@ -797,7 +754,6 @@
 35	september	september	subst	subst	appell|mask|ubøy	33	ATR	_	_
 36	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 007158
 # text = Han verket etter å skrive leserinnlegg, men lot det være.
 1	Han	han	pron	pron	mask|ent|pers|hum|3|nom	2	SUBJ	_	_
@@ -813,7 +769,6 @@
 11	være	være	verb	verb	inf	9	DOBJ	_	_
 12	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 007807
 # text = Nettopp det har blitt søstrenes kampsak.
 1	Nettopp	nettopp	adv	adv	_	2	ATR	_	_
@@ -824,7 +779,6 @@
 6	kampsak	kampsak	subst	subst	appell|fem|ub|ent	4	SPRED	_	_
 7	.	$.	clb	clb	<punkt>	3	IP	_	_
 
-
 # sent_id = 014250
 # text = Børge Brende (H):
 1	Børge	Børge	subst	subst	prop|mask	0	FRAG	_	_
@@ -833,7 +787,6 @@
 4	H	H	subst	subst	prop	1	ATR	_	_
 5	)	$)	<parentes-slutt>	<parentes-slutt>	_	4	IK	_	_
 6	:	$:	clb	clb	<kolon>	1	IP	_	_
-
 
 # sent_id = 003985
 # text = Mens på de områdene som fortsatt forholder seg aktivt til publikum, og i større grad forholder seg til et marked bestående av enkeltmennesker - romanforfattere, litografer, kirkemusikkomponister i mine eksempler - har kunstneriske normer som i større grad evner å berøre.
@@ -883,7 +836,6 @@
 44	berøre	berøre	verb	verb	inf	43	INFV	_	_
 45	.	$.	clb	clb	<punkt>	35	IP	_	_
 
-
 # sent_id = 011156
 # text = Men den smålugubre stemningen og kaotiske kjøringen er tilbake slik jeg liker den, og da kan jeg si meg godt fornøyd med årets utgave.
 1	Men	men	konj	konj	clb	8	KONJ	_	_
@@ -913,7 +865,6 @@
 25	utgave	utgave	subst	subst	appell|fem|ub|ent	23	PUTFYLL	_	_
 26	.	$.	clb	clb	<punkt>	8	IP	_	_
 
-
 # sent_id = 011476
 # text = Kanskje han hadde snev av manisk depresjon jeg ikke var klar over.
 1	Kanskje	kanskje	adv	adv	_	3	ADV	_	_
@@ -929,7 +880,6 @@
 11	klar	klar	adj	adj	ub|m/f|ent|pos	10	SPRED	_	_
 12	over	over	prep	prep	_	11	ADV	_	_
 13	.	$.	clb	clb	<punkt>	3	IP	_	_
-
 
 # sent_id = 007035
 # text = Derfor brukte de sin innovative forretningssans og nektet å selge CD-plater til mannen i gaten.
@@ -950,7 +900,6 @@
 15	gaten	gate	subst	subst	appell|mask|be|ent	14	PUTFYLL	_	_
 16	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 011716
 # text = Og ingenting tyder på at den statlige reguleringsiveren vil avta.
 1	Og	og	konj	konj	clb	3	KONJ	_	_
@@ -964,7 +913,6 @@
 9	vil	ville	verb	verb	pres	4	PUTFYLL	_	_
 10	avta	avta	verb	verb	inf	9	INFV	_	_
 11	.	$.	clb	clb	<punkt>	3	IP	_	_
-
 
 # sent_id = 012382
 # text = Tallpunktene 4 - 7 i mandatet angir ulike tema av organisasjonsmessig, juridisk og økonomisk karakter:
@@ -985,7 +933,6 @@
 15	økonomisk	økonomisk	adj	adj	ub|m/f|ent|pos	11	KOORD	_	_
 16	karakter	karakter	subst	subst	appell|mask|ub|ent	10	PUTFYLL	_	_
 17	:	$:	clb	clb	<kolon>	7	IP	_	_
-
 
 # sent_id = 002878
 # text = Men jeg ser at det er fullt mulig å trekke samme konklusjon som Kjell Aamot, og det særlig midt i en finanskrise.
@@ -1014,7 +961,6 @@
 23	finanskrise	finanskrise	subst	subst	appell|mask|ub|ent	21	PUTFYLL	_	_
 24	.	$.	clb	clb	<punkt>	3	IP	_	_
 
-
 # sent_id = 005234
 # text = Handelsportal.no er der fortsatt.
 1	Handelsportal.no	Handelsportal.no	subst	subst	prop	2	SUBJ	_	_
@@ -1022,7 +968,6 @@
 3	der	der	prep	prep	_	2	SPRED	_	_
 4	fortsatt	fortsatt	adv	adv	_	2	ADV	_	_
 5	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 007589
 # text = For det er en voksen person som får vite hvordan jentene har det hjemme.
@@ -1041,7 +986,6 @@
 13	det	det	pron	pron	nøyt|ent|pers|3	12	FOBJ	_	_
 14	hjemme	hjemme	prep	prep	_	12	ADV	_	_
 15	.	$.	clb	clb	<punkt>	3	IP	_	_
-
 
 # sent_id = 006100
 # text = NBC mener at Mitt Romney har 153 sikre valgmannstemmer, mot 148 til Obama.
@@ -1062,7 +1006,6 @@
 15	.	$.	clb	clb	<punkt>	2	IP	_	_
 
 # newpar
-
 # sent_id = 017113
 # text = Eidos gir fortsatt ut spill ved navn «Championship Manager», men har aldri oppnådd samme suksess som Sports Interactives spillserie.
 1	Eidos	Eidos	subst	subst	prop	2	SUBJ	_	_
@@ -1089,7 +1032,6 @@
 22	spillserie	spillserie	subst	subst	appell|mask|ub|ent|samset	19	APP	_	_
 23	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 000248
 # text = Kongens båt slo rivalen « Camilla », og dermed ble det revansj for nederlaget i HH Skagen Race.
 1	Kongens	konge	subst	subst	appell|mask|be|ent|gen	2	DET	_	_
@@ -1113,7 +1055,6 @@
 19	Race	Race	subst	subst	prop	17	FLAT	_	_
 20	.	$.	clb	clb	<punkt>	3	IP	_	_
 
-
 # sent_id = 017214
 # text = - Selve operasjonen har vært vellykket, sier ordførerens bror Pål W. Olsen til Tønsbergs Blads nettutgave.
 1	-	$-	<strek>	<strek>	_	4	IK	_	_
@@ -1136,7 +1077,6 @@
 18	.	$.	clb	clb	<punkt>	4	IP	_	_
 
 # newpar
-
 # sent_id = 012752
 # text = 2.2.8 Utvalgets forslag og konklusjoner
 1	2.2.8	2.2.8	det	det	kvant	3	IK	_	_
@@ -1144,7 +1084,6 @@
 3	forslag	forslag	subst	subst	appell|nøyt|ub|fl	0	FRAG	_	_
 4	og	og	konj	konj	<ikke-clb>	5	KONJ	_	_
 5	konklusjoner	konklusjon	subst	subst	appell|mask|ub|fl	3	KOORD	_	_
-
 
 # sent_id = 006781
 # text = T-banevogner kjøpt i 1994 for 240 millioner som var ment å vare i 20 år, ble solgt som vrakpant i 2011 for én million.
@@ -1175,14 +1114,12 @@
 25	million	million	subst	subst	appell|mask|ub|ent	23	PUTFYLL	_	_
 26	.	$.	clb	clb	<punkt>	17	IP	_	_
 
-
 # sent_id = 014594
 # text = Statsråd Kåre Gjønnes:
 1	Statsråd	statsråd	subst	subst	appell|mask|ub|ent	2	APP	_	_
 2	Kåre	Kåre	subst	subst	prop|mask	0	FRAG	_	_
 3	Gjønnes	Gjønnes	subst	subst	prop	2	FLAT	_	_
 4	:	$:	clb	clb	<kolon>	2	IP	_	_
-
 
 # sent_id = 015110
 # text = Innbyggerne i en arabisk landsby i Israel er rasende etter at en moské ble påtent og ødelagt.
@@ -1204,7 +1141,6 @@
 16	og	og	konj	konj	<ikke-clb>	17	KONJ	_	_
 17	ødelagt	ødelegge	adj	adj	ub|m/f|ent|<perf-part>	15	KOORD	_	_
 18	.	$.	clb	clb	<punkt>	8	IP	_	_
-
 
 # sent_id = 013033
 # text = Svalbardtraktaten gjelder ikke for Jan Mayen, slik at norsk myndighet kan utøves over Jan Mayen uten hensyn til begrensninger som traktaten setter.
@@ -1233,7 +1169,6 @@
 23	setter	sette	verb	verb	pres	20	ATR	_	_
 24	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 008826
 # text = På haugesundsk sang de om horisonter, hav, lengsel, kjærlighet.
 1	På	på	prep	prep	_	3	ADV	_	_
@@ -1249,7 +1184,6 @@
 11	,	$,	<komma>	<komma>	_	10	IK	_	_
 12	kjærlighet	kjærlighet	subst	subst	appell|fem|ub|ent	6	KOORD	_	_
 13	.	$.	clb	clb	<punkt>	3	IP	_	_
-
 
 # sent_id = 002345
 # text = Stein Erik Hagen er i sommer blitt hudflettet fordi han flytter familien og formuen til Sveits med sin beskjedne skatt.
@@ -1276,7 +1210,6 @@
 21	.	$.	clb	clb	<punkt>	4	IP	_	_
 
 # newpar
-
 # sent_id = 004000
 # text = Men kan flere av de offentlige pengene som etterspør ny kunst, gå lenger ned i næringskjeden, til amatørkunstnere og ensembler, eller lesere, lyttere og tilskuere?
 1	Men	men	konj	konj	clb	2	KONJ	_	_
@@ -1310,7 +1243,6 @@
 29	tilskuere	tilskuer	subst	subst	appell|mask|ub|fl	25	KOORD	_	_
 30	?	$?	clb	clb	<spm>	2	IP	_	_
 
-
 # sent_id = 017874
 # text = Regjeringen vil ta initiativ til en evaluering av den nye fylkeskommunen.
 1	Regjeringen	Regjeringen	subst	subst	prop	2	SUBJ	_	_
@@ -1325,7 +1257,6 @@
 10	nye	ny	adj	adj	be|ent|pos	11	ATR	_	_
 11	fylkeskommunen	fylkeskommune	subst	subst	appell|mask|be|ent	8	PUTFYLL	_	_
 12	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 011118
 # text = Nintendo har gjort mye bra siden lanseringen av Wii, og med det fått med seg et publikum som ikke tidligere var like interesserte av spill.
@@ -1357,7 +1288,6 @@
 26	spill	spill	subst	subst	appell|nøyt|ub|ent	25	PUTFYLL	_	_
 27	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 004233
 # text = Cannabis var mer effektivt enn de medisinene han ellers hadde brukt, og bivirkningene var færre.
 1	Cannabis	cannabis	subst	subst	appell|mask|ub|ent	2	SUBJ	_	_
@@ -1377,7 +1307,6 @@
 15	var	være	verb	verb	pret	2	KOORD	_	_
 16	færre	få	adj	adj	komp	15	SPRED	_	_
 17	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 012047
 # text = Det må være en etisk refleksjon før man ytrer seg, sier Rieber-Mohn, som også poengterer viktigheten av debatt og diskusjon om presseetiske spørsmål.
@@ -1407,7 +1336,6 @@
 24	presseetiske	presseetisk	adj	adj	fl|pos	25	ATR	_	_
 25	spørsmål	spørsmål	subst	subst	appell|nøyt|ub|fl	23	PUTFYLL	_	_
 26	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 006645
 # text = Flere medier har spekulert på om det kan ligge en bredere sammensvergelse bak lekkasjene av pavens dokumenter, uten at noen har klart å bevise det.
@@ -1439,7 +1367,6 @@
 26	det	det	pron	pron	nøyt|ent|pers|3	25	DOBJ	_	_
 27	.	$.	clb	clb	<punkt>	3	IP	_	_
 
-
 # sent_id = 003611
 # text = Demokrati krever at religiøse mennesker, som andre grupper, skal tolerere at andre kritiserer deres tro og tanker, verdier og aktiviteter.
 1	Demokrati	demokrati	subst	subst	appell|nøyt|ub|ent	2	SUBJ	_	_
@@ -1467,7 +1394,6 @@
 23	aktiviteter	aktivitet	subst	subst	appell|mask|ub|fl	21	KOORD	_	_
 24	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 009251
 # text = - Bare to av ti som kommer hit velger piggdekk.
 1	-	$-	<strek>	<strek>	_	9	IK	_	_
@@ -1481,7 +1407,6 @@
 9	velger	velge	verb	verb	pres	0	FINV	_	_
 10	piggdekk	piggdekk	subst	subst	appell|nøyt|ub|fl	9	DOBJ	_	_
 11	.	$.	clb	clb	<punkt>	9	IP	_	_
-
 
 # sent_id = 011876
 # text = Og hvor disse glidningene går for langt, avslutter Ekern.
@@ -1498,7 +1423,6 @@
 11	.	$.	clb	clb	<punkt>	5	IP	_	_
 
 # newpar
-
 # sent_id = 008099
 # text = Om å komme seg videre hva du enn har opplevd, eller mistet.
 1	Om	om	prep	prep	_	0	FRAG	_	_
@@ -1516,7 +1440,6 @@
 13	mistet	miste	verb	verb	perf-part	10	KOORD	_	_
 14	.	$.	clb	clb	<punkt>	1	IP	_	_
 
-
 # sent_id = 004103
 # text = At de mener alvor, kan illustreres med følgende:
 1	At	at	sbu	sbu	_	3	SBU	_	_
@@ -1529,7 +1452,6 @@
 8	med	med	prep	prep	_	7	ADV	_	_
 9	følgende	følgende	adj	adj	be|ent|pos	8	PUTFYLL	_	_
 10	:	$:	clb	clb	<kolon>	6	IP	_	_
-
 
 # sent_id = 008193
 # text = To år etter kom han inn på Dramatiska Institutet i Stockholm som filmfotograf.
@@ -1548,7 +1470,6 @@
 13	filmfotograf	filmfotograf	subst	subst	appell|mask|ub|ent	12	PUTFYLL	_	_
 14	.	$.	clb	clb	<punkt>	4	IP	_	_
 
-
 # sent_id = 000900
 # text = Treffer Cuba i natt
 1	Treffer	treffe	verb	verb	pres	0	FINV	_	_
@@ -1557,7 +1478,6 @@
 4	natt	natt	subst	subst	appell|mask|ub|ent	3	PUTFYLL	_	_
 
 # newpar
-
 # sent_id = 017715
 # text = Og vi forutsetter at det blir satt av milliarder, ikke millioner, til utvikling av alternative energikilder.
 1	Og	og	konj	konj	clb	3	KONJ	_	_
@@ -1579,7 +1499,6 @@
 17	alternative	alternativ	adj	adj	fl|pos	18	ATR	_	_
 18	energikilder	energikilde	subst	subst	appell|mask|ub|fl	16	PUTFYLL	_	_
 19	.	$.	clb	clb	<punkt>	3	IP	_	_
-
 
 # sent_id = 005091
 # text = Jeg må være den eneste personen i verden som ser tynnere ut av å bli avfotografert med et vidvinkelobjektiv.
@@ -1605,7 +1524,6 @@
 20	.	$.	clb	clb	<punkt>	2	IP	_	_
 
 # newpar
-
 # sent_id = 006684
 # text = - Men fenalår skal du ha?
 1	-	$-	<strek>	<strek>	_	4	IK	_	_
@@ -1616,7 +1534,6 @@
 6	ha	ha	verb	verb	inf	4	INFV	_	_
 7	?	$?	clb	clb	<spm>	4	IP	_	_
 
-
 # sent_id = 005371
 # text = Det er jo helt crazy!
 1	Det	det	pron	pron	nøyt|ent|pers|3	2	FSUBJ	_	_
@@ -1625,7 +1542,6 @@
 4	helt	hel	adj	adj	nøyt|ub|ent|pos	5	ADV	_	_
 5	crazy	crazy	adj	adj	nøyt|ub|ent|pos	2	SPRED	_	_
 6	!	$!	clb	clb	<utrop>	2	IP	_	_
-
 
 # sent_id = 001594
 # text = Hele beretningen deres fra de 11 dagene på Shifa-sykehuset i Gaza, samt de historiske og politiske tilleggsbetraktninger som omkapsler denne, levner ingen tvil om hvor holdningene ligger.
@@ -1660,7 +1576,6 @@
 29	ligger	ligge	verb	verb	pres	26	PUTFYLL	_	_
 30	.	$.	clb	clb	<punkt>	23	IP	_	_
 
-
 # sent_id = 008440
 # text = - Jeg tror det.
 1	-	$-	<strek>	<strek>	_	3	IK	_	_
@@ -1668,7 +1583,6 @@
 3	tror	tro	verb	verb	pres	0	FINV	_	_
 4	det	det	pron	pron	nøyt|ent|pers|3	3	DOBJ	_	_
 5	.	$.	clb	clb	<punkt>	3	IP	_	_
-
 
 # sent_id = 003409
 # text = Tajiks fremste minoritetsmotstander, Venstres Abid Raja, velger en annen strategi.
@@ -1685,7 +1599,6 @@
 11	annen	annen	det	det	dem|mask|ub|ent|<adj>	12	DET	_	_
 12	strategi	strategi	subst	subst	appell|mask|ub|ent	9	DOBJ	_	_
 13	.	$.	clb	clb	<punkt>	9	IP	_	_
-
 
 # sent_id = 007125
 # text = - Det var da journalistene fikk nyss i brevet fra Det hvite hus at de fattet interesse for det vi hadde gjort, og det ble en del oppstyr og skriverier, sier Olav Johansen.
@@ -1726,7 +1639,6 @@
 35	Johansen	Johansen	subst	subst	prop	34	FLAT	_	_
 36	.	$.	clb	clb	<punkt>	3	IP	_	_
 
-
 # sent_id = 012633
 # text = I dette ligger både en rett til tankefrihet og til åpent å kunne utøve sin tro eller ikketro.
 1	I	i	prep	prep	_	3	ADV	_	_
@@ -1749,14 +1661,12 @@
 18	ikketro	ikketro	subst	subst	appell|fem|ub|ent|samset	16	KOORD	_	_
 19	.	$.	clb	clb	<punkt>	3	IP	_	_
 
-
 # sent_id = 016538
 # text = Flyttet på seg.
 1	Flyttet	flytte	verb	verb	perf-part	0	FRAG	_	_
 2	på	på	prep	prep	_	1	ADV	_	_
 3	seg	seg	pron	pron	akk|refl	2	PUTFYLL	_	_
 4	.	$.	clb	clb	<punkt>	1	IP	_	_
-
 
 # sent_id = 017099
 # text = Han har et ekstremt fokus og vet at bare det beste og vondeste er nok, avslutter Bjørn Svindal.
@@ -1781,7 +1691,6 @@
 19	Svindal	Svindal	subst	subst	prop	18	FLAT	_	_
 20	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 009292
 # text = Jo større samfunn, desto mer makt.
 1	Jo	jo	adv	adv	_	2	ADV	_	_
@@ -1792,7 +1701,6 @@
 6	mer	mye	adj	adj	komp	7	ATR	_	_
 7	makt	makt	subst	subst	appell|fem|ub|ent	0	FRAG	_	_
 8	.	$.	clb	clb	<punkt>	7	IP	_	_
-
 
 # sent_id = 000298
 # text = Det er ikke verdt det rett og slett.
@@ -1805,7 +1713,6 @@
 7	og	og	konj	konj	<ikke-clb>	8	KONJ	_	_
 8	slett	slett	adj	adj	nøyt|ub|ent|pos	6	KOORD	_	_
 9	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 006953
 # text = Hans appell kan sies å ligge i utstrålingen hans, som en skoleklassens sjarmerende badboy.
@@ -1826,7 +1733,6 @@
 15	badboy	badboy	subst	subst	appell|mask|ub|ent|samset	11	PUTFYLL	_	_
 16	.	$.	clb	clb	<punkt>	3	IP	_	_
 
-
 # sent_id = 008311
 # text = Opp på scenen kom dattera, som den gangen var seks år og enebarn.
 1	Opp	opp	prep	prep	_	4	ADV	_	_
@@ -1844,7 +1750,6 @@
 13	og	og	konj	konj	<ikke-clb>	14	KONJ	_	_
 14	enebarn	enebarn	subst	subst	appell|nøyt|ub|fl	12	KOORD	_	_
 15	.	$.	clb	clb	<punkt>	4	IP	_	_
-
 
 # sent_id = 016292
 # text = Kirkens egne råd og utvalg sier at det er problematisk at moderne samfunn blander religion og stat på politisk toppnivå.
@@ -1870,7 +1775,6 @@
 20	toppnivå	toppnivå	subst	subst	appell|nøyt|ub|ent	18	PUTFYLL	_	_
 21	.	$.	clb	clb	<punkt>	6	IP	_	_
 
-
 # sent_id = 008169
 # text = Han leverte klær til kongehuset, NRK og de norske OL-troppene.
 1	Han	han	pron	pron	mask|ent|pers|hum|3|nom	2	SUBJ	_	_
@@ -1885,7 +1789,6 @@
 10	norske	norsk	adj	adj	fl|pos	11	ATR	_	_
 11	OL-troppene	OL-tropp	subst	subst	appell|mask|be|fl	5	KOORD	_	_
 12	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 007061
 # text = Det gjaldt liv eller død, for ham og pilot Per Karlsen, og for misjonærene de skulle redde fra opprørerne.
@@ -1912,7 +1815,6 @@
 21	opprørerne	opprører	subst	subst	appell|mask|be|fl	20	PUTFYLL	_	_
 22	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 008132
 # text = - Sier folk det til deg?
 1	-	$-	<strek>	<strek>	_	2	IK	_	_
@@ -1922,7 +1824,6 @@
 5	til	til	prep	prep	_	2	ADV	_	_
 6	deg	du	pron	pron	ent|pers|hum|akk|2	5	PUTFYLL	_	_
 7	?	$?	clb	clb	<spm>	2	IP	_	_
-
 
 # sent_id = 002602
 # text = Taper NATO Afghanistan, styrker man internasjonal terrorisme og svekker samtidig NATO fatalt.
@@ -1941,7 +1842,6 @@
 13	fatalt	fatal	adj	adj	nøyt|ub|ent|pos	10	ADV	_	_
 14	.	$.	clb	clb	<punkt>	5	IP	_	_
 
-
 # sent_id = 011040
 # text = Jeg er rørt av den teksten.
 1	Jeg	jeg	pron	pron	ent|pers|hum|nom|1	2	SUBJ	_	_
@@ -1951,7 +1851,6 @@
 5	den	den	det	det	dem|mask|ent	6	DET	_	_
 6	teksten	tekst	subst	subst	appell|mask|be|ent	4	PUTFYLL	_	_
 7	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 000139
 # text = Verdens helseorganisasjon, som ledes av Gro Harlem Brundtland, er sterkt inne i bildet.
@@ -1972,7 +1871,6 @@
 15	bildet	bilde	subst	subst	appell|nøyt|be|ent	14	PUTFYLL	_	_
 16	.	$.	clb	clb	<punkt>	11	IP	_	_
 
-
 # sent_id = 007206
 # text = Han pekte på turtallinstrumentet, et stykke forbi det kritiske rødmerket.
 1	Han	han	pron	pron	mask|ent|pers|hum|3|nom	2	SUBJ	_	_
@@ -1987,7 +1885,6 @@
 10	kritiske	kritisk	adj	adj	be|ent|pos	11	ATR	_	_
 11	rødmerket	rødmerke	subst	subst	appell|nøyt|be|ent|samset	8	PUTFYLL	_	_
 12	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 003864
 # text = Nobels fredspris gjør Barack Obama til en enda større internasjonal politisk stjerne.
@@ -2005,7 +1902,6 @@
 12	stjerne	stjerne	subst	subst	appell|mask|ub|ent	6	PUTFYLL	_	_
 13	.	$.	clb	clb	<punkt>	3	IP	_	_
 
-
 # sent_id = 012145
 # text = Flere peker på at det er psykososiale faktorer som gjerne er utslagsgivende.
 1	Flere	mange	adj	adj	komp	2	SUBJ	_	_
@@ -2021,7 +1917,6 @@
 11	er	være	verb	verb	pres	8	ATR	_	_
 12	utslagsgivende	utslagsgivende	adj	adj	fl|pos	11	SPRED	_	_
 13	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 007160
 # text = Olav Johansen og Per Karlsen hadde med seg oberstløytnant Paul A. Mayer og den svenske etterretningsoffiseren Stig von Bayer.
@@ -2045,7 +1940,6 @@
 18	von	von	subst	subst	prop	17	FLAT	_	_
 19	Bayer	Bayer	subst	subst	prop	17	FLAT	_	_
 20	.	$.	clb	clb	<punkt>	6	IP	_	_
-
 
 # sent_id = 002062
 # text = Barn trenger trygghet, foreldre som har tid, følelsesmessige relasjoner og et miljø der de kan lære, prøve og feile, uten å bli straffet, men veiledet.
@@ -2081,7 +1975,6 @@
 30	veiledet	veilede	verb	verb	perf-part	27	KOORD	_	_
 31	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 005785
 # text = «Flukt» er vakkert filmet, med storslåtte tagninger i praktfull, norsk natur.
 1	«	$"	<anf>	<anf>	_	2	IK	_	_
@@ -2101,7 +1994,6 @@
 15	natur	natur	subst	subst	appell|mask|ub|ent	11	PUTFYLL	_	_
 16	.	$.	clb	clb	<punkt>	4	IP	_	_
 
-
 # sent_id = 010097
 # text = - Synes du det er for lite?
 1	-	$-	<strek>	<strek>	_	2	IK	_	_
@@ -2113,7 +2005,6 @@
 7	lite	lite	adj	adj	nøyt|ub|ent|pos	5	SPRED	_	_
 8	?	$?	clb	clb	<spm>	2	IP	_	_
 
-
 # sent_id = 002798
 # text = Ha en god søndag!
 1	Ha	ha	verb	verb	imp	0	FINV	_	_
@@ -2121,7 +2012,6 @@
 3	god	god	adj	adj	ub|m/f|ent|pos	4	ATR	_	_
 4	søndag	søndag	subst	subst	appell|mask|ub|ent	1	DOBJ	_	_
 5	!	$!	clb	clb	<utrop>	1	IP	_	_
-
 
 # sent_id = 008448
 # text = Det er ikke tvil om at det går bra i NHL for tida, man flytter ikke fire kamper til Europa hvis ikke økonomien er god.
@@ -2153,7 +2043,6 @@
 26	god	god	adj	adj	ub|m/f|ent|pos	25	SPRED	_	_
 27	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 016004
 # text = Men også han merker presset.
 1	Men	men	konj	konj	clb	4	KONJ	_	_
@@ -2162,7 +2051,6 @@
 4	merker	merke	verb	verb	pres	0	FINV	_	_
 5	presset	press	subst	subst	appell|nøyt|be|ent	4	DOBJ	_	_
 6	.	$.	clb	clb	<punkt>	4	IP	_	_
-
 
 # sent_id = 009497
 # text = Vi må ta ansvar for vårt eget liv.
@@ -2175,7 +2063,6 @@
 7	eget	egen	det	det	nøyt|ub|ent|<adj>|forst	8	DET	_	_
 8	liv	liv	subst	subst	appell|nøyt|ub|ent	5	PUTFYLL	_	_
 9	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 017164
 # text = Desto mer tid du bruker på taktikk, treningsopplegg, speiding og forståelse av stallen du besitter, desto bedre resultater får du.
@@ -2204,7 +2091,6 @@
 23	du	du	pron	pron	ent|pers|hum|nom|2	22	SUBJ	_	_
 24	.	$.	clb	clb	<punkt>	22	IP	_	_
 
-
 # sent_id = 012494
 # text = Riksantikvaren skal uttale seg om den enkelte søknad.
 1	Riksantikvaren	Riksantikvaren	subst	subst	prop	2	SUBJ	_	_
@@ -2218,7 +2104,6 @@
 9	.	$.	clb	clb	<punkt>	2	IP	_	_
 
 # newpar
-
 # sent_id = 003148
 # text = Han er mange ganger så rik som Hagen, eier en eiendom midt i London som får Hagens villa på Oslos vestkant til å ligne en sliten Ål-hytte.
 1	Han	han	pron	pron	mask|ent|pers|hum|3|nom	2	SUBJ	_	_
@@ -2251,14 +2136,12 @@
 28	Ål-hytte	Ål-hytte	subst	subst	appell|mask|ub|ent|samset	25	DOBJ	_	_
 29	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 009558
 # text = Hvordan tør jeg?
 1	Hvordan	hvordan	adv	adv	_	2	ADV	_	_
 2	tør	tørre	verb	verb	pres	0	FINV	_	_
 3	jeg	jeg	pron	pron	ent|pers|hum|nom|1	2	SUBJ	_	_
 4	?	$?	clb	clb	<spm>	2	IP	_	_
-
 
 # sent_id = 009477
 # text = Og det er de som er fanget av æresbegrepet.
@@ -2273,7 +2156,6 @@
 9	æresbegrepet	æresbegrep	subst	subst	appell|nøyt|be|ent	8	PUTFYLL	_	_
 10	.	$.	clb	clb	<punkt>	3	IP	_	_
 
-
 # sent_id = 007105
 # text = Konflikten eskalerte, og i 1961 ble FN-mandatet forsterket.
 1	Konflikten	konflikt	subst	subst	appell|mask|be|ent	2	SUBJ	_	_
@@ -2286,7 +2168,6 @@
 8	FN-mandatet	FN-mandat	subst	subst	appell|nøyt|be|ent|samset	7	SUBJ	_	_
 9	forsterket	forsterke	verb	verb	perf-part	7	INFV	_	_
 10	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 000773
 # text = Vi får dessuten flere soner med trådløst nettverk, mens enkelte europeiske byer går motsatt vei og utraderer mobilmaster og trådløssoner fra bybildet i føre var-prinsippets navn.
@@ -2320,7 +2201,6 @@
 28	.	$.	clb	clb	<punkt>	2	IP	_	_
 
 # newpar
-
 # sent_id = 011987
 # text = Hva er så Gaddafis plan?
 1	Hva	hva	pron	pron	sp	2	SPRED	_	_
@@ -2330,14 +2210,12 @@
 5	plan	plan	subst	subst	appell|mask|ub|ent	2	SUBJ	_	_
 6	?	$?	clb	clb	<spm>	2	IP	_	_
 
-
 # sent_id = 004382
 # text = Ordkunstner.
 1	Ordkunstner	ordkunstner	subst	subst	appell|mask|ub|ent	0	FRAG	_	_
 2	.	$.	clb	clb	<punkt>	1	IP	_	_
 
 # newpar
-
 # sent_id = 011484
 # text = Det var et mistenkelig selvmordsbrev.
 1	Det	det	pron	pron	nøyt|ent|pers|3	2	SUBJ	_	_
@@ -2346,7 +2224,6 @@
 4	mistenkelig	mistenkelig	adj	adj	nøyt|ub|ent|pos	5	ATR	_	_
 5	selvmordsbrev	selvmordsbrev	subst	subst	appell|nøyt|ub|ent|samset	2	SPRED	_	_
 6	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 004405
 # text = Hans siste brev, datert 1939, der han beskriver jødenes uutholdelige situasjon i Hitlers Europa, former seg til en desperat bønn om hjelp.
@@ -2377,7 +2254,6 @@
 25	hjelp	hjelp	subst	subst	appell|fem|ub|ent	24	PUTFYLL	_	_
 26	.	$.	clb	clb	<punkt>	18	IP	_	_
 
-
 # sent_id = 001315
 # text = "Du vil ikke si at dere feirer en despot, en imperialist som Gaius Julius Cæsar?"
 1	"	$"	<anf>	<anf>	_	3	IK	_	_
@@ -2400,14 +2276,12 @@
 18	?	$?	clb	clb	<spm>	3	IP	_	_
 19	"	$"	<anf>	<anf>	_	3	IK	_	_
 
-
 # sent_id = 017641
 # text = Aktiv verdiskapningspolitikk for distriktene
 1	Aktiv	aktiv	adj	adj	ub|m/f|ent|pos	2	ATR	_	_
 2	verdiskapningspolitikk	verdiskapningspolitikk	subst	subst	appell|mask|ub|ent|samset	0	FRAG	_	_
 3	for	for	prep	prep	_	2	ATR	_	_
 4	distriktene	distrikt	subst	subst	appell|nøyt|be|fl	3	PUTFYLL	_	_
-
 
 # sent_id = 017735
 # text = - Dette synes jeg var veldig positive tall.
@@ -2420,7 +2294,6 @@
 7	positive	positiv	adj	adj	fl|pos	8	ATR	_	_
 8	tall	tall	subst	subst	appell|nøyt|ub|fl	5	SPRED	_	_
 9	.	$.	clb	clb	<punkt>	3	IP	_	_
-
 
 # sent_id = 017508
 # text = Kvaliteten på utdanningen unge får i dagens Chile avhenger av hvor mye de kan betale for den.
@@ -2443,7 +2316,6 @@
 17	den	den	pron	pron	mask|fem|ent|pers|3	16	PUTFYLL	_	_
 18	.	$.	clb	clb	<punkt>	9	IP	_	_
 
-
 # sent_id = 003118
 # text = Og nettopp derfor protesterer vi ikke.
 1	Og	og	konj	konj	clb	4	KONJ	_	_
@@ -2453,7 +2325,6 @@
 5	vi	vi	pron	pron	fl|pers|hum|nom|1	4	SUBJ	_	_
 6	ikke	ikke	adv	adv	_	4	ADV	_	_
 7	.	$.	clb	clb	<punkt>	4	IP	_	_
-
 
 # sent_id = 002495
 # text = Når veksten så falt i USA, var nok sikkerheten til de statlig garanterte amerikanske obligasjoner et vesentlig moment.
@@ -2477,7 +2348,6 @@
 18	vesentlig	vesentlig	adj	adj	nøyt|ub|ent|pos	19	ATR	_	_
 19	moment	moment	subst	subst	appell|nøyt|ub|ent	8	SPRED	_	_
 20	.	$.	clb	clb	<punkt>	8	IP	_	_
-
 
 # sent_id = 017036
 # text = Ikke på noe plan i universet har den inntørka, støvete, musikalske fossilen fra kambrium silur-tiden noe som helst i et «Guitar Hero»-spill å gjøre (akkurat på dette punktet er det ikke helt samsvar mellom musikkpreferansene våre, Snorre anm.).
@@ -2529,7 +2399,6 @@
 46	)	$)	<parentes-slutt>	<parentes-slutt>	_	45	IK	_	_
 47	.	$.	clb	clb	<punkt>	7	IP	_	_
 
-
 # sent_id = 015490
 # text = Push and pull, kaller ekspertene det.
 1	Push	Push	ukjent	ukjent	_	5	OPRED	_	_
@@ -2540,7 +2409,6 @@
 6	ekspertene	ekspert	subst	subst	appell|mask|be|fl	5	SUBJ	_	_
 7	det	det	pron	pron	nøyt|ent|pers|3	5	DOBJ	_	_
 8	.	$.	clb	clb	<punkt>	5	IP	_	_
-
 
 # sent_id = 013670
 # text = Senteret skal være det største og mest avanserte offshore simulatorsenteret i verden for marine operasjoner.
@@ -2561,7 +2429,6 @@
 15	operasjoner	operasjon	subst	subst	appell|mask|ub|fl	13	PUTFYLL	_	_
 16	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 005753
 # text = Samtidig vektlegger pressematerialet det som finnes av fakta om svartedauden.
 1	Samtidig	samtidig	adj	adj	nøyt|ub|ent|pos	2	ADV	_	_
@@ -2576,13 +2443,11 @@
 10	svartedauden	svartedaude	subst	subst	appell|mask|be|ent	9	PUTFYLL	_	_
 11	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 008124
 # text = - Uff?
 1	-	$-	<strek>	<strek>	_	2	IK	_	_
 2	Uff	uff	interj	interj	_	0	INTERJ	_	_
 3	?	$?	clb	clb	<spm>	2	IP	_	_
-
 
 # sent_id = 016862
 # text = Det som skjer den neste timen, markerer starten på en 16 år lang konflikt som har rokket Tinghuset i grunnvollene.
@@ -2608,7 +2473,6 @@
 20	i	i	prep	prep	_	18	ADV	_	_
 21	grunnvollene	grunnvoll	subst	subst	appell|mask|be|fl	20	PUTFYLL	_	_
 22	.	$.	clb	clb	<punkt>	8	IP	_	_
-
 
 # sent_id = 001598
 # text = Overbevise leserne om at den israelske krigføringen var brutal, at den ble ført i strid med internasjonale regler og at det, som det fremgår av Gilberts avslutningskapittel, er snakk om "krigsforbrytere".
@@ -2651,7 +2515,6 @@
 37	.	$.	clb	clb	<punkt>	1	IP	_	_
 
 # newpar
-
 # sent_id = 014934
 # text = Det vil bli satset på forebyggende helsearbeid.
 1	Det	det	pron	pron	nøyt|ent|pers|3	2	FSUBJ	_	_
@@ -2662,7 +2525,6 @@
 6	forebyggende	forebyggende	adj	adj	nøyt|ub|ent|pos	7	ATR	_	_
 7	helsearbeid	helsearbeid	subst	subst	appell|nøyt|ub|ent	5	PUTFYLL	_	_
 8	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 007189
 # text = Piloten tok ikke av før maskinisten fra passasjerkabinen signaliserte klart for take off ved å slå ham på leggen.
@@ -2687,12 +2549,10 @@
 19	leggen	legg	subst	subst	appell|mask|be|ent	18	PUTFYLL	_	_
 20	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 011004
 # text = Skuffet.
 1	Skuffet	skuffe	adj	adj	ub|m/f|ent|<perf-part>	0	FRAG	_	_
 2	.	$.	clb	clb	<punkt>	1	IP	_	_
-
 
 # sent_id = 004154
 # text = Manglende etisk engasjement.
@@ -2702,7 +2562,6 @@
 4	.	$.	clb	clb	<punkt>	3	IP	_	_
 
 # newpar
-
 # sent_id = 013247
 # text = Etter bare fjorten dager ble løftet brutt.
 1	Etter	etter	prep	prep	_	7	ADV	_	_
@@ -2713,7 +2572,6 @@
 6	løftet	løfte	subst	subst	appell|nøyt|be|ent	5	SUBJ	_	_
 7	brutt	bryte	verb	verb	perf-part	5	INFV	_	_
 8	.	$.	clb	clb	<punkt>	5	IP	_	_
-
 
 # sent_id = 004203
 # text = Som kjent kan ikke troverdighet utelukkende bygges på ord, retoriske knep og symbolhandlinger i forhold til mediene, men på handlinger.
@@ -2741,7 +2599,6 @@
 22	handlinger	handling	subst	subst	appell|fem|ub|fl	21	PUTFYLL	_	_
 23	.	$.	clb	clb	<punkt>	3	IP	_	_
 
-
 # sent_id = 005517
 # text = Harald Victor Hove, skolebyråd i Bergen kommune, sier han vil fortsette dialogen med universitetet om mulige løsninger.
 1	Harald	Harald	subst	subst	prop|mask	10	SUBJ	_	_
@@ -2765,7 +2622,6 @@
 19	løsninger	løsning	subst	subst	appell|fem|ub|fl	17	PUTFYLL	_	_
 20	.	$.	clb	clb	<punkt>	10	IP	_	_
 
-
 # sent_id = 011971
 # text = Selvsagt skiller krigen i Libya seg fra den feilslåtte Irak-invasjonen.
 1	Selvsagt	selvsagt	adj	adj	nøyt|ub|ent|pos	2	ADV	_	_
@@ -2779,7 +2635,6 @@
 9	feilslåtte	feilslått	adj	adj	be|ent|pos	10	ATR	_	_
 10	Irak-invasjonen	Irak-invasjon	subst	subst	appell|mask|be|ent|samset	7	PUTFYLL	_	_
 11	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 011047
 # text = - Det er sykt å tenke på at jeg har spilt fotball.
@@ -2796,7 +2651,6 @@
 11	spilt	spille	verb	verb	perf-part	10	INFV	_	_
 12	fotball	fotball	subst	subst	appell|mask|ub|ent	11	DOBJ	_	_
 13	.	$.	clb	clb	<punkt>	3	IP	_	_
-
 
 # sent_id = 013711
 # text = Maskinistforbundet frykter at resultatet blir at båtene som opererer i Nordsjøen kan bli tømt for norske sjøfolk.
@@ -2819,7 +2673,6 @@
 17	sjøfolk	sjøfolk	subst	subst	appell|nøyt|ub|fl	15	PUTFYLL	_	_
 18	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 016905
 # text = De ville imidlertid ikke stå frem - fordi de fryktet å bli inhabile hvis de støttet ham offentlig.
 1	De	de	pron	pron	fl|pers|3|nom	2	SUBJ	_	_
@@ -2841,7 +2694,6 @@
 17	ham	han	pron	pron	mask|ent|pers|hum|3|akk	16	DOBJ	_	_
 18	offentlig	offentlig	adj	adj	nøyt|ub|ent|pos	16	ADV	_	_
 19	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 004770
 # text = Og kanskje er det faktisk sånn som mange har påpekt andre steder, at hvis man ikke liker en blogg kan man bare la være å lese den.
@@ -2875,7 +2727,6 @@
 28	den	den	pron	pron	mask|fem|ent|pers|3	27	DOBJ	_	_
 29	.	$.	clb	clb	<punkt>	3	IP	_	_
 
-
 # sent_id = 011394
 # text = Han trodde at hans svarte venner, som selv hadde kjent på smerten ved fordommer, ville være forståelsesfulle.
 1	Han	han	pron	pron	mask|ent|pers|hum|3|nom	2	SUBJ	_	_
@@ -2898,7 +2749,6 @@
 18	være	være	verb	verb	inf	17	INFV	_	_
 19	forståelsesfulle	forståelsesfull	adj	adj	fl|pos	18	SPRED	_	_
 20	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 012124
 # text = Et asosialt liv kan kanskje bidra til å utvikle ekstreme holdninger og personlighetstrekk fordi personen ikke utsettes for den modererende effekten man ofte får ved omgang med andre mennesker, sier Vinje, som legger til at han ikke ser noen grunn til å tro at vanlige ungdommer tar skade av dataspill.
@@ -2956,7 +2806,6 @@
 52	dataspill	dataspill	subst	subst	appell|nøyt|ub|fl	51	PUTFYLL	_	_
 53	.	$.	clb	clb	<punkt>	4	IP	_	_
 
-
 # sent_id = 005737
 # text = Formelpreget og full av feil
 1	Formelpreget	formelpreget	adj	adj	ub|m/f|ent|<perf-part>|samset	0	FRAG	_	_
@@ -2966,7 +2815,6 @@
 5	feil	feil	subst	subst	appell|mask|ub|fl	4	PUTFYLL	_	_
 
 # newpar
-
 # sent_id = 011611
 # text = Spencers organisasjon er blant dem som mellom 2002 og 2008 mottok over 42 millioner dollar i økonomisk støtte fra syv ulike organisasjoner.
 1	Spencers	Spencer	subst	subst	prop|gen	2	DET	_	_
@@ -2992,7 +2840,6 @@
 21	ulike	ulik	adj	adj	fl|pos	22	ATR	_	_
 22	organisasjoner	organisasjon	subst	subst	appell|mask|ub|fl	19	PUTFYLL	_	_
 23	.	$.	clb	clb	<punkt>	3	IP	_	_
-
 
 # sent_id = 004660
 # text = Jeg ser på timeplanen at klassen slutter klokka halv ett på onsdager - jeg antar at du har mer enn nok tid da til å sette bind på et par bøker?
@@ -3028,7 +2875,6 @@
 30	par	par	subst	subst	appell|nøyt|ub|ent	31	DET	_	_
 31	bøker	bok	subst	subst	appell|fem|ub|fl	28	PUTFYLL	_	_
 32	?	$?	clb	clb	<spm>	2	IP	_	_
-
 
 # sent_id = 013929
 # text = Høyrenasjonalisten Jean-Marie Le Pen latterliggjorde aksenten hennes i en video på sin egen hjemmeside, mens magasinet Le Point nylig publiserte en satirisk artikkel skrevet i sin helhet i en fonetisk versjon av Jolys uttale.
@@ -3069,7 +2915,6 @@
 35	uttale	uttale	subst	subst	appell|mask|ub|ent	33	PUTFYLL	_	_
 36	.	$.	clb	clb	<punkt>	5	IP	_	_
 
-
 # sent_id = 003742
 # text = Retorikk krever at man taler både til hjerte og hjerne.
 1	Retorikk	retorikk	subst	subst	appell|mask|ub|ent	2	SUBJ	_	_
@@ -3084,7 +2929,6 @@
 10	hjerne	hjerne	subst	subst	appell|mask|ub|ent	8	KOORD	_	_
 11	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 016734
 # text = - Hva må du trene på da? spør pappa.
 1	-	$-	<strek>	<strek>	_	3	IK	_	_
@@ -3098,7 +2942,6 @@
 9	spør	spørre	verb	verb	pres	3	PAR	_	_
 10	pappa	pappa	subst	subst	appell|mask|ub|ent	9	SUBJ	_	_
 11	.	$.	clb	clb	<punkt>	3	IP	_	_
-
 
 # sent_id = 016903
 # text = Han mente barneloven var skrevet av og for forrige generasjon - noe han mente særlig gikk ut over far, som etter hans mening er den svake part i barnefordelingssaker.
@@ -3134,7 +2977,6 @@
 30	barnefordelingssaker	barnefordelingssak	subst	subst	appell|fem|ub|fl	29	PUTFYLL	_	_
 31	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 005927
 # text = Jeg er jo selv i media, så jeg må jo nesten være med på de greiene.
 1	Jeg	jeg	pron	pron	ent|pers|hum|nom|1	2	SUBJ	_	_
@@ -3156,7 +2998,6 @@
 17	greiene	greie	subst	subst	appell|fem|be|fl	15	PUTFYLL	_	_
 18	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 005894
 # text = Det er en altfor godt bevart hemmelighet at politikere også er mennesker.
 1	Det	det	pron	pron	nøyt|ent|pers|3	2	FSUBJ	_	_
@@ -3173,14 +3014,12 @@
 12	mennesker	menneske	subst	subst	appell|nøyt|ub|fl	11	SPRED	_	_
 13	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 005534
 # text = Her skjedde det:
 1	Her	her	prep	prep	_	2	ADV	_	_
 2	skjedde	skje	verb	verb	pret	0	FINV	_	_
 3	det	det	pron	pron	nøyt|ent|pers|3	2	SUBJ	_	_
 4	:	$:	clb	clb	<kolon>	2	IP	_	_
-
 
 # sent_id = 014817
 # text = Regjeringen vil styrke det norske bidraget.
@@ -3192,13 +3031,11 @@
 6	bidraget	bidrag	subst	subst	appell|nøyt|be|ent	3	DOBJ	_	_
 7	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 004409
 # text = «Shmiel.
 1	«	$"	<anf>	<anf>	_	2	IK	_	_
 2	Shmiel	Shmiel	subst	subst	prop	0	FRAG	_	_
 3	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 005176
 # text = Jeg har drukket opp farrisen min, skrevet ferdig innlegget om ingenting og tatt bilder av meg selv på en ferge.
@@ -3225,7 +3062,6 @@
 21	ferge	ferge	subst	subst	appell|mask|ub|ent	19	PUTFYLL	_	_
 22	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 011260
 # text = Tatchell rister på hodet.
 1	Tatchell	Tatchell	subst	subst	prop	2	SUBJ	_	_
@@ -3233,7 +3069,6 @@
 3	på	på	prep	prep	_	2	ADV	_	_
 4	hodet	hode	subst	subst	appell|nøyt|be|ent	3	PUTFYLL	_	_
 5	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 006166
 # text = I North Carolina viser TV-kanalens valgdagsmålinger at det er dødt løp - 49 prosent mot 49 prosent.
@@ -3256,7 +3091,6 @@
 17	prosent	prosent	subst	subst	appell|mask|ub|fl	15	PUTFYLL	_	_
 18	.	$.	clb	clb	<punkt>	4	IP	_	_
 
-
 # sent_id = 002235
 # text = Hans ordbruk i tiltredelsestalen var nok en bekreftelse.
 1	Hans	hans	det	det	mask|ent|poss	2	DET	_	_
@@ -3268,7 +3102,6 @@
 7	en	en	det	det	mask|ent|kvant	8	DET	_	_
 8	bekreftelse	bekreftelse	subst	subst	appell|mask|ub|ent	5	SPRED	_	_
 9	.	$.	clb	clb	<punkt>	5	IP	_	_
-
 
 # sent_id = 008242
 # text = Om du er på høyde med regissøren, kan du se ned på Filmparken fra de store vinduene i stua hans.
@@ -3295,7 +3128,6 @@
 21	hans	hans	det	det	fem|ent|poss	20	DET	_	_
 22	.	$.	clb	clb	<punkt>	9	IP	_	_
 
-
 # sent_id = 017377
 # text = Det var vondt å oppleve.
 1	Det	det	pron	pron	nøyt|ent|pers|3	2	SUBJ	_	_
@@ -3305,12 +3137,10 @@
 5	oppleve	oppleve	verb	verb	inf	4	INFV	_	_
 6	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 007898
 # text = 13.30:
 1	13.30	13.30	det	det	fl|kvant	0	FRAG	_	_
 2	:	$:	clb	clb	<kolon>	1	IP	_	_
-
 
 # sent_id = 001421
 # text = Tyrkias tilbud om å åpne en havn og en flyplass for gresk-kypriotisk trafikk kan kanskje få forhandlingene om tyrkisk EU-medlemskap på skinner.
@@ -3338,7 +3168,6 @@
 22	skinner	skinne	subst	subst	appell|fem|ub|fl	21	PUTFYLL	_	_
 23	.	$.	clb	clb	<punkt>	14	IP	_	_
 
-
 # sent_id = 010796
 # text = - Vi ble innelåst i huset, med videokameraer som overvåket oss.
 1	-	$-	<strek>	<strek>	_	3	IK	_	_
@@ -3354,7 +3183,6 @@
 11	overvåket	overvåke	verb	verb	pret	9	ATR	_	_
 12	oss	vi	pron	pron	fl|pers|hum|akk|1	11	DOBJ	_	_
 13	.	$.	clb	clb	<punkt>	3	IP	_	_
-
 
 # sent_id = 017024
 # text = Når du endelig har fått montert staseligheten i stua er det klin umulig å gå forbi uten å denge løs til man blir nummen i henda.
@@ -3386,7 +3214,6 @@
 26	henda	hånd	subst	subst	appell|fem|be|fl|unorm	25	PUTFYLL	_	_
 27	.	$.	clb	clb	<punkt>	10	IP	_	_
 
-
 # sent_id = 013788
 # text = Personene som ble tatt som gisler, har fått tilbud om helsehjelp og vil etter hvert bli avhørt av politiet.
 1	Personene	person	subst	subst	appell|mask|be|fl	8	SUBJ	_	_
@@ -3411,7 +3238,6 @@
 20	politiet	politi	subst	subst	appell|nøyt|be|ent	19	PUTFYLL	_	_
 21	.	$.	clb	clb	<punkt>	8	IP	_	_
 
-
 # sent_id = 010288
 # text = Dagmamma brukte Hells Angels til å kreve inn gjeld
 1	Dagmamma	dagmamma	subst	subst	appell|mask|ub|ent	2	SUBJ	_	_
@@ -3425,13 +3251,11 @@
 9	gjeld	gjeld	subst	subst	appell|fem|ub|ent	7	DOBJ	_	_
 
 # newpar
-
 # sent_id = 000636
 # text = - Latterlig.
 1	-	$-	<strek>	<strek>	_	2	IK	_	_
 2	Latterlig	latterlig	adj	adj	nøyt|ub|ent|pos	0	FRAG	_	_
 3	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 011685
 # text = Randi Sakshaug (Ap) mener offentlig styring av kulturmidlene må til for å sikre at midlene havner der de trengs mest.
@@ -3459,7 +3283,6 @@
 22	mest	mye	adj	adj	ub|sup	21	ADV	_	_
 23	.	$.	clb	clb	<punkt>	6	IP	_	_
 
-
 # sent_id = 004503
 # text = 1852-volden inntraff fordi samene hadde opplevd krenkelsene på fire nivå, det dypeste, det religiøse, knyttet til tro.
 1	1852-volden	1852-vold	subst	subst	appell|mask|be|ent|samset	2	SUBJ	_	_
@@ -3484,7 +3307,6 @@
 20	tro	tro	subst	subst	appell|fem|ub|ent	19	PUTFYLL	_	_
 21	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 003013
 # text = Vi bruker de innebygde selvmotsigelsene så selvfølgelig at vi ikke stusser over dem lenger.
 1	Vi	vi	pron	pron	fl|pers|hum|nom|1	2	SUBJ	_	_
@@ -3503,7 +3325,6 @@
 14	lenger	lenge	adj	adj	komp|<adv>	11	ADV	_	_
 15	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 008621
 # text = - Dette er en helt ny verden for meg, sier Øien.
 1	-	$-	<strek>	<strek>	_	3	IK	_	_
@@ -3520,7 +3341,6 @@
 12	Øien	Øien	subst	subst	prop	11	SUBJ	_	_
 13	.	$.	clb	clb	<punkt>	3	IP	_	_
 
-
 # sent_id = 007298
 # text = Hvem kunne ha gjort noe?
 1	Hvem	hvem	pron	pron	hum|sp	2	SUBJ	_	_
@@ -3529,7 +3349,6 @@
 4	gjort	gjøre	verb	verb	perf-part	3	INFV	_	_
 5	noe	noe	pron	pron	nøyt|ent|pers|3	4	DOBJ	_	_
 6	?	$?	clb	clb	<spm>	2	IP	_	_
-
 
 # sent_id = 015633
 # text = Ba de om færøyske spesialiteter, fikk de kanskje hvalbiff, lundefugl og kokte sauehoder, om de var heldige.
@@ -3555,7 +3374,6 @@
 20	heldige	heldig	adj	adj	fl|pos	19	SPRED	_	_
 21	.	$.	clb	clb	<punkt>	7	IP	_	_
 
-
 # sent_id = 007915
 # text = Hver enkelt politidistrikt må ta oppgaven alvorlig og ha kompetanse.
 1	Hver	hver	det	det	mask|ent|kvant	3	DET	_	_
@@ -3570,7 +3388,6 @@
 10	kompetanse	kompetanse	subst	subst	appell|mask|ub|ent	9	DOBJ	_	_
 11	.	$.	clb	clb	<punkt>	4	IP	_	_
 
-
 # sent_id = 011354
 # text = Han gikk heller aldri ut med sin legning.
 1	Han	han	pron	pron	mask|ent|pers|hum|3|nom	2	SUBJ	_	_
@@ -3582,7 +3399,6 @@
 7	sin	sin	det	det	mask|ent|poss	8	DET	_	_
 8	legning	legning	subst	subst	appell|mask|ub|ent	6	PUTFYLL	_	_
 9	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 014894
 # text = Utviklingsbistanden skal effektiviseres og gradvis økes til 1 pst. av brutto nasjonalinntekt innen 2005.
@@ -3602,7 +3418,6 @@
 14	2005	2005	det	det	fl|kvant	13	PUTFYLL	_	_
 15	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 004644
 # text = Dette burde vikaren vært informert om!
 1	Dette	dette	pron	pron	nøyt|ent|pers|3	6	PUTFYLL	_	_
@@ -3614,13 +3429,11 @@
 7	!	$!	clb	clb	<utrop>	2	IP	_	_
 
 # newpar
-
 # sent_id = 006383
 # text = Risikosport
 1	Risikosport	risikosport	subst	subst	appell|mask|ub|ent|samset	0	FRAG	_	_
 
 # newpar
-
 # sent_id = 008684
 # text = Tore André Flo var først ganske skeptisk til paljettskjortene.
 1	Tore	Tore	subst	subst	prop|mask	4	SUBJ	_	_
@@ -3634,12 +3447,10 @@
 9	paljettskjortene	paljettskjorte	subst	subst	appell|fem|be|fl|samset	8	PUTFYLL	_	_
 10	.	$.	clb	clb	<punkt>	4	IP	_	_
 
-
 # sent_id = 010443
 # text = Bursdagsbarnet:
 1	Bursdagsbarnet	bursdagsbarn	subst	subst	appell|nøyt|be|ent	0	FRAG	_	_
 2	:	$:	clb	clb	<kolon>	1	IP	_	_
-
 
 # sent_id = 013857
 # text = - Vi vinner puljen med uavgjort eller seier.
@@ -3652,7 +3463,6 @@
 7	eller	eller	konj	konj	<ikke-clb>	8	KONJ	_	_
 8	seier	seier	subst	subst	appell|mask|ub|ent	6	KOORD	_	_
 9	.	$.	clb	clb	<punkt>	3	IP	_	_
-
 
 # sent_id = 000029
 # text = Ved hovedbordet var representanter for de tre statsmakter, brudeparets familie og de mest fremtredende kongelige plassert.
@@ -3675,7 +3485,6 @@
 17	plassert	plassere	verb	verb	perf-part	3	INFV	_	_
 18	.	$.	clb	clb	<punkt>	3	IP	_	_
 
-
 # sent_id = 006769
 # text = Dette vitner om at det kan være toppen av et isfjell.
 1	Dette	dette	pron	pron	nøyt|ent|pers|3	2	SUBJ	_	_
@@ -3692,7 +3501,6 @@
 12	.	$.	clb	clb	<punkt>	2	IP	_	_
 
 # newpar
-
 # sent_id = 003859
 # text = Selvstendig næringsdrivende bør ha rett til «næringsfradrag» på linje med minstefradrag for lønnsmottagere, og rett til dagpenger, til omsorgspenger for å passe syke barn, og til AFP, bør også være en selvfølge.
 1	Selvstendig	selvstendig	adj	adj	nøyt|ub|ent|pos	2	ADV	_	_
@@ -3735,12 +3543,10 @@
 38	selvfølge	selvfølge	subst	subst	appell|mask|ub|ent	36	SPRED	_	_
 39	.	$.	clb	clb	<punkt>	3	IP	_	_
 
-
 # sent_id = 017156
 # text = Store forbedringer
 1	Store	stor	adj	adj	fl|pos	2	ATR	_	_
 2	forbedringer	forbedring	subst	subst	appell|fem|ub|fl	0	FRAG	_	_
-
 
 # sent_id = 010528
 # text = En hel verden.
@@ -3748,7 +3554,6 @@
 2	hel	hel	adj	adj	ub|m/f|ent|pos	3	ATR	_	_
 3	verden	verden	subst	subst	appell|mask|ub|ent	0	FRAG	_	_
 4	.	$.	clb	clb	<punkt>	3	IP	_	_
-
 
 # sent_id = 001774
 # text = Det var et kraftfullt svar på antydningene om at han står uten internasjonal støtte.
@@ -3768,7 +3573,6 @@
 14	støtte	støtte	subst	subst	appell|fem|ub|ent	12	PUTFYLL	_	_
 15	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 006421
 # text = Jeg sluttet å telle innbruddene i leiligheten.
 1	Jeg	jeg	pron	pron	ent|pers|hum|nom|1	2	SUBJ	_	_
@@ -3781,7 +3585,6 @@
 8	.	$.	clb	clb	<punkt>	2	IP	_	_
 
 # newpar
-
 # sent_id = 017678
 # text = Tenk om vi hadde fått en helårsvei til Grotli.
 1	Tenk	tenke	verb	verb	imp	0	FINV	_	_
@@ -3794,7 +3597,6 @@
 8	til	til	prep	prep	_	7	ATR	_	_
 9	Grotli	Grotli	subst	subst	prop	8	PUTFYLL	_	_
 10	.	$.	clb	clb	<punkt>	1	IP	_	_
-
 
 # sent_id = 003072
 # text = Men du vet ikke nøyaktig hvem, og du vet heller ikke om opplysningene blir brukt eller ikke.
@@ -3818,7 +3620,6 @@
 18	ikke	ikke	adv	adv	_	15	KOORD-ELL	_	_
 19	.	$.	clb	clb	<punkt>	3	IP	_	_
 
-
 # sent_id = 012815
 # text = De fleste arktiske artene av sjøfugl og sjøpattedyr lever lenge og har lavt reproduksjonspotensiale.
 1	De	de	det	det	dem|fl	4	DET	_	_
@@ -3836,7 +3637,6 @@
 13	lavt	lav	adj	adj	nøyt|ub|ent|pos	14	ATR	_	_
 14	reproduksjonspotensiale	reproduksjonspotensiale	subst	subst	appell|nøyt|ub|ent|samset	12	DOBJ	_	_
 15	.	$.	clb	clb	<punkt>	9	IP	_	_
-
 
 # sent_id = 013064
 # text = Det har vært og er et betydelig fiske på flere fiskeslag i havområdene omkring Jan Mayen.
@@ -3857,7 +3657,6 @@
 15	Jan	Jan	subst	subst	prop|mask	14	PUTFYLL	_	_
 16	Mayen	Mayen	subst	subst	prop	15	FLAT	_	_
 17	.	$.	clb	clb	<punkt>	2	IP	_	_
-
 
 # sent_id = 010821
 # text = Jeg hadde kompromisset med meg selv i hele mitt liv, formet meg til en fotballspiller, som var akkurat slik fotballverden ville ha, i håp om en dag å få makt til å påvirke, og en dag bli tatt på alvor.
@@ -3907,7 +3706,6 @@
 44	alvor	alvor	subst	subst	appell|nøyt|ub|ent	43	PUTFYLL	_	_
 45	.	$.	clb	clb	<punkt>	2	IP	_	_
 
-
 # sent_id = 010386
 # text = For i en bransje som stadig er jakt etter morgendagens motebilde, har Hermès blikk for de lange linjene og skynder seg langsomt.
 1	For	for	konj	konj	_	13	ADV	_	_
@@ -3934,5 +3732,4 @@
 22	seg	seg	pron	pron	akk|refl	21	DOBJ	_	_
 23	langsomt	langsom	adj	adj	nøyt|ub|ent|pos	21	ADV	_	_
 24	.	$.	clb	clb	<punkt>	13	IP	_	_
-
 

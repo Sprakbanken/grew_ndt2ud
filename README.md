@@ -7,7 +7,7 @@
 TODAY=$(date +%d-%m-%y_%H%M%S)
 
 grew transform \
-  -i  "data/sentences/one_sentence.conll" \
+  -i  "data/training_fixed_UDfeats.conll" \
   -o  "data/output/${TODAY}.conll" \
   -grs  mainstrategy.grs \
   -strat main \
@@ -20,13 +20,23 @@ grew transform \
 # grew-testing
 .
 ├── data
+│   ├── 2019_gullkorpus_ndt.conllu
+│   ├── 2019_gullkorpus_ndt_dev_uten_hash.conllu
+│   ├── 2019_gullkorpus_ndt_train_uten_hash.conllu
+│   ├── 2019_gullkorpus_ndt_uten_hash.conllu
 │   ├── 2019_gullkorpus_ud.conllu
+│   ├── 2019_gullkorpus_ud_dev_uten_hash.conllu
 │   ├── 2019_gullkorpus_ud_før_annotasjon.conllu
+│   ├── 2019_gullkorpus_ud_før_annotasjon_dev_uten_hash.conllu
+│   ├── 2019_gullkorpus_ud_før_annotasjon_train_uten_hash.conllu
+│   ├── 2019_gullkorpus_ud_før_annotasjon_uten_hash.conllu
+│   ├── 2019_gullkorpus_ud_train_uten_hash.conllu
+│   ├── 2019_gullkorpus_ud_uten_hash.conllu
 │   ├── dev_fixed_UDfeats.conll
-│   ├── GULL_dev.csv
-│   ├── GULL_dev_ids.txt
-│   ├── GULL_train.csv
-│   ├── GULL_train_ids.txt
+│   ├── gullkorpus_all_ids.txt
+│   ├── gullkorpus_dev_ids.txt
+│   ├── gullkorpus_train_ids.txt
+│   ├── ndt_nb-NO.conllu
 │   ├── output
 │   ├── sample1_training_fixed_UDfeats.conll
 │   ├── sample2_training_fixed_UDfeats.conll
@@ -40,27 +50,40 @@ grew transform \
 │   │   └── yet_another_sentence.conll
 │   ├── test_fixed_UDfeats.conll
 │   └── training_fixed_UDfeats.conll
+├── dist-20141005
+├── fetch_sents_by_ID.sh
 ├── notebooks
 │   ├── grew_book_code.ipynb
 │   ├── test_grew.ipynb
 │   └── test_grew_rule_application.ipynb
+├── output
+├── partition_data.py
 ├── README.md
-└── rules
-    ├── func_dep_rel.grs
-    ├── mainstrategy.grs
-    ├── NDT_to_UD.grs
-    ├── reverse_heads.grs
-    ├── SUD_to_UD.grs
-    ├── testrule.grs
-    ├── test_rules.grs
-    └── teststrategy.grs
+├── rules
+│   ├── func_dep_rel.grs
+│   ├── mainstrategy.grs
+│   ├── NDT_to_UD.grs
+│   ├── reverse_heads.grs
+│   ├── SUD_to_UD.grs
+│   ├── testrule.grs
+│   ├── test_rules.grs
+│   └── teststrategy.grs
+└── utils
+    └── MaltEval-dist.zip
 
-5 directories, 30 files
+7 directories, 43 files
 ```
+
 ## MaltEval diff
 
 ```
-java -jar MaltEval_dist-20141005/lib/MaltEval.jar -s 2019_gullkorpus_ud_før_annotasjon_uten-hash.conllu -g 2019_gullkorpus_ud_uten-hash.conllu -v 1
+java -jar dist-20141005/lib/MaltEval.jar -s data/2019_gullkorpus_ud_før_annotasjon_uten_hash.conllu data/2019_gullkorpus_ndt_uten_hash.conllu -g data/2019_gullkorpus_ud_uten_hash.conllu -v 1
+```
+
+## Generer MaltEval-kompatible dev- og train-splitter av gullkorpuset
+
+```
+./fetch_sents_by_ID.sh
 ```
 
 ## Referanser
