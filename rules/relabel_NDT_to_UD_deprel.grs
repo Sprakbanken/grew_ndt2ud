@@ -1,4 +1,4 @@
-% Change NDT dependency relation to UD deprel with 1 to 1 mappings 
+% relabel edges: Change NDT dependency relation to UD deprel with 1 to 1 mappings 
 
 rule punctuation_sentence_end { pattern { e: N -[ IP ]-> P } commands { del_edge e; add_edge N -[ punct ]-> P } }
 
@@ -23,4 +23,5 @@ rule coordination_verbal_ellipsis { pattern { e: GOV -[ KOORD-ELL ]-> DEP } comm
 rule subj_predicative { pattern { e: GOV -[ SPRED ]-> DEP } commands { del_edge e; add_edge GOV -[ xcomp ]-> DEP  } }  % Non-copula 
 
 % Will need further modification: NDT attaches UKJENT to main verb, UD attaches reparandum to the word that is being corrected
-rule ungrammatical_repair { pattern { e: GOV -[ UKJENT ]-> DEP } commands { del_edge e; add_edge GOV -[ reparandum ]-> DEP  } } 
+% rule ungrammatical_repair { pattern { e: GOV -[ UKJENT ]-> DEP } commands { del_edge e; add_edge GOV -[ reparandum ]-> DEP  } } 
+

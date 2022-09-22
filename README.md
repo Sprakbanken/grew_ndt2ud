@@ -14,6 +14,22 @@ grew transform \
   -safe_commands
 ```
 
+Test ut enkeltregler på enkeltsetninger med `rules/teststrategy.grs`: 
+
+```
+TODAY=$(date +%d-%m-%y_%H%M%S)
+
+grew transform \
+  -i  "data/sentences/yet_another_sentence.conll" \
+  -o  "data/output/${TODAY}.conll" \
+  -grs  rules/teststrategy.grs \
+  -strat main \
+  -safe_commands
+```
+
+I `rules/teststrategy.grs`: filtrer regler/pakker/strategier fra `Seq()`-lista i `strat test`-strategien med kommentarsymbolet `%`
+
+
 ## Repo-struktur
 
 ```

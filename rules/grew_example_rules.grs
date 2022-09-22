@@ -1,0 +1,19 @@
+
+rule reverse {
+    pattern { N[VerbForm=Fin]; M [VerbForm=Inf]; e: N -[INFV]-> M;  }
+    commands {
+        del_edge e;
+        add_edge new_e: M -> N;
+        new_e.label = e.label;
+    }
+}
+
+rule successive_same_label {
+    pattern {
+        G -[PUTFYLL]-> D1;
+        G -[PUTFYLL]-> D2;
+        D1.__id__ < D2.__id__;
+    }
+    commands {add_edge D1 -[new_label]-> D2;}
+}
+

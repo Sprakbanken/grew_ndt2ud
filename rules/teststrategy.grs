@@ -1,6 +1,41 @@
-% import the rule(s), which is interpreted as a package: 
+% import rules from other grs files, which are treated as packages: 
 
-import "test_rules.grs"
+import "testrules.grs"
 
-strat main { Onf (test_rules)}  
 
+% Define new rules to test
+
+rule shift_root_auxiliary_copula_predicate {
+% F.eks. "Aftenposten fikk være med på ..."
+    pattern {
+
+        % nodes
+        H[upos=AUX]; 
+        AUX[upos=AUX, lemma="være"|"bli"]; 
+        PRED[upos=ADP];
+
+        % dependencies
+        r: R -[FINV]-> H;
+        e1: H -[INFV]-> AUX; 
+        e2: AUX -[SPRED]-> PRED;
+    }
+    commands {
+        del_edge r;
+        del_edge e1;
+        del_edge e2;
+        shift H ==> PRED;
+        add_edge nr: R -> PRED; nr.label = root;
+        add_edge n1: PRED -> H; n1.label = aux;
+        add_edge n2: PRED -> AUX; n2.label = cop; 
+    }
+}
+
+
+strat test { 
+  Seq (
+%    Onf (testrules), 
+    Onf (shift_root_auxiliary_copula_predicate),
+  )
+}
+
+strat main { Onf (test) }  
