@@ -161,3 +161,4 @@ cython_debug/
 **/Lesenotater.ipynb
 **/adhoc*.conll
 **/output*.conll
+dist-20141005/*

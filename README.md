@@ -33,7 +33,7 @@ I `rules/teststrategy.grs`: filtrer regler/pakker/strategier fra `Seq()`-lista i
 ## Repo-struktur
 
 ```
-# grew-testing
+% tree --gitignore
 .
 ├── data
 │   ├── 2019_gullkorpus_ndt.conllu
@@ -58,11 +58,11 @@ I `rules/teststrategy.grs`: filtrer regler/pakker/strategier fra `Seq()`-lista i
 │   ├── sample2_training_fixed_UDfeats.conll
 │   ├── sentences
 │   │   ├── another_sentence.conll
-│   │   ├── another_sentence_rev.conll
 │   │   ├── even_one_more_sentence.conll
 │   │   ├── just_another_sentence.conll
+│   │   ├── modal_aux.conllu
 │   │   ├── one_sentence.conll
-│   │   ├── one_sentence_headrev.conll
+│   │   ├── skulle_ha_vaert_hovedsetning.conllu
 │   │   └── yet_another_sentence.conll
 │   ├── test_fixed_UDfeats.conll
 │   └── training_fixed_UDfeats.conll
@@ -72,22 +72,22 @@ I `rules/teststrategy.grs`: filtrer regler/pakker/strategier fra `Seq()`-lista i
 │   ├── grew_book_code.ipynb
 │   ├── test_grew.ipynb
 │   └── test_grew_rule_application.ipynb
-├── output
 ├── partition_data.py
 ├── README.md
 ├── rules
-│   ├── func_dep_rel.grs
+│   ├── grew_example_rules.grs
 │   ├── mainstrategy.grs
 │   ├── NDT_to_UD.grs
+│   ├── relabel_NDT_to_UD_deprel.grs
 │   ├── reverse_heads.grs
+│   ├── shift_sentence_root.grs
 │   ├── SUD_to_UD.grs
-│   ├── testrule.grs
-│   ├── test_rules.grs
+│   ├── testrules.grs
 │   └── teststrategy.grs
 └── utils
     └── MaltEval-dist.zip
 
-7 directories, 43 files
+7 directories, 44 files
 ```
 
 ## MaltEval diff
