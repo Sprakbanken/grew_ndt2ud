@@ -9,7 +9,7 @@ TODAY=$(date +%d-%m-%y_%H%M%S)
 grew transform \
   -i  "data/training_fixed_UDfeats.conll" \
   -o  "data/output/${TODAY}.conll" \
-  -grs  mainstrategy.grs \
+  -grs  rules/mainstrategy.grs \
   -strat main \
   -safe_commands
 ```

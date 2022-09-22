@@ -2,40 +2,14 @@
 
 import "testrules.grs"
 
-
-% Define new rules to test
-
-rule shift_root_auxiliary_copula_predicate {
-% F.eks. "Aftenposten fikk være med på ..."
-    pattern {
-
-        % nodes
-        H[upos=AUX]; 
-        AUX[upos=AUX, lemma="være"|"bli"]; 
-        PRED[upos=ADP];
-
-        % dependencies
-        r: R -[FINV]-> H;
-        e1: H -[INFV]-> AUX; 
-        e2: AUX -[SPRED]-> PRED;
-    }
-    commands {
-        del_edge r;
-        del_edge e1;
-        del_edge e2;
-        shift H ==> PRED;
-        add_edge nr: R -> PRED; nr.label = root;
-        add_edge n1: PRED -> H; n1.label = aux;
-        add_edge n2: PRED -> AUX; n2.label = cop; 
-    }
-}
-
+import "shift_sentence_root.grs"
 
 strat test { 
   Seq (
 %    Onf (testrules), 
-    Onf (shift_root_auxiliary_copula_predicate),
+    Onf (shift_sentence_root.rev_root_modal_aux_chain_to_lexical),
   )
 }
+  
 
 strat main { Onf (test) }  
