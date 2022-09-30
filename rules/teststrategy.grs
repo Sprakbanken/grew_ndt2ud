@@ -1,17 +1,25 @@
-% import rules from other grs files, which are treated as packages: 
+% import rules from other grs files, which are treated as packages:
 
 import "testrules.grs"
-
-import "shift_sentence_root.grs"
+import "relabel_NDT_to_UD_deprel.grs"
+import "shift_root.grs"
+import "reverse_heads.grs"
 import "passive.grs"
 
-strat test { 
+strat test {
   Seq (
-    shift_sentence_root.shift_copula_SPRED_head,  % <- already a sequence strategy 
-%    Onf (passive.passive_construction),
-%    Onf (),
+
+    %%% restructure graph
+    %Onf(reverse_heads),
+    Onf (testrules),
+    Onf (shift_root),
+    shift_root.shift_copula_SPRED_head,  % <- already a sequence strategy
+
+    %%% relabel edges
+    Onf (passive.passive_construction),
+    Onf (relabel_NDT_to_UD_deprel),
+
  )
 }
-  
 
-strat main { Onf (test) }  
+strat main { test }

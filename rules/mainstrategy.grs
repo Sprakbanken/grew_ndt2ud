@@ -1,11 +1,11 @@
 
 
-import "shift_sentence_root.grs"
+import "shift_root.grs"
 
 
 strat rules {
   Seq (
-    Onf(shift_sentence_root),
+    Onf(shift_root),
   )
 }
 

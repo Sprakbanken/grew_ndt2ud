@@ -162,3 +162,4 @@ cython_debug/
 **/adhoc*.conll
 **/output*.conll
 dist-20141005/*
+**/sentences/all.conll

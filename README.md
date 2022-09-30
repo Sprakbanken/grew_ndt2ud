@@ -14,13 +14,16 @@ grew transform \
   -safe_commands
 ```
 
-Test ut enkeltregler på enkeltsetninger med `rules/teststrategy.grs`: 
+Test ut regler på eksempelsetninger med `rules/teststrategy.grs`: 
 
 ```
+INPUT="data/sentences/all.conll"
+cat data/sentences/* > $INPUT
+
 TODAY=$(date +%d-%m-%y_%H%M%S)
 
 grew transform \
-  -i  "data/sentences/yet_another_sentence.conll" \
+  -i  $INPUT \
   -o  "data/output/${TODAY}.conll" \
   -grs  rules/teststrategy.grs \
   -strat main \
@@ -33,7 +36,7 @@ I `rules/teststrategy.grs`: filtrer regler/pakker/strategier fra `Seq()`-lista i
 ## Repo-struktur
 
 ```
-% tree --gitignore
+$ tree --gitignore
 .
 ├── data
 │   ├── 2019_gullkorpus_ndt.conllu
@@ -58,10 +61,12 @@ I `rules/teststrategy.grs`: filtrer regler/pakker/strategier fra `Seq()`-lista i
 │   ├── sample2_training_fixed_UDfeats.conll
 │   ├── sentences
 │   │   ├── another_sentence.conll
+│   │   ├── copula_relative_passive.conll
 │   │   ├── even_one_more_sentence.conll
 │   │   ├── just_another_sentence.conll
 │   │   ├── modal_aux.conllu
 │   │   ├── one_sentence.conll
+│   │   ├── passiv_nsubj.conllu
 │   │   ├── skulle_ha_vaert_hovedsetning.conllu
 │   │   └── yet_another_sentence.conll
 │   ├── test_fixed_UDfeats.conll
@@ -78,16 +83,17 @@ I `rules/teststrategy.grs`: filtrer regler/pakker/strategier fra `Seq()`-lista i
 │   ├── grew_example_rules.grs
 │   ├── mainstrategy.grs
 │   ├── NDT_to_UD.grs
+│   ├── passive.grs
 │   ├── relabel_NDT_to_UD_deprel.grs
 │   ├── reverse_heads.grs
-│   ├── shift_sentence_root.grs
+│   ├── shift_root.grs
 │   ├── SUD_to_UD.grs
 │   ├── testrules.grs
 │   └── teststrategy.grs
 └── utils
     └── MaltEval-dist.zip
 
-7 directories, 44 files
+7 directories, 47 files
 ```
 
 ## MaltEval diff
