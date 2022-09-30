@@ -1,0 +1,12 @@
+rule passive_construction {
+    pattern {
+        V [upos=VERB, Voice=Pass, form=re".*s"];
+        N [upos=PROPN|NOUN];
+        e: V -[SUBJ]-> N;
+
+     }
+    commands {
+        e.label= nsubj;
+     }
+}
+

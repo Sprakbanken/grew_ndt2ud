@@ -3,12 +3,14 @@
 import "testrules.grs"
 
 import "shift_sentence_root.grs"
+import "passive.grs"
 
 strat test { 
   Seq (
-%    Onf (testrules), 
-    Onf (shift_sentence_root.rev_root_modal_aux_chain_to_lexical),
-  )
+    shift_sentence_root.shift_copula_SPRED_head,  % <- already a sequence strategy 
+%    Onf (passive.passive_construction),
+%    Onf (),
+ )
 }
   
 
