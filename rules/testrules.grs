@@ -43,3 +43,20 @@
       }
   }
 
+
+rule chain2bouquet_same_label {
+  pattern {
+    e1: H -> D1;
+    e2: D1 -> D2;
+    e1.label = e2.label;
+  }
+  without {
+    * -[e1.label]-> H;
+    H -[e2.label]-> D2;
+  }
+  commands {
+    add_edge f: H -> D2; f.label = e2.label;
+    del_edge e2;
+  }
+}
+
