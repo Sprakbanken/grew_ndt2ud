@@ -1,45 +1,45 @@
-% graph tranformation 
+% graph tranformation
 
   rule subclause_infinitive {
       pattern {
-        PP[upos=ADP]; 
-        AA[upos=PART]; 
+        PP[upos=ADP];
+        AA[upos=PART];
         V[upos=VERB, VerbForm=Inf];
         LEXV [upos=VERB];
         * -[FINV]-> LEXV;
-        e: LEXV -[ADV]-> PP; 
+        e: LEXV -[ADV]-> PP;
         e1: PP -[PUTFYLL]-> AA;
-        e2: AA -[INFV]-> V; 
+        e2: AA -[INFV]-> V;
       }
       commands {
         del_edge e;
         del_edge e1;
-        add_edge f: V -> PP; f.label = case; 
+        add_edge f: V -> PP; f.label = case;
         del_edge e2;
-        add_edge f1: V -> AA; f1.label = mark; 
+        add_edge f1: V -> AA; f1.label = mark;
         add_edge cl: LEXV -> V; cl.label = advcl;
       }
   }
 
   rule subclause_aa {
-      pattern { 
-        TIL[form="til"]; 
-        AA[form="å"]; 
-        V[form="være"]; 
-        MED[form="med"]; 
-        e1: TIL -> AA; 
-        e2: AA -> V; 
+      pattern {
+        TIL[form="til"];
+        AA[form="å"];
+        V[form="være"];
+        MED[form="med"];
+        e1: TIL -> AA;
+        e2: AA -> V;
         e3: V -> MED;
       }
-      commands { 
+      commands {
         del_edge e3;
-        del_edge e2; 
-        del_edge e1; 
-        add_edge f1: MED -> TIL ; f1.label = case; 
-        add_edge f2: MED -> AA; f2.label = mark; 
-        add_edge f3: MED -> V; f3.label = cop; 
-        shift_in TIL ==> MED; 
-        shift_out V ==> MED; 
+        del_edge e2;
+        del_edge e1;
+        add_edge f1: MED -> TIL ; f1.label = case;
+        add_edge f2: MED -> AA; f2.label = mark;
+        add_edge f3: MED -> V; f3.label = cop;
+        shift_in TIL ==> MED;
+        shift_out V ==> MED;
       }
   }
 
@@ -53,13 +53,14 @@
     }
   }
 
-rule lex_verb_head_rule {
+rule reverse_lex_aux_verbs {
   pattern { H[upos=AUX]; D[upos=VERB]; e:H -[INFV]-> D;}
   commands {
-    e.rev=y;
-    add_edge f:D -> H; f.label = e.label;
     del_edge e;
     shift H ==> D;
+    add_edge f: D -> H;
+    f.label = aux;
+    f.rev=y;
   }
 }
 
@@ -74,7 +75,7 @@ rule lex_verb_head_passive_rule {
 
 rule subclause_at {
   pattern { AT[form="at"]; e: V -[SBU]-> AT;}
-  commands { 
+  commands {
     e.label = mark;
   }
 }
