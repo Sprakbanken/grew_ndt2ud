@@ -71,3 +71,16 @@ rule presentational_expl {
   }
 }
 
+rule passive_lex_aux {
+  pattern { 
+    H[upos=AUX, lemma=bli]; 
+    D[upos=VERB, VerbForm=Part]; 
+    e: D -> H; }
+  without {
+    e.label = "aux:pass";
+  }
+  commands {
+    e.label = "aux:pass";
+  }
+}
+

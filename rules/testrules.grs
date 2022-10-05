@@ -66,13 +66,6 @@ rule reverse_lex_aux_verbs {
 
 
 
-rule lex_verb_head_passive_rule {
-  pattern { H[upos=AUX, lemma=bli]; D[upos=VERB]; e:D -[rev=y]-> H; }
-  commands {
-    e.label = "aux:pass";
-  }
-}
-
 rule subclause_at {
   pattern { AT[form="at"]; e: V -[SBU]-> AT;}
   commands {
