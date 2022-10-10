@@ -16,14 +16,14 @@ strat test {
     shift_root.shift_copula_SPRED_head,  % <- already a sequence strategy
 
     %%% relabel edges
-    Onf (passive.passive_construction),
+    Onf (passive),
     Onf (relabel_NDT_to_UD_deprel),
 
  )
 }
 
 strat singletest {
-  Onf (reverse_heads)
+  Onf (passive)
 }
 
 strat main { singletest }
