@@ -10,7 +10,7 @@ strat test {
   Seq (
 
     %%% restructure graph
-    %Onf(reverse_heads),
+    Onf (reverse_heads),
     Onf (testrules),
     Onf (shift_root),
     shift_root.shift_copula_SPRED_head,  % <- already a sequence strategy
@@ -22,4 +22,8 @@ strat test {
  )
 }
 
-strat main { test }
+strat singletest {
+  Onf (reverse_heads)
+}
+
+strat main { singletest }

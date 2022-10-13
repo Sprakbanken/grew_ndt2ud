@@ -1,11 +1,18 @@
-rule rev_head {
-	pattern {e:H -[PUTFYLL]-> D; H[upos= ADP|CCONJ|PART|SCONJ]}
-    without{D[upos= ADP|CCONJ|PART|SCONJ]}
-    commands {
-   %   e.rev=y;
-      add_edge f:D -> H; f.label = e.label;
-      del_edge e;
-  %    shift_in H =[^IDIOM|TITLE|CONV]=> D;
-  %    shift_out H =[1=case|mark]=> D;
+
+% cop: reverser hodet i setninger der "være" er rot, med SPRED, men uten PSUBJ. Predikativet er ny rot. 
+rule rev_head_copula_in_subclause {
+	pattern {
+    H [ lemma="være" ];
+    e: H -[SPRED]-> D;
+  }
+  without {
+    H -[PSUBJ]-> *;
+  }
+  commands {
+    del_edge e;
+    shift H ==> D;
+    add_edge f: D -> H;
+    f.label = cop;
+    f.rev=y;
   }
 }
