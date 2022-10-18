@@ -11,7 +11,7 @@ strat test {
 
     %%% restructure graph
     Onf (reverse_heads),
-    Onf (testrules),
+    %Onf (testrules),
     Onf (shift_root),
     shift_root.shift_copula_SPRED_head,  % <- already a sequence strategy
 
@@ -25,4 +25,4 @@ strat singletest {
   Onf (relabel_NDT_to_UD_deprel)
 }
 
-strat main { singletest }
+strat main { test }
