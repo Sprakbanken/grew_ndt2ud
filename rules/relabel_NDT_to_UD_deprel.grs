@@ -55,4 +55,19 @@ rule coordination_verbal_ellipsis {
     commands { del_edge e; add_edge GOV -[ orphan ]-> DEP  }
 }
 
+% presenteringssetninger: når "være" er rot og setningen har PSUBJ og FSUBJ, men ikke SPRED. Behold roten.
+rule presentational_expl {
+  pattern {
+    H [ lemma="være" ];
+    e1: H -[PSUBJ]-> D1;
+    e2: H -[FSUBJ]-> D2;
+  }
+  without {
+    H -[SPRED]-> *;
+  }
+  commands {
+    e1.label = nsubj;
+    e2.label = expl;
+  }
+}
 

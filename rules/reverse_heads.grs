@@ -1,6 +1,6 @@
 
 % cop: reverser hodet i setninger der "være" er rot, med SPRED, men uten PSUBJ. Predikativet er ny rot. 
-rule rev_head_copula_in_subclause {
+rule focustype_head_SPRED_copula {
 	pattern {
     H [ lemma="være" ];
     e: H -[SPRED]-> D;
@@ -16,3 +16,22 @@ rule rev_head_copula_in_subclause {
     f.rev=y;
   }
 }
+
+% Setningsantisiperende: Predikativet blir rot, PSUBJ-leddsetning blir csubj, "være" blir kopula på predikativet.
+rule clause_anticipating_copula {
+	pattern {
+    H [ lemma="være" ];
+    e1: H -[SPRED]-> D1;
+    e2: H -[PSUBJ]-> D2;
+    D2 [upos <> NOUN|PRON|PROPN];
+  }
+  commands {
+    del_edge e1;
+    del_edge e2;
+    shift H ==> D1;
+    add_edge f1: D1 -> H; f1.label = cop;
+    f1.rev=y;
+    add_edge f2: D1 -> D2; f2.label = csubj;
+  }
+}
+
