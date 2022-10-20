@@ -1,64 +1,132 @@
 % relabel edges: Change NDT dependency relation to UD deprel with 1 to 1 mappings
 
 rule punctuation_sentence_end {
-    pattern { e: N -[ IP ]-> P }
-    commands { del_edge e; add_edge N -[ punct ]-> P }
+  pattern { e: N -[ IP ]-> P }
+  commands { e.label = punct }
 }
 
 rule punctuation_mid_sentence {
-    pattern { e: N -[ IK ]-> P;  }
-    commands { del_edge e; add_edge N -[ punct ]-> P }
+  pattern { e: N -[ IK ]-> P;  }
+  commands { e.label = punct }
 }
 
 rule nominal_subject {
-    pattern { V [upos=VERB]; N [upos=PROPN|NOUN]; e: V -[SUBJ]-> N; }
-    commands { e.label= nsubj}
+  pattern { DEP [upos=PROPN|NOUN|PRON]; e: GOV -[SUBJ]-> DEP; }
+  commands { e.label = nsubj }
+}
+
+rule clausal_subject {
+  pattern { DEP [upos <> PROPN|NOUN|PRON ]; e: GOV -[SUBJ]-> DEP; }
+  commands { e.label = csubj }
+}
+
+rule root_finite_verb {
+  pattern { e: GOV -[ FINV ]-> DEP }
+  commands { e.label = root }
 }
 
 rule expletive_subj {
-    pattern { e: GOV -[ FSUBJ ]-> DEP }
-    commands { del_edge e; add_edge GOV -[ expl ]-> DEP  }
+  pattern { e: GOV -[ FSUBJ ]-> DEP }
+  commands { e.label = expl }
 }
 
 rule expletive_obj {
-    pattern { e: GOV -[ FOBJ ]-> DEP }
-    commands { del_edge e; add_edge GOV -[ expl ]-> DEP  }
+  pattern { e: GOV -[ FOBJ ]-> DEP }
+  commands { e.label = expl }
 }
 
 rule indirect_obj {
-    pattern { e: GOV -[ IOBJ ]-> DEP }
-    commands { del_edge e; add_edge GOV -[ iobj ]-> DEP  }
+  pattern { e: GOV -[ IOBJ ]-> DEP }
+  commands { e.label = iobj }
 }
 
 rule obj_predicative {
-    pattern { e: GOV -[ OPRED ]-> DEP }
-    commands { del_edge e; add_edge GOV -[ xcomp ]-> DEP  }
+  pattern { e: GOV -[ OPRED ]-> DEP }
+  commands { e.label = xcomp }
 }
 
 rule interjection {
-    pattern { e: GOV -[ INTERJ ]-> DEP }
-    commands { del_edge e; add_edge GOV -[ discourse ]-> DEP  }
+  pattern { e: GOV -[ INTERJ ]-> DEP }
+  commands { e.label = discourse  }
 }
 
 rule coordinating_conjuction {
-    pattern { e: GOV -[ KONJ ]-> DEP }
-    commands { del_edge e; add_edge GOV -[ cc ]-> DEP  }
+  pattern { e: GOV -[ KONJ ]-> DEP }
+  commands { e.label = cc }
 }
 
 rule conjunct {
-    pattern { e: GOV -[ KOORD ]-> DEP }
-    commands { del_edge e; add_edge GOV -[ conj ]-> DEP  }
+  pattern { e: GOV -[ KOORD ]-> DEP }
+  commands { e.label = conj }
 }
 
 rule coordination_verbal_ellipsis {
-    pattern { e: GOV -[ KOORD-ELL ]-> DEP }
-    commands { del_edge e; add_edge GOV -[ orphan ]-> DEP  }
+  pattern { e: GOV -[ KOORD-ELL ]-> DEP }
+  commands { e.label = orphan }
+}
+
+rule subclause_at {
+  pattern { DEP [form="at"]; e: GOV -[SBU]-> DEP;}
+  commands { e.label = mark }
+}
+
+rule subclause_aa {
+  pattern { DEP [form="å"]; e: GOV -[INFV]-> DEP;}  % after the relation between the infinite verb and the marker has been reversed/shifted
+  commands { e.label = mark }
+}
+
+rule determiner {
+  pattern { GOV [upos= NOUN|PROPN]; DEP [upos=DET|NUM]; e: GOV -[DET]-> DEP; }
+  commands { e.label = det }
+}
+
+rule determiner_genitive {
+  pattern { GOV [upos= NOUN|PROPN]; DEP [upos=PROPN, Case=Gen]; e: GOV -[DET]-> DEP; }
+  commands { e.label = det }
+}
+
+rule adjectival_modifier {
+  pattern { GOV [upos = NOUN|PROPN]; DEP [upos=ADJ]; e: GOV -[ ATR ]-> DEP; }
+  commands { e.label = amod }
+}
+
+rule nominal_modifier {
+  pattern { GOV [upos = NOUN|PROPN]; DEP [upos=NOUN]; e: GOV -[ ATR ]-> DEP; }
+  commands { e.label = nmod }
+}
+
+rule adverbial_modifier {
+  pattern {
+    DEP [ upos=ADV|PART ];
+    e: GOV -[ADV]-> DEP;
+  }
+  commands { e.label = advmod }
+}
+
+rule oblique_nominal {
+  pattern {
+    DEP [ upos= NOUN|PROPN  ];
+    e: GOV -[ADV]-> DEP;
+  }
+  commands { e.label = obl }
+}
+
+rule flat_names {
+  pattern { e: GOV -[FLAT]-> DEP; }
+  commands { e.label = flat }
+}
+
+rule appositional_modifier {
+  pattern { e: GOV -[APP]-> DEP; }
+  commands { e.label = appos }
 }
 
 % presenteringssetninger: når "være" er rot og setningen har PSUBJ og FSUBJ, men ikke SPRED. Behold roten.
+% forutsetter at strukturen ikke er endret.
 rule presentational_expl {
   pattern {
     H [ lemma="være" ];
+    D1 [ upos = NOUN|PRON|PROPN ];
     e1: H -[PSUBJ]-> D1;
     e2: H -[FSUBJ]-> D2;
   }
@@ -71,7 +139,6 @@ rule presentational_expl {
   }
 }
 
-% In the case that the lexical verb is already the head:
 % "være" and "ha" can both be temporal auxiliaries in a passive construction, but only "bli" gets the "aux:pass" relation
 rule passive_lex_aux_bli {
   pattern {
