@@ -1,4 +1,3 @@
-
 % cop: reverser hodet i setninger der "være" er rot, med SPRED, men uten PSUBJ. Predikativet er ny rot. 
 rule focustype_head_SPRED_copula {
 	pattern {
@@ -44,3 +43,11 @@ rule reverse_lex_aux_verbs {
   }
 }
 
+rule PUTFYLL_rule {
+  pattern {e:H -[PUTFYLL]-> D; H[upos=ADP]; }
+    commands {
+      del_edge e;
+      shift H ==> D;
+      add_edge f:D -> H; f.label = case;
+  }
+}
