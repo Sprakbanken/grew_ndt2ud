@@ -85,6 +85,11 @@ rule determiner_genitive {
   commands { e.label = det }
 }
 
+rule determiner_possessive {
+  pattern { GOV [upos= NOUN|PROPN]; DEP [upos=PRON, Poss=Yes]; e: GOV -[DET]-> DEP; }
+  commands { e.label = det }
+}
+
 rule adjectival_modifier {
   pattern { GOV [upos = NOUN|PROPN]; DEP [upos=ADJ]; e: GOV -[ ATR ]-> DEP; }
   commands { e.label = amod }
