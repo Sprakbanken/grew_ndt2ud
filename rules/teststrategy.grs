@@ -22,7 +22,10 @@ strat test {
 }
 
 strat singletest {
-  Onf (relabel_NDT_to_UD_deprel)
+  Seq (
+    Onf (reverse_heads),
+    Onf (relabel_NDT_to_UD_deprel)
+  )
 }
 
-strat main { test }
+strat main { singletest }

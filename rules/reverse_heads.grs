@@ -13,7 +13,6 @@ rule focustype_head_SPRED_copula {
     shift H ==> D;
     add_edge f: D -> H;
     f.label = cop;
-    f.rev=y;
   }
 }
 
@@ -30,8 +29,18 @@ rule clause_anticipating_copula {
     del_edge e2;
     shift H ==> D1;
     add_edge f1: D1 -> H; f1.label = cop;
-    f1.rev=y;
     add_edge f2: D1 -> D2; f2.label = csubj;
+  }
+}
+
+% reverser relasjonen mellom et hjelpeverb og et leksikalsk verb
+rule reverse_lex_aux_verbs {
+  pattern { H [upos=AUX]; D[upos=VERB]; e:H -[INFV]-> D;}
+  commands {
+    del_edge e;
+    shift H ==> D;
+    add_edge f: D -> H;
+    f.label = aux;
   }
 }
 

@@ -53,29 +53,3 @@
     }
   }
 
-rule reverse_lex_aux_verbs {
-  pattern { H[upos=AUX]; D[upos=VERB]; e:H -[INFV]-> D;}
-  commands {
-    del_edge e;
-    shift H ==> D;
-    add_edge f: D -> H;
-    f.label = aux;
-    f.rev=y;
-  }
-}
-
-
-
-rule subclause_at {
-  pattern { AT[form="at"]; e: V -[SBU]-> AT;}
-  commands {
-    e.label = mark;
-  }
-}
-
-
-rule relabel_root {
-  pattern {e: R -[FINV]-> V;}
-  commands {e.label = root;}
-}
-
