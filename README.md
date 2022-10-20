@@ -17,14 +17,12 @@ grew transform \
 Test ut regler på eksempelsetninger med `rules/teststrategy.grs`: 
 
 ```
-INPUT="data/sentences/all.conll"
+INPUT=data/sentences/all.conll
 cat data/sentences/* > $INPUT
-
-TODAY=$(date +%d-%m-%y_%H%M%S)
 
 grew transform \
   -i  $INPUT \
-  -o  "data/output/${TODAY}.conll" \
+  -o  data/output/out.conll \
   -grs  rules/teststrategy.grs \
   -strat main \
   -safe_commands
