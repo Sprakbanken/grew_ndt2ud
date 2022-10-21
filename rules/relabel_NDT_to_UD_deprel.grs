@@ -71,3 +71,60 @@ rule presentational_expl {
   }
 }
 
+% In the case that the lexical verb is already the head:
+% "være" and "ha" can both be temporal auxiliaries in a passive construction, but only "bli" gets the "aux:pass" relation
+rule passive_lex_aux_bli {
+  pattern {
+    A [ upos=AUX, lemma="bli" ];
+    V [ upos=VERB, VerbForm=Part ];
+    e: V -> A;  % after the lexical verb is already the head
+  }
+  without { e.2 = pass; }
+  commands {
+    e.2 = pass;
+  }
+}
+
+rule temporal_aux_vare_ha {
+  pattern {
+    A [ upos=AUX, lemma="være"|"ha" ];
+    V [ upos=VERB|AUX, VerbForm=Part ];
+    e: V -> A;
+  }
+  without {
+    e.label = aux;
+  }
+  commands {
+    e.label = aux;
+  }
+}
+
+% passive subject is the dependent of a verb with passive marking or a participle with a passive auxiliary attached
+rule passive_subject_verbform {
+  pattern {
+    V [ upos=VERB, Voice=Pass, form=re".*s" ];
+    e: V -[ 1=nsubj|csubj ]-> S;
+  }
+  without {
+    e.2 = pass;
+  }
+  commands {
+    e.2 = pass;
+  }
+}
+
+% participle with a passive auxiliary attached
+rule passive_subject_periphrastic {
+  pattern {
+    V [ VerbForm=Part ];
+    V -[1=aux, 2=pass]-> *;
+    e: V -[ 1=nsubj|csubj ]-> S;
+  }
+  without {
+    e.2 = pass;
+  }
+  commands {
+    e.2 = pass;
+  }
+}
+

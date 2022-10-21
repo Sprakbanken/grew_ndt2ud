@@ -4,26 +4,28 @@ import "testrules.grs"
 import "relabel_NDT_to_UD_deprel.grs"
 import "shift_root.grs"
 import "reverse_heads.grs"
-import "passive.grs"
+
 
 strat test {
   Seq (
 
     %%% restructure graph
     Onf (reverse_heads),
-    Onf (testrules),
+    %Onf (testrules),
     Onf (shift_root),
     shift_root.shift_copula_SPRED_head,  % <- already a sequence strategy
 
     %%% relabel edges
-    Onf (passive.passive_construction),
     Onf (relabel_NDT_to_UD_deprel),
 
  )
 }
 
 strat singletest {
-  Onf (reverse_heads)
+  Seq (
+    Onf (reverse_heads),
+    Onf (relabel_NDT_to_UD_deprel)
+  )
 }
 
 strat main { singletest }
