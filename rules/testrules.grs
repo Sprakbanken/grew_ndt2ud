@@ -43,13 +43,3 @@
       }
   }
 
-  rule PUTFYLL_rule {
-    pattern {e:H -[PUTFYLL]-> D; H[upos=ADP]; }
-      commands {
-        e.rev=y;
-        add_edge f:D -> H; f.label = case;
-        del_edge e;
-        shift H ==> D;
-    }
-  }
-
