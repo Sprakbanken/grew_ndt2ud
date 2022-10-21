@@ -85,6 +85,11 @@ rule determiner_genitive {
   commands { e.label = det }
 }
 
+rule determiner_flat_name_genitive {
+  pattern { GOV [upos= NOUN|PROPN]; DEP [upos=PROPN]; DEP2[Case=Gen]; e: GOV -[DET]-> DEP; DEP -[FLAT|flat]-> DEP2;}
+  commands { e.label = det }
+}
+
 rule determiner_possessive {
   pattern { GOV [upos= NOUN|PROPN]; DEP [upos=PRON, Poss=Yes]; e: GOV -[DET]-> DEP; }
   commands { e.label = det }
