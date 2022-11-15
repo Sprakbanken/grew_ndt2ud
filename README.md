@@ -1,7 +1,37 @@
 # Konvertering av NDT til UD med GREW
 
-## Kjør grew fra kommandolinjen
 
+## Finn eksempelsetninger for en regel vi skal skrive
+
+* Se på strukturelle forskjeller mellom UD og NDT for 200 utvalgte setninger med MaltEval. 
+
+```
+java -jar dist-20141005/lib/MaltEval.jar -s data/2019_gullkorpus_ud_før_annotasjon_uten_hash.conllu data/2019_gullkorpus_ndt_uten_hash.conllu -g data/2019_gullkorpus_ud_uten_hash.conllu -v 1
+```
+
+## Kjør grew på eksempelsetninger med en teststrategi 
+
+Samle alle eksempelsetningene fra `data/sentences` i én fil, eller oppgi hvilken setningsfil du vil konvertere. 
+
+```
+INPUT=data/sentences/all.conll
+cat data/sentences/* > $INPUT
+```
+
+Test ut reglene som brukes i `rules/teststrategy.grs`.
+
+```
+grew transform \
+  -i  $INPUT \
+  -o  data/output/out.conll \
+  -grs  rules/teststrategy.grs \
+  -strat main \
+  -safe_commands
+```
+
+I `rules/teststrategy.grs`: filtrer regler/pakker/strategier fra `Seq()`-lista i `strat test`-strategien med kommentarsymbolet `%`
+
+## Kjør grew på hele treningssettet fra kommandolinjen
 
 ```
 TODAY=$(date +%d-%m-%y_%H%M%S)
@@ -13,24 +43,6 @@ grew transform \
   -strat main \
   -safe_commands
 ```
-
-Test ut regler på eksempelsetninger med `rules/teststrategy.grs`: 
-
-```
-INPUT="data/sentences/all.conll"
-cat data/sentences/* > $INPUT
-
-TODAY=$(date +%d-%m-%y_%H%M%S)
-
-grew transform \
-  -i  $INPUT \
-  -o  "data/output/${TODAY}.conll" \
-  -grs  rules/teststrategy.grs \
-  -strat main \
-  -safe_commands
-```
-
-I `rules/teststrategy.grs`: filtrer regler/pakker/strategier fra `Seq()`-lista i `strat test`-strategien med kommentarsymbolet `%`
 
 
 ## Repo-struktur
@@ -61,16 +73,21 @@ $ tree --gitignore
 │   ├── sample2_training_fixed_UDfeats.conll
 │   ├── sentences
 │   │   ├── another_sentence.conll
+│   │   ├── clause_anticipating_presentational.conll
+│   │   ├── clefting.conll
 │   │   ├── copula_relative_passive.conll
 │   │   ├── even_one_more_sentence.conll
+│   │   ├── FSUBJ_SPRED_PSUBJ_subclause.conll
 │   │   ├── just_another_sentence.conll
 │   │   ├── modal_aux.conllu
 │   │   ├── one_sentence.conll
-│   │   ├── passiv_nsubj.conllu
+│   │   ├── passive_sents.conllu
+│   │   ├── presentational_PSUBJ.conll
 │   │   ├── skulle_ha_vaert_hovedsetning.conllu
 │   │   └── yet_another_sentence.conll
 │   ├── test_fixed_UDfeats.conll
-│   └── training_fixed_UDfeats.conll
+│   ├── training_fixed_UDfeats.conll
+│   └── ud_vaere_aux_pass.conll
 ├── dist-20141005
 ├── fetch_sents_by_ID.sh
 ├── notebooks
@@ -83,7 +100,6 @@ $ tree --gitignore
 │   ├── grew_example_rules.grs
 │   ├── mainstrategy.grs
 │   ├── NDT_to_UD.grs
-│   ├── passive.grs
 │   ├── relabel_NDT_to_UD_deprel.grs
 │   ├── reverse_heads.grs
 │   ├── shift_root.grs
@@ -93,13 +109,7 @@ $ tree --gitignore
 └── utils
     └── MaltEval-dist.zip
 
-7 directories, 47 files
-```
-
-## MaltEval diff
-
-```
-java -jar dist-20141005/lib/MaltEval.jar -s data/2019_gullkorpus_ud_før_annotasjon_uten_hash.conllu data/2019_gullkorpus_ndt_uten_hash.conllu -g data/2019_gullkorpus_ud_uten_hash.conllu -v 1
+7 directories, 51 files
 ```
 
 ## Generer MaltEval-kompatible dev- og train-splitter av gullkorpuset
