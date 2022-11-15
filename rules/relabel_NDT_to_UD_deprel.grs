@@ -62,7 +62,7 @@ rule conjunct {
 
 rule coordination_verbal_ellipsis {
   pattern { e: GOV -[ KOORD-ELL ]-> DEP }
-  commands { e.label = orphan }
+  commands { e.label = conj }
 }
 
 rule subclause_at {
