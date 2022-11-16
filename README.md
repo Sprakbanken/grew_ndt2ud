@@ -1,6 +1,52 @@
 # Konvertering av NDT til UD med GREW
 
 
+
+
+
+
+## Arbeidsflyt
+
+1. Kjøre reglene vi allerede har på hele treningssettet
+
+    ```
+    TODAY=$(date +%d-%m-%y_%H%M%S)
+
+    grew transform \
+      -i  "data/training_fixed_UDfeats.conll" \
+      -o  "data/output/out_${TODAY}.conll" \
+      -grs  rules/mainstrategy.grs \
+      -strat main \
+      -safe_commands
+    ```
+
+<--- TODO [ILD]: sette sammen strategi som kjører testede regler i mainstrategy.grs --->
+
+2. Sammenligne resultatet med tidligere versjon av UD 
+   a. Overblikk i MaltEval
+
+    ```
+    UD_UTEN_HASH=<FYLL INN>  # ILD
+
+    java -jar dist-20141005/lib/MaltEval.jar -s data/training_fixed_UDfeats.conll -g $UD_UTEN_HASH -v 1
+    ```
+
+
+   b. Score relasjoner ut fra likhet mellom vår konvertering og tidligere versjon av UD:
+      - Hvilke ordklasser (felt 4) /evt. feats (felt 6) som oftest har feil hode (felt 7)
+      - Hvilke NDT-relasjoner ender oftest med feil hode (og merkelapp)?
+      - Hvilke UD-relasjonspar (vår vs. eldre) har feil merkelapp (felt 8)?
+<--- [AK]: fyll inn kommando for malteval evaluering + dokumentasjon --->  
+
+3. Skrive regler som håndterer de høyfrekvente feilene
+  - Legg inn regel i en grs-fil i [rules/](./rules/)
+  - Legg inn referanse til regelsett eller regel i [mainstrategy.grs](./rules/mainstrategy.grs)
+  - Dokumentasjon på regelsyntaks på [grew.fr](https://grew.fr/doc/rule/)
+
+
+
+
+
 ## Finn eksempelsetninger for en regel vi skal skrive
 
 * Se på strukturelle forskjeller mellom UD og NDT for 200 utvalgte setninger med MaltEval. 
