@@ -1,49 +1,72 @@
 # Konvertering av NDT til UD med GREW
 
+## Arbeidsflyt
 
-## Finn eksempelsetninger for en regel vi skal skrive
+1. Kjøre reglene vi allerede har på hele treningssettet
+    ```
+    TODAY=$(date +%d-%m-%y_%H%M%S)
 
-* Se på strukturelle forskjeller mellom UD og NDT for 200 utvalgte setninger med MaltEval. 
+    grew transform \
+      -i  data/training_fixed_UDfeats.conll \
+      -o  data/output/out_${TODAY}.conll \
+      -grs  rules/mainstrategy.grs \
+      -strat main \
+      -safe_commands
+    ```
+2. Sammenligne resultatet med tidligere versjon av UD 
 
-```
-java -jar dist-20141005/lib/MaltEval.jar -s data/2019_gullkorpus_ud_før_annotasjon_uten_hash.conllu data/2019_gullkorpus_ndt_uten_hash.conllu -g data/2019_gullkorpus_ud_uten_hash.conllu -v 1
-```
+   a. Overblikk i MaltEval
 
-## Kjør grew på eksempelsetninger med en teststrategi 
+    ```
+    UD_UTEN_HASH=<FYLL INN>  # ILD
 
-Samle alle eksempelsetningene fra `data/sentences` i én fil, eller oppgi hvilken setningsfil du vil konvertere. 
+    java -jar dist-20141005/lib/MaltEval.jar -s data/training_fixed_UDfeats.conll -g $UD_UTEN_HASH -v 1
+    ```
 
-```
-INPUT=data/sentences/all.conll
-cat data/sentences/* > $INPUT
-```
 
-Test ut reglene som brukes i `rules/teststrategy.grs`.
+   b. Score relasjoner ut fra likhet mellom vår konvertering og tidligere versjon av UD:
+      - Hvilke ordklasser (felt 4) /evt. feats (felt 6) som oftest har feil hode (felt 7)
+      - Hvilke NDT-relasjoner ender oftest med feil hode (og merkelapp)?
+      - Hvilke UD-relasjonspar (vår vs. eldre) har feil merkelapp (felt 8)?
+<--- [AK]: fyll inn kommando for malteval evaluering + dokumentasjon --->  
 
-```
-grew transform \
-  -i  $INPUT \
-  -o  data/output/out.conll \
-  -grs  rules/teststrategy.grs \
-  -strat main \
-  -safe_commands
-```
+3. Skrive regler som håndterer de høyfrekvente feilene
+     - Legg inn regel i en grs-fil i [rules/](./rules/)
+     - Legg inn referanse til regelsett eller regel i [mainstrategy.grs](./rules/mainstrategy.grs)
+     - Dokumentasjon på regelsyntaks på [grew.fr](https://grew.fr/doc/rule/)
 
-I `rules/teststrategy.grs`: filtrer regler/pakker/strategier fra `Seq()`-lista i `strat test`-strategien med kommentarsymbolet `%`
 
-## Kjør grew på hele treningssettet fra kommandolinjen
 
-```
-TODAY=$(date +%d-%m-%y_%H%M%S)
+## Eksempeldrevet arbeidsflyt
+1.  Finn eksempelsetninger på et syntaktisk fenomen med MaltEval.
 
-grew transform \
-  -i  "data/training_fixed_UDfeats.conll" \
-  -o  "data/output/${TODAY}.conll" \
-  -grs  rules/mainstrategy.grs \
-  -strat main \
-  -safe_commands
-```
+    Se på strukturelle forskjeller mellom UD og NDT for 200 utvalgte setninger med MaltEval. 
 
+      ```
+      java -jar dist-20141005/lib/MaltEval.jar -s data/2019_gullkorpus_ud_før_annotasjon_uten_hash.conllu data/2019_gullkorpus_ndt_uten_hash.conllu -g data/2019_gullkorpus_ud_uten_hash.conllu -v 1
+      ```
+
+2.  Kjør grew på eksempelsetninger med en teststrategi 
+
+    Samle alle eksempelsetningene fra `data/sentences` i én fil, eller oppgi hvilken setningsfil du vil konvertere. 
+
+    ```
+    INPUT=data/sentences/all.conll
+    cat data/sentences/* > $INPUT
+    ```
+
+    Test ut reglene som brukes i `rules/teststrategy.grs`.
+
+    ```
+    grew transform \
+      -i  $INPUT \
+      -o  data/output/out.conll \
+      -grs  rules/teststrategy.grs \
+      -strat main \
+      -safe_commands
+    ```
+
+    I `rules/teststrategy.grs`: filtrer regler/pakker/strategier fra `Seq()`-lista i `strat test`-strategien med kommentarsymbolet `%`
 
 ## Repo-struktur
 
@@ -112,7 +135,10 @@ $ tree --gitignore
 7 directories, 51 files
 ```
 
-## Generer MaltEval-kompatible dev- og train-splitter av gullkorpuset
+## Splitt opp UD-gullkorpuset (200 rettede setninger)
+
+Setningene i gullkorpuset er hentet fra to partisjoner, dev og train, av den norske UD-trebanken. 
+Dette skriptet bruker filene `data/gullkorpus_*_ids.txt` for å dele opp gullkorpuset med den samme partisjoneringen.
 
 ```
 ./fetch_sents_by_ID.sh
