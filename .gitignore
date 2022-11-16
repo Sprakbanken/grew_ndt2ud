@@ -163,3 +163,4 @@ cython_debug/
 **/output*.conll
 dist-20141005/*
 **/sentences/all.conll
+data/UD_v2-11/*
