@@ -18,11 +18,11 @@
    a. Overblikk i MaltEval
 
     ```
-    UD_UTEN_HASH=<FYLL INN>  # ILD
-
-    java -jar dist-20141005/lib/MaltEval.jar -s data/training_fixed_UDfeats.conll -g $UD_UTEN_HASH -v 1
+    java -jar dist-20141005/lib/MaltEval.jar \
+      -s data/retokenized/ndt_nb_train_retokenized.conllu \
+      -g data/no_bokmaal-ud-train_uten_hash.conllu \
+      -v 1
     ```
-
 
    b. Score relasjoner ut fra likhet mellom vår konvertering og tidligere versjon av UD:
       - Hvilke ordklasser (felt 4) /evt. feats (felt 6) som oftest har feil hode (felt 7)
