@@ -2,25 +2,41 @@
 
 ## Arbeidsflyt
 
-1. Kjøre reglene vi allerede har på hele treningssettet
+1. Kjøre reglene vi allerede har på et av datasettene: Endre miljøvariabelen `PARTITION` fra `train` til `dev` eller `test`.
+
     ```
+    PARTITION=test
     TODAY=$(date +%d-%m-%y_%H%M%S)
 
+    NDT_FILE=data/retokenized/ndt_nb_${PARTITION}_retokenized_udfeatspos.conllu
+    CONVERTED=data/output/${PARTITION}_${TODAY}.conllu
+    UD_OFFICIAL=data/no_bokmaal-ud-${PARTITION}_uten_hash.conllu
+
     grew transform \
-      -i  data/training_fixed_UDfeats.conll \
-      -o  data/output/out_${TODAY}.conll \
+      -i  $NDT_FILE \
+      -o  $CONVERTED \
       -grs  rules/mainstrategy.grs \
       -strat main \
       -safe_commands
     ```
+
 2. Sammenligne resultatet med tidligere versjon av UD 
 
-   a. Overblikk i MaltEval
+    Den første linjen i den konverterte conll-filen `$CONVERTED` lister opp kolonnenavnene, og gir feilmelding med MaltEval: 
+    `# global.columns = ID FORM LEMMA UPOS XPOS FEATS HEAD DEPREL DEPS MISC`
+
+    Fjern denne linjen: 
+
+    ```
+    tail -n +2 $CONVERTED > tmp.conll && mv tmp.conll $CONVERTED
+    ``` 
+
+   a. Overblikk i MaltEval 
 
     ```
     java -jar dist-20141005/lib/MaltEval.jar \
-      -s data/retokenized/ndt_nb_train_retokenized.conllu \
-      -g data/no_bokmaal-ud-train_uten_hash.conllu \
+      -s $CONVERTED
+      -g $UD_OFFICIAL \
       -v 1
     ```
 
