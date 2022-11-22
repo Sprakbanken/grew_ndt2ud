@@ -8,7 +8,7 @@
     PARTITION=test
     TODAY=$(date +%d-%m-%y_%H%M%S)
 
-    NDT_FILE=data/retokenized/ndt_nb_${PARTITION}_retokenized_udfeatspos.conllu
+    NDT_FILE=data/retokenized/ndt_nb_${PARTITION}_retokenized_no_quotechar_udfeatspos.conllu
     CONVERTED=data/output/${PARTITION}_${TODAY}.conllu
     UD_OFFICIAL=data/no_bokmaal-ud-${PARTITION}_uten_hash.conllu
 
@@ -34,10 +34,11 @@
    a. Overblikk i MaltEval 
 
     ```
-    java -jar dist-20141005/lib/MaltEval.jar \
-      -s $CONVERTED
+    java -jar dist-20141005/lib/MaltEval.jar \   
+      -s $CONVERTED \
       -g $UD_OFFICIAL \
       -v 1
+
     ```
 
    b. Score relasjoner ut fra likhet mellom vår konvertering og tidligere versjon av UD:
