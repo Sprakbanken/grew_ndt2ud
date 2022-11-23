@@ -1,5 +1,13 @@
 # Konvertering av NDT til UD med GREW
 
+**Innhold**
+- [Konvertering av NDT til UD med GREW](#konvertering-av-ndt-til-ud-med-grew)
+  - [Arbeidsflyt](#arbeidsflyt)
+  - [Eksempeldrevet arbeidsflyt](#eksempeldrevet-arbeidsflyt)
+  - [Hjelpeskript](#hjelpeskript)
+  - [Referanser](#referanser)
+  - [Filstruktur](#filstruktur)
+
 ## Arbeidsflyt
 
 1. Kjøre reglene vi allerede har på et av datasettene: 
@@ -80,77 +88,10 @@
 
     I `rules/teststrategy.grs`: filtrer regler/pakker/strategier fra `Seq()`-lista i `strat test`-strategien med kommentarsymbolet `%`
 
-## Repo-struktur
+## Hjelpeskript 
 
-```
-$ tree --gitignore
-.
-├── data
-│   ├── 2019_gullkorpus_ndt.conllu
-│   ├── 2019_gullkorpus_ndt_dev_uten_hash.conllu
-│   ├── 2019_gullkorpus_ndt_train_uten_hash.conllu
-│   ├── 2019_gullkorpus_ndt_uten_hash.conllu
-│   ├── 2019_gullkorpus_ud.conllu
-│   ├── 2019_gullkorpus_ud_dev_uten_hash.conllu
-│   ├── 2019_gullkorpus_ud_før_annotasjon.conllu
-│   ├── 2019_gullkorpus_ud_før_annotasjon_dev_uten_hash.conllu
-│   ├── 2019_gullkorpus_ud_før_annotasjon_train_uten_hash.conllu
-│   ├── 2019_gullkorpus_ud_før_annotasjon_uten_hash.conllu
-│   ├── 2019_gullkorpus_ud_train_uten_hash.conllu
-│   ├── 2019_gullkorpus_ud_uten_hash.conllu
-│   ├── dev_fixed_UDfeats.conll
-│   ├── gullkorpus_all_ids.txt
-│   ├── gullkorpus_dev_ids.txt
-│   ├── gullkorpus_train_ids.txt
-│   ├── ndt_nb-NO.conllu
-│   ├── output
-│   ├── sample1_training_fixed_UDfeats.conll
-│   ├── sample2_training_fixed_UDfeats.conll
-│   ├── sentences
-│   │   ├── another_sentence.conll
-│   │   ├── clause_anticipating_presentational.conll
-│   │   ├── clefting.conll
-│   │   ├── copula_relative_passive.conll
-│   │   ├── even_one_more_sentence.conll
-│   │   ├── FSUBJ_SPRED_PSUBJ_subclause.conll
-│   │   ├── just_another_sentence.conll
-│   │   ├── modal_aux.conllu
-│   │   ├── one_sentence.conll
-│   │   ├── passive_sents.conllu
-│   │   ├── presentational_PSUBJ.conll
-│   │   ├── skulle_ha_vaert_hovedsetning.conllu
-│   │   └── yet_another_sentence.conll
-│   ├── test_fixed_UDfeats.conll
-│   ├── training_fixed_UDfeats.conll
-│   └── ud_vaere_aux_pass.conll
-├── dist-20141005
-├── fetch_sents_by_ID.sh
-├── notebooks
-│   ├── grew_book_code.ipynb
-│   ├── test_grew.ipynb
-│   └── test_grew_rule_application.ipynb
-├── partition_data.py
-├── README.md
-├── rules
-│   ├── grew_example_rules.grs
-│   ├── mainstrategy.grs
-│   ├── NDT_to_UD.grs
-│   ├── relabel_NDT_to_UD_deprel.grs
-│   ├── reverse_heads.grs
-│   ├── shift_root.grs
-│   ├── SUD_to_UD.grs
-│   ├── testrules.grs
-│   └── teststrategy.grs
-└── utils
-    └── MaltEval-dist.zip
-
-7 directories, 51 files
-```
-
-## Splitt opp UD-gullkorpuset (200 rettede setninger)
-
-Setningene i gullkorpuset er hentet fra to partisjoner, dev og train, av den norske UD-trebanken. 
-Dette skriptet bruker filene `data/gullkorpus_*_ids.txt` for å dele opp gullkorpuset med den samme partisjoneringen.
+Setningene i gullkorpuset er hentet fra to partisjoner, dev og train, av den norske UD-trebanken. Det er 200 setninger totalt.
+Dette skriptet bruker filene [`gullkorpus_*_ids.txt`](./data/gullkorpus/) for å dele opp gullkorpuset med den samme partisjoneringen.
 
 ```
 ./fetch_sents_by_ID.sh
@@ -160,3 +101,50 @@ Dette skriptet bruker filene `data/gullkorpus_*_ids.txt` for å dele opp gullkor
 * [Starting a new treebank? Go SUD!](https://aclanthology.org/2021.depling-1.4) (Gerdes et al., DepLing 2021)
 * [Graph Matching and Graph Rewriting: GREW tools for corpus exploration, maintenance and conversion](https://aclanthology.org/2021.eacl-demos.21) (Guillaume, EACL 2021)
 * [Dependency Parsing with Graph Rewriting](https://aclanthology.org/W15-2204) (Guillaume & Perrier, 2015)
+
+
+## Filstruktur
+
+```
+$ tree --gitignore -L 2 
+
+.
+├── conversion_stats_UAS.txt
+├── data
+│   ├── grew_output_train.conllu
+│   ├── gullkorpus
+│   ├── ndt_nb_dev_retokenized_no_quotechar_udfeatspos.conllu
+│   ├── ndt_nb-NO.conllu
+│   ├── ndt_nb_test_retokenized_no_quotechar_udfeatspos.conllu
+│   ├── ndt_nb_train_retokenized_no_quotechar_udfeatspos.conllu
+│   ├── ndt_nn_dev_retokenized_no_quotechar_udfeatspos.conllu
+│   ├── ndt_nn_test_retokenized_no_quotechar_udfeatspos.conllu
+│   ├── ndt_nn_train_retokenized_no_quotechar_udfeatspos.conllu
+│   ├── no_bokmaal-ud-dev_uten_hash.conllu
+│   ├── no_bokmaal-ud-test_uten_hash.conllu
+│   ├── no_bokmaal-ud-train_uten_hash.conllu
+│   ├── sentences
+│   └── UD_v2-11
+├── dist-20141005
+├── fetch_sents_by_ID.sh
+├── notebooks
+│   ├── grew_book_code.ipynb
+│   ├── test_grew.ipynb
+│   └── test_grew_rule_application.ipynb
+├── partition_data.py
+├── README.md
+├── rules
+│   ├── grew_example_rules.grs
+│   ├── mainstrategy.grs
+│   ├── NDT_to_UD.grs
+│   ├── relabel_NDT_to_UD_deprel.grs
+│   ├── reverse_heads.grs
+│   ├── shift_root.grs
+│   ├── SUD_to_UD.grs
+│   ├── testrules.grs
+│   └── teststrategy.grs
+└── utils
+    └── MaltEval-dist.zip
+
+8 directories, 28 files
+```
