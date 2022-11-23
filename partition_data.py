@@ -129,34 +129,59 @@ def parse_conll_file(filepath: Path) -> dict:
 
 # Filter data by ids
 
-def partition_by_sent_ids(id_file, input_file, output_file): 
+def partition_by_sent_ids(id_file, conll_data):
     id_list = Path(id_file).read_text().split("\n")
-    conll_data = parse_conll_file(Path(input_file))
     partition = sorted([sent for sent in conll_data.get("sentences") if sent.get("sent_id") in id_list], key=lambda x: x.get("sent_id"))
+    return partition
 
-    with Path(output_file).open("w+") as fp:
-        for sentence in partition:
+def write_conll_without_hash(data, output_file):
+    with open(output_file, "w+") as fp:
+        for sentence in data:
             for token in sentence.get("tokens"):
                 feats = [str(t) for t in token.values()]
                 fp.write("\t".join(feats) + "\n")
             fp.write("\n")
+        fp.write("\n")
 
 
-if __name__ == "__main__": 
+def partition(): 
     import argparse
 
     parser = argparse.ArgumentParser()
     parser.add_argument("infiles", nargs="*")
+    parser.add_argument("-u", "--uncomment", action='store_true') 
     parser.add_argument("-f", "--filter_ids", nargs="*", default=['data/gullkorpus_dev_ids.txt', 'data/gullkorpus_train_ids.txt'])
     args = parser.parse_args()
 
-    for id_file in args.filter_ids:
-        partition = re.match(r".*[_-](\w+)_ids.txt", id_file).group(1)
-        print(partition)
-        for datafile in args.infiles: 
-            fpath = Path(datafile)
-            outfile = f"{fpath.parent}/{fpath.stem}_{partition}_uten_hash.conllu"
-            partition_by_sent_ids(id_file, datafile, outfile)
-            print(outfile)
+    for datafile in args.infiles:
+        fpath = Path(datafile)
+        conll_data = parse_conll_file(fpath)
+
+        if args.uncomment:
+            outfile = Path(f"{fpath.parent}/{fpath.stem}_uten_hash.conllu")
+            write_conll_without_hash(conll_data, outfile)
+        else:
+            for id_file in args.filter_ids:
+                partition_data = partition_by_sent_ids(id_file, conll_data)
+                
+                partition = re.match(r".*[_-](\w+)_ids.txt", id_file).group(1)
+                print(partition)
+                outfile = f"{fpath.parent}/{fpath.stem}_{partition}_uten_hash.conllu"
+                print(outfile)
+                write_conll_without_hash(partition_data, outfile)
+                     
     
     print("Ferdig.")
+
+if __name__ == "__main__": 
+    fpath = Path("data/no_bokmaal-ud-test.conllu")
+    data = parse_conll_file(fpath)
+    outfile = Path(f"{fpath.parent}/{fpath.stem}_uten_hash.conllu")
+    
+    with open(outfile, "w+") as fp:
+        for sent in data.get("sentences"):
+            for token in sent.get("tokens"):
+                feats = [str(t) for t in token.values()]
+                fp.write("\t".join(feats) + "\n")
+            fp.write("\n")
+        fp.write("\n")

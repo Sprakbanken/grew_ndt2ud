@@ -1,49 +1,82 @@
 # Konvertering av NDT til UD med GREW
 
+## Arbeidsflyt
 
-## Finn eksempelsetninger for en regel vi skal skrive
+1. Kjøre reglene vi allerede har på et av datasettene: 
+  
+  Du kan endre miljøvariabelen `PARTITION` fra `train` til `dev` når vi vil sjekke hvor langt vi har kommet. 
 
-* Se på strukturelle forskjeller mellom UD og NDT for 200 utvalgte setninger med MaltEval. 
+  Den første linjen i den konverterte conll-filen `$CONVERTED` lister opp kolonnenavnene, og gir feilmelding med MaltEval: `# global.columns = ID FORM LEMMA UPOS XPOS FEATS HEAD DEPREL DEPS MISC`. Den siste kommandoen i kodeblokken under fjerner denne linjen. 
 
-```
-java -jar dist-20141005/lib/MaltEval.jar -s data/2019_gullkorpus_ud_før_annotasjon_uten_hash.conllu data/2019_gullkorpus_ndt_uten_hash.conllu -g data/2019_gullkorpus_ud_uten_hash.conllu -v 1
-```
+    ```
+    PARTITION=train
+    TODAY=$(date +%d-%m-%y_%H%M%S)
 
-## Kjør grew på eksempelsetninger med en teststrategi 
+    NDT_FILE=data/retokenized/ndt_nb_${PARTITION}_retokenized_no_quotechar_udfeatspos.conllu
+    CONVERTED=data/output/${PARTITION}_${TODAY}.conllu
+    UD_OFFICIAL=data/no_bokmaal-ud-${PARTITION}_uten_hash.conllu
 
-Samle alle eksempelsetningene fra `data/sentences` i én fil, eller oppgi hvilken setningsfil du vil konvertere. 
+    grew transform \
+      -i  $NDT_FILE \
+      -o  $CONVERTED \
+      -grs  rules/mainstrategy.grs \
+      -strat main \
+      -safe_commands
 
-```
-INPUT=data/sentences/all.conll
-cat data/sentences/* > $INPUT
-```
+    tail -n +2 $CONVERTED > tmp.conll && mv tmp.conll $CONVERTED
+    ```
 
-Test ut reglene som brukes i `rules/teststrategy.grs`.
+2. Sammenligne resultatet med tidligere versjon av UD 
 
-```
-grew transform \
-  -i  $INPUT \
-  -o  data/output/out.conll \
-  -grs  rules/teststrategy.grs \
-  -strat main \
-  -safe_commands
-```
+   a. Overblikk i MaltEval
+   `--Metric` kan være `LAS` (Labelled accuracy score) viser andelen riktig etikett og peker fra riktig hode til riktig node, mens `UAS` viser bare andelen som peker på riktig node. 
 
-I `rules/teststrategy.grs`: filtrer regler/pakker/strategier fra `Seq()`-lista i `strat test`-strategien med kommentarsymbolet `%`
+    ```
+    java -jar dist-20141005/lib/MaltEval.jar -s $CONVERTED -g $UD_OFFICIAL --GroupBy Deprel --Metric UAS > conversion_stats.txt
+    ```
 
-## Kjør grew på hele treningssettet fra kommandolinjen
+   b. Score relasjoner ut fra likhet mellom vår konvertering og tidligere versjon av UD:
+      - Hvilke ordklasser (felt 4) /evt. feats (felt 6) som oftest har feil hode (felt 7)
+      - Hvilke NDT-relasjoner ender oftest med feil hode (og merkelapp)?
+      - Hvilke UD-relasjonspar (vår vs. eldre) har feil merkelapp (felt 8)?
 
-```
-TODAY=$(date +%d-%m-%y_%H%M%S)
+3. Skrive regler som håndterer de høyfrekvente feilene
+     - Legg inn regel i en grs-fil i [rules/](./rules/)
+     - Legg inn referanse til regelsett eller regel i [mainstrategy.grs](./rules/mainstrategy.grs)
+     - Dokumentasjon på regelsyntaks på [grew.fr](https://grew.fr/doc/rule/)
 
-grew transform \
-  -i  "data/training_fixed_UDfeats.conll" \
-  -o  "data/output/${TODAY}.conll" \
-  -grs  rules/mainstrategy.grs \
-  -strat main \
-  -safe_commands
-```
 
+
+## Eksempeldrevet arbeidsflyt
+1.  Finn eksempelsetninger på et syntaktisk fenomen med MaltEval.
+
+    Se på strukturelle forskjeller mellom UD og NDT for 200 utvalgte setninger med MaltEval. 
+
+      ```
+      java -jar dist-20141005/lib/MaltEval.jar -s data/2019_gullkorpus_ud_før_annotasjon_uten_hash.conllu data/2019_gullkorpus_ndt_uten_hash.conllu -g data/2019_gullkorpus_ud_uten_hash.conllu -v 1
+      ```
+
+2.  Kjør grew på eksempelsetninger med en teststrategi 
+
+    Samle alle eksempelsetningene fra `data/sentences` i én fil, eller oppgi hvilken setningsfil du vil konvertere. 
+
+    ```
+    INPUT=data/sentences/all.conll
+    cat data/sentences/* > $INPUT
+    ```
+
+    Test ut reglene som brukes i `rules/teststrategy.grs`.
+
+    ```
+    grew transform \
+      -i  $INPUT \
+      -o  data/output/out.conll \
+      -grs  rules/teststrategy.grs \
+      -strat main \
+      -safe_commands
+    ```
+
+    I `rules/teststrategy.grs`: filtrer regler/pakker/strategier fra `Seq()`-lista i `strat test`-strategien med kommentarsymbolet `%`
 
 ## Repo-struktur
 
@@ -112,7 +145,10 @@ $ tree --gitignore
 7 directories, 51 files
 ```
 
-## Generer MaltEval-kompatible dev- og train-splitter av gullkorpuset
+## Splitt opp UD-gullkorpuset (200 rettede setninger)
+
+Setningene i gullkorpuset er hentet fra to partisjoner, dev og train, av den norske UD-trebanken. 
+Dette skriptet bruker filene `data/gullkorpus_*_ids.txt` for å dele opp gullkorpuset med den samme partisjoneringen.
 
 ```
 ./fetch_sents_by_ID.sh
