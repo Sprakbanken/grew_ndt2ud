@@ -2,10 +2,14 @@
 
 ## Arbeidsflyt
 
-1. Kjøre reglene vi allerede har på et av datasettene: Endre miljøvariabelen `PARTITION` fra `train` til `dev` eller `test`.
+1. Kjøre reglene vi allerede har på et av datasettene: 
+  
+  Du kan endre miljøvariabelen `PARTITION` fra `train` til `dev` når vi vil sjekke hvor langt vi har kommet. 
+
+  Den første linjen i den konverterte conll-filen `$CONVERTED` lister opp kolonnenavnene, og gir feilmelding med MaltEval: `# global.columns = ID FORM LEMMA UPOS XPOS FEATS HEAD DEPREL DEPS MISC`. Den siste kommandoen i kodeblokken under fjerner denne linjen. 
 
     ```
-    PARTITION=test
+    PARTITION=train
     TODAY=$(date +%d-%m-%y_%H%M%S)
 
     NDT_FILE=data/retokenized/ndt_nb_${PARTITION}_retokenized_no_quotechar_udfeatspos.conllu
@@ -18,34 +22,23 @@
       -grs  rules/mainstrategy.grs \
       -strat main \
       -safe_commands
+
+    tail -n +2 $CONVERTED > tmp.conll && mv tmp.conll $CONVERTED
     ```
 
 2. Sammenligne resultatet med tidligere versjon av UD 
 
-    Den første linjen i den konverterte conll-filen `$CONVERTED` lister opp kolonnenavnene, og gir feilmelding med MaltEval: 
-    `# global.columns = ID FORM LEMMA UPOS XPOS FEATS HEAD DEPREL DEPS MISC`
-
-    Fjern denne linjen: 
+   a. Overblikk i MaltEval
+   `--Metric` kan være `LAS` (Labelled accuracy score) viser andelen riktig etikett og peker fra riktig hode til riktig node, mens `UAS` viser bare andelen som peker på riktig node. 
 
     ```
-    tail -n +2 $CONVERTED > tmp.conll && mv tmp.conll $CONVERTED
-    ``` 
-
-   a. Overblikk i MaltEval 
-
-    ```
-    java -jar dist-20141005/lib/MaltEval.jar \   
-      -s $CONVERTED \
-      -g $UD_OFFICIAL \
-      -v 1
-
+    java -jar dist-20141005/lib/MaltEval.jar -s $CONVERTED -g $UD_OFFICIAL --GroupBy Deprel --Metric UAS > conversion_stats.txt
     ```
 
    b. Score relasjoner ut fra likhet mellom vår konvertering og tidligere versjon av UD:
       - Hvilke ordklasser (felt 4) /evt. feats (felt 6) som oftest har feil hode (felt 7)
       - Hvilke NDT-relasjoner ender oftest med feil hode (og merkelapp)?
       - Hvilke UD-relasjonspar (vår vs. eldre) har feil merkelapp (felt 8)?
-<--- [AK]: fyll inn kommando for malteval evaluering + dokumentasjon --->  
 
 3. Skrive regler som håndterer de høyfrekvente feilene
      - Legg inn regel i en grs-fil i [rules/](./rules/)
