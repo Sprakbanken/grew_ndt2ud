@@ -51,3 +51,12 @@ rule PUTFYLL_rule {
       add_edge f:D -> H; f.label = case;
   }
 }
+
+rule inf_mark_rule {
+  pattern {e:H -[INFV]-> D; H[lemma="å"]; }
+    commands {
+      del_edge e;
+      shift H ==> D;
+      add_edge f:D -> H; f.label = mark;
+  }
+}
