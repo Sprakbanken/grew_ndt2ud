@@ -29,10 +29,12 @@
 2. Sammenligne resultatet med tidligere versjon av UD 
 
    a. Overblikk i MaltEval
-   `--Metric` kan være `LAS` (Labelled accuracy score) viser andelen riktig etikett og peker fra riktig hode til riktig node, mens `UAS` viser bare andelen som peker på riktig node. 
+   `--Metric` kan være `LAS` (Labelled accuracy score) viser andelen riktig etikett og peker fra riktig hode til riktig node, mens `UAS` viser bare andelen som peker på riktig node. Bytt ut `METRIC`-variabelen og kjør kommandoen to ganger for å få begge statistikk-filene.
 
     ```
-    java -jar dist-20141005/lib/MaltEval.jar -s $CONVERTED -g $UD_OFFICIAL --GroupBy Deprel --Metric UAS > conversion_stats_UAS.txt
+    METRIC=UAS
+
+    java -jar dist-20141005/lib/MaltEval.jar -s $CONVERTED -g $UD_OFFICIAL --GroupBy Deprel --Metric $METRIC > conversion_stats_${METRIC}.txt
     ```
 
    b. Score relasjoner ut fra likhet mellom vår konvertering og tidligere versjon av UD:
