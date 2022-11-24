@@ -18,9 +18,8 @@
 
     ```
     PARTITION=train
-    TODAY=$(date +%d-%m-%Y_%H%M%S)
 
-    NDT_FILE=data/ndt_nb_${PARTITION}_retokenized_no_quotechar_udfeatspos.conllu
+    NDT_FILE=data/ndt_nb_${PARTITION}_udfeatspos.conllu
     CONVERTED=data/grew_output_${PARTITION}.conllu
     UD_OFFICIAL=data/no_bokmaal-ud-${PARTITION}_uten_hash.conllu
 
@@ -36,24 +35,29 @@
 
 2. Sammenligne resultatet med tidligere versjon av UD 
 
-   a. Overblikk i MaltEval
-   `--Metric` kan være `LAS` (Labelled accuracy score) viser andelen riktig etikett og peker fra riktig hode til riktig node, mens `UAS` viser bare andelen som peker på riktig node. Bytt ut `METRIC`-variabelen og kjør kommandoen to ganger for å få begge statistikkfilene.
+   a. Statistikk over relasjoner
 
-    ```
-    METRIC=UAS
+      I hvor stor grad matcher relasjonene i konversjonen ift. UD på
+      - at relasjonen `R(x,y)` finnes i den andre trebanken, med samme etikett, og mellom de samme nodene? --> Sett `METRIC=LAS` (Labelled Accuracy Score) i kommandoen under.
+      - at det finnes en relasjon `R(x,y)` mellom nodene `x` og `y` (uavhengig av etikett)? --> Sett `METRIC=UAS`
 
-    java -jar dist-20141005/lib/MaltEval.jar -s $CONVERTED -g $UD_OFFICIAL --GroupBy Deprel --Metric $METRIC > conversion_stats_${METRIC}.txt
-    ```
+      ```
+      METRIC=UAS
 
-   b. Score relasjoner ut fra likhet mellom vår konvertering og tidligere versjon av UD:
-      - Hvilke ordklasser (felt 4) /evt. feats (felt 6) som oftest har feil hode (felt 7)
-      - Hvilke NDT-relasjoner ender oftest med feil hode (og merkelapp)?
-      - Hvilke UD-relasjonspar (vår vs. eldre) har feil merkelapp (felt 8)?
+      java -jar dist-20141005/lib/MaltEval.jar -s $CONVERTED -g $UD_OFFICIAL --GroupBy Deprel --Metric $METRIC > conversion_stats_${METRIC}.txt
+      ```
+      Bytt ut `METRIC`-variabelen og kjør kommandoen på nytt for å få begge statistikkene.
+
+   b. Overblikk i MaltEval
+
+      Se visuell sammenligning av setningsgrafene, og søk etter relasjonene som har flest feil (dårligst score fra pkt a.)
+      ```
+      java -jar dist-20141005/lib/MaltEval.jar -s $CONVERTED -g $UD_OFFICIAL -v 1
+      ```
 
 3. Skrive regler som håndterer de høyfrekvente feilene
-     - Legg inn regel i en grs-fil i [rules/](./rules/)
+     - Legg inn regel i en grs-fil i [rules/](./rules/) (Se [grew dokumentasjon ](https://grew.fr/doc/rule/))
      - Legg inn referanse til regelsett eller regel i [mainstrategy.grs](./rules/mainstrategy.grs)
-     - Dokumentasjon på regelsyntaks på [grew.fr](https://grew.fr/doc/rule/)
 
 
 
@@ -63,7 +67,7 @@
     Se på strukturelle forskjeller mellom UD og NDT for 200 utvalgte setninger med MaltEval. 
 
       ```
-      java -jar dist-20141005/lib/MaltEval.jar -s data/2019_gullkorpus_ud_før_annotasjon_uten_hash.conllu data/2019_gullkorpus_ndt_uten_hash.conllu -g data/2019_gullkorpus_ud_uten_hash.conllu -v 1
+      java -jar dist-20141005/lib/MaltEval.jar -s data/gullkorpus/2019_gullkorpus_ud_før_annotasjon_uten_hash.conllu data/gullkorpus/2019_gullkorpus_ndt_uten_hash.conllu -g data/gullkorpus/2019_gullkorpus_ud_uten_hash.conllu -v 1
       ```
 
 2.  Kjør grew på eksempelsetninger med en teststrategi 
@@ -80,7 +84,7 @@
     ```
     grew transform \
       -i  $INPUT \
-      -o  data/output/out.conll \
+      -o  data/output.conll \
       -grs  rules/teststrategy.grs \
       -strat main \
       -safe_commands
@@ -114,13 +118,13 @@ $ tree --gitignore -L 2
 ├── data
 │   ├── grew_output_train.conllu
 │   ├── gullkorpus
-│   ├── ndt_nb_dev_retokenized_no_quotechar_udfeatspos.conllu
+│   ├── ndt_nb_dev_udfeatspos.conllu
 │   ├── ndt_nb-NO.conllu
-│   ├── ndt_nb_test_retokenized_no_quotechar_udfeatspos.conllu
-│   ├── ndt_nb_train_retokenized_no_quotechar_udfeatspos.conllu
-│   ├── ndt_nn_dev_retokenized_no_quotechar_udfeatspos.conllu
-│   ├── ndt_nn_test_retokenized_no_quotechar_udfeatspos.conllu
-│   ├── ndt_nn_train_retokenized_no_quotechar_udfeatspos.conllu
+│   ├── ndt_nb_test_udfeatspos.conllu
+│   ├── ndt_nb_train_udfeatspos.conllu
+│   ├── ndt_nn_dev_udfeatspos.conllu
+│   ├── ndt_nn_test_udfeatspos.conllu
+│   ├── ndt_nn_train_udfeatspos.conllu
 │   ├── no_bokmaal-ud-dev_uten_hash.conllu
 │   ├── no_bokmaal-ud-test_uten_hash.conllu
 │   ├── no_bokmaal-ud-train_uten_hash.conllu
