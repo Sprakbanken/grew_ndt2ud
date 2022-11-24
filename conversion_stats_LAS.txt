@@ -24,6 +24,7 @@ parseraccuracy /    treebankaccuracy /    Deprel
 0                   -                     PUTFYLL
 0                   -                     SBU
 0                   -                     SPRED
+0                   -                     SUBJ
 0                   -                     UKJENT
 -                   0                     acl
 -                   0                     acl:cleft
@@ -41,8 +42,8 @@ parseraccuracy /    treebankaccuracy /    Deprel
 -                   0                     compound:prt
 0.978               0.978                 conj
 0.978               0.97                  cop
-0.225               0.329                 csubj
-0.057               0.5                   csubj:pass
+0.467               0.327                 csubj
+1                   0.5                   csubj:pass
 0.695               0.91                  det
 0.656               0.972                 discourse
 0.956               0.956                 expl

@@ -24,6 +24,7 @@ parseraccuracy /    treebankaccuracy /    Deprel
 1                   -                     PUTFYLL
 0.984               -                     SBU
 0.977               -                     SPRED
+0.912               -                     SUBJ
 1                   -                     UKJENT
 -                   0.366                 acl
 -                   0.977                 acl:cleft
@@ -41,7 +42,7 @@ parseraccuracy /    treebankaccuracy /    Deprel
 -                   1                     compound:prt
 0.978               0.978                 conj
 0.978               0.975                 cop
-0.695               0.454                 csubj
+0.467               0.454                 csubj
 1                   1                     csubj:pass
 1                   1                     det
 0.981               0.972                 discourse
