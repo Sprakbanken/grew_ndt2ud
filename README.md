@@ -37,7 +37,7 @@
 2. Sammenligne resultatet med tidligere versjon av UD 
 
    a. Overblikk i MaltEval
-   `--Metric` kan være `LAS` (Labelled accuracy score) viser andelen riktig etikett og peker fra riktig hode til riktig node, mens `UAS` viser bare andelen som peker på riktig node. Bytt ut `METRIC`-variabelen og kjør kommandoen to ganger for å få begge statistikk-filene.
+   `--Metric` kan være `LAS` (Labelled accuracy score) viser andelen riktig etikett og peker fra riktig hode til riktig node, mens `UAS` viser bare andelen som peker på riktig node. Bytt ut `METRIC`-variabelen og kjør kommandoen to ganger for å få begge statistikkfilene.
 
     ```
     METRIC=UAS
