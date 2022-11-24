@@ -11,7 +11,10 @@ rule punctuation_mid_sentence {
 }
 
 rule nominal_subject {
-  pattern { DEP [upos=PROPN|NOUN|PRON]; e: GOV -[SUBJ]-> DEP; }
+  pattern { DEP [upos=ADJ|PROPN|NOUN|PRON]; e: GOV -[SUBJ]-> DEP; }
+    without {
+    DEP -[cop]-> *;
+  }
   commands { e.label = nsubj }
 }
 
