@@ -53,8 +53,8 @@ parseraccuracy /    treebankaccuracy /    Deprel
 1                   0.863                 iobj
 0.985               0.506                 mark
 0.977               0.392                 nmod
-0.98                0.853                 nsubj
-0.997               0.825                 nsubj:pass
+0.98                0.87                  nsubj
+0.997               0.847                 nsubj:pass
 -                   0                     nummod
 -                   0                     obj
 0.986               0.889                 obl
