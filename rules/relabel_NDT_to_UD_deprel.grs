@@ -16,7 +16,7 @@ rule nominal_subject {
 }
 
 rule clausal_subject {
-  pattern { DEP [upos <> PROPN|NOUN|PRON ]; e: GOV -[SUBJ]-> DEP; }
+  pattern { DEP [upos=VERB]; e: GOV -[SUBJ]-> DEP; }
   commands { e.label = csubj }
 }
 
