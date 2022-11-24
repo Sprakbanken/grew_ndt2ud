@@ -11,7 +11,7 @@ rule punctuation_mid_sentence {
 }
 
 rule nominal_subject {
-  pattern { DEP [upos=ADJ|PROPN|NOUN|PRON]; e: GOV -[SUBJ]-> DEP; }
+  pattern { DEP [upos<>VERB]; e: GOV -[SUBJ]-> DEP; }
     without {
     DEP -[cop]-> *;
   }
@@ -21,6 +21,12 @@ rule nominal_subject {
 rule clausal_subject {
   pattern { DEP [upos=VERB]; e: GOV -[SUBJ]-> DEP; }
   commands { e.label = csubj }
+}
+
+rule copular_clausal_subject {
+  pattern { e1: GOV -[SUBJ]-> DEP;
+            e2: DEP -[cop]-> D2; }
+  commands { e1.label = csubj }
 }
 
 rule root_finite_verb {
@@ -41,6 +47,11 @@ rule expletive_obj {
 rule indirect_obj {
   pattern { e: GOV -[ IOBJ ]-> DEP }
   commands { e.label = iobj }
+}
+
+rule subj_predicative {
+  pattern { e: GOV -[ SPRED ]-> DEP }
+  commands { e.label = xcomp } % copular constr. should be no problem, since they are converted first in reverse_heads
 }
 
 rule obj_predicative {
@@ -134,23 +145,57 @@ rule appositional_modifier {
   commands { e.label = appos }
 }
 
-% presenteringssetninger: når "være" er rot og setningen har PSUBJ og FSUBJ, men ikke SPRED. Behold roten.
+% presenteringssetninger: når "være" er rot og setningen har PSUBJ og FSUBJ. Behold roten.
 % forutsetter at strukturen ikke er endret.
 rule presentational_expl {
   pattern {
-    H [ lemma="være" ];
-    D1 [ upos = NOUN|PRON|PROPN ];
+    D1 [ upos <> VERB|ADP ];
     e1: H -[PSUBJ]-> D1;
     e2: H -[FSUBJ]-> D2;
   }
-  without {
-    H -[SPRED]-> *;
-  }
+  without { H -[cop]-> *; }
   commands {
     e1.label = nsubj;
     e2.label = expl;
   }
 }
+
+rule fsubj_psubj_verb {
+  pattern {
+    D1 [ upos = VERB ];
+    e1: H -[PSUBJ]-> D1;
+    e2: H -[FSUBJ]-> D2;
+  }
+  commands {
+    e1.label = csubj;
+    e2.label = expl;
+  }
+}
+
+
+rule only_psubj_nom {
+  pattern {
+    D [ upos <> VERB|ADP ];
+    e: H -[PSUBJ]-> D;
+  }
+  without { H -[FSUBJ]-> *;
+            H -[cop]-> *;}
+  commands {
+    e.label = nsubj;
+  }
+}
+
+rule only_psubj_vb {
+  pattern {
+    D [ upos = VERB ];
+    e: H -[PSUBJ]-> D;
+  }
+  without { H -[FSUBJ]-> *; }
+  commands {
+    e.label = csubj;
+  }
+}
+
 
 % "være" and "ha" can both be temporal auxiliaries in a passive construction, but only "bli" gets the "aux:pass" relation
 rule passive_lex_aux_bli {

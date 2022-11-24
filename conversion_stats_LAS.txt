@@ -20,11 +20,8 @@ parseraccuracy /    treebankaccuracy /    Deprel
 0                   -                     INFV
 0                   -                     PAR
 0                   -                     POBJ
-0                   -                     PSUBJ
 0                   -                     PUTFYLL
 0                   -                     SBU
-0                   -                     SPRED
-0                   -                     SUBJ
 0                   -                     UKJENT
 -                   0                     acl
 -                   0                     acl:cleft
@@ -42,8 +39,8 @@ parseraccuracy /    treebankaccuracy /    Deprel
 -                   0                     compound:prt
 0.987               0.987                 conj
 0.999               0.991                 cop
-0.988               0.74                  csubj
-1                   0.5                   csubj:pass
+0.987               0.972                 csubj
+1                   1                     csubj:pass
 0.695               0.91                  det
 0.656               0.972                 discourse
 0.96                0.96                  expl
@@ -53,8 +50,8 @@ parseraccuracy /    treebankaccuracy /    Deprel
 1                   0.863                 iobj
 0.985               0.506                 mark
 0.977               0.392                 nmod
-0.98                0.87                  nsubj
-0.997               0.847                 nsubj:pass
+0.979               0.89                  nsubj
+0.997               0.861                 nsubj:pass
 -                   0                     nummod
 -                   0                     obj
 0.986               0.889                 obl
@@ -63,5 +60,5 @@ parseraccuracy /    treebankaccuracy /    Deprel
 0.741               0.738                 punct
 -                   0                     reparandum
 0.979               0.858                 root
-0.99                0.214                 xcomp
+0.98                0.597                 xcomp
 

@@ -20,11 +20,8 @@ parseraccuracy /    treebankaccuracy /    Deprel
 0.032               -                     INFV
 0.965               -                     PAR
 1                   -                     POBJ
-0.967               -                     PSUBJ
 1                   -                     PUTFYLL
 0.985               -                     SBU
-0.988               -                     SPRED
-0.975               -                     SUBJ
 1                   -                     UKJENT
 -                   0.821                 acl
 -                   0.977                 acl:cleft
@@ -42,7 +39,7 @@ parseraccuracy /    treebankaccuracy /    Deprel
 -                   1                     compound:prt
 0.987               0.987                 conj
 0.999               0.996                 cop
-0.99                0.991                 csubj
+0.992               0.991                 csubj
 1                   1                     csubj:pass
 1                   1                     det
 0.981               0.972                 discourse
@@ -63,5 +60,5 @@ parseraccuracy /    treebankaccuracy /    Deprel
 0.743               0.739                 punct
 -                   1                     reparandum
 0.979               0.981                 root
-1                   0.993                 xcomp
+0.992               0.993                 xcomp
 
