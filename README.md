@@ -109,6 +109,7 @@ Dette skriptet bruker filene [`gullkorpus_*_ids.txt`](./data/gullkorpus/) for å
 $ tree --gitignore -L 2 
 
 .
+├── conversion_stats_LAS.txt
 ├── conversion_stats_UAS.txt
 ├── data
 │   ├── grew_output_train.conllu
@@ -146,5 +147,5 @@ $ tree --gitignore -L 2
 └── utils
     └── MaltEval-dist.zip
 
-8 directories, 28 files
+8 directories, 29 files
 ```
