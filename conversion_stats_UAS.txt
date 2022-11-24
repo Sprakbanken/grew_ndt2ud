@@ -1,0 +1,66 @@
+Evaluation arguments: -s data/grew_output_train.conllu -g data/no_bokmaal-ud-train_uten_hash.conllu --GroupBy Deprel --Metric UAS
+====================================================
+Gold:   data/no_bokmaal-ud-train_uten_hash.conllu
+Parsed: data/grew_output_train.conllu
+====================================================
+GroupBy-> Deprel
+Metric-> UAS
+
+====================================================
+
+parseraccuracy /    treebankaccuracy /    Deprel
+------------------------------------------------------
+0.993               -                     ADV
+0.915               -                     ATR
+1                   -                     DET
+0.942               -                     DOBJ
+1                   -                     FOPRED
+0.987               -                     FRAG
+0.133               -                     FSPRED
+0.005               -                     INFV
+0.956               -                     PAR
+0.441               -                     POBJ
+0.774               -                     PSUBJ
+1                   -                     PUTFYLL
+0.984               -                     SBU
+0.977               -                     SPRED
+1                   -                     UKJENT
+-                   0.366                 acl
+-                   0.977                 acl:cleft
+-                   0.987                 acl:relcl
+-                   0.679                 advcl
+0.872               0.994                 advmod
+1                   0.998                 amod
+0.977               0.984                 appos
+0.998               0.919                 aux
+0.999               0.995                 aux:pass
+0.934               0.996                 case
+0.984               0.984                 cc
+-                   0.97                  ccomp
+-                   1                     compound
+-                   1                     compound:prt
+0.978               0.978                 conj
+0.978               0.975                 cop
+0.695               0.454                 csubj
+1                   1                     csubj:pass
+1                   1                     det
+0.981               0.972                 discourse
+0.956               0.956                 expl
+0.973               -                     flat
+-                   1                     flat:foreign
+-                   1                     flat:name
+0.998               0.998                 iobj
+0.962               0.564                 mark
+0.999               0.999                 nmod
+0.975               0.975                 nsubj
+0.997               0.997                 nsubj:pass
+-                   1                     nummod
+-                   1                     obj
+0.999               0.999                 obl
+-                   0.957                 orphan
+-                   0.966                 parataxis
+0.737               0.733                 punct
+-                   1                     reparandum
+0.972               0.973                 root
+0.975               0.753                 xcomp
+

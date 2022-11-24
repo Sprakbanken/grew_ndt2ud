@@ -4,16 +4,16 @@
 
 1. Kjøre reglene vi allerede har på et av datasettene: 
   
-  Du kan endre miljøvariabelen `PARTITION` fra `train` til `dev` når vi vil sjekke hvor langt vi har kommet. 
+    Du kan endre miljøvariabelen `PARTITION` fra `train` til `dev` når vi vil sjekke hvor langt vi har kommet.
 
-  Den første linjen i den konverterte conll-filen `$CONVERTED` lister opp kolonnenavnene, og gir feilmelding med MaltEval: `# global.columns = ID FORM LEMMA UPOS XPOS FEATS HEAD DEPREL DEPS MISC`. Den siste kommandoen i kodeblokken under fjerner denne linjen. 
+    Den første linjen i den konverterte conll-filen `$CONVERTED` lister opp kolonnenavnene, og gir feilmelding med MaltEval: `# global.columns = ID FORM LEMMA UPOS XPOS FEATS HEAD DEPREL DEPS MISC`. Den siste kommandoen i kodeblokken under fjerner denne linjen.
 
     ```
     PARTITION=train
-    TODAY=$(date +%d-%m-%y_%H%M%S)
+    TODAY=$(date +%d-%m-%Y_%H%M%S)
 
-    NDT_FILE=data/retokenized/ndt_nb_${PARTITION}_retokenized_no_quotechar_udfeatspos.conllu
-    CONVERTED=data/output/${PARTITION}_${TODAY}.conllu
+    NDT_FILE=data/ndt_nb_${PARTITION}_retokenized_no_quotechar_udfeatspos.conllu
+    CONVERTED=data/grew_output_${PARTITION}.conllu
     UD_OFFICIAL=data/no_bokmaal-ud-${PARTITION}_uten_hash.conllu
 
     grew transform \
@@ -29,10 +29,12 @@
 2. Sammenligne resultatet med tidligere versjon av UD 
 
    a. Overblikk i MaltEval
-   `--Metric` kan være `LAS` (Labelled accuracy score) viser andelen riktig etikett og peker fra riktig hode til riktig node, mens `UAS` viser bare andelen som peker på riktig node. 
+   `--Metric` kan være `LAS` (Labelled accuracy score) viser andelen riktig etikett og peker fra riktig hode til riktig node, mens `UAS` viser bare andelen som peker på riktig node. Bytt ut `METRIC`-variabelen og kjør kommandoen to ganger for å få begge statistikk-filene.
 
     ```
-    java -jar dist-20141005/lib/MaltEval.jar -s $CONVERTED -g $UD_OFFICIAL --GroupBy Deprel --Metric UAS > conversion_stats.txt
+    METRIC=UAS
+
+    java -jar dist-20141005/lib/MaltEval.jar -s $CONVERTED -g $UD_OFFICIAL --GroupBy Deprel --Metric $METRIC > conversion_stats_${METRIC}.txt
     ```
 
    b. Score relasjoner ut fra likhet mellom vår konvertering og tidligere versjon av UD:
