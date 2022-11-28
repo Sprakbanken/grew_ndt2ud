@@ -15,6 +15,28 @@ rule par_punct {
   commands { e.label = punct }
 }
 
+rule flat_punct {
+  pattern {DEP [upos=PUNCT]; e: GOV -[ FLAT ]-> DEP }
+  commands { e.label = punct }
+}
+
+rule flat_foreign {
+  pattern {GOV [upos=X]; e: GOV -[ FLAT ]-> DEP }
+  commands { e.label = flat;
+              e.2 = foreign; }
+}
+
+rule flat_name_propn {
+  pattern {GOV [upos=PROPN]; e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
+  commands { e.label = flat;
+              e.2 = name; }
+}
+
+rule flat_compound {
+  pattern {e: GOV -[ FLAT ]-> DEP; GOV >> DEP; }
+  commands { e.label = compound }
+}
+
 rule par_rest {
   pattern {DEP [upos<>PUNCT]; e: GOV -[ PAR ]-> DEP;  }
   commands { e.label = parataxis }
@@ -259,11 +281,6 @@ rule oblique_nominal {
     e: GOV -[ADV]-> DEP;
   }
   commands { e.label = obl }
-}
-
-rule flat_names {
-  pattern { e: GOV -[FLAT]-> DEP; }
-  commands { e.label = flat }
 }
 
 rule appositional_modifier {
