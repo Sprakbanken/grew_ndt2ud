@@ -12,6 +12,7 @@ parseraccuracy /    treebankaccuracy /    Deprel
 ------------------------------------------------------
 0.212               -                     ADV
 0.754               -                     ATR
+1                   -                     FLAT
 1                   -                     FOPRED
 0.133               -                     FSPRED
 0.032               -                     INFV
@@ -28,7 +29,7 @@ parseraccuracy /    treebankaccuracy /    Deprel
 0.998               1                     case
 0.991               0.991                 cc
 0.952               0.973                 ccomp
--                   1                     compound
+0.796               1                     compound
 -                   1                     compound:prt
 0.987               0.987                 conj
 0.999               0.996                 cop
@@ -37,9 +38,8 @@ parseraccuracy /    treebankaccuracy /    Deprel
 1                   1                     det
 0.981               0.972                 discourse
 0.96                0.96                  expl
-0.973               -                     flat
--                   1                     flat:foreign
--                   1                     flat:name
+0.927               1                     flat:foreign
+0.991               1                     flat:name
 1                   1                     iobj
 0.985               0.987                 mark
 1                   0.999                 nmod
