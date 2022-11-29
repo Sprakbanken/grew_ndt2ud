@@ -10,6 +10,38 @@ rule punctuation_mid_sentence {
   commands { e.label = punct }
 }
 
+rule par_punct {
+  pattern {DEP [upos=PUNCT]; e: GOV -[ PAR ]-> DEP;  }
+  commands { e.label = punct }
+}
+
+rule flat_punct {
+  pattern {DEP [upos=PUNCT]; e: GOV -[ FLAT ]-> DEP }
+  commands { e.label = punct }
+}
+
+rule flat_foreign {
+  pattern {GOV [upos=X]; e: GOV -[ FLAT ]-> DEP }
+  commands { e.label = flat;
+              e.2 = foreign; }
+}
+
+rule flat_name_propn {
+  pattern {GOV [upos=PROPN]; e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
+  commands { e.label = flat;
+              e.2 = name; }
+}
+
+rule flat_compound {
+  pattern {e: GOV -[ FLAT ]-> DEP; GOV >> DEP; }
+  commands { e.label = compound }
+}
+
+rule par_rest {
+  pattern {DEP [upos<>PUNCT]; e: GOV -[ PAR ]-> DEP;  }
+  commands { e.label = parataxis }
+}
+
 rule nominal_subject {
   pattern { DEP [upos<>VERB]; e: GOV -[SUBJ]-> DEP; }
     without {
@@ -34,6 +66,16 @@ rule root_finite_verb {
   commands { e.label = root }
 }
 
+rule root_frag {
+  pattern { e: GOV -[ FRAG ]-> DEP }
+  commands { e.label = root }
+}
+
+rule ukjent {
+  pattern { e: GOV -[ UKJENT ]-> DEP }
+  commands { e.label = reparandum }
+}
+
 rule expletive_subj {
   pattern { e: GOV -[ FSUBJ ]-> DEP }
   commands { e.label = expl }
@@ -42,6 +84,26 @@ rule expletive_subj {
 rule expletive_obj {
   pattern { e: GOV -[ FOBJ ]-> DEP }
   commands { e.label = expl }
+}
+
+rule nominal_obj {
+  pattern { DEP [ upos<> VERB ];
+            e: GOV -[ DOBJ | POBJ ]-> DEP; }
+  without { DEP -[cop]-> *; }
+  commands { e.label = obj }
+}
+
+rule finv_obj {
+  pattern { DEP [ VerbForm=Fin ];
+            e: GOV -[ DOBJ | POBJ ]-> DEP; }
+  commands { e.label = ccomp }
+}
+
+rule finv_obj_aux {
+  pattern { D2 [ VerbForm=Fin ];
+            e1: GOV -[ DOBJ | POBJ ]-> D1;
+            e2: D1 -[cop|aux|aux:pass]-> D2; }
+  commands { e1.label = ccomp }
 }
 
 rule indirect_obj {
@@ -79,8 +141,8 @@ rule coordination_verbal_ellipsis {
   commands { e.label = conj }
 }
 
-rule subclause_at {
-  pattern { DEP [form="at"]; e: GOV -[SBU]-> DEP;}
+rule subjunction {
+  pattern {e: GOV -[SBU]-> DEP;}
   commands { e.label = mark }
 }
 
@@ -89,55 +151,136 @@ rule subclause_aa {
   commands { e.label = mark }
 }
 
-rule determiner {
-  pattern { GOV [upos= NOUN|PROPN]; DEP [upos=DET|NUM]; e: GOV -[DET]-> DEP; }
-  commands { e.label = det }
+
+rule num {
+  pattern {DEP [upos=NUM]; e: GOV -[DET]-> DEP; }
+  commands { e.label = nummod}
+}
+
+rule det_noun {
+  pattern {DEP [upos=NOUN|PROPN]; e: GOV -[DET]-> DEP; }
+  commands { e.label = nmod }
+}
+
+rule det_adj {
+  pattern {DEP [upos=ADJ]; e: GOV -[DET]-> DEP; }
+  commands { e.label = amod }
 }
 
 rule determiner_genitive {
-  pattern { GOV [upos= NOUN|PROPN]; DEP [upos=PROPN, Case=Gen]; e: GOV -[DET]-> DEP; }
-  commands { e.label = det }
+  pattern {DEP [Case=Gen]; e: GOV -[DET]-> DEP; }
+  commands { e.label = nmod }
 }
 
 rule determiner_flat_name_genitive {
-  pattern { GOV [upos= NOUN|PROPN]; DEP [upos=PROPN]; DEP2[Case=Gen]; e: GOV -[DET]-> DEP; DEP -[FLAT|flat]-> DEP2;}
-  commands { e.label = det }
+  pattern {DEP [upos=PROPN]; DEP2[Case=Gen]; e: GOV -[DET]-> DEP; DEP -[FLAT|flat]-> DEP2;}
+  commands { e.label = nmod }
 }
 
 rule determiner_possessive {
-  pattern { GOV [upos= NOUN|PROPN]; DEP [upos=PRON, Poss=Yes]; e: GOV -[DET]-> DEP; }
+  pattern {DEP [Poss=Yes]; e: GOV -[DET]-> DEP; }
+  commands { e.label = nmod }
+}
+
+rule determiner {
+  pattern {DEP [upos=DET|PRON]; e: GOV -[DET]-> DEP; }
   commands { e.label = det }
 }
 
+rule acl_verbal {
+  pattern { D1 [upos=VERB];
+            e1: GOV -[ ATR ]-> D1;}
+  commands {e1.label = acl;
+            e1.2 = relcl;}
+}
+
+rule acl_aux {
+  pattern {e1: GOV -[ ATR ]-> D1;
+            e2: D1 -[cop|aux|aux:pass]-> D2;}
+  commands {e1.label = acl;
+            e1.2 = relcl;}
+}
+
+% Last version of UD seems to introduce a distinction between acl and acl:relcl
+% if this distinction is to be kept, remove "e1.2 = relcl" in the rules above and
+% uncomment the rules below. The rules below are too restrictive, so they should be
+% modified, e.g. to account for relative clauses with "der"
+%rule relcl_som_verbal {
+%  pattern {D2 [lemma="som"|"å"];
+%            e1: GOV -[ acl ]-> D1;
+%            e2: D1 -> D2;}
+%  commands {e1.2 = relcl}
+%}
+
+%rule relcl_som_aux {
+%  pattern { D3 [ lemma="som"|"å"];
+%            e1: GOV -[ acl ]-> D1;
+%            e2: D1 -[cop|aux|aux:pass]-> D2;
+%            e3: D1 -> D3;}
+%  commands {e1.2 = relcl}
+%}
+
+%rule relcl_verbal {
+%  pattern {D1 [upos=VERB];
+%            e1: GOV -[ acl ]-> D1;}
+%  without {e2: D1 -[SBU|mark]-> D2;}
+%  commands {e1.2 = relcl}
+%}
+
+%rule relcl_aux {
+%  pattern {e1: GOV -[ acl ]-> D1;
+%            e2: D1 -[cop|aux|aux:pass]-> D2;
+%            e3: D1 -> D3;}
+%  without {e4: D1 -[SBU|mark]-> D4;}
+%  commands {e1.2 = relcl}
+%}
+
 rule adjectival_modifier {
-  pattern { GOV [upos = NOUN|PROPN]; DEP [upos=ADJ]; e: GOV -[ ATR ]-> DEP; }
+  pattern {DEP [upos=ADJ]; e: GOV -[ ATR ]-> DEP; }
   commands { e.label = amod }
 }
 
 rule nominal_modifier {
-  pattern { GOV [upos = NOUN|PROPN]; DEP [upos=NOUN]; e: GOV -[ ATR ]-> DEP; }
+  pattern {DEP [upos=NOUN|PROPN|NUM|DET|PRON|X]; e: GOV -[ ATR ]-> DEP; }
   commands { e.label = nmod }
+}
+
+rule adv_on_nom {
+  pattern {DEP [upos=ADV]; e: GOV -[ ATR ]-> DEP; }
+  commands { e.label = advmod }
 }
 
 rule adverbial_modifier {
   pattern {
-    DEP [ upos=ADV|PART ];
+    DEP [ upos=ADV|PART|ADJ|DET|NUM|DET|ADP ]; % Check if ADP is allowed acc. to UD guidelines.
     e: GOV -[ADV]-> DEP;
   }
+    without { DEP -[cop|aux|aux:pass]-> *; }
   commands { e.label = advmod }
+}
+
+rule adverbial_cl_modifier {
+  pattern {
+    DEP [ upos=VERB ];
+    e: GOV -[ADV]-> DEP;
+  }
+  commands { e.label = advcl }
+}
+
+rule adverbial_cl_modifier_aux {
+  pattern {
+    e1: GOV -[ADV]-> D1;
+    e2: D1 -[cop|aux|aux:pass]-> D2;
+  }
+  commands { e1.label = advcl }
 }
 
 rule oblique_nominal {
   pattern {
-    DEP [ upos= NOUN|PROPN  ];
+    DEP [ upos= NOUN|PROPN|PRON  ];
     e: GOV -[ADV]-> DEP;
   }
   commands { e.label = obl }
-}
-
-rule flat_names {
-  pattern { e: GOV -[FLAT]-> DEP; }
-  commands { e.label = flat }
 }
 
 rule appositional_modifier {
@@ -253,3 +396,17 @@ rule passive_subject_periphrastic {
   }
 }
 
+rule inf_obj_control {
+  pattern { DEP [ VerbForm=Inf|Part ];
+            e: GOV -[ DOBJ | POBJ ]-> DEP; }
+  without {e2: DEP -[nsubj | csubj | nsubj:pass | csubj:pass ]-> SUB;}
+  commands { e.label = xcomp }
+}
+
+rule inf_obj_control_aux {
+  pattern { D2 [ VerbForm=Inf ];
+            e1: GOV -[ DOBJ | POBJ ]-> D1;
+            e2: D1 -[cop|aux|aux:pass]-> D2;}
+  without {e3: D1 -[nsubj | csubj | nsubj:pass | csubj:pass ]-> SUB;}
+  commands { e1.label = xcomp }
+}

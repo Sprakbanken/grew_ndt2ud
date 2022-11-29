@@ -10,23 +10,17 @@ Metric-> UAS
 
 parseraccuracy /    treebankaccuracy /    Deprel
 ------------------------------------------------------
-0.996               -                     ADV
-0.993               -                     ATR
-1                   -                     DET
-0.995               -                     DOBJ
+0.212               -                     ADV
+0.754               -                     ATR
+1                   -                     FLAT
 1                   -                     FOPRED
-0.999               -                     FRAG
 0.133               -                     FSPRED
 0.032               -                     INFV
-0.965               -                     PAR
-1                   -                     POBJ
 1                   -                     PUTFYLL
-0.985               -                     SBU
-1                   -                     UKJENT
 -                   0.821                 acl
 -                   0.977                 acl:cleft
--                   0.988                 acl:relcl
--                   0.989                 advcl
+1                   0.988                 acl:relcl
+0.999               0.989                 advcl
 1                   0.999                 advmod
 1                   0.999                 amod
 0.997               0.993                 appos
@@ -34,8 +28,8 @@ parseraccuracy /    treebankaccuracy /    Deprel
 0.999               0.995                 aux:pass
 0.998               1                     case
 0.991               0.991                 cc
--                   0.973                 ccomp
--                   1                     compound
+0.952               0.973                 ccomp
+0.796               1                     compound
 -                   1                     compound:prt
 0.987               0.987                 conj
 0.999               0.996                 cop
@@ -44,21 +38,20 @@ parseraccuracy /    treebankaccuracy /    Deprel
 1                   1                     det
 0.981               0.972                 discourse
 0.96                0.96                  expl
-0.973               -                     flat
--                   1                     flat:foreign
--                   1                     flat:name
+0.927               1                     flat:foreign
+0.991               1                     flat:name
 1                   1                     iobj
 0.985               0.987                 mark
-0.999               0.999                 nmod
+1                   0.999                 nmod
 0.98                0.98                  nsubj
 0.997               0.998                 nsubj:pass
--                   1                     nummod
--                   1                     obj
+1                   1                     nummod
+1                   1                     obj
 1                   1                     obl
 -                   1                     orphan
--                   0.975                 parataxis
+0.975               0.975                 parataxis
 0.743               0.739                 punct
--                   1                     reparandum
-0.979               0.981                 root
-0.992               0.993                 xcomp
+1                   1                     reparandum
+0.981               0.981                 root
+0.996               0.993                 xcomp
 
