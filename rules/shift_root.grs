@@ -1,6 +1,6 @@
 rule rev_root_modal_aux_to_lexical_verb {
   pattern {
-    AUX [lemma="ville"|"kunne"|"måtte"|"skulle"|"burde"];
+    AUX [lemma="ville"|"kunne"|"måtte"|"skulle"|"burde"|"ha"];
     LEX [upos=VERB];
     r1: R -[FINV]-> AUX;
     e: AUX -[INFV]-> LEX;
@@ -16,7 +16,7 @@ rule rev_root_modal_aux_to_lexical_verb {
 
 rule rev_root_modal_aux_chain_to_lexical {
   pattern {
-    AUX1 [upos=AUX, lemma="ville"|"kunne"|"måtte"|"skulle"|"burde"];
+    AUX1 [upos=AUX, lemma="ville"|"kunne"|"måtte"|"skulle"|"burde"|"ha"];
     AUX2 [upos=AUX];
     AUX3 [upos=AUX];
     e1: AUX1 -[INFV]-> AUX2;
@@ -36,7 +36,6 @@ rule rev_root_modal_aux_chain_to_lexical {
   }
 }
 
-
 rule shift_root_auxiliary_copula_predicate {
 % F.eks. "Aftenposten fikk være med på ..."
     pattern {
@@ -44,7 +43,6 @@ rule shift_root_auxiliary_copula_predicate {
         % nodes
         H[upos=AUX];
         AUX[upos=AUX, lemma="være"];
-        PRED[upos=ADP];
 
         % dependencies
         r: R -[FINV]-> H;
