@@ -27,7 +27,7 @@ rule flat_foreign {
 }
 
 rule flat_name_propn {
-  pattern {GOV [upos=PROPN]; e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
+  pattern {e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
   commands { e.label = flat;
               e.2 = name; }
 }
@@ -241,7 +241,7 @@ rule adjectival_modifier {
 }
 
 rule nominal_modifier {
-  pattern {DEP [upos=NOUN|PROPN|NUM|DET|PRON|X]; e: GOV -[ ATR ]-> DEP; }
+  pattern {DEP [upos=NOUN|PROPN|NUM|DET|PRON|X|PART|ADP]; e: GOV -[ ATR ]-> DEP; }
   commands { e.label = nmod }
 }
 
@@ -409,4 +409,21 @@ rule inf_obj_control_aux {
             e2: D1 -[cop|aux|aux:pass]-> D2;}
   without {e3: D1 -[nsubj | csubj | nsubj:pass | csubj:pass ]-> SUB;}
   commands { e1.label = xcomp }
+}
+
+rule free_opred_relabel {
+  pattern { e1: GOV -[ FOPRED ]-> D1; }
+  without {e2: GOV -[ obj ]-> D2; } % tatt fra forrige versjon. Tviler litt på at dette er korrekt
+  commands { e1.label = xcomp }
+}
+
+rule free_spred_relabel {
+  pattern { e1: GOV -[ FSPRED ]-> D1; }
+  without {e2: GOV -[ nsubj ]-> D2; } % tatt fra forrige versjon. Tviler litt på at dette er korrekt
+  commands { e1.label = xcomp }
+}
+
+rule relabel_putfyll_nmod {
+  pattern { e: GOV -[ PUTFYLL ]-> DEP; } % Denne analysen gir ikke så mye mening, men har den med foreløpig for å speile forrige versjon
+  commands { e.label = nmod }
 }
