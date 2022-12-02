@@ -2,7 +2,7 @@
 rule focustype_head_SPRED_copula {
 	pattern {
     H [ lemma="være" ];
-    e: H -[SPRED]-> D;
+    e: H -[SPRED | INFV ]-> D; % Mulig at vi skal ha en egen behandling av tilfeller med INFV
   }
   without {
     H -[PSUBJ]-> *;
@@ -40,6 +40,51 @@ rule reverse_lex_aux_verbs {
     shift H ==> D;
     add_edge f: D -> H;
     f.label = aux;
+  }
+}
+
+% kombinasjoner av hjelpeverb og copula
+rule reverse_cop_aux {
+  pattern {
+    COP [lemma="være"];
+    AUX [upos=AUX];
+    e1: AUX -[ INFV ]-> COP;
+    e2: COP -[ SPRED ]-> SPRED;
+  }
+  commands {
+    del_edge e1;
+    del_edge e2;
+    shift AUX ==> SPRED;
+    shift COP ==> SPRED;
+    add_edge f1: SPRED -> AUX;
+    add_edge f2: SPRED -> COP;
+    f1.label = aux;
+    f2.label = cop;
+  }
+}
+
+rule reverse_cop_aux_aux {
+  pattern {
+    COP [lemma="være"];
+    AUX1 [upos=AUX];
+    AUX2 [upos=AUX];
+    e1: AUX1 -[ INFV ]-> AUX2;
+    e2: AUX2 -[ INFV ]-> COP;
+    e3: COP -[ SPRED ]-> SPRED;
+  }
+  commands {
+    del_edge e1;
+    del_edge e2;
+    del_edge e3;
+    shift AUX1 ==> SPRED;
+    shift AUX2 ==> SPRED;
+    shift COP ==> SPRED;
+    add_edge f1: SPRED -> AUX1;
+    add_edge f2: SPRED -> AUX2;
+    add_edge f3: SPRED -> COP;
+    f1.label = aux;
+    f2.label = aux;
+    f3.label = cop;
   }
 }
 
