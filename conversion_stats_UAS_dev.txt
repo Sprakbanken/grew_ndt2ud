@@ -1,0 +1,50 @@
+Evaluation arguments: -s data/grew_output_dev.conllu -g data/no_bokmaal-ud-dev_uten_hash.conllu --GroupBy Deprel --Metric UAS
+====================================================
+Gold:   data/no_bokmaal-ud-dev_uten_hash.conllu
+Parsed: data/grew_output_dev.conllu
+====================================================
+GroupBy-> Deprel
+Metric-> UAS
+
+====================================================
+
+parseraccuracy /    treebankaccuracy /    Deprel
+------------------------------------------------------
+1                   0.827                 acl
+-                   1                     acl:cleft
+1                   1                     acl:relcl
+1                   1                     advcl
+1                   1                     advmod
+1                   1                     amod
+1                   1                     appos
+0.998               0.999                 aux
+0.992               0.992                 aux:pass
+1                   1                     case
+0.999               0.999                 cc
+1                   1                     ccomp
+0.872               1                     compound
+-                   1                     compound:prt
+0.999               0.999                 conj
+1                   0.999                 cop
+1                   1                     csubj
+1                   1                     csubj:pass
+1                   1                     det
+1                   1                     discourse
+0.997               0.997                 expl
+-                   1                     flat:foreign
+0.981               1                     flat:name
+1                   1                     iobj
+0.999               0.999                 mark
+1                   1                     nmod
+1                   0.999                 nsubj
+0.98                0.995                 nsubj:pass
+1                   1                     nummod
+1                   1                     obj
+1                   1                     obl
+-                   1                     orphan
+1                   1                     parataxis
+0.776               0.772                 punct
+1                   1                     reparandum
+1                   1                     root
+0.922               0.998                 xcomp
+

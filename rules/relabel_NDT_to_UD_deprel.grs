@@ -158,7 +158,7 @@ rule num {
 }
 
 rule det_noun {
-  pattern {DEP [upos=NOUN|PROPN]; e: GOV -[DET]-> DEP; }
+  pattern {DEP [upos=NOUN|PROPN|X|SYM]; e: GOV -[DET]-> DEP; }
   commands { e.label = nmod }
 }
 
@@ -187,53 +187,53 @@ rule determiner {
   commands { e.label = det }
 }
 
-rule acl_verbal {
-  pattern { D1 [upos=VERB];
-            e1: GOV -[ ATR ]-> D1;}
+rule aclrel_verbal {
+  pattern {
+    D1 [upos=VERB|AUX];
+    e1: GOV -[ ATR ]-> D1;}
+  without {
+    D2 [lemma="at"|"å"];
+    e2: D1 -> D2;
+    }
   commands {e1.label = acl;
             e1.2 = relcl;}
+}
+
+rule aclrel_aux {
+  pattern {e1: GOV -[ ATR ]-> D1;
+            e2: D1 -[cop|aux|aux:pass]-> D2;
+          }
+    without {
+    D3 [lemma="at"|"å"];
+    e3: D1 -> D3;
+    }
+  commands {e1.label = acl;
+            e1.2 = relcl;}
+}
+
+rule acl_verbal {
+  pattern {
+    D1 [upos=VERB|AUX];
+    D2 [lemma="at"|"å"];
+    e1: GOV -[ ATR ]-> D1;
+    e2: D1 -> D2;
+  }
+  commands {
+    e1.label = acl;
+  }
 }
 
 rule acl_aux {
-  pattern {e1: GOV -[ ATR ]-> D1;
-            e2: D1 -[cop|aux|aux:pass]-> D2;}
-  commands {e1.label = acl;
-            e1.2 = relcl;}
+  pattern {
+    D3 [lemma="at"|"å"];
+    e1: GOV -[ ATR ]-> D1;
+    e2: D1 -[cop|aux|aux:pass]-> D2;
+    e3: D1 -> D3;
+  }
+  commands {
+    e1.label = acl;
+  }
 }
-
-% Last version of UD seems to introduce a distinction between acl and acl:relcl
-% if this distinction is to be kept, remove "e1.2 = relcl" in the rules above and
-% uncomment the rules below. The rules below are too restrictive, so they should be
-% modified, e.g. to account for relative clauses with "der"
-%rule relcl_som_verbal {
-%  pattern {D2 [lemma="som"|"å"];
-%            e1: GOV -[ acl ]-> D1;
-%            e2: D1 -> D2;}
-%  commands {e1.2 = relcl}
-%}
-
-%rule relcl_som_aux {
-%  pattern { D3 [ lemma="som"|"å"];
-%            e1: GOV -[ acl ]-> D1;
-%            e2: D1 -[cop|aux|aux:pass]-> D2;
-%            e3: D1 -> D3;}
-%  commands {e1.2 = relcl}
-%}
-
-%rule relcl_verbal {
-%  pattern {D1 [upos=VERB];
-%            e1: GOV -[ acl ]-> D1;}
-%  without {e2: D1 -[SBU|mark]-> D2;}
-%  commands {e1.2 = relcl}
-%}
-
-%rule relcl_aux {
-%  pattern {e1: GOV -[ acl ]-> D1;
-%            e2: D1 -[cop|aux|aux:pass]-> D2;
-%            e3: D1 -> D3;}
-%  without {e4: D1 -[SBU|mark]-> D4;}
-%  commands {e1.2 = relcl}
-%}
 
 rule adjectival_modifier {
   pattern {DEP [upos=ADJ]; e: GOV -[ ATR ]-> DEP; }
@@ -241,7 +241,7 @@ rule adjectival_modifier {
 }
 
 rule nominal_modifier {
-  pattern {DEP [upos=NOUN|PROPN|NUM|DET|PRON|X|PART|ADP]; e: GOV -[ ATR ]-> DEP; }
+  pattern {DEP [upos=NOUN|PROPN|NUM|DET|PRON|X|PART|ADP|SYM]; e: GOV -[ ATR ]-> DEP; }
   commands { e.label = nmod }
 }
 
@@ -261,7 +261,7 @@ rule adverbial_modifier {
 
 rule adverbial_cl_modifier {
   pattern {
-    DEP [ upos=VERB ];
+    DEP [ upos=VERB|AUX ];
     e: GOV -[ADV]-> DEP;
   }
   commands { e.label = advcl }
@@ -277,10 +277,19 @@ rule adverbial_cl_modifier_aux {
 
 rule oblique_nominal {
   pattern {
-    DEP [ upos= NOUN|PROPN|PRON  ];
+    DEP [ upos= NOUN|PROPN|PRON|X|SYM  ];
     e: GOV -[ADV]-> DEP;
   }
   commands { e.label = obl }
+}
+
+% hvis ikke ...
+rule hvis_adv {
+  pattern {
+    DEP [ lemma="hvis" ];
+    e: GOV -[ ADV ]-> DEP;
+  }
+  commands {e.label = advmod}
 }
 
 rule appositional_modifier {
@@ -426,4 +435,31 @@ rule free_spred_relabel {
 rule relabel_putfyll_nmod {
   pattern { e: GOV -[ PUTFYLL ]-> DEP; } % Denne analysen gir ikke så mye mening, men har den med foreløpig for å speile forrige versjon
   commands { e.label = nmod }
+}
+
+rule relable_infv_xcomp {
+  pattern {
+    e1: GOV -[ INFV ]-> D1;
+    e2: GOV -[ nsubj ]-> D2; }
+  commands { e1.label = xcomp }
+}
+
+rule relable_infv_ccomp {
+  pattern {
+    e1: GOV -[ INFV ]-> D1;
+  }
+  without { e2: GOV -[ nsubj ]-> D2; }
+  commands { e1.label = ccomp }
+}
+
+% Rene feilrettingsregler. Kanskje i egen fil?
+
+rule error_og_adv {
+  pattern {
+    DEP [ lemma="og"|"for", upos=CCONJ ];
+    e: GOV -[ ADV ]-> DEP;
+  }
+  commands {
+    e.label = cc
+  }
 }
