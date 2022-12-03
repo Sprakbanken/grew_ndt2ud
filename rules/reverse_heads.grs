@@ -105,3 +105,43 @@ rule inf_mark_rule {
       add_edge f:D -> H; f.label = mark;
   }
 }
+
+rule shift_komma_fst_conj {
+  pattern {
+    KOMMA [ lemma="$,"|"$-" ];
+    e1: H -[ KOORD ]-> KNJ;
+    e2: H -[ IK ]-> KOMMA;
+    KOMMA >> H;
+    KNJ >> KOMMA;
+  }
+  without {
+    e3: H -[ KOORD ]-> KNJ2;
+    KNJ >> KNJ2;
+  }
+  commands {
+    del_edge e2;
+    add_edge f2: KNJ -> KOMMA;
+    f2.label = punct;
+  }
+}
+
+rule shift_komma_scd_conj {
+  pattern {
+    KOMMA [ lemma="$,"|"$-" ];
+    e1: H -[ KOORD ]-> KNJ;
+    e2: H -[ KOORD ]-> KNJ2;
+    e3: KNJ -[ IK ]-> KOMMA;
+    KOMMA >> KNJ;
+    KNJ2 >> KOMMA;
+  }
+  without {
+    e4: H -[ KOORD ]-> KNJ3;
+    KNJ2 >> KNJ3;
+    KNJ3 >> KNJ;
+  }
+  commands {
+    del_edge e3;
+    add_edge f3: KNJ2 -> KOMMA;
+    f3.label = punct;
+  }
+}
