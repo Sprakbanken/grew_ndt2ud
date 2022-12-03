@@ -43,7 +43,7 @@ parseraccuracy /    treebankaccuracy /    Deprel
 0.984               0.953                 obl
 -                   0                     orphan
 1                   1                     parataxis
-0.752               0.75                  punct
+0.854               0.852                 punct
 1                   1                     reparandum
 1                   0.996                 root
 0.749               0.914                 xcomp
