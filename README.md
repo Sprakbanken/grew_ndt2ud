@@ -1,22 +1,22 @@
 # Konvertering av NDT til UD med GREW
 
-**Innhold**
-- [Konvertering av NDT til UD med GREW](#konvertering-av-ndt-til-ud-med-grew)
-  - [Arbeidsflyt](#arbeidsflyt)
-  - [Eksempeldrevet arbeidsflyt](#eksempeldrevet-arbeidsflyt)
-  - [Hjelpeskript](#hjelpeskript)
-  - [Referanser](#referanser)
-  - [Filstruktur](#filstruktur)
+## Innhold
+
+- [Arbeidsflyt](#arbeidsflyt)
+- [Eksempeldrevet arbeidsflyt](#eksempeldrevet-arbeidsflyt)
+- [Hjelpeskript](#hjelpeskript)
+- [Referanser](#referanser)
+- [Filstruktur](#filstruktur)
 
 ## Arbeidsflyt
 
-1. Kjøre reglene vi allerede har på et av datasettene: 
-  
+1. Kjøre reglene vi allerede har på et av datasettene:
+
     Du kan endre miljøvariabelen `PARTITION` fra `train` til `dev` når vi vil sjekke hvor langt vi har kommet.
 
     Den første linjen i den konverterte conll-filen `$CONVERTED` lister opp kolonnenavnene, og gir feilmelding med MaltEval: `# global.columns = ID FORM LEMMA UPOS XPOS FEATS HEAD DEPREL DEPS MISC`. Den siste kommandoen i kodeblokken under fjerner denne linjen.
 
-    ```
+    ```shell
     PARTITION=train
 
     NDT_FILE=data/ndt_nb_${PARTITION}_udfeatspos.conllu
@@ -33,7 +33,7 @@
     tail -n +2 $CONVERTED > tmp.conll && mv tmp.conll $CONVERTED
     ```
 
-2. Sammenligne resultatet med tidligere versjon av UD 
+2. Sammenligne resultatet med tidligere versjon av UD
 
    a. Statistikk over relasjoner
 
@@ -41,47 +41,49 @@
       - at relasjonen `R(x,y)` finnes i den andre trebanken, med samme etikett, og mellom de samme nodene? --> Sett `METRIC=LAS` (Labelled Accuracy Score) i kommandoen under.
       - at det finnes en relasjon `R(x,y)` mellom nodene `x` og `y` (uavhengig av etikett)? --> Sett `METRIC=UAS`
 
-      ```
+      ```shell
       METRIC=UAS
 
       java -jar dist-20141005/lib/MaltEval.jar -s $CONVERTED -g $UD_OFFICIAL --GroupBy Deprel --Metric $METRIC > conversion_stats_${METRIC}.txt
       ```
+
       Bytt ut `METRIC`-variabelen og kjør kommandoen på nytt for å få begge statistikkene.
 
    b. Overblikk i MaltEval
 
       Se visuell sammenligning av setningsgrafene, og søk etter relasjonene som har flest feil (dårligst score fra pkt a.)
-      ```
+
+      ```shell
       java -jar dist-20141005/lib/MaltEval.jar -s $CONVERTED -g $UD_OFFICIAL -v 1
       ```
 
 3. Skrive regler som håndterer de høyfrekvente feilene
-     - Legg inn regel i en grs-fil i [rules/](./rules/) (Se [grew dokumentasjon ](https://grew.fr/doc/rule/))
+
+     - Legg inn regel i en grs-fil i [rules/](./rules/) (Se [grew dokumentasjon](https://grew.fr/doc/rule/))
      - Legg inn referanse til regelsett eller regel i [mainstrategy.grs](./rules/mainstrategy.grs)
 
-
-
 ## Eksempeldrevet arbeidsflyt
-1.  Finn eksempelsetninger på et syntaktisk fenomen med MaltEval.
 
-    Se på strukturelle forskjeller mellom UD og NDT for 200 utvalgte setninger med MaltEval. 
+1. Finn eksempelsetninger på et syntaktisk fenomen med MaltEval.
 
-      ```
+    Se på strukturelle forskjeller mellom UD og NDT for 200 utvalgte setninger med MaltEval.
+
+      ```shell
       java -jar dist-20141005/lib/MaltEval.jar -s data/gullkorpus/2019_gullkorpus_ud_før_annotasjon_uten_hash.conllu data/gullkorpus/2019_gullkorpus_ndt_uten_hash.conllu -g data/gullkorpus/2019_gullkorpus_ud_uten_hash.conllu -v 1
       ```
 
-2.  Kjør grew på eksempelsetninger med en teststrategi 
+2. Kjør grew på eksempelsetninger med en teststrategi
 
-    Samle alle eksempelsetningene fra `data/sentences` i én fil, eller oppgi hvilken setningsfil du vil konvertere. 
+    Samle alle eksempelsetningene fra `data/sentences` i én fil, eller oppgi hvilken setningsfil du vil konvertere.
 
-    ```
+    ```shell
     INPUT=data/sentences/all.conll
     cat data/sentences/* > $INPUT
     ```
 
-    Test ut reglene som brukes i `rules/teststrategy.grs`.
+    Test reglene som brukes i `rules/teststrategy.grs`.
 
-    ```
+    ```shell
     grew transform \
       -i  $INPUT \
       -o  data/output.conll \
@@ -92,25 +94,25 @@
 
     I `rules/teststrategy.grs`: filtrer regler/pakker/strategier fra `Seq()`-lista i `strat test`-strategien med kommentarsymbolet `%`
 
-## Hjelpeskript 
+## Hjelpeskript
 
 Setningene i gullkorpuset er hentet fra to partisjoner, dev og train, av den norske UD-trebanken. Det er 200 setninger totalt.
 Dette skriptet bruker filene [`gullkorpus_*_ids.txt`](./data/gullkorpus/) for å dele opp gullkorpuset med den samme partisjoneringen.
 
-```
+```shell
 ./fetch_sents_by_ID.sh
 ```
 
 ## Referanser
-* [Starting a new treebank? Go SUD!](https://aclanthology.org/2021.depling-1.4) (Gerdes et al., DepLing 2021)
-* [Graph Matching and Graph Rewriting: GREW tools for corpus exploration, maintenance and conversion](https://aclanthology.org/2021.eacl-demos.21) (Guillaume, EACL 2021)
-* [Dependency Parsing with Graph Rewriting](https://aclanthology.org/W15-2204) (Guillaume & Perrier, 2015)
 
+- [Starting a new treebank? Go SUD!](https://aclanthology.org/2021.depling-1.4) (Gerdes et al., DepLing 2021)
+- [Graph Matching and Graph Rewriting: GREW tools for corpus exploration, maintenance and conversion](https://aclanthology.org/2021.eacl-demos.21) (Guillaume, EACL 2021)
+- [Dependency Parsing with Graph Rewriting](https://aclanthology.org/W15-2204) (Guillaume & Perrier, 2015)
 
 ## Filstruktur
 
-```
-$ tree --gitignore -L 2 
+```shell
+$ tree --gitignore -L 2
 
 .
 ├── conversion_stats_LAS.txt
