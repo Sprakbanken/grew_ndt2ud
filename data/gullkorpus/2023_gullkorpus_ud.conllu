@@ -447,7 +447,7 @@
 8	Cathrine	Cathrine	PROPN	_	_	9	nsubj	_	_
 9	søkte	søke	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	6	acl:relcl	_	_
 10	trøst	trøst	NOUN	_	Definite=Ind|Gender=Fem|Number=Sing	9	obj	_	_
-11	hos	hos	ADP	_	_	7	case	_	_
+11	hos	hos	ADP	_	_	6	case	_	_
 12	hadde	ha	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	13	aux	_	_
 13	sendt	sende	VERB	_	VerbForm=Part	4	advcl	_	_
 14	inn	inn	ADP	_	_	13	compound:prt	_	_
