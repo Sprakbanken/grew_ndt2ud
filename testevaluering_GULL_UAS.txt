@@ -1,0 +1,51 @@
+Evaluation arguments: -s data/grew_output_TEST.conllu -g data/gullkorpus/2023_gullkorpus_ud_uten_hash.conllu --GroupBy Deprel --Metric UAS
+====================================================
+Gold:   data/gullkorpus/2023_gullkorpus_ud_uten_hash.conllu
+Parsed: data/grew_output_TEST.conllu
+====================================================
+GroupBy-> Deprel
+Metric-> UAS
+
+====================================================
+
+parseraccuracy /    treebankaccuracy /    Deprel
+------------------------------------------------------
+1                   0.944                 acl
+-                   1                     acl:cleft
+1                   1                     acl:relcl
+1                   1                     advcl
+-                   1                     advcl:cleft
+0.99                1                     advmod
+1                   1                     amod
+0.467               0.667                 appos
+1                   1                     aux
+1                   1                     aux:pass
+0.994               0.994                 case
+0.972               0.972                 cc
+1                   0.941                 ccomp
+1                   1                     compound
+-                   0.929                 compound:prt
+0.975               0.967                 conj
+0.969               1                     cop
+1                   1                     csubj
+1                   1                     csubj:pass
+1                   1                     det
+1                   1                     discourse
+-                   1                     dislocated
+0.968               0.967                 expl
+-                   1                     flat:foreign
+0.767               0.657                 flat:name
+1                   1                     iobj
+1                   1                     mark
+0.994               0.995                 nmod
+0.964               0.965                 nsubj
+1                   1                     nsubj:pass
+1                   1                     nummod
+0.986               0.986                 obj
+1                   0.984                 obl
+-                   1                     orphan
+0.929               0.929                 parataxis
+0.841               0.84                  punct
+0.985               0.985                 root
+0.974               1                     xcomp
+
