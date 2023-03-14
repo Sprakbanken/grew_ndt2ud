@@ -96,11 +96,27 @@
 
 ## Hjelpeskript
 
-Setningene i gullkorpuset er hentet fra to partisjoner, dev og train, av den norske UD-trebanken. Det er 200 setninger totalt.
-Dette skriptet bruker filene [`gullkorpus_*_ids.txt`](./data/gullkorpus/) for å dele opp gullkorpuset med den samme partisjoneringen.
+Filen [`2023_gullkorpus_ud.conllu`](./data/gullkorpus/2023_gullkorpus_ud.conllu) inneholder 200 setninger fra den norske UD-trebanken for bokmål. Setningene er blitt rettet manuelt og kan brukes til å teste konverteringen av NDT.
+
+1. Dette skriptet henter ut de samme setningene fra NDT som finnes i gullkorpuset:
 
 ```shell
 ./fetch_sents_by_ID.sh
+```
+
+Setningene i gullkorpuset er hentet fra to partisjoner i UD, dev og train.
+
+2. Dette python-skriptet bruker setnings-IDer i [`gullkorpus_*_ids.txt`-filene](./data/gullkorpus/) for å splitte en conllu-fil i de samme partisjonene, og fjerne kommentarlinjer.
+
+```shell
+FILENAME="data/gullkorpus/2023_gullkorpus_ud.conllu"
+python ./partition_data.py $FILENAME -f data/gullkorpus/gullkorpus_*_ids.txt
+```
+
+3. Uten `-f`-argumentet fjerner skriptet bare kommentarlinjene.
+
+```shell
+python ./partition_data.py $FILENAME
 ```
 
 ## Referanser

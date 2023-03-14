@@ -1,6 +1,6 @@
 """Script to parse, filter and write conllu-files for use with MaltEval.
 
-The following regex patterns and functions are fetched from https://github.com/peresolb/trebankdatabase/blob/master/utils.py 
+The following regex patterns and functions are fetched from https://github.com/peresolb/trebankdatabase/blob/master/utils.py
 The only change to the original utils module is that "_" does NOT get swapped out with None.
 
 Below is a new function to filter sentences on ids.
@@ -129,59 +129,65 @@ def parse_conll_file(filepath: Path) -> dict:
 
 # Filter data by ids
 
-def partition_by_sent_ids(id_file, conll_data):
-    id_list = Path(id_file).read_text().split("\n")
-    partition = sorted([sent for sent in conll_data.get("sentences") if sent.get("sent_id") in id_list], key=lambda x: x.get("sent_id"))
-    return partition
-
-def write_conll_without_hash(data, output_file):
-    with open(output_file, "w+") as fp:
-        for sentence in data:
-            for token in sentence.get("tokens"):
-                feats = [str(t) for t in token.values()]
-                fp.write("\t".join(feats) + "\n")
-            fp.write("\n")
-        fp.write("\n")
+def extract_partition(sentences, id_list):
+    partition = [sent for sent in sentences if sent.get("sent_id") in id_list]
+    return sorted(partition, key=lambda x: x.get("sent_id"))
 
 
-def partition(): 
+def get_ids(id_file):
+    return Path(id_file).read_text().split("\n")
+
+
+def format_conll_line(token_dict):
+    return "\t".join([str(t) for t in token_dict.values()])
+
+
+def iterate_conll_data_no_hash(data):
+    for sentence in data:
+        for token in sentence.get("tokens"):
+            yield format_conll_line(token) + "\n"
+        yield "\n"
+    return "\n"
+
+
+def write_conll(data, output_file, suffix=None):
+    output_file = output_file.parent / f"{output_file.stem}{suffix if suffix else ''}.conllu"
+    print(f"Write conll data to {output_file}")
+    with open(output_file, "w+", encoding="utf-8") as fp:
+        fp.writelines(iterate_conll_data_no_hash(data))
+
+
+def partition_by_sent_ids(conll_file, id_files):
+    fpath = Path(conll_file)
+    sentences = parse_conll_file(fpath).get("sentences")
+
+    for id_file in id_files:
+        part = re.match(r".*[_-](\w+)_ids.txt", id_file).group(1)
+        print(f"Extract partition '{part}' from {fpath.name}")
+        ids = get_ids(id_file)
+        partition = extract_partition(sentences, ids)
+        write_conll(partition, fpath, suffix=f"_{part}_uten_hash")
+
+
+def remove_comments(conll_file):
+    fpath = Path(conll_file)
+    conll_data = parse_conll_file(fpath).get("sentences")
+    write_conll(conll_data, fpath, suffix="_uten_hash")
+
+
+if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser()
     parser.add_argument("infiles", nargs="*")
-    parser.add_argument("-u", "--uncomment", action='store_true') 
-    parser.add_argument("-f", "--filter_ids", nargs="*", default=['data/gullkorpus_dev_ids.txt', 'data/gullkorpus_train_ids.txt'])
+    parser.add_argument("-f", "--filter_ids", nargs="*")
     args = parser.parse_args()
 
     for datafile in args.infiles:
-        fpath = Path(datafile)
-        conll_data = parse_conll_file(fpath)
-
-        if args.uncomment:
-            outfile = Path(f"{fpath.parent}/{fpath.stem}_uten_hash.conllu")
-            write_conll_without_hash(conll_data, outfile)
+        print(f"Processing file: {datafile}")
+        if args.filter_ids is not None:
+            partition_by_sent_ids(datafile, args.filter_ids)
         else:
-            for id_file in args.filter_ids:
-                partition_data = partition_by_sent_ids(id_file, conll_data)
-                
-                partition = re.match(r".*[_-](\w+)_ids.txt", id_file).group(1)
-                print(partition)
-                outfile = f"{fpath.parent}/{fpath.stem}_{partition}_uten_hash.conllu"
-                print(outfile)
-                write_conll_without_hash(partition_data, outfile)
-                     
-    
-    print("Ferdig.")
+            remove_comments(datafile)
 
-if __name__ == "__main__": 
-    fpath = Path("data/no_bokmaal-ud-test.conllu")
-    data = parse_conll_file(fpath)
-    outfile = Path(f"{fpath.parent}/{fpath.stem}_uten_hash.conllu")
-    
-    with open(outfile, "w+") as fp:
-        for sent in data.get("sentences"):
-            for token in sent.get("tokens"):
-                feats = [str(t) for t in token.values()]
-                fp.write("\t".join(feats) + "\n")
-            fp.write("\n")
-        fp.write("\n")
+    print("Done.")
