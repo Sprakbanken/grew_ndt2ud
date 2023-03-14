@@ -235,7 +235,7 @@
 7	,	$,	PUNCT	_	_	6	punct	_	_
 8	for	for	ADP	_	_	9	case	_	_
 9	alle	alle	PRON	_	Number=Plur|Person=3|PronType=Prs,Tot	18	obl	_	_
-10	som	som	SCONJ  	_	PronType=Rel	12	mark	_	_
+10	som	som	SCONJ	_	PronType=Rel	12	mark	_	_
 11	har	ha	AUX	_	Mood=Ind|Tense=Pres|VerbForm=Fin	12	aux	_	_
 12	sett	se	VERB	_	VerbForm=Part	9	acl:relcl	_	_
 13	et	en	DET	_	Gender=Neut|Number=Sing|PronType=Art	14	det	_	_
@@ -443,7 +443,7 @@
 4	gjort	gjøre	VERB	_	VerbForm=Part	0	root	_	_
 5	hvis	hvis	SCONJ	_	_	13	mark	_	_
 6	nabokvinnen	nabokvinne	NOUN	_	Definite=Def|Gender=Masc|Number=Sing	13	nsubj	_	_
-7	som	som	SCONJ  	_	PronType=Rel	9	mark	_	_
+7	som	som	SCONJ	_	PronType=Rel	9	mark	_	_
 8	Cathrine	Cathrine	PROPN	_	_	9	nsubj	_	_
 9	søkte	søke	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	6	acl:relcl	_	_
 10	trøst	trøst	NOUN	_	Definite=Ind|Gender=Fem|Number=Sing	9	obj	_	_
