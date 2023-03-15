@@ -1106,7 +1106,7 @@
 16	,	$,	PUNCT	_	_	10	punct	_	_
 17	ble	bli	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	18	aux:pass	_	_
 18	solgt	selge	VERB	_	VerbForm=Part	0	root	_	_
-19	som	som	SCONJ	_	_	20	mark	_	_
+19	som	som	ADP	_	_	20	case	_	_
 20	vrakpant	vrakpant	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	18	obl	_	_
 21	i	i	ADP	_	_	22	case	_	_
 22	2011	2011	NUM	_	Number=Plur|NumType=Card	18	obl	_	_
