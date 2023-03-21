@@ -250,6 +250,17 @@ rule adv_on_nom {
   commands { e.label = advmod }
 }
 
+rule verbal_particle_adverb {
+  pattern {
+    DEP [ upos=ADP ];
+    e: GOV -[ADV]-> DEP;
+  }
+  without { DEP -[PUTFYLL]-> *; }
+  commands {
+    DEP.upos = ADV;
+  }
+}
+
 rule adverbial_modifier {
   pattern {
     DEP [ upos=ADV|PART|ADJ|DET|NUM|DET ];
@@ -290,18 +301,6 @@ rule oblique_adpositional {
   }
   with { DEP -[PUTFYLL]-> * }
   commands { e.label = obl }
-}
-
-rule verbal_particle {
-  pattern {
-    DEP [ upos=ADP ];
-    e: GOV -[ADV]-> DEP;
-  }
-  without { DEP -[PUTFYLL]-> *; }
-  commands {
-    e.1 = compound;
-    e.2 = prt;
-  }
 }
 
 
