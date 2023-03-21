@@ -3,7 +3,7 @@
 The following regex patterns and functions are fetched from https://github.com/peresolb/trebankdatabase/blob/master/utils.py
 The only change to the original utils module is that "_" does NOT get swapped out with None.
 
-Below is a new function to filter sentences on ids.
+Below are new functions to filter sentences on ids.
 """
 
 from pathlib import Path
@@ -16,6 +16,8 @@ COMMENTPATTERN = re.compile(r'^# (.+?) = (.+?)\n')
 NEWPARPATTERN = re.compile(r'^# newpar\n')
 EMPTYLINEPATTERN = re.compile(r'^\n')
 TOKENLINEPATTERN = re.compile(r'^\d+\t([^\s]+?\t){8}[^\s]+?\n')
+DOCIDPATTERN = re.compile(r'^# newpar\n')
+
 
 # Conll fields
 
