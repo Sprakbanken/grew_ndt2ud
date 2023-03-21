@@ -292,6 +292,19 @@ rule oblique_adpositional {
   commands { e.label = obl }
 }
 
+rule verbal_particle {
+  pattern {
+    DEP [ upos=ADP ];
+    e: GOV -[ADV]-> DEP;
+  }
+  without { DEP -[PUTFYLL]-> *; }
+  commands {
+    e.1 = compound;
+    e.2 = prt;
+  }
+}
+
+
 % hvis ikke ...
 rule hvis_adv {
   pattern {
