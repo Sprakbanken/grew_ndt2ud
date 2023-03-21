@@ -12,6 +12,9 @@ ipython_config.py
 # Remove previous ipynb_checkpoints
 #   git rm -r .ipynb_checkpoints/
 
+# Ignore other repos cloned into this one
+grewpy/*
+
 # IntelliJ project files
 .idea
 *.iml
