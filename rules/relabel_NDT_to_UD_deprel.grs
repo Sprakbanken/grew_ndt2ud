@@ -275,11 +275,20 @@ rule adverbial_cl_modifier_aux {
   commands { e1.label = advcl }
 }
 
-rule oblique_nominal_adpositional {
+rule oblique_nominal {
   pattern {
-    DEP [ upos= NOUN|PROPN|PRON|X|SYM|ADP  ];
+    DEP [ upos= NOUN|PROPN|PRON|X|SYM  ];
     e: GOV -[ADV]-> DEP;
   }
+  commands { e.label = obl }
+}
+
+rule oblique_adpositional {
+  pattern {
+    DEP [ upos= ADP  ];
+    e: GOV -[ADV]-> DEP;
+  }
+  with { DEP -[PUTFYLL]-> * }
   commands { e.label = obl }
 }
 
