@@ -252,7 +252,7 @@ rule adv_on_nom {
 
 rule adverbial_modifier {
   pattern {
-    DEP [ upos=ADV|PART|ADJ|DET|NUM|DET|ADP ]; % Check if ADP is allowed acc. to UD guidelines.
+    DEP [ upos=ADV|PART|ADJ|DET|NUM|DET ];
     e: GOV -[ADV]-> DEP;
   }
     without { DEP -[cop|aux|aux:pass]-> *; }
@@ -275,9 +275,9 @@ rule adverbial_cl_modifier_aux {
   commands { e1.label = advcl }
 }
 
-rule oblique_nominal {
+rule oblique_nominal_adpositional {
   pattern {
-    DEP [ upos= NOUN|PROPN|PRON|X|SYM  ];
+    DEP [ upos= NOUN|PROPN|PRON|X|SYM|ADP  ];
     e: GOV -[ADV]-> DEP;
   }
   commands { e.label = obl }
