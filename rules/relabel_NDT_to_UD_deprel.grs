@@ -484,3 +484,18 @@ rule error_og_adv {
     e.label = cc
   }
 }
+
+rule multiple_subjects_predicate_clause {
+  pattern {
+    e: GOV -[nsubj]-> D1;
+  }
+  with {
+    * -[root]-> GOV;
+    GOV -[cop]-> C;
+    GOV -[nsubj]-> D2;
+    D1 << D2
+  }
+  commands {
+    e.2 = outer;
+  }
+}
