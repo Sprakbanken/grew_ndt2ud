@@ -3,7 +3,7 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 import pandas as pd
-from parse_conllu import parse_line, parse_conll_file, CONLLFIELDS
+from parse_conllu import parse_line, parse_conll_file, CONLLFIELDS, write_conll_file, format_tab_separated
 
 
 ##### CONSTANTS
@@ -177,18 +177,6 @@ def replace_placeholder(feats: list, addendum: list):
         return addendum if not field_is_empty(addendum) else ["_"]
     feats.extend(addendum)
     return list(set(feats))
-
-
-def format_tab_separated(token):
-    return "\t".join(map(str, token))
-
-
-def write_conll_file(filename, sentences):
-    with open(filename, "w+") as fp:
-        for sentence in sentences:
-            for token_data in sentence:
-                fp.write(format_tab_separated(token_data) + "\n")
-            fp.write("\n")
 
 
 def split_batch_samples(filename, sample_size: int = 200000):

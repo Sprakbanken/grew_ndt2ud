@@ -1,22 +1,17 @@
 """Script to parse, filter and write conllu-files for use with MaltEval.
 
-The following regex patterns and functions are fetched from https://github.com/peresolb/trebankdatabase/blob/master/utils.py
-The only change to the original utils module is that "_" does NOT get swapped out with None.
+Module copied from https://github.com/Sprakbanken/trebankdatabase/blob/master/utils.py
 
-Below are new functions to filter sentences on ids.
+Changes from the original utils functions:
+- "_" does NOT get swapped out with None.
+- Extra regex patterns to match "newpar" and "newdoc" comment lines
+
+Below are additional functions to filter sentences on ids, load the parsed conll into a dataframe,
+write conllu files with selected metadata (sent_id, text)
 """
 
 from pathlib import Path
 import re
-
-
-# Regular expressions for reading conll lines
-
-COMMENTPATTERN = re.compile(r'^# (.+?) = (.+?)\n')
-NEWPARPATTERN = re.compile(r'^# newpar\n')
-EMPTYLINEPATTERN = re.compile(r'^\n')
-TOKENLINEPATTERN = re.compile(r'^\d+\t([^\s]+?\t){8}[^\s]+?\n')
-DOCIDPATTERN = re.compile(r'^# newpar\n')
 
 
 # Conll fields
@@ -33,6 +28,15 @@ CONLLFIELDS = [
                 'DEPS',
                 'MISC'
             ]
+
+
+# Regular expressions for reading conll lines
+
+COMMENTPATTERN = re.compile(r'^# (.+?) = (.+?)$')
+NEWPARDOCPATTERN = re.compile(r'^# (newpar|newdoc)(?: id = )?(.*)?$')
+EMPTYLINEPATTERN = re.compile(r'^$')
+TOKENLINEPATTERN = re.compile(r'^\d+\t([^\s]+?\t){8}[^\s]+?$')
+
 
 # Functions
 
@@ -51,15 +55,13 @@ def validate_conll_lines(lines: list) -> list:
     invalid_lines = []
     validlines = True
     for i, l in enumerate(lines):
-        validline = False
-        for pattern in [
-                        COMMENTPATTERN,
-                        NEWPARPATTERN,
-                        EMPTYLINEPATTERN,
-                        TOKENLINEPATTERN
-                        ]:
-            if pattern.match(l):
-                validline = True
+        validline = any(
+            pattern.match(l) for pattern in [
+                COMMENTPATTERN,
+                NEWPARDOCPATTERN,
+                EMPTYLINEPATTERN,
+                TOKENLINEPATTERN
+            ])
         if not validline:
             validlines = False
             invalid_lines.append(f'line: {i}, text: {l}')
@@ -84,7 +86,7 @@ def parse_line(conline: str) -> dict:
     '''
 
     vals = conline.strip().split('\t')
-    conlldict = {k: v for k, v in zip(CONLLFIELDS, vals)}
+    conlldict = dict(zip(CONLLFIELDS, vals))
 
     for k, v in conlldict.items():
         if k in ['ID', 'HEAD']:
@@ -109,21 +111,19 @@ def parse_conll_file(filepath: Path) -> dict:
 
     conlldict = {'file': filepath.name, 'sentences': []}
     sentdict = {'tokens': []}
-    with filepath.open(mode='r') as f:
-        lines = validate_conll_lines(f.readlines())
-        for line in lines:
-            if EMPTYLINEPATTERN.match(line):
-                if not sentdict['tokens']:
-                    pass
-                conlldict['sentences'].append(sentdict)
-                sentdict = {'tokens': []}
-            elif NEWPARPATTERN.match(line):
-                sentdict['newpar'] = True
-            elif COMMENTPATTERN.match(line):
-                matchobj = COMMENTPATTERN.match(line)
-                sentdict[matchobj.group(1)] = matchobj.group(2)
-            elif TOKENLINEPATTERN.match(line):
-                sentdict['tokens'].append(parse_line(line))
+    lines = validate_conll_lines(filepath.read_text().splitlines())
+    for line in lines:
+        if EMPTYLINEPATTERN.match(line):
+            if not sentdict['tokens']:
+                pass
+            conlldict['sentences'].append(sentdict)
+            sentdict = {'tokens': []}
+        elif (matchobj := NEWPARDOCPATTERN.match(line)):
+            sentdict[matchobj.group(1)] = True
+        elif (matchobj := COMMENTPATTERN.match(line)):
+            sentdict[matchobj.group(1)] = matchobj.group(2)
+        elif TOKENLINEPATTERN.match(line):
+            sentdict['tokens'].append(parse_line(line))
     return conlldict
 
 
@@ -136,8 +136,8 @@ def extract_partition(sentences, id_list):
     return sorted(partition, key=lambda x: x.get("sent_id"))
 
 
-def get_ids(id_file):
-    return Path(id_file).read_text().split("\n")
+def filereadlines(id_file):
+    return Path(id_file).read_text().splitlines()
 
 
 def format_conll_line(token_dict):
@@ -159,6 +159,19 @@ def write_conll(data, output_file, suffix=None):
         fp.writelines(iterate_conll_data_no_hash(data))
 
 
+
+def format_tab_separated(token):
+    return "\t".join(map(str, token))
+
+
+def write_conll_file(filename, sentences):
+    with open(filename, "w+") as fp:
+        for sentence in sentences:
+            for token_data in sentence:
+                fp.write(format_tab_separated(token_data) + "\n")
+            fp.write("\n")
+
+
 def partition_by_sent_ids(conll_file, id_files):
     fpath = Path(conll_file)
     sentences = parse_conll_file(fpath).get("sentences")
@@ -166,7 +179,7 @@ def partition_by_sent_ids(conll_file, id_files):
     for id_file in id_files:
         part = re.match(r".*[_-](\w+)_ids.txt", id_file).group(1)
         print(f"Extract partition '{part}' from {fpath.name}")
-        ids = get_ids(id_file)
+        ids = filereadlines(id_file)
         partition = extract_partition(sentences, ids)
         write_conll(partition, fpath, suffix=f"_{part}_uten_hash")
 
@@ -175,6 +188,7 @@ def remove_comments(conll_file):
     fpath = Path(conll_file)
     conll_data = parse_conll_file(fpath).get("sentences")
     write_conll(conll_data, fpath, suffix="_uten_hash")
+
 
 
 if __name__ == "__main__":
