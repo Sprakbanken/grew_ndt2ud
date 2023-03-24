@@ -77,64 +77,64 @@ posmap = {
 
 featsmap = {
     '1': {'Person': '1'},
- '2': {'Person': '2'},
- '3': {'Person': '3'},
- '<adj>': '_',  # POS = ADJ
- '<adv>': '_',  # POS=ADV
- '<ikke-clb>': '_',  # Not Clause boundary
- '<kolon>': '_',  # Colon, POS=PUNCT
- '<ordenstall>': {'NumType': 'Ord'}, # lagt til 2.12
- '<perf-part>': {'VerbForm': 'Part'},
- '<pres-part>': {'VerbForm': 'Part'},
- '<punkt>': '_',  #tegnsetting, POS=PUNCT
- '<s-verb>': '_',
- '<spm>': '_', # Spørsmålstegn, POS=PUNCT
- '<utrop>': '_',  #! POS=PUNCT
- 'akk': {'Case': 'Acc'},
- 'appell': '_', # Common noun, POS=NOUN
- 'art': {'PronType': 'Art'},
- 'be': {'Definite': 'Def'},
- 'card': {'NumType': 'Card'},
- 'clb': '_',  #Clause Boundary
- 'dem': {'PronType': 'Dem'},
- 'ent': {'Number': 'Sing'},
- 'fem': {'Gender': 'Fem'},
- 'fl': {'Number': 'Plur'},
- 'fork': {'Abbr': 'Yes'},
- 'forst': '_',  # eg. selv, egen
- 'gen': {'Case': 'Gen'},
- 'hum': {'Animacy': 'Hum'},
- 'imp': {'Mood': 'Imp', 'VerbForm': 'Fin'},
- 'ind': {'PronType': 'Ind'},
- 'inf': {'VerbForm': 'Inf'},
- 'komp': {'Degree': 'Cmp'},
- 'kvant': '_',  #quantifier (POS=DET)
- 'm/f': {'Gender': 'Fem,Masc'},   # New 2.12
- 'mask': {'Gender': 'Masc'},
- 'neg': {'Polarity': 'Neg'},
- 'negpron': {'PronType': 'Neg'},
- 'nom': {'Case': 'Nom'},
- 'nøyt': {'Gender': 'Neut'},
- 'pass': {'Voice': 'Pass'},
- 'perf-part': {'VerbForm': 'Part'},
- 'pers': {'PronType': 'Prs'},
- 'pos': {'Degree': 'Pos'},
- 'poss': {'Poss': 'Yes'},
- 'pres': {'Mood': 'Ind', 'Tense': 'Pres', 'VerbForm': 'Fin'},
- 'pret': {'Mood': 'Ind', 'Tense': 'Past', 'VerbForm': 'Fin'},
- 'prop': '_',  # Egennavn, POS = PROPN
- 'refl': {'Reflex': 'Yes'},
- 'rel': {'PronType': 'Rel'},
- 'res': {'PronType': 'Rcp'},
- 'samset': '_',  #? DEPREL=compound? flat? fixed?
- 'sp': {'PronType': 'Int'},
- 'sup': {'Degree': 'Sup'},
- 'tot': {'PronType': 'Tot'},
- 'ub': {'Definite': 'Ind'},
- 'ubøy': '_',  # Uninflected
- 'ufl': '_',  #Incomplete
- 'unorm': '_'  # feat Typo?
- }
+    '2': {'Person': '2'},
+    '3': {'Person': '3'},
+    '<adj>': '_',  # POS = ADJ
+    '<adv>': '_',  # POS=ADV
+    '<ikke-clb>': '_',  # Not Clause boundary
+    '<kolon>': '_',  # Colon, POS=PUNCT
+    '<ordenstall>': {'NumType': 'Ord'}, # lagt til 2.12
+    '<perf-part>': {'VerbForm': 'Part'},
+    '<pres-part>': {'VerbForm': 'Part'},
+    '<punkt>': '_',  #tegnsetting, POS=PUNCT
+    '<s-verb>': '_',
+    '<spm>': '_', # Spørsmålstegn, POS=PUNCT
+    '<utrop>': '_',  #! POS=PUNCT
+    'akk': {'Case': 'Acc'},
+    'appell': '_', # Common noun, POS=NOUN
+    'art': {'PronType': 'Art'},
+    'be': {'Definite': 'Def'},
+    'card': {'NumType': 'Card'},
+    'clb': '_',  #Clause Boundary
+    'dem': {'PronType': 'Dem'},
+    'ent': {'Number': 'Sing'},
+    'fem': {'Gender': 'Fem'},
+    'fl': {'Number': 'Plur'},
+    'fork': {'Abbr': 'Yes'},
+    'forst': '_',  # eg. selv, egen
+    'gen': {'Case': 'Gen'},
+    'hum': {'Animacy': 'Hum'},
+    'imp': {'Mood': 'Imp', 'VerbForm': 'Fin'},
+    'ind': {'PronType': 'Ind'},
+    'inf': {'VerbForm': 'Inf'},
+    'komp': {'Degree': 'Cmp'},
+    'kvant': '_',  #quantifier (POS=DET)
+    'm/f': {'Gender': 'Fem,Masc'},   # New 2.12
+    'mask': {'Gender': 'Masc'},
+    'neg': {'Polarity': 'Neg'},
+    'negpron': {'PronType': 'Neg'},
+    'nom': {'Case': 'Nom'},
+    'nøyt': {'Gender': 'Neut'},
+    'pass': {'Voice': 'Pass'},
+    'perf-part': {'VerbForm': 'Part'},
+    'pers': {'PronType': 'Prs'},
+    'pos': {'Degree': 'Pos'},
+    'poss': {'Poss': 'Yes'},
+    'pres': {'Mood': 'Ind', 'Tense': 'Pres', 'VerbForm': 'Fin'},
+    'pret': {'Mood': 'Ind', 'Tense': 'Past', 'VerbForm': 'Fin'},
+    'prop': '_',  # Egennavn, POS = PROPN
+    'refl': {'Reflex': 'Yes'},
+    'rel': {'PronType': 'Rel'},
+    'res': {'PronType': 'Rcp'},
+    'samset': '_',  #? DEPREL=compound? flat? fixed?
+    'sp': {'PronType': 'Int'},
+    'sup': {'Degree': 'Sup'},
+    'tot': {'PronType': 'Tot'},
+    'ub': {'Definite': 'Ind'},
+    'ubøy': '_',  # Uninflected
+    'ufl': '_',  #Incomplete
+    'unorm': '_'  # feat Typo?
+}
 
 ### UTILITY FUNCTIONS
 
