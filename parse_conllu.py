@@ -246,12 +246,15 @@ def write_df_to_conll(totaldf, path= None, add_comments=False):
 
 
 if __name__ == "__main__":
+    import argparse
 
-    for datafile in sys.argv[1:]:
-        print(f"Processing file: {datafile}")
-        fpath = Path(datafile)
-        output = fpath.parent / f"{fpath.stem}_OUTPUT{fpath.suffix}"
-        write_conll(parse_conll_file(fpath), output, add_comments=False)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-rc", "--remove_comments", action="store_false")
+    parser.add_argument("-f", "--file", nargs="*")
+    args = parser.parse_args()
 
+    for filename in args.file:
+        fpath = Path(filename)
+        write_conll(parse_conll_file(fpath), fpath, add_comments=args.remove_comments)
 
     print("Done.")

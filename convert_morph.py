@@ -365,18 +365,30 @@ def convert_morphology(data):
         s["tokens"] = converted
     return conll_data
 
+def process_file(filename, add_comments):
+    # Konverter alle splittene av retokenisert ndt data
+    fpath = Path(filename)
+    data = parse_conll_file(fpath)
+    morphdata = convert_morphology(data)
+    output = fpath.parent / f"{fpath.stem}_udmorph{fpath.suffix}"
+    write_conll(morphdata, output, add_comments=add_comments)
+
+
+def process_ndt():
+    for part in ["train", "test", "dev"]:
+        for lang in ["nb", "nn"]:
+            process_file(f"data/ndt_{lang}_{part}.conllu", add_comments=True)
+
 
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-rc", "--remove_comments", action="store_false")
+    parser.add_argument("-f", "--file", nargs="*")
+    args = parser.parse_args()
 
     print("Konverterer morfologiske trekk og POS-tag")
-    for filename in sys.argv[1:]:
-
-        filename = Path(filename)
-        print("INPUT: ",filename)
-
-        conll_data = convert_morphology(parse_conll_file(filename))
-
-        output_path = filename.parent / f"{filename.stem}_udpostfeats{filename.suffix}"
-
-        print("OUTPUT: ", output_path)
-        write_conll(conll_data, output_path, add_comments=True)
+    for filename in args.file:
+        print("FIL: ",filename)
+        process_file(filename, args.remove_comments)
