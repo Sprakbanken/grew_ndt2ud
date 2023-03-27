@@ -67,7 +67,13 @@
       java -jar MaltEval.jar -s parser.conll -g gold.conll --postag gold.postag --deprel gold.deprel
       ```
 
-3. Skrive regler som håndterer de høyfrekvente feilene
+3. Valider utdata med UD's valideringsskript:
+
+   ```shell
+   python ../tools/validate.py --max-err 0 --lang no --level 3 --no-tree-text --no-space-after $CONVERTED 2>&1 | tee validation-report_ndt2ud.txt
+   ```
+
+4. Skrive regler som håndterer de høyfrekvente feilene
 
      - Legg inn regel i en grs-fil i [rules/](./rules/) (Se [grew dokumentasjon](https://grew.fr/doc/rule/))
      - Legg inn referanse til regelsett eller regel i [mainstrategy.grs](./rules/mainstrategy.grs)
