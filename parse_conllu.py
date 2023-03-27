@@ -172,7 +172,7 @@ def partition_by_sent_ids(data, id_files):
     parts = {}
     for id_file in id_files:
         part = re.match(r".*[_-]?(\w+)_ids.txt", id_file).group(1)
-        print(f"Extract partition '{part}' from {fpath.name}")
+        print(f"Extract partition '{part}' from data")
         ids = filereadlines(id_file)
         parts[part] = extract_partition(data, ids)
     return parts
@@ -250,11 +250,12 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument("-rc", "--remove_comments", action="store_false")
-    parser.add_argument("-f", "--file", nargs="*")
+    parser.add_argument("-f", "--file", action="extend", nargs="+", type=str)
+    parser.add_argument("-o", "--outputfile",  type=str, required=False)
     args = parser.parse_args()
 
     for filename in args.file:
-        fpath = Path(filename)
-        write_conll(parse_conll_file(fpath), fpath, add_comments=args.remove_comments)
+        outfile = args.outputfile if args.outputfile is not None else filename
+        write_conll(parse_conll_file(Path(filename)), Path(outfile), add_comments=args.remove_comments)
 
     print("Done.")
