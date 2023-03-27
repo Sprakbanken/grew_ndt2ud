@@ -12,7 +12,7 @@ write conllu files with selected metadata (sent_id, text)
 
 from pathlib import Path
 import re
-
+import sys
 
 # Conll fields
 
@@ -121,7 +121,11 @@ def parse_conll_file(filepath: Path) -> dict:
         elif (matchobj := NEWPARDOCPATTERN.match(line)):
             sentdict[matchobj.group(1)] = True
         elif (matchobj := COMMENTPATTERN.match(line)):
-            sentdict[matchobj.group(1)] = matchobj.group(2)
+            metadata = matchobj.group(1)
+            if metadata == "ud_id":
+                metadata = "sent_id"
+            sentdict[metadata] = matchobj.group(2)
+
         elif TOKENLINEPATTERN.match(line):
             sentdict['tokens'].append(parse_line(line))
     return conlldict
@@ -129,81 +133,64 @@ def parse_conll_file(filepath: Path) -> dict:
 
 ### End of copied module ###
 
-# Filter data by ids
-
-def extract_partition(sentences, id_list):
-    partition = [sent for sent in sentences if sent.get("sent_id") in id_list]
-    return sorted(partition, key=lambda x: x.get("sent_id"))
-
 
 def filereadlines(id_file):
     return Path(id_file).read_text().splitlines()
 
 
-def format_conll_line(token_dict):
-    return "\t".join([str(t) for t in token_dict.values()])
+# Filter data by ids
+
+def extract_partition(data, id_list):
+    partition = [sent for sent in data.get("sentences") if sent.get("sent_id") in id_list]
+    return sorted(partition, key=lambda x: x.get("sent_id"))
 
 
-def iterate_conll_data_no_hash(data):
-    for sentence in data:
+def add_commentlines(datadict, metadatafields):
+    for meta in metadatafields:
+        value = datadict.get(meta)
+        if not value:
+            continue
+        yield f"# {meta} = {value}\n"
+
+#Skriv CONLLU-filer med og uten kommentarlinjer
+
+def iterate_conll_data_dict(data, add_comments=False):
+    for sentence in data.get("sentences"):
+        if add_comments:
+            # Can be 'sent_id', 'text', 'newpar' or 'newpar id', 'newdoc' or 'newdoc id'
+            for line in add_commentlines(sentence, ["sent_id", "text"]):
+                yield line
         for token in sentence.get("tokens"):
-            yield format_conll_line(token) + "\n"
+            yield "\t".join(map(str, token.values())) + "\n"
         yield "\n"
     return "\n"
 
 
-def write_conll(data, output_file, suffix=None):
-    output_file = output_file.parent / f"{output_file.stem}{suffix if suffix else ''}.conllu"
-    print(f"Write conll data to {output_file}")
-    with open(output_file, "w+", encoding="utf-8") as fp:
-        fp.writelines(iterate_conll_data_no_hash(data))
+def write_conll(data, path: Path, add_comments=False):
+    print(f"Write conll data to {path.name}")
+    output_data = iterate_conll_data_dict(data, add_comments=add_comments)
+    with open(path, "w+", encoding="utf-8") as fp:
+        fp.writelines(output_data)
 
 
+def partition_by_sent_ids(data, id_files):
 
-def format_tab_separated(token):
-    return "\t".join(map(str, token))
-
-
-def write_conll_file(filename, sentences):
-    with open(filename, "w+") as fp:
-        for sentence in sentences:
-            for token_data in sentence:
-                fp.write(format_tab_separated(token_data) + "\n")
-            fp.write("\n")
-
-
-def partition_by_sent_ids(conll_file, id_files):
-    fpath = Path(conll_file)
-    sentences = parse_conll_file(fpath).get("sentences")
-
+    parts = {}
     for id_file in id_files:
         part = re.match(r".*[_-](\w+)_ids.txt", id_file).group(1)
         print(f"Extract partition '{part}' from {fpath.name}")
         ids = filereadlines(id_file)
-        partition = extract_partition(sentences, ids)
-        write_conll(partition, fpath, suffix=f"_{part}_uten_hash")
-
-
-def remove_comments(conll_file):
-    fpath = Path(conll_file)
-    conll_data = parse_conll_file(fpath).get("sentences")
-    write_conll(conll_data, fpath, suffix="_uten_hash")
-
+        parts[part] = extract_partition(data, ids)
+    return parts
 
 
 if __name__ == "__main__":
-    import argparse
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument("infiles", nargs="*")
-    parser.add_argument("-f", "--filter_ids", nargs="*")
-    args = parser.parse_args()
-
-    for datafile in args.infiles:
+    for datafile in sys.argv[1:]:
         print(f"Processing file: {datafile}")
-        if args.filter_ids is not None:
-            partition_by_sent_ids(datafile, args.filter_ids)
-        else:
-            remove_comments(datafile)
+        fpath = Path(datafile)
+        output = fpath.parent / f"{fpath.stem}_OUTPUT{fpath.suffix}"
+        write_conll(parse_conll_file(fpath), output, add_comments=False)
+
 
     print("Done.")
