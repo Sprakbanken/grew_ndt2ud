@@ -13,6 +13,9 @@ write conllu files with selected metadata (sent_id, text)
 from pathlib import Path
 import re
 import sys
+import pandas as pd
+from csv import QUOTE_NONE
+
 
 # Conll fields
 
@@ -111,7 +114,7 @@ def parse_conll_file(filepath: Path) -> dict:
 
     conlldict = {'file': filepath.name, 'sentences': []}
     sentdict = {'tokens': []}
-    lines = validate_conll_lines(filepath.read_text().splitlines())
+    lines = validate_conll_lines(filereadlines(filepath))
     for line in lines:
         if EMPTYLINEPATTERN.match(line):
             if not sentdict['tokens']:
@@ -140,10 +143,42 @@ def filereadlines(id_file):
 
 # Filter data by ids
 
+
+def fetch_ids(datafile):
+    for line in filereadlines(datafile):
+        if (matchobj := COMMENTPATTERN.match(line)) and matchobj.group(1) in ["ud_id","sent_id"]:
+            yield matchobj.group(2)
+
+
 def extract_partition(data, id_list):
     partition = [sent for sent in data.get("sentences") if sent.get("sent_id") in id_list]
     return sorted(partition, key=lambda x: x.get("sent_id"))
 
+
+def gather_partition_idlists():
+    partitions = {
+        "test" :  Path("data/ndt_nb_test.conllu"),
+        "dev" : Path("data/ndt_nb_dev.conllu"),
+        "train" : Path("data/ndt_nb_train.conllu"),
+    }
+
+    for part, part_data in partitions.items():
+        part_ids = list(fetch_ids(part_data))
+        Path(f"data/{part}_ids.txt").write_text("\n".join(part_ids))
+
+
+
+def partition_by_sent_ids(data, id_files):
+    parts = {}
+    for id_file in id_files:
+        part = re.match(r".*[_-]?(\w+)_ids.txt", id_file).group(1)
+        print(f"Extract partition '{part}' from {fpath.name}")
+        ids = filereadlines(id_file)
+        parts[part] = extract_partition(data, ids)
+    return parts
+
+
+#Skriv CONLLU-filer med og uten kommentarlinjer
 
 def add_commentlines(datadict, metadatafields):
     for meta in metadatafields:
@@ -152,7 +187,6 @@ def add_commentlines(datadict, metadatafields):
             continue
         yield f"# {meta} = {value}\n"
 
-#Skriv CONLLU-filer med og uten kommentarlinjer
 
 def iterate_conll_data_dict(data, add_comments=False):
     for sentence in data.get("sentences"):
@@ -173,15 +207,42 @@ def write_conll(data, path: Path, add_comments=False):
         fp.writelines(output_data)
 
 
-def partition_by_sent_ids(data, id_files):
+def load_conll_to_df(conlldict):
+    dfs =[]
+    for idx, sentence in enumerate(conlldict.get("sentences")):
+        sent_df = pd.DataFrame(sentence.get("tokens"))
+        for col in sentence.keys():
+            if col == "tokens":
+                continue
+            sent_df[col] = sentence.get(col)
+        sent_df["idx"] = idx
+        dfs.append(sent_df)
 
-    parts = {}
-    for id_file in id_files:
-        part = re.match(r".*[_-](\w+)_ids.txt", id_file).group(1)
-        print(f"Extract partition '{part}' from {fpath.name}")
-        ids = filereadlines(id_file)
-        parts[part] = extract_partition(data, ids)
-    return parts
+    return pd.concat(dfs, ignore_index=True).fillna(False)
+
+
+def get_conll_csv(df):
+    return df[CONLLFIELDS].to_csv(
+        sep='\t', header=False, index=False,  quoting=QUOTE_NONE,
+        quotechar="", escapechar="\\", na_rep="_")
+
+
+def write_df_to_conll(totaldf, path= None, add_comments=False):
+    """Produce conllu string from a pandas dataframe."""
+    gb = totaldf.groupby("idx")
+    mystring = ""
+    ids = gb.groups.keys()
+    for id in ids:
+        df = gb.get_group(id).copy()
+        if add_comments:
+            for line in add_commentlines(df.iloc[0], ["sent_id", "text"]):
+                mystring += line
+        mystring += get_conll_csv(df)
+        mystring += "\n"
+    if path is not None:
+        with Path(path).open(mode="w") as filepath:
+            filepath.write(mystring)
+    return mystring
 
 
 if __name__ == "__main__":

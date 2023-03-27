@@ -3,7 +3,7 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 import pandas as pd
-from parse_conllu import parse_line, parse_conll_file, CONLLFIELDS, write_conll_file, format_tab_separated
+from parse_conllu import parse_conll_file, CONLLFIELDS, write_conll
 
 
 ##### CONSTANTS
@@ -353,7 +353,7 @@ def format_ud_feat(feat_type, feat_val):
 
 # Konverter POS og  morfologiske trekk fra NDT til UD
 
-def process(data):
+def convert_morphology(data):
     conll_data = data.copy()
     for s in conll_data.get("sentences"):
         sentence = s.get("tokens")
@@ -374,11 +374,9 @@ if __name__ == "__main__":
         filename = Path(filename)
         print("INPUT: ",filename)
 
-        conll_data = process(parse_conll_file(filename))
+        conll_data = convert_morphology(parse_conll_file(filename))
 
-        output_dir = filename.parents[0] / "output"
-        output_dir.mkdir(parents=True, exist_ok=True)
-        output_path = output_dir / f"{filename.stem}_udfeatspos{filename.suffix}"
+        output_path = filename.parent / f"{filename.stem}_udpostfeats{filename.suffix}"
 
         print("OUTPUT: ", output_path)
-        write_conll_file(output_path, conll_data)
+        write_conll(conll_data, output_path, add_comments=True)
