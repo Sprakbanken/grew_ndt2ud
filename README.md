@@ -19,7 +19,7 @@
     ```shell
     PARTITION=train
 
-    NDT_FILE=data/ndt_nb_${PARTITION}_udfeatspos.conllu
+    NDT_FILE=data/ndt_nb_${PARTITION}_udmorph.conllu
     CONVERTED=data/grew_output_${PARTITION}.conllu
     UD_OFFICIAL=data/no_bokmaal-ud-${PARTITION}_uten_hash.conllu
 
@@ -29,11 +29,15 @@
       -grs  rules/mainstrategy.grs \
       -strat main \
       -safe_commands
-
-    tail -n +2 $CONVERTED > tmp.conll && mv tmp.conll $CONVERTED
     ```
 
 2. Sammenligne resultatet med tidligere versjon av UD
+
+   Fjern kommentarlinjer fra utdata før du kjører MaltEval, som forventer [CONLL-X-formatet](https://aclanthology.org/W06-2920.pdf):
+
+    ```shell
+    python parse_conllu.py -rc -f $CONVERTED -o tmp.conllu
+    ```
 
    a. Statistikk over relasjoner
 
@@ -44,7 +48,7 @@
       ```shell
       METRIC=UAS
 
-      java -jar dist-20141005/lib/MaltEval.jar -s $CONVERTED -g $UD_OFFICIAL --GroupBy Deprel --Metric $METRIC > conversion_stats_${METRIC}.txt
+      java -jar dist-20141005/lib/MaltEval.jar -s tmp.conllu -g $UD_OFFICIAL --GroupBy Deprel --Metric $METRIC > conversion_stats_${METRIC}.txt
       ```
 
       Bytt ut `METRIC`-variabelen og kjør kommandoen på nytt for å få begge statistikkene.
@@ -54,7 +58,13 @@
       Se visuell sammenligning av setningsgrafene, og søk etter relasjonene som har flest feil (dårligst score fra pkt a.)
 
       ```shell
-      java -jar dist-20141005/lib/MaltEval.jar -s $CONVERTED -g $UD_OFFICIAL -v 1
+      java -jar dist-20141005/lib/MaltEval.jar -s tmp.conllu -g $UD_OFFICIAL -v 1
+      ```
+
+   c. Valider conll-fil med egendefinerte pos-tags og deprel:
+
+      ```shell
+      java -jar MaltEval.jar -s parser.conll -g gold.conll --postag gold.postag --deprel gold.deprel
       ```
 
 3. Skrive regler som håndterer de høyfrekvente feilene
@@ -62,31 +72,6 @@
      - Legg inn regel i en grs-fil i [rules/](./rules/) (Se [grew dokumentasjon](https://grew.fr/doc/rule/))
      - Legg inn referanse til regelsett eller regel i [mainstrategy.grs](./rules/mainstrategy.grs)
 
-## Test konverteringen mot gullkorpuset
-
-```shell
-NDT_UTVALG=data/gullkorpus/2019_gullkorpus_ndt_uten_hash.conllu
-CONVERTED=data/grew_output_TEST.conllu
-GULL=data/gullkorpus/2023_gullkorpus_ud_uten_hash.conllu
-
-grew transform \
-  -i  $NDT_UTVALG \
-  -o  $CONVERTED \
-  -grs  rules/mainstrategy.grs \
-  -strat main \
-  -safe_commands
-
-tail -n +2 $CONVERTED > tmp.conll && mv tmp.conll $CONVERTED
-
-for METRIC in UAS LAS; do
-  java -jar dist-20141005/lib/MaltEval.jar \
-    -s $CONVERTED \
-    -g $GULL \
-    --GroupBy Deprel \
-    --Metric $METRIC \
-    > testevaluering_GULL_$METRIC.txt
-done
-```
 
 ## Eksempeldrevet arbeidsflyt
 
@@ -124,34 +109,20 @@ done
 
 Filen [`2023_gullkorpus_ud.conllu`](./data/gullkorpus/2023_gullkorpus_ud.conllu) inneholder 200 setninger fra den norske UD-trebanken for bokmål. Setningene er blitt rettet manuelt og kan brukes til å teste konverteringen av NDT.
 
-1. Dette skriptet henter ut de samme setningene fra NDT som finnes i gullkorpuset:
+1. I notebooken `process_NDT.ipynb` er det kode for å hente ut UD-partisjonene fra gullkorpuset.
 
-```shell
-./fetch_sents_by_ID.sh
-```
+2. `convert_morph.py` konverterer conll-feltene "feats" og "upos" fra NDT sine merkelapper til UD sine.
 
-Malteval og Grew godtar bare UD sine "FEATS" og "UPOS".
-2. Dette skriptet konverterer conll-feltene "feats" og "upos" fra NDT sine merkelapper til UD sine.
+  ```shell
+  python convert_morph.py -f 'data/gullkorpus/2019_gullkorpus_ndt.conllu' -o 'data/gullkorpus/2019_gullkorpus_ndt_udmorph.conllu'
+  ```
 
-```shell
-python convert_morph.py data/gullkorpus/2019_gullkorpus_ndt.conllu
-```
+3. Modulen "parse_conllu.py" har et flagg `-rc` som fjerner kommentarlinjene fra Conll-filen.
 
+  ```shell
+  python parse_conllu.py -rc -f $FILENAME
+  ```
 
-Setningene i gullkorpuset er hentet fra to partisjoner i UD, dev og train.
-
-3. Dette python-skriptet bruker setnings-IDer i [`gullkorpus_*_ids.txt`-filene](./data/gullkorpus/) for å splitte en conllu-fil i de samme partisjonene, og fjerne kommentarlinjer.
-
-```shell
-FILENAME="data/gullkorpus/2023_gullkorpus_ud.conllu"
-python ./partition_data.py $FILENAME -f data/gullkorpus/gullkorpus_*_ids.txt
-```
-
-4. Uten `-f`-argumentet fjerner skriptet bare kommentarlinjene.
-
-```shell
-python ./partition_data.py $FILENAME
-```
 
 ## Referanser
 
