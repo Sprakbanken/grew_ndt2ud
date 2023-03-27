@@ -185,14 +185,14 @@ def add_commentlines(datadict, metadatafields):
         value = datadict.get(meta)
         if not value:
             continue
-        yield f"# {meta} = {value}\n"
+        yield f"# {meta}\n" if meta in ["newpar", "newdoc"] else f"# {meta} = {value}\n"
 
 
 def iterate_conll_data_dict(data, add_comments=False):
     for sentence in data.get("sentences"):
         if add_comments:
             # Can be 'sent_id', 'text', 'newpar' or 'newpar id', 'newdoc' or 'newdoc id'
-            for line in add_commentlines(sentence, ["sent_id", "text"]):
+            for line in add_commentlines(sentence,  ["newpar", "sent_id", "text"]):
                 yield line
         for token in sentence.get("tokens"):
             yield "\t".join(map(str, token.values())) + "\n"
@@ -235,7 +235,7 @@ def write_df_to_conll(totaldf, path= None, add_comments=False):
     for id in ids:
         df = gb.get_group(id).copy()
         if add_comments:
-            for line in add_commentlines(df.iloc[0], ["sent_id", "text"]):
+            for line in add_commentlines(df.iloc[0], ["newpar", "sent_id", "text"]):
                 mystring += line
         mystring += get_conll_csv(df)
         mystring += "\n"
