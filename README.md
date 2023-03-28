@@ -31,7 +31,13 @@
       -safe_commands
     ```
 
-2. Sammenligne resultatet med tidligere versjon av UD
+2. Valider utdata med UD's valideringsskript:
+
+   ```shell
+   python ../tools/validate.py --max-err 0 --lang no --level 3 --no-tree-text --no-space-after $CONVERTED 2>&1 | tee validation-report_ndt2ud.txt
+   ```
+
+3. Sammenligne resultatet med tidligere versjon av UD
 
    Fjern kommentarlinjer fra utdata før du kjører MaltEval, som forventer [CONLL-X-formatet](https://aclanthology.org/W06-2920.pdf):
 
@@ -67,11 +73,6 @@
       java -jar MaltEval.jar -s parser.conll -g gold.conll --postag gold.postag --deprel gold.deprel
       ```
 
-3. Valider utdata med UD's valideringsskript:
-
-   ```shell
-   python ../tools/validate.py --max-err 0 --lang no --level 3 --no-tree-text --no-space-after $CONVERTED 2>&1 | tee validation-report_ndt2ud.txt
-   ```
 
 4. Skrive regler som håndterer de høyfrekvente feilene
 
