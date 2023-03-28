@@ -490,7 +490,6 @@ rule multiple_subjects_predicate_clause {
     e: GOV -[nsubj|csubj]-> D1;
   }
   with {
-    * -[root]-> GOV;
     GOV -[cop]-> C;
     GOV -[nsubj|csubj]-> D2;
     D1 << D2
