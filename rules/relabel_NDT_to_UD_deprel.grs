@@ -383,14 +383,14 @@ rule passive_lex_aux_bli {
   }
 }
 
-rule temporal_aux_vare_ha {
+rule temporal_aux_vare_ha { %problematic when it is changing cop to aux
   pattern {
     A [ upos=AUX, lemma="være"|"ha" ];
     V [ upos=VERB|AUX, VerbForm=Part ];
     e: V -> A;
   }
   without {
-    e.label = aux;
+    V -[aux|cop]-> A;
   }
   commands {
     e.label = aux;
