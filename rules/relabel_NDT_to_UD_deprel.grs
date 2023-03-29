@@ -123,7 +123,14 @@ rule obj_predicative {
 
 rule interjection {
   pattern { e: GOV -[ INTERJ ]-> DEP }
+  with {* -> GOV }
   commands { e.label = discourse  }
+}
+
+rule root_interjection {
+  pattern { e: GOV -[ INTERJ ]-> DEP }
+  without { * -> GOV }
+  commands { e.label = root }
 }
 
 rule coordinating_conjuction {
