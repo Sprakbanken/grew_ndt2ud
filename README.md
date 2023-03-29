@@ -34,7 +34,7 @@
 2. Valider utdata med UD's valideringsskript:
 
    ```shell
-   python ../tools/validate.py --max-err 0 --lang no --level 3 --no-tree-text --no-space-after $CONVERTED 2>&1 | tee validation-report_ndt2ud.txt
+   python ../tools/validate.py --max-err 0 --lang no --no-space-after $CONVERTED 2>&1 | tee validation-report_ndt2ud.txt
    ```
 
 3. Sammenligne resultatet med tidligere versjon av UD
