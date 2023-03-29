@@ -279,10 +279,10 @@ rule verbal_particle_adverb {
 
 rule adverbial_modifier {
   pattern {
-    DEP [ upos=ADV|PART|ADJ|DET|NUM|DET ];
+    DEP [ upos=ADV|PART|ADJ];
     e: GOV -[ADV]-> DEP;
   }
-    without { DEP -[cop|aux|aux:pass]-> *; }
+  without { DEP -[cop|aux|aux:pass]-> *; }
   commands { e.label = advmod }
 }
 
@@ -304,7 +304,7 @@ rule adverbial_cl_modifier_aux {
 
 rule oblique_nominal {
   pattern {
-    DEP [ upos= NOUN|PROPN|PRON|X|SYM  ];
+    DEP [ upos= NOUN|PROPN|PRON|X|SYM|DET|NUM ];
     e: GOV -[ADV]-> DEP;
   }
   commands { e.label = obl }
