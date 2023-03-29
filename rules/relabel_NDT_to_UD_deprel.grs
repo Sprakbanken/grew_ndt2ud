@@ -326,7 +326,7 @@ rule hvis_adv {
     DEP [ lemma="hvis" ];
     e: GOV -[ ADV ]-> DEP;
   }
-  commands {e.label = advmod}
+  commands {e.label = mark}
 }
 
 rule appositional_modifier {
