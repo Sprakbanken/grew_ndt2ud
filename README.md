@@ -21,7 +21,6 @@
 
     NDT_FILE=data/ndt_nb_${PARTITION}_udmorph.conllu
     CONVERTED=data/grew_output_${PARTITION}.conllu
-    UD_OFFICIAL=data/no_bokmaal-ud-${PARTITION}_uten_hash.conllu
 
     grew transform \
       -i  $NDT_FILE \
@@ -33,8 +32,15 @@
 
 2. Valider utdata med UD's valideringsskript:
 
+   Hvis du har udapi installert, kan du også fikse tegnsettingen før du validerer:
+
+   ```
+   cat $CONVERTED | udapy -s ud.FixPunct ud.FixRightheaded ud.FixLeaf > tmp.conllu  && mv tmp.conllu $CONVERTED
+   ```
+   Kjør valideringsskriptet:
+
    ```shell
-   python ../tools/validate.py --max-err 0 --lang no --no-space-after $CONVERTED 2>&1 | tee validation-report_ndt2ud.txt
+   python ../tools/validate.py --max-err 0 --lang no $CONVERTED 2>&1 | tee validation-report_ndt2ud.txt
    ```
 
 3. Sammenligne resultatet med tidligere versjon av UD
@@ -53,6 +59,7 @@
 
       ```shell
       METRIC=UAS
+      UD_OFFICIAL=data/no_bokmaal-ud-${PARTITION}_uten_hash.conllu
 
       java -jar dist-20141005/lib/MaltEval.jar -s tmp.conllu -g $UD_OFFICIAL --GroupBy Deprel --Metric $METRIC > conversion_stats_${METRIC}.txt
       ```
@@ -129,7 +136,11 @@ Filen [`2023_gullkorpus_ud.conllu`](./data/gullkorpus/2023_gullkorpus_ud.conllu)
   ```shell
   python parse_conllu.py -rc -f $FILENAME
   ```
+4. Fiks tegnsetting i conlldata med [udapi](https://udapi.github.io/):
 
+```
+cat $CONVERTED | udapy -s ud.FixPunct > out.conllu
+```
 
 ## Referanser
 
