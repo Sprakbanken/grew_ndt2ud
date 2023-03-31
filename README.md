@@ -34,13 +34,20 @@
 
    Hvis du har udapi installert, kan du også fikse tegnsettingen før du validerer:
 
-   ```
+   ``` shell
    cat $CONVERTED | udapy -s ud.FixPunct ud.FixRightheaded ud.FixLeaf > tmp.conllu  && mv tmp.conllu $CONVERTED
    ```
+
    Kjør valideringsskriptet:
 
-   ```shell
+   ``` shell
    python ../tools/validate.py --max-err 0 --lang no $CONVERTED 2>&1 | tee validation-report_ndt2ud.txt
+   ```
+
+   Hent ut en oppsummering av valideringsrapporten:
+
+   ``` shell
+   python extract_errorlines.py -f validation-report_ndt2ud.txt
    ```
 
 3. Sammenligne resultatet med tidligere versjon av UD
