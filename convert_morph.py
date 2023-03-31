@@ -8,6 +8,8 @@ from parse_conllu import parse_conll_file, CONLLFIELDS, write_conll
 
 ##### CONSTANTS
 
+symbols = ['$', '£', '%', ':(', ':)', '+', '-', '/', '>=']
+
 auxlemmas = [
     "bli", "burde", "få", "ha", "kunne",
     "måtte", "skulle", "tørre", "ville", "være"
@@ -281,7 +283,7 @@ def convert_pos(token, sentence):
     # special cases
     pos_conversion = {
         "subst": "PROPN" if "prop" in feats else "NOUN",
-        "symb": "PUNCT" if lemma in ["$/", "*"] else "SYM",
+        "symb": "PUNCT" if lemma == "*" else "SYM",
         'verb': convert_verb_pos(), #'VERB' or 'AUX',
         'det': convert_det_pos(), #'DET', 'PRON', 'NUM'
         'adj': 'ADJ',
