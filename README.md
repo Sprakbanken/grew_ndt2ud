@@ -35,7 +35,7 @@
    Hvis du har udapi installert, kan du også fikse tegnsettingen før du validerer:
 
    ``` shell
-   cat $CONVERTED | udapy -s ud.FixPunct ud.FixRightheaded ud.FixLeaf > tmp.conllu  && mv tmp.conllu $CONVERTED
+   cat $CONVERTED | udapy -s ud.FixPunct > tmp.conllu  && mv tmp.conllu $CONVERTED
    ```
 
    Kjør valideringsskriptet:
@@ -143,10 +143,11 @@ Filen [`2023_gullkorpus_ud.conllu`](./data/gullkorpus/2023_gullkorpus_ud.conllu)
   ```shell
   python parse_conllu.py -rc -f $FILENAME
   ```
-4. Fiks tegnsetting i conlldata med [udapi](https://udapi.github.io/):
+
+4. Fiks tegnsetting, terminalnoder, og skift hoder fra høyre til venstre  i conlldata med [udapi](https://udapi.github.io/):
 
 ```
-cat $CONVERTED | udapy -s ud.FixPunct > out.conllu
+cat $CONVERTED | udapy -s ud.FixPunct ud.FixRightheaded ud.FixLeaf > out.conllu
 ```
 
 ## Referanser
