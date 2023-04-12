@@ -5,8 +5,17 @@ rule punctuation_sentence_end {
   commands { e.label = punct }
 }
 
+rule coordinating_symbol {
+  pattern {
+    SYMBOL [upos=SYM];
+    e: N -[IK]-> SYMBOL;
+    N >> SYMBOL;
+  }
+  commands { e.label = cc }
+}
+
 rule punctuation_mid_sentence {
-  pattern { e: N -[ IK ]-> P;  }
+  pattern { P [ upos=PUNCT ]; e: N -[ IK ]-> P;  }
   commands { e.label = punct }
 }
 
@@ -160,7 +169,7 @@ rule subclause_aa {
 
 
 rule num {
-  pattern {DEP [upos=NUM]; e: GOV -[DET]-> DEP; }
+  pattern {DEP [upos=NUM]; e: GOV -[DET|IK]-> DEP; }
   commands { e.label = nummod}
 }
 
