@@ -146,6 +146,32 @@ rule shift_komma_scd_conj {
   }
 }
 
+% Symbolet "/" mellom måleenheter får relasjonen "case" på enheten den kommer foran.
+% F.eks. 000779: "Det tyske miljømerket Blå Engel går enda lenger og krever 0,6 watt / kg , (...)"
+rule shift_case_symbol {
+  pattern {
+    SYMBOL [ upos=SYM, form="/" ];
+    UNIT1 [ upos=NOUN|PROPN ];
+    UNIT2 [ upos=NOUN|PROPN ];
+    NUMBER [ upos= NUM ];
+    e1: UNIT1 -[ IK ]-> SYMBOL;
+    UNIT1 -> NUMBER;
+    e2: NUMBER -> UNIT2;
+  }
+  with {
+    SYMBOL >> UNIT1;
+    UNIT2 >> SYMBOL;
+  }
+  commands {
+    del_edge e1;
+    add_edge f: UNIT2 -> SYMBOL;
+    f.label = case;
+    del_edge e2;
+    add_edge f2: UNIT1 -> UNIT2;
+    f2.label = nmod;
+  }
+}
+
 rule shift_coordinating_sym {
   pattern {
     SYMBOL [upos=SYM];
