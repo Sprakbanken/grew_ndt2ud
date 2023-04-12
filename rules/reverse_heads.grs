@@ -1,4 +1,4 @@
-% cop: reverser hodet i setninger der "være" er rot, med SPRED, men uten PSUBJ. Predikativet er ny rot. 
+% cop: reverser hodet i setninger der "være" er rot, med SPRED, men uten PSUBJ. Predikativet er ny rot.
 rule focustype_head_SPRED_copula {
 	pattern {
     H [ lemma="være" ];
@@ -143,5 +143,20 @@ rule shift_komma_scd_conj {
     del_edge e3;
     add_edge f3: KNJ2 -> KOMMA;
     f3.label = punct;
+  }
+}
+
+rule shift_coordinating_sym {
+  pattern {
+    SYMBOL [upos=SYM];
+    e: H -[IK]-> SYMBOL;
+    H -> KNJ ;
+    SYMBOL < KNJ;
+  }
+  without { H >> SYMBOL }
+  commands {
+    del_edge e;
+    add_edge f: KNJ -> SYMBOL;
+    f.label = cc;
   }
 }
