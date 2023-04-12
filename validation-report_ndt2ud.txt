@@ -1,9 +1,5 @@
 [Line 44 Sent 000004 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 79 Sent 000005 Node 7]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 119 Sent 000007 Node 6]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 153 Sent 000009 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 160 Sent 000009 Node 9]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 226 Sent 000012 Node 10]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [11]
 [Line 253 Sent 000013 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 256 Sent 000013 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 259 Sent 000013 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -48,16 +44,11 @@
 [Line 2291 Sent 000106 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 2293 Sent 000106 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 2318 Sent 000107 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 2613 Sent 000127 Node 2]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 2779 Sent 000138 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 2818 Sent 000140 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 2824 Sent 000140 Node 9]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 2851 Sent 000141 Node 18]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [21]
-[Line 2851 Sent 000141 Node 18]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [19, 20, 21]
 [Line 2879 Sent 000142 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 2940 Sent 000144 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 2953 Sent 000145 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 2963 Sent 000145 Node 12]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [13, 14, 15, 16]
 [Line 3212 Sent 000157 Node 16]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 3250 Sent 000160 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 3255 Sent 000160 Node 20]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -73,11 +64,7 @@
 [Line 3877 Sent 000188 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 4278 Sent 000203 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 4287 Sent 000203 Node 11]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 4416 Sent 000207 Node 21]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [22]
-[Line 4417 Sent 000207 Node 22]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [21]
 [Line 4492 Sent 000210 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 4515 Sent 000210 Node 38]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [39]
-[Line 4516 Sent 000210 Node 39]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [38]
 [Line 4647 Sent 000218 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 4664 Sent 000219 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 4688 Sent 000220 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -152,7 +139,6 @@
 [Line 10579 Sent 000533 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 10603 Sent 000534 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 10653 Sent 000536 Node 24]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 10681 Sent 000538 Node 7]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [10]
 [Line 10736 Sent 000542 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 10739 Sent 000542 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 10745 Sent 000542 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -174,12 +160,11 @@
 [Line 11472 Sent 000581 Node 8]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 12017 Sent 000615 Node 5]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 12325 Sent 000635 Node 9]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
+[Line 12325 Sent 000635 Node 9]: [L3 Syntax right-to-left-flat] Relation 'flat:name' must go left-to-right.
 [Line 12327 Sent 000635 Node 11]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 12335 Sent 000635 Node 19]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 12432 Sent 000642 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 12438 Sent 000642 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 12524 Sent 000646 Node 12]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [13]
-[Line 12524 Sent 000646 Node 12]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [13]
 [Line 12571 Sent 000649 Node 11]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 12678 Sent 000656 Node 3]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 12735 Sent 000662 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -227,7 +212,6 @@
 [Line 17101 Sent 000905 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 17198 Sent 000910 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 17251 Sent 000912 Node 10]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 17327 Sent 000914 Node 20]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [14, 15, 16, 17, 18, 19]
 [Line 17412 Sent 000917 Node 21]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 17492 Sent 000920 Node 21]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 17548 Sent 000923 Node 29]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -235,26 +219,19 @@
 [Line 17741 Sent 000931 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 17751 Sent 000931 Node 25]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 17854 Sent 000941 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 18103 Sent 000953 Node 20]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [24]
-[Line 18103 Sent 000953 Node 20]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [21, 22, 23, 24, 25, 26]
 [Line 18701 Sent 000981 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 18848 Sent 000991 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 19330 Sent 001019 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 19356 Sent 001021 Node 3]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'SYM'
-[Line 19359 Sent 001021 Node 6]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'SYM'
 [Line 19568 Sent 001033 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 19570 Sent 001033 Node 17]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 19675 Sent 001037 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 19712 Sent 001039 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 19837 Sent 001046 Node 10]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [11, 12, 13, 14, 15]
 [Line 19851 Sent 001046 Node 24]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 19855 Sent 001046 Node 28]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 20000 Sent 001056 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 20225 Sent 001071 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 20883 Sent 001110 Node 10]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [11, 12, 13, 14, 15]
 [Line 20937 Sent 001112 Node 14]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 20949 Sent 001113 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 21029 Sent 001116 Node 12]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 21328 Sent 001130 Node 4]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 21403 Sent 001135 Node 21]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 21436 Sent 001137 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -263,7 +240,6 @@
 [Line 21916 Sent 001168 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 22051 Sent 001177 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 22150 Sent 001182 Node 19]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 22687 Sent 001209 Node 3]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [4, 5, 6, 7, 8, 9]
 [Line 22695 Sent 001209 Node 11]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 22957 Sent 001222 Node 7]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 22972 Sent 001222 Node 22]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
@@ -276,16 +252,8 @@
 [Line 24088 Sent 001284 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 24162 Sent 001289 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 24554 Sent 001318 Node 5]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 24555 Sent 001318 Node 6]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [2, 3]
 [Line 24566 Sent 001318 Node 17]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 24570 Sent 001318 Node 21]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [15, 17, 22]
-[Line 24600 Sent 001319 Node 23]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [25]
-[Line 24600 Sent 001319 Node 23]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [24, 25, 26, 27, 28, 29, 30, 31, 32]
-[Line 24777 Sent 001326 Node 4]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [7]
-[Line 24777 Sent 001326 Node 4]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [5, 6, 7]
 [Line 24816 Sent 001327 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 24901 Sent 001330 Node 8]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [12]
-[Line 24901 Sent 001330 Node 8]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [9, 10, 11, 12, 13, 14, 15]
 [Line 24904 Sent 001330 Node 11]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 25381 Sent 001350 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 25386 Sent 001350 Node 9]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
@@ -293,14 +261,10 @@
 [Line 26176 Sent 001386 Node 24]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 26711 Sent 001407 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 27035 Sent 001427 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 27045 Sent 001427 Node 12]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [11]
 [Line 27545 Sent 001454 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 27581 Sent 001456 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 27642 Sent 001458 Node 5]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 27765 Sent 001463 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 27855 Sent 001468 Node 4]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 28096 Sent 001480 Node 20]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [21]
-[Line 28097 Sent 001480 Node 21]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [20]
 [Line 28332 Sent 001495 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 28476 Sent 001500 Node 16]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 28541 Sent 001504 Node 10]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
@@ -328,11 +292,7 @@
 [Line 31462 Sent 001656 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 31469 Sent 001656 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 31563 Sent 001660 Node 28]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 31801 Sent 001674 Node 7]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [8]
-[Line 31802 Sent 001674 Node 8]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [7]
-[Line 31889 Sent 001678 Node 9]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [12]
 [Line 32080 Sent 001688 Node 18]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 32613 Sent 001712 Node 19]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [16, 17, 18]
 [Line 32757 Sent 001718 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 32805 Sent 001721 Node 6]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 32980 Sent 001727 Node 24]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -354,12 +314,10 @@
 [Line 34458 Sent 001792 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 34583 Sent 001797 Node 17]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 34773 Sent 001807 Node 15]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 35053 Sent 001821 Node 16]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [24]
 [Line 35606 Sent 001844 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 35929 Sent 001862 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 36235 Sent 001880 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 36248 Sent 001880 Node 14]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 36311 Sent 001882 Node 30]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [35]
 [Line 36530 Sent 001891 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 36854 Sent 001908 Node 17]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 37000 Sent 001915 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -370,36 +328,25 @@
 [Line 37284 Sent 001928 Node 13]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 37413 Sent 001933 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 37559 Sent 001940 Node 20]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 37745 Sent 001946 Node 12]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [13, 14, 15, 16, 17, 18]
 [Line 37832 Sent 001951 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 37938 Sent 001956 Node 9]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [11]
-[Line 37966 Sent 001957 Node 15]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [17]
 [Line 38367 Sent 001976 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 38381 Sent 001977 Node 5]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [6, 7, 8, 9]
 [Line 38503 Sent 001984 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 38979 Sent 002005 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 39844 Sent 002057 Node 7]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [6, 8, 12]
-[Line 40609 Sent 002094 Node 10]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [11]
 [Line 41172 Sent 002126 Node 9]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 41593 Sent 002151 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 41931 Sent 002171 Node 9]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 42008 Sent 002177 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 42514 Sent 002199 Node 4]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
 [Line 42755 Sent 002214 Node 18]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 42852 Sent 002219 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 43133 Sent 002229 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 43239 Sent 002233 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 43991 Sent 002260 Node 8]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [9, 10, 11, 12]
 [Line 43994 Sent 002260 Node 11]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 44033 Sent 002263 Node 8]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 44035 Sent 002263 Node 10]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 44097 Sent 002267 Node 9]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [10, 11, 12]
 [Line 44329 Sent 002277 Node 12]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 44659 Sent 002297 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 45805 Sent 002356 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 45948 Sent 002363 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 46270 Sent 002377 Node 22]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [21]
-[Line 46306 Sent 002379 Node 16]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [21]
 [Line 46525 Sent 002388 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 47397 Sent 002436 Node 9]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 47803 Sent 002457 Node 17]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
@@ -409,18 +356,11 @@
 [Line 49398 Sent 002546 Node 14]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 49649 Sent 002558 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 49795 Sent 002565 Node 8]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 49802 Sent 002565 Node 15]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [16, 17, 18, 19, 20]
 [Line 49913 Sent 002570 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 50175 Sent 002583 Node 19]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [21]
-[Line 50175 Sent 002583 Node 19]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [20, 21, 22, 23, 24, 25]
-[Line 50181 Sent 002583 Node 25]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [19]
 [Line 50459 Sent 002595 Node 27]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 50539 Sent 002601 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 50541 Sent 002601 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 50812 Sent 002616 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 51049 Sent 002628 Node 17]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [20, 25]
-[Line 51057 Sent 002628 Node 25]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [16, 17, 18]
-[Line 51146 Sent 002634 Node 4]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [5, 6, 7, 8]
 [Line 51248 Sent 002638 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 51349 Sent 002644 Node 3]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 51392 Sent 002646 Node 13]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
@@ -436,25 +376,16 @@
 [Line 51763 Sent 002666 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 51911 Sent 002672 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 51919 Sent 002672 Node 11]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 51949 Sent 002673 Node 6]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [7, 8, 9, 10, 11]
 [Line 51987 Sent 002674 Node 21]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 52016 Sent 002676 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 52225 Sent 002686 Node 26]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 52397 Sent 002695 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 52418 Sent 002696 Node 3]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [4, 5, 6, 7, 8]
 [Line 52425 Sent 002696 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 52546 Sent 002701 Node 17]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 52758 Sent 002716 Node 12]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 52832 Sent 002720 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 52843 Sent 002720 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 52943 Sent 002725 Node 6]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 53379 Sent 002742 Node 19]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [22]
-[Line 53562 Sent 002752 Node 3]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [4]
-[Line 53563 Sent 002752 Node 4]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [3]
 [Line 53585 Sent 002752 Node 26]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 53591 Sent 002752 Node 32]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 54276 Sent 002786 Node 4]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [3]
-[Line 54417 Sent 002795 Node 6]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 54529 Sent 002808 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 54627 Sent 002814 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 54696 Sent 002821 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -480,21 +411,15 @@
 [Line 60736 Sent 003146 Node 30]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 60839 Sent 003150 Node 13]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 61002 Sent 003159 Node 37]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 61423 Sent 003179 Node 34]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33]
-[Line 61521 Sent 003184 Node 12]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [13, 14, 15, 16, 17]
 [Line 61926 Sent 003203 Node 28]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 61930 Sent 003203 Node 32]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [28]
 [Line 62144 Sent 003218 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 62157 Sent 003218 Node 21]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 62276 Sent 003225 Node 14]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [15, 16, 17, 18]
 [Line 62731 Sent 003245 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 62741 Sent 003245 Node 11]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 62754 Sent 003245 Node 24]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 62882 Sent 003252 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 62964 Sent 003256 Node 36]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [40]
 [Line 63017 Sent 003260 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 63451 Sent 003279 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 63502 Sent 003281 Node 10]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 63622 Sent 003287 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 63700 Sent 003290 Node 4]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 64004 Sent 003301 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -518,7 +443,6 @@
 [Line 66319 Sent 003409 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 66414 Sent 003412 Node 17]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 66526 Sent 003417 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 66726 Sent 003427 Node 18]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [12, 13, 14, 15, 16, 17]
 [Line 67501 Sent 003467 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 67601 Sent 003471 Node 4]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 67636 Sent 003472 Node 17]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -526,9 +450,6 @@
 [Line 67874 Sent 003482 Node 19]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 67998 Sent 003487 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 68039 Sent 003489 Node 5]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 68682 Sent 003529 Node 4]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [5]
-[Line 69766 Sent 003594 Node 16]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [17]
-[Line 70353 Sent 003625 Node 14]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [15, 16, 17, 18, 19, 20, 21, 22, 23]
 [Line 70463 Sent 003632 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 70630 Sent 003639 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 70632 Sent 003639 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -540,11 +461,9 @@
 [Line 71068 Sent 003660 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 71070 Sent 003660 Node 10]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 71095 Sent 003662 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 71992 Sent 003705 Node 21]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
 [Line 72332 Sent 003721 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 72566 Sent 003734 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 72572 Sent 003734 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 72698 Sent 003740 Node 14]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [15]
 [Line 73421 Sent 003773 Node 21]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 73975 Sent 003802 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 73987 Sent 003803 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -559,7 +478,6 @@
 [Line 75887 Sent 003903 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 76429 Sent 003927 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 76914 Sent 003956 Node 6]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 77967 Sent 004002 Node 5]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 78127 Sent 004016 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 78497 Sent 004033 Node 3]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 78604 Sent 004037 Node 4]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
@@ -568,7 +486,6 @@
 [Line 78972 Sent 004052 Node 11]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 79082 Sent 004056 Node 13]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 79109 Sent 004058 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 79679 Sent 004088 Node 7]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [2]
 [Line 79698 Sent 004089 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 79816 Sent 004094 Node 16]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 79909 Sent 004099 Node 5]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
@@ -578,31 +495,18 @@
 [Line 81089 Sent 004164 Node 22]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 81336 Sent 004177 Node 19]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 81813 Sent 004195 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 82008 Sent 004200 Node 16]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 82994 Sent 004265 Node 2]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 83015 Sent 004266 Node 2]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 83050 Sent 004268 Node 2]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 83073 Sent 004270 Node 2]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
 [Line 83155 Sent 004275 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 83539 Sent 004296 Node 2]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 83554 Sent 004297 Node 2]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 83585 Sent 004298 Node 2]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 83629 Sent 004299 Node 2]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
 [Line 83677 Sent 004301 Node 18]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 83928 Sent 004319 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 84083 Sent 004330 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 84167 Sent 004332 Node 6]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 20]
-[Line 84174 Sent 004332 Node 13]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [14, 15, 16, 17, 18, 19, 20]
 [Line 84477 Sent 004343 Node 36]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 84509 Sent 004345 Node 13]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 84602 Sent 004349 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 84675 Sent 004351 Node 21]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [24]
 [Line 85304 Sent 004377 Node 20]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 85441 Sent 004388 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 85453 Sent 004389 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 85502 Sent 004392 Node 5]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 85582 Sent 004397 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 85610 Sent 004398 Node 3]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 85654 Sent 004400 Node 18]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 85736 Sent 004405 Node 6]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 85774 Sent 004407 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -610,31 +514,24 @@
 [Line 86022 Sent 004420 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 86631 Sent 004442 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 86842 Sent 004454 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 86847 Sent 004454 Node 14]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 86871 Sent 004455 Node 11]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [12, 13, 14, 15, 16, 17]
 [Line 87019 Sent 004461 Node 13]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 87319 Sent 004483 Node 21]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 87322 Sent 004483 Node 24]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 87333 Sent 004484 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 87343 Sent 004484 Node 16]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 87352 Sent 004485 Node 5]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 87451 Sent 004490 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 87457 Sent 004490 Node 9]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 87520 Sent 004492 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 87581 Sent 004494 Node 16]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 87587 Sent 004494 Node 22]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 87598 Sent 004495 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 87773 Sent 004502 Node 13]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 87781 Sent 004502 Node 21]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 87803 Sent 004503 Node 11]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [13]
 [Line 87840 Sent 004505 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 87863 Sent 004506 Node 11]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 87945 Sent 004509 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 88105 Sent 004516 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 88107 Sent 004516 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 88116 Sent 004516 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 88120 Sent 004516 Node 16]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 88124 Sent 004516 Node 20]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 88190 Sent 004518 Node 5]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 88245 Sent 004520 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 88287 Sent 004523 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -644,25 +541,24 @@
 [Line 89354 Sent 004577 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 89414 Sent 004579 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 89433 Sent 004579 Node 21]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 89448 Sent 004580 Node 11]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 89896 Sent 004604 Node 11]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [12]
 [Line 90903 Sent 004660 Node 10]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 92169 Sent 004744 Node 7]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [8, 9]
-[Line 92231 Sent 004746 Node 17]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 92235 Sent 004746 Node 21]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 92348 Sent 004751 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 92480 Sent 004757 Node 33]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
 [Line 92732 Sent 004767 Node 8]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 92734 Sent 004767 Node 10]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 92751 Sent 004768 Node 8]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [11]
-[Line 93244 Sent 004791 Node 15]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [14]
-[Line 93596 Sent 004809 Node 15]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [14, 16]
 [Line 93984 Sent 004828 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 94318 Sent 004844 Node 7]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [6]
 [Line 94722 Sent 004865 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
+[Line 94924 Sent 004872]: [L2 Syntax invalid-deprel] Invalid DEPREL value 'IK'.
+[Line 94924 Sent 004872]: [L4 Syntax unknown-deprel] Unknown DEPREL label: 'IK'
+
+The following 49 relations are currently permitted in language [no]:
+acl, acl:cleft, acl:relcl, advcl, advmod, amod, appos, aux, aux:pass, case, cc, ccomp, clf, compound, compound:prt, conj, cop, csubj, csubj:outer, csubj:pass, dep, det, discourse, discourse:filler, dislocated, expl, fixed, flat, flat:foreign, flat:name, goeswith, iobj, list, mark, nmod, nsubj, nsubj:outer, nsubj:pass, nummod, obj, obl, orphan, parataxis, parataxis:deletion, punct, reparandum, root, vocative, xcomp
+If a language needs a relation subtype that is not documented in the universal guidelines, the relation
+must have a language-specific documentation page in a prescribed format.
+See https://universaldependencies.org/contributing_language_specific.html for further guidelines.
+Documented dependency relations can be specifically turned on/off for each language in which they are used.
+See https://quest.ms.mff.cuni.cz/udvalidator/cgi-bin/unidep/langspec/specify_deprel.pl for details.
+
 [Line 95610 Sent 004902 Node 11]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 96623 Sent 004956 Node 19]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [20]
-[Line 96624 Sent 004956 Node 20]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [19]
 [Line 97423 Sent 005007 Node 9]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 98630 Sent 005064 Node 11]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 98639 Sent 005064 Node 20]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
@@ -670,32 +566,27 @@
 [Line 98883 Sent 005073 Node 14]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 99297 Sent 005092 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 99461 Sent 005099 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
+[Line 99552 Sent 005103]: [L2 Syntax invalid-deprel] Invalid DEPREL value 'IK'.
+[Line 99552 Sent 005103]: [L4 Syntax unknown-deprel] Unknown DEPREL label: 'IK'
 [Line 99551 Sent 005103 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 99552 Sent 005103 Node 10]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'SYM'
 [Line 99995 Sent 005128 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 100168 Sent 005135 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 100200 Sent 005136 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 100291 Sent 005142 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 100411 Sent 005146 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 101119 Sent 005189 Node 5]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [4]
 [Line 101192 Sent 005197 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 101508 Sent 005209 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 101965 Sent 005238 Node 20]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'SYM'
 [Line 102017 Sent 005241 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 102360 Sent 005267 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 102509 Sent 005275 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 102934 Sent 005297 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 102948 Sent 005298 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 102962 Sent 005298 Node 17]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 103069 Sent 005301 Node 37]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [40]
 [Line 103234 Sent 005308 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 103369 Sent 005312 Node 16]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 104193 Sent 005357 Node 8]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [9, 10]
 [Line 105065 Sent 005406 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 105242 Sent 005423 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 105437 Sent 005440 Node 4]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [5, 6, 7]
 [Line 105589 Sent 005449 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 105594 Sent 005449 Node 12]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [13, 14, 15, 16]
 [Line 105732 Sent 005456 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 105736 Sent 005456 Node 13]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 106050 Sent 005477 Node 17]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -721,15 +612,13 @@
 [Line 109884 Sent 005703 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 110029 Sent 005709 Node 35]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 110096 Sent 005713 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 110223 Sent 005718 Node 14]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [17]
 [Line 110277 Sent 005720 Node 1]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'SCONJ'
 [Line 110631 Sent 005740 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 110945 Sent 005758 Node 4]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 111406 Sent 005782 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 111508 Sent 005787 Node 3]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 111590 Sent 005794 Node 3]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 111864 Sent 005807 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 111866 Sent 005807 Node 17]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
+[Line 111866 Sent 005807 Node 17]: [L3 Syntax right-to-left-flat] Relation 'flat:name' must go left-to-right.
 [Line 111868 Sent 005807 Node 19]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 112083 Sent 005819 Node 16]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 112256 Sent 005825 Node 27]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -738,7 +627,6 @@
 [Line 112503 Sent 005835 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 112669 Sent 005843 Node 21]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 112690 Sent 005844 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 112701 Sent 005845 Node 6]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [7, 8]
 [Line 112738 Sent 005846 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 112872 Sent 005854 Node 20]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 112967 Sent 005860 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -747,11 +635,9 @@
 [Line 113202 Sent 005869 Node 33]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 113317 Sent 005874 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 114351 Sent 005930 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 114353 Sent 005930 Node 16]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 114538 Sent 005942 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 114540 Sent 005942 Node 10]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 114542 Sent 005942 Node 12]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 114544 Sent 005942 Node 14]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
+[Line 114544 Sent 005942 Node 14]: [L3 Syntax right-to-left-flat] Relation 'flat:name' must go left-to-right.
 [Line 114547 Sent 005942 Node 17]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 114674 Sent 005950 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 114693 Sent 005951 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -766,12 +652,10 @@
 [Line 115409 Sent 005986 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 115571 Sent 005994 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 115582 Sent 005994 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 115619 Sent 005996 Node 9]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [10, 11, 12, 13, 14, 15, 16, 17, 18]
 [Line 115638 Sent 005996 Node 28]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 115731 Sent 006000 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 115755 Sent 006002 Node 4]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 115964 Sent 006011 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 115970 Sent 006011 Node 8]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [9, 10, 11, 12]
 [Line 115996 Sent 006012 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 116085 Sent 006016 Node 7]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 116142 Sent 006021 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -820,8 +704,6 @@
 [Line 118607 Sent 006150 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 118610 Sent 006150 Node 17]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 118623 Sent 006150 Node 30]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 118635 Sent 006150 Node 42]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [45, 51]
-[Line 118635 Sent 006150 Node 42]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [43, 44, 45, 46, 47, 48, 49, 50, 51, 52]
 [Line 118713 Sent 006153 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 118761 Sent 006155 Node 7]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 118797 Sent 006157 Node 13]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
@@ -829,14 +711,10 @@
 [Line 118908 Sent 006162 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 119137 Sent 006173 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 119147 Sent 006173 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 119159 Sent 006174 Node 7]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [8, 9, 10, 11, 12, 13, 14, 15]
 [Line 119324 Sent 006182 Node 5]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 119461 Sent 006189 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 119467 Sent 006189 Node 8]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [7]
 [Line 119483 Sent 006190 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 119492 Sent 006190 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 119494 Sent 006190 Node 14]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [15, 17]
-[Line 119494 Sent 006190 Node 14]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [15, 16, 17, 18, 19]
 [Line 119505 Sent 006190 Node 25]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 119516 Sent 006191 Node 6]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 119538 Sent 006191 Node 28]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -856,32 +734,22 @@
 [Line 120510 Sent 006244 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 120541 Sent 006246 Node 5]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 120553 Sent 006246 Node 17]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 120605 Sent 006250 Node 2]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 120607 Sent 006250 Node 4]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 120615 Sent 006250 Node 12]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 120664 Sent 006252 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 120834 Sent 006261 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 120875 Sent 006264 Node 11]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [25]
 [Line 120947 Sent 006267 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 120963 Sent 006268 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 120983 Sent 006268 Node 21]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 121110 Sent 006273 Node 30]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 121237 Sent 006280 Node 20]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 121380 Sent 006285 Node 24]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 121425 Sent 006286 Node 34]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 122182 Sent 006318 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 122187 Sent 006318 Node 20]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 122317 Sent 006323 Node 8]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
 [Line 122363 Sent 006324 Node 6]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 122446 Sent 006326 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 122451 Sent 006326 Node 20]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 122897 Sent 006344 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 123047 Sent 006348 Node 32]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 123066 Sent 006349 Node 7]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [8, 9, 10, 11, 12, 13, 14, 15, 16]
 [Line 123164 Sent 006353 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 123195 Sent 006354 Node 19]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [24]
-[Line 123195 Sent 006354 Node 19]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [20, 21, 22, 23, 24, 25]
-[Line 123201 Sent 006354 Node 25]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [19]
 [Line 123279 Sent 006361 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 123320 Sent 006365 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 123562 Sent 006377 Node 4]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
@@ -894,22 +762,18 @@
 [Line 124298 Sent 006410 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 124574 Sent 006424 Node 36]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 124586 Sent 006425 Node 8]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 124658 Sent 006429 Node 7]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [8, 9, 10]
 [Line 124678 Sent 006429 Node 27]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 124694 Sent 006430 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 124709 Sent 006430 Node 18]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 124725 Sent 006432 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 124767 Sent 006434 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 124770 Sent 006434 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 124786 Sent 006435 Node 5]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 124794 Sent 006436 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 124876 Sent 006443 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 124935 Sent 006448 Node 5]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 125111 Sent 006459 Node 16]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 125544 Sent 006483 Node 7]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 125748 Sent 006493 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 125826 Sent 006496 Node 11]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 126034 Sent 006512 Node 15]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 126749 Sent 006551 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 126902 Sent 006563 Node 19]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 126938 Sent 006565 Node 17]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -925,7 +789,6 @@
 [Line 128234 Sent 006629 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 128344 Sent 006633 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 128525 Sent 006641 Node 21]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 128542 Sent 006642 Node 9]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [8]
 [Line 128649 Sent 006646 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 128712 Sent 006650 Node 3]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 128914 Sent 006663 Node 9]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
@@ -958,8 +821,6 @@
 [Line 131275 Sent 006796 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 131468 Sent 006806 Node 13]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 131634 Sent 006814 Node 13]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 131856 Sent 006832 Node 6]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'SYM'
-[Line 131897 Sent 006835 Node 6]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'SYM'
 [Line 131902 Sent 006836 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 132229 Sent 006854 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 132267 Sent 006856 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -980,20 +841,17 @@
 [Line 133835 Sent 006939 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 133840 Sent 006939 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 133847 Sent 006939 Node 16]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 134049 Sent 006947 Node 18]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [19, 20]
 [Line 134147 Sent 006950 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 134168 Sent 006951 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 134171 Sent 006951 Node 5]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 134425 Sent 006964 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 134436 Sent 006965 Node 4]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 134578 Sent 006969 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 134622 Sent 006971 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 134683 Sent 006973 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 134912 Sent 006988 Node 21]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 135503 Sent 007016 Node 8]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 135531 Sent 007018 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 135541 Sent 007018 Node 12]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 135908 Sent 007036 Node 31]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'DET'
+[Line 135908 Sent 007036]: [L2 Syntax invalid-deprel] Invalid DEPREL value 'IK'.
+[Line 135908 Sent 007036]: [L4 Syntax unknown-deprel] Unknown DEPREL label: 'IK'
 [Line 136340 Sent 007054 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 136344 Sent 007054 Node 16]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 136436 Sent 007060 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1005,7 +863,6 @@
 [Line 136911 Sent 007086 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 137053 Sent 007095 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 137208 Sent 007105 Node 6]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 137314 Sent 007114 Node 5]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [6, 7, 8]
 [Line 137342 Sent 007116 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 137375 Sent 007118 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 137389 Sent 007119 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1035,15 +892,12 @@
 [Line 141821 Sent 007386 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 141888 Sent 007391 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 142716 Sent 007439 Node 12]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 142792 Sent 007444 Node 4]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [5, 6, 7, 8, 9]
 [Line 143699 Sent 007504 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 143969 Sent 007520 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 144346 Sent 007546 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 144434 Sent 007552 Node 5]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [6, 7, 8, 9, 10]
 [Line 144515 Sent 007559 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 144703 Sent 007570 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 146462 Sent 007681 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 146685 Sent 007697 Node 11]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [9, 10]
 [Line 147216 Sent 007734 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 148691 Sent 007811 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 148925 Sent 007822 Node 21]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1085,7 +939,6 @@
 [Line 152734 Sent 008056 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 152775 Sent 008059 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 152950 Sent 008070 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 153048 Sent 008076 Node 6]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [7]
 [Line 153087 Sent 008078 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 153203 Sent 008083 Node 26]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 153219 Sent 008084 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1094,15 +947,11 @@
 [Line 153516 Sent 008100 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 153758 Sent 008114 Node 15]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 153955 Sent 008128 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 154030 Sent 008134 Node 7]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [9]
 [Line 154137 Sent 008142 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 154294 Sent 008152 Node 4]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 154296 Sent 008152 Node 6]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 154299 Sent 008152 Node 9]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 154422 Sent 008160 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 154428 Sent 008160 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 154459 Sent 008163 Node 8]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [13]
-[Line 154487 Sent 008164 Node 9]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 154547 Sent 008168 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 154577 Sent 008170 Node 3]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 154608 Sent 008171 Node 17]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
@@ -1112,21 +961,11 @@
 [Line 155842 Sent 008241 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 155898 Sent 008243 Node 22]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 156318 Sent 008272 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 156322 Sent 008272 Node 11]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [8, 9, 10]
-[Line 156416 Sent 008278 Node 7]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [10]
-[Line 156416 Sent 008278 Node 7]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [8, 9, 10]
-[Line 156654 Sent 008293 Node 11]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 156842 Sent 008306 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 157025 Sent 008314 Node 12]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [27]
 [Line 157172 Sent 008325 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 157449 Sent 008347 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 157514 Sent 008352 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 157579 Sent 008356 Node 3]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 157587 Sent 008356 Node 11]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 157776 Sent 008367 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 157815 Sent 008368 Node 8]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 157822 Sent 008368 Node 15]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 157831 Sent 008368 Node 24]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 157875 Sent 008371 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 157881 Sent 008371 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 157951 Sent 008375 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1134,16 +973,10 @@
 [Line 158136 Sent 008388 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 158246 Sent 008395 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 158563 Sent 008413 Node 3]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 158569 Sent 008413 Node 9]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 158672 Sent 008419 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 158773 Sent 008426 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 158956 Sent 008437 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 159208 Sent 008450 Node 6]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 159212 Sent 008450 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 159241 Sent 008451 Node 15]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 159344 Sent 008456 Node 13]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 159350 Sent 008456 Node 19]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 159395 Sent 008458 Node 21]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 159513 Sent 008466 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 159652 Sent 008474 Node 7]: [L3 Syntax leaf-aux-cop] 'aux' not expected to have children (7:er:aux --> 5:om:mark)
 [Line 159653 Sent 008474 Node 7]: [L3 Syntax leaf-aux-cop] 'aux' not expected to have children (7:er:aux --> 6:det:expl)
@@ -1153,7 +986,6 @@
 [Line 159738 Sent 008479 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 160093 Sent 008505 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 160214 Sent 008512 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 160250 Sent 008513 Node 22]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [20, 21]
 [Line 160400 Sent 008521 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 160534 Sent 008528 Node 13]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 160652 Sent 008535 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1162,9 +994,6 @@
 [Line 161122 Sent 008563 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 161267 Sent 008569 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 161345 Sent 008573 Node 10]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 161478 Sent 008581 Node 9]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 161486 Sent 008581 Node 17]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 161493 Sent 008581 Node 24]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 161511 Sent 008582 Node 3]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 161538 Sent 008584 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 161599 Sent 008588 Node 4]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
@@ -1180,9 +1009,7 @@
 [Line 162361 Sent 008633 Node 22]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 163067 Sent 008669 Node 21]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 163194 Sent 008675 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 163432 Sent 008687 Node 9]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [13, 19]
 [Line 163642 Sent 008698 Node 10]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 163665 Sent 008699 Node 6]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [4, 5]
 [Line 163667 Sent 008699 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 164231 Sent 008730 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 164291 Sent 008732 Node 24]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1198,12 +1025,8 @@
 [Line 165440 Sent 008799 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 165463 Sent 008801 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 165469 Sent 008801 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 165851 Sent 008827 Node 12]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [11, 17]
-[Line 165852 Sent 008827 Node 13]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [11, 17]
-[Line 165853 Sent 008827 Node 14]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [11, 17]
 [Line 165939 Sent 008832 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 166338 Sent 008863 Node 3]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 166428 Sent 008868 Node 27]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [28]
 [Line 166508 Sent 008875 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 166908 Sent 008903 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 167063 Sent 008915 Node 3]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
@@ -1251,7 +1074,6 @@
 [Line 174923 Sent 009393 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 174935 Sent 009393 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 175088 Sent 009405 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 175285 Sent 009418 Node 4]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [5, 6, 7, 8, 9, 10, 11, 12, 13]
 [Line 175360 Sent 009421 Node 13]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 175538 Sent 009431 Node 14]: [L3 Syntax leaf-aux-cop] 'aux' not expected to have children (14:var:aux --> 13:det:expl)
 [Line 175540 Sent 009431 Node 14]: [L3 Syntax leaf-aux-cop] 'aux' not expected to have children (14:var:aux --> 15:deilig:xcomp)
@@ -1262,18 +1084,12 @@
 [Line 176089 Sent 009465 Node 37]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 176398 Sent 009489 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 176420 Sent 009489 Node 24]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 176626 Sent 009501 Node 7]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [8, 9, 10]
-[Line 176725 Sent 009507 Node 19]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [20]
-[Line 176725 Sent 009507 Node 19]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [20, 21]
 [Line 176933 Sent 009518 Node 34]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 177199 Sent 009540 Node 26]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [27]
-[Line 177200 Sent 009540 Node 27]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [26]
 [Line 177306 Sent 009546 Node 27]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 177317 Sent 009547 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 177343 Sent 009549 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 177367 Sent 009550 Node 8]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 177379 Sent 009551 Node 8]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 177887 Sent 009586 Node 5]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [6, 7]
 [Line 178069 Sent 009599 Node 13]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 178118 Sent 009600 Node 13]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 178343 Sent 009613 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1282,8 +1098,6 @@
 [Line 178968 Sent 009657 Node 3]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 178973 Sent 009657 Node 8]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 179208 Sent 009670 Node 20]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 179340 Sent 009678 Node 14]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [15]
-[Line 179341 Sent 009678 Node 15]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [14]
 [Line 179417 Sent 009683 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 179469 Sent 009685 Node 9]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 179471 Sent 009685 Node 11]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
@@ -1295,9 +1109,7 @@
 [Line 180140 Sent 009719 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 180342 Sent 009728 Node 10]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 180345 Sent 009728 Node 13]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 181042 Sent 009760 Node 4]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 181059 Sent 009761 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 181288 Sent 009769 Node 23]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 181463 Sent 009779 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 181601 Sent 009785 Node 19]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 181613 Sent 009786 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1323,11 +1135,7 @@
 [Line 184713 Sent 009935 Node 18]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 184772 Sent 009937 Node 23]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 185089 Sent 009953 Node 26]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 185301 Sent 009962 Node 30]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [22, 23, 24, 25, 26, 27, 28, 29]
 [Line 185388 Sent 009967 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 185587 Sent 009976 Node 12]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [19]
-[Line 185632 Sent 009978 Node 11]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [15]
-[Line 186081 Sent 009997 Node 41]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [51]
 [Line 186184 Sent 010005 Node 11]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 186219 Sent 010007 Node 10]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 186227 Sent 010008 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1339,9 +1147,7 @@
 [Line 186732 Sent 010035 Node 13]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 186757 Sent 010036 Node 13]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 186815 Sent 010038 Node 12]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 187005 Sent 010048 Node 6]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [5]
 [Line 187102 Sent 010052 Node 24]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 187681 Sent 010088 Node 27]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [30]
 [Line 188076 Sent 010112 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 188086 Sent 010112 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 188171 Sent 010119 Node 10]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
@@ -1351,7 +1157,6 @@
 [Line 189149 Sent 010193 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 189158 Sent 010193 Node 16]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 189207 Sent 010196 Node 13]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 189221 Sent 010197 Node 7]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [8, 9, 10, 11, 12, 13, 14]
 [Line 189269 Sent 010199 Node 18]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 189445 Sent 010207 Node 16]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 189784 Sent 010222 Node 1]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
@@ -1362,8 +1167,6 @@
 [Line 190782 Sent 010271 Node 27]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 190970 Sent 010279 Node 33]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 191145 Sent 010290 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 191725 Sent 010321 Node 9]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 191787 Sent 010327 Node 4]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [5, 6, 7]
 [Line 191870 Sent 010335 Node 12]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 191873 Sent 010335 Node 15]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 192049 Sent 010345 Node 19]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1371,13 +1174,10 @@
 [Line 192319 Sent 010365 Node 11]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 192407 Sent 010370 Node 15]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 192473 Sent 010375 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 192608 Sent 010379 Node 12]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 192655 Sent 010380 Node 13]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 192659 Sent 010380 Node 17]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 192675 Sent 010381 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 192681 Sent 010381 Node 12]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 192868 Sent 010390 Node 14]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [13]
-[Line 192903 Sent 010391 Node 26]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [27, 28, 29, 30, 31, 32, 33]
 [Line 192906 Sent 010391 Node 29]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 193268 Sent 010408 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 193542 Sent 010423 Node 12]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
@@ -1391,49 +1191,27 @@
 [Line 194639 Sent 010488 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 194680 Sent 010492 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 194728 Sent 010498 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 194832 Sent 010507 Node 5]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 194834 Sent 010507 Node 7]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 194836 Sent 010507 Node 9]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 194961 Sent 010516 Node 21]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 195373 Sent 010539 Node 6]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [7, 8, 9, 10, 11]
 [Line 195969 Sent 010585 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 195972 Sent 010585 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 196042 Sent 010590 Node 5]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [6, 7, 8]
 [Line 196348 Sent 010613 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 196406 Sent 010617 Node 7]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 196938 Sent 010649 Node 7]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [8, 9, 10, 11, 12, 13]
-[Line 197132 Sent 010663 Node 9]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [4, 8]
 [Line 197243 Sent 010673 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 197462 Sent 010689 Node 8]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 197468 Sent 010689 Node 14]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 197686 Sent 010703 Node 12]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [18]
 [Line 197720 Sent 010705 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 198297 Sent 010746 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 198448 Sent 010756 Node 38]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [41]
 [Line 198491 Sent 010758 Node 11]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 198781 Sent 010780 Node 14]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [15]
-[Line 200525 Sent 010906 Node 11]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 200530 Sent 010906 Node 16]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 200537 Sent 010906 Node 23]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 200547 Sent 010906 Node 33]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 200552 Sent 010906 Node 38]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 200581 Sent 010908 Node 8]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 200789 Sent 010925 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 201596 Sent 010985 Node 10]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 201751 Sent 010996 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 201764 Sent 010996 Node 14]: [L3 Syntax too-many-subjects] Node has multiple subjects not subtyped as ':outer': [12, 15]. Outer subjects are allowed if a clause acts as the predicate of another clause.
-[Line 201783 Sent 010997 Node 11]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [17]
 [Line 202256 Sent 011037 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 202280 Sent 011039 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 202492 Sent 011055 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 202509 Sent 011056 Node 10]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 202511 Sent 011056 Node 12]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 202665 Sent 011062 Node 12]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
 [Line 202793 Sent 011065 Node 34]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 202795 Sent 011065 Node 36]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 202825 Sent 011068 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 202877 Sent 011071 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 202879 Sent 011071 Node 11]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [6]
 [Line 203042 Sent 011080 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 203380 Sent 011099 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 203398 Sent 011100 Node 4]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
@@ -1451,25 +1229,15 @@
 [Line 204335 Sent 011140 Node 11]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 204391 Sent 011144 Node 16]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 204395 Sent 011144 Node 20]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 204408 Sent 011145 Node 8]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 204453 Sent 011146 Node 7]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 204487 Sent 011148 Node 5]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 204661 Sent 011155 Node 5]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 204665 Sent 011155 Node 9]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 204765 Sent 011161 Node 3]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 204786 Sent 011162 Node 17]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 204803 Sent 011164 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 204810 Sent 011164 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 204814 Sent 011164 Node 18]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 204817 Sent 011164 Node 21]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 204823 Sent 011164 Node 27]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 204825 Sent 011164 Node 29]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 204917 Sent 011172 Node 9]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 204956 Sent 011174 Node 12]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 205096 Sent 011182 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 205204 Sent 011188 Node 8]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [10]
-[Line 205239 Sent 011191 Node 5]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 205354 Sent 011199 Node 4]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 205479 Sent 011207 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 205525 Sent 011211 Node 13]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 205779 Sent 011226 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1477,11 +1245,9 @@
 [Line 205956 Sent 011239 Node 21]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 206271 Sent 011263 Node 6]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 206458 Sent 011275 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 206700 Sent 011291 Node 5]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [6, 7, 8, 9]
-[Line 206782 Sent 011296 Node 8]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
-[Line 206786 Sent 011296 Node 12]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
 [Line 207033 Sent 011312 Node 4]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 207052 Sent 011313 Node 3]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
+[Line 207052 Sent 011313 Node 3]: [L3 Syntax right-to-left-flat] Relation 'flat:name' must go left-to-right.
 [Line 207054 Sent 011313 Node 5]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 207123 Sent 011316 Node 14]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 207135 Sent 011317 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1513,7 +1279,6 @@
 [Line 210986 Sent 011562 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 211086 Sent 011568 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 211314 Sent 011584 Node 6]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 211324 Sent 011585 Node 5]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 211792 Sent 011611 Node 8]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 211968 Sent 011619 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 212512 Sent 011647 Node 17]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
@@ -1536,7 +1301,6 @@
 [Line 214537 Sent 011741 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 214783 Sent 011750 Node 16]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 214785 Sent 011750 Node 18]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 214945 Sent 011756 Node 14]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [17]
 [Line 215063 Sent 011762 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 215493 Sent 011781 Node 22]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 215792 Sent 011796 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1544,7 +1308,6 @@
 [Line 215847 Sent 011799 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 216383 Sent 011830 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 216558 Sent 011839 Node 20]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 216645 Sent 011844 Node 16]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [20]
 [Line 216926 Sent 011862 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 217112 Sent 011872 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 217264 Sent 011882 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1565,13 +1328,10 @@
 [Line 218718 Sent 011956 Node 42]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 218720 Sent 011956 Node 44]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 218971 Sent 011968 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 219028 Sent 011969 Node 20]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [24]
-[Line 219055 Sent 011970 Node 12]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
 [Line 219152 Sent 011973 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 219305 Sent 011979 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 219324 Sent 011979 Node 22]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 219517 Sent 011989 Node 20]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 219583 Sent 011990 Node 39]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [43]
 [Line 219818 Sent 012002 Node 19]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 219841 Sent 012003 Node 13]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 219884 Sent 012005 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1582,15 +1342,11 @@
 [Line 220232 Sent 012021 Node 24]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 220249 Sent 012022 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 220371 Sent 012026 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 220430 Sent 012028 Node 13]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [20]
 [Line 220432 Sent 012028 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 220486 Sent 012031 Node 13]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [17]
 [Line 220514 Sent 012032 Node 11]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 220539 Sent 012033 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 220547 Sent 012033 Node 14]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 220611 Sent 012035 Node 27]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [28, 29, 30]
 [Line 220768 Sent 012045 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 220936 Sent 012053 Node 19]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [20]
 [Line 220941 Sent 012053 Node 24]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 220954 Sent 012054 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 221396 Sent 012075 Node 8]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
@@ -1601,10 +1357,8 @@
 [Line 222572 Sent 012127 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 222710 Sent 012132 Node 20]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 223327 Sent 012158 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 223375 Sent 012160 Node 10]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [13]
 [Line 223459 Sent 012165 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 223505 Sent 012167 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 223626 Sent 012172 Node 14]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [12]
 [Line 223773 Sent 012179 Node 21]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 223786 Sent 012179 Node 34]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 223887 Sent 012186 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1619,26 +1373,21 @@
 [Line 224840 Sent 012232 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 224927 Sent 012234 Node 22]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 224960 Sent 012236 Node 17]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 224972 Sent 012236 Node 29]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [31]
 [Line 225053 Sent 012239 Node 10]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 225208 Sent 012245 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 225346 Sent 012248 Node 31]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 225385 Sent 012249 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 225405 Sent 012250 Node 8]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [9, 10, 11, 12, 13, 14, 15]
 [Line 225557 Sent 012260 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 225672 Sent 012266 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 225794 Sent 012273 Node 3]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 225842 Sent 012275 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 225893 Sent 012278 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 226017 Sent 012284 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
 [Line 226029 Sent 012285 Node 8]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 226093 Sent 012288 Node 6]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 226178 Sent 012292 Node 4]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 226197 Sent 012293 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 226200 Sent 012293 Node 8]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 226204 Sent 012293 Node 12]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 226287 Sent 012297 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 226354 Sent 012300 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
 [Line 226442 Sent 012305 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 226454 Sent 012306 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 226466 Sent 012307 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1660,33 +1409,8 @@
 [Line 226614 Sent 012323 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 226623 Sent 012324 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 226638 Sent 012325 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 226652 Sent 012326 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 226728 Sent 012331 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 226745 Sent 012332 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 226767 Sent 012333 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 226783 Sent 012334 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 226807 Sent 012335 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 226813 Sent 012336 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 226826 Sent 012337 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 226851 Sent 012338 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 227088 Sent 012347 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 227316 Sent 012356 Node 4]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [5]
-[Line 227317 Sent 012356 Node 5]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [3, 4]
-[Line 227914 Sent 012380 Node 4]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [3]
-[Line 227915 Sent 012380 Node 5]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [6]
-[Line 227916 Sent 012380 Node 6]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [3, 5]
-[Line 228251 Sent 012392 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 228507 Sent 012404 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
 [Line 228617 Sent 012410 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 228651 Sent 012411 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 228746 Sent 012417 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 228753 Sent 012418 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 229952 Sent 012468 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 230102 Sent 012474 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 230428 Sent 012486 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 230732 Sent 012501 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 230983 Sent 012513 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 230991 Sent 012514 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
 [Line 231428 Sent 012537 Node 25]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 231471 Sent 012540 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 231509 Sent 012542 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
@@ -1695,100 +1419,53 @@
 [Line 231600 Sent 012547 Node 3]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 231620 Sent 012548 Node 10]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 231799 Sent 012557 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 232068 Sent 012568 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 232589 Sent 012590 Node 20]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
 [Line 233010 Sent 012611 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 233072 Sent 012615 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 233188 Sent 012621 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 233652 Sent 012643 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 234707 Sent 012695 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 235088 Sent 012715 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 235339 Sent 012727 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 235616 Sent 012743 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 235821 Sent 012752 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 235869 Sent 012755 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 235897 Sent 012757 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 235918 Sent 012759 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 235926 Sent 012760 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 235931 Sent 012761 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 236362 Sent 012780 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 236754 Sent 012796 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 237516 Sent 012829 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
+[Line 234145 Sent 012667]: [L2 Syntax invalid-deprel] Invalid DEPREL value 'IK'.
+[Line 234145 Sent 012667]: [L4 Syntax unknown-deprel] Unknown DEPREL label: 'IK'
 [Line 237738 Sent 012841 Node 7]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 237782 Sent 012843 Node 3]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 237923 Sent 012849 Node 13]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 237939 Sent 012850 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 238212 Sent 012862 Node 25]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 238365 Sent 012868 Node 25]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [28]
-[Line 238424 Sent 012871 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 238477 Sent 012874 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
 [Line 238533 Sent 012878 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 238546 Sent 012878 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 238561 Sent 012879 Node 8]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 238600 Sent 012881 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 238814 Sent 012889 Node 37]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 238820 Sent 012890 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 238994 Sent 012900 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
 [Line 239077 Sent 012904 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 239086 Sent 012905 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 239111 Sent 012906 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 239182 Sent 012909 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
 [Line 239195 Sent 012910 Node 9]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 239365 Sent 012918 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
 [Line 239387 Sent 012919 Node 18]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 239394 Sent 012919 Node 25]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 239418 Sent 012921 Node 3]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 239430 Sent 012921 Node 15]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 239490 Sent 012924 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 239554 Sent 012927 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 239569 Sent 012928 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
 [Line 239584 Sent 012929 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 239831 Sent 012945 Node 17]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 239936 Sent 012949 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 239941 Sent 012950 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
 [Line 239947 Sent 012951 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 240030 Sent 012954 Node 23]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 240200 Sent 012961 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
 [Line 240261 Sent 012963 Node 23]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 240377 Sent 012969 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 240473 Sent 012975 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 240531 Sent 012979 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 240597 Sent 012983 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 240668 Sent 012987 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 240745 Sent 012990 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 240808 Sent 012993 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 240814 Sent 012994 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 241146 Sent 013009 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 241336 Sent 013019 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
 [Line 241425 Sent 013022 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 241507 Sent 013025 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 241513 Sent 013026 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
 [Line 241592 Sent 013030 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 241611 Sent 013031 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 241736 Sent 013035 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
 [Line 241774 Sent 013038 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 241791 Sent 013038 Node 20]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 242370 Sent 013074 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
 [Line 242413 Sent 013076 Node 3]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 242415 Sent 013076 Node 5]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 242418 Sent 013076 Node 8]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 242489 Sent 013079 Node 20]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 242554 Sent 013083 Node 8]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 242672 Sent 013089 Node 5]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 242706 Sent 013091 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
 [Line 242738 Sent 013093 Node 9]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 242740 Sent 013093 Node 11]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 242845 Sent 013100 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 243069 Sent 013112 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 243139 Sent 013116 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
 [Line 243178 Sent 013117 Node 9]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 243315 Sent 013123 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
 [Line 243367 Sent 013124 Node 20]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 243389 Sent 013126 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 243634 Sent 013136 Node 11]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
 [Line 243636 Sent 013136 Node 13]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 243638 Sent 013136 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 244631 Sent 013192 Node 4]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [2, 3]
 [Line 244789 Sent 013200 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 244807 Sent 013201 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 244872 Sent 013205 Node 18]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1800,8 +1477,6 @@
 [Line 246330 Sent 013287 Node 16]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 246709 Sent 013304 Node 11]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 246871 Sent 013311 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 247468 Sent 013339 Node 13]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 247674 Sent 013350 Node 9]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [20]
 [Line 247744 Sent 013353 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 247761 Sent 013354 Node 9]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 247943 Sent 013363 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1818,15 +1493,12 @@
 [Line 249747 Sent 013452 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 249959 Sent 013461 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 249996 Sent 013463 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 250237 Sent 013473 Node 9]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 250238 Sent 013473 Node 10]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 250340 Sent 013478 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 250363 Sent 013480 Node 4]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 250364 Sent 013480 Node 5]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 250691 Sent 013495 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 250798 Sent 013500 Node 20]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 250838 Sent 013502 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 250951 Sent 013508 Node 5]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 250952 Sent 013508 Node 6]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 251076 Sent 013514 Node 23]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 251166 Sent 013521 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1834,18 +1506,15 @@
 [Line 251368 Sent 013532 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 251450 Sent 013536 Node 6]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 251569 Sent 013544 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 252128 Sent 013581 Node 2]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 252343 Sent 013595 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 252452 Sent 013601 Node 19]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 252538 Sent 013606 Node 16]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 252598 Sent 013608 Node 26]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 253110 Sent 013636 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 253191 Sent 013640 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 253354 Sent 013650 Node 5]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'SYM'
 [Line 253488 Sent 013658 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 253613 Sent 013667 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 253633 Sent 013668 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 253655 Sent 013669 Node 6]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'SYM'
 [Line 253730 Sent 013672 Node 34]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 253807 Sent 013675 Node 20]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 253808 Sent 013675 Node 21]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1867,17 +1536,10 @@
 [Line 256748 Sent 013838 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 256819 Sent 013840 Node 14]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 257202 Sent 013864 Node 6]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 257219 Sent 013866 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 257231 Sent 013867 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 257245 Sent 013868 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
-[Line 257257 Sent 013869 Node 1]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'NUM'
 [Line 257262 Sent 013869 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 257271 Sent 013870 Node 2]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 257273 Sent 013870 Node 4]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 257274 Sent 013870 Node 5]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 257333 Sent 013873 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 257474 Sent 013882 Node 9]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [10]
-[Line 257474 Sent 013882 Node 9]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [10, 11, 12, 13]
 [Line 257633 Sent 013893 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 258003 Sent 013913 Node 11]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 258120 Sent 013918 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1898,17 +1560,12 @@
 [Line 258951 Sent 013961 Node 11]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 259046 Sent 013966 Node 9]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 259058 Sent 013967 Node 8]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 259103 Sent 013971 Node 5]: [L3 Syntax rel-upos-punct] 'punct' must be 'PUNCT' but it is 'SYM'
 [Line 259134 Sent 013974 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 259142 Sent 013975 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 259149 Sent 013976 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 259205 Sent 013979 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 259313 Sent 013984 Node 22]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [28]
 [Line 259442 Sent 013992 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 259450 Sent 013993 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 259583 Sent 013999 Node 10]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [27, 28, 29, 30, 31]
-[Line 259618 Sent 013999 Node 45]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [27, 28, 29, 30, 31]
-[Line 259650 Sent 014000 Node 8]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [7]
 [Line 259805 Sent 014004 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 259895 Sent 014008 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 260026 Sent 014013 Node 19]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1918,10 +1575,8 @@
 [Line 260268 Sent 014025 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 260643 Sent 014040 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 261016 Sent 014055 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 261047 Sent 014057 Node 12]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
 [Line 261221 Sent 014066 Node 14]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 261313 Sent 014071 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 261459 Sent 014077 Node 12]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [16]
 [Line 261578 Sent 014084 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 261722 Sent 014091 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 261798 Sent 014095 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1931,7 +1586,6 @@
 [Line 262278 Sent 014119 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 262428 Sent 014126 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 262470 Sent 014127 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 262490 Sent 014127 Node 22]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [24, 25, 26, 27]
 [Line 262522 Sent 014128 Node 17]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 262562 Sent 014132 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 262678 Sent 014137 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1965,9 +1619,6 @@
 [Line 268308 Sent 014375 Node 24]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 268417 Sent 014380 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 268655 Sent 014392 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 268728 Sent 014394 Node 16]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [21, 24]
-[Line 268728 Sent 014394 Node 16]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
-[Line 268742 Sent 014394 Node 30]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [16]
 [Line 268985 Sent 014405 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 268997 Sent 014406 Node 4]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 269037 Sent 014408 Node 2]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
@@ -1975,7 +1626,6 @@
 [Line 269060 Sent 014408 Node 25]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 269172 Sent 014413 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 269582 Sent 014431 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 269598 Sent 014431 Node 20]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [28]
 [Line 269655 Sent 014433 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 269823 Sent 014440 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 270113 Sent 014452 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1983,9 +1633,6 @@
 [Line 270295 Sent 014458 Node 11]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 270502 Sent 014469 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 270738 Sent 014478 Node 11]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 270794 Sent 014481 Node 7]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [6]
-[Line 270835 Sent 014481 Node 48]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [47, 53]
-[Line 270839 Sent 014481 Node 52]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [47, 53]
 [Line 270974 Sent 014488 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 271190 Sent 014499 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 271347 Sent 014506 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -2010,15 +1657,12 @@
 [Line 274312 Sent 014628 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 274551 Sent 014641 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 274755 Sent 014653 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 276011 Sent 014731 Node 12]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [8, 9, 10, 11]
-[Line 276012 Sent 014731 Node 13]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [8, 9, 10, 11]
 [Line 276259 Sent 014744 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 276397 Sent 014751 Node 19]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 276603 Sent 014762 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 277905 Sent 014843 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 278748 Sent 014894 Node 14]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 279259 Sent 014927 Node 12]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 279530 Sent 014947 Node 1]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [2]
 [Line 279581 Sent 014950 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 279706 Sent 014955 Node 21]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 279776 Sent 014957 Node 29]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -2035,7 +1679,6 @@
 [Line 281333 Sent 015035 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 281360 Sent 015035 Node 30]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 281713 Sent 015051 Node 32]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 281726 Sent 015053 Node 1]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [2]
 [Line 281942 Sent 015068 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 281969 Sent 015071 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 282019 Sent 015072 Node 33]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -2049,13 +1692,11 @@
 [Line 282432 Sent 015098 Node 3]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 282437 Sent 015098 Node 8]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 282555 Sent 015106 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 282577 Sent 015108 Node 1]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [2]
 [Line 282614 Sent 015111 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 282629 Sent 015112 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 282852 Sent 015124 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 282946 Sent 015128 Node 24]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 282954 Sent 015129 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 283105 Sent 015139 Node 24]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [21]
 [Line 283155 Sent 015141 Node 28]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 283202 Sent 015144 Node 1]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 283270 Sent 015148 Node 1]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
@@ -2068,7 +1709,6 @@
 [Line 283900 Sent 015186 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 283912 Sent 015187 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 283932 Sent 015188 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 284011 Sent 015192 Node 1]: [L3 Syntax punct-is-nonproj] Punctuation must not be attached non-projectively over nodes [2]
 [Line 284032 Sent 015193 Node 15]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
 [Line 284204 Sent 015204 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 284216 Sent 015205 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -2135,7 +1775,6 @@
 [Line 291274 Sent 015616 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 291315 Sent 015617 Node 26]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 291483 Sent 015626 Node 23]: [L3 Syntax rel-upos-advmod] 'advmod' should be 'ADV' but it is 'NUM'
-[Line 291555 Sent 015628 Node 17]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [19]
 [Line 291799 Sent 015640 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 291834 Sent 015642 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 291893 Sent 015644 Node 23]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -2144,5 +1783,5 @@
 [Line 292179 Sent 015658 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 292242 Sent 015663 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 292604 Sent 015683 Node 16]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-Syntax errors: 2146
-*** FAILED *** with 2146 errors
+Syntax errors: 1776
+*** FAILED *** with 1776 errors
