@@ -319,16 +319,6 @@ rule oblique_adpositional {
   commands { e.label = obl }
 }
 
-
-% hvis ikke ...
-rule hvis_adv {
-  pattern {
-    DEP [ lemma="hvis" ];
-    e: GOV -[ ADV ]-> DEP;
-  }
-  commands {e.label = mark}
-}
-
 rule appositional_modifier {
   pattern { e: GOV -[APP]-> DEP; }
   commands { e.label = appos }

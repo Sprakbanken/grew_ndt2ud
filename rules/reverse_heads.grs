@@ -186,3 +186,24 @@ rule shift_coordinating_sym {
     f.label = cc;
   }
 }
+
+
+% hvis ikke ...
+rule hvis_adv {
+  pattern {
+    DEP [ lemma="hvis" ];
+    N1 [form="ikke"];
+    e: GOV -[ ADV ]-> DEP;
+    e2: DEP -> N1;
+  }
+  commands {
+    del_edge e;
+    del_edge e2;
+
+    add_edge f: N1 -> DEP;
+    f.label = orphan;
+
+    add_edge f2: GOV -> N1;
+    f2.label = advcl;
+    }
+}
