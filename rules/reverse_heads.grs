@@ -207,3 +207,17 @@ rule hvis_adv {
     f2.label = advcl;
     }
 }
+
+% Skift hodet til apposisjoner fra høyre til venstre
+rule shift_app_right_head {
+  pattern {
+    e: H -[ APP ]-> N;
+    H >> N;
+  }
+  commands {
+    del_edge e;
+    shift_in H ==> N;
+    add_edge f: N -> H;
+    f.label = appos;
+  }
+}
