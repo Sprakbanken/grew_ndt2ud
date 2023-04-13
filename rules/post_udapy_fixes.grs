@@ -1,0 +1,14 @@
+% Post-fix errors introduced by udapy fixes
+
+rule name_compound_punctuation {
+  pattern { DEP [upos=PUNCT]; e: GOV -[^punct]-> DEP;}
+  commands {e.label = punct}
+}
+
+
+
+strat main {
+    Seq (
+        Onf (name_compound_punctuation),
+    )
+}
