@@ -148,9 +148,6 @@
 [Line 11261 Sent 000569 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 11278 Sent 000570 Node 11]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 11338 Sent 000572 Node 18]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 12325 Sent 000635 Node 9]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 12325 Sent 000635 Node 9]: [L3 Syntax right-to-left-flat] Relation 'flat:name' must go left-to-right.
-[Line 12327 Sent 000635 Node 11]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 12335 Sent 000635 Node 19]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 12432 Sent 000642 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 12438 Sent 000642 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -330,8 +327,6 @@
 [Line 57529 Sent 002966 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 57566 Sent 002967 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 57719 Sent 002972 Node 13]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 57969 Sent 002984 Node 12]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 57971 Sent 002984 Node 14]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 58028 Sent 002986 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 58269 Sent 003001 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 59139 Sent 003050 Node 16]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -373,9 +368,7 @@
 [Line 70681 Sent 003640 Node 25]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 70725 Sent 003641 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 70876 Sent 003649 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 71067 Sent 003660 Node 7]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 71068 Sent 003660 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 71070 Sent 003660 Node 10]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 71095 Sent 003662 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 72332 Sent 003721 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 72566 Sent 003734 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -428,8 +421,6 @@
 [Line 88330 Sent 004525 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 89354 Sent 004577 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 92348 Sent 004751 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 92732 Sent 004767 Node 8]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 92734 Sent 004767 Node 10]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 93984 Sent 004828 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 94722 Sent 004865 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 94924 Sent 004872]: [L2 Syntax invalid-deprel] Invalid DEPREL value 'IK'.
@@ -444,10 +435,6 @@ Documented dependency relations can be specifically turned on/off for each langu
 See https://quest.ms.mff.cuni.cz/udvalidator/cgi-bin/unidep/langspec/specify_deprel.pl for details.
 
 [Line 95610 Sent 004902 Node 11]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 98630 Sent 005064 Node 11]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 98639 Sent 005064 Node 20]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 98880 Sent 005073 Node 11]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 98883 Sent 005073 Node 14]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 99297 Sent 005092 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 99461 Sent 005099 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 99552 Sent 005103]: [L2 Syntax invalid-deprel] Invalid DEPREL value 'IK'.
@@ -494,9 +481,6 @@ See https://quest.ms.mff.cuni.cz/udvalidator/cgi-bin/unidep/langspec/specify_dep
 [Line 110631 Sent 005740 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 111406 Sent 005782 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 111864 Sent 005807 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 111866 Sent 005807 Node 17]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 111866 Sent 005807 Node 17]: [L3 Syntax right-to-left-flat] Relation 'flat:name' must go left-to-right.
-[Line 111868 Sent 005807 Node 19]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 112083 Sent 005819 Node 16]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 112256 Sent 005825 Node 27]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 112314 Sent 005827 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -513,9 +497,6 @@ See https://quest.ms.mff.cuni.cz/udvalidator/cgi-bin/unidep/langspec/specify_dep
 [Line 113317 Sent 005874 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 114351 Sent 005930 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 114538 Sent 005942 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 114544 Sent 005942 Node 14]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 114544 Sent 005942 Node 14]: [L3 Syntax right-to-left-flat] Relation 'flat:name' must go left-to-right.
-[Line 114547 Sent 005942 Node 17]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 114674 Sent 005950 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 114693 Sent 005951 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 114698 Sent 005951 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -759,8 +740,6 @@ See https://quest.ms.mff.cuni.cz/udvalidator/cgi-bin/unidep/langspec/specify_dep
 [Line 153516 Sent 008100 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 153955 Sent 008128 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 154137 Sent 008142 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 154294 Sent 008152 Node 4]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 154299 Sent 008152 Node 9]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 154422 Sent 008160 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 154428 Sent 008160 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 154547 Sent 008168 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -800,8 +779,6 @@ See https://quest.ms.mff.cuni.cz/udvalidator/cgi-bin/unidep/langspec/specify_dep
 [Line 161538 Sent 008584 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 161637 Sent 008590 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 161770 Sent 008602 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 161777 Sent 008602 Node 10]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 161781 Sent 008602 Node 14]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 161889 Sent 008612 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 161909 Sent 008614 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 161957 Sent 008616 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -833,15 +810,11 @@ See https://quest.ms.mff.cuni.cz/udvalidator/cgi-bin/unidep/langspec/specify_dep
 [Line 170084 Sent 009124 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 170640 Sent 009164 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 170644 Sent 009164 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 170667 Sent 009166 Node 11]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 170670 Sent 009166 Node 14]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 170688 Sent 009168 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 170961 Sent 009181 Node 13]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 170973 Sent 009183 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 171215 Sent 009194 Node 17]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 171520 Sent 009210 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 171820 Sent 009222 Node 10]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 171824 Sent 009222 Node 14]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 171891 Sent 009226 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 171895 Sent 009226 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 171969 Sent 009233 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -877,20 +850,14 @@ See https://quest.ms.mff.cuni.cz/udvalidator/cgi-bin/unidep/langspec/specify_dep
 [Line 178343 Sent 009613 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 178773 Sent 009645 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 178800 Sent 009646 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 178968 Sent 009657 Node 3]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 178973 Sent 009657 Node 8]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 179208 Sent 009670 Node 20]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 179417 Sent 009683 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 179469 Sent 009685 Node 9]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 179471 Sent 009685 Node 11]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 179647 Sent 009694 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 179787 Sent 009700 Node 18]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 179828 Sent 009704 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 179914 Sent 009708 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 180039 Sent 009714 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 180140 Sent 009719 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 180342 Sent 009728 Node 10]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 180345 Sent 009728 Node 13]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 181059 Sent 009761 Node 10]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 181463 Sent 009779 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 181601 Sent 009785 Node 19]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -934,20 +901,14 @@ See https://quest.ms.mff.cuni.cz/udvalidator/cgi-bin/unidep/langspec/specify_dep
 [Line 189207 Sent 010196 Node 13]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 189269 Sent 010199 Node 18]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 189445 Sent 010207 Node 16]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 189784 Sent 010222 Node 1]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 189786 Sent 010222 Node 3]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 189841 Sent 010224 Node 13]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 190262 Sent 010243 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 190475 Sent 010254 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 190782 Sent 010271 Node 27]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 191145 Sent 010290 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 191870 Sent 010335 Node 12]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 191873 Sent 010335 Node 15]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 192049 Sent 010345 Node 19]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 192273 Sent 010361 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 192473 Sent 010375 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 192655 Sent 010380 Node 13]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 192659 Sent 010380 Node 17]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 192675 Sent 010381 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 192906 Sent 010391 Node 29]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 193268 Sent 010408 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -973,29 +934,15 @@ See https://quest.ms.mff.cuni.cz/udvalidator/cgi-bin/unidep/langspec/specify_dep
 [Line 202256 Sent 011037 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 202280 Sent 011039 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 202492 Sent 011055 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 202509 Sent 011056 Node 10]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 202511 Sent 011056 Node 12]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 202793 Sent 011065 Node 34]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 202795 Sent 011065 Node 36]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 202825 Sent 011068 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 202877 Sent 011071 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 203042 Sent 011080 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 203380 Sent 011099 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 203398 Sent 011100 Node 4]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 203400 Sent 011100 Node 6]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 203463 Sent 011102 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 203691 Sent 011110 Node 8]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 203693 Sent 011110 Node 10]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 203700 Sent 011110 Node 17]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 204166 Sent 011131 Node 3]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 204168 Sent 011131 Node 5]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 204169 Sent 011131 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 204265 Sent 011137 Node 21]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 204319 Sent 011139 Node 22]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 204391 Sent 011144 Node 16]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 204395 Sent 011144 Node 20]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 204661 Sent 011155 Node 5]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 204665 Sent 011155 Node 9]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 204803 Sent 011164 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 204810 Sent 011164 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 205096 Sent 011182 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1003,9 +950,6 @@ See https://quest.ms.mff.cuni.cz/udvalidator/cgi-bin/unidep/langspec/specify_dep
 [Line 205525 Sent 011211 Node 13]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 205779 Sent 011226 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 205953 Sent 011239 Node 18]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 207052 Sent 011313 Node 3]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 207052 Sent 011313 Node 3]: [L3 Syntax right-to-left-flat] Relation 'flat:name' must go left-to-right.
-[Line 207054 Sent 011313 Node 5]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 207135 Sent 011317 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 207182 Sent 011319 Node 25]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 207331 Sent 011332 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1061,8 +1005,6 @@ See https://quest.ms.mff.cuni.cz/udvalidator/cgi-bin/unidep/langspec/specify_dep
 [Line 218479 Sent 011943 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 218523 Sent 011946 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 218705 Sent 011956 Node 29]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 218718 Sent 011956 Node 42]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 218720 Sent 011956 Node 44]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
 [Line 218971 Sent 011968 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 219152 Sent 011973 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 219305 Sent 011979 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1148,8 +1090,6 @@ See https://quest.ms.mff.cuni.cz/udvalidator/cgi-bin/unidep/langspec/specify_dep
 [Line 241425 Sent 013022 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 241592 Sent 013030 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 241774 Sent 013038 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 242413 Sent 013076 Node 3]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 242415 Sent 013076 Node 5]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 242740 Sent 013093 Node 11]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 243389 Sent 013126 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 243636 Sent 013136 Node 13]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1214,8 +1154,6 @@ See https://quest.ms.mff.cuni.cz/udvalidator/cgi-bin/unidep/langspec/specify_dep
 [Line 255844 Sent 013787 Node 22]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 256748 Sent 013838 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 257262 Sent 013869 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 257271 Sent 013870 Node 2]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 257273 Sent 013870 Node 4]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 257333 Sent 013873 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 257633 Sent 013893 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 258003 Sent 013913 Node 11]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1336,13 +1274,7 @@ See https://quest.ms.mff.cuni.cz/udvalidator/cgi-bin/unidep/langspec/specify_dep
 [Line 282019 Sent 015072 Node 33]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 282117 Sent 015078 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 282294 Sent 015089 Node 13]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 282342 Sent 015093 Node 1]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 282344 Sent 015093 Node 3]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 282354 Sent 015094 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 282402 Sent 015096 Node 3]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 282405 Sent 015096 Node 6]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'flat:name'
-[Line 282432 Sent 015098 Node 3]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 282437 Sent 015098 Node 8]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 282555 Sent 015106 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 282614 Sent 015111 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 282629 Sent 015112 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1404,10 +1336,6 @@ See https://quest.ms.mff.cuni.cz/udvalidator/cgi-bin/unidep/langspec/specify_dep
 [Line 290359 Sent 015555 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 290380 Sent 015555 Node 22]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 290658 Sent 015568 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 290733 Sent 015572 Node 9]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 290735 Sent 015572 Node 11]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 290737 Sent 015572 Node 13]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
-[Line 290739 Sent 015572 Node 15]: [L3 Syntax upos-rel-punct] 'PUNCT' must be 'punct' but it is 'compound'
 [Line 290903 Sent 015589 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 290958 Sent 015593 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 290971 Sent 015593 Node 14]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
@@ -1424,5 +1352,5 @@ See https://quest.ms.mff.cuni.cz/udvalidator/cgi-bin/unidep/langspec/specify_dep
 [Line 292179 Sent 015658 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 292242 Sent 015663 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 292604 Sent 015683 Node 16]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-Syntax errors: 1417
-*** FAILED *** with 1417 errors
+Syntax errors: 1345
+*** FAILED *** with 1345 errors
