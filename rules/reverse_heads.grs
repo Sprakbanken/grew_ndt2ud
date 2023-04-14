@@ -222,7 +222,8 @@ rule shift_app_right_head {
   }
   commands {
     del_edge e;
-    shift H ==> N;
+    shift_in H ==> N;
+    shift_out H =[^FLAT|IK|ATR]=> N;
     add_edge f: N -> H;
     f.label = appos;
   }
