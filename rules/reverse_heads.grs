@@ -214,10 +214,17 @@ rule shift_app_right_head {
     e: H -[ APP ]-> N;
     H >> N;
   }
+  without {
+    H [upos=PROPN];
+    N [upos=NOUN];
+    H > N;
+    * -[conj]-> H;
+  }
   commands {
     del_edge e;
-    shift_in H ==> N;
+    shift H ==> N;
     add_edge f: N -> H;
     f.label = appos;
   }
 }
+
