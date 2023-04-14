@@ -319,6 +319,20 @@ rule oblique_adpositional {
   commands { e.label = obl }
 }
 
+
+% profesjoner, titler o.l. umiddelbart foran egennavn blir nmod
+rule shift_app_right_head {
+  pattern {
+    H [upos=PROPN];
+    N [upos=NOUN];
+    e: H -[ APP ]-> N;
+    H > N;
+  }
+  commands {
+    e.label = nmod;
+  }
+}
+
 rule appositional_modifier {
   pattern { e: GOV -[APP]-> DEP; }
   commands { e.label = appos }
