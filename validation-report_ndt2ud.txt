@@ -1,23 +1,4 @@
-[Line 505 Sent 000026 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 651 Sent 000032 Node 22]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [28]
-[Line 2291 Sent 000106 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 7533 Sent 000375 Node 19]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 10476 Sent 000527 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 13075 Sent 000680 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 13393 Sent 000699 Node 15]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 16063 Sent 000845 Node 4]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 16839 Sent 000890 Node 6]: [L3 Syntax too-many-subjects] Node has multiple subjects not subtyped as ':outer': [2, 4]. Outer subjects are allowed if a clause acts as the predicate of another clause.
-[Line 28686 Sent 001515 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 30944 Sent 001633 Node 16]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 31462 Sent 001656 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 34048 Sent 001769 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 50539 Sent 002601 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 57521 Sent 002966 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 70630 Sent 003639 Node 5]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 70640 Sent 003639 Node 15]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [19]
-[Line 78967 Sent 004052 Node 6]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 86020 Sent 004420 Node 3]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 88105 Sent 004516 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 94924 Sent 004872]: [L2 Syntax invalid-deprel] Invalid DEPREL value 'IK'.
 [Line 94924 Sent 004872]: [L4 Syntax unknown-deprel] Unknown DEPREL label: 'IK'
 
@@ -29,33 +10,17 @@ See https://universaldependencies.org/contributing_language_specific.html for fu
 Documented dependency relations can be specifically turned on/off for each language in which they are used.
 See https://quest.ms.mff.cuni.cz/udvalidator/cgi-bin/unidep/langspec/specify_deprel.pl for details.
 
-[Line 105732 Sent 005456 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 118204 Sent 006130 Node 8]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 119568 Sent 006193 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 124767 Sent 006434 Node 9]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 135908 Sent 007036]: [L2 Syntax invalid-deprel] Invalid DEPREL value 'IK'.
 [Line 135908 Sent 007036]: [L4 Syntax unknown-deprel] Unknown DEPREL label: 'IK'
-[Line 139686 Sent 007247 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 149155 Sent 007841 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 153238 Sent 008085 Node 13]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 159652 Sent 008474 Node 7]: [L3 Syntax leaf-aux-cop] 'aux' not expected to have children (7:er:aux --> 5:om:mark)
 [Line 159653 Sent 008474 Node 7]: [L3 Syntax leaf-aux-cop] 'aux' not expected to have children (7:er:aux --> 6:det:expl)
 [Line 159655 Sent 008474 Node 7]: [L3 Syntax leaf-aux-cop] 'aux' not expected to have children (7:er:aux --> 8:aktuelt:xcomp)
 [Line 159659 Sent 008474 Node 7]: [L3 Syntax leaf-aux-cop] 'aux' not expected to have children (7:er:aux --> 12:NHL-divisjon:nsubj)
-[Line 164984 Sent 008769 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 165061 Sent 008772 Node 7]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 175538 Sent 009431 Node 14]: [L3 Syntax leaf-aux-cop] 'aux' not expected to have children (14:var:aux --> 13:det:expl)
 [Line 175540 Sent 009431 Node 14]: [L3 Syntax leaf-aux-cop] 'aux' not expected to have children (14:var:aux --> 15:deilig:xcomp)
 [Line 175546 Sent 009431 Node 14]: [L3 Syntax leaf-aux-cop] 'aux' not expected to have children (14:var:aux --> 21:jente:nsubj)
-[Line 183485 Sent 009876 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 201764 Sent 010996 Node 14]: [L3 Syntax too-many-subjects] Node has multiple subjects not subtyped as ':outer': [12, 15]. Outer subjects are allowed if a clause acts as the predicate of another clause.
-[Line 209454 Sent 011465 Node 2]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 210052 Sent 011503 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 217805 Sent 011909 Node 12]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
 [Line 234145 Sent 012667]: [L2 Syntax invalid-deprel] Invalid DEPREL value 'IK'.
 [Line 234145 Sent 012667]: [L4 Syntax unknown-deprel] Unknown DEPREL label: 'IK'
-[Line 243636 Sent 013136 Node 13]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 253807 Sent 013675 Node 20]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-[Line 255022 Sent 013742 Node 1]: [L3 Syntax right-to-left-appos] Relation 'appos' must go left-to-right.
-Syntax errors: 50
-*** FAILED *** with 50 errors
+Syntax errors: 15
+*** FAILED *** with 15 errors
