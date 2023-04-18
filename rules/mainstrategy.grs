@@ -1,5 +1,6 @@
 
 
+import "NDT_fix.grs"
 import "relabel_NDT_to_UD_deprel.grs"
 import "shift_root.grs"
 import "reverse_heads.grs"
@@ -7,6 +8,7 @@ import "reverse_heads.grs"
 
 strat rules {
   Seq (
+    Onf(NDT_fix),
 
     %%% restructure graph
     Onf (reverse_heads),

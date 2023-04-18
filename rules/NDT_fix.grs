@@ -1,0 +1,62 @@
+% 000890: "Men det har vi ikke klart å vise i de siste kvalifiseringene, sier Portsmouth-spilleren."
+rule double_subject {
+    pattern {
+        V [form="klart", upos="VERB"];
+        D [form="det", upos="PRON"];
+        e: V -[SUBJ]-> D;
+        R [form="har", upos="AUX"];
+        * -[FINV]-> R;
+    }
+    commands {
+        del_edge e;
+        add_edge f: R -> D;
+        f.label = FSUBJ;
+    }
+}
+
+% 10996: "Ikke det at boka mi skal være en fasit , men den kan være underlag for å diskutere ."
+rule double_subject2 {
+    pattern {
+
+        N1 [form="den", upos="PRON"];
+        N2 [form="kan", upos="AUX"];
+        N3 [form="være"];
+        N4 [form="underlag"];
+        e: N2 -[SUBJ]-> N1;
+    }
+    with { N1 < N2; N2 < N3; N3 < N4;}
+    commands {
+        e.label = FSUBJ;
+    }
+}
+
+
+% 007036: "(...) å utgi vår neste plate på CD - og (...)"
+rule DET_to_NOUN {
+    pattern {
+        N [form="CD", upos="DET"];
+        A [upos=ADP];
+        e: A -[IK]-> N;
+    }
+    commands {
+        N.upos = "NOUN";
+        e.label = "PUTFYLL";
+    }
+}
+
+
+% 001021: "Eva Joly + Daniel Cohn-Bendit = EU"
+rule PAR_to_KOORD {
+  pattern {
+    N1 [lemma="Eva"];
+    N3 [lemma="EU"];
+    S [form="=", upos=SYM];
+    e: N1 -[PAR]-> N3;
+  }
+  with {
+    N1 << S; S < N3; % The symbol immediately precedes the coordinated node
+  }
+  commands {
+    e.label = KOORD;
+  }
+}
