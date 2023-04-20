@@ -1,0 +1,11 @@
+pos
+%------
+NOUN
+PROPN
+NUM
+DET
+PRON
+X
+PART
+ADP
+SYM
