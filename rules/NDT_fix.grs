@@ -15,21 +15,21 @@ rule double_subject {
 }
 
 % 10996: "Ikke det at boka mi skal være en fasit , men den kan være underlag for å diskutere ."
-rule double_subject2 {
+% Dobbelt subjekt dersom "den" beholder "SUBJ"-relasjonen
+% 8128: "- At andre regissører kaller deg pompøs ; kan det også skyldes misunnelse ?"
+% SUBJ -> FSUBJ; Mulig analyse som setningsantisiperende hvis leddsetningene var omrokkert.
+rule relabel_formal_subject {
+    global { sent_id = "008128" | "010996"}
     pattern {
-
-        N1 [form="den", upos="PRON"];
-        N2 [form="kan", upos="AUX"];
-        N3 [form="være"];
-        N4 [form="underlag"];
+        N1 [upos="PRON"];
+        N2 [upos="AUX"];
         e: N2 -[SUBJ]-> N1;
     }
-    with { N1 < N2; N2 < N3; N3 < N4;}
+    with { e.length = 1; }
     commands {
         e.label = FSUBJ;
     }
 }
-
 
 % 007036: "(...) å utgi vår neste plate på CD - og (...)"
 rule DET_to_NOUN {
@@ -59,4 +59,33 @@ rule PAR_to_KOORD {
   commands {
     e.label = KOORD;
   }
+}
+
+
+% Eksempel 000016: Først i prosesjonen gikk kong Harald og brudens mor , Marit Tjessem.
+rule add_morph_feats {
+    pattern {
+        N [upos=NOUN, lemma="kong", !Definite, !Gender, !Number];
+        * -[APP]-> N;
+    }
+    commands {
+        N.Definite=Ind;
+        N.Gender=Masc;
+        N.Number=Sing;
+    }
+}
+
+% 5092	 Til informasjon , så veier jeg omtrent 65 kilo - 63 kilo dersom jeg vasker meg .
+rule shift_APP {
+    global { sent_id = "005092" }
+    pattern {
+        A [form="så"];
+        e1: V -[APP]-> A;
+        e2: A -[ADV]-> N;
+    }
+    commands {
+        e1.label = "ADV";
+        e2.label = "APP";
+    }
+
 }
