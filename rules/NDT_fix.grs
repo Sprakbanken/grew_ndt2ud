@@ -14,12 +14,10 @@ rule double_subject {
     }
 }
 
-% 10996: "Ikke det at boka mi skal være en fasit , men den kan være underlag for å diskutere ."
-% Dobbelt subjekt dersom "den" beholder "SUBJ"-relasjonen
 % 8128: "- At andre regissører kaller deg pompøs ; kan det også skyldes misunnelse ?"
 % SUBJ -> FSUBJ; Mulig analyse som setningsantisiperende hvis leddsetningene var omrokkert.
 rule relabel_formal_subject {
-    global { sent_id = "008128" | "010996"}
+    global { sent_id = "008128" }
     pattern {
         N1 [upos="PRON"];
         N2 [upos="AUX"];
@@ -88,4 +86,19 @@ rule shift_APP {
         e2.label = "APP";
     }
 
+}
+
+
+% 10996: "Ikke det at boka mi skal være en fasit , men den kan være underlag for å diskutere ."
+% Dobbelt subjekt dersom "den" beholder "SUBJ"-relasjonen
+rule APP_to_ADV {
+    global {sent_id = "010996"}
+    pattern {
+        N1 [lemma="ikke"];
+        N2 [form="det"];
+        e: N2 -[APP]-> N1;
+    }
+    commands {
+        e.label = ADV;
+    }
 }
