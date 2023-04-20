@@ -1,6 +1,8 @@
 
 
 import "NDT_fix.grs"
+import "appositions.grs"
+import "copula.grs"
 import "relabel_NDT_to_UD_deprel.grs"
 import "shift_root.grs"
 import "reverse_heads.grs"
@@ -8,9 +10,12 @@ import "reverse_heads.grs"
 
 strat rules {
   Seq (
+    %%% Fix errors in NDT prior to conversion
     Onf(NDT_fix),
 
-    %%% restructure graph
+    %%% restructure graphs
+    appositions.APP_ordered_strategy,
+    Onf(copula),
     Onf (reverse_heads),
     Onf (shift_root),
     Onf(shift_root.shift_copula_SPRED_head),  % <- already a sequence strategy
