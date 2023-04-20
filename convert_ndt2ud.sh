@@ -1,10 +1,19 @@
-PARTITION=train
-
-NDT_FILE=data/ndt_nb_${PARTITION}_udmorph.conllu
-CONVERTED=data/grew_output_${PARTITION}.conllu
 TEMPFILE=tmp.conllu
+MALTGOLD=malt_input.conllu
 
-echo "Convert treebank"
+# Treebank file names
+#PARTITION=train
+#NDT_FILE=data/ndt_nb_${PARTITION}_udmorph.conllu
+#CONVERTED=data/grew_output_${PARTITION}.conllu
+
+# File names for testing
+NDT_FILE=data/sentences/testsents.conllu
+CONVERTED=OUTPUT.conllu
+
+
+
+# START CONVERSION
+echo "--- Convert treebank ---"
 
 grew transform \
     -i  $NDT_FILE \
@@ -13,7 +22,7 @@ grew transform \
     -strat main \
     -safe_commands
 
-echo "Fix punctuation"
+echo "--- Fix punctuation ---"
 cat $CONVERTED | udapy -s ud.FixPunct > $TEMPFILE
 
 grew transform \
@@ -22,16 +31,20 @@ grew transform \
     -grs rules/post_udapy_fixes.grs \
     -safe_commands
 
-echo "Validate treebank"
+# EVALUATION
+echo "--- Validate treebank ---"
 python ../tools/validate.py --max-err 0 --lang no $CONVERTED 2>&1 | tee validation-report_ndt2ud.txt
 
-# endre verdien til -e (errortype) for å hente ut linjene til en spesifikk feiltype fra valideringsrapporten
-python extract_errorlines.py -f validation-report_ndt2ud.txt -e rel-pos-advmod
+python extract_errorlines.py \
+    -f validation-report_ndt2ud.txt #\
+    # -e right-to-left-appos  # hent ut linjene for en spesifikk feilmeldingstype (-e errortype) fra valideringsrapporten
 
-echo "Remove comment lines"
+
+# VISUALISATION
+echo "--- Remove comment lines ---"
 python parse_conllu.py -rc -f $CONVERTED -o $TEMPFILE
+python parse_conllu.py -rc -f $NDT_FILE -o $MALTGOLD
 
-echo "Visualize converted treebank"
-java -jar dist-20141005/lib/MaltEval.jar -s $TEMPFILE -v 1
-
+echo "--- Visualize converted treebank ---"
+java -jar dist-20141005/lib/MaltEval.jar -g $MALTGOLD -s $TEMPFILE -v 1
 
