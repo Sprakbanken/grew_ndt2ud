@@ -1,0 +1,173 @@
+%%%% APPOSISJONER %%%%
+
+package left_head_relabelling {
+
+    % 1: Enkel omskriving fra APP til appos for 2 Nominaler som kommer etter hverandre
+    % Eksempel 4272: "Jeg stusset og ringte en kollega , en professor i medisin som arbeider med legemidler."
+    rule N-APP-N_to_appos_1 (lex1 from "nominals.lex", lex2 from "nominals.lex") {
+        pattern {
+            GOV [upos=lex1.pos];
+            DEP [upos=lex2.pos];
+            e: GOV -[APP]-> DEP;
+            GOV << DEP;
+        }
+        with { N [upos <> PUNCT|PRON]; N << e; }
+        commands { e.label = appos }
+    }
+
+
+}
+
+% 2: Med kryssende kanter
+% Eksempel: "Jeg [H=møtte] [N1=Fredrik] [X=i går], [N2=mannen] som ..."
+% Eksempel: "Det [H=er] [N1=mye] jeg syns er interessant med mammablogger, blant annet [X=hva] de er [N2=uttrykk] [Y=for]."
+rule APP_to_dislocated {
+    global { is_not_projective }
+    pattern {
+        H -> N1;
+        e: N1 -[APP]-> N2;
+        e2: X -> Y;
+        N1 << X ; X << N2;
+        e >< e2;  % Intersecting edges
+    }
+    with { * -> H ;}  % Unngå å matche det "usynlige hodet" til rot-noder
+    commands {
+        del_edge e;
+        add_edge f: H -> N2;
+        f.label = dislocated;
+    }
+}
+
+% 3: Fra nominalt til verbalt ledd
+% Eksempel 8692: "- Det gjelder både kostymene og [N1=det] at de [V=løfter] hverandre, noe som ikke er lov i konkurranser."
+% Eksempel 7739: "- Men det er kritikkverdig at de ikke kalte inn Cathrines foreldre til samtale om det at hun ikke hadde mat med, og at hun flere ganger møtte uforberedt."
+rule N-APP-V_to_acl (lex from "nominals.lex") {
+    pattern {
+        N1[upos=lex.pos];
+        V [upos=VERB];
+        e: N1 -[APP]-> V;
+    }
+    commands {
+        e.label = acl;
+    }
+}
+
+% 4: Fra verbalt til nominalt ledd
+% Eksempel 8692: "- Det gjelder både kostymene og det at de [V=løfter] hverandre, [N=noe] som ikke er lov i konkurranser."
+rule V-APP-N_to_dislocated (lex from "nominals.lex") {
+    pattern {
+        N [upos=lex.pos];
+        V [upos=VERB];
+        e: V -[APP]-> N;
+    }
+    commands {
+        e.label = dislocated;
+    }
+}
+
+% 5: Titler foran egennavn
+rule titles_APP_to_flat {
+  pattern {
+    TITLE [upos=NOUN, Definite=Ind];
+    NAME  [upos=PROPN];
+    e: NAME -[ APP ]-> TITLE;
+    TITLE < NAME;
+  }
+  without {
+    * -[DET]-> TITLE;
+  }
+  commands {
+    shift NAME ==> TITLE;
+    del_edge e;
+    add_edge f: TITLE -> NAME;
+    f.label = "FLAT";
+  }
+}
+
+% Skift hodet fra høyre til venstre
+rule APP_to_appos_shift_head  (lex1 from "nominals.lex", lex2 from "nominals.lex") {
+  pattern {
+    e: H -[ APP ]-> N;
+    N << H;
+  }
+  without {
+    H [upos=PROPN];
+    N [upos=NOUN, Definite=Ind];
+    N < H;
+  }
+  commands {
+    add_edge f: N -> H;
+    f.label = e.label;
+    del_edge e;
+
+    shift_in H ==> N;
+    shift_out H =[^FLAT|ATR|KOORD|IK]=> N;  % Sjekk om denne listen er fullstendig: relasjoner som bør henge igjen på 2.ledd
+  }
+}
+
+
+% Mellom to verballedd
+% Eksempel 7111: "Nødlanding kunne bety at de bare forsvant - ble slukt i det store grønne intet."
+% Eksempel 10961: "Jeg vil gjøre ting du har gjort, skrive, skape, produsere."
+rule V-APP-V_to_conj {
+    pattern {
+        V1 [upos=VERB];
+        V2 [upos=VERB];
+        e: V1 -[APP]-> V2;
+        V1 << V2;
+    }
+    commands {
+        e.label = KOORD;
+    }
+}
+
+% "X, så Y"
+% Eksempel 8512: "Men når det er sagt, så ser vi ikke på KHL som en trussel."
+% Eksempel 1792: "Hvis det er noe finanskrisen har vist, så er det hvor viktig det er."
+rule APP_saa_to_ADV {
+    pattern {
+        e: GOV -[APP]-> DEP;
+        GOV [upos=ADV, form="så"];
+        e2: H -[ADV]-> GOV;
+    }
+    commands {
+        del_edge e;
+        add_edge f: H -> DEP;
+        f.label = e2.label;
+    }
+}
+
+
+
+% For alle andre tilfeller. OBS! Ikke kjør denne regelen uten å ha kjørt de andre reglene først.
+rule APP_to_dislocated_fallback {
+    pattern {
+        e: GOV -[APP]-> DEP;
+        H -> GOV;
+    }
+    commands {
+        del_edge e;
+        add_edge f: H -> DEP;
+        f.label = dislocated;
+        f.fallback="Y";
+    }
+}
+
+
+strat APP_ordered_strategy {
+    Seq (
+        % Rekkefølgen går fra mest spesifikk til minst spesifikk
+        Onf (titles_APP_to_flat),
+        Onf (APP_saa_to_ADV),
+        Onf (V-APP-V_to_conj),
+        Onf (APP_to_appos_shift_head),
+        Onf (APP_to_dislocated),
+        Onf (left_head_relabelling),  % Reglene som forutsetter at APP_to_appos_shift_head allerede har skiftet hoder
+        % multiple_APP_deprels: Skal allerede dekkes av tidligere regler!
+        % Eksempel 4420: "Sammen med [N1=broren], [N2=fotografen] [N3=Matt], reiste han i fem år (...)"
+        Onf (N-APP-V_to_acl),
+        Onf (V-APP-N_to_dislocated ),
+        Onf (APP_to_dislocated_fallback),
+    )
+}
+
