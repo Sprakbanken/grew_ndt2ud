@@ -1,0 +1,79 @@
+% kombinasjoner av hjelpeverb og copula
+rule reverse_cop_aux {
+  pattern {
+    COP [lemma="være"];
+    AUX [upos=AUX];
+    e1: AUX -[ INFV ]-> COP;
+    e2: COP -[ SPRED ]-> SPRED;
+  }
+  commands {
+    del_edge e1;
+    del_edge e2;
+    shift AUX ==> SPRED;
+    shift COP ==> SPRED;
+    add_edge f1: SPRED -> AUX;
+    add_edge f2: SPRED -> COP;
+    f1.label = aux;
+    f2.label = cop;
+  }
+}
+
+% cop: reverser hodet i setninger der "være" er rot, med SPRED, men uten PSUBJ. Predikativet er ny rot.
+rule focustype_head_SPRED_copula {
+	pattern {
+    H [ lemma="være" ];
+    e: H -[SPRED | INFV ]-> D; % Mulig at vi skal ha en egen behandling av tilfeller med INFV
+  }
+  without {
+    H -[PSUBJ]-> *;
+  }
+  commands {
+    del_edge e;
+    shift H ==> D;
+    add_edge f: D -> H;
+    f.label = cop;
+  }
+}
+
+% Setningsantisiperende: Predikativet blir rot, PSUBJ-leddsetning blir csubj, "være" blir kopula på predikativet.
+rule clause_anticipating_copula {
+	pattern {
+    H [ lemma="være" ];
+    e1: H -[SPRED]-> D1;
+    e2: H -[PSUBJ]-> D2;
+    D2 [upos <> NOUN|PRON|PROPN];
+  }
+  commands {
+    del_edge e1;
+    del_edge e2;
+    shift H ==> D1;
+    add_edge f1: D1 -> H; f1.label = cop;
+    add_edge f2: D1 -> D2; f2.label = csubj;
+  }
+}
+
+
+rule reverse_cop_aux_aux {
+  pattern {
+    COP [lemma="være"];
+    AUX1 [upos=AUX];
+    AUX2 [upos=AUX];
+    e1: AUX1 -[ INFV ]-> AUX2;
+    e2: AUX2 -[ INFV ]-> COP;
+    e3: COP -[ SPRED ]-> SPRED;
+  }
+  commands {
+    del_edge e1;
+    del_edge e2;
+    del_edge e3;
+    shift AUX1 ==> SPRED;
+    shift AUX2 ==> SPRED;
+    shift COP ==> SPRED;
+    add_edge f1: SPRED -> AUX1;
+    add_edge f2: SPRED -> AUX2;
+    add_edge f3: SPRED -> COP;
+    f1.label = aux;
+    f2.label = aux;
+    f3.label = cop;
+  }
+}
