@@ -319,25 +319,6 @@ rule oblique_adpositional {
   commands { e.label = obl }
 }
 
-
-% profesjoner, titler o.l. umiddelbart foran egennavn blir nmod
-rule shift_app_right_head {
-  pattern {
-    H [upos=PROPN];
-    N [upos=NOUN];
-    e: H -[ APP ]-> N;
-    H > N;
-  }
-  commands {
-    e.label = nmod;
-  }
-}
-
-rule appositional_modifier {
-  pattern { e: GOV -[APP]-> DEP; }
-  commands { e.label = appos }
-}
-
 % presenteringssetninger: når "være" er rot og setningen har PSUBJ og FSUBJ. Behold roten.
 % forutsetter at strukturen ikke er endret.
 rule presentational_expl {
