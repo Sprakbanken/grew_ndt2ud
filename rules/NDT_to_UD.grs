@@ -54,6 +54,12 @@ package nom_init {
     pattern { N[upos=DET,!nom]; N -[ATR]-> A;}
     commands { N.nom=y}
   }
+% Adjectives that are APP dependents on a proper noun are nominals
+  rule nom_adj_app_propn {
+    pattern { N [upos=PROPN|NOUN]; A [upos=ADJ,!nom]; N -[APP]-> A;}
+    commands {A.nom=y}
+  }
+
 
 }
 
