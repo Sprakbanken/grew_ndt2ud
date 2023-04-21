@@ -26,7 +26,7 @@ Alle stegene under kjøres med ett shell-skript fra terminalen (*OBS! Siste linj
     grew transform \
       -i  $NDT_FILE \
       -o  $CONVERTED \
-      -grs  rules/mainstrategy.grs \
+      -grs  rules/NDT_to_UD.grs \
       -strat main \
       -safe_commands
     ```
