@@ -294,6 +294,15 @@ rule adverbial_cl_modifier {
   commands { e.label = advcl }
 }
 
+rule adverbial_cl_modifier_2 {
+  pattern {
+    GOV [upos = ADV|VERB|AUX];
+    DEP [ upos=VERB|AUX ];
+    e: GOV -[APP]-> DEP;
+  }
+  commands { e.label = advcl }
+}
+
 rule adverbial_cl_modifier_aux {
   pattern {
     e1: GOV -[ADV]-> D1;
