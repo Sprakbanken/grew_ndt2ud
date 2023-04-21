@@ -58,6 +58,11 @@ package nom_init {
     commands {A.nom=y}
   }
 
+% Words with outgoing "FLAT"-relations are considered nominals
+  rule nom_flat {
+    pattern {N [!nom]; N -[FLAT]-> *;}
+    commands {N.nom=y}
+  }
 
 }
 

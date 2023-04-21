@@ -153,7 +153,7 @@ package relabelling {
     % Eksempel 7739: "- Men det er kritikkverdig at de ikke kalte inn Cathrines foreldre til samtale om det at hun ikke hadde mat med, og at hun flere ganger møtte uforberedt."
     rule N-APP-V_to_acl {
         pattern {
-            N1[nom];
+            N1[nom=y];
             V [upos=VERB|AUX];
             e: N1 -[APP]-> V;
         }
