@@ -224,8 +224,8 @@ strat APP_main {
     Seq (
         restructuring,
         Onf (relabelling),
-        %Onf (APP_to_dislocated_fallback),
-        %Onf (clean_up),
+        Onf (APP_to_dislocated_fallback),
+        Onf (clean_up),
     )
 }
 
