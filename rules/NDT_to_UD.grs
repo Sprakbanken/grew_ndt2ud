@@ -1,7 +1,7 @@
 import "NDT_fix.grs"
 include "appositions.grs"
 include "reverse_heads.grs"
-import "relabel_NDT_to_UD_deprel.grs"
+import "rename_deprel.grs"
 
 
 
@@ -82,7 +82,7 @@ strat main {
         Onf (nom_init),
         rev_main, % reverse_heads
         APP_main,  % appositions strategy, restructuring and relabelling APP relations
-        Onf (relabel_NDT_to_UD_deprel),
+        Onf (rename_deprel),
         Onf (final),
     )
 }
