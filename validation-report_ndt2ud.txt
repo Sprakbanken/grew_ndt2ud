@@ -1,4 +1,5 @@
-[Line 16839 Sent 000890 Node 6]: [L3 Syntax too-many-subjects] Node has multiple subjects not subtyped as ':outer': [2, 4]. Outer subjects are allowed if a clause acts as the predicate of another clause.
+[Line 70640 Sent 003639 Node 15]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [19]
+[Line 84675 Sent 004351 Node 21]: [L3 Syntax punct-causes-nonproj] Punctuation must not cause non-projectivity of nodes [24]
 [Line 94924 Sent 004872]: [L2 Syntax invalid-deprel] Invalid DEPREL value 'IK'.
 [Line 94924 Sent 004872]: [L4 Syntax unknown-deprel] Unknown DEPREL label: 'IK'
 
@@ -10,17 +11,10 @@ See https://universaldependencies.org/contributing_language_specific.html for fu
 Documented dependency relations can be specifically turned on/off for each language in which they are used.
 See https://quest.ms.mff.cuni.cz/udvalidator/cgi-bin/unidep/langspec/specify_deprel.pl for details.
 
-[Line 135908 Sent 007036]: [L2 Syntax invalid-deprel] Invalid DEPREL value 'IK'.
-[Line 135908 Sent 007036]: [L4 Syntax unknown-deprel] Unknown DEPREL label: 'IK'
-[Line 159652 Sent 008474 Node 7]: [L3 Syntax leaf-aux-cop] 'aux' not expected to have children (7:er:aux --> 5:om:mark)
-[Line 159653 Sent 008474 Node 7]: [L3 Syntax leaf-aux-cop] 'aux' not expected to have children (7:er:aux --> 6:det:expl)
-[Line 159655 Sent 008474 Node 7]: [L3 Syntax leaf-aux-cop] 'aux' not expected to have children (7:er:aux --> 8:aktuelt:xcomp)
-[Line 159659 Sent 008474 Node 7]: [L3 Syntax leaf-aux-cop] 'aux' not expected to have children (7:er:aux --> 12:NHL-divisjon:nsubj)
-[Line 175538 Sent 009431 Node 14]: [L3 Syntax leaf-aux-cop] 'aux' not expected to have children (14:var:aux --> 13:det:expl)
-[Line 175540 Sent 009431 Node 14]: [L3 Syntax leaf-aux-cop] 'aux' not expected to have children (14:var:aux --> 15:deilig:xcomp)
-[Line 175546 Sent 009431 Node 14]: [L3 Syntax leaf-aux-cop] 'aux' not expected to have children (14:var:aux --> 21:jente:nsubj)
+[Line 99552 Sent 005103]: [L2 Syntax invalid-deprel] Invalid DEPREL value 'IK'.
+[Line 99552 Sent 005103]: [L4 Syntax unknown-deprel] Unknown DEPREL label: 'IK'
 [Line 201764 Sent 010996 Node 14]: [L3 Syntax too-many-subjects] Node has multiple subjects not subtyped as ':outer': [12, 15]. Outer subjects are allowed if a clause acts as the predicate of another clause.
 [Line 234145 Sent 012667]: [L2 Syntax invalid-deprel] Invalid DEPREL value 'IK'.
 [Line 234145 Sent 012667]: [L4 Syntax unknown-deprel] Unknown DEPREL label: 'IK'
-Syntax errors: 15
-*** FAILED *** with 15 errors
+Syntax errors: 9
+*** FAILED *** with 9 errors
