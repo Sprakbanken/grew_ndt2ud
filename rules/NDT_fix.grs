@@ -17,7 +17,8 @@ rule double_subject {
 % 8128: "- At andre regissører kaller deg pompøs ; kan det også skyldes misunnelse ?"
 % SUBJ -> FSUBJ; Mulig analyse som setningsantisiperende hvis leddsetningene var omrokkert.
 rule relabel_formal_subject {
-    global { sent_id = "008128" }
+    %global { sent_id = "008128" }
+    global { text = re".*andre regissører kaller deg pompøs.*"}
     pattern {
         N1 [upos="PRON"];
         N2 [upos="AUX"];
@@ -75,7 +76,8 @@ rule add_morph_feats {
 
 % 5092	 Til informasjon , så veier jeg omtrent 65 kilo - 63 kilo dersom jeg vasker meg .
 rule shift_APP {
-    global { sent_id = "005092" }
+    %global { sent_id = "005092" }
+    global { text = re".*så veier jeg omtrent 65 kilo.*" }
     pattern {
         A [form="så"];
         e1: V -[APP]-> A;
@@ -92,7 +94,8 @@ rule shift_APP {
 % 10996: "Ikke det at boka mi skal være en fasit , men den kan være underlag for å diskutere ."
 % Dobbelt subjekt dersom "den" beholder "SUBJ"-relasjonen
 rule APP_to_ADV {
-    global {sent_id = "010996"}
+    %global {sent_id = "010996"}
+    global { text = re"Ikke det at boka mi skal være en fasit.*" }
     pattern {
         N1 [lemma="ikke"];
         N2 [form="det"];
@@ -102,3 +105,21 @@ rule APP_to_ADV {
         e.label = ADV;
     }
 }
+
+% Prosesjonen ble avsluttet av den 90 år gamle prins Carl Bernadotte som førte brudgommens søster , Märtha Louise , til bords .
+rule APP_modifiers {
+    global { text = re".*den 90 år gamle prins Carl Bernadotte.*" }
+    pattern {
+        H [form="Carl"];
+        N [form="prins"];
+        H -[APP]-> N;
+        e: H -[ATR|DET]-> D;
+        N < H; D << H;
+    }
+    commands {
+        add_edge e2: N -> D; e2.label = e.label; del_edge e;
+    }
+}
+
+
+% 417	 Og i sommer var en ny legespire intervjuet i Nettavisen - den 18-årige supereleven Faisal Qureshi , som har sanket 25 seksere på videregående skole .
