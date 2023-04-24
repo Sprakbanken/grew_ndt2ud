@@ -2,8 +2,7 @@ import "NDT_fix.grs"
 include "appositions.grs"
 include "reverse_heads.grs"
 import "rename_deprel.grs"
-
-
+import "post_udapy_fixes.grs"
 
 
 %%% Copied and modified from https://github.com/surfacesyntacticud/tools/blob/master/converter/grs/SUD_to_UD.grs#L134
@@ -85,4 +84,11 @@ strat main {
         Onf (rename_deprel),
         Onf (final),
     )
+}
+
+
+strat postfix {
+  Seq (
+    Onf(post_udapy_fixes)
+  )
 }
