@@ -1,5 +1,9 @@
 % 000890: "Men det har vi ikke klart å vise i de siste kvalifiseringene, sier Portsmouth-spilleren."
 rule double_subject {
+    global {
+        sent_id = "000890";
+        text = re".*det har vi ikke klart å vise.*"
+    }
     pattern {
         V [form="klart", upos="VERB"];
         D [form="det", upos="PRON"];
@@ -17,8 +21,10 @@ rule double_subject {
 % 8128: "- At andre regissører kaller deg pompøs ; kan det også skyldes misunnelse ?"
 % SUBJ -> FSUBJ; Mulig analyse som setningsantisiperende hvis leddsetningene var omrokkert.
 rule relabel_formal_subject {
-    %global { sent_id = "008128" }
-    global { text = re".*andre regissører kaller deg pompøs.*"}
+    global {
+        sent_id = "008128";
+        text = re".*andre regissører kaller deg pompøs.*"
+    }
     pattern {
         N1 [upos="PRON"];
         N2 [upos="AUX"];
@@ -32,6 +38,10 @@ rule relabel_formal_subject {
 
 % 007036: "(...) å utgi vår neste plate på CD - og (...)"
 rule DET_to_NOUN {
+    global {
+        sent_id = "007036";
+        text = re"utgi vår neste plate på CD"
+    }
     pattern {
         N [form="CD", upos="DET"];
         A [upos=ADP];
@@ -46,7 +56,11 @@ rule DET_to_NOUN {
 
 % 001021: "Eva Joly + Daniel Cohn-Bendit = EU"
 rule PAR_to_KOORD {
-  pattern {
+    global {
+        sent_id = "001021";
+        text = re"Daniel Cohn-Bendit";
+    }
+    pattern {
     N1 [lemma="Eva"];
     N3 [lemma="EU"];
     S [form="=", upos=SYM];
@@ -76,8 +90,10 @@ rule add_morph_feats {
 
 % 5092	 Til informasjon , så veier jeg omtrent 65 kilo - 63 kilo dersom jeg vasker meg .
 rule shift_APP {
-    %global { sent_id = "005092" }
-    global { text = re".*så veier jeg omtrent 65 kilo.*" }
+    global {
+        sent_id = "005092";
+        text = re".*så veier jeg omtrent 65 kilo.*"
+    }
     pattern {
         A [form="så"];
         e1: V -[APP]-> A;
@@ -94,8 +110,10 @@ rule shift_APP {
 % 10996: "Ikke det at boka mi skal være en fasit , men den kan være underlag for å diskutere ."
 % Dobbelt subjekt dersom "den" beholder "SUBJ"-relasjonen
 rule APP_to_ADV {
-    %global {sent_id = "010996"}
-    global { text = re"Ikke det at boka mi skal være en fasit.*" }
+    global {
+        sent_id = "010996";
+        text = re"Ikke det at boka mi skal være en fasit.*"
+    }
     pattern {
         N1 [lemma="ikke"];
         N2 [form="det"];

@@ -1,6 +1,6 @@
 
 # Treebank file names
-PARTITION=train
+PARTITION=test
 NDT_FILE=data/ndt_nb_${PARTITION}_udmorph.conllu
 CONVERTED=data/grew_output_${PARTITION}.conllu
 TEMPFILE=tmp.conllu
@@ -27,7 +27,8 @@ cat $CONVERTED | udapy -s ud.FixPunct > $TEMPFILE
 grew transform \
     -i $TEMPFILE \
     -o $CONVERTED \
-    -grs rules/post_udapy_fixes.grs \
+    -grs rules/NDT_to_UD.grs \
+    -strat "postfix" \
     -safe_commands
 
 # EVALUATION

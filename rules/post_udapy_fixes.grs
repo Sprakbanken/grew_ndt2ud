@@ -6,9 +6,16 @@ rule name_compound_punctuation {
 }
 
 
-
-strat main {
-    Seq (
-        Onf (name_compound_punctuation),
-    )
+% 018806	 For helt ærlig , det passer jo aldri å være hjemme i permisjon .
+rule remove_PSUBJ {
+  global {
+    sent_id = "018806";
+    text = re".*det passer jo aldri å være hjemme i permisjon.*"
+  }
+  pattern {
+    e: H -[PSUBJ]-> N;
+  }
+  commands {
+    e.label = ccomp;
+  }
 }
