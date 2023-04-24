@@ -4,6 +4,7 @@ PARTITION=train
 NDT_FILE=data/ndt_nb_${PARTITION}_udmorph.conllu
 CONVERTED=data/grew_output_${PARTITION}.conllu
 TEMPFILE=tmp.conllu
+REPORTFILE=validation-report_ndt2ud_${PARTITION}.txt
 
 # File names for testing
 #NDT_FILE=data/sentences/testsents.conllu
@@ -31,10 +32,10 @@ grew transform \
 
 # EVALUATION
 echo "--- Validate treebank ---"
-python ../tools/validate.py --max-err 0 --lang no $CONVERTED 2>&1 | tee validation-report_ndt2ud.txt
+python ../tools/validate.py --max-err 0 --lang no $CONVERTED 2>&1 | tee $REPORTFILE
 
 python extract_errorlines.py \
-    -f validation-report_ndt2ud.txt \
+    -f $REPORTFILE \
     -e right-to-left-appos  # hent ut linjene for en spesifikk feilmeldingstype (-e errortype) fra valideringsrapporten
 
 
