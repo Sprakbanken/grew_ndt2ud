@@ -494,7 +494,6 @@ rule multiple_subjects_predicate_clause {
     e: GOV -[nsubj | csubj | nsubj:pass | csubj:pass]-> D1;
   }
   with {
-    GOV -[cop]-> C;
     GOV -[nsubj | csubj | nsubj:pass | csubj:pass]-> D2;
     D1 << D2
   }
