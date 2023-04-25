@@ -157,3 +157,16 @@ rule ADV_head_attachment {
 }
 
 % 417	 Og i sommer var en ny legespire intervjuet i Nettavisen - den 18-årige supereleven Faisal Qureshi , som har sanket 25 seksere på videregående skole .
+
+%  004197 "[...] ( Norges spesialetterforsker A1 / dommer ved A2 ) , [...]"
+rule APP_to_KOORD {
+    global { sent_id = "004197" }
+    pattern {
+        e: H -[APP]-> D ;
+        H [form="spesialetterforsker"];
+        D [form="dommer"];
+    }
+    commands {
+        e.label = KOORD;
+    }
+}
