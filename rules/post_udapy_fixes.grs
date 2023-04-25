@@ -67,3 +67,19 @@ rule shift_koordinating_predicate {
     shift_out V ==> P;
   }
 }
+
+% adhoc postfix:
+% 5103	 Her er forresten meg og Paradise Hotel-Are og Cult-promotør / gatebil-Iselin .
+rule appos_to_conj {
+  global {sent_id ="005103"}
+  pattern {
+    e: H -[IK]-> S;
+    e1: H -[appos]-> N;
+  }
+  commands {
+    e1.label = conj;
+    del_edge e;
+    add_edge f: N -> S; f.label = cc;
+  }
+}
+
