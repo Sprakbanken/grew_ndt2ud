@@ -40,7 +40,7 @@ rule relabel_formal_subject {
 rule DET_to_NOUN {
     global {
         sent_id = "007036";
-        text = re"utgi vår neste plate på CD"
+        text = re".*utgi vår neste plate på CD.*"
     }
     pattern {
         N [form="CD", upos="DET"];
@@ -58,7 +58,7 @@ rule DET_to_NOUN {
 rule PAR_to_KOORD {
     global {
         sent_id = "001021";
-        text = re"Daniel Cohn-Bendit";
+        text = re".*Daniel Cohn-Bendit.*";
     }
     pattern {
         N1 [lemma="Eva"];
