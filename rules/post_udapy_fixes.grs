@@ -6,7 +6,8 @@ rule name_compound_punctuation {
 }
 
 
-% 018806	 For helt ærlig , det passer jo aldri å være hjemme i permisjon .
+% FIXME: Check if this can be removed, since a relabelling rule handles PSUBJ to csubj
+%018806	 For helt ærlig , det passer jo aldri å være hjemme i permisjon .
 rule remove_PSUBJ {
   global {
     sent_id = "018806";
@@ -16,6 +17,53 @@ rule remove_PSUBJ {
     e: H -[PSUBJ]-> N;
   }
   commands {
-    e.label = ccomp;
+    e.label = csubj;
+  }
+}
+
+% Adhoc postfix. TODO: rearrange the copula, lex, aux and root shifting rules so this problem doesn't arise.
+% 008474 Vi blir spurt ofte om det er aktuelt med en europeisk NHL-divisjon , men det ligger ikke i planene våre for den nærmeste framtid .
+rule shift_head_ {
+  global { sent_id = "008474" }
+  pattern {
+    V [lemma="være"];
+    P[upos=ADJ];
+    e: H -[aux]-> V;
+    e1: V -[xcomp]-> P;
+    e2: V -[nsubj]-> O;
+  }
+  with {V -[mark]-> *;}
+  commands {
+    add_edge f: P -> V; f.label = cop;
+    shift_out V ==> P;
+    del_edge e;
+    del_edge e1;
+    add_edge f1: H -> P; f1.label = ccomp;
+    del_edge e2;
+    add_edge f2: P -> O; f2.label = obl;
+  }
+}
+
+% Adhoc postfix. TODO: rearrange the copula, lex, aux and root shifting rules so this problem doesn't arise.
+% 009431 Jeg har levd som en 30-40-åring siden jeg var 20 , så det var deilig å få være ei ung jente , en nybegynner , igjen .
+rule shift_koordinating_predicate {
+  global {sent_id = "009431"}
+  pattern {
+    V [lemma="være"];
+    P [upos=ADJ];
+    e: H -[aux]-> V;
+    e1: V -[xcomp]-> P;
+    e2: V -[nsubj]-> O;
+  }
+  with {V -[cc]-> *;}
+  commands {
+    add_edge f: P -> V; f.label = cop;
+    shift_out V ==> P;
+    del_edge e;
+    del_edge e1;
+    add_edge f1: H -> P; f1.label = conj;
+    del_edge e2;
+    add_edge f2: P -> O; f2.label = csubj;
+    shift_out V ==> P;
   }
 }
