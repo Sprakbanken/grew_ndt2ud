@@ -284,6 +284,7 @@
           add_edge n2: PRED -> AUX; n2.label = cop;
       }
   }
+
 rule bouquet {
   pattern {
     e1: H -[PUTFYLL]-> N1;
@@ -336,4 +337,17 @@ rule solve_non_projective_modifiers {
     f.label = e.label;
     del_edge e;
   }
+}
+
+strat rev_main {
+  Seq (
+    Onf (copula),
+    Onf (shift_sentence_internal),
+    Onf (coordination),
+
+    Onf (shift_root),
+    Onf (bouquet),
+    Onf (rev_PUTFYLL_bouquet_head),
+    Onf (shift_root_copula_predicate)
+  )
 }
