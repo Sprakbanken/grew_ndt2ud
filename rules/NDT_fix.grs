@@ -61,17 +61,17 @@ rule PAR_to_KOORD {
         text = re"Daniel Cohn-Bendit";
     }
     pattern {
-    N1 [lemma="Eva"];
-    N3 [lemma="EU"];
-    S [form="=", upos=SYM];
-    e: N1 -[PAR]-> N3;
-  }
-  with {
-    N1 << S; S < N3; % The symbol immediately precedes the coordinated node
-  }
-  commands {
-    e.label = KOORD;
-  }
+        N1 [lemma="Eva"];
+        N3 [lemma="EU"];
+        S [form="=", upos=SYM];
+        e: N1 -[PAR]-> N3;
+    }
+    with {
+        N1 << S; S < N3; % The symbol immediately precedes the coordinated node
+    }
+    commands {
+        e.label = KOORD;
+    }
 }
 
 
