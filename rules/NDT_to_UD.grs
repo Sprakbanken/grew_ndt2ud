@@ -1,6 +1,6 @@
 import "NDT_fix.grs"
 include "appositions.grs"
-include "reverse_heads.grs"
+import "reverse_heads.grs"
 import "rename_deprel.grs"
 import "post_udapy_fixes.grs"
 
@@ -79,7 +79,7 @@ strat main {
     Seq (
         Onf (NDT_fix),
         Onf (nom_init),
-        rev_main, % reverse_heads
+        Onf (reverse_heads),
         APP_main,  % appositions strategy, restructuring and relabelling APP relations
         Onf (rename_deprel),
         Onf (final),

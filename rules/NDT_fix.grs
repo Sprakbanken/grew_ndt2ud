@@ -139,5 +139,21 @@ rule APP_modifiers {
     }
 }
 
+%4351	 Og generelt er det i alle fall slik at private penger er [A1=mer] forgjengelige ( og kan ha [H=flere] føringer ) [A2=enn] offentlige penger .
+rule ADV_head_attachment {
+    global {sent_id = "004351"}
+    pattern {
+        A1 [form="mer"];
+        A2 [form="enn"];
+        A1 << A2;
+        H [form="flere"];
+        e: H -[ADV]-> A2;
+    }
+    commands {
+        add_edge f: A1 -> A2;
+        f.label = e.label;
+        del_edge e;
+    }
+}
 
 % 417	 Og i sommer var en ny legespire intervjuet i Nettavisen - den 18-årige supereleven Faisal Qureshi , som har sanket 25 seksere på videregående skole .

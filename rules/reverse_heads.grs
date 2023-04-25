@@ -1,5 +1,5 @@
-package copula {
-  % cop: reverser hodet i setninger der "være" er rot, med SPRED, men uten PSUBJ. Predikativet er ny rot.
+%package copula {
+  % cop: reverser hodet i (ledd)setninger der "være" er hodet, med SPRED, men uten PSUBJ. Predikativet er ny rot.
   rule focustype_head_SPRED_copula {
     pattern {
       H [ lemma="være" ];
@@ -16,7 +16,7 @@ package copula {
     }
   }
 
-  % Setningsantisiperende: Predikativet blir rot, PSUBJ-leddsetning blir csubj, "være" blir kopula på predikativet.
+  % Setningsantisiperende: Predikativet blir hode, PSUBJ-leddsetning blir csubj, "være" blir kopula på predikativet.
   rule clause_anticipating_copula {
     pattern {
       H [ lemma="være" ];
@@ -78,10 +78,10 @@ package copula {
     }
   }
 
-}
+%}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-package shift_sentence_internal {
+%package shift_sentence_internal {
   % reverser relasjonen mellom et hjelpeverb og et leksikalsk verb
   rule reverse_lex_aux_verbs {
     pattern {
@@ -135,9 +135,9 @@ package shift_sentence_internal {
       }
   }
 
-}
+%}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-package coordination {
+%package coordination {
 
   rule shift_komma_fst_conj {
     pattern {
@@ -219,11 +219,9 @@ package coordination {
         f.label = cc;
     }
   }
-}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-package shift_root {
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%package shift_root {
   rule rev_root_modal_aux_to_lexical_verb {
     pattern {
       AUX [lemma="ville"|"kunne"|"måtte"|"skulle"|"burde"|"ha"];
@@ -240,25 +238,25 @@ package shift_root {
     }
   }
 
-  rule rev_root_modal_aux_chain_to_lexical {
+  rule rev_modal_aux_chain_to_lexical {
     pattern {
-      AUX1 [upos=AUX, lemma="ville"|"kunne"|"måtte"|"skulle"|"burde"|"ha"];
-      AUX2 [upos=AUX];
-      AUX3 [upos=AUX];
-      e1: AUX1 -[INFV]-> AUX2;
-      e2: AUX2 -[INFV]-> AUX3;
-      e3: AUX3 -[SPRED]-> PRED;
+      A1 [upos=AUX, lemma="ville"|"kunne"|"måtte"|"skulle"|"burde"|"ha"];
+      A2 [upos=AUX];
+      A3 [upos=AUX];
+      e1: A1 -[INFV]-> A2;
+      e2: A2 -[INFV]-> A3;
+      e3: A3 -[SPRED]-> P;
     }
     commands {
       del_edge e1;
       del_edge e2;
       del_edge e3;
-      shift AUX1 ==> PRED;
-      shift AUX2 ==> PRED;
-      shift AUX3 ==> PRED;
-      add_edge PRED -[aux]-> AUX1;
-      add_edge PRED -[aux]-> AUX2;
-      add_edge PRED -[aux]-> AUX3;
+      shift A1 ==> P;
+      shift A2 ==> P;
+      shift A3 ==> P;
+      add_edge P -[aux]-> A1;
+      add_edge P -[aux]-> A2;
+      add_edge P -[aux]-> A3;
     }
   }
 
@@ -286,72 +284,56 @@ package shift_root {
           add_edge n2: PRED -> AUX; n2.label = cop;
       }
   }
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
 rule bouquet {
   pattern {
-    e1: H -[PUTFYLL|INFV]-> N1;
-    e: N1 -[e1.label]-> N2;
+    e1: H -[PUTFYLL]-> N1;
+    e: N1 -[PUTFYLL]-> N2;
   }
   without {
-    * -[e1.label]-> H;
+    * -[PUTFYLL]-> H;
   }
   commands {
-    add_edge H -[e1.label]-> N2;
+    add_edge f: H -> N2;
+    f.label = e1.label;
     del_edge e;
   }
 }
 
-rule rev_PUTFYLL_bouquet_head {
-  pattern {
-    ADP[upos=ADP];
-    N [upos=NOUN];
-    e1: S -[SPRED]-> ADP;
-    e: ADP -[PUTFYLL]-> N;
+  % F.eks. "[WHO] er sterkt inne i bildet."
+  rule shift_root_copula_predicate {
+      pattern {
 
+          % nodes
+          AUX[upos=AUX, lemma="være"];
+          % dependencies
+          r: R -[FINV]-> AUX;
+          e: AUX -[SPRED]-> PRED;
+      }
+      commands {
+          del_edge r;
+          del_edge e;
+          shift AUX ==> PRED;
+          add_edge nr: R -> PRED; nr.label = root;
+          add_edge ne: PRED -> AUX; ne.label = cop;
+      }
   }
+
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% 2287	 Hargeisa fremsto langt mer harmonisk og trygt enn jeg hadde forestilt meg .
+rule solve_non_projective_modifiers {
+   pattern {
+    A1 [form="mer"];
+    A2 [form="enn"];
+    A1 << H; H << A2;
+    H -> A1;
+    e: A1 -> N;
+  }
+  with {N -> A2;}
   commands {
+    add_edge f: H -> N;
+    f.label = e.label;
     del_edge e;
-    del_edge e1;
-    shift ADP ==> N;
-    add_edge f: N -> ADP; f.label = case;
-    add_edge S -[SPRED]-> N;
   }
-}
-
-
-rule shift_root_copula_predicate {
-% F.eks. "[WHO] er sterkt inne i bildet."
-    pattern {
-
-        % nodes
-        AUX[upos=AUX, lemma="være"];
-        % dependencies
-        r: R -[FINV]-> AUX;
-        e: AUX -[SPRED]-> PRED;
-    }
-    commands {
-        del_edge r;
-        del_edge e;
-        shift AUX ==> PRED;
-        add_edge nr: R -> PRED; nr.label = root;
-        add_edge ne: PRED -> AUX; ne.label = cop;
-    }
-}
-
-strat rev_main {
-  Seq (
-    Onf (copula),
-    Onf (shift_sentence_internal),
-    Onf (coordination),
-
-    Onf (shift_root),
-    Onf (bouquet),
-    Onf (rev_PUTFYLL_bouquet_head),
-    Onf (shift_root_copula_predicate)
-  )
 }
