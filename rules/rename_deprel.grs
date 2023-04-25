@@ -368,9 +368,11 @@ rule only_psubj_nom {
   }
 }
 
+% Eksempel der PSUBJ går til ADP etter restruktureringen
+% 000307	 "Men det var helt vilt deilig å være med på å kjempe om en seier igjen, sa Solberg."
 rule only_psubj_vb {
   pattern {
-    D [ upos = VERB ];
+    D [ upos = VERB|ADP ];
     e: H -[PSUBJ]-> D;
   }
   without { H -[FSUBJ]-> *; }
