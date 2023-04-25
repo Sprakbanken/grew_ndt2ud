@@ -1,6 +1,6 @@
 
 # Treebank file names
-PARTITION=test
+PARTITION=train
 NDT_FILE=data/ndt_nb_${PARTITION}_udmorph.conllu
 CONVERTED=data/grew_output_${PARTITION}.conllu
 TEMPFILE=tmp.conllu
