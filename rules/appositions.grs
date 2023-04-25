@@ -23,6 +23,24 @@ package restructuring_1 {
         }
     }
 
+    rule abbreviations_APP_to_FLAT {
+        pattern {
+            TITLE [upos=NOUN, Abbr];
+            NAME  [upos=PROPN];
+            e: NAME -[ APP ]-> TITLE;
+            TITLE < NAME;
+        }
+        without {
+            TITLE -[DET]-> *;
+        }
+        commands {
+            del_edge e;
+            shift NAME ==> TITLE;
+            add_edge f: TITLE -> NAME;
+            f.label = "FLAT";
+        }
+    }
+
     % 2: Non-consecutive nominal nodes --> dislocated
     % Eksempel: "Jeg [H=møtte] [N1=Fredrik] [X=i går], [N2=mannen] som ..."
     % Eksempel: "Men så [H=er] ikke [N1=bryllupet] mellom Haakon og Mette-Marit [X=hverdagskost] [N2=det] heller."
