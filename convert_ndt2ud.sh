@@ -13,7 +13,7 @@ REPORTFILE=validation-report_ndt2ud_${PARTITION}.txt
 
 
 # START CONVERSION
-echo "--- Convert treebank ---"
+echo "--- Convert $PARTITION treebank ---"
 
 grew transform \
     -i  $NDT_FILE \
