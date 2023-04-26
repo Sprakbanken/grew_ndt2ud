@@ -1,7 +1,7 @@
-Evaluation arguments: -s data/grew_output_train.conllu -g data/no_bokmaal-ud-train_uten_hash.conllu --GroupBy Deprel --Metric LAS
+Evaluation arguments: -s tmp.conllu -g data/no_bokmaal-ud-train_uten_hash.conllu --GroupBy Deprel --Metric LAS
 ====================================================
 Gold:   data/no_bokmaal-ud-train_uten_hash.conllu
-Parsed: data/grew_output_train.conllu
+Parsed: tmp.conllu
 ====================================================
 GroupBy-> Deprel
 Metric-> LAS
@@ -10,41 +10,44 @@ Metric-> LAS
 
 parseraccuracy /    treebankaccuracy /    Deprel
 ------------------------------------------------------
-0.992               0.547                 acl
+0.987               0.6                   acl
 -                   0                     acl:cleft
-0.856               0.885                 acl:relcl
-0.992               0.956                 advcl
-0.838               0.998                 advmod
-0.981               1                     amod
-0.322               0.999                 appos
-0.995               0.998                 aux
-0.999               0.995                 aux:pass
-0.873               1                     case
-0.999               0.999                 cc
-0.799               0.626                 ccomp
-0.786               1                     compound
+0.853               0.883                 acl:relcl
+0.976               0.95                  advcl
+0.863               0.996                 advmod
+0.98                0.999                 amod
+0.411               0.779                 appos
+0.997               0.998                 aux
+0.999               0.999                 aux:pass
+0.86                0.953                 case
+0.986               0.99                  cc
+0.8                 0.626                 ccomp
+1                   1                     compound
 -                   0                     compound:prt
-0.999               0.999                 conj
-0.998               0.992                 cop
-0.993               0.974                 csubj
-1                   1                     csubj:pass
+0.985               0.986                 conj
+0.996               0.992                 cop
+0.985               0.927                 csubj
+0                   -                     csubj:outer
+-                   0                     csubj:pass
 0.863               1                     det
-0.675               1                     discourse
-0.993               0.993                 expl
+1                   1                     discourse
+0                   -                     dislocated
+0.99                0.991                 expl
 -                   0                     flat:foreign
-0.902               1                     flat:name
-1                   0.863                 iobj
+0.74                0.895                 flat:name
+0.998               0.861                 iobj
 0.759               0.696                 mark
-0.98                0.798                 nmod
-0.998               0.907                 nsubj
-0.997               0.861                 nsubj:pass
-1                   0.957                 nummod
-0.999               0.976                 obj
-0.984               0.953                 obl
--                   0                     orphan
-1                   1                     parataxis
-0.854               0.852                 punct
+0.895               0.782                 nmod
+0.913               0.875                 nsubj
+0                   -                     nsubj:outer
+-                   0                     nsubj:pass
+1                   0.999                 nummod
+0.992               0.97                  obj
+0.967               0.973                 obl
+0                   0                     orphan
+0.999               0.998                 parataxis
+0.967               0.966                 punct
 1                   1                     reparandum
-1                   0.996                 root
-0.749               0.914                 xcomp
+0.994               0.994                 root
+0.748               0.913                 xcomp
 
