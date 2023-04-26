@@ -53,20 +53,20 @@ rule DET_to_NOUN {
     }
 }
 
-
+% 018430: Rune Stølås / bt.no
 % 001021: "Eva Joly + Daniel Cohn-Bendit = EU"
 rule PAR_to_KOORD {
     global {
-        sent_id = "001021";
-        text = re".*Daniel Cohn-Bendit.*";
+        sent_id = "001021"|"018430";
     }
     pattern {
-        N1 [lemma="Eva"];
-        N3 [lemma="EU"];
-        S [form="=", upos=SYM];
+        N1 [upos=PROPN];
+        N3 [upos= PROPN];
         e: N1 -[PAR]-> N3;
     }
     with {
+        S [form="="|"/", upos=SYM];
+        * -[IK]-> S;
         N1 << S; S < N3; % The symbol immediately precedes the coordinated node
     }
     commands {
@@ -170,3 +170,5 @@ rule APP_to_KOORD {
         e.label = KOORD;
     }
 }
+
+% 325	 Rune Stølås / bt.no
