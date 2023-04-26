@@ -68,6 +68,29 @@ rule shift_koordinating_predicate {
   }
 }
 
+% Adhoc postfix. TODO: rearrange/rewrite the copula, lex, aux and root shifting rules so this problem doesn't arise.
+% 017771: Representanter for SV har til og med uttrykt at det er et «samfunnsproblem» med friskoler.
+rule restructure_copula_comp_clause {
+  global {sent_id = "017771"}
+  pattern {
+    V [lemma="være"];
+    P [upos=NOUN];
+    e: H -[aux]-> V;
+    e1: V -[xcomp]-> P;
+    e2: V -[nsubj]-> O;
+  }
+  commands {
+    add_edge f: P -> V; f.label = cop;
+    shift_out V ==> P;
+    del_edge e;
+    del_edge e1;
+    add_edge f1: H -> P; f1.label = ccomp;
+    del_edge e2;
+    add_edge f2: P -> O; f2.label = nmod;
+
+  }
+}
+
 % adhoc postfix:
 % 5103	 Her er forresten meg og Paradise Hotel-Are og Cult-promotør / gatebil-Iselin .
 rule appos_to_conj {
