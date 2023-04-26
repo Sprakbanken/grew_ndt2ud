@@ -1,13 +1,1 @@
-[Line 13416 Sent 018806]: [L2 Syntax invalid-deprel] Invalid DEPREL value 'PSUBJ'.
-[Line 13416 Sent 018806]: [L4 Syntax unknown-deprel] Unknown DEPREL label: 'PSUBJ'
-
-The following 49 relations are currently permitted in language [no]:
-acl, acl:cleft, acl:relcl, advcl, advmod, amod, appos, aux, aux:pass, case, cc, ccomp, clf, compound, compound:prt, conj, cop, csubj, csubj:outer, csubj:pass, dep, det, discourse, discourse:filler, dislocated, expl, fixed, flat, flat:foreign, flat:name, goeswith, iobj, list, mark, nmod, nsubj, nsubj:outer, nsubj:pass, nummod, obj, obl, orphan, parataxis, parataxis:deletion, punct, reparandum, root, vocative, xcomp
-If a language needs a relation subtype that is not documented in the universal guidelines, the relation
-must have a language-specific documentation page in a prescribed format.
-See https://universaldependencies.org/contributing_language_specific.html for further guidelines.
-Documented dependency relations can be specifically turned on/off for each language in which they are used.
-See https://quest.ms.mff.cuni.cz/udvalidator/cgi-bin/unidep/langspec/specify_deprel.pl for details.
-
-Syntax errors: 2
-*** FAILED *** with 2 errors
+*** PASSED ***
