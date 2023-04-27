@@ -223,41 +223,6 @@ package coordination {
   }
 }
 
-% 6832	 Arkivfoto : H=[Håkon] Mosvold Larsen [S=/] N[SCANPIX]
-rule slash_case_mod {
-  pattern {
-    S [upos=SYM, form="/"];
-    H [upos=PROPN];
-    N [upos=PROPN];
-    e: H -[IK]-> S;
-    H -[ATR]-> N;
-    H << S; S < N;
-  }
-  commands {
-    del_edge e;
-    add_edge f: N -> S; f.label = case;
-  }
-}
-
-%adhoc fix:
-% 12667	 - Legge prestetjenesten inn under soknene / fellesråd / prostiråd og dermed få samme tilsettingsmyndighet og arbeidsgiver i lokalkirken .
-rule adhoc_symbol_coordination {
-  global {sent_id = "012667"}
-  pattern {
-    H -[KOORD]-> K1;
-    H -[KOORD]-> K2;
-    S1 [upos=SYM];
-    S2 [upos=SYM];
-    H < S1; S1 < K1; K1 < S2; S2 < K2;
-    e1: H -[IK]-> S1;
-    e2: K1 -[IK]-> S2;
-  }
-  commands {
-    del_edge e1; add_edge f1: K1 -> S1; f1.label = cc;
-    del_edge e2; add_edge f2: K2 -> S2; f2.label = cc;
-  }
-}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 package shift_root {
 
@@ -378,32 +343,69 @@ rule shift_root_copula_predicate {
 
 
 %%%%%%%%%%%%%%%%%%%%%%
-% 2287	 Hargeisa fremsto langt mer harmonisk og trygt enn jeg hadde forestilt meg .
-rule solve_non_projective_modifiers {
-   pattern {
-    A1 [form="mer"];
-    A2 [form="enn"];
-    A1 << H; H << A2;
-    H -> A1;
-    e: A1 -> N;
+package adhoc_fixes {
+
+  % 6832	 Arkivfoto : H=[Håkon] Mosvold Larsen [S=/] N[SCANPIX]
+  rule slash_case_mod {
+    pattern {
+      S [upos=SYM, form="/"];
+      H [upos=PROPN];
+      N [upos=PROPN];
+      e: H -[IK]-> S;
+      H -[ATR]-> N;
+      H << S; S < N;
+    }
+    commands {
+      del_edge e;
+      add_edge f: N -> S; f.label = case;
+    }
   }
-  with {N -> A2;}
-  commands {
-    add_edge f: H -> N;
-    f.label = e.label;
-    del_edge e;
+
+  % 12667	 - Legge prestetjenesten inn under soknene / fellesråd / prostiråd og dermed få samme tilsettingsmyndighet og arbeidsgiver i lokalkirken .
+  rule adhoc_symbol_coordination {
+    global {sent_id = "012667"}
+    pattern {
+      H -[KOORD]-> K1;
+      H -[KOORD]-> K2;
+      S1 [upos=SYM];
+      S2 [upos=SYM];
+      H < S1; S1 < K1; K1 < S2; S2 < K2;
+      e1: H -[IK]-> S1;
+      e2: K1 -[IK]-> S2;
+    }
+    commands {
+      del_edge e1; add_edge f1: K1 -> S1; f1.label = cc;
+      del_edge e2; add_edge f2: K2 -> S2; f2.label = cc;
+    }
+  }
+
+  % 2287	 Hargeisa fremsto langt mer harmonisk og trygt enn jeg hadde forestilt meg .
+  rule solve_non_projective_modifiers {
+    pattern {
+      A1 [form="mer"];
+      A2 [form="enn"];
+      A1 << H; H << A2;
+      H -> A1;
+      e: A1 -> N;
+    }
+    with {N -> A2;}
+    commands {
+      add_edge f: H -> N;
+      f.label = e.label;
+      del_edge e;
+    }
   }
 }
 
 strat main_ {
   Seq (
+    Onf(adhoc_fixes),
     Onf (copula),
     Onf (shift_sentence_internal),
     Onf (coordination),
-
     Onf (shift_root),
     Onf (bouquet),
     Onf (rev_PUTFYLL_bouquet_head),
-    Onf (shift_root_copula_predicate)
+    Onf (shift_root_copula_predicate),
   )
 }
