@@ -238,7 +238,7 @@ package clean_up {
 }
 
 
-strat APP_main {
+strat main_ {
     Seq (
         restructuring,
         Onf (relabelling),
