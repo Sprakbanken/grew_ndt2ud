@@ -41,10 +41,8 @@ grew transform \
     -safe_commands
 
 echo "--- Fix punctuation ---"
-# add ud.SetSpaceAfterFromText after ud.FixPunct if needed
-cat $CONVERTED | udapy -s \
-    ud.FixPunct \
-    > $TEMPFILE
+# add ud.SetSpaceAfterFromText after ud.FixPunct for the nb dev set!
+cat $CONVERTED | udapy -s ud.FixPunct  > $TEMPFILE
 
 grew transform \
     -i $TEMPFILE \
