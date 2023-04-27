@@ -94,7 +94,14 @@ Alle stegene under kjøres med ett shell-skript fra terminalen (*OBS! Siste linj
 
 ## Eksempeldrevet arbeidsflyt
 
-Kjør grew på eksempelsetninger med en teststrategi.
+### Matche setninger med grew-mønstre
+
+``` shell
+grew grep -request rules/testpattern.req -i data/ndt_nb_dev_udmorph.conllu > match_dev.json
+```
+
+### Teststrategi
+
 
 Samle alle eksempelsetningene fra `data/sentences` i én fil, eller oppgi hvilken setningsfil du vil konvertere.
 
@@ -139,6 +146,14 @@ Filen [`2023_gullkorpus_ud.conllu`](./data/gullkorpus/2023_gullkorpus_ud.conllu)
 ```
 cat $CONVERTED | udapy -s ud.FixPunct ud.FixRightheaded ud.FixLeaf > out.conllu
 ```
+
+
+## OBS: Feilretting NDT
+
+dev-splitten av NDT har en setning der et punktum henger igjen på et ord slik at det ser ut som en forkortelse, og POS-taggen er X.
+
+Denne regelen fjerner punktumet fra ordformen, endrer pos-taggen, og legger til en ny node for punktumet + legger til "SpaceAfter=No" i MISC-feltet til ordet.
+Det gjøres for "originalfilen" før resten av konverteringsprosessen, fordi MaltEval ikke takler sammenligning av filer med ulikt antall rader / token.
 
 ## Referanser
 

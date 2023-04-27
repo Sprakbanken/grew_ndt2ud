@@ -1,0 +1,10 @@
+pattern {
+    e: N1 -[APP]-> N2;
+    H -> N1;
+    X[];
+    * -> X;
+    X << e; % Node X occurs between source and target node of edge e
+}
+with { * -> H ;}  % Avoid matching the "invisible" root node as H
+without { N1 -> X }
+without { N2 -> X }
