@@ -11,12 +11,24 @@ NDT_FILE=data/ndt_${LANG}_${PARTITION}_udmorph.conllu
 CONVERTED=data/grew_output_${PARTITION}.conllu
 TEMPFILE=tmp.conllu
 REPORTFILE=validation-report_ndt2ud_${LANG}_${PARTITION}.txt
+UD_OFFICIAL=data/${LANG}-ud-${PARTITION}_uten_hash.conllu
 
 # File names for testing
 #NDT_FILE=data/sentences/testsents.conllu
 #CONVERTED=OUTPUT.conllu
 #TEMPFILE=deleteme.conllu
 
+
+echo "--- Pre-conversion changes ---"
+# Add SpaceAfter in MISC-field, add nodes and fix errors in the file before converting it.
+grew transform \
+    -i  $NDT_FILE \
+    -o  $TEMPFILE \
+    -grs  rules/pre_conversion.grs \
+    -strat "Onf(fix_postag_X)" \
+    -safe_commands
+
+mv $TEMPFILE $NDT_FILE
 
 # START CONVERSION
 echo "--- Convert $LANG $PARTITION treebank ---"
@@ -28,7 +40,7 @@ grew transform \
     -safe_commands
 
 echo "--- Fix punctuation ---"
-cat $CONVERTED | udapy -s ud.FixPunct > $TEMPFILE
+cat $CONVERTED | udapy -s ud.FixPunct ud.SetSpaceAfterFromText > $TEMPFILE
 
 grew transform \
     -i $TEMPFILE \
@@ -52,7 +64,6 @@ MALTGOLD=malt_input.conllu
 python parse_conllu.py -rc -f $NDT_FILE -o $MALTGOLD
 
 echo "--- Validate treebank with MaltEval ---"
-UD_OFFICIAL=data/${LANG}-ud-${PARTITION}_uten_hash.conllu
 
 for METRIC in UAS LAS; do
     java -jar dist-20141005/lib/MaltEval.jar \

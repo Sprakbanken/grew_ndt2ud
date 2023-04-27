@@ -1,0 +1,21 @@
+% 016964: Det virker som fotball er det siste profesjonelle miljø hvor du ikke kan komme ut av skapet stolt. ( ... ) .
+rule fix_postag_X {
+    global {sent_id = "016964"}
+    pattern { N [form="stolt.", upos=X]; R [upos=VERB];}
+    with { * -[FINV|root]-> R; }
+    commands {
+        N.upos=ADJ;
+        N.form="stolt";
+        N.lemma="stolt";
+        N.Degree="Pos";
+        N.Definite="Ind";
+        N.Number="Sing";
+        add_node P :> N;
+        P.form=".";
+        P.lemma="$.";
+        P.upos=PUNCT;
+        P.xpos=clb;
+        add_edge ep: R -> P; ep.label =IP;
+    }
+}
+
