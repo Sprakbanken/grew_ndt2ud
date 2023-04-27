@@ -1,0 +1,231 @@
+% cop: reverser hodet i setninger der "være" er rot, med SPRED, men uten PSUBJ. Predikativet er ny rot.
+rule focustype_head_SPRED_copula {
+	pattern {
+    H [ lemma="være" ];
+    e: H -[SPRED | INFV ]-> D; % Mulig at vi skal ha en egen behandling av tilfeller med INFV
+  }
+  without {
+    H -[PSUBJ]-> *;
+  }
+  commands {
+    del_edge e;
+    shift H ==> D;
+    add_edge f: D -> H;
+    f.label = cop;
+  }
+}
+
+% Setningsantisiperende: Predikativet blir rot, PSUBJ-leddsetning blir csubj, "være" blir kopula på predikativet.
+rule clause_anticipating_copula {
+	pattern {
+    H [ lemma="være" ];
+    e1: H -[SPRED]-> D1;
+    e2: H -[PSUBJ]-> D2;
+    D2 [upos <> NOUN|PRON|PROPN];
+  }
+  commands {
+    del_edge e1;
+    del_edge e2;
+    shift H ==> D1;
+    add_edge f1: D1 -> H; f1.label = cop;
+    add_edge f2: D1 -> D2; f2.label = csubj;
+  }
+}
+
+% reverser relasjonen mellom et hjelpeverb og et leksikalsk verb
+rule reverse_lex_aux_verbs {
+  pattern { H [upos=AUX]; D[upos=VERB]; e:H -[INFV]-> D;}
+  commands {
+    del_edge e;
+    shift H ==> D;
+    add_edge f: D -> H;
+    f.label = aux;
+  }
+}
+
+% kombinasjoner av hjelpeverb og copula
+rule reverse_cop_aux {
+  pattern {
+    COP [lemma="være"];
+    AUX [upos=AUX];
+    e1: AUX -[ INFV ]-> COP;
+    e2: COP -[ SPRED ]-> SPRED;
+  }
+  commands {
+    del_edge e1;
+    del_edge e2;
+    shift AUX ==> SPRED;
+    shift COP ==> SPRED;
+    add_edge f1: SPRED -> AUX;
+    add_edge f2: SPRED -> COP;
+    f1.label = aux;
+    f2.label = cop;
+  }
+}
+
+rule reverse_cop_aux_aux {
+  pattern {
+    COP [lemma="være"];
+    AUX1 [upos=AUX];
+    AUX2 [upos=AUX];
+    e1: AUX1 -[ INFV ]-> AUX2;
+    e2: AUX2 -[ INFV ]-> COP;
+    e3: COP -[ SPRED ]-> SPRED;
+  }
+  commands {
+    del_edge e1;
+    del_edge e2;
+    del_edge e3;
+    shift AUX1 ==> SPRED;
+    shift AUX2 ==> SPRED;
+    shift COP ==> SPRED;
+    add_edge f1: SPRED -> AUX1;
+    add_edge f2: SPRED -> AUX2;
+    add_edge f3: SPRED -> COP;
+    f1.label = aux;
+    f2.label = aux;
+    f3.label = cop;
+  }
+}
+
+rule PUTFYLL_rule {
+  pattern {e:H -[PUTFYLL]-> D; H[upos=ADP]; }
+    commands {
+      del_edge e;
+      shift H ==> D;
+      add_edge f:D -> H; f.label = case;
+  }
+}
+
+rule inf_mark_rule {
+  pattern {e:H -[INFV]-> D; H[lemma="å"]; }
+    commands {
+      del_edge e;
+      shift H ==> D;
+      add_edge f:D -> H; f.label = mark;
+  }
+}
+
+rule shift_komma_fst_conj {
+  pattern {
+    KOMMA [ lemma="$,"|"$-" ];
+    e1: H -[ KOORD ]-> KNJ;
+    e2: H -[ IK ]-> KOMMA;
+    KOMMA >> H;
+    KNJ >> KOMMA;
+  }
+  without {
+    e3: H -[ KOORD ]-> KNJ2;
+    KNJ >> KNJ2;
+  }
+  commands {
+    del_edge e2;
+    add_edge f2: KNJ -> KOMMA;
+    f2.label = punct;
+  }
+}
+
+rule shift_komma_scd_conj {
+  pattern {
+    KOMMA [ lemma="$,"|"$-" ];
+    e1: H -[ KOORD ]-> KNJ;
+    e2: H -[ KOORD ]-> KNJ2;
+    e3: KNJ -[ IK ]-> KOMMA;
+    KOMMA >> KNJ;
+    KNJ2 >> KOMMA;
+  }
+  without {
+    e4: H -[ KOORD ]-> KNJ3;
+    KNJ2 >> KNJ3;
+    KNJ3 >> KNJ;
+  }
+  commands {
+    del_edge e3;
+    add_edge f3: KNJ2 -> KOMMA;
+    f3.label = punct;
+  }
+}
+
+% Symbolet "/" mellom måleenheter får relasjonen "case" på enheten den kommer foran.
+% F.eks. 000779: "Det tyske miljømerket Blå Engel går enda lenger og krever 0,6 watt / kg , (...)"
+rule shift_case_symbol {
+  pattern {
+    SYMBOL [ upos=SYM, form="/" ];
+    UNIT1 [ upos=NOUN|PROPN ];
+    UNIT2 [ upos=NOUN|PROPN ];
+    NUMBER [ upos= NUM ];
+    e1: UNIT1 -[ IK ]-> SYMBOL;
+    UNIT1 -> NUMBER;
+    e2: NUMBER -> UNIT2;
+  }
+  with {
+    SYMBOL >> UNIT1;
+    UNIT2 >> SYMBOL;
+  }
+  commands {
+    del_edge e1;
+    add_edge f: UNIT2 -> SYMBOL;
+    f.label = case;
+    del_edge e2;
+    add_edge f2: UNIT1 -> UNIT2;
+    f2.label = nmod;
+  }
+}
+
+rule shift_coordinating_sym {
+  pattern {
+    SYMBOL [upos=SYM];
+    e: H -[IK]-> SYMBOL;
+    H -> KNJ ;
+    SYMBOL < KNJ;
+  }
+  without { H >> SYMBOL }
+  commands {
+    del_edge e;
+    add_edge f: KNJ -> SYMBOL;
+    f.label = cc;
+  }
+}
+
+
+% hvis ikke ...
+rule hvis_adv {
+  pattern {
+    DEP [ lemma="hvis" ];
+    N1 [form="ikke"];
+    e: GOV -[ ADV ]-> DEP;
+    e2: DEP -> N1;
+  }
+  commands {
+    del_edge e;
+    del_edge e2;
+
+    add_edge f: N1 -> DEP;
+    f.label = orphan;
+
+    add_edge f2: GOV -> N1;
+    f2.label = advcl;
+    }
+}
+
+% Skift hodet til apposisjoner fra høyre til venstre
+rule shift_app_right_head {
+  pattern {
+    e: H -[ APP ]-> N;
+    H >> N;
+  }
+  without {
+    H [upos=PROPN];
+    N [upos=NOUN];
+    H > N;
+    * -[conj]-> H;
+  }
+  commands {
+    del_edge e;
+    shift_in H ==> N;
+    shift_out H =[^FLAT|IK|ATR]=> N;
+    add_edge f: N -> H;
+    f.label = appos;
+  }
+}
+
