@@ -1,10 +1,15 @@
 
 # Treebank file names
-PARTITION=train
-NDT_FILE=data/ndt_nb_${PARTITION}_udmorph.conllu
-CONVERTED=data/grew_output_${PARTITION}.conllu
+#PARTITION=dev
+#PARTITION=train
+PARTITION=test
+LANG=nn
+#LANG=nb
+
+NDT_FILE=data/ndt_${LANG}_${PARTITION}_udmorph.conllu
+CONVERTED=data/grew_output_${LANG}_${PARTITION}.conllu
 TEMPFILE=tmp.conllu
-REPORTFILE=validation-report_ndt2ud_${PARTITION}.txt
+REPORTFILE=validation-report_ndt2ud_${LANG}_${PARTITION}.txt
 
 # File names for testing
 #NDT_FILE=data/sentences/testsents.conllu
@@ -13,7 +18,7 @@ REPORTFILE=validation-report_ndt2ud_${PARTITION}.txt
 
 
 # START CONVERSION
-echo "--- Convert $PARTITION treebank ---"
+echo "--- Convert $LANG $PARTITION treebank ---"
 
 grew transform \
     -i  $NDT_FILE \
@@ -32,7 +37,7 @@ grew transform \
     -safe_commands
 
 # EVALUATION
-echo "--- Validate treebank ---"
+echo "--- Validate treebank with UD validation script ---"
 python ../tools/validate.py --max-err 0 --lang no $CONVERTED 2>&1 | tee $REPORTFILE
 
 python extract_errorlines.py \
@@ -40,12 +45,28 @@ python extract_errorlines.py \
     -e right-to-left-appos  # hent ut linjene for en spesifikk feilmeldingstype (-e errortype) fra valideringsrapporten
 
 
-# VISUALISATION
-echo "--- Remove comment lines ---"
-MALTGOLD=malt_input.conllu
+echo "--- Remove comment lines for MaltEval ---"
 python parse_conllu.py -rc -f $CONVERTED -o $TEMPFILE
+MALTGOLD=malt_input.conllu
 python parse_conllu.py -rc -f $NDT_FILE -o $MALTGOLD
 
+echo "--- Validate treebank with MaltEval ---"
+UD_OFFICIAL=data/${LANG}-ud-${PARTITION}_uten_hash.conllu
+
+for METRIC in UAS LAS; do
+    java -jar dist-20141005/lib/MaltEval.jar \
+        -s tmp.conllu \
+        -g $UD_OFFICIAL \
+        --GroupBy Deprel \
+        --Metric $METRIC \
+    > conversion_stats_${LANG}_${PARTITION}_${METRIC}.txt
+
+    java -jar dist-20141005/lib/MaltEval.jar \
+        -s tmp.conllu \
+        -g $UD_OFFICIAL \
+        --Metric $METRIC
+done
+
+# VISUALISATION
 echo "--- Visualize converted treebank ---"
 java -jar dist-20141005/lib/MaltEval.jar -g $MALTGOLD -s $TEMPFILE -v 1
-
