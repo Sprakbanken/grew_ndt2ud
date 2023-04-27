@@ -1,13 +1,14 @@
 
 # Treebank file names
-#PARTITION=dev
+PARTITION=dev
 #PARTITION=train
-PARTITION=test
-LANG=nn
-#LANG=nb
+#PARTITION=test
+#LANG=nn
+LANG=nb
 
 NDT_FILE=data/ndt_${LANG}_${PARTITION}_udmorph.conllu
-CONVERTED=data/grew_output_${LANG}_${PARTITION}.conllu
+#CONVERTED=data/grew_output_${LANG}_${PARTITION}.conllu
+CONVERTED=data/grew_output_${PARTITION}.conllu
 TEMPFILE=tmp.conllu
 REPORTFILE=validation-report_ndt2ud_${LANG}_${PARTITION}.txt
 
