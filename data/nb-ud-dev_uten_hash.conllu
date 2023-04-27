@@ -18940,11 +18940,12 @@
 15	ut	ut	ADP	_	_	17	case	_	_
 16	av	av	ADP	_	_	17	case	_	_
 17	skapet	skap	NOUN	_	Definite=Def|Gender=Neut|Number=Sing	14	obl	_	_
-18	stolt.	stolt.	X	_	_	11	acl	_	_
-19	(	$(	PUNCT	_	_	20	punct	_	SpaceAfter=No
-20	...	$...	PUNCT	_	_	2	punct	_	SpaceAfter=No
-21	)	$)	PUNCT	_	_	20	punct	_	SpaceAfter=No
-22	.	$.	PUNCT	_	_	2	punct	_	_
+18	stolt	stolt	ADJ	_	Definite=Ind|Degree=Pos|Number=Sing	11	acl	_	SpaceAfter=No
+19	.	$.	PUNCT	_	_	2	punct	_	_
+20	(	$(	PUNCT	_	_	21	punct	_	SpaceAfter=No
+21	...	$...	PUNCT	_	_	2	punct	_	SpaceAfter=No
+22	)	$)	PUNCT	_	_	21	punct	_	SpaceAfter=No
+23	.	$.	PUNCT	_	_	2	punct	_	_
 
 1	I	i	ADP	_	_	3	case	_	_
 2	det	det	DET	_	Gender=Neut|Number=Sing|PronType=Dem	3	det	_	_
