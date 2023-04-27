@@ -401,6 +401,7 @@ package adhoc_fixes {
       e: GOV -[PAR]-> DEP;
       DEP [upos=VERB];
     }
+    without { P1 [form="("]; P2 [form=")"]; P1 << DEP; DEP << P2;  }
     commands {
       del_edge e;
       shift_in GOV ==> DEP;
