@@ -31,19 +31,50 @@ rule flat_punct {
 
 rule flat_foreign {
   pattern {GOV [upos=X]; e: GOV -[ FLAT ]-> DEP }
-  commands { e.label = flat;
-              e.2 = foreign; }
+  commands {
+    e.1 = flat;
+    e.2 = foreign;
+  }
 }
 
 rule flat_name_propn {
-  pattern {e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
-  commands { e.label = flat;
-              e.2 = name; }
+  pattern {GOV [upos=PROPN|NOUN]; e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
+  commands {
+    e.1 = flat;
+    e.2 = name;
+  }
+}
+
+rule flat_name_propn_2 {
+  pattern { GOV [upos=ADJ]; DEP[upos=PROPN]; e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
+  commands {
+    e.1 = flat;
+    e.2 = name;
+  }
+}
+
+rule flat_name_clause_title {
+  pattern { H [upos=NOUN|PROPN]; H -> GOV; e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
+  without { GOV [upos=NUM]; DEP [upos=NUM]; }
+  commands {
+    e.1 = flat;
+    e.2 = name;
+  }
+}
+
+rule flat_num_range {
+    pattern { GOV [upos=NUM]; DEP [upos=NUM]; e: GOV -[FLAT]-> DEP; P [upos=PUNCT]; GOV << P ; P << DEP; }
+    commands { e.label = conj; }
 }
 
 rule flat_compound {
   pattern {e: GOV -[ FLAT ]-> DEP; GOV >> DEP; }
   commands { e.label = compound }
+}
+
+rule flat_fallback {
+  pattern { GOV[upos <> NOUN|PROPN|X]; e:GOV -[FLAT]-> DEP; H -[^APP|appos]-> GOV; GOV << DEP;}
+  commands { e.label = flat }
 }
 
 rule par_rest {

@@ -1,7 +1,7 @@
 
 # Treebank file names
-PARTITION=dev
-#PARTITION=train
+#PARTITION=dev
+PARTITION=train
 #PARTITION=test
 #LANG=nn
 LANG=nb
@@ -29,6 +29,7 @@ grew transform \
     -safe_commands
 
 mv $TEMPFILE $NDT_FILE
+#python parse_conllu.py -rc -f $TEMPFILE -o $NDT_FILE
 
 # START CONVERSION
 echo "--- Convert $LANG $PARTITION treebank ---"
@@ -40,7 +41,10 @@ grew transform \
     -safe_commands
 
 echo "--- Fix punctuation ---"
-cat $CONVERTED | udapy -s ud.FixPunct ud.SetSpaceAfterFromText > $TEMPFILE
+# add ud.SetSpaceAfterFromText after ud.FixPunct if needed
+cat $CONVERTED | udapy -s \
+    ud.FixPunct \
+    > $TEMPFILE
 
 grew transform \
     -i $TEMPFILE \
@@ -55,7 +59,7 @@ python ../tools/validate.py --max-err 0 --lang no $CONVERTED 2>&1 | tee $REPORTF
 
 python extract_errorlines.py \
     -f $REPORTFILE \
-    -e right-to-left-appos  # hent ut linjene for en spesifikk feilmeldingstype (-e errortype) fra valideringsrapporten
+    #-e right-to-left-appos  # hent ut linjene for en spesifikk feilmeldingstype (-e errortype) fra valideringsrapporten
 
 
 echo "--- Remove comment lines for MaltEval ---"
