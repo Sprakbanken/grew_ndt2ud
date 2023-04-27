@@ -395,6 +395,18 @@ package adhoc_fixes {
       del_edge e;
     }
   }
+
+  rule reported_speech_PAR_to_ccomp {
+    pattern {
+      e: GOV -[PAR]-> DEP;
+      DEP [upos=VERB];
+    }
+    commands {
+      del_edge e;
+      shift_in GOV ==> DEP;
+      add_edge f: DEP -> GOV; f.label = ccomp;
+    }
+  }
 }
 
 strat main_ {
