@@ -1,7 +1,6 @@
 import "NDT_fix.grs"
-include "appositions.grs"
+import "appositions.grs"
 import "reverse_heads.grs"
-include "reverse_heads_main_copy.grs"
 import "rename_deprel.grs"
 import "post_udapy_fixes.grs"
 
@@ -60,7 +59,7 @@ package nom_init {
 
 % Words with outgoing "FLAT"-relations are considered nominals
   rule nom_flat {
-    pattern {N [!nom]; N -[FLAT]-> *;}
+    pattern {N [!nom, upos <> X]; N -[FLAT]-> *;}
     commands {N.nom=y}
   }
 
@@ -78,12 +77,12 @@ package final {
 
 strat main {
     Seq (
-        Onf (NDT_fix),
-        Onf (nom_init),
-        rev_main,
-        APP_main,  % appositions strategy, restructuring and relabelling APP relations
-        Onf (rename_deprel),
-        Onf (final),
+        Onf (NDT_fix), % sentence-specific fixes and relabelling of pos-tags or feats
+        Onf (nom_init), % add a "nom" feature for nominal elements
+        reverse_heads.main_, % restructure graph edges
+        appositions.main_,  % restructuring and relabelling APP relations
+        Onf (rename_deprel), % simple rewrite of labels
+        Onf (final), % remove the nom feature
     )
 }
 
