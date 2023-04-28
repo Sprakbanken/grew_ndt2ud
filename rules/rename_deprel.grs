@@ -342,6 +342,12 @@ rule adverbial_cl_modifier_aux {
   commands { e1.label = advcl }
 }
 
+rule adverbial_clause_ellipsis {
+  pattern {DEP [upos=SCONJ]; e: GOV -[ADV]-> DEP;}
+  without {DEP -> *}
+  commands { e.label = advcl }
+}
+
 rule oblique_nominal {
   pattern {
     DEP [ upos= NOUN|PROPN|PRON|X|SYM|DET|NUM ];
@@ -356,6 +362,14 @@ rule oblique_adpositional {
     e: GOV -[ADV]-> DEP;
   }
   with { DEP -[PUTFYLL]-> * }
+  commands { e.label = obl }
+}
+
+rule oblique_interjection {
+  pattern {
+    DEP [ upos= INTJ  ];
+    e: GOV -[ADV]-> DEP;
+  }
   commands { e.label = obl }
 }
 
@@ -514,8 +528,8 @@ rule relable_infv_ccomp {
 
 rule error_og_adv {
   pattern {
-    DEP [ lemma="og"|"for", upos=CCONJ ];
-    e: GOV -[ ADV ]-> DEP;
+    DEP [ lemma="og"|"for"|"pluss", upos=CCONJ ];
+    e: GOV -[ ADV|ATR ]-> DEP;
   }
   commands {
     e.label = cc
