@@ -1,4 +1,3 @@
-# global.columns = ID FORM LEMMA UPOS XPOS FEATS HEAD DEPREL DEPS MISC
 # sent_id = 015697
 # text = Dommer Finn Eilertsen avstår, selvfølgelig bevisst, fra å «sette ord på» det inntrykk retten for sitt vedkommende måtte ha dannet seg av de handlinger retten finner bevist og av lovovertrederen.
 1	Dommer	dommer	NOUN	subst	Definite=Ind|Gender=Masc|Number=Sing	4	nsubj	_	_

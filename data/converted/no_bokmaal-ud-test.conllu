@@ -1,4 +1,3 @@
-# global.columns = ID FORM LEMMA UPOS XPOS FEATS HEAD DEPREL DEPS MISC
 # sent_id = 018106
 # text = Honnørordene er "dristig formspråk", " nyskapning " og "livgivende kontrast".
 1	Honnørordene	honnørord	NOUN	subst	Definite=Def|Gender=Neut|Number=Plur	5	nsubj	_	_
