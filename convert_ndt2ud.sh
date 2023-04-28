@@ -1,14 +1,15 @@
 
 # Treebank file names
-PARTITION=dev
+#PARTITION=dev
 #PARTITION=train
-#PARTITION=test
+PARTITION=test
 #LANG=nn
 LANG=nb
+NAME=bokmaal
 
 NDT_FILE=data/ndt_${LANG}_${PARTITION}_udmorph.conllu
 #CONVERTED=data/grew_output_${LANG}_${PARTITION}.conllu
-CONVERTED=data/grew_output_${PARTITION}.conllu
+CONVERTED=data/converted/no_${NAME}-ud-${PARTITION}.conllu
 TEMPFILE=tmp.conllu
 REPORTFILE=validation-report_ndt2ud_${LANG}_${PARTITION}.txt
 UD_OFFICIAL=data/${LANG}-ud-${PARTITION}_uten_hash.conllu
