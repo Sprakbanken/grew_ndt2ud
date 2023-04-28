@@ -184,3 +184,30 @@ rule fix_postag_X {
         N.Number="Sing";
     }
 }
+
+
+% 004797: Og sjølv om aktørane i boka påfallande ofte seier hø-hø-hø, og nokre gonger hå-hå, er her ikkje eigentleg humor, slik at boka kan forklarast som parodi eller karikatur.
+rule adverbial_formal_subject {
+    global { sent_id = "004797"; }
+    pattern { N [upos=ADV]; e: V -[FSUBJ]-> N;}
+    commands { e.label = ADV; }
+}
+
+rule adverbial_interjection {
+    pattern { D [upos=INTJ]; e: H -[ADV]-> D; }
+    commands { D.upos = ADV;  }
+}
+
+
+% 76	 Alle maktene og myndigheitene er " skapt av , ved , til Kristus , " altså vert dei " sett på sin rette stad " ( ikkje ulikt Rom 13 , der Paulus understrekar at myndigheiter er " Guds tenarar " ) .
+rule internal_punctuation_attachment {
+    global { sent_id = "000076"}
+    pattern {
+        N [lemma="Kristus"]; P1 [form=","]; P2 [upos=PUNCT]; P1 < P2; e1: H1 -> P1;
+        A [lemma="altså"]; V1 [form="vert"]; V2 [form="sett"]; e2: V2 -> A;
+    }
+    commands {
+        del_edge e1; add_edge N -[IK]-> P1;
+        del_edge e2; add_edge V1 -[ADV]-> A;
+    }
+}
