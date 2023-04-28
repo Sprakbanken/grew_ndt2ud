@@ -417,12 +417,12 @@ rule only_psubj_vb {
 rule passive_lex_aux_bli {
   pattern {
     A [ upos=AUX, lemma="bli" ];
-    V [ upos=VERB, VerbForm=Part ];
+    V [ upos=VERB|ADJ, VerbForm=Part ];
     e: V -> A;  % after the lexical verb is already the head
   }
-  without { e.2 = pass; }
+  without { e.1 = aux; e.2 = pass; }
   commands {
-    e.2 = pass;
+    e.label = "aux:pass";
   }
 }
 
