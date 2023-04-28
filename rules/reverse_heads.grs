@@ -3,7 +3,7 @@ package copula {
   % cop: reverser hodet i (ledd)setninger der "være" er hodet, med SPRED, men uten PSUBJ. Predikativet er ny rot.
   rule focustype_head_SPRED_copula {
     pattern {
-      H [ lemma="være" ];
+      H [ lemma="være"|"vere" ];
       e: H -[SPRED | INFV ]-> D; % Mulig at vi skal ha en egen behandling av tilfeller med INFV
     }
     without {
@@ -20,7 +20,7 @@ package copula {
   % Setningsantisiperende: Predikativet blir hode, PSUBJ-leddsetning blir csubj, "være" blir kopula på predikativet.
   rule clause_anticipating_copula {
     pattern {
-      H [ lemma="være" ];
+      H [ lemma="være"|"vere" ];
       e1: H -[SPRED]-> D1;
       e2: H -[PSUBJ]-> D2;
       D2 [upos <> NOUN|PRON|PROPN];
@@ -37,7 +37,7 @@ package copula {
   % kombinasjoner av hjelpeverb og kopula
   rule reverse_cop_aux {
     pattern {
-      COP [lemma="være"];
+      COP [lemma="være"|"vere"];
       AUX [upos=AUX];
       e1: AUX -[ INFV ]-> COP;
       e2: COP -[ SPRED ]-> SPRED;
@@ -56,7 +56,7 @@ package copula {
 
   rule reverse_cop_aux_aux {
     pattern {
-      COP [lemma="være"];
+      COP [lemma="være"|"vere" ];
       AUX1 [upos=AUX];
       AUX2 [upos=AUX];
       e1: AUX1 -[ INFV ]-> AUX2;
@@ -253,7 +253,7 @@ package shift_root {
 
   rule rev_root_modal_aux_to_lexical_verb {
     pattern {
-      AUX [lemma="ville"|"kunne"|"måtte"|"skulle"|"burde"|"ha"];
+      AUX [lemma="ville"|"vilje"|"kunne"|"måtte"|"skulle"|"burde"|"ha"];
       LEX [upos=VERB];
       r1: R -[FINV]-> AUX;
       e: AUX -[INFV]-> LEX;
@@ -269,7 +269,7 @@ package shift_root {
 
   rule rev_modal_aux_chain_to_lexical {
     pattern {
-      A1 [upos=AUX, lemma="ville"|"kunne"|"måtte"|"skulle"|"burde"|"ha"];
+      A1 [upos=AUX, lemma="ville"|"vilje"|"kunne"|"måtte"|"skulle"|"burde"|"ha"];
       A2 [upos=AUX];
       A3 [upos=AUX];
       e1: A1 -[INFV]-> A2;
@@ -295,7 +295,7 @@ package shift_root {
 
         % nodes
         H[upos=AUX];
-        AUX[upos=AUX, lemma="være"];
+        AUX[upos=AUX, lemma="være"|"vere"];
 
         % dependencies
         r: R -[FINV]-> H;
@@ -352,7 +352,7 @@ rule shift_root_copula_predicate {
     pattern {
 
         % nodes
-        AUX[upos=AUX, lemma="være"];
+        AUX[upos=AUX, lemma="være"|"vere"];
         % dependencies
         r: R -[FINV]-> AUX;
         e: AUX -[SPRED]-> PRED;
