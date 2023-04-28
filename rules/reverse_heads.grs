@@ -87,14 +87,14 @@ package shift_sentence_internal {
   rule reverse_lex_aux_verbs {
     pattern {
       H [upos=AUX];
-      D [upos=VERB];
+      D [upos=VERB|ADJ, VerbForm];
       e: H -[INFV]-> D;
     }
     commands {
       del_edge e;
       shift H ==> D;
       add_edge f: D -> H;
-      f.label = aux;
+      f.1 = aux;
     }
   }
 
