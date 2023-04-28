@@ -1,7 +1,7 @@
 
 # Treebank file names
-#PARTITION=dev
-PARTITION=train
+PARTITION=dev
+#PARTITION=train
 #PARTITION=test
 #LANG=nn
 LANG=nb
@@ -17,19 +17,6 @@ UD_OFFICIAL=data/${LANG}-ud-${PARTITION}_uten_hash.conllu
 #NDT_FILE=data/sentences/testsents.conllu
 #CONVERTED=OUTPUT.conllu
 #TEMPFILE=deleteme.conllu
-
-
-echo "--- Pre-conversion changes ---"
-# Add SpaceAfter in MISC-field, add nodes and fix errors in the file before converting it.
-grew transform \
-    -i  $NDT_FILE \
-    -o  $TEMPFILE \
-    -grs  rules/pre_conversion.grs \
-    -strat "Onf(fix_postag_X)" \
-    -safe_commands
-
-mv $TEMPFILE $NDT_FILE
-#python parse_conllu.py -rc -f $TEMPFILE -o $NDT_FILE
 
 # START CONVERSION
 echo "--- Convert $LANG $PARTITION treebank ---"
