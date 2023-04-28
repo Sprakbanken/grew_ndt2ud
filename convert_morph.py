@@ -11,8 +11,8 @@ from parse_conllu import parse_conll_file, CONLLFIELDS, write_conll
 symbols = ['$', '£', '%', ':(', ':)', '+', '-', '/', '>=']
 
 auxlemmas = [
-    "bli", "burde", "få", "ha", "kunne",
-    "måtte", "skulle", "tørre", "ville", "være"
+    "bli", "burde", "få", "ha", "kunne", "vilje",
+    "måtte", "skulle", "tørre", "ville", "være", "vere"
 ]
 
 
@@ -154,7 +154,7 @@ def is_neg(token):
 
 def is_copula(token, deps):
     return (
-        get_field(token, "LEMMA") == "være" and
+        get_field(token, "LEMMA") in ("være", "vere") and
         has_dep_label("SPRED", deps)
     )
 
@@ -257,7 +257,7 @@ def convert_pos(token, sentence):
             "INFV" in labels and lemma in auxlemmas
             # token is a modal auxiliary verb
             ) or (
-            "SPRED" in labels and lemma == "være"
+            "SPRED" in labels and lemma in ("være", "vere")
             # token is a copular verb
             ):
             return "AUX"
