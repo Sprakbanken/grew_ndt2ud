@@ -211,3 +211,14 @@ rule internal_punctuation_attachment {
         del_edge e2; add_edge V1 -[ADV]-> A;
     }
 }
+
+% 13399	 Påstandane om stor kriminalitet blir også kontant avvist av mottaksleiaren .
+rule fix_postag_INTJ {
+    global {sent_id = "013399"}
+    pattern {N[form ="mottaksleiaren", upos=INTJ]; *-[PUTFYLL]-> N;}
+    commands {
+        N.upos=NOUN;
+        N.lemma="mottaksleiar";
+        N.Gender="Masc";
+    }
+}
