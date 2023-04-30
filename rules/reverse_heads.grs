@@ -207,7 +207,7 @@ package coordination {
 
   % The symbol "/" between units of measurements is a "case" dependent on the unit it precedes.
   % F.eks. 000779: "Det tyske miljømerket Blå Engel går enda lenger og krever 0,6 watt / kg , (...)"
-  rule shift_case_symbol {
+  rule shift_case_symbol_units {
     pattern {
         SYMBOL [ upos=SYM, form="/" ];
         UNIT1 [ upos=NOUN|PROPN ];
@@ -244,6 +244,21 @@ package coordination {
         del_edge e;
         add_edge f: KNJ -> SYMBOL;
         f.label = cc;
+    }
+  }
+  % 4311	"... ( sjå Språknytt nr. 2 / 1997 )."
+  rule shift_case_symbol {
+    pattern {
+        N1 [upos=NUM];
+        N2[upos=NUM];
+        S [upos=SYM];
+        e: N1 -[IK]-> S;
+        N1 -[ATR]-> N2;
+    }
+    commands {
+      del_edge e;
+      add_edge f: N2 -> S;
+      f.label = case;
     }
   }
 }
