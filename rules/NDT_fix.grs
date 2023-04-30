@@ -222,3 +222,22 @@ rule fix_postag_INTJ {
         N.Gender="Masc";
     }
 }
+
+
+% 9674	 [...] "«dei 20 mest dedikerte og pålitelege konservative / patriotiske leiarar i landet»."
+rule fix_coordinated_attributes {
+    global { sent_id = "009674" }
+    pattern {
+        A1 [upos=ADJ];
+        S [upos=SYM];
+        A2 [upos=ADJ];
+        N [upos=NOUN];
+        A1 < S; S < A2; A2 < N;
+        e: N -[ATR]-> A2;
+        A1 -[IK]-> S;
+    }
+    commands {
+        del_edge e;
+        add_edge f: A1 -> A2; f.label=KOORD;
+    }
+}
