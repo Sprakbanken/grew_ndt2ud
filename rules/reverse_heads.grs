@@ -163,7 +163,7 @@ package shift_sentence_internal {
   }
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-package coordination {
+package comma {
 
   rule shift_komma_fst_conj {
     pattern {
@@ -204,63 +204,134 @@ package coordination {
         f3.label = punct;
     }
   }
+}
 
-  % The symbol "/" between units of measurements is a "case" dependent on the unit it precedes.
-  % F.eks. 000779: "Det tyske miljømerket Blå Engel går enda lenger og krever 0,6 watt / kg , (...)"
-  rule shift_case_symbol_units {
-    pattern {
-        SYMBOL [ upos=SYM, form="/" ];
-        UNIT1 [ upos=NOUN|PROPN ];
-        UNIT2 [ upos=NOUN|PROPN ];
-        NUMBER [ upos= NUM ];
-        e1: UNIT1 -[ IK ]-> SYMBOL;
-        UNIT1 -> NUMBER;
-        e2: NUMBER -> UNIT2;
-    }
-    with {
-        SYMBOL >> UNIT1;
-        UNIT2 >> SYMBOL;
-    }
-    commands {
-        del_edge e1;
-        add_edge f: UNIT2 -> SYMBOL;
-        f.label = case;
-        del_edge e2;
-        add_edge f2: UNIT1 -> UNIT2;
-        f2.label = nmod;
-        shift_out UNIT1 ==> UNIT2;
-    }
+% The symbol "/" between units of measurements is a "case" dependent on the unit it precedes.
+% F.eks. 000779: "Det tyske miljømerket Blå Engel går enda lenger og krever 0,6 watt / kg , (...)"
+rule shift_case_symbol_units {
+  pattern {
+      SYMBOL [ upos=SYM, form="/" ];
+      UNIT1 [ upos=NOUN|PROPN ];
+      UNIT2 [ upos=NOUN|PROPN ];
+      NUMBER [ upos= NUM ];
+      e1: UNIT1 -[ IK ]-> SYMBOL;
+      UNIT1 -> NUMBER;
+      e2: NUMBER -> UNIT2;
   }
-
-  rule shift_coordinating_sym {
-    pattern {
-        SYMBOL [upos=SYM];
-        e: H -[IK]-> SYMBOL;
-        conj: H -[KOORD]-> KNJ ;
-        H << SYMBOL; SYMBOL << KNJ;
-        SYMBOL << conj;
-    }
-    commands {
-        del_edge e;
-        add_edge f: KNJ -> SYMBOL;
-        f.label = cc;
-    }
+  with {
+      SYMBOL >> UNIT1;
+      UNIT2 >> SYMBOL;
   }
-  % 4311	"... ( sjå Språknytt nr. 2 / 1997 )."
-  rule shift_case_symbol {
-    pattern {
-        N1 [upos=NUM];
-        N2[upos=NUM];
-        S [upos=SYM];
-        e: N1 -[IK]-> S;
-        N1 -[ATR]-> N2;
-    }
-    commands {
-      del_edge e;
-      add_edge f: N2 -> S;
+  commands {
+      del_edge e1;
+      add_edge f: UNIT2 -> SYMBOL;
       f.label = case;
-    }
+      del_edge e2;
+      add_edge f2: UNIT1 -> UNIT2;
+      f2.label = nmod;
+      shift_out UNIT1 ==> UNIT2;
   }
+}
+
+
+% 4311	"... ( sjå Språknytt nr. 2 / 1997 )."
+rule shift_case_symbol {
+  pattern {
+      N1 [upos=NUM];
+      N2[upos=NUM];
+      S [upos=SYM];
+      e: N1 -[IK]-> S;
+      N1 -[ATR]-> N2;
+  }
+  commands {
+    del_edge e;
+    add_edge f: N2 -> S;
+    f.label = case;
+  }
+}
+
+
+% 000231: (...) "ein større organisasjon / tradisjon / fellesskap / kyrkje " (...)
+rule coord_symbol_1 {
+  pattern {
+      S1[upos=SYM];
+      S2[upos=SYM];
+      S3[upos=SYM];
+      N1[];
+      N2[];
+      N3[];
+      N4[];
+      e1: N1 -[IK]-> S1;
+      e2: N2 -[IK]-> S2;
+      e3: N3 -[IK]-> S3;
+      * -[KOORD]-> N2;
+      * -[KOORD]-> N3;
+      * -[KOORD]-> N4;
+      N1 << N2;
+      N2 << N3;
+      N3 << N4;
+    }
+  commands {
+    del_edge e1;
+    del_edge e2;
+    del_edge e3;
+    add_edge N2 -[cc]-> S1;
+    add_edge N3 -[cc]-> S2;
+    add_edge N4 -[cc]-> S3;
+  }
+}
+
+% 005598: "(...) poliklinikk for øyre / nase / hals (...)"
+% 006450	"- Vi flyttar i år festivalområdet til Rådhusplassen / Trovikkaia / Trovikbakken!"
+rule coord_symbol_2 {
+  global { sent_id = "005598" | "006450" }
+  pattern {
+    S1[upos=SYM];
+    S2[upos=SYM];
+    e1: N1 -[IK]-> S1;
+    e2: N2 -[IK]-> S2;
+    N1 -[KOORD]-> N2;
+    N1 -[KOORD]-> N3;
+  }
+  commands {
+    del_edge e1;
+    del_edge e2;
+    add_edge N2 -[cc]-> S1;
+    add_edge N3 -[cc]-> S2;
+  }
+}
+
+rule coord_symbol_3 {
+  pattern {
+      SYMBOL [upos=SYM];
+      e: H -[IK]-> SYMBOL;
+      H -[KOORD]-> KNJ ;
+      H << SYMBOL; SYMBOL << KNJ;
+  }
+  without {
+    KNJ2 [upos=CCONJ];
+    KNJ -[KONJ|cc]-> KNJ2;
+  }
+  without {
+    KNJ2 []; H -[KOORD]-> KNJ2;
+    SYMBOL << KNJ2; KNJ2 << KNJ;
+  }
+  commands {
+    del_edge e;
+    add_edge f: KNJ -> SYMBOL;
+    f.label = cc;
+  }
+}
+
+strat coordinating_symbols {
+  Seq (
+    Onf (comma),
+    Onf (shift_case_symbol_units),
+    Onf (shift_case_symbol),
+    Onf (coord_symbol_1),
+    Onf (coord_symbol_2),
+    Onf (coord_symbol_3),
+  )
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -442,9 +513,12 @@ package adhoc_fixes {
       DEP [upos=VERB];
     }
     without { P1 [form="("]; P2 [form=")"]; P1 << DEP; DEP << P2;  }
+    without { P1 [form=","]; P2 [form=","]; P1 << DEP; DEP << P2;  }
+    without { GOV -> N; N << DEP; DEP << GOV; }
     commands {
       del_edge e;
       shift_in GOV ==> DEP;
+      shift_out GOV =[IP]=> DEP;
       add_edge f: DEP -> GOV; f.label = ccomp;
     }
   }
@@ -455,7 +529,7 @@ strat main_ {
     Onf(adhoc_fixes),
     Onf (copula),
     Onf (shift_sentence_internal),
-    Onf (coordination),
+    coordinating_symbols,
     Onf (shift_root),
     Onf (bouquet),
     Onf (rev_PUTFYLL_bouquet_head),
