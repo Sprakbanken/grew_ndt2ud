@@ -258,3 +258,37 @@ rule fix_non_projective_punctuation {
         add_edge H2 -[IK]-> C;
     }
 }
+
+% 010128:	 Kanskje gjentek serien seg sjølv ( Ralles nye kjærast Danuta ( eg nektar å tru at det blir dei to til slutt ! ) ...) ...
+rule fix_non_projective_punctuation_2 {
+    global { sent_id = "010128" }
+    pattern {
+        e: V1 -[PAR]-> CL;
+        CL[lemma="nekte"];
+        V2 -[SUBJ]-> N;
+        N [form="Danuta"];
+    }
+    commands {
+        del_edge e;
+        add_edge N -[PAR]-> CL;
+    }
+}
+
+% 010128: ... blir i alle fall forsøkt sjekka opp av sjefen på gartneriet der dei har sommarjobb ...
+rule fix_non_projective_punctuation_3 {
+    global { sent_id = "010128" }
+    pattern {
+        * -[INFV]-> V1;
+        e: V2 -[ADV]-> A;
+        V2 [lemma="sjekke"];
+        A [form="i"];
+        V1 [lemma="forsøkje"];
+        A << V1;
+        V1 < V2;
+    }
+    commands {
+        del_edge e;
+        add_edge V1 -[ADV]-> A;
+    }
+}
+
