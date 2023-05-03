@@ -317,7 +317,7 @@ def add_feats(token):
 
     if pos == "NUM":
         new_feats.append("card")
-    if is_neg(token):
+    if is_neg(token) and pos != "X":
         new_feats.append("neg")
     if pos == "PRON" or pos == "DET":
         if lemma not in pron_det_lemma_feats_map and overlaps(feats, pron_feats):
