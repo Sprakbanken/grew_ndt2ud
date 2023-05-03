@@ -3,7 +3,7 @@ package copula {
   % cop: reverser hodet i (ledd)setninger der "være" er hodet, med SPRED, men uten PSUBJ. Predikativet er ny rot.
   rule focustype_head_SPRED_copula {
     pattern {
-      H [ lemma="være"|"vere" ];
+      H [ lemma="være"|"vere", upos <> ADJ ];
       e: H -[SPRED | INFV ]-> D; % Mulig at vi skal ha en egen behandling av tilfeller med INFV
     }
     without {
@@ -20,7 +20,7 @@ package copula {
   % Setningsantisiperende: Predikativet blir hode, PSUBJ-leddsetning blir csubj, "være" blir kopula på predikativet.
   rule clause_anticipating_copula {
     pattern {
-      H [ lemma="være"|"vere" ];
+      H [ lemma="være"|"vere", upos <> ADJ];
       e1: H -[SPRED]-> D1;
       e2: H -[PSUBJ]-> D2;
       D2 [upos <> NOUN|PRON|PROPN];
