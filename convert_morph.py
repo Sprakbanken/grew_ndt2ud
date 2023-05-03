@@ -17,35 +17,44 @@ auxlemmas = [
 
 
 quantifiers = [
-    "all", "alt", "alle", "en", "et", "ei", "enhver", "ethvert",
-    "hver", "hvert", "ingen", "noe", "noen", "samtlige", "begge"
+    "all", "alt", "alle", "en", "ein", "et", "ei", "eit", "enhver", "einkvar",
+    "ethvert", "einkvan", "hver", "hvert", "kvar", "ingen", "noe", "noen", "nokon",
+    "samtlige", "samtleg","begge"
 ]
 
 
 possessivepronouns = [
     "min", "din", "sin", "hans",
-    "hennes", "dens", "dets", "vår", "deres"
+    "hennes", "hennar", "dens", "dets", "vår", "deres"
 ]
 
 
 pron_det_lemma_feats_map = {
         "en": "art",
+        "ein": "art",
         "seg": "pers",
         "noen": "ind",
         "noe": "ind",
+        "nokon": "ind",
         "endel": "ind",
         "ingen": "negpron|neg",
         "ingenting": "negpron|neg",
         "alle": "tot",
         "all": "tot",
         "hver": "tot",
+        "kvar": "tot",
         "enhver": "tot",
+        "ethvert": "tot",
+        "einkvar": "tot",
+        "einkvan": "tot",
         "begge": "tot",
         "samtlige": "tot",
+        "samtleg": "tot",
         "selv": "pers",
         "selve": "pers",
         "sjølv": "pers",
         "egen": "pers",
+        "eigen": "pers",
         "som": "rel",
 }
 
