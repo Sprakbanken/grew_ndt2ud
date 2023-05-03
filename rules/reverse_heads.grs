@@ -176,6 +176,20 @@ package shift_sentence_internal {
       add_edge H -[mark]-> N1;
     }
   }
+
+  % 014423 "Ja , dei rike må byrja å betala skatt , og ja , gresk og søreuropeisk økonomi (...)"
+  rule coordinated_interjection {
+    pattern {
+      I [upos=INTJ];
+      N [upos=CCONJ];
+      H -[KONJ]-> N;
+      e: N -[INTERJ]-> I;
+    }
+    commands {
+      add_edge f: H -> I; f.label = e.label;
+      del_edge e;
+    }
+  }
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
