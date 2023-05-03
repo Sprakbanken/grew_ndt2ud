@@ -124,7 +124,6 @@ package shift_sentence_internal {
       e: GOV -[ ADV ]-> DEP;
       e2: DEP -> N1;
     }
-
     without {
       DEP -> N2; N2 [upos <> PUNCT];
     }
@@ -140,19 +139,19 @@ package shift_sentence_internal {
     }
   }
 
-  % nynorsk: om ikkje adj... ("if not ADJ")
+  % nynorsk: om ikkje ... ("if not...")
   rule om_ikkje_adj {
     pattern {
       DEP [ lemma="om", upos=SCONJ ];
       N1 [form="ikke"|"ikkje"];
-      N2 [upos=ADJ];
+      N2 [upos=ADJ|PRON];
       e: GOV -[ ADV ]-> DEP;
       e2: DEP -[ADV]-> N1;
-      e3: DEP -[SPRED]-> N2;
+      e3: DEP -> N2;
       DEP < N1; N1 << N2;
     }
     commands {
-      add_edge f: GOV -> N2; f.label = advmod;
+      add_edge f: GOV -> N2; f.label = e.label;  % should this be e3.label instead?
       add_edge f2: N2 -> DEP; f2.label = mark;
       add_edge f3: N2 -> N1; f3.label = advmod;
 
