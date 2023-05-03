@@ -223,6 +223,11 @@ rule det_adj {
   commands { e.label = amod }
 }
 
+rule det_adv {
+  pattern {DEP [upos=ADV]; e: GOV -[DET]-> DEP; }
+  commands { e.label = advmod }
+}
+
 rule determiner_genitive {
   pattern {DEP [Case=Gen]; e: GOV -[DET]-> DEP; }
   commands { e.label = nmod }
