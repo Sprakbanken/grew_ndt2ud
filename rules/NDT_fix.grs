@@ -241,3 +241,20 @@ rule fix_coordinated_attributes {
         add_edge f: A1 -> A2; f.label=KOORD;
     }
 }
+
+% 000100: ein "levande tradisjon,"
+% 000113: "på vegen,"
+rule fix_non_projective_punctuation {
+    global { sent_id = "000100" | "000113" | "000179" | "000582" | "010128" }
+    pattern {
+        C [lemma="$,"];
+        Q [lemma="$\""];
+        e: H1 -[IK]-> C;
+        H2 -[IK]-> Q;
+        C < Q;  % The comma immediately precedes the quotation sign
+    }
+    commands {
+        del_edge e;
+        add_edge H2 -[IK]-> C;
+    }
+}
