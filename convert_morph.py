@@ -338,13 +338,13 @@ def convert_feats(token):
 
 
 def map_feats(feats):
-    newfeats = defaultdict(list)
+    newfeats = defaultdict(set)
     mapped = (featsmap.get(feat, "_") for feat in feats)
     for feat in mapped:
         if not isinstance(feat, dict):
             continue
         for (feattype, val) in feat.items():
-            newfeats[feattype].append(val)
+            newfeats[feattype].add(val)
     formatted = [format_ud_feat(*feat) for feat in newfeats.items()]
     return formatted
 
