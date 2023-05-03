@@ -160,7 +160,24 @@ package shift_sentence_internal {
       del_edge e3;
     }
   }
+
+  % slik at ...
+  rule slik_at_fixed_conj {
+    pattern {
+      N1 [lemma="slik", upos=ADV];
+      N2 [lemma="at", upos=SCONJ];
+      e1: N2 -[ADV]-> N1;
+      e2: H -[SBU]-> N2;
+    }
+    commands {
+      del_edge e1;
+      del_edge e2;
+      add_edge N1 -[fixed]-> N2;
+      add_edge H -[mark]-> N1;
+    }
+  }
 }
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 package comma {
 
