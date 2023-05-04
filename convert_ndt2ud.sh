@@ -1,8 +1,8 @@
 
 # Treebank file names
 
-PARTITION=dev
-#PARTITION=train
+#PARTITION=dev
+PARTITION=train
 #PARTITION=test
 
 #LANG=nb
