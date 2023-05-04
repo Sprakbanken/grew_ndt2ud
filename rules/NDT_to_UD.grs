@@ -1,7 +1,10 @@
 import "NDT_fix.grs"
-import "appositions.grs"
-import "reverse_heads.grs"
-import "rename_deprel.grs"
+import "appositions_nb.grs"
+import "appositions_nn.grs"
+import "reverse_heads_nb.grs"
+import "reverse_heads_nn.grs"
+import "rename_deprel_nb.grs"
+import "rename_deprel_nn.grs"
 import "post_udapy_fixes.grs"
 
 
@@ -75,13 +78,24 @@ package final {
 }
 
 
-strat main {
+strat main_nb {
     Seq (
         Onf (NDT_fix), % sentence-specific fixes and relabelling of pos-tags or feats
         Onf (nom_init), % add a "nom" feature for nominal elements
-        reverse_heads.main_, % restructure graph edges
-        appositions.main_,  % restructuring and relabelling APP relations
-        Onf (rename_deprel), % simple rewrite of labels
+        reverse_heads_nb.main_, % restructure graph edges
+        appositions_nb.main_,  % restructuring and relabelling APP relations
+        Onf (rename_deprel_nb), % simple rewrite of labels
+        Onf (final), % remove the nom feature
+    )
+}
+
+strat main_nn {
+    Seq (
+        Onf (NDT_fix), % sentence-specific fixes and relabelling of pos-tags or feats
+        Onf (nom_init), % add a "nom" feature for nominal elements
+        reverse_heads_nn.main_, % restructure graph edges
+        appositions_nn.main_,  % restructuring and relabelling APP relations
+        Onf (rename_deprel_nn), % simple rewrite of labels
         Onf (final), % remove the nom feature
     )
 }
