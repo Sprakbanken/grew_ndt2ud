@@ -1,11 +1,14 @@
 
 # Treebank file names
-#PARTITION=dev
+
+PARTITION=dev
 #PARTITION=train
-PARTITION=test
-#LANG=nn
-LANG=nb
-NAME=bokmaal
+#PARTITION=test
+
+#LANG=nb
+#NAME=bokmaal
+LANG=nn
+NAME=nynorsk
 
 NDT_FILE=data/ndt_${LANG}_${PARTITION}_udmorph.conllu
 #CONVERTED=data/grew_output_${LANG}_${PARTITION}.conllu
@@ -26,6 +29,7 @@ grew transform \
     -i  $NDT_FILE \
     -o  $CONVERTED \
     -grs  rules/NDT_to_UD.grs \
+    -strat "main_$LANG" \
     -safe_commands
 
 echo "--- Fix punctuation ---"
@@ -70,5 +74,5 @@ for METRIC in UAS LAS; do
 done
 
 # VISUALISATION
-echo "--- Visualize converted treebank ---"
-java -jar dist-20141005/lib/MaltEval.jar -g $MALTGOLD -s $TEMPFILE -v 1
+#echo "--- Visualize converted treebank ---"
+#java -jar dist-20141005/lib/MaltEval.jar -g $MALTGOLD -s $TEMPFILE -v 1

@@ -1,0 +1,249 @@
+%%%% APPOSISJONER %%%%
+% The numbering of the rules are from the initial definition, and have no relevance for execution order
+
+package restructuring_1 {
+
+    % 5: titles, indefinite nouns immediately preceding proper nouns
+    % "De ble ønsket velkommen av [TITLE=dronning] [NAME=Sonja], [TITLE=kong] [NAME=Harald] , [TITLE=kronprins] [NAME=Haakon] og [TITLE=kronprinsesse] [NAME=Mette-Marit]."
+    rule titles_APP_to_FLAT {
+        pattern {
+            TITLE [upos=NOUN, Definite=Ind];
+            NAME  [upos=PROPN];
+            e: NAME -[ APP ]-> TITLE;
+            TITLE < NAME;
+        }
+        without {
+            TITLE -[DET]-> *;
+        }
+        commands {
+            del_edge e;
+            shift NAME ==> TITLE;
+            add_edge f: TITLE -> NAME;
+            f.label = "FLAT";
+        }
+    }
+
+    rule abbreviations_APP_to_FLAT {
+        pattern {
+            TITLE [upos=NOUN, Abbr];
+            NAME  [upos=PROPN];
+            e: NAME -[ APP ]-> TITLE;
+            TITLE < NAME;
+        }
+        without {
+            TITLE -[DET]-> *;
+        }
+        commands {
+            del_edge e;
+            shift NAME ==> TITLE;
+            add_edge f: TITLE -> NAME;
+            f.label = "FLAT";
+        }
+    }
+
+    % 2: Non-consecutive nominal nodes --> dislocated
+    % Eksempel: "Jeg [H=møtte] [N1=Fredrik] [X=i går], [N2=mannen] som ..."
+    % Eksempel: "Men så [H=er] ikke [N1=bryllupet] mellom Haakon og Mette-Marit [X=hverdagskost] [N2=det] heller."
+    rule not_consecutive_APP_to_dislocated {
+        pattern {
+            N1 [nom=y];
+            N2 [nom=y];
+            e: N1 -[APP]-> N2;
+            H -> N1;
+            H -> X;
+            X << e; % Node X occurs between source and target node of edge e
+        }
+        with { * -> H ;}  % Avoid matching the "invisible" root node as H
+        commands {
+            del_edge e;
+            add_edge f: H -> N2;
+            f.label = dislocated;
+            N1.head_dislocated=y;
+        }
+    }
+
+    % 8: Conditional "[if] X, [then|so]" --> ADV
+    % Eksempel 8512: "Men når det er sagt, så ser vi ikke på KHL som en trussel."
+    % Eksempel 1792: "Hvis det er noe finanskrisen har vist, så er det hvor viktig det er."
+    rule APP_saa_to_ADV {
+        pattern {
+            GOV [upos=ADV, form="så"];
+            e: GOV -[APP]-> DEP;
+            e2: H -[ADV]-> GOV;
+        }
+        commands {
+            del_edge e;
+            add_edge f: H -> DEP;
+            f.label = e2.label;
+        }
+    }
+}
+
+package restructuring_2 {
+    %"Bak våre nabolands statsoverhoder fulgte Islands [president] [Olafur] Ragnar Grimsson med dronning Silvia av Sverige."
+    rule shift_genitiv_title_to_left_head_appos {
+        pattern {
+            TITLE [upos=NOUN, Definite=Ind];
+            NAME  [upos=PROPN];
+            e: NAME -[ APP ]-> TITLE;
+            TITLE < NAME;
+        }
+        with {
+            N[upos=PROPN|NOUN, Case=Gen]; TITLE -[DET]-> N;
+        }
+        commands {
+            add_edge f: TITLE -> NAME;
+            f.label = "APP";
+            del_edge e;
+            shift_in NAME ==> TITLE;
+        }
+    }
+    % "(...) dronning Silvia hadde overtatt sin " onkel Mulle " , [N=den] 90 år gamle [TITLE=prins] [NAME=Carl] Bernadotte."
+    rule shift_modified_title_to_left_head_appos {
+        pattern {
+            TITLE [upos=NOUN, Definite=Ind];
+            NAME  [upos=PROPN];
+            e: NAME -[ APP ]-> TITLE;
+            TITLE < NAME;
+        }
+        with {
+            N[upos=DET|ADJ]; TITLE -[DET|ATR]-> N;
+        }
+        commands {
+            add_edge f: TITLE -> NAME;
+            f.label = "APP";
+            del_edge e;
+            shift_in NAME ==> TITLE;
+        }
+    }
+}
+
+package restructuring_3 {
+    % 6: Shift APP head from right to left
+    rule shift_head_right_to_left {
+        pattern {
+            H [nom=y];
+            N [nom=y];
+            e: H -[ APP ]-> N;
+            N << H;
+        }
+        commands {
+            add_edge f: N -> H;
+            f.label = APP;
+            del_edge e;
+
+            shift_in H ==> N;
+            shift_out H =[^FLAT|ATR|KOORD|IK|DET]=> N;  % Sjekk om denne listen er fullstendig: relasjoner som bør henge igjen på 2.ledd
+        }
+    }
+
+}
+
+strat restructuring {
+    Seq (
+        Onf (restructuring_1),
+        Onf (restructuring_2),
+        Onf (restructuring_3),
+    )
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+package relabelling {
+
+    % 1: Two consecutive nominals --> appos
+    % Eksempel 4272: "Jeg stusset og ringte en [kollega] , en [professor] i medisin som arbeider med legemidler."
+    % "Det vi egentlig står overfor , er en tilspisset konflikt mellom [åpenhet] og [N1=personvern] - to [N2=prinsipper] som begge er viktige."
+    % "(...) dronning Silvia hadde overtatt sin " [onkel] Mulle " , den 90 år gamle [prins] Carl Bernadotte."
+    rule N-APP-N_to_appos {
+        pattern {
+            N1 [nom=y];
+            N2 [nom=y];
+            e: N1 -[APP]-> N2;
+            N1 << N2;
+        }
+        commands { e.label = appos }
+    }
+
+
+    % 3: Nominal to verbal element --> acl
+    % Eksempel 8692: "- Det gjelder både kostymene og [N1=det] at de [V=løfter] hverandre, noe som ikke er lov i konkurranser."
+    % Eksempel 7739: "- Men det er kritikkverdig at de ikke kalte inn Cathrines foreldre til samtale om det at hun ikke hadde mat med, og at hun flere ganger møtte uforberedt."
+    rule N-APP-V_to_acl {
+        pattern {
+            N1[nom=y];
+            V [upos=VERB|AUX];
+            e: N1 -[APP]-> V;
+        }
+        commands {
+            e.label = acl;
+        }
+    }
+
+    % 4: Verbal to nominal element --> dislocated
+    % Eksempel 8692: "- Det gjelder både kostymene og det at de [V=løfter] hverandre, [N=noe] som ikke er lov i konkurranser."
+    rule V-APP-N_to_dislocated {
+        pattern {
+            N [nom=Y];
+            V [upos=VERB|AUX];
+            e: V -[APP]-> N;
+        }
+        commands {
+            e.label = dislocated;
+        }
+    }
+
+    % 7: Verbal elements --> KOORD
+    % Eksempel 7111: "Nødlanding kunne bety at de bare forsvant - ble slukt i det store grønne intet."
+    % Eksempel 10961: "Jeg vil gjøre ting du har gjort, skrive, skape, produsere."
+    rule V-APP-V_to_conj {
+        pattern {
+            V1 [upos=VERB|AUX];
+            V2 [upos=VERB|AUX];
+            e: V1 -[APP]-> V2;
+            V1 << V2;
+        }
+        commands {
+            e.label = KOORD;
+        }
+    }
+}
+
+
+
+% 9: Fallback solution --> dislocated
+rule APP_to_dislocated_fallback {
+    pattern {
+        e: GOV -[APP]-> DEP;
+        H -> GOV;
+    }
+    commands {
+        del_edge e;
+        add_edge f: H -> DEP;
+        f.label = dislocated;
+        f.fallback=y;
+    }
+}
+
+% clean up additional features
+package clean_up {
+    rule remove_dislocated {
+        pattern { N[head_dislocated] }
+        commands { del_feat N.head_dislocated }
+    }
+    rule remove_fallback {
+        pattern { e: N -[fallback=y]-> M; }
+        commands { del_feat e.fallback }
+    }
+}
+
+
+strat main_ {
+    Seq (
+        restructuring,
+        Onf (relabelling),
+        Onf (APP_to_dislocated_fallback),
+        Onf (clean_up),
+    )
+}
+

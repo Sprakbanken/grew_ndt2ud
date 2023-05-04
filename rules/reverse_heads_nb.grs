@@ -1,0 +1,424 @@
+package copula {
+
+  % cop: reverser hodet i (ledd)setninger der "være" er hodet, med SPRED, men uten PSUBJ. Predikativet er ny rot.
+  rule focustype_head_SPRED_copula {
+    pattern {
+      H [ lemma="være" ];
+      e: H -[SPRED | INFV ]-> D; % Mulig at vi skal ha en egen behandling av tilfeller med INFV
+    }
+    without {
+      H -[PSUBJ]-> *;
+    }
+    commands {
+      del_edge e;
+      shift H ==> D;
+      add_edge f: D -> H;
+      f.label = cop;
+    }
+  }
+
+  % Setningsantisiperende: Predikativet blir hode, PSUBJ-leddsetning blir csubj, "være" blir kopula på predikativet.
+  rule clause_anticipating_copula {
+    pattern {
+      H [ lemma="være" ];
+      e1: H -[SPRED]-> D1;
+      e2: H -[PSUBJ]-> D2;
+      D2 [upos <> NOUN|PRON|PROPN];
+    }
+    commands {
+      del_edge e1;
+      del_edge e2;
+      shift H ==> D1;
+      add_edge f1: D1 -> H; f1.label = cop;
+      add_edge f2: D1 -> D2; f2.label = csubj;
+    }
+  }
+
+  % kombinasjoner av hjelpeverb og kopula
+  rule reverse_cop_aux {
+    pattern {
+      COP [lemma="være"];
+      AUX [upos=AUX];
+      e1: AUX -[ INFV ]-> COP;
+      e2: COP -[ SPRED ]-> SPRED;
+    }
+    commands {
+      del_edge e1;
+      del_edge e2;
+      shift AUX ==> SPRED;
+      shift COP ==> SPRED;
+      add_edge f1: SPRED -> AUX;
+      add_edge f2: SPRED -> COP;
+      f1.label = aux;
+      f2.label = cop;
+    }
+  }
+
+  rule reverse_cop_aux_aux {
+    pattern {
+      COP [lemma="være"];
+      AUX1 [upos=AUX];
+      AUX2 [upos=AUX];
+      e1: AUX1 -[ INFV ]-> AUX2;
+      e2: AUX2 -[ INFV ]-> COP;
+      e3: COP -[ SPRED ]-> SPRED;
+    }
+    commands {
+      del_edge e1;
+      del_edge e2;
+      del_edge e3;
+      shift AUX1 ==> SPRED;
+      shift AUX2 ==> SPRED;
+      shift COP ==> SPRED;
+      add_edge f1: SPRED -> AUX1;
+      add_edge f2: SPRED -> AUX2;
+      add_edge f3: SPRED -> COP;
+      f1.label = aux;
+      f2.label = aux;
+      f3.label = cop;
+    }
+  }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+package shift_sentence_internal {
+
+  % reverser relasjonen mellom et hjelpeverb og et leksikalsk verb
+  rule reverse_lex_aux_verbs {
+    pattern {
+      H [upos=AUX];
+      D [upos=VERB];
+      e: H -[INFV]-> D;
+    }
+    commands {
+      del_edge e;
+      shift H ==> D;
+      add_edge f: D -> H;
+      f.label = aux;
+    }
+  }
+
+  rule PUTFYLL_rule {
+    pattern {e:H -[PUTFYLL]-> D; H[upos=ADP]; }
+      commands {
+        del_edge e;
+        shift H ==> D;
+        add_edge f:D -> H; f.label = case;
+    }
+  }
+
+  rule inf_mark_rule {
+    pattern {e:H -[INFV]-> D; H[lemma="å"]; }
+      commands {
+        del_edge e;
+        shift H ==> D;
+        add_edge f:D -> H; f.label = mark;
+    }
+  }
+
+  % hvis ikke ... ("if not")
+  rule hvis_adv {
+    pattern {
+      DEP [ lemma="hvis" ];
+      N1 [form="ikke"];
+      e: GOV -[ ADV ]-> DEP;
+      e2: DEP -> N1;
+    }
+    commands {
+      del_edge e;
+      del_edge e2;
+
+      add_edge f: N1 -> DEP;
+      f.label = orphan;
+
+      add_edge f2: GOV -> N1;
+      f2.label = advcl;
+      }
+  }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+package coordination {
+
+  rule shift_komma_fst_conj {
+    pattern {
+        KOMMA [ lemma="$,"|"$-" ];
+        e1: H -[ KOORD ]-> KNJ;
+        e2: H -[ IK ]-> KOMMA;
+        KOMMA >> H;
+        KNJ >> KOMMA;
+    }
+    without {
+        e3: H -[ KOORD ]-> KNJ2;
+        KNJ >> KNJ2;
+    }
+    commands {
+        del_edge e2;
+        add_edge f2: KNJ -> KOMMA;
+        f2.label = punct;
+    }
+  }
+
+  rule shift_komma_scd_conj {
+    pattern {
+        KOMMA [ lemma="$,"|"$-" ];
+        e1: H -[ KOORD ]-> KNJ;
+        e2: H -[ KOORD ]-> KNJ2;
+        e3: KNJ -[ IK ]-> KOMMA;
+        KOMMA >> KNJ;
+        KNJ2 >> KOMMA;
+    }
+    without {
+        e4: H -[ KOORD ]-> KNJ3;
+        KNJ2 >> KNJ3;
+        KNJ3 >> KNJ;
+    }
+    commands {
+        del_edge e3;
+        add_edge f3: KNJ2 -> KOMMA;
+        f3.label = punct;
+    }
+  }
+
+  % The symbol "/" between units of measurements is a "case" dependent on the unit it precedes.
+  % F.eks. 000779: "Det tyske miljømerket Blå Engel går enda lenger og krever 0,6 watt / kg , (...)"
+  rule shift_case_symbol {
+    pattern {
+        SYMBOL [ upos=SYM, form="/" ];
+        UNIT1 [ upos=NOUN|PROPN ];
+        UNIT2 [ upos=NOUN|PROPN ];
+        NUMBER [ upos= NUM ];
+        e1: UNIT1 -[ IK ]-> SYMBOL;
+        UNIT1 -> NUMBER;
+        e2: NUMBER -> UNIT2;
+    }
+    with {
+        SYMBOL >> UNIT1;
+        UNIT2 >> SYMBOL;
+    }
+    commands {
+        del_edge e1;
+        add_edge f: UNIT2 -> SYMBOL;
+        f.label = case;
+        del_edge e2;
+        add_edge f2: UNIT1 -> UNIT2;
+        f2.label = nmod;
+        shift_out UNIT1 ==> UNIT2;
+    }
+  }
+
+  rule shift_coordinating_sym {
+    pattern {
+        SYMBOL [upos=SYM];
+        e: H -[IK]-> SYMBOL;
+        conj: H -[KOORD]-> KNJ ;
+        H << SYMBOL; SYMBOL << KNJ;
+        SYMBOL << conj;
+    }
+    commands {
+        del_edge e;
+        add_edge f: KNJ -> SYMBOL;
+        f.label = cc;
+    }
+  }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+package shift_root {
+
+  rule rev_root_modal_aux_to_lexical_verb {
+    pattern {
+      AUX [lemma="ville"|"kunne"|"måtte"|"skulle"|"burde"|"ha"];
+      LEX [upos=VERB];
+      r1: R -[FINV]-> AUX;
+      e: AUX -[INFV]-> LEX;
+    }
+    commands {
+      del_edge e;
+      del_edge r1;
+      shift AUX ==> LEX;
+      add_edge r2: R -> LEX; r2.label = root;
+      add_edge LEX -[aux]-> AUX;
+    }
+  }
+
+  rule rev_modal_aux_chain_to_lexical {
+    pattern {
+      A1 [upos=AUX, lemma="ville"|"kunne"|"måtte"|"skulle"|"burde"|"ha"];
+      A2 [upos=AUX];
+      A3 [upos=AUX];
+      e1: A1 -[INFV]-> A2;
+      e2: A2 -[INFV]-> A3;
+      e3: A3 -[SPRED]-> P;
+    }
+    commands {
+      del_edge e1;
+      del_edge e2;
+      del_edge e3;
+      shift A1 ==> P;
+      shift A2 ==> P;
+      shift A3 ==> P;
+      add_edge P -[aux]-> A1;
+      add_edge P -[aux]-> A2;
+      add_edge P -[aux]-> A3;
+    }
+  }
+
+  % F.eks. "Aftenposten fikk være med på ..."
+  rule shift_root_auxiliary_copula_predicate {
+      pattern {
+
+        % nodes
+        H[upos=AUX];
+        AUX[upos=AUX, lemma="være"];
+
+        % dependencies
+        r: R -[FINV]-> H;
+        e1: H -[INFV]-> AUX;
+        e2: AUX -[SPRED]-> PRED;
+      }
+      commands {
+          del_edge r;
+          del_edge e1;
+          del_edge e2;
+          shift H ==> PRED;
+          shift AUX ==> PRED;
+          add_edge nr: R -> PRED; nr.label = root;
+          add_edge n1: PRED -> H; n1.label = aux;
+          add_edge n2: PRED -> AUX; n2.label = cop;
+      }
+  }
+}
+
+rule bouquet {
+  pattern {
+    e1: H -[PUTFYLL]-> N1;
+    e: N1 -[PUTFYLL]-> N2;
+  }
+  without {
+    * -[PUTFYLL]-> H;
+  }
+  commands {
+    add_edge f: H -> N2;
+    f.label = e1.label;
+    del_edge e;
+  }
+}
+
+rule rev_PUTFYLL_bouquet_head {
+  pattern {
+    ADP[upos=ADP];
+    N [upos=NOUN];
+    e1: S -[SPRED]-> ADP;
+    e: ADP -[PUTFYLL]-> N;
+
+  }
+  commands {
+    del_edge e;
+    del_edge e1;
+    shift ADP ==> N;
+    add_edge f: N -> ADP; f.label = case;
+    add_edge S -[SPRED]-> N;
+  }
+}
+
+% F.eks. "[WHO] er sterkt inne i bildet."
+rule shift_root_copula_predicate {
+    pattern {
+
+        % nodes
+        AUX[upos=AUX, lemma="være"];
+        % dependencies
+        r: R -[FINV]-> AUX;
+        e: AUX -[SPRED]-> PRED;
+    }
+    commands {
+        del_edge r;
+        del_edge e;
+        shift AUX ==> PRED;
+        add_edge nr: R -> PRED; nr.label = root;
+        add_edge ne: PRED -> AUX; ne.label = cop;
+    }
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+package adhoc_fixes {
+
+  % 6832	 Arkivfoto : H=[Håkon] Mosvold Larsen [S=/] N[SCANPIX]
+  rule slash_case_mod {
+    pattern {
+      S [upos=SYM, form="/"];
+      H [upos=PROPN];
+      N [upos=PROPN];
+      e: H -[IK]-> S;
+      H -[ATR]-> N;
+      H << S; S < N;
+    }
+    commands {
+      del_edge e;
+      add_edge f: N -> S; f.label = case;
+    }
+  }
+
+  % 12667	 - Legge prestetjenesten inn under soknene / fellesråd / prostiråd og dermed få samme tilsettingsmyndighet og arbeidsgiver i lokalkirken .
+  rule adhoc_symbol_coordination {
+    global {sent_id = "012667"}
+    pattern {
+      H -[KOORD]-> K1;
+      H -[KOORD]-> K2;
+      S1 [upos=SYM];
+      S2 [upos=SYM];
+      H < S1; S1 < K1; K1 < S2; S2 < K2;
+      e1: H -[IK]-> S1;
+      e2: K1 -[IK]-> S2;
+    }
+    commands {
+      del_edge e1; add_edge f1: K1 -> S1; f1.label = cc;
+      del_edge e2; add_edge f2: K2 -> S2; f2.label = cc;
+    }
+  }
+
+  % 2287	 Hargeisa fremsto langt mer harmonisk og trygt enn jeg hadde forestilt meg .
+  rule solve_non_projective_modifiers {
+    pattern {
+      A1 [form="mer"];
+      A2 [form="enn"];
+      A1 << H; H << A2;
+      H -> A1;
+      e: A1 -> N;
+    }
+    with {N -> A2;}
+    commands {
+      add_edge f: H -> N;
+      f.label = e.label;
+      del_edge e;
+    }
+  }
+
+  rule reported_speech_PAR_to_ccomp {
+    pattern {
+      e: GOV -[PAR]-> DEP;
+      DEP [upos=VERB];
+    }
+    without { P1 [form="("]; P2 [form=")"]; P1 << DEP; DEP << P2;  }
+    commands {
+      del_edge e;
+      shift_in GOV ==> DEP;
+      add_edge f: DEP -> GOV; f.label = ccomp;
+    }
+  }
+}
+
+strat main_ {
+  Seq (
+    Onf(adhoc_fixes),
+    Onf (copula),
+    Onf (shift_sentence_internal),
+    Onf (coordination),
+    Onf (shift_root),
+    Onf (bouquet),
+    Onf (rev_PUTFYLL_bouquet_head),
+    Onf (shift_root_copula_predicate),
+  )
+}

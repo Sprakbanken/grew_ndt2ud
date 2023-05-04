@@ -1,0 +1,539 @@
+% relabel edges: Change NDT dependency relation to UD deprel with 1 to 1 mappings
+
+rule punctuation_sentence_end {
+  pattern { e: N -[ IP ]-> P }
+  commands { e.label = punct }
+}
+
+rule coordinating_symbol {
+  pattern {
+    SYMBOL [upos=SYM];
+    e: N -[IK]-> SYMBOL;
+    N >> SYMBOL;
+  }
+  commands { e.label = cc }
+}
+
+rule punctuation_mid_sentence {
+  pattern { P [ upos=PUNCT ]; e: N -[ IK ]-> P;  }
+  commands { e.label = punct }
+}
+
+rule par_punct {
+  pattern {DEP [upos=PUNCT]; e: GOV -[ PAR ]-> DEP;  }
+  commands { e.label = punct }
+}
+
+rule flat_punct {
+  pattern {DEP [upos=PUNCT]; e: GOV -[ FLAT ]-> DEP }
+  commands { e.label = punct }
+}
+
+rule flat_foreign {
+  pattern {GOV [upos=X]; e: GOV -[ FLAT ]-> DEP }
+  commands {
+    e.1 = flat;
+    e.2 = foreign;
+  }
+}
+
+rule flat_name_propn {
+  pattern {GOV [upos=PROPN|NOUN]; e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
+  commands {
+    e.1 = flat;
+    e.2 = name;
+  }
+}
+
+rule flat_name_propn_2 {
+  pattern { GOV [upos=ADJ]; DEP[upos=PROPN]; e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
+  commands {
+    e.1 = flat;
+    e.2 = name;
+  }
+}
+
+rule flat_name_clause_title {
+  pattern { H [upos=NOUN|PROPN]; H -> GOV; e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
+  without { GOV [upos=NUM]; DEP [upos=NUM]; }
+  commands {
+    e.1 = flat;
+    e.2 = name;
+  }
+}
+
+rule flat_num_range {
+    pattern { GOV [upos=NUM]; DEP [upos=NUM]; e: GOV -[FLAT]-> DEP; P [upos=PUNCT]; GOV << P ; P << DEP; }
+    commands { e.label = conj; }
+}
+
+rule flat_compound {
+  pattern {e: GOV -[ FLAT ]-> DEP; GOV >> DEP; }
+  commands { e.label = compound }
+}
+
+rule flat_fallback {
+  pattern { GOV[upos <> NOUN|PROPN|X]; e:GOV -[FLAT]-> DEP; H -[^APP|appos]-> GOV; GOV << DEP;}
+  commands { e.label = flat }
+}
+
+rule par_rest {
+  pattern {DEP [upos<>PUNCT]; e: GOV -[ PAR ]-> DEP;  }
+  commands { e.label = parataxis }
+}
+
+rule nominal_subject {
+  pattern { DEP [upos<>VERB]; e: GOV -[SUBJ]-> DEP; }
+    without {
+    DEP -[cop]-> *;
+  }
+  commands { e.label = nsubj }
+}
+
+rule clausal_subject {
+  pattern { DEP [upos=VERB]; e: GOV -[SUBJ]-> DEP; }
+  commands { e.label = csubj }
+}
+
+rule copular_clausal_subject {
+  pattern { e1: GOV -[SUBJ]-> DEP;
+            e2: DEP -[cop]-> D2; }
+  commands { e1.label = csubj }
+}
+
+rule root_finite_verb {
+  pattern { e: GOV -[ FINV ]-> DEP }
+  commands { e.label = root }
+}
+
+rule root_frag {
+  pattern { e: GOV -[ FRAG ]-> DEP }
+  commands { e.label = root }
+}
+
+rule ukjent {
+  pattern { e: GOV -[ UKJENT ]-> DEP }
+  commands { e.label = reparandum }
+}
+
+rule expletive_subj {
+  pattern { e: GOV -[ FSUBJ ]-> DEP }
+  commands { e.label = expl }
+}
+
+rule expletive_obj {
+  pattern { e: GOV -[ FOBJ ]-> DEP }
+  commands { e.label = expl }
+}
+
+rule nominal_obj {
+  pattern { DEP [ upos<> VERB ];
+            e: GOV -[ DOBJ | POBJ ]-> DEP; }
+  without { DEP -[cop]-> *; }
+  commands { e.label = obj }
+}
+
+rule finv_obj {
+  pattern { DEP [ VerbForm=Fin ];
+            e: GOV -[ DOBJ | POBJ ]-> DEP; }
+  commands { e.label = ccomp }
+}
+
+rule finv_obj_aux {
+  pattern { D2 [ VerbForm=Fin ];
+            e1: GOV -[ DOBJ | POBJ ]-> D1;
+            e2: D1 -[cop|aux|aux:pass]-> D2; }
+  commands { e1.label = ccomp }
+}
+
+rule indirect_obj {
+  pattern { e: GOV -[ IOBJ ]-> DEP }
+  commands { e.label = iobj }
+}
+
+rule subj_predicative {
+  pattern { e: GOV -[ SPRED ]-> DEP }
+  commands { e.label = xcomp } % copular constr. should be no problem, since they are converted first in reverse_heads
+}
+
+rule obj_predicative {
+  pattern { e: GOV -[ OPRED ]-> DEP }
+  commands { e.label = xcomp }
+}
+
+rule interjection {
+  pattern { e: GOV -[ INTERJ ]-> DEP }
+  with {* -> GOV }
+  commands { e.label = discourse  }
+}
+
+rule root_interjection {
+  pattern { e: GOV -[ INTERJ ]-> DEP }
+  without { * -> GOV }
+  commands { e.label = root }
+}
+
+rule coordinating_conjuction {
+  pattern { e: GOV -[ KONJ ]-> DEP }
+  commands { e.label = cc }
+}
+
+rule conjunct {
+  pattern { e: GOV -[ KOORD ]-> DEP }
+  commands { e.label = conj }
+}
+
+rule coordination_verbal_ellipsis {
+  pattern { e: GOV -[ KOORD-ELL ]-> DEP }
+  commands { e.label = conj }
+}
+
+rule subjunction {
+  pattern {e: GOV -[SBU]-> DEP;}
+  commands { e.label = mark }
+}
+
+rule subclause_aa {
+  pattern { DEP [form="å"]; e: GOV -[INFV]-> DEP;}  % after the relation between the infinite verb and the marker has been reversed/shifted
+  commands { e.label = mark }
+}
+
+
+rule num {
+  pattern {DEP [upos=NUM]; e: GOV -[DET|IK]-> DEP; }
+  commands { e.label = nummod}
+}
+
+rule det_noun {
+  pattern {DEP [upos=NOUN|PROPN|X|SYM]; e: GOV -[DET]-> DEP; }
+  commands { e.label = nmod }
+}
+
+rule det_adj {
+  pattern {DEP [upos=ADJ]; e: GOV -[DET]-> DEP; }
+  commands { e.label = amod }
+}
+
+rule determiner_genitive {
+  pattern {DEP [Case=Gen]; e: GOV -[DET]-> DEP; }
+  commands { e.label = nmod }
+}
+
+rule determiner_flat_name_genitive {
+  pattern {DEP [upos=PROPN]; DEP2[Case=Gen]; e: GOV -[DET]-> DEP; DEP -[FLAT|flat]-> DEP2;}
+  commands { e.label = nmod }
+}
+
+rule determiner_possessive {
+  pattern {DEP [Poss=Yes]; e: GOV -[DET]-> DEP; }
+  commands { e.label = nmod }
+}
+
+rule determiner {
+  pattern {DEP [upos=DET|PRON]; e: GOV -[DET]-> DEP; }
+  commands { e.label = det }
+}
+
+rule aclrel_verbal {
+  pattern {
+    D1 [upos=VERB|AUX];
+    e1: GOV -[ ATR ]-> D1;}
+  without {
+    D2 [lemma="at"|"å"];
+    e2: D1 -> D2;
+    }
+  commands {e1.label = acl;
+            e1.2 = relcl;}
+}
+
+rule aclrel_aux {
+  pattern {e1: GOV -[ ATR ]-> D1;
+            e2: D1 -[cop|aux|aux:pass]-> D2;
+          }
+    without {
+    D3 [lemma="at"|"å"];
+    e3: D1 -> D3;
+    }
+  commands {e1.label = acl;
+            e1.2 = relcl;}
+}
+
+rule acl_verbal {
+  pattern {
+    D1 [upos=VERB|AUX];
+    D2 [lemma="at"|"å"];
+    e1: GOV -[ ATR ]-> D1;
+    e2: D1 -> D2;
+  }
+  commands {
+    e1.label = acl;
+  }
+}
+
+rule acl_aux {
+  pattern {
+    D3 [lemma="at"|"å"];
+    e1: GOV -[ ATR ]-> D1;
+    e2: D1 -[cop|aux|aux:pass]-> D2;
+    e3: D1 -> D3;
+  }
+  commands {
+    e1.label = acl;
+  }
+}
+
+rule adjectival_modifier {
+  pattern {DEP [upos=ADJ]; e: GOV -[ ATR ]-> DEP; }
+  commands { e.label = amod }
+}
+
+rule nominal_modifier {
+  pattern {DEP [upos=NOUN|PROPN|NUM|DET|PRON|X|PART|ADP|SYM]; e: GOV -[ ATR ]-> DEP; }
+  commands { e.label = nmod }
+}
+
+rule adv_on_nom {
+  pattern {DEP [upos=ADV]; e: GOV -[ ATR ]-> DEP; }
+  commands { e.label = advmod }
+}
+
+rule verbal_particle_adverb {
+  pattern {
+    DEP [ upos=ADP ];
+    e: GOV -[ADV]-> DEP;
+  }
+  without { DEP -[PUTFYLL]-> *; }
+  commands {
+    DEP.upos = ADV;
+  }
+}
+
+rule adverbial_modifier {
+  pattern {
+    DEP [ upos=ADV|PART|ADJ];
+    e: GOV -[ADV]-> DEP;
+  }
+  without { DEP -[cop|aux|aux:pass]-> *; }
+  commands { e.label = advmod }
+}
+
+rule adverbial_cl_modifier {
+  pattern {
+    DEP [ upos=VERB|AUX ];
+    e: GOV -[ADV]-> DEP;
+  }
+  commands { e.label = advcl }
+}
+
+rule adverbial_cl_modifier_2 {
+  pattern {
+    GOV [upos = ADV|VERB|AUX];
+    DEP [ upos=VERB|AUX ];
+    e: GOV -[APP]-> DEP;
+  }
+  commands { e.label = advcl }
+}
+
+rule adverbial_cl_modifier_aux {
+  pattern {
+    e1: GOV -[ADV]-> D1;
+    e2: D1 -[cop|aux|aux:pass]-> D2;
+  }
+  commands { e1.label = advcl }
+}
+
+rule oblique_nominal {
+  pattern {
+    DEP [ upos= NOUN|PROPN|PRON|X|SYM|DET|NUM ];
+    e: GOV -[ADV]-> DEP;
+  }
+  commands { e.label = obl }
+}
+
+rule oblique_adpositional {
+  pattern {
+    DEP [ upos= ADP  ];
+    e: GOV -[ADV]-> DEP;
+  }
+  with { DEP -[PUTFYLL]-> * }
+  commands { e.label = obl }
+}
+
+% presenteringssetninger: når "være" er rot og setningen har PSUBJ og FSUBJ. Behold roten.
+% forutsetter at strukturen ikke er endret.
+rule presentational_expl {
+  pattern {
+    D1 [ upos <> VERB|ADP ];
+    e1: H -[PSUBJ]-> D1;
+    e2: H -[FSUBJ]-> D2;
+  }
+  without { H -[cop]-> *; }
+  commands {
+    e1.label = nsubj;
+    e2.label = expl;
+  }
+}
+
+rule fsubj_psubj_verb {
+  pattern {
+    D1 [ upos = VERB ];
+    e1: H -[PSUBJ]-> D1;
+    e2: H -[FSUBJ]-> D2;
+  }
+  commands {
+    e1.label = csubj;
+    e2.label = expl;
+  }
+}
+
+
+rule only_psubj_nom {
+  pattern {
+    D [ upos <> VERB|ADP ];
+    e: H -[PSUBJ]-> D;
+  }
+  without { H -[FSUBJ]-> *;
+            H -[cop]-> *;}
+  commands {
+    e.label = nsubj;
+  }
+}
+
+% Eksempel der PSUBJ går til ADP etter restruktureringen
+% 000307	 "Men det var helt vilt deilig å være med på å kjempe om en seier igjen, sa Solberg."
+rule only_psubj_vb {
+  pattern {
+    D [ upos = VERB|ADP ];
+    e: H -[PSUBJ]-> D;
+  }
+  without { H -[FSUBJ]-> *; }
+  commands {
+    e.label = csubj;
+  }
+}
+
+
+% "være" and "ha" can both be temporal auxiliaries in a passive construction, but only "bli" gets the "aux:pass" relation
+rule passive_lex_aux_bli {
+  pattern {
+    A [ upos=AUX, lemma="bli" ];
+    V [ upos=VERB, VerbForm=Part ];
+    e: V -> A;  % after the lexical verb is already the head
+  }
+  without { e.2 = pass; }
+  commands {
+    e.2 = pass;
+  }
+}
+
+rule temporal_aux_vare_ha { %problematic when it is changing cop to aux
+  pattern {
+    A [ upos=AUX, lemma="være"|"ha" ];
+    V [ upos=VERB|AUX, VerbForm=Part ];
+    e: V -> A;
+  }
+  without {
+    V -[aux|cop]-> A;
+  }
+  commands {
+    e.label = aux;
+  }
+}
+
+% passive subject is the dependent of a verb with passive marking or a participle with a passive auxiliary attached
+rule passive_subject_verbform {
+  pattern {
+    V [ upos=VERB, Voice=Pass, form=re".*s" ];
+    e: V -[ 1=nsubj|csubj, 2<>pass|outer]-> S;
+  }
+  commands {
+    e.2 = pass;
+  }
+}
+
+% participle with a passive auxiliary attached
+rule passive_subject_periphrastic {
+  pattern {
+    V [ VerbForm=Part ];
+    V -[1=aux, 2=pass]-> *;
+    e: V -[ 1=nsubj|csubj, 2<>pass|outer]-> S;
+  }
+  commands {
+    e.2 = pass;
+  }
+}
+
+rule inf_obj_control {
+  pattern { DEP [ VerbForm=Inf|Part ];
+            e: GOV -[ DOBJ | POBJ ]-> DEP; }
+  without {e2: DEP -[nsubj | csubj | nsubj:pass | csubj:pass ]-> SUB;}
+  commands { e.label = xcomp }
+}
+
+rule inf_obj_control_aux {
+  pattern { D2 [ VerbForm=Inf ];
+            e1: GOV -[ DOBJ | POBJ ]-> D1;
+            e2: D1 -[cop|aux|aux:pass]-> D2;}
+  without {e3: D1 -[nsubj | csubj | nsubj:pass | csubj:pass ]-> SUB;}
+  commands { e1.label = xcomp }
+}
+
+rule free_opred_relabel {
+  pattern { e1: GOV -[ FOPRED ]-> D1; }
+  without {e2: GOV -[ obj ]-> D2; } % tatt fra forrige versjon. Tviler litt på at dette er korrekt
+  commands { e1.label = xcomp }
+}
+
+rule free_spred_relabel {
+  pattern { e1: GOV -[ FSPRED ]-> D1; }
+  without {e2: GOV -[ nsubj ]-> D2; } % tatt fra forrige versjon. Tviler litt på at dette er korrekt
+  commands { e1.label = xcomp }
+}
+
+rule relabel_putfyll_nmod {
+  pattern { e: GOV -[ PUTFYLL ]-> DEP; } % Denne analysen gir ikke så mye mening, men har den med foreløpig for å speile forrige versjon
+  commands { e.label = nmod }
+}
+
+rule relable_infv_xcomp {
+  pattern {
+    e1: GOV -[ INFV ]-> D1;
+    e2: GOV -[ nsubj ]-> D2; }
+  commands { e1.label = xcomp }
+}
+
+rule relable_infv_ccomp {
+  pattern {
+    e1: GOV -[ INFV ]-> D1;
+  }
+  without { e2: GOV -[ nsubj ]-> D2; }
+  commands { e1.label = ccomp }
+}
+
+% Rene feilrettingsregler. Kanskje i egen fil?
+
+rule error_og_adv {
+  pattern {
+    DEP [ lemma="og"|"for", upos=CCONJ ];
+    e: GOV -[ ADV ]-> DEP;
+  }
+  commands {
+    e.label = cc
+  }
+}
+
+rule multiple_subjects_predicate_clause {
+  pattern {
+    e: GOV -[nsubj | csubj | nsubj:pass | csubj:pass]-> D1;
+  }
+  with {
+    GOV -[nsubj | csubj | nsubj:pass | csubj:pass]-> D2;
+    D1 << D2
+  }
+  without {
+    e.2 = outer;
+  }
+  commands {
+    e.2 = outer;
+  }
+}
