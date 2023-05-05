@@ -292,3 +292,14 @@ rule fix_non_projective_punctuation_3 {
     }
 }
 
+% 004431: "Krafta burde gått til det føremålet ho var tenkt , og avtalen burde ha falle bort da Union vart nedlagt."
+rule adjectival_participle {
+    global { sent_id = "004431" }
+    pattern {
+        V [ lemma = "verte" ];
+        A [ form = "nedlagt", upos = ADJ, !VerbForm];
+        V -[INFV]-> A;
+    }
+    commands { A.VerbForm = Part }
+}
+

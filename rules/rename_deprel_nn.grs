@@ -219,7 +219,8 @@ rule det_noun {
 }
 
 rule det_adj {
-  pattern {DEP [upos=ADJ]; e: GOV -[DET]-> DEP; }
+  pattern {GOV [nom]; DEP [upos=ADJ ]; e: GOV -[DET]-> DEP; }
+  without { DEP -[1=cop|aux]-> *;}
   commands { e.label = amod }
 }
 
@@ -261,15 +262,18 @@ rule aclrel_verbal {
 }
 
 rule aclrel_aux {
-  pattern {e1: GOV -[ ATR ]-> D1;
-            e2: D1 -[cop|aux|aux:pass]-> D2;
-          }
-    without {
+  pattern {
+    e1: GOV -[ ATR ]-> D1;
+    e2: D1 -[1=cop|aux]-> D2;
+  }
+  without {
     D3 [lemma="at"|"å"];
     e3: D1 -> D3;
     }
-  commands {e1.label = acl;
-            e1.2 = relcl;}
+  commands {
+    e1.1 = acl;
+    e1.2 = relcl;
+  }
 }
 
 rule acl_verbal {
@@ -288,7 +292,7 @@ rule acl_aux {
   pattern {
     D3 [lemma="at"|"å"];
     e1: GOV -[ ATR ]-> D1;
-    e2: D1 -[cop|aux|aux:pass]-> D2;
+    e2: D1 -[1=cop|aux]-> D2;
     e3: D1 -> D3;
   }
   commands {
@@ -297,7 +301,8 @@ rule acl_aux {
 }
 
 rule adjectival_modifier {
-  pattern {DEP [upos=ADJ]; e: GOV -[ ATR|APP ]-> DEP; }
+  pattern {DEP [ upos=ADJ]; e: GOV -[ ATR|APP ]-> DEP; }
+  without { DEP -[1=cop|aux]-> *;}
   commands { e.label = amod }
 }
 
