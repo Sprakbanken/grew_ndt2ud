@@ -13,7 +13,7 @@
 11	mat	mat	NOUN	subst	Definite=Ind|Gender=Masc	2	conj	_	_
 12	som	som	SCONJ	sbu	_	14	mark	_	_
 13	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	14	cop	_	_
-14	lett	lett	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	11	amod	_	_
+14	lett	lett	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	11	acl:relcl	_	_
 15	å	å	PART	inf-merke	_	16	mark	_	_
 16	variere	variere	VERB	verb	VerbForm=Inf	14	advcl	_	SpaceAfter=No
 17	.	$.	PUNCT	clb	_	2	punct	_	_
@@ -382,7 +382,7 @@
 4	lært	lære	VERB	verb	VerbForm=Part	0	root	_	_
 5	av	av	ADP	prep	_	6	case	_	_
 6	søstra	søster	NOUN	subst	Gender=Fem	4	obl	_	_
-7	mi	min	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	6	det	_	SpaceAfter=No
+7	mi	min	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	6	nmod:poss	_	SpaceAfter=No
 8	,	$,	PUNCT	<komma>	_	13	punct	_	_
 9	og	og	CCONJ	konj	_	13	cc	_	_
 10	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	13	nsubj	_	_
@@ -426,7 +426,7 @@
 # newpar
 # sent_id = 014206
 # text = Vårt daglege brød
-1	Vårt	vår	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	3	det	_	_
+1	Vårt	vår	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	3	nmod:poss	_	_
 2	daglege	dagleg	ADJ	adj	Degree=Pos	3	amod	_	_
 3	brød	brød	NOUN	subst	Definite=Ind|Gender=Neut	0	root	_	_
 
@@ -536,7 +536,7 @@
 21	,	$,	PUNCT	<komma>	_	25	punct	_	_
 22	som	som	SCONJ	sbu	_	25	mark	_	_
 23	mor	mor	NOUN	subst	Definite=Ind|Gender=Fem	25	nsubj	_	_
-24	mi	min	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	23	det	_	_
+24	mi	min	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	23	nmod:poss	_	_
 25	gjorde	gjere	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	16	advcl	_	SpaceAfter=No
 26	,	$,	PUNCT	<komma>	_	16	punct	_	_
 27	så	så	ADV	adv	_	28	advmod	_	_
@@ -569,7 +569,7 @@
 19	inn	inn	ADP	prep	_	21	case	_	_
 20	i	i	ADP	prep	_	21	case	_	_
 21	omnen	omn	NOUN	subst	Gender=Masc	17	obl	_	_
-22	min	min	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	21	det	_	_
+22	min	min	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	21	nmod:poss	_	_
 23	side	side	NOUN	subst	Definite=Ind|Gender=Fem	17	obl	_	_
 24	om	om	ADP	prep	_	25	case	_	_
 25	side	side	NOUN	subst	Definite=Ind|Gender=Fem	23	nmod	_	SpaceAfter=No
@@ -719,7 +719,7 @@
 
 # sent_id = 014219
 # text = Mitt tips viss du bakar tre brød er å dele dei i to, og fryse ned fem halve brød.
-1	Mitt	min	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	2	det	_	_
+1	Mitt	min	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	2	nmod:poss	_	_
 2	tips	tips	NOUN	subst	Definite=Ind|Gender=Neut	10	nsubj	_	_
 3	viss	viss	SCONJ	sbu	_	5	mark	_	_
 4	du	du	PRON	pron	Animacy=Hum|Case=Nom|Person=2|PronType=Prs	5	nsubj	_	_
@@ -787,11 +787,11 @@
 3	eg	eg	PRON	pron	Animacy=Hum|Case=Nom|Person=1|PronType=Prs	4	nsubj	_	_
 4	har	ha	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 5	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	4	obj	_	SpaceAfter=No
-6	,	$,	PUNCT	<komma>	_	9	punct	_	_
-7	og	og	CCONJ	konj	_	9	cc	_	_
-8	den	den	PRON	pron	Gender=Fem,Masc|Person=3|PronType=Prs	9	nsubj	_	_
-9	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	4	conj	_	_
-10	brukt	bruke	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	9	ccomp	_	_
+6	,	$,	PUNCT	<komma>	_	10	punct	_	_
+7	og	og	CCONJ	konj	_	10	cc	_	_
+8	den	den	PRON	pron	Gender=Fem,Masc|Person=3|PronType=Prs	10	nsubj:pass	_	_
+9	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	10	aux:pass	_	_
+10	brukt	bruke	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	4	conj	_	_
 11	rett	rett	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	10	advmod	_	_
 12	som	som	SCONJ	sbu	_	14	mark	_	_
 13	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	14	expl	_	_
@@ -869,7 +869,7 @@
 # sent_id = 014226
 # text = Oppskrifta mi er basert på ei mengd med mjøl og ei mengd med væte per brød.
 1	Oppskrifta	oppskrift	NOUN	subst	Gender=Fem	4	nsubj	_	_
-2	mi	min	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	1	det	_	_
+2	mi	min	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	1	nmod:poss	_	_
 3	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	4	cop	_	_
 4	basert	basere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	0	root	_	_
 5	på	på	ADP	prep	_	7	case	_	_
@@ -1100,7 +1100,7 @@
 12	kan	kunne	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	14	aux	_	_
 13	du	du	PRON	pron	Animacy=Hum|Case=Nom|Person=2|PronType=Prs	14	nsubj	_	_
 14	lage	lage	VERB	verb	VerbForm=Inf	2	conj	_	_
-15	di	din	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	17	det	_	_
+15	di	din	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	17	nmod:poss	_	_
 16	eiga	eigen	DET	det	Definite=Ind|Gender=Fem|PronType=Prs	17	det	_	_
 17	blanding	blanding	NOUN	subst	Definite=Ind|Gender=Fem	14	obj	_	_
 18	som	som	SCONJ	sbu	_	20	mark	_	_
@@ -1438,7 +1438,7 @@
 # text = Smør formene dine med matolje, og legg i eit og eit brød.
 1	Smør	smørje	VERB	verb	Mood=Imp|VerbForm=Fin	0	root	_	_
 2	formene	form	NOUN	subst	Gender=Fem|Number=Plur	1	obj	_	_
-3	dine	din	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	2	det	_	_
+3	dine	din	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	2	nmod:poss	_	_
 4	med	med	ADP	prep	_	5	case	_	_
 5	matolje	matolje	NOUN	subst	Definite=Ind|Gender=Fem	1	obl	_	SpaceAfter=No
 6	,	$,	PUNCT	<komma>	_	8	punct	_	_
@@ -1610,12 +1610,12 @@
 6	for	for	ADV	adv	_	7	advmod	_	_
 7	høg	høg	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	8	amod	_	_
 8	varme	varme	NOUN	subst	Definite=Ind|Gender=Masc	5	obj	_	SpaceAfter=No
-9	,	$,	PUNCT	<komma>	_	13	punct	_	_
+9	,	$,	PUNCT	<komma>	_	14	punct	_	_
 10	slik	slik	ADV	adv	_	11	advmod	_	_
-11	at	at	SCONJ	sbu	_	13	mark	_	_
-12	maten	mat	NOUN	subst	Gender=Masc	13	nsubj	_	_
-13	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	5	advcl	_	_
-14	svidd	svi	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	13	ccomp	_	_
+11	at	at	SCONJ	sbu	_	14	mark	_	_
+12	maten	mat	NOUN	subst	Gender=Masc	14	nsubj:pass	_	_
+13	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	14	aux:pass	_	_
+14	svidd	svi	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	5	advcl	_	_
 15	før	før	SCONJ	sbu	_	18	mark	_	_
 16	den	den	PRON	pron	Gender=Fem,Masc|Person=3|PronType=Prs	18	nsubj	_	_
 17	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	18	cop	_	_
@@ -1672,7 +1672,7 @@
 20	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	18	obj	_	_
 21	vi	vi	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=1|PronType=Prs	25	nsubj	_	_
 22	i	i	ADP	prep	_	24	case	_	_
-23	vår	vår	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	24	det	_	_
+23	vår	vår	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	24	nmod:poss	_	_
 24	familie	familie	NOUN	subst	Definite=Ind|Gender=Masc	25	obl	_	_
 25	kallar	kalle	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	20	acl:relcl	_	_
 26	ei	ein	DET	det	Gender=Fem|PronType=Art	27	det	_	_
@@ -2106,16 +2106,16 @@
 7	byrjinga	byrjing	NOUN	subst	Gender=Fem	2	obl	_	_
 8	av	av	ADP	prep	_	9	case	_	_
 9	1990-åra	1990-år	NOUN	subst	Gender=Neut|Number=Plur	7	nmod	_	SpaceAfter=No
-10	,	$,	PUNCT	<komma>	_	16	punct	_	_
-11	og	og	CCONJ	konj	_	16	cc	_	_
+10	,	$,	PUNCT	<komma>	_	19	punct	_	_
+11	og	og	CCONJ	konj	_	19	cc	_	_
 12	fyrst	fyrst	ADV	adv	_	15	advmod	_	_
 13	i	i	ADP	prep	_	15	case	_	_
 14	desse	desse	DET	det	Number=Plur|PronType=Dem	15	det	_	_
 15	dagar	dag	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	19	obl	_	_
-16	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	2	conj	_	_
-17	IMF-kontoret	IMF-kontor	NOUN	subst	Gender=Neut	16	nsubj	_	_
+16	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	19	aux:pass	_	_
+17	IMF-kontoret	IMF-kontor	NOUN	subst	Gender=Neut	19	nsubj:pass	_	_
 18	der	der	ADV	prep	_	17	advmod	_	_
-19	stengt	stenge	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	16	ccomp	_	SpaceAfter=No
+19	stengt	stenge	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	2	conj	_	SpaceAfter=No
 20	.	$.	PUNCT	clb	_	2	punct	_	_
 
 # sent_id = 014301
@@ -2286,14 +2286,14 @@
 22	betala	betale	VERB	verb	VerbForm=Inf	19	acl	_	_
 23	heile	heil	ADJ	adj	Degree=Pos	24	amod	_	_
 24	skulda	skuld	NOUN	subst	Gender=Fem	22	obj	_	_
-25	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	24	det	_	SpaceAfter=No
+25	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	24	nmod:poss	_	SpaceAfter=No
 26	.	$.	PUNCT	clb	_	5	punct	_	_
 
 # sent_id = 014311
 # text = Det er mi oppgåve.
 1	Det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	0	root	_	_
 2	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	1	cop	_	_
-3	mi	min	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	4	det	_	_
+3	mi	min	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	4	nmod:poss	_	_
 4	oppgåve	oppgåve	NOUN	subst	Definite=Ind|Gender=Fem	1	nsubj	_	SpaceAfter=No
 5	.	$.	PUNCT	clb	_	1	punct	_	_
 
@@ -2391,10 +2391,10 @@
 7	andre	annan	DET	det	Number=Plur|PronType=Dem	8	nsubj	_	_
 8	gjer	gjere	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	4	advcl	_	SpaceAfter=No
 9	,	$,	PUNCT	<komma>	_	4	punct	_	_
-10	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
-11	du	du	PRON	pron	Animacy=Hum|Case=Nom|Person=2|PronType=Prs	10	nsubj	_	_
-12	lurd	lure	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	10	ccomp	_	SpaceAfter=No
-13	.	$.	PUNCT	clb	_	10	punct	_	_
+10	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	12	aux:pass	_	_
+11	du	du	PRON	pron	Animacy=Hum|Case=Nom|Person=2|PronType=Prs	12	nsubj:pass	_	_
+12	lurd	lure	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	0	root	_	SpaceAfter=No
+13	.	$.	PUNCT	clb	_	12	punct	_	_
 
 # sent_id = 014317
 # text = Sjølvsagt er eg klar over det.
@@ -2786,22 +2786,22 @@
 
 # sent_id = 014338
 # text = Ingen ville verta skattlagd, og ingen ville taka risikoen på at drakmen kom att.
-1	Ingen	ingen	PRON	pron	Gender=Masc|Person=3|PronType=Prs	3	nsubj	_	_
-2	ville	vilje	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	aux	_	_
-3	verta	verte	VERB	verb	VerbForm=Inf	0	root	_	_
-4	skattlagd	skattleggje	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	3	ccomp	_	SpaceAfter=No
+1	Ingen	ingen	PRON	pron	Gender=Masc|Person=3|PronType=Prs	4	nsubj:pass	_	_
+2	ville	vilje	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	4	aux	_	_
+3	verta	verte	AUX	verb	VerbForm=Inf	4	aux:pass	_	_
+4	skattlagd	skattleggje	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	0	root	_	SpaceAfter=No
 5	,	$,	PUNCT	<komma>	_	9	punct	_	_
 6	og	og	CCONJ	konj	_	9	cc	_	_
 7	ingen	ingen	PRON	pron	Gender=Masc|Person=3|PronType=Prs	9	nsubj	_	_
 8	ville	vilje	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	9	aux	_	_
-9	taka	take	VERB	verb	VerbForm=Inf	3	conj	_	_
+9	taka	take	VERB	verb	VerbForm=Inf	4	conj	_	_
 10	risikoen	risiko	NOUN	subst	Gender=Masc	9	obj	_	_
 11	på	på	ADP	prep	_	14	case	_	_
 12	at	at	SCONJ	sbu	_	14	mark	_	_
 13	drakmen	drakme	NOUN	subst	Gender=Masc	14	nsubj	_	_
 14	kom	kome	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	10	acl	_	_
 15	att	att	ADV	prep	_	14	advmod	_	SpaceAfter=No
-16	.	$.	PUNCT	clb	_	3	punct	_	_
+16	.	$.	PUNCT	clb	_	4	punct	_	_
 
 # sent_id = 014339
 # text = Då krisa var eit faktum, sette ein gresk finansanalytikar på Wall Street seg ned og skreiv ei soge om dei tjue rikaste oligarkfamiliane i Hellas og om korleis maktapparatet i PASOK hadde fare fram sidan dei fekk makta i 1981.
@@ -2862,7 +2862,7 @@
 10	har	ha	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	12	aux	_	_
 11	sidan	sidan	ADV	adv	_	12	advmod	_	_
 12	gått	gå	VERB	verb	VerbForm=Part	3	conj	_	_
-13	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	14	det	_	_
+13	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	14	nmod:poss	_	_
 14	sigersgang	sigersgang	NOUN	subst	Definite=Ind|Gender=Masc	12	obj	_	_
 15	over	over	ADP	prep	_	16	case	_	_
 16	verda	verd	NOUN	subst	Gender=Fem	12	obl	_	SpaceAfter=No
@@ -3214,7 +3214,7 @@
 12	som	som	SCONJ	sbu	_	15	mark	_	_
 13	skal	skulle	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	15	aux	_	_
 14	vera	vere	AUX	verb	VerbForm=Inf	15	cop	_	_
-15	uavhengig	uavhengig	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	8	amod	_	_
+15	uavhengig	uavhengig	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	8	acl:relcl	_	_
 16	og	og	CCONJ	konj	_	18	cc	_	_
 17	berre	berre	ADV	adv	_	18	advmod	_	_
 18	arbeida	arbeide	VERB	verb	VerbForm=Inf	15	conj	_	_
@@ -3511,12 +3511,12 @@
 # sent_id = 014375
 # text = Denne skatten vert lagd på kraftrekninga.
 1	Denne	denne	DET	det	Gender=Masc|PronType=Dem	2	det	_	_
-2	skatten	skatt	NOUN	subst	Gender=Masc	3	nsubj	_	_
-3	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
-4	lagd	leggje	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	3	ccomp	_	_
+2	skatten	skatt	NOUN	subst	Gender=Masc	4	nsubj:pass	_	_
+3	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	4	aux:pass	_	_
+4	lagd	leggje	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	0	root	_	_
 5	på	på	ADP	prep	_	6	case	_	_
 6	kraftrekninga	kraftrekning	NOUN	subst	Gender=Fem	4	obl	_	SpaceAfter=No
-7	.	$.	PUNCT	clb	_	3	punct	_	_
+7	.	$.	PUNCT	clb	_	4	punct	_	_
 
 # sent_id = 014376
 # text = Betaler du straumen, betaler du eigedomsskatt.
@@ -3546,7 +3546,7 @@
 13	då	då	ADV	adv	_	14	advmod	_	_
 14	står	stå	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	6	conj	_	_
 15	eigedomen	eigedom	NOUN	subst	Gender=Masc	14	nsubj	_	_
-16	din	din	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	15	det	_	_
+16	din	din	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	15	nmod:poss	_	_
 17	att	att	ADV	prep	_	14	advmod	_	_
 18	utan	utan	ADP	prep	_	19	case	_	_
 19	elektrisitet	elektrisitet	NOUN	subst	Definite=Ind|Gender=Masc	14	obl	_	SpaceAfter=No
@@ -4197,7 +4197,7 @@
 5	Elstat	Elstat	PROPN	subst	_	0	root	_	SpaceAfter=No
 6	,	$,	PUNCT	<komma>	_	9	punct	_	_
 7	men	men	CCONJ	konj	_	9	cc	_	_
-8	hans	hans	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	9	det	_	_
+8	hans	hans	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	9	nmod:poss	_	_
 9	eigen	eigen	DET	det	Definite=Ind|Gender=Masc|PronType=Prs	5	conj	_	SpaceAfter=No
 10	.	$.	PUNCT	clb	_	5	punct	_	_
 
@@ -4353,7 +4353,7 @@
 # text = 15.000 av våre best utdana og mest intelligente har drege frå Hellas i år.
 1	15.000	15.000	NUM	det	Number=Plur|NumType=Card	10	nsubj	_	_
 2	av	av	ADP	prep	_	5	case	_	_
-3	våre	vår	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	5	det	_	_
+3	våre	vår	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	5	nmod:poss	_	_
 4	best	god	ADJ	adj	Definite=Ind|Degree=Sup	5	advmod	_	_
 5	utdana	utdane	ADJ	adj	Number=Plur|VerbForm=Part	1	amod	_	_
 6	og	og	CCONJ	konj	_	8	cc	_	_
@@ -4638,10 +4638,10 @@
 8	ottomanske	ottomansk	ADJ	adj	Degree=Pos	9	amod	_	_
 9	riket	rike	NOUN	subst	Gender=Neut	5	nmod	_	SpaceAfter=No
 10	,	$,	PUNCT	<komma>	_	5	punct	_	_
-11	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
+11	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	14	aux:pass	_	_
 12	dei	dei	DET	det	Number=Plur|PronType=Dem	13	det	_	_
-13	kristne	kristen	ADJ	adj	Degree=Pos|Number=Plur	11	nsubj	_	_
-14	pålagde	påleggje	ADJ	adj	Number=Plur|VerbForm=Part	11	ccomp	_	_
+13	kristne	kristen	ADJ	adj	Degree=Pos|Number=Plur	14	nsubj:pass	_	_
+14	pålagde	påleggje	ADJ	adj	Number=Plur|VerbForm=Part	0	root	_	_
 15	å	å	PART	inf-merke	_	16	mark	_	_
 16	betala	betale	VERB	verb	VerbForm=Inf	14	xcomp	_	_
 17	mykje	mykje	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	18	advmod	_	_
@@ -4649,7 +4649,7 @@
 19	skatt	skatt	NOUN	subst	Definite=Ind|Gender=Masc	16	obj	_	_
 20	enn	enn	ADP	prep	_	21	case	_	_
 21	muslimane	muslim	NOUN	subst	Gender=Masc|Number=Plur	18	obl	_	SpaceAfter=No
-22	.	$.	PUNCT	clb	_	11	punct	_	_
+22	.	$.	PUNCT	clb	_	14	punct	_	_
 
 # sent_id = 014436
 # text = I tillegg måtte kvart femte gutebarn gjevast til janitsjarane som tvangskonverterte barnet til islam.
@@ -4683,7 +4683,7 @@
 
 # sent_id = 014438
 # text = Og kom representantar for makta på døra, vart dei betalte under bordet.
-1	Og	og	CCONJ	konj	_	9	cc	_	_
+1	Og	og	CCONJ	konj	_	11	cc	_	_
 2	kom	kome	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	11	advcl	_	_
 3	representantar	representant	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	2	nsubj	_	_
 4	for	for	ADP	prep	_	5	case	_	_
@@ -4691,12 +4691,12 @@
 6	på	på	ADP	prep	_	7	case	_	_
 7	døra	dør	NOUN	subst	Gender=Fem	2	obl	_	SpaceAfter=No
 8	,	$,	PUNCT	<komma>	_	2	punct	_	_
-9	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
-10	dei	dei	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=3|PronType=Prs	9	nsubj	_	_
-11	betalte	betale	ADJ	adj	Number=Plur|VerbForm=Part	9	ccomp	_	_
+9	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	11	aux:pass	_	_
+10	dei	dei	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=3|PronType=Prs	11	nsubj:pass	_	_
+11	betalte	betale	ADJ	adj	Number=Plur|VerbForm=Part	0	root	_	_
 12	under	under	ADP	prep	_	13	case	_	_
 13	bordet	bord	NOUN	subst	Gender=Neut	11	obl	_	SpaceAfter=No
-14	.	$.	PUNCT	clb	_	9	punct	_	_
+14	.	$.	PUNCT	clb	_	11	punct	_	_
 
 # sent_id = 014439
 # text = - Eit slikt system bygde ikkje ein stat.
@@ -4794,7 +4794,7 @@
 7	at	at	SCONJ	sbu	_	10	mark	_	_
 8	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	10	expl	_	_
 9	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	10	cop	_	_
-10	mogeleg	mogeleg	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	5	amod	_	_
+10	mogeleg	mogeleg	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	5	acl	_	_
 11	å	å	PART	inf-merke	_	12	mark	_	_
 12	skvisa	skvise	VERB	verb	VerbForm=Inf	10	csubj	_	_
 13	meir	mykje	ADJ	adj	Degree=Cmp	14	amod	_	_
@@ -5359,7 +5359,7 @@
 7	får	få	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	14	advcl	_	_
 8	halvvert	halvvere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	7	xcomp	_	_
 9	statsgjelda	statsgjeld	NOUN	subst	Gender=Fem	7	obj	_	_
-10	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	9	det	_	SpaceAfter=No
+10	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	9	nmod:poss	_	SpaceAfter=No
 11	,	$,	PUNCT	<komma>	_	7	punct	_	_
 12	vil	vilje	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	14	aux	_	_
 13	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	14	nsubj	_	_
@@ -5377,7 +5377,7 @@
 1	No	no	ADV	adv	_	5	advmod	_	_
 2	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	5	cop	_	_
 3	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	5	expl	_	_
-4	deira	deira	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	5	det	_	_
+4	deira	deira	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	5	nmod:poss	_	_
 5	tur	tur	NOUN	subst	Definite=Ind|Gender=Masc	0	root	_	_
 6	til	til	ADP	prep	_	8	case	_	_
 7	å	å	PART	inf-merke	_	8	mark	_	_
@@ -5469,9 +5469,9 @@
 5	på	på	ADP	prep	_	7	case	_	_
 6	same	same	DET	det	PronType=Dem	7	det	_	_
 7	sjukehus	sjukehus	NOUN	subst	Definite=Ind|Gender=Neut	2	obl	_	_
-8	og	og	CCONJ	konj	_	9	cc	_	_
-9	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	2	conj	_	_
-10	bundne	binde	ADJ	adj	Number=Plur|VerbForm=Part	9	ccomp	_	_
+8	og	og	CCONJ	konj	_	10	cc	_	_
+9	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	10	aux:pass	_	_
+10	bundne	binde	ADJ	adj	Number=Plur|VerbForm=Part	2	conj	_	_
 11	saman	saman	ADV	adv	_	10	advmod	_	_
 12	i	i	ADP	prep	_	14	case	_	_
 13	ein	ein	DET	det	Gender=Masc|PronType=Art	14	det	_	_
@@ -5479,7 +5479,7 @@
 15	heilt	heil	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	19	advmod	_	_
 16	opp	opp	ADP	prep	_	19	case	_	_
 17	til	til	ADP	prep	_	19	case	_	_
-18	vår	vår	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	19	det	_	_
+18	vår	vår	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	19	nmod:poss	_	_
 19	tid	tid	NOUN	subst	Definite=Ind|Gender=Fem	10	obl	_	SpaceAfter=No
 20	.	$.	PUNCT	clb	_	2	punct	_	_
 
@@ -5497,7 +5497,7 @@
 10	,	$,	PUNCT	<komma>	_	23	punct	_	_
 11	og	og	CCONJ	konj	_	23	cc	_	_
 12	mor	mor	NOUN	subst	Definite=Ind|Gender=Fem	23	nsubj	_	_
-13	hans	hans	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	12	det	_	SpaceAfter=No
+13	hans	hans	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	12	nmod:poss	_	SpaceAfter=No
 14	,	$,	PUNCT	<komma>	_	15	punct	_	_
 15	Ora	Ora	PROPN	subst	_	12	appos	_	SpaceAfter=No
 16	,	$,	PUNCT	<komma>	_	15	punct	_	_
@@ -5562,13 +5562,13 @@
 2	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 3	vi	vi	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=1|PronType=Prs	2	nsubj	_	_
 4	kjend	kjend	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	2	xcomp	_	_
-5	med	med	ADP	prep	_	10	case	_	_
-6	at	at	SCONJ	sbu	_	10	mark	_	_
-7	han	han	PRON	pron	Case=Nom|Gender=Masc|Person=3|PronType=Prs	10	nsubj	_	_
+5	med	med	ADP	prep	_	11	case	_	_
+6	at	at	SCONJ	sbu	_	11	mark	_	_
+7	han	han	PRON	pron	Case=Nom|Gender=Masc|Person=3|PronType=Prs	11	nsubj:pass	_	_
 8	som	som	ADP	prep	_	9	case	_	_
 9	soldat	soldat	NOUN	subst	Definite=Ind|Gender=Masc	11	xcomp	_	_
-10	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	4	advcl	_	_
-11	fanga	fange	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	10	ccomp	_	_
+10	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	11	aux:pass	_	_
+11	fanga	fange	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	4	advcl	_	_
 12	og	og	CCONJ	konj	_	13	cc	_	_
 13	torturert	torturere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	11	conj	_	_
 14	av	av	ADP	prep	_	15	case	_	_
@@ -5625,19 +5625,19 @@
 19	full	full	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	20	amod	_	_
 20	gang	gang	NOUN	subst	Definite=Ind|Gender=Masc	11	nmod	_	_
 21	med	med	ADP	prep	_	20	nmod	_	_
-22	då	då	SCONJ	sbu	_	33	mark	_	_
+22	då	då	SCONJ	sbu	_	34	mark	_	_
 23	den	den	DET	det	Gender=Masc|PronType=Dem	24	det	_	_
-24	eine	eine	NUM	det	NumType=Card	33	nsubj	_	_
+24	eine	eine	NUM	det	NumType=Card	34	nsubj:pass	_	_
 25	av	av	ADP	prep	_	28	case	_	_
 26	dei	dei	DET	det	Number=Plur|PronType=Dem	28	det	_	_
 27	to	to	NUM	det	Number=Plur|NumType=Card	28	nummod	_	_
 28	sønene	son	NOUN	subst	Gender=Masc|Number=Plur	24	nmod	_	_
-29	hans	hans	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	28	det	_	SpaceAfter=No
+29	hans	hans	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	28	nmod:poss	_	SpaceAfter=No
 30	,	$,	PUNCT	<komma>	_	31	punct	_	_
 31	Uri	Uri	PROPN	subst	_	24	appos	_	SpaceAfter=No
 32	,	$,	PUNCT	<komma>	_	31	punct	_	_
-33	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	20	advcl	_	_
-34	drepen	drepe	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	33	ccomp	_	_
+33	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	34	aux:pass	_	_
+34	drepen	drepe	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	20	advcl	_	_
 35	i	i	ADP	prep	_	36	case	_	_
 36	Sør-Libanon	Sør-Libanon	PROPN	subst	_	34	obl	_	_
 37	under	under	ADP	prep	_	40	case	_	_
@@ -5675,7 +5675,7 @@
 21	tapet	tap	NOUN	subst	Gender=Neut	20	nsubj	_	_
 22	av	av	ADP	prep	_	23	case	_	_
 23	son	son	NOUN	subst	Definite=Ind|Gender=Masc	21	nmod	_	_
-24	din	din	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	23	det	_	_
+24	din	din	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	23	nmod:poss	_	_
 25	arbeidet	arbeid	NOUN	subst	Gender=Neut	20	obj	_	_
 26	med	med	ADP	prep	_	27	case	_	_
 27	boka	bok	NOUN	subst	Gender=Fem	25	nmod	_	SpaceAfter=No
@@ -5694,11 +5694,11 @@
 9	2003	2003	NUM	det	Number=Plur|NumType=Card	5	obl	_	SpaceAfter=No
 10	,	$,	PUNCT	<komma>	_	19	punct	_	_
 11	men	men	CCONJ	konj	_	19	cc	_	_
-12	då	då	SCONJ	sbu	_	14	mark	_	_
-13	Uri	Uri	PROPN	subst	_	14	nsubj	_	_
-14	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	19	advcl	_	_
-15	drepen	drepe	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	14	ccomp	_	SpaceAfter=No
-16	,	$,	PUNCT	<komma>	_	14	punct	_	_
+12	då	då	SCONJ	sbu	_	15	mark	_	_
+13	Uri	Uri	PROPN	subst	_	15	nsubj:pass	_	_
+14	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	15	aux:pass	_	_
+15	drepen	drepe	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	19	advcl	_	SpaceAfter=No
+16	,	$,	PUNCT	<komma>	_	15	punct	_	_
 17	var	vere	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	19	cop	_	_
 18	eg	eg	PRON	pron	Animacy=Hum|Case=Nom|Person=1|PronType=Prs	19	nsubj	_	_
 19	nær	nær	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	5	conj	_	_
@@ -5851,7 +5851,7 @@
 24	sterkaste	sterk	ADJ	adj	Degree=Sup	25	amod	_	_
 25	kritikarane	kritikar	NOUN	subst	Gender=Masc|Number=Plur	22	nmod	_	_
 26	av	av	ADP	prep	_	30	case	_	_
-27	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	29	det	_	_
+27	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	29	nmod:poss	_	_
 28	eige	eigen	DET	det	Definite=Ind|Gender=Neut|PronType=Prs	29	det	_	_
 29	lands	land	NOUN	subst	Case=Gen|Definite=Ind|Gender=Neut	30	nmod	_	_
 30	politikk	politikk	NOUN	subst	Definite=Ind|Gender=Masc	25	nmod	_	SpaceAfter=No
@@ -5929,17 +5929,17 @@
 6	med	med	ADP	prep	_	8	case	_	_
 7	éi	éin	NUM	det	Gender=Fem|NumType=Card	8	nummod	_	_
 8	setning	setning	NOUN	subst	Definite=Ind|Gender=Fem	3	obl	_	SpaceAfter=No
-9	,	$,	PUNCT	<komma>	_	15	punct	_	_
-10	men	men	CCONJ	konj	_	15	cc	_	_
+9	,	$,	PUNCT	<komma>	_	19	punct	_	_
+10	men	men	CCONJ	konj	_	19	cc	_	_
 11	eit	ein	DET	det	Gender=Neut|PronType=Art	13	det	_	_
 12	halvt	halv	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	13	amod	_	_
 13	år	år	NOUN	subst	Definite=Ind|Gender=Neut	14	obl	_	_
 14	seinare	sein	ADJ	adj	Degree=Cmp	19	advmod	_	_
-15	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	conj	_	_
+15	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	19	aux:pass	_	_
 16	den	den	DET	det	Gender=Masc|PronType=Dem	18	det	_	_
 17	første	første	ADJ	adj	Degree=Pos	18	amod	_	_
-18	steinen	stein	NOUN	subst	Gender=Masc	15	nsubj	_	_
-19	kasta	kaste	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	15	ccomp	_	_
+18	steinen	stein	NOUN	subst	Gender=Masc	19	nsubj:pass	_	_
+19	kasta	kaste	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	3	conj	_	_
 20	i	i	ADP	prep	_	21	case	_	_
 21	Gaza	Gaza	PROPN	subst	_	19	obl	_	SpaceAfter=No
 22	,	$,	PUNCT	<komma>	_	26	punct	_	_
@@ -6084,9 +6084,9 @@
 10	går	gå	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	6	acl:relcl	_	_
 11	langs	langs	ADP	prep	_	12	case	_	_
 12	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	10	obl	_	_
-13	som	som	SCONJ	sbu	_	14	mark	_	_
-14	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	12	acl:relcl	_	_
-15	kalla	kalle	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	14	ccomp	_	_
+13	som	som	SCONJ	sbu	_	15	mark	_	_
+14	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	15	aux:pass	_	_
+15	kalla	kalle	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	12	acl:relcl	_	_
 16	Israelsstigen	Israelsstigen	PROPN	subst	_	15	xcomp	_	SpaceAfter=No
 17	,	$,	PUNCT	<komma>	_	6	punct	_	_
 18	sentral	sentral	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	0	root	_	_
@@ -6124,9 +6124,9 @@
 # sent_id = 014513
 # text = Alt som vert sagt i samtalar med møtande turistar i romanen, er ekte, frå mine eigne notat.
 1	Alt	alt	PRON	pron	Gender=Neut|Person=3|PronType=Prs	14	nsubj	_	_
-2	som	som	SCONJ	sbu	_	3	mark	_	_
-3	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	1	acl:relcl	_	_
-4	sagt	seie	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	3	ccomp	_	_
+2	som	som	SCONJ	sbu	_	4	mark	_	_
+3	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	4	aux:pass	_	_
+4	sagt	seie	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	1	acl:relcl	_	_
 5	i	i	ADP	prep	_	6	case	_	_
 6	samtalar	samtale	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	4	obl	_	_
 7	med	med	ADP	prep	_	9	case	_	_
@@ -6139,7 +6139,7 @@
 14	ekte	ekte	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	0	root	_	SpaceAfter=No
 15	,	$,	PUNCT	<komma>	_	19	punct	_	_
 16	frå	frå	ADP	prep	_	19	case	_	_
-17	mine	min	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	19	det	_	_
+17	mine	min	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	19	nmod:poss	_	_
 18	eigne	eigen	DET	det	Number=Plur|PronType=Prs	19	det	_	_
 19	notat	notat	NOUN	subst	Definite=Ind|Gender=Neut|Number=Plur	14	conj	_	SpaceAfter=No
 20	.	$.	PUNCT	clb	_	14	punct	_	_
@@ -6190,7 +6190,7 @@
 # text = - Boka di har alt møtt ovasjonar blant kritikarar, kva seier lesarane i Israel?
 1	-	$-	PUNCT	<strek>	_	6	punct	_	_
 2	Boka	bok	NOUN	subst	Gender=Fem	6	nsubj	_	_
-3	di	din	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	2	det	_	_
+3	di	din	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	2	nmod:poss	_	_
 4	har	ha	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	6	aux	_	_
 5	alt	alt	ADV	adv	_	6	advmod	_	_
 6	møtt	møte	VERB	verb	VerbForm=Part	0	root	_	_
@@ -6218,14 +6218,14 @@
 1	Eg	eg	PRON	pron	Animacy=Hum|Case=Nom|Person=1|PronType=Prs	2	nsubj	_	_
 2	respekterer	respektere	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 3	lesarane	lesar	NOUN	subst	Gender=Masc|Number=Plur	2	obj	_	_
-4	mine	min	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	3	det	_	SpaceAfter=No
-5	,	$,	PUNCT	<komma>	_	9	punct	_	_
-6	og	og	CCONJ	konj	_	9	cc	_	_
+4	mine	min	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	3	nmod:poss	_	SpaceAfter=No
+5	,	$,	PUNCT	<komma>	_	11	punct	_	_
+6	og	og	CCONJ	konj	_	11	cc	_	_
 7	av	av	ADP	prep	_	8	case	_	_
 8	lesarane	lesar	NOUN	subst	Gender=Masc|Number=Plur	11	obl	_	_
-9	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	2	conj	_	_
-10	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	9	expl	_	_
-11	forventa	forvente	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	9	ccomp	_	_
+9	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	11	aux:pass	_	_
+10	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	11	expl	_	_
+11	forventa	forvente	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	2	conj	_	_
 12	at	at	SCONJ	sbu	_	15	mark	_	_
 13	du	du	PRON	pron	Animacy=Hum|Case=Nom|Person=2|PronType=Prs	15	nsubj	_	_
 14	også	også	ADV	adv	_	15	advmod	_	_
@@ -6393,7 +6393,7 @@
 18	det	det	DET	det	Gender=Neut|PronType=Dem	20	det	_	_
 19	vesle	liten	ADJ	adj	Degree=Pos	20	amod	_	_
 20	landet	land	NOUN	subst	Gender=Neut	14	obl	_	_
-21	mitt	min	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	20	det	_	SpaceAfter=No
+21	mitt	min	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	20	nmod:poss	_	SpaceAfter=No
 22	,	$,	PUNCT	<komma>	_	26	punct	_	_
 23	og	og	CCONJ	konj	_	26	cc	_	_
 24	reaksjonane	reaksjon	NOUN	subst	Gender=Masc|Number=Plur	26	nsubj	_	_
@@ -6591,7 +6591,7 @@
 10	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	9	nsubj	_	_
 11	ikkje	ikkje	ADV	adv	_	9	advmod	_	_
 12	leiarane	leiar	NOUN	subst	Gender=Masc|Number=Plur	9	obj	_	_
-13	våre	vår	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	12	det	_	SpaceAfter=No
+13	våre	vår	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	12	nmod:poss	_	SpaceAfter=No
 14	,	$,	PUNCT	<komma>	_	17	punct	_	_
 15	som	som	SCONJ	sbu	_	17	mark	_	_
 16	berre	berre	ADV	adv	_	17	advmod	_	_
@@ -7190,15 +7190,15 @@
 23	farvatn	farvatn	NOUN	subst	Definite=Ind|Gender=Neut	18	nmod	_	_
 24	i	i	ADP	prep	_	25	case	_	_
 25	fjor	fjor	NOUN	subst	_	18	nmod	_	SpaceAfter=No
-26	,	$,	PUNCT	<komma>	_	33	punct	_	_
-27	der	der	SCONJ	sbu	_	33	mark	_	_
-28	fleire	mange	ADJ	adj	Degree=Cmp	33	nsubj	_	_
+26	,	$,	PUNCT	<komma>	_	34	punct	_	_
+27	der	der	SCONJ	sbu	_	34	mark	_	_
+28	fleire	mange	ADJ	adj	Degree=Cmp	34	nsubj:pass	_	_
 29	om	om	ADP	prep	_	30	case	_	_
 30	bord	bord	NOUN	subst	_	28	nmod	_	_
 31	i	i	ADP	prep	_	32	case	_	_
 32	båten	båt	NOUN	subst	Gender=Masc	30	nmod	_	_
-33	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	18	acl:relcl	_	_
-34	drepne	drepe	ADJ	adj	Number=Plur|VerbForm=Part	33	ccomp	_	SpaceAfter=No
+33	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	34	aux:pass	_	_
+34	drepne	drepe	ADJ	adj	Number=Plur|VerbForm=Part	18	acl:relcl	_	SpaceAfter=No
 35	.	$.	PUNCT	clb	_	5	punct	_	_
 
 # sent_id = 014557
@@ -7270,7 +7270,7 @@
 6	det	det	DET	det	Gender=Neut|PronType=Dem	8	det	_	_
 7	kortklipte	kortklipt	ADJ	adj	Degree=Pos	8	amod	_	_
 8	hovudet	hovud	NOUN	subst	Gender=Neut	4	nmod	_	_
-9	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	8	det	_	_
+9	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	8	nmod:poss	_	_
 10	skilde	skilje	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
 11	fotograf	fotograf	NOUN	subst	Definite=Ind|Gender=Masc	10	nsubj	_	_
 12	Marie	Marie	PROPN	subst	Gender=Fem	11	flat:name	_	_
@@ -7346,9 +7346,9 @@
 12	på	på	ADP	prep	_	13	case	_	_
 13	Austlandet	Austlandet	PROPN	subst	Gender=Neut	11	nmod	_	SpaceAfter=No
 14	,	$,	PUNCT	<komma>	_	11	punct	_	_
-15	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
-16	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	15	expl	_	_
-17	funne	finne	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	15	ccomp	_	_
+15	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	17	aux:pass	_	_
+16	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	17	expl	_	_
+17	funne	finne	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
 18	om	om	ADP	prep	_	19	case	_	_
 19	lag	lag	NOUN	subst	_	20	obl	_	_
 20	førti	førti	NUM	det	Number=Plur|NumType=Card	21	nummod	_	_
@@ -7357,7 +7357,7 @@
 23	«	$"	PUNCT	<anf>	_	24	punct	_	SpaceAfter=No
 24	privat	privat	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	22	obj	_	SpaceAfter=No
 25	»	$"	PUNCT	<anf>	_	24	punct	_	SpaceAfter=No
-26	.	$.	PUNCT	clb	_	15	punct	_	_
+26	.	$.	PUNCT	clb	_	17	punct	_	_
 
 # sent_id = 014565
 # text = Eska dei låg i, stamma frå eit fotoatelier i Horten med namnet «Berg og Høeg», som hadde sitt virke kring år 1900.
@@ -7382,7 +7382,7 @@
 19	,	$,	PUNCT	<komma>	_	21	punct	_	_
 20	som	som	SCONJ	sbu	_	21	mark	_	_
 21	hadde	ha	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	15	acl:relcl	_	_
-22	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	23	det	_	_
+22	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	23	nmod:poss	_	_
 23	virke	virke	NOUN	subst	Definite=Ind|Gender=Neut	21	obj	_	_
 24	kring	kring	ADP	prep	_	26	case	_	_
 25	år	år	NOUN	subst	Definite=Ind|Gender=Neut	26	obl	_	_
@@ -7449,7 +7449,7 @@
 3	som	som	SCONJ	sbu	_	6	mark	_	_
 4	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	6	cop	_	_
 5	heilt	heil	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	6	advmod	_	_
-6	unike	unik	ADJ	adj	Degree=Pos|Number=Plur	1	amod	_	_
+6	unike	unik	ADJ	adj	Degree=Pos|Number=Plur	1	acl:relcl	_	_
 7	i	i	ADP	prep	_	9	case	_	_
 8	norsk	norsk	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	9	amod	_	_
 9	samanheng	samanheng	NOUN	subst	Definite=Ind|Gender=Masc	6	obl	_	SpaceAfter=No
@@ -7523,7 +7523,7 @@
 2	Horten	Horten	PROPN	subst	_	3	obl	_	_
 3	opna	opne	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
 4	dei	dei	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=3|PronType=Prs	3	nsubj	_	_
-5	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	7	det	_	_
+5	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	7	nmod:poss	_	_
 6	eige	eigen	DET	det	Definite=Ind|Gender=Neut|PronType=Prs	7	det	_	_
 7	fotoatelier	fotoatelier	NOUN	subst	Definite=Ind|Gender=Neut	3	obj	_	_
 8	med	med	ADP	prep	_	9	case	_	_
@@ -7667,7 +7667,7 @@
 10	rolla	rolle	NOUN	subst	Gender=Fem	6	obl	_	_
 11	ho	ho	PRON	pron	Case=Nom|Gender=Fem|Person=3|PronType=Prs	13	nsubj	_	_
 12	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	13	cop	_	_
-13	sett	setje	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	10	amod	_	_
+13	sett	setje	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	10	acl:relcl	_	_
 14	i	i	ADV	prep	_	13	advmod	_	SpaceAfter=No
 15	.	$.	PUNCT	clb	_	2	punct	_	_
 
@@ -7784,7 +7784,7 @@
 
 # sent_id = 014586
 # text = Kvinnene ville ikkje lenger bli sette i bås, dei ville i større grad vere seg sjølve og bryte med forventningane.
-1	Kvinnene	kvinne	NOUN	subst	Gender=Fem|Number=Plur	6	nsubj	_	_
+1	Kvinnene	kvinne	NOUN	subst	Gender=Fem|Number=Plur	6	nsubj:pass	_	_
 2	ville	vilje	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	6	aux	_	_
 3	ikkje	ikkje	ADV	adv	_	4	advmod	_	_
 4	lenger	lenge	ADJ	adj	Degree=Cmp	6	advmod	_	_
@@ -7979,7 +7979,7 @@
 15	seksualitet	seksualitet	NOUN	subst	Definite=Ind|Gender=Masc	13	conj	_	_
 16	i	i	ADP	prep	_	17	case	_	_
 17	virket	virke	NOUN	subst	Gender=Neut	11	obl	_	_
-18	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	17	det	_	SpaceAfter=No
+18	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	17	nmod:poss	_	SpaceAfter=No
 19	.	$.	PUNCT	clb	_	11	punct	_	_
 
 # sent_id = 014595
@@ -8046,7 +8046,7 @@
 9	ikkje	ikkje	ADV	adv	_	12	advmod	_	_
 10	alt	alt	ADV	adv	_	12	advmod	_	_
 11	var	vere	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	12	cop	_	_
-12	mannsdominerte	mannsdominert	ADJ	adj	Degree=Pos|Number=Plur	7	amod	_	SpaceAfter=No
+12	mannsdominerte	mannsdominert	ADJ	adj	Degree=Pos|Number=Plur	7	acl:relcl	_	SpaceAfter=No
 13	,	$,	PUNCT	<komma>	_	16	punct	_	_
 14	mellom	mellom	ADP	prep	_	15	case	_	_
 15	anna	annan	DET	det	Definite=Ind|Gender=Fem|PronType=Dem	16	nmod	_	_
@@ -8055,9 +8055,9 @@
 
 # sent_id = 014599
 # text = Dette vart rekna som eit passande kvinneyrke, fordi ein trudde at kvinner hadde større sans for iscenesetjing og kunst, og det var heller ikkje så dyrt å etablere seg som fotograf.
-1	Dette	dette	PRON	pron	Gender=Neut|Person=3|PronType=Prs	2	nsubj	_	_
-2	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
-3	rekna	rekne	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	2	ccomp	_	_
+1	Dette	dette	PRON	pron	Gender=Neut|Person=3|PronType=Prs	3	nsubj:pass	_	_
+2	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	aux:pass	_	_
+3	rekna	rekne	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
 4	som	som	ADP	prep	_	7	case	_	_
 5	eit	ein	DET	det	Gender=Neut|PronType=Art	7	det	_	_
 6	passande	passe	ADJ	adj	VerbForm=Part	7	amod	_	_
@@ -8082,13 +8082,13 @@
 25	heller	heller	ADV	adv	_	28	advmod	_	_
 26	ikkje	ikkje	ADV	adv	_	28	advmod	_	_
 27	så	så	ADV	adv	_	28	advmod	_	_
-28	dyrt	dyr	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	2	conj	_	_
+28	dyrt	dyr	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	3	conj	_	_
 29	å	å	PART	inf-merke	_	30	mark	_	_
 30	etablere	etablere	VERB	verb	VerbForm=Inf	28	csubj	_	_
 31	seg	seg	PRON	pron	Case=Acc|PronType=Prs	30	obj	_	_
 32	som	som	ADP	prep	_	33	case	_	_
 33	fotograf	fotograf	NOUN	subst	Definite=Ind|Gender=Masc	30	xcomp	_	SpaceAfter=No
-34	.	$.	PUNCT	clb	_	2	punct	_	_
+34	.	$.	PUNCT	clb	_	3	punct	_	_
 
 # sent_id = 014600
 # text = At dei drog utanlands for å utdanne seg, var heller ikkje så uvanleg.
@@ -8142,11 +8142,11 @@
 3	truleg	truleg	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	0	root	_	_
 4	i	i	ADP	prep	_	5	case	_	_
 5	Finland	Finland	PROPN	subst	_	3	obl	_	_
-6	at	at	SCONJ	sbu	_	9	mark	_	_
-7	Marie	Marie	PROPN	subst	Gender=Fem	9	nsubj	_	_
+6	at	at	SCONJ	sbu	_	10	mark	_	_
+7	Marie	Marie	PROPN	subst	Gender=Fem	10	nsubj:pass	_	_
 8	Høeg	Høeg	PROPN	subst	_	7	flat:name	_	_
-9	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	csubj	_	_
-10	engasjert	engasjere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	9	ccomp	_	_
+9	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	10	aux:pass	_	_
+10	engasjert	engasjere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	3	csubj	_	_
 11	i	i	ADP	prep	_	12	case	_	_
 12	kvinnerørsla	kvinnerørsle	NOUN	subst	Gender=Fem	10	obl	_	SpaceAfter=No
 13	.	$.	PUNCT	clb	_	3	punct	_	_
@@ -8156,7 +8156,7 @@
 1	Ho	ho	PRON	pron	Case=Nom|Gender=Fem|Person=3|PronType=Prs	2	nsubj	_	_
 2	lét	la	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
 3	engasjementet	engasjement	NOUN	subst	Gender=Neut	2	iobj	_	_
-4	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	3	det	_	_
+4	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	3	nmod:poss	_	_
 5	smitte	smitte	VERB	verb	VerbForm=Inf	2	xcomp	_	_
 6	over	over	ADP	prep	_	8	case	_	_
 7	på	på	ADP	prep	_	8	case	_	_
@@ -8170,12 +8170,12 @@
 15	på	på	ADP	prep	_	17	case	_	_
 16	ei	ein	DET	det	Gender=Fem|PronType=Art	17	det	_	_
 17	tid	tid	NOUN	subst	Definite=Ind|Gender=Fem	12	obl	_	_
-18	da	da	SCONJ	sbu	_	22	mark	_	_
-19	ideen	idé	NOUN	subst	Gender=Masc	22	nsubj	_	_
+18	da	da	SCONJ	sbu	_	23	mark	_	_
+19	ideen	idé	NOUN	subst	Gender=Masc	23	nsubj:pass	_	_
 20	om	om	ADP	prep	_	21	case	_	_
 21	kvinnefrigjering	kvinnefrigjering	NOUN	subst	Definite=Ind|Gender=Fem	19	nmod	_	_
-22	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	17	acl:relcl	_	_
-23	mistenkt	mistenkje	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	22	ccomp	_	_
+22	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	23	aux:pass	_	_
+23	mistenkt	mistenkje	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	17	acl:relcl	_	_
 24	for	for	ADP	prep	_	28	case	_	_
 25	å	å	PART	inf-merke	_	28	mark	_	_
 26	vere	vere	AUX	verb	VerbForm=Inf	28	cop	_	_
@@ -8262,17 +8262,17 @@
 
 # sent_id = 014608
 # text = Ordet selskabelig vart lagt til namnet for å mildne uttrykket.
-1	Ordet	ord	NOUN	subst	Gender=Neut	3	nsubj	_	_
+1	Ordet	ord	NOUN	subst	Gender=Neut	4	nsubj:pass	_	_
 2	selskabelig	selskabelig	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	1	appos	_	_
-3	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
-4	lagt	leggje	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	3	ccomp	_	_
+3	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	4	aux:pass	_	_
+4	lagt	leggje	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
 5	til	til	ADP	prep	_	6	case	_	_
 6	namnet	namn	NOUN	subst	Gender=Neut	4	obl	_	_
 7	for	for	ADP	prep	_	9	case	_	_
 8	å	å	PART	inf-merke	_	9	mark	_	_
 9	mildne	mildne	VERB	verb	VerbForm=Inf	4	advcl	_	_
 10	uttrykket	uttrykk	NOUN	subst	Gender=Neut	9	obj	_	SpaceAfter=No
-11	.	$.	PUNCT	clb	_	3	punct	_	_
+11	.	$.	PUNCT	clb	_	4	punct	_	_
 
 # sent_id = 014609
 # text = Innkallinga til det første møtet gjekk med bod, for at mennene i byen ikkje skulle bli provoserte.
@@ -8367,7 +8367,7 @@
 14	i	i	ADP	prep	_	15	case	_	_
 15	landet	land	NOUN	subst	Gender=Neut	13	obl	_	_
 16	i	i	ADP	prep	_	18	case	_	_
-17	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	18	det	_	_
+17	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	18	nmod:poss	_	_
 18	slag	slag	NOUN	subst	Definite=Ind|Gender=Neut	13	obl	_	SpaceAfter=No
 19	.	$.	PUNCT	clb	_	2	punct	_	_
 
@@ -8521,13 +8521,13 @@
 1	Men	men	CCONJ	konj	_	16	cc	_	_
 2	etter	etter	ADP	prep	_	3	case	_	_
 3	kvart	kvar	DET	det	Gender=Neut|PronType=Tot	16	obl	_	_
-4	som	som	SCONJ	sbu	_	6	mark	_	_
-5	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	6	expl	_	_
-6	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	acl:relcl	_	_
+4	som	som	SCONJ	sbu	_	8	mark	_	_
+5	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	8	expl	_	_
+6	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	8	aux:pass	_	_
 7	meir	mykje	ADJ	adj	Degree=Cmp	8	advmod	_	_
-8	akseptert	akseptere	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	6	ccomp	_	_
+8	akseptert	akseptere	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	3	acl:relcl	_	_
 9	å	å	PART	inf-merke	_	10	mark	_	_
-10	arbeide	arbeide	VERB	verb	VerbForm=Inf	8	csubj	_	_
+10	arbeide	arbeide	VERB	verb	VerbForm=Inf	8	csubj:pass	_	_
 11	for	for	ADP	prep	_	12	case	_	_
 12	røysterett	røysterett	NOUN	subst	Definite=Ind|Gender=Masc	10	obl	_	_
 13	for	for	ADP	prep	_	14	case	_	_
@@ -8557,21 +8557,21 @@
 6	heim	heim	ADP	prep	_	8	case	_	_
 7	frå	frå	ADP	prep	_	8	case	_	_
 8	polferda	polferd	NOUN	subst	Gender=Fem	3	obl	_	_
-9	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	8	det	_	SpaceAfter=No
+9	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	8	nmod:poss	_	SpaceAfter=No
 10	.	$.	PUNCT	clb	_	3	punct	_	_
 
 # sent_id = 014623
 # text = Han vart teken imot som ein helt, han vart eit symbol for nasjonen, eit verkeleg ideal.
-1	Han	han	PRON	pron	Case=Nom|Gender=Masc|Person=3|PronType=Prs	2	nsubj	_	_
-2	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
-3	teken	ta	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	2	ccomp	_	_
+1	Han	han	PRON	pron	Case=Nom|Gender=Masc|Person=3|PronType=Prs	3	nsubj:pass	_	_
+2	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	aux:pass	_	_
+3	teken	ta	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	0	root	_	_
 4	imot	imot	ADV	prep	_	3	advmod	_	_
 5	som	som	ADP	prep	_	7	case	_	_
 6	ein	ein	DET	det	Gender=Masc|PronType=Art	7	det	_	_
 7	helt	helt	NOUN	subst	Definite=Ind|Gender=Masc	3	xcomp	_	SpaceAfter=No
 8	,	$,	PUNCT	<komma>	_	10	punct	_	_
 9	han	han	PRON	pron	Case=Nom|Gender=Masc|Person=3|PronType=Prs	10	nsubj	_	_
-10	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	2	conj	_	_
+10	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	conj	_	_
 11	eit	ein	DET	det	Gender=Neut|PronType=Art	12	det	_	_
 12	symbol	symbol	NOUN	subst	Definite=Ind|Gender=Neut	10	xcomp	_	_
 13	for	for	ADP	prep	_	14	case	_	_
@@ -8580,7 +8580,7 @@
 16	eit	ein	DET	det	Gender=Neut|PronType=Art	18	det	_	_
 17	verkeleg	verkeleg	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	18	amod	_	_
 18	ideal	ideal	NOUN	subst	Definite=Ind|Gender=Neut	12	appos	_	SpaceAfter=No
-19	.	$.	PUNCT	clb	_	2	punct	_	_
+19	.	$.	PUNCT	clb	_	3	punct	_	_
 
 # sent_id = 014624
 # text = Lite ante dei som hylla Fridtjof Nansen, at ein ung, kvinneleg fotograf i Horten var ein av pionerane for ei rørsle som skulle endre samfunnet meir enn noka polarferd ville gjere.
@@ -8784,7 +8784,7 @@
 
 # sent_id = 014634
 # text = Marie Høegs liv og virke har naturleg nok vekt interesse i fleire krinsar.
-1	Marie	Marie	PROPN	subst	Gender=Fem	3	nmod	_	_
+1	Marie	Marie	PROPN	subst	Gender=Fem	3	nmod:poss	_	_
 2	Høegs	Høeg	PROPN	subst	Case=Gen	1	flat:name	_	_
 3	liv	liv	NOUN	subst	Definite=Ind|Gender=Neut	9	nsubj	_	_
 4	og	og	CCONJ	konj	_	5	cc	_	_
@@ -8895,7 +8895,7 @@
 21	år	år	NOUN	subst	Definite=Ind|Gender=Neut|Number=Plur	22	obl	_	_
 22	lange	lang	ADJ	adj	Degree=Pos	23	amod	_	_
 23	sambuarskapet	sambuarskap	NOUN	subst	Gender=Neut	9	obl	_	_
-24	deira	deira	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	23	det	_	SpaceAfter=No
+24	deira	deira	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	23	nmod:poss	_	SpaceAfter=No
 25	.	$.	PUNCT	clb	_	9	punct	_	_
 
 # newpar
@@ -9430,7 +9430,7 @@
 
 # sent_id = 014669
 # text = Dette har aldri blitt sett på prøve, fordi stortingsfleirtalet alltid har godkjent lovendringane.
-1	Dette	dette	PRON	pron	Gender=Neut|Person=3|PronType=Prs	5	nsubj	_	_
+1	Dette	dette	PRON	pron	Gender=Neut|Person=3|PronType=Prs	5	nsubj:pass	_	_
 2	har	ha	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	5	aux	_	_
 3	aldri	aldri	ADV	adv	_	5	advmod	_	_
 4	blitt	bli	AUX	verb	VerbForm=Part	5	aux:pass	_	_
@@ -9773,7 +9773,7 @@
 5	gehør	gehør	NOUN	subst	Definite=Ind|Gender=Neut	3	obj	_	_
 6	i	i	ADP	prep	_	7	case	_	_
 7	partiet	parti	NOUN	subst	Gender=Neut	3	obl	_	_
-8	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	7	det	_	SpaceAfter=No
+8	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	7	nmod:poss	_	SpaceAfter=No
 9	.	$.	PUNCT	clb	_	3	punct	_	_
 
 # sent_id = 014688
@@ -9848,7 +9848,7 @@
 
 # sent_id = 014691
 # text = Men da Stortinget handsama meldinga om Europa-politikken i fjor, vart det vedteke at fagkomiteane skal tidleg inn i handsaminga av dei rettsaktene som gjer at norsk lov må endrast.
-1	Men	men	CCONJ	konj	_	11	cc	_	_
+1	Men	men	CCONJ	konj	_	13	cc	_	_
 2	da	da	SCONJ	sbu	_	4	mark	_	_
 3	Stortinget	Stortinget	PROPN	subst	Gender=Neut	4	nsubj	_	_
 4	handsama	handsame	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	13	advcl	_	_
@@ -9858,9 +9858,9 @@
 8	i	i	ADP	prep	_	9	case	_	_
 9	fjor	fjor	NOUN	subst	_	4	obl	_	SpaceAfter=No
 10	,	$,	PUNCT	<komma>	_	4	punct	_	_
-11	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
-12	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	11	expl	_	_
-13	vedteke	vedta	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	11	ccomp	_	_
+11	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	13	aux:pass	_	_
+12	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	13	expl	_	_
+13	vedteke	vedta	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
 14	at	at	SCONJ	sbu	_	16	mark	_	_
 15	fagkomiteane	fagkomité	NOUN	subst	Gender=Masc|Number=Plur	16	nsubj	_	_
 16	skal	skulle	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	13	ccomp	_	_
@@ -9878,7 +9878,7 @@
 28	lov	lov	NOUN	subst	Definite=Ind|Gender=Fem	30	nsubj	_	_
 29	må	måtte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	30	aux	_	_
 30	endrast	endre	VERB	verb	VerbForm=Inf	25	xcomp	_	SpaceAfter=No
-31	.	$.	PUNCT	clb	_	11	punct	_	_
+31	.	$.	PUNCT	clb	_	13	punct	_	_
 
 # sent_id = 014692
 # text = Det punktet er ikkje sett i verk som det var meint, seier Dag Seierstad.
@@ -10089,7 +10089,7 @@
 19	på	på	ADP	prep	_	20	case	_	_
 20	førehand	førehand	NOUN	subst	_	17	obl	_	_
 21	om	om	ADP	prep	_	25	case	_	_
-22	kva	kva	PRON	pron	PronType=Int	25	nsubj	_	_
+22	kva	kva	PRON	pron	PronType=Int	25	nsubj:pass	_	_
 23	som	som	SCONJ	sbu	_	25	mark	_	_
 24	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	25	aux:pass	_	_
 25	teke	ta	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	17	advcl	_	_
@@ -10174,7 +10174,7 @@
 8	om	om	ADP	prep	_	11	case	_	_
 9	kor	kor	ADV	adv	_	10	advmod	_	_
 10	godt	god	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	11	advmod	_	_
-11	budde	budd	ADJ	adj	Degree=Pos|Number=Plur	7	amod	_	_
+11	budde	budd	ADJ	adj	Degree=Pos|Number=Plur	7	acl:relcl	_	_
 12	andre	annan	DET	det	Number=Plur|PronType=Dem	11	nsubj	_	_
 13	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	11	cop	_	SpaceAfter=No
 14	.	$.	PUNCT	clb	_	5	punct	_	_
@@ -10233,7 +10233,7 @@
 # text = Og når direktiva ikkje blir diskuterte i dei faste komiteane eller i det offentlege rommet, er det ei demokratisk utfordring.
 1	Og	og	CCONJ	konj	_	21	cc	_	_
 2	når	når	SCONJ	sbu	_	6	mark	_	_
-3	direktiva	direktiv	NOUN	subst	Gender=Neut|Number=Plur	6	nsubj	_	_
+3	direktiva	direktiv	NOUN	subst	Gender=Neut|Number=Plur	6	nsubj:pass	_	_
 4	ikkje	ikkje	ADV	adv	_	6	advmod	_	_
 5	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	6	aux:pass	_	_
 6	diskuterte	diskutere	ADJ	adj	Number=Plur|VerbForm=Part	21	advcl	_	_
@@ -10311,7 +10311,7 @@
 9	sakene	sak	NOUN	subst	Gender=Fem|Number=Plur	3	obl	_	_
 10	som	som	SCONJ	sbu	_	12	mark	_	_
 11	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	12	aux:pass	_	_
-12	diskuterte	diskutere	ADJ	adj	Number=Plur|VerbForm=Part	9	amod	_	_
+12	diskuterte	diskutere	ADJ	adj	Number=Plur|VerbForm=Part	9	acl:relcl	_	_
 13	i	i	ADP	prep	_	14	case	_	_
 14	EU	EU	PROPN	subst	Abbr=Yes	12	obl	_	SpaceAfter=No
 15	,	$,	PUNCT	<komma>	_	17	punct	_	_
@@ -10323,7 +10323,7 @@
 # text = - Når rettsaktene frå EU blir så lite diskuterte i Noreg, er det vel òg fordi Noreg ikkje eigentleg kan påverke utforminga av dei?
 1	-	$-	PUNCT	<strek>	_	22	punct	_	_
 2	Når	når	SCONJ	sbu	_	9	mark	_	_
-3	rettsaktene	rettsakt	NOUN	subst	Gender=Fem|Number=Plur	9	nsubj	_	_
+3	rettsaktene	rettsakt	NOUN	subst	Gender=Fem|Number=Plur	9	nsubj:pass	_	_
 4	frå	frå	ADP	prep	_	5	case	_	_
 5	EU	EU	PROPN	subst	Abbr=Yes	3	nmod	_	_
 6	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	9	aux:pass	_	_
@@ -10656,7 +10656,7 @@
 10	sakene	sak	NOUN	subst	Gender=Fem|Number=Plur	19	nsubj	_	_
 11	som	som	SCONJ	sbu	_	13	mark	_	_
 12	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	13	aux:pass	_	_
-13	tekne	ta	ADJ	adj	Number=Plur|VerbForm=Part	10	amod	_	_
+13	tekne	ta	ADJ	adj	Number=Plur|VerbForm=Part	10	acl:relcl	_	_
 14	opp	opp	ADV	prep	_	13	advmod	_	_
 15	i	i	ADP	prep	_	16	case	_	_
 16	utvalet	utval	NOUN	subst	Gender=Neut	13	obl	_	SpaceAfter=No
@@ -10728,15 +10728,15 @@
 5	var	vere	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	2	ccomp	_	_
 6	mykje	mykje	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	7	amod	_	_
 7	frustrasjon	frustrasjon	NOUN	subst	Definite=Ind|Gender=Masc	5	nsubj	_	_
-8	over	over	ADP	prep	_	11	case	_	_
+8	over	over	ADP	prep	_	12	case	_	_
 9	korleis	korleis	ADV	adv	_	12	advmod	_	_
-10	sakene	sak	NOUN	subst	Gender=Fem|Number=Plur	11	nsubj	_	_
-11	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	7	acl:relcl	_	_
-12	handsama	handsame	ADJ	adj	Number=Plur|VerbForm=Part	11	ccomp	_	SpaceAfter=No
+10	sakene	sak	NOUN	subst	Gender=Fem|Number=Plur	12	nsubj:pass	_	_
+11	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	12	aux:pass	_	_
+12	handsama	handsame	ADJ	adj	Number=Plur|VerbForm=Part	7	acl:relcl	_	SpaceAfter=No
 13	,	$,	PUNCT	<komma>	_	16	punct	_	_
 14	og	og	CCONJ	konj	_	16	cc	_	_
 15	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	16	expl	_	_
-16	var	vere	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	11	conj	_	_
+16	var	vere	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	12	conj	_	_
 17	langt	lang	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	18	advmod	_	_
 18	mindre	liten	ADJ	adj	Degree=Cmp	19	amod	_	_
 19	innsyn	innsyn	NOUN	subst	Definite=Ind|Gender=Neut	16	nsubj	_	_
@@ -10780,7 +10780,7 @@
 
 # sent_id = 014738
 # text = Sakene blir jo førebudde av regjeringa, som har langt større innsyn i innhaldet, seier Høybråten.
-1	Sakene	sak	NOUN	subst	Gender=Fem|Number=Plur	4	nsubj	_	_
+1	Sakene	sak	NOUN	subst	Gender=Fem|Number=Plur	4	nsubj:pass	_	_
 2	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	4	aux:pass	_	_
 3	jo	jo	ADV	adv	_	4	advmod	_	_
 4	førebudde	førebu	ADJ	adj	Number=Plur|VerbForm=Part	16	ccomp	_	_
@@ -10844,7 +10844,7 @@
 15	Noregs	Noreg	PROPN	subst	Case=Gen	16	nmod	_	_
 16	interesser	interesse	NOUN	subst	Definite=Ind|Gender=Fem|Number=Plur	13	nmod	_	_
 17	om	om	SCONJ	sbu	_	21	mark	_	_
-18	vi	vi	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=1|PronType=Prs	21	nsubj	_	_
+18	vi	vi	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=1|PronType=Prs	21	nsubj:pass	_	_
 19	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	21	aux:pass	_	_
 20	meir	mykje	ADJ	adj	Degree=Cmp	21	advmod	_	_
 21	involverte	involvere	ADJ	adj	Number=Plur|VerbForm=Part	5	advcl	_	SpaceAfter=No
@@ -10906,7 +10906,7 @@
 19	ein	ein	DET	det	Gender=Masc|PronType=Art	23	nsubj	_	_
 20	av	av	ADP	prep	_	21	case	_	_
 21	herrane	herre	NOUN	subst	Gender=Masc|Number=Plur	19	nmod	_	_
-22	hans	hans	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	21	det	_	_
+22	hans	hans	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	21	nmod:poss	_	_
 23	forstod	forstå	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	12	advcl	_	_
 24	at	at	SCONJ	sbu	_	27	mark	_	_
 25	han	han	PRON	pron	Case=Nom|Gender=Masc|Person=3|PronType=Prs	27	nsubj	_	_
@@ -11051,7 +11051,7 @@
 13	må	måtte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	14	aux	_	_
 14	forståast	forstå	VERB	verb	VerbForm=Inf	0	root	_	_
 15	i	i	ADP	prep	_	18	case	_	_
-16	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	18	det	_	_
+16	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	18	nmod:poss	_	_
 17	kulturelle	kulturell	ADJ	adj	Degree=Pos	18	amod	_	_
 18	kontekst	kontekst	NOUN	subst	Definite=Ind|Gender=Masc	14	obl	_	SpaceAfter=No
 19	.	$.	PUNCT	clb	_	14	punct	_	_
@@ -11120,7 +11120,7 @@
 3	ufridomen	ufridom	NOUN	subst	Gender=Masc	4	nsubj	_	_
 4	gjorde	gjere	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
 5	at	at	SCONJ	sbu	_	10	mark	_	_
-6	ideen	idé	NOUN	subst	Gender=Masc	10	nsubj	_	_
+6	ideen	idé	NOUN	subst	Gender=Masc	10	nsubj:pass	_	_
 7	om	om	ADP	prep	_	8	case	_	_
 8	fridom	fridom	NOUN	subst	Definite=Ind|Gender=Masc	6	nmod	_	_
 9	blei	bli	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	10	aux:pass	_	_
@@ -11177,7 +11177,7 @@
 5	om	om	ADP	prep	_	8	case	_	_
 6	å	å	PART	inf-merke	_	8	mark	_	_
 7	vere	vere	AUX	verb	VerbForm=Inf	8	cop	_	_
-8	sjølvtilstrekkeleg	sjølvtilstrekkeleg	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	4	amod	_	_
+8	sjølvtilstrekkeleg	sjølvtilstrekkeleg	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	4	acl	_	_
 9	-	$-	PUNCT	<strek>	_	10	punct	_	_
 10	autark	autark	NOUN	subst	Definite=Ind|Gender=Masc	4	appos	_	_
 11	-	$-	PUNCT	<strek>	_	10	punct	_	_
@@ -11232,7 +11232,7 @@
 4	sunne	sunn	ADJ	adj	Degree=Pos|Number=Plur	5	amod	_	_
 5	ideal	ideal	NOUN	subst	Definite=Ind|Gender=Neut|Number=Plur	0	root	_	_
 6	i	i	ADP	prep	_	8	case	_	_
-7	vår	vår	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	8	det	_	_
+7	vår	vår	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	8	nmod:poss	_	_
 8	tid	tid	NOUN	subst	Definite=Ind|Gender=Fem	5	obl	_	SpaceAfter=No
 9	,	$,	PUNCT	<komma>	_	12	punct	_	_
 10	der	der	SCONJ	sbu	_	12	mark	_	_
@@ -11428,10 +11428,10 @@
 2	Kysser	kysse	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 3	du	du	PRON	pron	Animacy=Hum|Case=Nom|Person=2|PronType=Prs	2	nsubj	_	_
 4	barnet	barn	NOUN	subst	Gender=Neut	2	obj	_	_
-5	ditt	din	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	4	det	_	_
+5	ditt	din	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	4	nmod:poss	_	_
 6	eller	eller	CCONJ	konj	_	7	cc	_	_
 7	kona	kone	NOUN	subst	Gender=Fem	4	conj	_	_
-8	di	din	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	7	det	_	SpaceAfter=No
+8	di	din	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	7	nmod:poss	_	SpaceAfter=No
 9	,	$,	PUNCT	<komma>	_	11	punct	_	_
 10	så	så	ADV	adv	_	11	advmod	_	_
 11	hugs	hugse	VERB	verb	Mood=Imp|VerbForm=Fin	2	conj	_	SpaceAfter=No
@@ -11454,7 +11454,7 @@
 3	,	$,	PUNCT	<komma>	_	1	punct	_	_
 4	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	8	cop	_	_
 5	sjela	sjel	NOUN	subst	Gender=Fem	8	nsubj	_	_
-6	di	din	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	5	det	_	_
+6	di	din	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	5	nmod:poss	_	_
 7	like	like	ADV	adv	_	8	advmod	_	_
 8	roleg	roleg	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	0	root	_	SpaceAfter=No
 9	.	$.	PUNCT	clb	_	8	punct	_	SpaceAfter=No
@@ -11687,7 +11687,7 @@
 6	som	som	SCONJ	sbu	_	9	mark	_	_
 7	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	9	cop	_	_
 8	så	så	ADV	adv	_	9	advmod	_	_
-9	tiltalande	tiltalande	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	1	amod	_	SpaceAfter=No
+9	tiltalande	tiltalande	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	1	acl:relcl	_	SpaceAfter=No
 10	?	$?	PUNCT	clb	_	1	punct	_	_
 
 # sent_id = 014788
@@ -11958,9 +11958,9 @@
 8	tenkjemåte	tenkjemåte	NOUN	subst	Definite=Ind|Gender=Masc	5	nmod	_	_
 9	som	som	SCONJ	sbu	_	11	mark	_	_
 10	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	11	cop	_	_
-11	utbreidd	utbreidd	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	8	amod	_	_
+11	utbreidd	utbreidd	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	8	acl:relcl	_	_
 12	i	i	ADP	prep	_	15	case	_	_
-13	vår	vår	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	15	det	_	_
+13	vår	vår	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	15	nmod:poss	_	_
 14	seinmoderne	seinmoderne	ADJ	adj	Degree=Pos	15	amod	_	_
 15	kultur	kultur	NOUN	subst	Definite=Ind|Gender=Masc	11	obl	_	SpaceAfter=No
 16	:	$:	PUNCT	clb	_	21	punct	_	_
@@ -12324,12 +12324,12 @@
 1	Dei	dei	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=3|PronType=Prs	2	nsubj	_	_
 2	viser	vise	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 3	oss	vi	PRON	pron	Animacy=Hum|Case=Acc|Number=Plur|Person=1|PronType=Prs	2	iobj	_	_
-4	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	6	det	_	_
+4	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	6	nmod:poss	_	_
 5	eigne	eigen	DET	det	Number=Plur|PronType=Prs	6	det	_	_
 6	blindsoner	blindsone	NOUN	subst	Definite=Ind|Gender=Fem|Number=Plur	2	obj	_	SpaceAfter=No
 7	,	$,	PUNCT	<komma>	_	11	punct	_	_
 8	eller	eller	CCONJ	konj	_	11	cc	_	_
-9	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	11	det	_	_
+9	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	11	nmod:poss	_	_
 10	eigen	eigen	DET	det	Definite=Ind|Gender=Masc|PronType=Prs	11	det	_	_
 11	mangel	mangel	NOUN	subst	Definite=Ind|Gender=Masc	6	conj	_	_
 12	på	på	ADP	prep	_	13	case	_	_
@@ -12388,7 +12388,7 @@
 22	den	den	DET	det	Gender=Masc|PronType=Dem	24	det	_	_
 23	storforlangande	storforlangande	ADJ	adj	Degree=Pos	24	amod	_	_
 24	kjærasten	kjærast	NOUN	subst	Gender=Masc	20	nmod	_	_
-25	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	24	det	_	SpaceAfter=No
+25	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	24	nmod:poss	_	SpaceAfter=No
 26	.	$.	PUNCT	clb	_	3	punct	_	_
 
 # sent_id = 014826
@@ -12417,7 +12417,7 @@
 22	har	ha	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	23	aux	_	_
 23	mist	miste	VERB	verb	VerbForm=Part	8	advcl	_	_
 24	son	son	NOUN	subst	Definite=Ind|Gender=Masc	23	obj	_	_
-25	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	24	det	_	_
+25	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	24	nmod:poss	_	_
 26	i	i	ADP	prep	_	27	case	_	_
 27	krybbedød	krybbedød	NOUN	subst	Definite=Ind|Gender=Masc	23	obl	_	SpaceAfter=No
 28	.	$.	PUNCT	clb	_	8	punct	_	_
@@ -12491,7 +12491,7 @@
 4	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	0	root	_	_
 5	som	som	SCONJ	sbu	_	7	mark	_	_
 6	var	vere	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	7	cop	_	_
-7	komme	komme	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	4	amod	_	_
+7	komme	komme	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	4	acl:relcl	_	_
 8	ut	ut	ADV	prep	_	7	advmod	_	SpaceAfter=No
 9	?	$?	PUNCT	clb	_	4	punct	_	SpaceAfter=No
 10	»	$"	PUNCT	<anf>	_	4	punct	_	_
@@ -12515,7 +12515,7 @@
 # sent_id = 014831
 # text = Nettopp deira eigen prøvande eller mangelfulle refleksjon over livet fann eg svært fascinerande, og eg las desse novellene to gonger av rein lyst til å sjå om det kanskje stod meir der enn eg hadde sett fyrste gongen.
 1	Nettopp	nettopp	ADV	adv	_	7	advmod	_	_
-2	deira	deira	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	7	det	_	_
+2	deira	deira	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	7	nmod:poss	_	_
 3	eigen	eigen	DET	det	Definite=Ind|Gender=Masc|PronType=Prs	7	det	_	_
 4	prøvande	prøve	ADJ	adj	VerbForm=Part	7	amod	_	_
 5	eller	eller	CCONJ	konj	_	6	cc	_	_
@@ -12670,7 +12670,7 @@
 19	til	til	ADP	prep	_	21	case	_	_
 20	å	å	PART	inf-merke	_	21	mark	_	_
 21	fremje	fremje	VERB	verb	VerbForm=Inf	13	advcl	_	_
-22	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	23	det	_	_
+22	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	23	nmod:poss	_	_
 23	kandidat	kandidat	NOUN	subst	Definite=Ind|Gender=Masc	21	obj	_	SpaceAfter=No
 24	.	$.	PUNCT	clb	_	5	punct	_	_
 
@@ -12802,7 +12802,7 @@
 20	kjenner	kjenne	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	3	advcl	_	_
 21	at	at	SCONJ	sbu	_	24	mark	_	_
 22	tungene	tunge	NOUN	subst	Gender=Fem|Number=Plur	24	nsubj	_	_
-23	deira	deira	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	22	det	_	_
+23	deira	deira	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	22	nmod:poss	_	_
 24	hovnar	hovne	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	20	ccomp	_	_
 25	opp	opp	ADV	prep	_	24	advmod	_	_
 26	og	og	CCONJ	konj	_	27	cc	_	_
@@ -12827,7 +12827,7 @@
 11	seier	seie	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	3	advcl	_	_
 12	til	til	ADP	prep	_	13	case	_	_
 13	son	son	NOUN	subst	Definite=Ind|Gender=Masc	11	obl	_	_
-14	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	13	det	_	SpaceAfter=No
+14	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	13	nmod:poss	_	SpaceAfter=No
 15	:	$:	PUNCT	clb	_	3	punct	_	_
 
 # sent_id = 014844
@@ -12841,7 +12841,7 @@
 7	grunnverdiane	grunnverdi	NOUN	subst	Gender=Masc|Number=Plur	6	obj	_	_
 8	i	i	ADP	prep	_	9	case	_	_
 9	samfunnet	samfunn	NOUN	subst	Gender=Neut	6	obl	_	_
-10	vårt	vår	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	9	det	_	SpaceAfter=No
+10	vårt	vår	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	9	nmod:poss	_	SpaceAfter=No
 11	,	$,	PUNCT	<komma>	_	14	punct	_	_
 12	skal	skulle	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	14	aux	_	_
 13	de	de	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=2|PronType=Prs	14	nsubj	_	_
@@ -13147,7 +13147,7 @@
 7	himmelen	himmel	NOUN	subst	Gender=Masc	4	obl	_	SpaceAfter=No
 8	,	$,	PUNCT	<komma>	_	14	punct	_	_
 9	natta	natt	NOUN	subst	Gender=Fem	10	obl	_	_
-10	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	11	det	_	_
+10	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	11	nmod:poss	_	_
 11	mold	mold	NOUN	subst	Definite=Ind|Gender=Fem	14	nsubj	_	_
 12	var	vere	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	14	cop	_	_
 13	på	på	ADP	prep	_	14	case	_	_
@@ -13330,7 +13330,7 @@
 5	minst	liten	ADJ	adj	Definite=Ind|Degree=Sup	6	advmod	_	_
 6	25	25	NUM	det	Number=Plur|NumType=Card	3	obj	_	_
 7	av	av	ADP	prep	_	9	case	_	_
-8	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	9	det	_	_
+8	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	9	nmod:poss	_	_
 9	næraste	nær	ADJ	adj	Degree=Sup	6	amod	_	_
 10	i	i	ADP	prep	_	11	case	_	_
 11	salen	sal	NOUN	subst	Gender=Masc	3	xcomp	_	_
@@ -13435,7 +13435,7 @@
 12	ikkje	ikkje	ADV	adv	_	15	advmod	_	_
 13	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	15	cop	_	_
 14	betre	god	ADJ	adj	Degree=Cmp	15	advmod	_	_
-15	utrusta	utruste	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	6	amod	_	_
+15	utrusta	utruste	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	6	acl	_	_
 16	enn	enn	ADP	prep	_	20	case	_	_
 17	kva	kva	PRON	pron	PronType=Int	20	nsubj	_	_
 18	som	som	SCONJ	sbu	_	20	mark	_	_
@@ -13579,9 +13579,9 @@
 
 # sent_id = 014883
 # text = Bygningen vart restaurert og pussa opp med Rekkedals-midlar på 80-talet.
-1	Bygningen	bygning	NOUN	subst	Gender=Masc	2	nsubj	_	_
-2	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
-3	restaurert	restaurere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	2	ccomp	_	_
+1	Bygningen	bygning	NOUN	subst	Gender=Masc	3	nsubj:pass	_	_
+2	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	aux:pass	_	_
+3	restaurert	restaurere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	0	root	_	_
 4	og	og	CCONJ	konj	_	5	cc	_	_
 5	pussa	pusse	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	3	conj	_	_
 6	opp	opp	ADV	prep	_	5	advmod	_	_
@@ -13589,20 +13589,20 @@
 8	Rekkedals-midlar	Rekkedals-midel	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	5	obl	_	_
 9	på	på	ADP	prep	_	10	case	_	_
 10	80-talet	80-tal	NOUN	subst	Gender=Neut	5	obl	_	SpaceAfter=No
-11	.	$.	PUNCT	clb	_	2	punct	_	_
+11	.	$.	PUNCT	clb	_	3	punct	_	_
 
 # sent_id = 014884
 # text = Fullverdiforsikring gjer at det økonomiske tapet for kommunen vert redusert til nokre ti tusen kroner i eigendel.
 1	Fullverdiforsikring	fullverdiforsikring	NOUN	subst	Definite=Ind|Gender=Fem	2	nsubj	_	_
 2	gjer	gjere	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
-3	at	at	SCONJ	sbu	_	9	mark	_	_
+3	at	at	SCONJ	sbu	_	10	mark	_	_
 4	det	det	DET	det	Gender=Neut|PronType=Dem	6	det	_	_
 5	økonomiske	økonomisk	ADJ	adj	Degree=Pos	6	amod	_	_
-6	tapet	tap	NOUN	subst	Gender=Neut	9	nsubj	_	_
+6	tapet	tap	NOUN	subst	Gender=Neut	10	nsubj:pass	_	_
 7	for	for	ADP	prep	_	8	case	_	_
 8	kommunen	kommune	NOUN	subst	Gender=Masc	6	nmod	_	_
-9	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	2	ccomp	_	_
-10	redusert	redusere	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	9	ccomp	_	_
+9	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	10	aux:pass	_	_
+10	redusert	redusere	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	2	xcomp	_	_
 11	til	til	ADP	prep	_	15	case	_	_
 12	nokre	nokon	DET	det	Number=Plur|PronType=Ind	13	det	_	_
 13	ti	ti	NUM	det	Number=Plur|NumType=Card	14	nummod	_	_
@@ -13620,7 +13620,7 @@
 4	vekk	vekk	ADP	prep	_	10	case	_	_
 5	frå	frå	ADP	prep	_	10	case	_	_
 6	at	at	SCONJ	sbu	_	10	mark	_	_
-7	bygningen	bygning	NOUN	subst	Gender=Masc	10	nsubj	_	_
+7	bygningen	bygning	NOUN	subst	Gender=Masc	10	nsubj:pass	_	_
 8	kan	kunne	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	10	aux	_	_
 9	bli	bli	AUX	verb	VerbForm=Inf	10	aux:pass	_	_
 10	bygd	byggje	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	2	advcl	_	_
@@ -13705,7 +13705,7 @@
 # sent_id = 014890
 # text = Plata hennar « Bliss » selde til gull, og ho er den tredje mest søkte personen på nettet.
 1	Plata	plate	NOUN	subst	Gender=Fem	6	nsubj	_	_
-2	hennar	hennar	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	1	det	_	_
+2	hennar	hennar	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	1	nmod:poss	_	_
 3	«	$"	PUNCT	<anf>	_	4	punct	_	_
 4	Bliss	Bliss	PROPN	subst	_	1	appos	_	_
 5	»	$"	PUNCT	<anf>	_	4	punct	_	_
@@ -14036,7 +14036,7 @@
 12	ein	ein	DET	det	Gender=Masc|PronType=Art	6	conj	_	_
 13	av	av	ADP	prep	_	20	case	_	_
 14	Norge	Norge	PROPN	subst	_	15	obl	_	_
-15	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	20	det	_	_
+15	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	20	nmod:poss	_	_
 16	mest	mykje	ADJ	adj	Definite=Ind|Degree=Sup	17	advmod	_	_
 17	populære	populær	ADJ	adj	Degree=Pos|Number=Plur	20	amod	_	_
 18	og	og	CCONJ	konj	_	19	cc	_	_
@@ -14163,7 +14163,7 @@
 17	få	få	AUX	verb	VerbForm=Inf	18	aux	_	_
 18	spelt	spele	VERB	verb	VerbForm=Part	14	acl	_	_
 19	låta	låt	NOUN	subst	Gender=Masc	18	obj	_	_
-20	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	19	det	_	_
+20	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	19	nmod:poss	_	_
 21	for	for	ADP	prep	_	22	case	_	_
 22	publikum	publikum	NOUN	subst	Definite=Ind|Gender=Neut	18	obl	_	SpaceAfter=No
 23	.	$.	PUNCT	clb	_	2	punct	_	_
@@ -14353,8 +14353,8 @@
 
 # sent_id = 014937
 # text = Vart stoppa
-1	Vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
-2	stoppa	stoppe	ADJ	adj	Number=Plur|VerbForm=Part	1	ccomp	_	_
+1	Vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	2	aux:pass	_	_
+2	stoppa	stoppe	ADJ	adj	Number=Plur|VerbForm=Part	0	root	_	_
 
 # sent_id = 014938
 # text = Etter det firda.no kjenner til skal ein eller begge bilane ha blitt stoppa av politiet sine patruljar seinare på natta.
@@ -14367,13 +14367,13 @@
 7	ein	ein	DET	det	Gender=Masc|PronType=Art	10	det	_	_
 8	eller	eller	CCONJ	konj	_	9	cc	_	_
 9	begge	begge	DET	det	Number=Plur|PronType=Tot	7	conj	_	_
-10	bilane	bil	NOUN	subst	Gender=Masc|Number=Plur	13	nsubj	_	_
+10	bilane	bil	NOUN	subst	Gender=Masc|Number=Plur	13	nsubj:pass	_	_
 11	ha	ha	AUX	verb	VerbForm=Inf	13	aux	_	_
 12	blitt	bli	AUX	verb	VerbForm=Part	13	aux:pass	_	_
 13	stoppa	stoppe	ADJ	adj	Number=Plur|VerbForm=Part	0	root	_	_
 14	av	av	ADP	prep	_	17	case	_	_
 15	politiet	politi	NOUN	subst	Gender=Neut	16	obl	_	_
-16	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	17	det	_	_
+16	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	17	nmod:poss	_	_
 17	patruljar	patrulje	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	13	obl	_	_
 18	seinare	sein	ADJ	adj	Degree=Cmp	20	advmod	_	_
 19	på	på	ADP	prep	_	20	case	_	_
@@ -14411,7 +14411,7 @@
 
 # sent_id = 014940
 # text = Saka blir følgt opp
-1	Saka	sak	NOUN	subst	Gender=Fem	3	nsubj	_	_
+1	Saka	sak	NOUN	subst	Gender=Fem	3	nsubj:pass	_	_
 2	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	3	aux:pass	_	_
 3	følgt	følgje	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
 4	opp	opp	ADV	prep	_	3	advmod	_	_
@@ -14447,15 +14447,15 @@
 6	ikkje	ikkje	ADV	adv	_	7	advmod	_	_
 7	har	ha	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	2	ccomp	_	_
 8	oversikt	oversikt	NOUN	subst	Definite=Ind|Gender=Fem	7	obj	_	_
-9	om	om	SCONJ	sbu	_	11	mark	_	_
-10	nokon	nokon	PRON	pron	Number=Plur|Person=3|PronType=Ind,Prs	11	nsubj	_	_
-11	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	8	acl:relcl	_	_
-12	skadd	skade	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	11	ccomp	_	SpaceAfter=No
+9	om	om	SCONJ	sbu	_	12	mark	_	_
+10	nokon	nokon	PRON	pron	Number=Plur|Person=3|PronType=Ind,Prs	12	nsubj:pass	_	_
+11	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	12	aux:pass	_	_
+12	skadd	skade	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	8	acl:relcl	_	SpaceAfter=No
 13	.	$.	PUNCT	clb	_	2	punct	_	_
 
 # sent_id = 014943
 # text = Saka vil bli følgt opp av politiet i Flora.
-1	Saka	sak	NOUN	subst	Gender=Fem	4	nsubj	_	_
+1	Saka	sak	NOUN	subst	Gender=Fem	4	nsubj:pass	_	_
 2	vil	vilje	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	4	aux	_	_
 3	bli	bli	AUX	verb	VerbForm=Inf	4	aux:pass	_	_
 4	følgt	følgje	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
@@ -14475,11 +14475,11 @@
 5	ein	ein	DET	det	Gender=Masc|PronType=Art	3	obl	_	_
 6	månad	månad	NOUN	subst	Definite=Ind|Gender=Masc	0	root	_	_
 7	sidan	sidan	ADV	adv	_	6	advmod	_	_
-8	at	at	SCONJ	sbu	_	11	mark	_	_
+8	at	at	SCONJ	sbu	_	12	mark	_	_
 9	tre	tre	NUM	det	Number=Plur|NumType=Card	10	nummod	_	_
-10	personar	person	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	11	nsubj	_	_
-11	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	6	csubj	_	_
-12	arresterte	arrestere	ADJ	adj	Number=Plur|VerbForm=Part	11	ccomp	_	_
+10	personar	person	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	12	nsubj:pass	_	_
+11	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	12	aux:pass	_	_
+12	arresterte	arrestere	ADJ	adj	Number=Plur|VerbForm=Part	6	csubj	_	_
 13	etter	etter	ADP	prep	_	16	case	_	_
 14	eit	ein	DET	det	Gender=Neut|PronType=Art	16	det	_	_
 15	større	stor	ADJ	adj	Degree=Cmp	16	amod	_	_
@@ -14506,13 +14506,13 @@
 # text = Same helga vart ein dørvakt ved utestaden Shamrock truga på livet etter å ha nekta dei same tsjetsjenarane å kome inn på utestaden.
 1	Same	same	DET	det	PronType=Dem	2	det	_	_
 2	helga	helg	NOUN	subst	Gender=Fem	9	obl	_	_
-3	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
+3	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	9	aux:pass	_	_
 4	ein	ein	DET	det	Gender=Masc|PronType=Art	5	det	_	_
-5	dørvakt	dørvakt	NOUN	subst	Definite=Ind|Gender=Fem	3	nsubj	_	_
+5	dørvakt	dørvakt	NOUN	subst	Definite=Ind|Gender=Fem	9	nsubj:pass	_	_
 6	ved	ved	ADP	prep	_	7	case	_	_
 7	utestaden	utestad	NOUN	subst	Gender=Masc	5	nmod	_	_
 8	Shamrock	Shamrock	PROPN	subst	_	7	appos	_	_
-9	truga	truge	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	3	ccomp	_	_
+9	truga	truge	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	0	root	_	_
 10	på	på	ADP	prep	_	11	case	_	_
 11	livet	liv	NOUN	subst	Gender=Neut	9	obl	_	_
 12	etter	etter	ADP	prep	_	15	case	_	_
@@ -14527,7 +14527,7 @@
 21	inn	inn	ADP	prep	_	23	case	_	_
 22	på	på	ADP	prep	_	23	case	_	_
 23	utestaden	utestad	NOUN	subst	Gender=Masc	20	obl	_	SpaceAfter=No
-24	.	$.	PUNCT	clb	_	3	punct	_	_
+24	.	$.	PUNCT	clb	_	9	punct	_	_
 
 # sent_id = 014947
 # text = Trugsmålet spreidde frykt, og utestaden fekk politibeskyttelse av totalt åtte polititenestemenn.
@@ -14555,13 +14555,13 @@
 # newpar
 # sent_id = 014949
 # text = Vart sendt til Haukeland med luftambulanse.
-1	Vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
-2	sendt	sende	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	1	ccomp	_	_
+1	Vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	2	aux:pass	_	_
+2	sendt	sende	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	0	root	_	_
 3	til	til	ADP	prep	_	4	case	_	_
 4	Haukeland	Haukeland	PROPN	subst	_	2	obl	_	_
 5	med	med	ADP	prep	_	6	case	_	_
 6	luftambulanse	luftambulanse	NOUN	subst	Definite=Ind|Gender=Masc	2	obl	_	SpaceAfter=No
-7	.	$.	PUNCT	clb	_	1	punct	_	_
+7	.	$.	PUNCT	clb	_	2	punct	_	_
 
 # sent_id = 014950
 # text = Ved 01.20-tida rykka politiet ut etter melding om slossing utafor ein utestad i Vik i Sogn.
@@ -14613,15 +14613,15 @@
 
 # sent_id = 014953
 # text = Mannen vart sendt med luftambulanse til Haukeland Universitessjukehus.
-1	Mannen	mann	NOUN	subst	Gender=Masc	2	nsubj	_	_
-2	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
-3	sendt	sende	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	2	ccomp	_	_
+1	Mannen	mann	NOUN	subst	Gender=Masc	3	nsubj:pass	_	_
+2	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	aux:pass	_	_
+3	sendt	sende	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	0	root	_	_
 4	med	med	ADP	prep	_	5	case	_	_
 5	luftambulanse	luftambulanse	NOUN	subst	Definite=Ind|Gender=Masc	3	obl	_	_
 6	til	til	ADP	prep	_	7	case	_	_
 7	Haukeland	Haukeland	PROPN	subst	_	3	obl	_	_
 8	Universitessjukehus	Universitessjukehus	PROPN	subst	_	7	flat:name	_	SpaceAfter=No
-9	.	$.	PUNCT	clb	_	2	punct	_	_
+9	.	$.	PUNCT	clb	_	3	punct	_	_
 
 # sent_id = 014954
 # text = Politiet veit ikkje kor mange personar som deltok i slossinga, og har heller ingen opplysningar om at det skal ha blitt nytta gjenstander.
@@ -14647,7 +14647,7 @@
 20	skal	skulle	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	23	aux	_	_
 21	ha	ha	AUX	verb	VerbForm=Inf	23	aux	_	_
 22	blitt	bli	AUX	verb	VerbForm=Part	23	aux:pass	_	_
-23	nytta	nytte	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	16	amod	_	_
+23	nytta	nytte	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	16	acl	_	_
 24	gjenstander	gjenstand	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	23	obj	_	SpaceAfter=No
 25	.	$.	PUNCT	clb	_	2	punct	_	_
 
@@ -15166,12 +15166,12 @@
 
 # sent_id = 014992
 # text = Lureprinsen blei unnfanga då mor hans sjølv var kalv - ikkje meir enn seks månader gammal.
-1	Lureprinsen	Lureprinsen	PROPN	subst	_	3	nsubj	_	_
+1	Lureprinsen	Lureprinsen	PROPN	subst	_	3	nsubj:pass	_	_
 2	blei	bli	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	aux:pass	_	_
 3	unnfanga	unnfange	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	0	root	_	_
 4	då	då	SCONJ	sbu	_	9	mark	_	_
 5	mor	mor	NOUN	subst	Definite=Ind|Gender=Fem	9	nsubj	_	_
-6	hans	hans	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	5	det	_	_
+6	hans	hans	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	5	nmod:poss	_	_
 7	sjølv	sjølv	DET	det	PronType=Prs	5	det	_	_
 8	var	vere	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	9	cop	_	_
 9	kalv	kalv	NOUN	subst	Definite=Ind|Gender=Masc	3	obl	_	_
@@ -15241,7 +15241,7 @@
 8	dei	dei	DET	det	Number=Plur|PronType=Dem	10	det	_	_
 9	stolte	stolt	ADJ	adj	Degree=Pos|Number=Plur	10	amod	_	_
 10	eigarane	eigar	NOUN	subst	Gender=Masc|Number=Plur	6	nmod	_	_
-11	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	10	det	_	SpaceAfter=No
+11	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	10	nmod:poss	_	SpaceAfter=No
 12	,	$,	PUNCT	<komma>	_	13	punct	_	_
 13	Steinar	Steinar	PROPN	subst	Gender=Masc	10	appos	_	_
 14	og	og	CCONJ	konj	_	15	cc	_	_
@@ -15520,7 +15520,7 @@
 3	for	for	ADP	prep	_	9	case	_	_
 4	at	at	SCONJ	sbu	_	9	mark	_	_
 5	helsa	helse	NOUN	subst	Gender=Fem	9	nsubj	_	_
-6	hennar	hennar	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	5	det	_	_
+6	hennar	hennar	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	5	nmod:poss	_	_
 7	ikkje	ikkje	ADV	adv	_	9	advmod	_	_
 8	ville	vilje	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	9	aux	_	_
 9	tole	tole	VERB	verb	VerbForm=Inf	2	acl	_	_
@@ -15941,14 +15941,14 @@
 12	og	og	CCONJ	konj	_	14	cc	_	_
 13	å	å	PART	inf-merke	_	14	mark	_	_
 14	endre	endre	VERB	verb	VerbForm=Inf	8	conj	_	_
-15	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	16	det	_	_
+15	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	16	nmod:poss	_	_
 16	image	image	NOUN	subst	Definite=Ind|Gender=Neut	14	obj	_	SpaceAfter=No
 17	.	$.	PUNCT	clb	_	3	punct	_	_
 
 # sent_id = 015036
 # text = - Vi blir konfrontert med at folk flyttar som piska skinn frå Sogn og Fjordane.
 1	-	$-	PUNCT	<strek>	_	4	punct	_	_
-2	Vi	vi	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=1|PronType=Prs	4	nsubj	_	_
+2	Vi	vi	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=1|PronType=Prs	4	nsubj:pass	_	_
 3	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	4	aux:pass	_	_
 4	konfrontert	konfrontere	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
 5	med	med	ADP	prep	_	8	case	_	_
@@ -16059,7 +16059,7 @@
 4	sit	sitje	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 5	med	med	ADP	prep	_	6	case	_	_
 6	pappskallen	pappskalle	NOUN	subst	Gender=Masc	4	obl	_	_
-7	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	6	det	_	_
+7	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	6	nmod:poss	_	_
 8	under	under	ADP	prep	_	9	case	_	_
 9	vatn	vatn	NOUN	subst	Definite=Ind|Gender=Neut	6	xcomp	_	_
 10	i	i	ADP	prep	_	11	case	_	_
@@ -16311,9 +16311,9 @@
 # text = Etter reaksjonane hennar på Sogn og Fjordanes bunadsbidrag til kongens bursdag i 2007, fekk Viken mykje mediemerksemd.
 1	Etter	etter	ADP	prep	_	2	case	_	_
 2	reaksjonane	reaksjon	NOUN	subst	Gender=Masc|Number=Plur	15	obl	_	_
-3	hennar	hennar	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	2	det	_	_
+3	hennar	hennar	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	2	nmod:poss	_	_
 4	på	på	ADP	prep	_	8	case	_	_
-5	Sogn	Sogn	PROPN	subst	_	8	nmod	_	_
+5	Sogn	Sogn	PROPN	subst	_	8	nmod:poss	_	_
 6	og	og	CCONJ	konj	_	5	flat:name	_	_
 7	Fjordanes	Fjordane	PROPN	subst	Case=Gen	5	flat:name	_	_
 8	bunadsbidrag	bunadsbidrag	NOUN	subst	Definite=Ind|Gender=Neut	2	nmod	_	_
@@ -16733,7 +16733,7 @@
 
 # sent_id = 015084
 # text = Mannen blei sist sett i sentrum natt til fredag, men kom til rette laurdag natt att.
-1	Mannen	mann	NOUN	subst	Gender=Masc	4	nsubj	_	_
+1	Mannen	mann	NOUN	subst	Gender=Masc	4	nsubj:pass	_	_
 2	blei	bli	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	4	aux:pass	_	_
 3	sist	sist	ADV	adv	_	4	advmod	_	_
 4	sett	sjå	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	0	root	_	_
@@ -16921,10 +16921,10 @@
 5	til	til	ADP	prep	_	6	case	_	_
 6	rette	rett	ADJ	adj	Degree=Pos	3	advmod	_	_
 7	att	att	ADV	prep	_	3	advmod	_	_
-8	-	$-	PUNCT	<strek>	_	10	punct	_	_
-9	20-åringen	20-åring	NOUN	subst	Gender=Masc	10	nsubj	_	_
-10	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	conj	_	_
-11	funnen	finne	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	10	ccomp	_	_
+8	-	$-	PUNCT	<strek>	_	11	punct	_	_
+9	20-åringen	20-åring	NOUN	subst	Gender=Masc	11	nsubj:pass	_	_
+10	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	11	aux:pass	_	_
+11	funnen	finne	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	3	conj	_	_
 12	sovande	sove	ADJ	adj	VerbForm=Part	11	xcomp	_	_
 13	på	på	ADP	prep	_	15	case	_	_
 14	ein	ein	DET	det	Gender=Masc|PronType=Art	15	det	_	_
@@ -17130,7 +17130,7 @@
 5	og	og	CCONJ	konj	_	6	cc	_	_
 6	fremst	fremre	ADJ	adj	Definite=Ind|Degree=Sup	4	conj	_	_
 7	setje	setje	VERB	verb	VerbForm=Inf	0	root	_	_
-8	vår	vår	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	9	det	_	_
+8	vår	vår	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	9	nmod:poss	_	_
 9	lit	lit	NOUN	subst	Definite=Ind|Gender=Fem	7	obj	_	_
 10	til	til	ADP	prep	_	22	case	_	_
 11	at	at	SCONJ	sbu	_	22	mark	_	_
@@ -17206,15 +17206,15 @@
 # sent_id = 015108
 # text = Etnestads inntrykk blir stadfesta av tal som søndag vart presenterte i Bergens Tidende.
 1	Etnestads	Etnestad	PROPN	subst	Case=Gen	2	nmod	_	_
-2	inntrykk	inntrykk	NOUN	subst	Definite=Ind|Gender=Neut	4	nsubj	_	_
+2	inntrykk	inntrykk	NOUN	subst	Definite=Ind|Gender=Neut	4	nsubj:pass	_	_
 3	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	4	aux:pass	_	_
 4	stadfesta	stadfeste	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
 5	av	av	ADP	prep	_	6	case	_	_
 6	tal	tal	NOUN	subst	Definite=Ind|Gender=Neut|Number=Plur	4	obl	_	_
-7	som	som	SCONJ	sbu	_	9	mark	_	_
-8	søndag	søndag	NOUN	subst	Definite=Ind|Gender=Masc	9	nsubj	_	_
-9	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	6	acl:relcl	_	_
-10	presenterte	presentere	ADJ	adj	Number=Plur|VerbForm=Part	9	ccomp	_	_
+7	som	som	SCONJ	sbu	_	10	mark	_	_
+8	søndag	søndag	NOUN	subst	Definite=Ind|Gender=Masc	10	nsubj:pass	_	_
+9	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	10	aux:pass	_	_
+10	presenterte	presentere	ADJ	adj	Number=Plur|VerbForm=Part	6	acl:relcl	_	_
 11	i	i	ADP	prep	_	12	case	_	_
 12	Bergens	Bergens	PROPN	subst	_	10	obl	_	_
 13	Tidende	Tidende	PROPN	subst	_	12	flat:name	_	SpaceAfter=No
@@ -17358,7 +17358,7 @@
 20	løyva	løyve	NOUN	subst	Gender=Neut|Number=Plur	18	obj	_	_
 21	som	som	SCONJ	sbu	_	23	mark	_	_
 22	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	23	aux:pass	_	_
-23	gitt	gi	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	20	amod	_	SpaceAfter=No
+23	gitt	gi	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	20	acl:relcl	_	SpaceAfter=No
 24	.	$.	PUNCT	clb	_	4	punct	_	_
 
 # sent_id = 015116
@@ -17411,7 +17411,7 @@
 7	etter	etter	ADP	prep	_	10	case	_	_
 8	at	at	SCONJ	sbu	_	10	mark	_	_
 9	ho	ho	PRON	pron	Case=Nom|Gender=Fem|Person=3|PronType=Prs	10	nsubj	_	_
-10	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	4	advcl	_	_
+10	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	4	advcl	_	_
 11	utskriven	utskriven	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	10	ccomp	_	_
 12	frå	frå	ADP	prep	_	13	case	_	_
 13	Førde	Førde	PROPN	subst	_	11	obl	_	_
@@ -17441,7 +17441,7 @@
 10	unge	ung	ADJ	adj	Degree=Pos	11	amod	_	_
 11	kvinne	kvinne	NOUN	subst	Definite=Ind|Gender=Fem	7	obl	_	_
 12	som	som	SCONJ	sbu	_	13	mark	_	_
-13	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	11	acl:relcl	_	_
+13	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	11	acl:relcl	_	_
 14	utskriven	utskriven	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	13	ccomp	_	_
 15	frå	frå	ADP	prep	_	16	case	_	_
 16	Førde	Førde	PROPN	subst	_	14	obl	_	_
@@ -17462,9 +17462,9 @@
 
 # sent_id = 015123
 # text = Kvinna vart innskriven ved sentralsjukehuset i Førde med mistanke om blodpropp i lungene.
-1	Kvinna	kvinne	NOUN	subst	Gender=Fem	2	nsubj	_	_
-2	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
-3	innskriven	innskrive	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	2	ccomp	_	_
+1	Kvinna	kvinne	NOUN	subst	Gender=Fem	3	nsubj:pass	_	_
+2	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	aux:pass	_	_
+3	innskriven	innskrive	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	0	root	_	_
 4	ved	ved	ADP	prep	_	5	case	_	_
 5	sentralsjukehuset	sentralsjukehus	NOUN	subst	Gender=Neut	3	obl	_	_
 6	i	i	ADP	prep	_	7	case	_	_
@@ -17475,7 +17475,7 @@
 11	blodpropp	blodpropp	NOUN	subst	Definite=Ind|Gender=Masc	9	nmod	_	_
 12	i	i	ADP	prep	_	13	case	_	_
 13	lungene	lunge	NOUN	subst	Gender=Fem|Number=Plur	11	nmod	_	SpaceAfter=No
-14	.	$.	PUNCT	clb	_	2	punct	_	_
+14	.	$.	PUNCT	clb	_	3	punct	_	_
 
 # sent_id = 015124
 # text = Ho fekk diagnosen lungebetennelse, og sjukehuset avslutta dermed behandlinga for blodpropp.
@@ -17527,7 +17527,7 @@
 14	der	der	SCONJ	sbu	_	17	mark	_	_
 15	ho	ho	PRON	pron	Case=Nom|Gender=Fem|Person=3|PronType=Prs	17	nsubj	_	_
 16	var	vere	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	17	cop	_	_
-17	utplassert	utplassere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	11	amod	_	_
+17	utplassert	utplassere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	11	acl:relcl	_	_
 18	i	i	ADP	prep	_	19	case	_	_
 19	praksis	praksis	NOUN	subst	Definite=Ind|Gender=Masc	17	obl	_	SpaceAfter=No
 20	.	$.	PUNCT	clb	_	2	punct	_	_
@@ -17656,7 +17656,7 @@
 
 # sent_id = 015134
 # text = Etterforskinga kan bli retta mot helseføretaket eller mot einskildpersonar- eller begge delar.
-1	Etterforskinga	etterforsking	NOUN	subst	Gender=Fem	4	nsubj	_	_
+1	Etterforskinga	etterforsking	NOUN	subst	Gender=Fem	4	nsubj:pass	_	_
 2	kan	kunne	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	4	aux	_	_
 3	bli	bli	AUX	verb	VerbForm=Inf	4	aux:pass	_	_
 4	retta	rette	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	0	root	_	_
@@ -18300,7 +18300,7 @@
 10	dei	dei	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=3|PronType=Prs	11	nsubj	_	_
 11	tape	tape	VERB	verb	VerbForm=Inf	0	root	_	_
 12	motivasjonen	motivasjon	NOUN	subst	Gender=Masc	11	obj	_	_
-13	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	12	det	_	SpaceAfter=No
+13	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	12	nmod:poss	_	SpaceAfter=No
 14	.	$.	PUNCT	clb	_	11	punct	_	_
 
 # sent_id = 015173
@@ -18367,7 +18367,7 @@
 4	derimot	derimot	ADV	adv	_	3	advmod	_	_
 5	i	i	ADP	prep	_	6	case	_	_
 6	synet	syn	NOUN	subst	Gender=Neut	3	obl	_	_
-7	hans	hans	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	6	det	_	_
+7	hans	hans	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	6	nmod:poss	_	_
 8	på	på	ADP	prep	_	14	case	_	_
 9	kva	kva	DET	det	PronType=Int	11	det	_	_
 10	erkjennelsesfilosofiske	erkjennelsesfilosofisk	ADJ	adj	Degree=Pos|Number=Plur	11	amod	_	_
@@ -18567,7 +18567,7 @@
 16	«	$"	PUNCT	<anf>	_	17	punct	_	_
 17	resultata	resultat	NOUN	subst	Gender=Neut|Number=Plur	14	obl	_	_
 18	»	$"	PUNCT	<anf>	_	17	punct	_	_
-19	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	17	det	_	SpaceAfter=No
+19	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	17	nmod:poss	_	SpaceAfter=No
 20	.	$.	PUNCT	clb	_	2	punct	_	_
 
 # sent_id = 015184
@@ -18603,7 +18603,7 @@
 3	at	at	SCONJ	sbu	_	6	mark	_	_
 4	naturvitskapen	naturvitskap	NOUN	subst	Gender=Masc	6	nsubj	_	_
 5	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	6	cop	_	_
-6	rasjonell	rasjonell	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	1	amod	_	_
+6	rasjonell	rasjonell	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	1	acl	_	_
 7	i	i	ADP	prep	_	10	case	_	_
 8	ein	ein	DET	det	Gender=Masc|PronType=Art	10	det	_	_
 9	mønstergyldig	mønstergyldig	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	10	amod	_	_
@@ -18631,7 +18631,7 @@
 10	framstillinga	framstilling	NOUN	subst	Gender=Fem	8	obl	_	_
 11	av	av	ADP	prep	_	12	case	_	_
 12	posisjonen	posisjon	NOUN	subst	Gender=Masc	10	nmod	_	_
-13	hans	hans	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	12	det	_	SpaceAfter=No
+13	hans	hans	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	12	nmod:poss	_	SpaceAfter=No
 14	,	$,	PUNCT	<komma>	_	3	punct	_	_
 15	lar	la	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 16	eg	eg	PRON	pron	Animacy=Hum|Case=Nom|Person=1|PronType=Prs	15	nsubj	_	_
@@ -18702,7 +18702,7 @@
 28	som	som	SCONJ	sbu	_	29	mark	_	_
 29	hentar	hente	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	27	acl:relcl	_	_
 30	overtalingskrafta	overtalingskraft	NOUN	subst	Gender=Fem	29	obj	_	_
-31	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	30	det	_	_
+31	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	30	nmod:poss	_	_
 32	frå	frå	ADP	prep	_	35	case	_	_
 33	den	den	DET	det	Gender=Masc|PronType=Dem	35	det	_	_
 34	tilsynelatande	tilsynelatande	ADJ	adj	Degree=Pos	35	amod	_	_
@@ -18711,7 +18711,7 @@
 37	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	35	nmod	_	_
 38	som	som	SCONJ	sbu	_	40	mark	_	_
 39	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	40	aux:pass	_	_
-40	oppdaga	oppdage	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	37	amod	_	SpaceAfter=No
+40	oppdaga	oppdage	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	37	acl:relcl	_	SpaceAfter=No
 41	.	$.	PUNCT	clb	_	2	punct	_	_
 
 # sent_id = 015190
@@ -18773,7 +18773,7 @@
 9	persuasion	persuasion	X	ukjent	_	6	appos	_	_
 10	»	$"	PUNCT	<anf>	_	9	punct	_	_
 11	)	$)	PUNCT	<parentes-slutt>	_	9	punct	_	_
-12	dei	dei	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=3|PronType=Prs	14	nsubj	_	_
+12	dei	dei	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=3|PronType=Prs	14	nsubj:pass	_	_
 13	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	14	aux:pass	_	_
 14	tolka	tolke	ADJ	adj	Number=Plur|VerbForm=Part	6	advcl	_	_
 15	og	og	CCONJ	konj	_	16	cc	_	_
@@ -18836,7 +18836,7 @@
 9	,	$,	PUNCT	<komma>	_	1	punct	_	_
 10	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	15	cop	_	_
 11	i	i	ADP	prep	_	13	case	_	_
-12	hans	hans	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	13	det	_	_
+12	hans	hans	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	13	nmod:poss	_	_
 13	framstilling	framstilling	NOUN	subst	Definite=Ind|Gender=Fem	15	obl	_	_
 14	berre	berre	ADV	adv	_	15	advmod	_	_
 15	resultat	resultat	NOUN	subst	Definite=Ind|Gender=Neut	0	root	_	_
@@ -19004,7 +19004,7 @@
 4	opplagt	opplagt	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	0	root	_	_
 5	at	at	SCONJ	sbu	_	8	mark	_	_
 6	boka	bok	NOUN	subst	Gender=Fem	8	nsubj	_	_
-7	hans	hans	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	6	det	_	_
+7	hans	hans	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	6	nmod:poss	_	_
 8	lir	li	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	4	csubj	_	_
 9	av	av	ADP	prep	_	11	case	_	_
 10	ei	ein	DET	det	Gender=Fem|PronType=Art	11	det	_	_
@@ -19114,7 +19114,7 @@
 8	påstår	påstå	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	6	acl:relcl	_	_
 9	om	om	ADP	prep	_	10	case	_	_
 10	studieobjekta	studieobjekt	NOUN	subst	Gender=Neut|Number=Plur	8	obl	_	_
-11	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	10	det	_	_
+11	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	10	nmod:poss	_	_
 12	kan	kunne	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	13	aux	_	_
 13	slå	slå	VERB	verb	VerbForm=Inf	3	xcomp	_	_
 14	tilbake	tilbake	ADP	prep	_	18	case	_	_
@@ -19190,7 +19190,7 @@
 9	ein	ein	DET	det	Gender=Masc|PronType=Art	10	det	_	_
 10	teoretikar	teoretikar	NOUN	subst	Definite=Ind|Gender=Masc	16	nsubj	_	_
 11	i	i	ADP	prep	_	14	case	_	_
-12	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	14	det	_	_
+12	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	14	nmod:poss	_	_
 13	eiga	eigen	DET	det	Definite=Ind|Gender=Fem|PronType=Prs	14	det	_	_
 14	teoretisering	teoretisering	NOUN	subst	Definite=Ind|Gender=Fem	16	obl	_	_
 15	kan	kunne	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	16	aux	_	_
@@ -19349,7 +19349,7 @@
 9	pragmatiske	pragmatisk	ADJ	adj	Degree=Pos	10	amod	_	_
 10	faktum	faktum	NOUN	subst	Definite=Ind|Gender=Neut	6	conj	_	_
 11	at	at	SCONJ	sbu	_	14	mark	_	_
-12	setninga	setning	NOUN	subst	Gender=Fem	14	nsubj	_	_
+12	setninga	setning	NOUN	subst	Gender=Fem	14	nsubj:pass	_	_
 13	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	14	aux:pass	_	_
 14	hevda	hevde	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	6	dislocated	_	_
 15	og	og	CCONJ	konj	_	17	cc	_	_
@@ -19412,7 +19412,7 @@
 10	som	som	SCONJ	sbu	_	13	mark	_	_
 11	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	13	cop	_	_
 12	like	like	ADV	adv	_	13	advmod	_	_
-13	sjølvfalsifiserande	sjølvfalsifisere	ADJ	adj	VerbForm=Part	9	amod	_	_
+13	sjølvfalsifiserande	sjølvfalsifisere	ADJ	adj	VerbForm=Part	9	acl:relcl	_	_
 14	som	som	ADP	prep	_	18	case	_	_
 15	dei	dei	DET	det	Number=Plur|PronType=Dem	18	det	_	_
 16	mest	mykje	ADJ	adj	Definite=Ind|Degree=Sup	17	advmod	_	_
@@ -19445,7 +19445,7 @@
 2	mest	mykje	ADJ	adj	Definite=Ind|Degree=Sup	3	advmod	_	_
 3	dristige	dristig	ADJ	adj	Degree=Pos|Number=Plur	4	amod	_	_
 4	skriftene	skrift	NOUN	subst	Gender=Neut|Number=Plur	6	nsubj	_	_
-5	deira	deira	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	4	det	_	_
+5	deira	deira	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	4	nmod:poss	_	_
 6	kom	kome	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
 7	i	i	ADP	prep	_	8	case	_	_
 8	løpet	løp	NOUN	subst	Gender=Neut	6	obl	_	_
@@ -19702,7 +19702,7 @@
 19	slag	slag	NOUN	subst	Definite=Ind|Gender=Neut	15	nmod	_	_
 20	som	som	SCONJ	sbu	_	22	mark	_	_
 21	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	22	cop	_	_
-22	ukjent	ukjend	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	19	amod	_	_
+22	ukjent	ukjend	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	19	acl:relcl	_	_
 23	i	i	ADP	prep	_	24	case	_	_
 24	dag	dag	NOUN	subst	Definite=Ind|Gender=Masc	22	obl	_	SpaceAfter=No
 25	)	$)	PUNCT	<parentes-slutt>	_	19	punct	_	_
@@ -19742,7 +19742,7 @@
 4	reduktive	reduktiv	ADJ	adj	Degree=Pos|Number=Plur	5	amod	_	_
 5	fysikalistane	fysikalist	NOUN	subst	Gender=Masc|Number=Plur	6	nsubj	_	_
 6	avskaffa	avskaffe	VERB	verb	VerbForm=Part	0	root	_	_
-7	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	9	det	_	_
+7	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	9	nmod:poss	_	_
 8	eigen	eigen	DET	det	Definite=Ind|Gender=Masc|PronType=Prs	9	det	_	_
 9	sjanse	sjanse	NOUN	subst	Definite=Ind|Gender=Masc	6	obj	_	_
 10	til	til	ADP	prep	_	12	case	_	_
@@ -19752,7 +19752,7 @@
 14	rasjonelt	rasjonell	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	15	amod	_	_
 15	forsvar	forsvar	NOUN	subst	Definite=Ind|Gender=Neut	12	obj	_	_
 16	for	for	ADP	prep	_	19	case	_	_
-17	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	19	det	_	_
+17	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	19	nmod:poss	_	_
 18	eigen	eigen	DET	det	Definite=Ind|Gender=Masc|PronType=Prs	19	det	_	_
 19	posisjon	posisjon	NOUN	subst	Definite=Ind|Gender=Masc	15	nmod	_	SpaceAfter=No
 20	.	$.	PUNCT	clb	_	6	punct	_	_
@@ -19895,7 +19895,7 @@
 10	som	som	SCONJ	sbu	_	13	mark	_	_
 11	opphavleg	opphavleg	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	13	advmod	_	_
 12	blei	bli	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	13	aux:pass	_	_
-13	brukt	bruke	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	9	amod	_	_
+13	brukt	bruke	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	9	acl:relcl	_	_
 14	innanfor	innanfor	ADP	prep	_	17	case	_	_
 15	den	den	DET	det	Gender=Fem|PronType=Dem	17	det	_	_
 16	fenomenologiske	fenomenologisk	ADJ	adj	Degree=Pos	17	amod	_	_
@@ -19963,7 +19963,7 @@
 # sent_id = 015245
 # text = Kritikken min ovanfor rettar seg ikkje mot nevrovitskap, berre mot den scientistiske måten å bruke den på.
 1	Kritikken	kritikk	NOUN	subst	Gender=Masc	4	nsubj	_	_
-2	min	min	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	1	det	_	_
+2	min	min	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	1	nmod:poss	_	_
 3	ovanfor	ovanfor	ADP	prep	_	1	nmod	_	_
 4	rettar	rette	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 5	seg	seg	PRON	pron	Case=Acc|PronType=Prs	4	obj	_	_
@@ -20023,7 +20023,7 @@
 1	Naturvitskaplege	naturvitskapleg	ADJ	adj	Degree=Pos|Number=Plur	2	amod	_	_
 2	forklaringar	forklaring	NOUN	subst	Definite=Ind|Gender=Fem|Number=Plur	3	nsubj	_	_
 3	har	ha	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
-4	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	5	det	_	_
+4	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	5	nmod:poss	_	_
 5	styrke	styrke	NOUN	subst	Definite=Ind|Gender=Masc	3	obj	_	_
 6	blant	blant	ADP	prep	_	7	case	_	_
 7	anna	annan	DET	det	Definite=Ind|Gender=Fem|PronType=Dem	8	obl	_	_
@@ -20232,7 +20232,7 @@
 28	vidt	vid	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	31	advmod	_	_
 29	dei	dei	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=3|PronType=Prs	31	nsubj	_	_
 30	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	31	cop	_	_
-31	innfridde	innfri	ADJ	adj	Number=Plur|VerbForm=Part	25	amod	_	_
+31	innfridde	innfri	ADJ	adj	Number=Plur|VerbForm=Part	25	acl:relcl	_	_
 32	eller	eller	CCONJ	konj	_	33	cc	_	_
 33	ikkje	ikkje	ADV	adv	_	31	conj	_	SpaceAfter=No
 34	.	$.	PUNCT	clb	_	14	punct	_	_
@@ -20265,12 +20265,12 @@
 10	som	som	SCONJ	sbu	_	13	mark	_	_
 11	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	13	cop	_	_
 12	meir	mykje	ADJ	adj	Degree=Cmp	13	advmod	_	_
-13	tilforlateleg	tilforlateleg	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	5	amod	_	_
+13	tilforlateleg	tilforlateleg	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	5	acl:relcl	_	_
 14	enn	enn	ADP	prep	_	15	case	_	_
 15	den	den	PRON	pron	Gender=Fem,Masc|Person=3|PronType=Prs	12	obl	_	_
 16	som	som	SCONJ	sbu	_	18	mark	_	_
 17	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	18	cop	_	_
-18	basert	basere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	15	amod	_	_
+18	basert	basere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	15	acl:relcl	_	_
 19	på	på	ADP	prep	_	21	case	_	_
 20	private	privat	ADJ	adj	Degree=Pos|Number=Plur	21	amod	_	_
 21	innsikter	innsikt	NOUN	subst	Definite=Ind|Gender=Fem|Number=Plur	18	obl	_	_
@@ -20300,7 +20300,7 @@
 # text = I framstillinga hans er ikkje vitskap først og fremst etablert kunnskap ( « a body of knowledge » ) , men eit sosialt fenomen, ein pågåande aktivitet innanfor eit fellesskap av likestilte - « a community of investigators » .
 1	I	i	ADP	prep	_	2	case	_	_
 2	framstillinga	framstilling	NOUN	subst	Gender=Fem	11	obl	_	_
-3	hans	hans	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	2	det	_	_
+3	hans	hans	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	2	nmod:poss	_	_
 4	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	11	cop	_	_
 5	ikkje	ikkje	ADV	adv	_	11	advmod	_	_
 6	vitskap	vitskap	NOUN	subst	Definite=Ind|Gender=Masc	11	nsubj	_	_
@@ -20351,7 +20351,7 @@
 7	eventuelt	eventuell	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	8	advmod	_	_
 8	viser	vise	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	3	advcl	_	_
 9	berekrafta	berekraft	NOUN	subst	Gender=Fem	8	obj	_	_
-10	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	9	det	_	_
+10	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	9	nmod:poss	_	_
 11	ved	ved	ADP	prep	_	14	case	_	_
 12	at	at	SCONJ	sbu	_	14	mark	_	_
 13	dei	dei	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=3|PronType=Prs	14	nsubj	_	_
@@ -20571,7 +20571,7 @@
 # text = Klassekampen engasjerte vår eigen litteraturkritikar og forfattar Espen Stueland og den politisk radikale rapparen Elling Borgersrud frå Gatas Parlament til ein debatt om artisten som sel mest plater og skapar størst kontroversar.
 1	Klassekampen	Klassekampen	PROPN	subst	_	2	nsubj	_	_
 2	engasjerte	engasjere	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
-3	vår	vår	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	5	det	_	_
+3	vår	vår	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	5	nmod:poss	_	_
 4	eigen	eigen	DET	det	Definite=Ind|Gender=Masc|PronType=Prs	5	det	_	_
 5	litteraturkritikar	litteraturkritikar	NOUN	subst	Definite=Ind|Gender=Masc	2	obj	_	_
 6	og	og	CCONJ	konj	_	7	cc	_	_
@@ -20708,7 +20708,7 @@
 1	Inspirert	inspirere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	8	xcomp	_	_
 2	av	av	ADP	prep	_	6	case	_	_
 3	rapparen	rappar	NOUN	subst	Gender=Masc	4	obl	_	_
-4	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	6	det	_	_
+4	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	6	nmod:poss	_	_
 5	eiga	eigen	DET	det	Definite=Ind|Gender=Fem|PronType=Prs	6	det	_	_
 6	livshistorie	livshistorie	NOUN	subst	Definite=Ind|Gender=Fem	1	obl	_	SpaceAfter=No
 7	,	$,	PUNCT	<komma>	_	1	punct	_	_
@@ -20750,7 +20750,7 @@
 4	film	film	NOUN	subst	Definite=Ind|Gender=Masc	0	root	_	SpaceAfter=No
 5	,	$,	PUNCT	<komma>	_	6	punct	_	_
 6	meiner	meine	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	4	parataxis	_	_
-7	våre	vår	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	8	det	_	_
+7	våre	vår	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	8	nmod:poss	_	_
 8	debattantar	debattant	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	6	nsubj	_	SpaceAfter=No
 9	,	$,	PUNCT	<komma>	_	12	punct	_	_
 10	men	men	CCONJ	konj	_	12	cc	_	_
@@ -20761,7 +20761,7 @@
 15	på	på	ADP	prep	_	16	case	_	_
 16	rapparen	rappar	NOUN	subst	Gender=Masc	12	obl	_	_
 17	frå	frå	ADP	prep	_	20	case	_	_
-18	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	20	det	_	_
+18	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	20	nmod:poss	_	_
 19	ulike	ulike	ADJ	adj	Degree=Pos|Number=Plur	20	amod	_	_
 20	ståstadar	ståstad	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	12	obl	_	SpaceAfter=No
 21	.	$.	PUNCT	clb	_	4	punct	_	_
@@ -20861,7 +20861,7 @@
 6	denne	denne	DET	det	Gender=Masc|PronType=Dem	8	det	_	_
 7	galne	galen	ADJ	adj	Degree=Pos	8	amod	_	_
 8	rasefetisjen	rasefetisj	NOUN	subst	Gender=Masc	3	obj	_	_
-9	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	8	det	_	SpaceAfter=No
+9	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	8	nmod:poss	_	SpaceAfter=No
 10	.	$.	PUNCT	clb	_	3	punct	_	_
 
 # sent_id = 015289
@@ -20889,7 +20889,7 @@
 7	som	som	SCONJ	sbu	_	10	mark	_	_
 8	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	10	cop	_	_
 9	heilt	heil	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	10	advmod	_	_
-10	lik	lik	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	5	amod	_	SpaceAfter=No
+10	lik	lik	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	5	acl:relcl	_	SpaceAfter=No
 11	.	$.	PUNCT	clb	_	2	punct	_	_
 
 # sent_id = 015291
@@ -20901,13 +20901,13 @@
 5	musikk	musikk	NOUN	subst	Definite=Ind|Gender=Masc	2	conj	_	_
 6	har	ha	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 7	kvar	kvar	DET	det	Gender=Fem|PronType=Tot	9	det	_	_
-8	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	9	det	_	_
+8	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	9	nmod:poss	_	_
 9	hitliste	hitliste	NOUN	subst	Definite=Ind|Gender=Fem	6	obj	_	SpaceAfter=No
 10	,	$,	PUNCT	<komma>	_	11	punct	_	_
 11	basert	basere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	9	amod	_	_
 12	på	på	ADP	prep	_	15	case	_	_
 13	musikarane	musikar	NOUN	subst	Gender=Masc|Number=Plur	14	obl	_	_
-14	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	15	det	_	_
+14	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	15	nmod:poss	_	_
 15	hudfarge	hudfarge	NOUN	subst	Definite=Ind|Gender=Masc	11	obl	_	SpaceAfter=No
 16	.	$.	PUNCT	clb	_	6	punct	_	_
 
@@ -21174,7 +21174,7 @@
 16	kunstnaren	kunstnar	NOUN	subst	Gender=Masc	10	conj	_	_
 17	Eminem	Eminem	PROPN	subst	_	16	appos	_	_
 18	og	og	CCONJ	konj	_	21	cc	_	_
-19	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	21	det	_	_
+19	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	21	nmod:poss	_	_
 20	sinte	sint	ADJ	adj	Degree=Pos	21	amod	_	_
 21	alter-ego	alter-ego	NOUN	subst	Definite=Ind|Gender=Neut	10	conj	_	SpaceAfter=No
 22	,	$,	PUNCT	<komma>	_	23	punct	_	_
@@ -21466,12 +21466,12 @@
 12	å	å	PART	inf-merke	_	13	mark	_	_
 13	rundstela	rundstele	VERB	verb	VerbForm=Inf	9	advcl	_	_
 14	vener	ven	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	13	obj	_	_
-15	etter	etter	ADP	prep	_	19	case	_	_
-16	at	at	SCONJ	sbu	_	19	mark	_	_
-17	han	han	PRON	pron	Case=Nom|Gender=Masc|Person=3|PronType=Prs	19	nsubj	_	_
-18	hadde	ha	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	19	aux	_	_
-19	vorte	verte	VERB	verb	VerbForm=Part	13	advcl	_	_
-20	akseptert	akseptere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	19	ccomp	_	SpaceAfter=No
+15	etter	etter	ADP	prep	_	20	case	_	_
+16	at	at	SCONJ	sbu	_	20	mark	_	_
+17	han	han	PRON	pron	Case=Nom|Gender=Masc|Person=3|PronType=Prs	20	nsubj:pass	_	_
+18	hadde	ha	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	20	aux	_	_
+19	vorte	verte	AUX	verb	VerbForm=Part	20	aux:pass	_	_
+20	akseptert	akseptere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	13	advcl	_	SpaceAfter=No
 21	.	$.	PUNCT	clb	_	3	punct	_	_
 
 # sent_id = 015322
@@ -21657,7 +21657,7 @@
 6	han	han	PRON	pron	Case=Nom|Gender=Masc|Person=3|PronType=Prs	7	nsubj	_	_
 7	overraskar	overraske	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	4	acl:relcl	_	_
 8	kjærasten	kjærast	NOUN	subst	Gender=Masc	7	obj	_	_
-9	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	8	det	_	_
+9	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	8	nmod:poss	_	_
 10	saman	saman	ADV	adv	_	14	advmod	_	_
 11	med	med	ADP	prep	_	14	case	_	_
 12	ein	ein	DET	det	Gender=Masc|PronType=Art	14	det	_	_
@@ -21695,7 +21695,7 @@
 14	på	på	ADP	prep	_	18	case	_	_
 15	at	at	SCONJ	sbu	_	18	mark	_	_
 16	kona	kone	NOUN	subst	Gender=Fem	18	nsubj	_	_
-17	hans	hans	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	16	det	_	_
+17	hans	hans	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	16	nmod:poss	_	_
 18	klina	kline	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	13	advcl	_	_
 19	med	med	ADP	prep	_	22	case	_	_
 20	ein	ein	DET	det	Gender=Masc|PronType=Art	22	det	_	_
@@ -21756,7 +21756,7 @@
 6	av	av	ADP	prep	_	1	case	_	_
 7	i	i	ADP	prep	_	8	case	_	_
 8	tekstane	tekst	NOUN	subst	Gender=Masc|Number=Plur	2	obl	_	_
-9	hans	hans	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	8	det	_	SpaceAfter=No
+9	hans	hans	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	8	nmod:poss	_	SpaceAfter=No
 10	.	$.	PUNCT	clb	_	2	punct	_	_
 
 # sent_id = 015337
@@ -21784,7 +21784,7 @@
 4	alle	all	DET	det	Gender=Fem,Masc|PronType=Tot	5	det	_	_
 5	fall	fall	NOUN	subst	Definite=Ind|Gender=Neut|Number=Plur	7	obl	_	_
 6	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	7	cop	_	_
-7	sikkert	sikker	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	1	amod	_	SpaceAfter=No
+7	sikkert	sikker	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	1	acl:relcl	_	SpaceAfter=No
 8	,	$,	PUNCT	<komma>	_	1	punct	_	_
 9	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	28	cop	_	_
 10	at	at	SCONJ	sbu	_	28	mark	_	_
@@ -21795,7 +21795,7 @@
 15	»	$"	PUNCT	<anf>	_	13	punct	_	_
 16	,	$,	PUNCT	<komma>	_	13	punct	_	_
 17	med	med	ADP	prep	_	20	case	_	_
-18	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	20	det	_	_
+18	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	20	nmod:poss	_	_
 19	halv-biografiske	halv-biografisk	ADJ	adj	Degree=Pos	20	amod	_	_
 20	forankring	forankring	NOUN	subst	Definite=Ind|Gender=Fem	28	obl	_	SpaceAfter=No
 21	,	$,	PUNCT	<komma>	_	20	punct	_	_
@@ -21832,7 +21832,7 @@
 16	førebilete	førebilete	NOUN	subst	Definite=Ind|Gender=Neut	12	xcomp	_	_
 17	for	for	ADP	prep	_	18	case	_	_
 18	publikummet	publikum	NOUN	subst	Gender=Neut	16	nmod	_	_
-19	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	18	det	_	SpaceAfter=No
+19	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	18	nmod:poss	_	SpaceAfter=No
 20	,	$,	PUNCT	<komma>	_	24	punct	_	_
 21	eller	eller	CCONJ	konj	_	24	cc	_	_
 22	ein	ein	PRON	pron	Animacy=Hum|PronType=Art,Prs	24	nsubj	_	_
@@ -21865,7 +21865,7 @@
 8	om	om	SCONJ	sbu	_	10	mark	_	_
 9	marknadsposisjonen	marknadsposisjon	NOUN	subst	Gender=Masc	10	nsubj	_	_
 10	har	ha	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	6	ccomp	_	_
-11	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	13	det	_	_
+11	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	13	nmod:poss	_	_
 12	eigen	eigen	DET	det	Definite=Ind|Gender=Masc|PronType=Prs	13	det	_	_
 13	dynamikk	dynamikk	NOUN	subst	Definite=Ind|Gender=Masc	10	obj	_	_
 14	som	som	SCONJ	sbu	_	16	mark	_	_
@@ -21934,7 +21934,7 @@
 5	kunsten	kunst	NOUN	subst	Gender=Masc	3	nmod	_	_
 6	frå	frå	ADP	prep	_	7	case	_	_
 7	Rimbaud	Rimbaud	PROPN	subst	_	3	nmod	_	_
-8	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	7	det	_	_
+8	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	7	nmod:poss	_	_
 9	til	til	ADP	prep	_	10	case	_	_
 10	punken	punk	NOUN	subst	Gender=Masc	7	obl	_	_
 11	har	ha	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
@@ -22215,7 +22215,7 @@
 3	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	1	nmod	_	_
 4	som	som	SCONJ	sbu	_	6	mark	_	_
 5	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	6	cop	_	_
-6	flott	flott	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	3	amod	_	_
+6	flott	flott	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	3	acl:relcl	_	_
 7	med	med	ADP	prep	_	8	case	_	_
 8	Eminem	Eminem	PROPN	subst	_	6	obl	_	SpaceAfter=No
 9	,	$,	PUNCT	<komma>	_	1	punct	_	_
@@ -22234,7 +22234,7 @@
 22	av	av	ADV	prep	_	20	advmod	_	_
 23	i	i	ADP	prep	_	24	case	_	_
 24	tekstane	tekst	NOUN	subst	Gender=Masc|Number=Plur	20	obl	_	_
-25	hans	hans	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	24	det	_	SpaceAfter=No
+25	hans	hans	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	24	nmod:poss	_	SpaceAfter=No
 26	.	$.	PUNCT	clb	_	15	punct	_	_
 
 # sent_id = 015363
@@ -22383,7 +22383,7 @@
 5	Eminem	Eminem	PROPN	subst	_	8	nsubj	_	_
 6	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	8	cop	_	_
 7	svært	svær	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	8	advmod	_	_
-8	god	god	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	4	amod	_	_
+8	god	god	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	4	acl:relcl	_	_
 9	på	på	ADV	prep	_	8	advmod	_	_
 10	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	12	cop	_	_
 11	«	$"	PUNCT	<anf>	_	12	punct	_	SpaceAfter=No
@@ -22490,7 +22490,7 @@
 14	at	at	SCONJ	sbu	_	17	mark	_	_
 15	Eminem	Eminem	PROPN	subst	_	17	nsubj	_	_
 16	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	17	cop	_	_
-17	samfunnskritisk	samfunnskritisk	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	12	amod	_	SpaceAfter=No
+17	samfunnskritisk	samfunnskritisk	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	12	acl	_	SpaceAfter=No
 18	?	$?	PUNCT	clb	_	6	punct	_	_
 
 # sent_id = 015383
@@ -22587,17 +22587,17 @@
 
 # sent_id = 015390
 # text = Då rap vart adoptert frå New York til Los Angeles, var det av artistar som LA Dream Team, som stor sett rappa om kor fint det var i L.A., med badebasseng og damer i bikini og alle dei tinga der.
-1	Då	då	SCONJ	sbu	_	3	mark	_	_
-2	rap	rap	NOUN	subst	Definite=Ind|Gender=Masc	3	nsubj	_	_
-3	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	15	advcl	_	_
-4	adoptert	adoptere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	3	ccomp	_	_
+1	Då	då	SCONJ	sbu	_	4	mark	_	_
+2	rap	rap	NOUN	subst	Definite=Ind|Gender=Masc	4	nsubj:pass	_	_
+3	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	4	aux:pass	_	_
+4	adoptert	adoptere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	15	advcl	_	_
 5	frå	frå	ADP	prep	_	6	case	_	_
 6	New	New	PROPN	subst	_	4	obl	_	_
 7	York	York	PROPN	subst	_	6	flat:name	_	_
 8	til	til	ADP	prep	_	9	case	_	_
 9	Los	Los	PROPN	subst	_	6	obl	_	_
 10	Angeles	Angeles	PROPN	subst	_	9	flat:name	_	SpaceAfter=No
-11	,	$,	PUNCT	<komma>	_	3	punct	_	_
+11	,	$,	PUNCT	<komma>	_	4	punct	_	_
 12	var	vere	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	15	cop	_	_
 13	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	15	nsubj	_	_
 14	av	av	ADP	prep	_	15	case	_	_
@@ -22658,7 +22658,7 @@
 6	og	og	CCONJ	konj	_	7	cc	_	_
 7	rappa	rappe	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	conj	_	_
 8	om	om	ADP	prep	_	10	case	_	_
-9	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	10	det	_	_
+9	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	10	nmod:poss	_	_
 10	røynd	røynd	NOUN	subst	Definite=Ind|Gender=Fem	7	obl	_	SpaceAfter=No
 11	,	$,	PUNCT	<komma>	_	13	punct	_	_
 12	så	så	ADV	adv	_	13	advmod	_	_
@@ -22669,7 +22669,7 @@
 
 # sent_id = 015393
 # text = Det som starta som ei skildring av ekte tilhøve på gata i L.A. blir på eit vis blitt reprodusert, marknadsført og laga til ein ny valdsromantisk «pakke» som kan kjøpast og seljast.
-1	Det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	18	nsubj	_	_
+1	Det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	18	nsubj:pass	_	_
 2	som	som	SCONJ	sbu	_	3	mark	_	_
 3	starta	starte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	1	acl:relcl	_	_
 4	som	som	ADP	prep	_	6	case	_	_
@@ -22848,7 +22848,7 @@
 4	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	8	expl	_	_
 5	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	8	cop	_	_
 6	NHO	NHO	PROPN	subst	_	7	obl	_	_
-7	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	8	det	_	_
+7	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	8	nmod:poss	_	_
 8	syn	syn	NOUN	subst	Definite=Ind|Gender=Neut	2	ccomp	_	_
 9	at	at	SCONJ	sbu	_	13	mark	_	_
 10	6-åringar	6-åring	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	13	nsubj	_	_
@@ -22860,7 +22860,7 @@
 16	skular	skule	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	13	obl	_	_
 17	som	som	SCONJ	sbu	_	19	mark	_	_
 18	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	19	cop	_	_
-19	drivne	drive	ADJ	adj	Number=Plur|VerbForm=Part	16	amod	_	_
+19	drivne	drive	ADJ	adj	Number=Plur|VerbForm=Part	16	acl:relcl	_	_
 20	for	for	ADP	prep	_	22	case	_	_
 21	økonomisk	økonomisk	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	22	amod	_	_
 22	profitt	profitt	NOUN	subst	Definite=Ind|Gender=Masc	19	obl	_	SpaceAfter=No
@@ -22921,7 +22921,7 @@
 13	representert	representere	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	2	advcl	_	_
 14	i	i	ADP	prep	_	17	case	_	_
 15	regjeringa	regjering	NOUN	subst	Gender=Fem	16	obl	_	_
-16	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	17	det	_	_
+16	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	17	nmod:poss	_	_
 17	arbeid	arbeid	NOUN	subst	Definite=Ind|Gender=Neut	13	obl	_	_
 18	i	i	ADP	prep	_	19	case	_	_
 19	forkant	forkant	NOUN	subst	Definite=Ind|Gender=Masc	17	nmod	_	_
@@ -23198,7 +23198,7 @@
 6	den	den	DET	det	Gender=Masc|PronType=Dem	8	det	_	_
 7	private	privat	ADJ	adj	Degree=Pos	8	amod	_	_
 8	tenestesektoren	tenestesektor	NOUN	subst	Gender=Masc	9	obl	_	_
-9	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	10	det	_	_
+9	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	10	nmod:poss	_	_
 10	del	del	NOUN	subst	Definite=Ind|Gender=Masc	5	nsubj	_	_
 11	av	av	ADP	prep	_	13	case	_	_
 12	USAs	USA	PROPN	subst	Abbr=Yes|Case=Gen	13	nmod	_	_
@@ -23296,7 +23296,7 @@
 
 # sent_id = 015434
 # text = Vareproduksjonen blir bygd ned.
-1	Vareproduksjonen	vareproduksjon	NOUN	subst	Gender=Masc	3	nsubj	_	_
+1	Vareproduksjonen	vareproduksjon	NOUN	subst	Gender=Masc	3	nsubj:pass	_	_
 2	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	3	aux:pass	_	_
 3	bygd	byggje	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	0	root	_	_
 4	ned	ned	ADV	prep	_	3	advmod	_	SpaceAfter=No
@@ -23639,7 +23639,7 @@
 7	siviliserande	sivilisere	ADJ	adj	VerbForm=Part	5	conj	_	_
 8	drag	drag	NOUN	subst	Definite=Ind|Gender=Neut	0	root	_	_
 9	ved	ved	ADP	prep	_	11	case	_	_
-10	vårt	vår	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	11	det	_	_
+10	vårt	vår	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	11	nmod:poss	_	_
 11	samfunn	samfunn	NOUN	subst	Definite=Ind|Gender=Neut	8	nmod	_	_
 12	at	at	SCONJ	sbu	_	18	mark	_	_
 13	såpass	såpass	ADV	adv	_	14	advmod	_	_
@@ -23670,7 +23670,7 @@
 1	Det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	6	nsubj	_	_
 2	som	som	SCONJ	sbu	_	4	mark	_	_
 3	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	4	cop	_	_
-4	viktig	viktig	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	1	amod	_	_
+4	viktig	viktig	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	1	acl:relcl	_	_
 5	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	6	cop	_	_
 6	tenestene	teneste	NOUN	subst	Gender=Fem|Number=Plur	0	root	_	SpaceAfter=No
 7	.	$.	PUNCT	clb	_	6	punct	_	_
@@ -23880,7 +23880,7 @@
 8	siviliserande	sivilisere	ADJ	adj	VerbForm=Part	9	amod	_	_
 9	drag	drag	NOUN	subst	Definite=Ind|Gender=Neut	5	conj	_	_
 10	ved	ved	ADP	prep	_	12	case	_	_
-11	vår	vår	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	12	det	_	_
+11	vår	vår	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	12	nmod:poss	_	_
 12	kapitalisme	kapitalisme	NOUN	subst	Definite=Ind|Gender=Masc	9	nmod	_	_
 13	dersom	dersom	SCONJ	sbu	_	19	mark	_	_
 14	760.000	760.000	NUM	det	Number=Plur|NumType=Card	15	nummod	_	_
@@ -24019,7 +24019,7 @@
 1	Vi	vi	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=1|PronType=Prs	2	nsubj	_	_
 2	veit	vite	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 3	at	at	SCONJ	sbu	_	9	mark	_	_
-4	samfunnsøkonomien	samfunnsøkonomi	NOUN	subst	Gender=Masc	9	nsubj	_	_
+4	samfunnsøkonomien	samfunnsøkonomi	NOUN	subst	Gender=Masc	9	nsubj:pass	_	_
 5	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	9	aux:pass	_	_
 6	meir	mykje	ADJ	adj	Degree=Cmp	9	advmod	_	_
 7	og	og	CCONJ	konj	_	8	cc	_	_
@@ -24146,7 +24146,7 @@
 6	stortingsfleirtal	stortingsfleirtal	NOUN	subst	Definite=Ind|Gender=Neut	3	obj	_	_
 7	som	som	SCONJ	sbu	_	9	mark	_	_
 8	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	9	cop	_	_
-9	positive	positiv	ADJ	adj	Degree=Pos|Number=Plur	6	amod	_	_
+9	positive	positiv	ADJ	adj	Degree=Pos|Number=Plur	6	acl:relcl	_	_
 10	til	til	ADP	prep	_	11	case	_	_
 11	konkurranseutsetting	konkurranseutsetting	NOUN	subst	Definite=Ind|Gender=Fem	9	obl	_	SpaceAfter=No
 12	.	$.	PUNCT	clb	_	3	punct	_	_
@@ -24260,7 +24260,7 @@
 6	ein	ein	PRON	pron	Animacy=Hum|PronType=Art,Prs	7	nsubj	_	_
 7	står	stå	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	3	advcl	_	_
 8	ved	ved	ADP	prep	_	10	case	_	_
-9	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	10	det	_	_
+9	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	10	nmod:poss	_	_
 10	forpliktingar	forplikting	NOUN	subst	Definite=Ind|Gender=Fem|Number=Plur	7	obl	_	SpaceAfter=No
 11	.	$.	PUNCT	clb	_	3	punct	_	_
 
@@ -24414,7 +24414,7 @@
 13	medan	medan	SCONJ	sbu	_	22	mark	_	_
 14	det	det	DET	det	Gender=Neut|PronType=Dem	16	det	_	_
 15	konkrete	konkret	ADJ	adj	Degree=Pos	16	amod	_	_
-16	folkestyret	folkestyre	NOUN	subst	Gender=Neut	22	nsubj	_	_
+16	folkestyret	folkestyre	NOUN	subst	Gender=Neut	22	nsubj:pass	_	_
 17	i	i	ADP	prep	_	20	case	_	_
 18	til	til	ADP	prep	_	19	case	_	_
 19	dømes	døme	NOUN	subst	Case=Gen|Definite=Ind|Gender=Neut	20	nmod	_	_
@@ -24428,7 +24428,7 @@
 # sent_id = 015505
 # text = I vår tid må ein kunna gå inn i internasjonale forpliktingar.
 1	I	i	ADP	prep	_	3	case	_	_
-2	vår	vår	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	3	det	_	_
+2	vår	vår	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	3	nmod:poss	_	_
 3	tid	tid	NOUN	subst	Definite=Ind|Gender=Fem	7	obl	_	_
 4	må	måtte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	7	aux	_	_
 5	ein	ein	PRON	pron	Animacy=Hum|PronType=Art,Prs	7	nsubj	_	_
@@ -24550,10 +24550,10 @@
 5	at	at	SCONJ	sbu	_	7	mark	_	_
 6	politikarane	politikar	NOUN	subst	Gender=Masc|Number=Plur	7	nsubj	_	_
 7	gjer	gjere	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	3	advcl	_	_
-8	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	9	det	_	_
+8	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	9	nmod:poss	_	_
 9	beste	god	ADJ	adj	Degree=Sup	7	obj	_	_
 10	for	for	ADP	prep	_	12	case	_	_
-11	våre	vår	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	12	det	_	_
+11	våre	vår	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	12	nmod:poss	_	_
 12	interesser	interesse	NOUN	subst	Definite=Ind|Gender=Fem|Number=Plur	9	obl	_	SpaceAfter=No
 13	.	$.	PUNCT	clb	_	3	punct	_	_
 
@@ -24692,7 +24692,7 @@
 7	at	at	SCONJ	sbu	_	10	mark	_	_
 8	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	10	nsubj	_	_
 9	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	10	cop	_	_
-10	representativt	representativ	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	5	amod	_	_
+10	representativt	representativ	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	5	acl	_	_
 
 # sent_id = 015521
 # text = He, he, he.
@@ -24771,7 +24771,7 @@
 8	demokratiet	demokrati	NOUN	subst	Gender=Neut	11	nsubj	_	_
 9	ikkje	ikkje	ADV	adv	_	11	advmod	_	_
 10	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	11	cop	_	_
-11	perfekt	perfekt	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	5	amod	_	SpaceAfter=No
+11	perfekt	perfekt	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	5	acl	_	SpaceAfter=No
 12	,	$,	PUNCT	<komma>	_	4	punct	_	_
 13	bryt	bryte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 14	Hersoug	Hersoug	PROPN	subst	_	13	nsubj	_	_
@@ -24793,7 +24793,7 @@
 # sent_id = 015528
 # text = Teknoalderen sin Frankenstein
 1	Teknoalderen	teknoalder	NOUN	subst	Gender=Masc	2	obl	_	_
-2	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	3	det	_	_
+2	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	3	nmod:poss	_	_
 3	Frankenstein	Frankenstein	PROPN	subst	_	0	root	_	_
 
 # sent_id = 015529
@@ -24823,7 +24823,7 @@
 4	som	som	SCONJ	sbu	_	7	mark	_	_
 5	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	7	cop	_	_
 6	så	så	ADV	adv	_	7	advmod	_	_
-7	fascinerande	fascinere	ADJ	adj	VerbForm=Part	1	amod	_	_
+7	fascinerande	fascinere	ADJ	adj	VerbForm=Part	1	acl:relcl	_	_
 8	med	med	ADP	prep	_	10	case	_	_
 9	denne	denne	DET	det	Gender=Masc|PronType=Dem	10	det	_	_
 10	drapsmaskinen	drapsmaskin	NOUN	subst	Gender=Masc	7	obl	_	SpaceAfter=No
@@ -24961,7 +24961,7 @@
 15	såleis	såleis	ADV	adv	_	16	advmod	_	_
 16	hindra	hindre	VERB	verb	VerbForm=Inf	4	conj	_	_
 17	at	at	SCONJ	sbu	_	23	mark	_	_
-18	motstandsleiaren	motstandsleiar	NOUN	subst	Gender=Masc	23	nsubj	_	_
+18	motstandsleiaren	motstandsleiar	NOUN	subst	Gender=Masc	23	nsubj:pass	_	_
 19	i	i	ADP	prep	_	21	case	_	_
 20	det	det	DET	det	Gender=Neut|PronType=Dem	21	det	_	_
 21	heile	heil	ADJ	adj	Degree=Pos	23	advmod	_	_
@@ -25048,7 +25048,7 @@
 3	den	den	DET	det	Gender=Masc|PronType=Dem	5	det	_	_
 4	komande	kome	ADJ	adj	VerbForm=Part	5	amod	_	_
 5	far	far	NOUN	subst	Definite=Ind|Gender=Masc	0	root	_	_
-6	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	5	det	_	_
+6	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	5	nmod:poss	_	_
 7	John	John	PROPN	subst	Gender=Masc	9	nsubj	_	_
 8	Connor	Connor	PROPN	subst	_	7	flat:name	_	_
 9	sender	sende	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	5	acl:relcl	_	_
@@ -25257,7 +25257,7 @@
 9	Reagan	Reagan	PROPN	subst	_	8	flat:name	_	_
 10	gjekk	gå	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	6	acl	_	_
 11	i	i	ADP	prep	_	14	case	_	_
-12	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	14	det	_	_
+12	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	14	nmod:poss	_	_
 13	andre	andre	ADJ	adj	Degree=Pos	14	amod	_	_
 14	presidentperiode	presidentperiode	NOUN	subst	Definite=Ind|Gender=Masc	10	obl	_	_
 15	i	i	ADP	prep	_	16	case	_	_
@@ -25307,7 +25307,7 @@
 5	filmen	film	NOUN	subst	Gender=Masc	0	root	_	_
 6	som	som	SCONJ	sbu	_	7	mark	_	_
 7	lyfte	lyfte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	5	acl:relcl	_	_
-8	Arnold	Arnold	PROPN	subst	Gender=Masc	10	nmod	_	_
+8	Arnold	Arnold	PROPN	subst	Gender=Masc	10	nmod:poss	_	_
 9	Schwarzeneggers	Schwarzenegger	PROPN	subst	Case=Gen	8	flat:name	_	_
 10	karriere	karriere	NOUN	subst	Definite=Ind|Gender=Fem	7	obj	_	_
 11	ut	ut	ADP	prep	_	13	case	_	_
@@ -25377,7 +25377,7 @@
 5	han	han	PRON	pron	Case=Nom|Gender=Masc|Person=3|PronType=Prs	4	nsubj	_	_
 6	nyleg	nyleg	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	4	advmod	_	_
 7	kandidaturet	kandidatur	NOUN	subst	Gender=Neut	4	obj	_	_
-8	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	7	det	_	_
+8	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	7	nmod:poss	_	_
 9	til	til	ADP	prep	_	10	case	_	_
 10	guvernørstillinga	guvernørstilling	NOUN	subst	Gender=Fem	7	nmod	_	_
 11	i	i	ADP	prep	_	12	case	_	_
@@ -25417,7 +25417,7 @@
 8	opp	opp	ADV	prep	_	7	advmod	_	_
 9	heilt	heil	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	14	advmod	_	_
 10	sidan	sidan	ADP	prep	_	14	case	_	_
-11	Fritz	Fritz	PROPN	subst	_	14	nmod	_	_
+11	Fritz	Fritz	PROPN	subst	_	14	nmod:poss	_	_
 12	Langs	Lang	PROPN	subst	Case=Gen	11	flat:name	_	_
 13	«	$"	PUNCT	<anf>	_	14	punct	_	SpaceAfter=No
 14	Metropolis	Metropolis	PROPN	subst	_	7	obl	_	SpaceAfter=No
@@ -25426,14 +25426,14 @@
 17	1927	1927	NUM	det	Number=Plur|NumType=Card	7	parataxis	_	SpaceAfter=No
 18	)	$)	PUNCT	<parentes-slutt>	_	17	punct	_	SpaceAfter=No
 19	,	$,	PUNCT	<komma>	_	17	punct	_	_
-20	der	der	SCONJ	sbu	_	26	mark	_	_
+20	der	der	SCONJ	sbu	_	27	mark	_	_
 21	ein	ein	DET	det	Gender=Masc|PronType=Art	25	det	_	_
 22	«	$"	PUNCT	<anf>	_	23	punct	_	SpaceAfter=No
 23	kvinneleg	kvinneleg	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	25	amod	_	SpaceAfter=No
 24	»	$"	PUNCT	<anf>	_	23	punct	_	_
-25	robot	robot	NOUN	subst	Definite=Ind|Gender=Masc	26	nsubj	_	_
-26	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	14	acl:relcl	_	_
-27	brukt	bruke	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	26	ccomp	_	_
+25	robot	robot	NOUN	subst	Definite=Ind|Gender=Masc	27	nsubj:pass	_	_
+26	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	27	aux:pass	_	_
+27	brukt	bruke	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	14	acl:relcl	_	_
 28	til	til	ADP	prep	_	30	case	_	_
 29	å	å	PART	inf-merke	_	30	mark	_	_
 30	avverja	avverje	VERB	verb	VerbForm=Inf	27	advcl	_	_
@@ -25450,7 +25450,7 @@
 5	av	av	ADP	prep	_	6	case	_	_
 6	Terminator	Terminator	PROPN	subst	_	4	nmod	_	_
 7	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	11	cop	_	_
-8	Yul	Yul	PROPN	subst	_	11	nmod	_	_
+8	Yul	Yul	PROPN	subst	_	11	nmod:poss	_	_
 9	Brynners	Brynner	PROPN	subst	Case=Gen	8	flat:name	_	_
 10	mekaniske	mekanisk	ADJ	adj	Degree=Pos	11	amod	_	_
 11	revolvermann	revolvermann	NOUN	subst	Definite=Ind|Gender=Masc	0	root	_	_
@@ -25501,13 +25501,13 @@
 8	og	og	CCONJ	konj	_	9	cc	_	_
 9	mentalitet	mentalitet	NOUN	subst	Definite=Ind|Gender=Masc	5	conj	_	_
 10	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	2	cop	_	_
-11	Rutger	Rutger	PROPN	subst	_	14	nmod	_	_
+11	Rutger	Rutger	PROPN	subst	_	14	nmod:poss	_	_
 12	Hauers	Hauer	PROPN	subst	Case=Gen	11	flat:name	_	_
 13	«	$"	PUNCT	<anf>	_	14	punct	_	SpaceAfter=No
 14	replikant	replikant	NOUN	subst	_	2	nsubj	_	SpaceAfter=No
 15	»	$"	PUNCT	<anf>	_	14	punct	_	_
 16	i	i	ADP	prep	_	20	case	_	_
-17	Ridley	Ridley	PROPN	subst	_	20	nmod	_	_
+17	Ridley	Ridley	PROPN	subst	_	20	nmod:poss	_	_
 18	Scotts	Scott	PROPN	subst	Case=Gen	17	flat:name	_	_
 19	«	$"	PUNCT	<anf>	_	20	punct	_	SpaceAfter=No
 20	Blade	Blade	PROPN	subst	_	14	nmod	_	_
@@ -25597,7 +25597,7 @@
 21	mellom	mellom	ADP	prep	_	22	case	_	_
 22	anna	annan	DET	det	Definite=Ind|Gender=Neut|PronType=Dem	29	obl	_	_
 23	i	i	ADP	prep	_	29	case	_	_
-24	Shinja	Shinja	PROPN	subst	_	29	nmod	_	_
+24	Shinja	Shinja	PROPN	subst	_	29	nmod:poss	_	_
 25	Tsukamotos	Tsukamoto	PROPN	subst	Case=Gen	24	flat:name	_	_
 26	«	$"	PUNCT	<anf>	_	27	punct	_	SpaceAfter=No
 27	Tetsuo	Tetsuo	PROPN	subst	_	29	compound	_	SpaceAfter=No
@@ -25612,7 +25612,7 @@
 
 # sent_id = 015558
 # text = Steven Spielbergs syntetiske barn i «A.I.» (2001) er langt snillare og meir konvensjonell, men som i «Tetsuo» og mange av dei andre robotfilmane er farane ved å tukla med naturen eit sentralt motiv også i Spielbergs film.
-1	Steven	Steven	PROPN	subst	_	4	nmod	_	_
+1	Steven	Steven	PROPN	subst	_	4	nmod:poss	_	_
 2	Spielbergs	Spielberg	PROPN	subst	Case=Gen	1	flat:name	_	_
 3	syntetiske	syntetisk	ADJ	adj	Degree=Pos|Number=Plur	4	amod	_	_
 4	barn	barn	NOUN	subst	Definite=Ind|Gender=Neut|Number=Plur	14	nsubj	_	_
@@ -25751,14 +25751,14 @@
 8	,	$,	PUNCT	<komma>	_	29	punct	_	_
 9	og	og	CCONJ	konj	_	29	cc	_	_
 10	med	med	ADP	prep	_	12	case	_	_
-11	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	12	det	_	_
+11	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	12	nmod:poss	_	_
 12	metallskjellett	metallskjellett	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	29	advmod	_	_
 13	dekt	dekke	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	12	amod	_	_
 14	av	av	ADP	prep	_	16	case	_	_
 15	sjølvlegande	sjølvlegande	ADJ	adj	Degree=Pos	16	amod	_	_
 16	menneskehud	menneskehud	NOUN	subst	Definite=Ind|Gender=Fem	13	nmod	_	_
 17	og	og	CCONJ	konj	_	20	cc	_	_
-18	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	20	det	_	_
+18	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	20	nmod:poss	_	_
 19	sjølvlærande	sjølvlære	ADJ	adj	VerbForm=Part	20	amod	_	_
 20	microchip	microchip	NOUN	subst	Definite=Ind|Gender=Masc	12	conj	_	_
 21	til	til	ADP	prep	_	23	case	_	_
@@ -25782,7 +25782,7 @@
 4	nøkkelen	nøkkel	NOUN	subst	Gender=Masc	0	root	_	_
 5	til	til	ADP	prep	_	8	case	_	_
 6	karakteren	karakter	NOUN	subst	Gender=Masc	7	obl	_	_
-7	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	8	det	_	_
+7	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	8	nmod:poss	_	_
 8	fascinasjonskraft	fascinasjonskraft	NOUN	subst	Definite=Ind|Gender=Fem	4	nmod	_	SpaceAfter=No
 9	.	$.	PUNCT	clb	_	4	punct	_	_
 
@@ -25844,7 +25844,7 @@
 9	kjernefysisk	kjernefysisk	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	10	amod	_	_
 10	ragnarok	ragnarok	NOUN	subst	Definite=Ind|Gender=Neut	8	obj	_	_
 11	mot	mot	ADP	prep	_	13	case	_	_
-12	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	13	det	_	_
+12	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	13	nmod:poss	_	_
 13	skaparar	skapar	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	8	obl	_	SpaceAfter=No
 14	.	$.	PUNCT	clb	_	5	punct	_	_
 
@@ -25860,7 +25860,7 @@
 8	Reagan	Reagan	PROPN	subst	_	7	flat:name	_	_
 9	utvikla	utvikle	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	4	advcl	_	_
 10	stjernekrigsprogrammet	stjernekrigsprogram	NOUN	subst	Gender=Neut	9	obj	_	_
-11	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	10	det	_	SpaceAfter=No
+11	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	10	nmod:poss	_	SpaceAfter=No
 12	.	$.	PUNCT	clb	_	4	punct	_	_
 
 # sent_id = 015568
@@ -25922,9 +25922,9 @@
 
 # sent_id = 015569
 # text = Skurkegalleriet vart henta frå nyhende i den verkelege verda, for å bli stengt inne i fiksjonen av mainstreamfilmens sløvande, eventyr-dramaturgi.
-1	Skurkegalleriet	skurkegalleri	NOUN	subst	Gender=Neut	2	nsubj	_	_
-2	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
-3	henta	hente	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	2	ccomp	_	_
+1	Skurkegalleriet	skurkegalleri	NOUN	subst	Gender=Neut	3	nsubj:pass	_	_
+2	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	aux:pass	_	_
+3	henta	hente	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
 4	frå	frå	ADP	prep	_	5	case	_	_
 5	nyhende	nyhende	NOUN	subst	Definite=Ind|Gender=Neut|Number=Plur	3	obl	_	_
 6	i	i	ADP	prep	_	9	case	_	_
@@ -25944,7 +25944,7 @@
 20	sløvande	sløve	ADJ	adj	VerbForm=Part	22	amod	_	SpaceAfter=No
 21	,	$,	PUNCT	<komma>	_	20	punct	_	_
 22	eventyr-dramaturgi	eventyr-dramaturgi	NOUN	subst	Definite=Ind|Gender=Masc	17	nmod	_	SpaceAfter=No
-23	.	$.	PUNCT	clb	_	2	punct	_	_
+23	.	$.	PUNCT	clb	_	3	punct	_	_
 
 # sent_id = 015570
 # text = På Island og Færøyane ligg derimot ansvaret for terminologiarbeidet innanfor dei respektive språkorgana, jf. kap. 7.2.4.5.
@@ -26002,7 +26002,7 @@
 10	den	den	DET	det	Gender=Fem|PronType=Dem	12	det	_	_
 11	primære	primær	ADJ	adj	Degree=Pos	12	amod	_	_
 12	oppgåva	oppgåve	NOUN	subst	Gender=Fem	16	nsubj	_	_
-13	deira	deira	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	12	det	_	_
+13	deira	deira	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	12	nmod:poss	_	_
 14	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	16	cop	_	_
 15	å	å	PART	inf-merke	_	16	mark	_	_
 16	driva	drive	VERB	verb	VerbForm=Inf	3	conj	_	_
@@ -26038,7 +26038,7 @@
 4	som	som	SCONJ	sbu	_	7	mark	_	_
 5	tidlegare	tidleg	ADJ	adj	Degree=Cmp	7	advmod	_	_
 6	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	7	cop	_	_
-7	lagde	leggje	ADJ	adj	Number=Plur|VerbForm=Part	3	amod	_	_
+7	lagde	leggje	ADJ	adj	Number=Plur|VerbForm=Part	3	acl:relcl	_	_
 8	til	til	ADP	prep	_	9	case	_	_
 9	Språkrådet	Språkrådet	PROPN	subst	_	7	obl	_	_
 
@@ -26092,12 +26092,12 @@
 1	For	for	ADP	prep	_	3	case	_	_
 2	det	det	DET	det	Gender=Neut|PronType=Dem	3	det	_	_
 3	første	første	ADJ	adj	Degree=Pos	18	advmod	_	_
-4	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
+4	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	18	aux:pass	_	_
 5	ein	ein	DET	det	Gender=Masc|PronType=Art	6	det	_	_
-6	del	del	NOUN	subst	Definite=Ind|Gender=Masc	4	nsubj	_	_
+6	del	del	NOUN	subst	Definite=Ind|Gender=Masc	18	nsubj:pass	_	_
 7	av	av	ADP	prep	_	10	case	_	_
 8	departementet	departement	NOUN	subst	Gender=Neut	9	obl	_	_
-9	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	10	det	_	_
+9	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	10	nmod:poss	_	_
 10	tilsynsoppgåver	tilsynsoppgåve	NOUN	subst	Definite=Ind|Gender=Fem|Number=Plur	6	nmod	_	_
 11	etter	etter	ADP	prep	_	12	case	_	_
 12	lov	lov	NOUN	subst	Definite=Ind|Gender=Fem	18	obl	_	_
@@ -26106,14 +26106,14 @@
 15	i	i	ADP	prep	_	17	case	_	_
 16	offentleg	offentleg	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	17	amod	_	_
 17	teneste	teneste	NOUN	subst	Definite=Ind|Gender=Fem	14	nmod	_	_
-18	overført	overføre	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	4	ccomp	_	_
+18	overført	overføre	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
 19	til	til	ADP	prep	_	20	case	_	_
 20	Språkrådet	Språkrådet	PROPN	subst	_	18	obl	_	_
 21	frå	frå	ADV	prep	_	18	advmod	_	_
 22	og	og	CCONJ	konj	_	24	cc	_	_
 23	med	med	ADP	prep	_	24	case	_	_
 24	1994	1994	NUM	det	Number=Plur|NumType=Card	21	conj	_	SpaceAfter=No
-25	.	$.	PUNCT	clb	_	4	punct	_	_
+25	.	$.	PUNCT	clb	_	18	punct	_	_
 
 # sent_id = 015576
 # text = Etter dette har Språkrådet hatt ansvaret mellom anna for å innhenta årlege målbruksrapportar frå alle statsorgan under departementsnivået, driva informasjon og rettleiing om målbruksreglane og følgja opp alle dei organ som ikkje kan dokumentera at dei etterlever lova.
@@ -26193,12 +26193,12 @@
 5	av	av	ADP	prep	_	7	case	_	_
 6	dei	dei	DET	det	Number=Plur|PronType=Dem	7	det	_	_
 7	oppgåvene	oppgåve	NOUN	subst	Gender=Fem|Number=Plur	3	obl	_	_
-8	som	som	SCONJ	sbu	_	9	mark	_	_
-9	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	7	acl:relcl	_	_
-10	overførte	overføre	ADJ	adj	Number=Plur|VerbForm=Part	9	ccomp	_	_
+8	som	som	SCONJ	sbu	_	10	mark	_	_
+9	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	10	aux:pass	_	_
+10	overførte	overføre	ADJ	adj	Number=Plur|VerbForm=Part	7	acl:relcl	_	_
 11	i	i	ADP	prep	_	12	case	_	_
 12	1994	1994	NUM	det	Number=Plur|NumType=Card	10	obl	_	SpaceAfter=No
-13	,	$,	PUNCT	<komma>	_	9	punct	_	_
+13	,	$,	PUNCT	<komma>	_	10	punct	_	_
 14	fekk	få	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
 15	Språkrådet	Språkrådet	PROPN	subst	_	14	nsubj	_	_
 16	tilført	tilføre	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	14	xcomp	_	_
@@ -26245,10 +26245,10 @@
 27	språkteknologi	språkteknologi	NOUN	subst	Definite=Ind|Gender=Masc	24	nmod	_	SpaceAfter=No
 28	,	$,	PUNCT	<komma>	_	29	punct	_	_
 29	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	24	appos	_	_
-30	som	som	SCONJ	sbu	_	32	mark	_	_
+30	som	som	SCONJ	sbu	_	33	mark	_	_
 31	også	også	ADV	adv	_	33	advmod	_	_
-32	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	29	acl:relcl	_	_
-33	omtalt	omtale	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	32	ccomp	_	_
+32	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	33	aux:pass	_	_
+33	omtalt	omtale	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	29	acl:relcl	_	_
 34	som	som	ADP	prep	_	37	case	_	_
 35	eit	ein	DET	det	Gender=Neut|PronType=Art	37	det	_	_
 36	fagleg-administrativt	fagleg-administrativ	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	37	amod	_	_
@@ -26328,7 +26328,7 @@
 8	fått	få	AUX	verb	VerbForm=Part	9	aux	_	_
 9	styrkt	styrkje	VERB	verb	VerbForm=Part	0	root	_	_
 10	budsjettet	budsjett	NOUN	subst	Gender=Neut	9	obj	_	_
-11	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	10	det	_	_
+11	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	10	nmod:poss	_	_
 12	noko	noko	PRON	pron	Gender=Neut|Person=3|PronType=Prs	9	obl	_	_
 13	i	i	ADP	prep	_	14	case	_	_
 14	samband	samband	NOUN	subst	Definite=Ind|Gender=Neut	9	obl	_	_
@@ -26337,7 +26337,7 @@
 17	omdanninga	omdanning	NOUN	subst	Gender=Fem	14	nmod	_	_
 18	som	som	SCONJ	sbu	_	20	mark	_	_
 19	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	20	cop	_	_
-20	gjennomført	gjennomføre	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	17	amod	_	SpaceAfter=No
+20	gjennomført	gjennomføre	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	17	acl:relcl	_	SpaceAfter=No
 21	.	$.	PUNCT	clb	_	9	punct	_	_
 
 # sent_id = 015583
@@ -26385,9 +26385,9 @@
 16	nynorsk	nynorsk	NOUN	subst	Definite=Ind|Gender=Masc	14	nmod	_	_
 17	i	i	ADP	prep	_	18	case	_	_
 18	staten	stat	NOUN	subst	Gender=Masc	16	nmod	_	_
-19	som	som	SCONJ	sbu	_	20	mark	_	_
-20	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	11	acl:relcl	_	_
-21	skissert	skissere	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	20	ccomp	_	_
+19	som	som	SCONJ	sbu	_	21	mark	_	_
+20	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	21	aux:pass	_	_
+21	skissert	skissere	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	11	acl:relcl	_	_
 22	i	i	ADP	prep	_	23	case	_	_
 23	St.meld.	st.meld.	NOUN	subst	Abbr=Yes	21	obl	_	_
 24	nr.	nr.	NOUN	subst	Abbr=Yes	25	obl	_	_
@@ -26432,18 +26432,18 @@
 
 # sent_id = 015587
 # text = Etter at oppbygginga av den interne organisasjonsmodellen vart fullført i 2007, har sekretariatet i Språkrådet no ei leiargruppe som består av direktør, administrasjonssjef, informasjonssjef og i tillegg ein funksjon som fagkoordinator, i alt fire stillingar.
-1	Etter	etter	ADP	prep	_	8	case	_	_
-2	at	at	SCONJ	sbu	_	8	mark	_	_
-3	oppbygginga	oppbygging	NOUN	subst	Gender=Fem	8	nsubj	_	_
+1	Etter	etter	ADP	prep	_	9	case	_	_
+2	at	at	SCONJ	sbu	_	9	mark	_	_
+3	oppbygginga	oppbygging	NOUN	subst	Gender=Fem	9	nsubj:pass	_	_
 4	av	av	ADP	prep	_	7	case	_	_
 5	den	den	DET	det	Gender=Masc|PronType=Dem	7	det	_	_
 6	interne	intern	ADJ	adj	Degree=Pos	7	amod	_	_
 7	organisasjonsmodellen	organisasjonsmodell	NOUN	subst	Gender=Masc	3	nmod	_	_
-8	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	13	advcl	_	_
-9	fullført	fullføre	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	8	ccomp	_	_
+8	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	9	aux:pass	_	_
+9	fullført	fullføre	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	13	advcl	_	_
 10	i	i	ADP	prep	_	11	case	_	_
 11	2007	2007	NUM	det	Number=Plur|NumType=Card	9	obl	_	SpaceAfter=No
-12	,	$,	PUNCT	<komma>	_	8	punct	_	_
+12	,	$,	PUNCT	<komma>	_	9	punct	_	_
 13	har	ha	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 14	sekretariatet	sekretariat	NOUN	subst	Gender=Neut	13	nsubj	_	_
 15	i	i	ADP	prep	_	16	case	_	_
@@ -26722,7 +26722,7 @@
 7	Språkrådet	Språkrådet	PROPN	subst	_	10	nsubj	_	_
 8	tidlegare	tidleg	ADJ	adj	Degree=Cmp	10	advmod	_	_
 9	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	10	cop	_	_
-10	tillagt	tilleggje	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	6	amod	_	SpaceAfter=No
+10	tillagt	tilleggje	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	6	acl:relcl	_	SpaceAfter=No
 11	,	$,	PUNCT	<komma>	_	19	punct	_	_
 12	og	og	CCONJ	konj	_	19	cc	_	_
 13	at	at	SCONJ	sbu	_	19	mark	_	_
@@ -26762,7 +26762,7 @@
 47	ansvar	ansvar	NOUN	subst	Definite=Ind|Gender=Neut	43	conj	_	_
 48	utan	utan	ADP	prep	_	53	case	_	_
 49	at	at	SCONJ	sbu	_	53	mark	_	_
-50	institusjonen	institusjon	NOUN	subst	Gender=Masc	53	nsubj	_	_
+50	institusjonen	institusjon	NOUN	subst	Gender=Masc	53	nsubj:pass	_	_
 51	også	også	ADV	adv	_	53	advmod	_	_
 52	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	53	aux:pass	_	_
 53	tilført	tilføre	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	39	advcl	_	_
@@ -26946,7 +26946,7 @@
 22	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	20	nmod	_	_
 23	som	som	SCONJ	sbu	_	25	mark	_	_
 24	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	25	aux:pass	_	_
-25	drøfta	drøfte	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	22	amod	_	_
+25	drøfta	drøfte	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	22	acl:relcl	_	_
 26	i	i	ADP	prep	_	28	case	_	_
 27	det	det	DET	det	Gender=Neut|PronType=Dem	28	det	_	_
 28	følgjande	følgje	ADJ	adj	VerbForm=Part	25	advmod	_	SpaceAfter=No
@@ -27113,7 +27113,7 @@
 3	generelle	generell	ADJ	adj	Degree=Pos	12	advmod	_	_
 4	som	som	SCONJ	sbu	_	6	mark	_	_
 5	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	6	cop	_	_
-6	sagt	seie	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	3	amod	_	_
+6	sagt	seie	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	3	acl:relcl	_	_
 7	nedanfor	nedanfor	ADV	prep	_	6	advmod	_	_
 8	under	under	ADP	prep	_	9	case	_	_
 9	kap.	kap.	NOUN	subst	Abbr=Yes	7	obl	_	_
@@ -27216,11 +27216,11 @@
 2	samband	samband	NOUN	subst	Definite=Ind|Gender=Neut	9	obl	_	_
 3	med	med	ADP	prep	_	4	case	_	_
 4	lovendringa	lovendring	NOUN	subst	Gender=Fem	2	nmod	_	_
-5	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
-6	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	5	expl	_	_
+5	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	9	aux:pass	_	_
+6	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	9	expl	_	_
 7	i	i	ADP	prep	_	8	case	_	_
 8	forarbeida	forarbeid	NOUN	subst	Gender=Neut|Number=Plur	9	obl	_	_
-9	presisert	presisere	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	5	ccomp	_	_
+9	presisert	presisere	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
 10	at	at	SCONJ	sbu	_	16	mark	_	_
 11	Kultur-	Kultur-	PROPN	subst	_	16	nsubj	_	_
 12	og	og	CCONJ	konj	_	11	flat:name	_	_
@@ -27242,7 +27242,7 @@
 28	språkreglane	språkregel	NOUN	subst	Gender=Masc|Number=Plur	26	nmod	_	_
 29	i	i	ADP	prep	_	30	case	_	_
 30	samelova	samelov	NOUN	subst	Gender=Fem	28	nmod	_	SpaceAfter=No
-31	.	$.	PUNCT	clb	_	5	punct	_	_
+31	.	$.	PUNCT	clb	_	9	punct	_	_
 
 # sent_id = 015616
 # text = Lova fastset dessutan at Sametinget kvart fjerde år skal utarbeida ein rapport til Kongen om situasjonen for samiske språk i Noreg.
@@ -27272,12 +27272,12 @@
 # sent_id = 015617
 # text = Siste rapport vart utarbeidt i 2004, jf. nærare omtale under kap. 10.
 1	Siste	sist	ADJ	adj	Degree=Pos	2	amod	_	_
-2	rapport	rapport	NOUN	subst	Definite=Ind|Gender=Masc	3	nsubj	_	_
-3	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	8	ccomp	_	_
-4	utarbeidt	utarbeide	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	3	ccomp	_	_
+2	rapport	rapport	NOUN	subst	Definite=Ind|Gender=Masc	4	nsubj:pass	_	_
+3	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	4	aux:pass	_	_
+4	utarbeidt	utarbeide	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	8	ccomp	_	_
 5	i	i	ADP	prep	_	6	case	_	_
 6	2004	2004	NUM	det	Number=Plur|NumType=Card	4	obl	_	SpaceAfter=No
-7	,	$,	PUNCT	<komma>	_	3	punct	_	_
+7	,	$,	PUNCT	<komma>	_	4	punct	_	_
 8	jf.	jf.	VERB	verb	Abbr=Yes|Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 9	nærare	nær	ADJ	adj	Degree=Cmp	10	amod	_	_
 10	omtale	omtale	NOUN	subst	Definite=Ind|Gender=Fem	8	obj	_	_
@@ -27359,7 +27359,7 @@
 3	generelle	generell	ADJ	adj	Degree=Pos	12	advmod	_	_
 4	som	som	SCONJ	sbu	_	6	mark	_	_
 5	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	6	cop	_	_
-6	sagt	seie	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	3	amod	_	_
+6	sagt	seie	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	3	acl:relcl	_	_
 7	nedanfor	nedanfor	ADV	prep	_	6	advmod	_	_
 8	under	under	ADP	prep	_	9	case	_	_
 9	kap.	kap.	NOUN	subst	Abbr=Yes	7	obl	_	_
@@ -27384,13 +27384,13 @@
 28	minoritetsspråka	minoritetsspråk	NOUN	subst	Gender=Neut|Number=Plur	24	obj	_	_
 29	i	i	ADP	prep	_	30	case	_	_
 30	landet	land	NOUN	subst	Gender=Neut	28	nmod	_	_
-31	vårt	vår	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	30	det	_	SpaceAfter=No
+31	vårt	vår	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	30	nmod:poss	_	SpaceAfter=No
 32	.	$.	PUNCT	clb	_	12	punct	_	_
 
 # sent_id = 015622
 # text = Men spørsmålet om språksituasjonen for personar med slik minoritetsspråkleg bakgrunn burde inngå i ansvarsområdet for Språkrådet, vart så vidt lufta alt i den prosjektskissa frå 2003 som la grunnlaget for den institusjonelle omdanninga av Språkrådet.
-1	Men	men	CCONJ	konj	_	18	cc	_	_
-2	spørsmålet	spørsmål	NOUN	subst	Gender=Neut	18	nsubj	_	_
+1	Men	men	CCONJ	konj	_	21	cc	_	_
+2	spørsmålet	spørsmål	NOUN	subst	Gender=Neut	21	nsubj:pass	_	_
 3	om	om	SCONJ	sbu	_	12	mark	_	_
 4	språksituasjonen	språksituasjon	NOUN	subst	Gender=Masc	12	nsubj	_	_
 5	for	for	ADP	prep	_	6	case	_	_
@@ -27406,10 +27406,10 @@
 15	for	for	ADP	prep	_	16	case	_	_
 16	Språkrådet	Språkrådet	PROPN	subst	_	14	nmod	_	SpaceAfter=No
 17	,	$,	PUNCT	<komma>	_	12	punct	_	_
-18	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
+18	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	21	aux:pass	_	_
 19	så	så	ADV	adv	_	20	advmod	_	_
 20	vidt	vid	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	21	advmod	_	_
-21	lufta	lufte	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	18	ccomp	_	_
+21	lufta	lufte	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
 22	alt	alt	ADV	adv	_	25	advmod	_	_
 23	i	i	ADP	prep	_	25	case	_	_
 24	den	den	DET	det	Gender=Fem|PronType=Dem	25	det	_	_
@@ -27425,14 +27425,14 @@
 34	omdanninga	omdanning	NOUN	subst	Gender=Fem	30	nmod	_	_
 35	av	av	ADP	prep	_	36	case	_	_
 36	Språkrådet	Språkrådet	PROPN	subst	_	34	nmod	_	SpaceAfter=No
-37	.	$.	PUNCT	clb	_	18	punct	_	_
+37	.	$.	PUNCT	clb	_	21	punct	_	_
 
 # sent_id = 015623
 # text = Spørsmålet vart vidare drøfta i rapporten frå ein organisasjonsgjennomgang av Språkrådet som ein ekstern konsulent gjennomførte i første halvår 2003.
-1	Spørsmålet	spørsmål	NOUN	subst	Gender=Neut	2	nsubj	_	_
-2	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
+1	Spørsmålet	spørsmål	NOUN	subst	Gender=Neut	4	nsubj:pass	_	_
+2	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	4	aux:pass	_	_
 3	vidare	vid	ADJ	adj	Degree=Cmp	4	advmod	_	_
-4	drøfta	drøfte	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	2	ccomp	_	_
+4	drøfta	drøfte	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
 5	i	i	ADP	prep	_	6	case	_	_
 6	rapporten	rapport	NOUN	subst	Gender=Masc	4	obl	_	_
 7	frå	frå	ADP	prep	_	9	case	_	_
@@ -27449,7 +27449,7 @@
 18	første	første	ADJ	adj	Degree=Pos	19	amod	_	_
 19	halvår	halvår	NOUN	subst	Definite=Ind|Gender=Neut	16	obl	_	_
 20	2003	2003	NUM	det	Number=Plur|NumType=Card	19	nmod	_	SpaceAfter=No
-21	.	$.	PUNCT	clb	_	2	punct	_	_
+21	.	$.	PUNCT	clb	_	4	punct	_	_
 
 # sent_id = 015624
 # text = Resultatet av denne gjennomgangen er reflektert i ei vurdering departementet gav i det notatet om omorganiseringa som vart sendt på høyring i 2004.
@@ -27469,9 +27469,9 @@
 14	notatet	notat	NOUN	subst	Gender=Neut	11	obl	_	_
 15	om	om	ADP	prep	_	16	case	_	_
 16	omorganiseringa	omorganisering	NOUN	subst	Gender=Fem	14	nmod	_	_
-17	som	som	SCONJ	sbu	_	18	mark	_	_
-18	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	16	acl:relcl	_	_
-19	sendt	sende	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	18	ccomp	_	_
+17	som	som	SCONJ	sbu	_	19	mark	_	_
+18	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	19	aux:pass	_	_
+19	sendt	sende	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	16	acl:relcl	_	_
 20	på	på	ADP	prep	_	21	case	_	_
 21	høyring	høyring	NOUN	subst	Definite=Ind|Gender=Fem	19	obl	_	_
 22	i	i	ADP	prep	_	23	case	_	_
@@ -27818,7 +27818,7 @@
 10	nokre	nokre	PRON	pron	Number=Plur|Person=3|PronType=Prs	7	nsubj	_	_
 11	som	som	SCONJ	sbu	_	13	mark	_	_
 12	var	vere	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	13	cop	_	_
-13	skeptiske	skeptisk	ADJ	adj	Degree=Pos|Number=Plur	10	amod	_	_
+13	skeptiske	skeptisk	ADJ	adj	Degree=Pos|Number=Plur	10	acl:relcl	_	_
 14	til	til	ADP	prep	_	18	case	_	_
 15	eit	ein	DET	det	Gender=Neut|PronType=Art	18	det	_	_
 16	slikt	slik	DET	det	Gender=Neut|PronType=Dem	18	det	_	_
@@ -27828,11 +27828,11 @@
 
 # sent_id = 015635
 # text = Det vart mellom anna nemnt at spørsmål som gjeld språksituasjonen for minoritetsspråklege, i utgangspunktet ville vera eit stort og ressurskrevjande arbeid med vidare politiske implikasjonar enn det som det nye organet for norsk språk naturleg burde ta seg av.
-1	Det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	2	expl	_	_
-2	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
+1	Det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	5	expl	_	_
+2	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	5	aux:pass	_	_
 3	mellom	mellom	ADP	prep	_	4	case	_	_
 4	anna	annan	DET	det	Definite=Ind|Gender=Neut|PronType=Dem	5	obl	_	_
-5	nemnt	nemne	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	2	ccomp	_	_
+5	nemnt	nemne	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
 6	at	at	SCONJ	sbu	_	22	mark	_	_
 7	spørsmål	spørsmål	NOUN	subst	Definite=Ind|Gender=Neut|Number=Plur	22	nsubj	_	_
 8	som	som	SCONJ	sbu	_	9	mark	_	_
@@ -27868,7 +27868,7 @@
 38	ta	ta	VERB	verb	VerbForm=Inf	28	acl:relcl	_	_
 39	seg	seg	PRON	pron	Case=Acc|PronType=Prs	38	obj	_	_
 40	av	av	ADV	prep	_	38	advmod	_	SpaceAfter=No
-41	.	$.	PUNCT	clb	_	2	punct	_	_
+41	.	$.	PUNCT	clb	_	5	punct	_	_
 
 # sent_id = 015636
 # text = 3.5.3.4 Merknader i Norsk i hundre!
@@ -27930,9 +27930,9 @@
 12	gav	gje	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	10	acl:relcl	_	_
 13	det	det	DET	det	Gender=Neut|PronType=Dem	14	det	_	_
 14	interimsstyret	interimsstyre	NOUN	subst	Gender=Neut	12	iobj	_	_
-15	som	som	SCONJ	sbu	_	16	mark	_	_
-16	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	14	acl:relcl	_	_
-17	oppnemnt	oppnemne	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	16	ccomp	_	_
+15	som	som	SCONJ	sbu	_	17	mark	_	_
+16	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	17	aux:pass	_	_
+17	oppnemnt	oppnemne	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	14	acl:relcl	_	_
 18	sommaren	sommar	NOUN	subst	Gender=Masc	17	obl	_	_
 19	2004	2004	NUM	det	Number=Plur|NumType=Card	18	nmod	_	_
 20	for	for	ADP	prep	_	22	case	_	_
@@ -27945,9 +27945,9 @@
 27	etableringa	etablering	NOUN	subst	Gender=Fem	26	obj	_	_
 28	av	av	ADP	prep	_	29	case	_	_
 29	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	27	nmod	_	_
-30	som	som	SCONJ	sbu	_	31	mark	_	_
-31	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	29	acl:relcl	_	_
-32	kalla	kalle	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	31	ccomp	_	_
+30	som	som	SCONJ	sbu	_	32	mark	_	_
+31	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	32	aux:pass	_	_
+32	kalla	kalle	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	29	acl:relcl	_	_
 33	eit	ein	DET	det	Gender=Neut|PronType=Art	35	det	_	_
 34	nytt	ny	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	35	amod	_	_
 35	kompetansesenter	kompetansesenter	NOUN	subst	Definite=Ind|Gender=Neut	32	xcomp	_	_
@@ -27995,10 +27995,10 @@
 # text = I rapporten vart det nettopp peikt på at ein generell analyse av språksituasjonen i Noreg låg utanfor det mandatet arbeidsgruppa hadde hatt.
 1	I	i	ADP	prep	_	2	case	_	_
 2	rapporten	rapport	NOUN	subst	Gender=Masc	6	obl	_	_
-3	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
-4	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	3	expl	_	_
+3	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	6	aux:pass	_	_
+4	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	6	expl	_	_
 5	nettopp	nettopp	ADV	adv	_	6	advmod	_	_
-6	peikt	peike	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	3	ccomp	_	_
+6	peikt	peike	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
 7	på	på	ADP	prep	_	16	case	_	_
 8	at	at	SCONJ	sbu	_	16	mark	_	_
 9	ein	ein	DET	det	Gender=Masc|PronType=Art	11	det	_	_
@@ -28015,7 +28015,7 @@
 20	arbeidsgruppa	arbeidsgruppe	NOUN	subst	Gender=Fem	22	nsubj	_	_
 21	hadde	ha	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	22	aux	_	_
 22	hatt	ha	VERB	verb	VerbForm=Part	19	acl:relcl	_	SpaceAfter=No
-23	.	$.	PUNCT	clb	_	3	punct	_	_
+23	.	$.	PUNCT	clb	_	6	punct	_	_
 
 # sent_id = 015641
 # text = Rapporten streka likevel under at det i fleire samanhengar var uråd å drøfta situasjonen for norsk utan å trekkja inn status for minoritetsspråka.
@@ -28048,14 +28048,14 @@
 # text = Som døme vart nemnt tilhøvet mellom morsmål og nasjonalspråk.
 1	Som	som	ADP	prep	_	2	case	_	_
 2	døme	døme	NOUN	subst	Definite=Ind|Gender=Neut	4	xcomp	_	_
-3	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
-4	nemnt	nemne	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	3	ccomp	_	_
-5	tilhøvet	tilhøve	NOUN	subst	Gender=Neut	3	nsubj	_	_
+3	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	4	aux:pass	_	_
+4	nemnt	nemne	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
+5	tilhøvet	tilhøve	NOUN	subst	Gender=Neut	4	nsubj:pass	_	_
 6	mellom	mellom	ADP	prep	_	7	case	_	_
 7	morsmål	morsmål	NOUN	subst	Definite=Ind|Gender=Neut	5	nmod	_	_
 8	og	og	CCONJ	konj	_	9	cc	_	_
 9	nasjonalspråk	nasjonalspråk	NOUN	subst	Definite=Ind|Gender=Neut	7	conj	_	SpaceAfter=No
-10	.	$.	PUNCT	clb	_	3	punct	_	_
+10	.	$.	PUNCT	clb	_	4	punct	_	_
 
 # sent_id = 015643
 # text = Arbeidsgruppa gav også uttrykk for at det var eit klart behov for ei eiga utgreiing om situasjonen for dei nye minoritetsspråka i Noreg.
@@ -28208,10 +28208,10 @@
 
 # sent_id = 015647
 # text = Det vart difor teke inn ei eiga føresegn om dette i dei nye vedtektene som departementet fastsette i 2006.
-1	Det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	2	expl	_	_
-2	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
+1	Det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	4	expl	_	_
+2	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	4	aux:pass	_	_
 3	difor	difor	ADV	adv	_	4	advmod	_	_
-4	teke	ta	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	2	ccomp	_	_
+4	teke	ta	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
 5	inn	inn	ADP	prep	_	14	case	_	_
 6	ei	ein	DET	det	Gender=Fem|PronType=Art	8	det	_	_
 7	eiga	eigen	DET	det	Definite=Ind|Gender=Fem|PronType=Prs	8	det	_	_
@@ -28227,7 +28227,7 @@
 17	fastsette	fastsetje	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	14	acl:relcl	_	_
 18	i	i	ADP	prep	_	19	case	_	_
 19	2006	2006	NUM	det	Number=Plur|NumType=Card	17	obl	_	SpaceAfter=No
-20	.	$.	PUNCT	clb	_	2	punct	_	_
+20	.	$.	PUNCT	clb	_	4	punct	_	_
 
 # sent_id = 015648
 # text = Her heiter det at Språkrådet, i tillegg til meir spesifikke oppgåver som gjeld norsk språk, også skal «ta omsyn til den totale språksituasjonen i landet, slik denne kjem til uttrykk gjennom dei språklege interessene til nordmenn med samisk eller minoritetsspråkleg bakgrunn eller tilknyting».
@@ -28379,10 +28379,10 @@
 
 # sent_id = 015652
 # text = Det vart her vist til at også Norsk språkråd frå tid til anna har uttalt seg om andre språkspørsmål enn dei som direkte vedkjem norsk språk.
-1	Det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	2	expl	_	_
-2	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
+1	Det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	4	expl	_	_
+2	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	4	aux:pass	_	_
 3	her	her	ADV	prep	_	4	advmod	_	_
-4	vist	vise	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	2	ccomp	_	_
+4	vist	vise	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
 5	til	til	ADP	prep	_	15	case	_	_
 6	at	at	SCONJ	sbu	_	15	mark	_	_
 7	også	også	ADV	adv	_	8	advmod	_	_
@@ -28405,7 +28405,7 @@
 24	vedkjem	vedkome	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	21	acl:relcl	_	_
 25	norsk	norsk	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	26	amod	_	_
 26	språk	språk	NOUN	subst	Definite=Ind|Gender=Neut	24	obj	_	SpaceAfter=No
-27	.	$.	PUNCT	clb	_	2	punct	_	_
+27	.	$.	PUNCT	clb	_	4	punct	_	_
 
 # sent_id = 015653
 # text = 3.5.3.6 Nordisk jamføring
@@ -28451,9 +28451,9 @@
 2	nye	ny	ADJ	adj	Degree=Pos	4	amod	_	_
 3	statlege	statleg	ADJ	adj	Degree=Pos	4	amod	_	_
 4	etaten	etat	NOUN	subst	Gender=Masc	14	nsubj	_	_
-5	som	som	SCONJ	sbu	_	6	mark	_	_
-6	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	4	acl:relcl	_	_
-7	etablert	etablere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	6	ccomp	_	_
+5	som	som	SCONJ	sbu	_	7	mark	_	_
+6	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	7	aux:pass	_	_
+7	etablert	etablere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	4	acl:relcl	_	_
 8	i	i	ADP	prep	_	9	case	_	_
 9	Sverige	Sverige	PROPN	subst	_	7	obl	_	_
 10	frå	frå	ADP	prep	_	12	case	_	_
@@ -28558,7 +28558,7 @@
 13	framlegg	framlegg	NOUN	subst	Definite=Ind|Gender=Neut|Number=Plur	11	conj	_	_
 14	som	som	SCONJ	sbu	_	16	mark	_	_
 15	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	16	cop	_	_
-16	komne	kome	ADJ	adj	Number=Plur|VerbForm=Part	13	amod	_	_
+16	komne	kome	ADJ	adj	Number=Plur|VerbForm=Part	13	acl:relcl	_	_
 17	i	i	ADP	prep	_	18	case	_	_
 18	samband	samband	NOUN	subst	Definite=Ind|Gender=Neut	16	obl	_	_
 19	med	med	ADP	prep	_	22	case	_	_
@@ -28567,7 +28567,7 @@
 22	grunnlagsarbeidet	grunnlagsarbeid	NOUN	subst	Gender=Neut	18	nmod	_	_
 23	som	som	SCONJ	sbu	_	25	mark	_	_
 24	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	25	cop	_	_
-25	gjort	gjere	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	22	amod	_	_
+25	gjort	gjere	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	22	acl:relcl	_	_
 26	dei	dei	DET	det	Number=Plur|PronType=Dem	28	det	_	_
 27	siste	sist	ADJ	adj	Degree=Pos|Number=Plur	28	amod	_	_
 28	åra	år	NOUN	subst	Gender=Neut|Number=Plur	25	obl	_	SpaceAfter=No
@@ -28620,7 +28620,7 @@
 13	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	11	nmod	_	_
 14	som	som	SCONJ	sbu	_	16	mark	_	_
 15	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	16	cop	_	_
-16	uttalt	uttale	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	13	amod	_	_
+16	uttalt	uttale	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	13	acl:relcl	_	_
 17	i	i	ADP	prep	_	18	case	_	_
 18	språkopplæringsmeldinga	språkopplæringsmelding	NOUN	subst	Gender=Fem	16	obl	_	_
 19	frå	frå	ADP	prep	_	20	case	_	_
@@ -28679,7 +28679,7 @@
 # sent_id = 015661
 # text = Språkrådet sitt ansvar for spørsmål som gjeld kvensk, må også avgrensast mot det ansvaret som etter føresetnaden skal liggja til det nye kvenske språkrådet som er under oppbygging.
 1	Språkrådet	Språkrådet	PROPN	subst	_	2	obl	_	_
-2	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	3	det	_	_
+2	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	3	nmod:poss	_	_
 3	ansvar	ansvar	NOUN	subst	Definite=Ind|Gender=Neut	12	nsubj	_	_
 4	for	for	ADP	prep	_	5	case	_	_
 5	spørsmål	spørsmål	NOUN	subst	Definite=Ind|Gender=Neut|Number=Plur	3	nmod	_	_
@@ -28826,7 +28826,7 @@
 12	teiknspråkkonsulent	teiknspråkkonsulent	NOUN	subst	Definite=Ind|Gender=Masc	10	nmod	_	_
 13	som	som	SCONJ	sbu	_	15	mark	_	_
 14	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	15	aux:pass	_	_
-15	knytt	knyte	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	10	amod	_	_
+15	knytt	knyte	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	10	acl:relcl	_	_
 16	til	til	ADP	prep	_	17	case	_	_
 17	Språkrådet	Språkrådet	PROPN	subst	_	15	obl	_	SpaceAfter=No
 18	,	$,	PUNCT	<komma>	_	19	punct	_	_
@@ -28876,7 +28876,7 @@
 10	som	som	SCONJ	sbu	_	13	mark	_	_
 11	ovanfor	ovanfor	ADV	prep	_	13	advmod	_	_
 12	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	13	cop	_	_
-13	referert	referere	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	9	amod	_	_
+13	referert	referere	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	9	acl:relcl	_	_
 14	frå	frå	ADP	prep	_	17	case	_	_
 15	den	den	DET	det	Gender=Masc|PronType=Dem	17	det	_	_
 16	nordiske	nordisk	ADJ	adj	Degree=Pos	17	amod	_	_
@@ -28904,7 +28904,7 @@
 38	annan	annan	DET	det	Definite=Ind|Gender=Masc|PronType=Dem	39	det	_	_
 39	ekspertise	ekspertise	NOUN	subst	Definite=Ind|Gender=Masc	36	conj	_	_
 40	innanfor	innanfor	ADP	prep	_	43	case	_	_
-41	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	43	det	_	_
+41	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	43	nmod:poss	_	_
 42	eige	eigen	DET	det	Definite=Ind|Gender=Neut|PronType=Prs	43	det	_	_
 43	morsmål	morsmål	NOUN	subst	Definite=Ind|Gender=Neut	39	nmod	_	SpaceAfter=No
 44	.	$.	PUNCT	clb	_	4	punct	_	_
@@ -28995,7 +28995,7 @@
 16	inn	inn	ADP	prep	_	20	case	_	_
 17	i	i	ADP	prep	_	20	case	_	_
 18	EØS-avtalen	EØS-avtale	NOUN	subst	Gender=Masc	19	obl	_	_
-19	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	20	det	_	_
+19	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	20	nmod:poss	_	_
 20	verknader	verknad	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	15	obl	_	_
 21	for	for	ADP	prep	_	23	case	_	_
 22	norsk	norsk	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	23	amod	_	_
@@ -29056,7 +29056,7 @@
 16	langt	lang	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	19	advmod	_	_
 17	under	under	ADP	prep	_	19	case	_	_
 18	dei	dei	DET	det	Number=Plur|PronType=Dem	19	det	_	_
-19	norske	norsk	ADJ	adj	Degree=Pos|Number=Plur	13	amod	_	SpaceAfter=No
+19	norske	norsk	ADJ	adj	Degree=Pos|Number=Plur	13	acl:relcl	_	SpaceAfter=No
 20	,	$,	PUNCT	<komma>	_	3	punct	_	_
 21	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	23	cop	_	_
 22	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	23	expl	_	_
@@ -29090,7 +29090,7 @@
 7	ikkje	ikkje	ADV	adv	_	8	advmod	_	_
 8	støtter	støtte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	3	acl	_	_
 9	SV	SV	PROPN	subst	Abbr=Yes	10	obl	_	_
-10	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	11	det	_	_
+10	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	11	nmod:poss	_	_
 11	forslag	forslag	NOUN	subst	Definite=Ind|Gender=Neut	8	obj	_	SpaceAfter=No
 12	?	$?	PUNCT	clb	_	3	punct	_	_
 
@@ -29255,7 +29255,7 @@
 21	eigentleg	eigentleg	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	27	advmod	_	_
 22	frå	frå	ADP	prep	_	25	case	_	_
 23	Regjeringa	Regjeringa	PROPN	subst	_	24	obl	_	_
-24	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	25	det	_	_
+24	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	25	nmod:poss	_	_
 25	side	side	NOUN	subst	Definite=Ind|Gender=Fem	27	obl	_	_
 26	skulle	skulle	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	27	aux	_	_
 27	verna	verne	VERB	verb	VerbForm=Inf	18	advcl	_	_
@@ -29269,7 +29269,7 @@
 # sent_id = 015681
 # text = Så mitt spørsmål til representanten Onarheim er:
 1	Så	så	CCONJ	konj	_	7	cc	_	_
-2	mitt	min	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	3	det	_	_
+2	mitt	min	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	3	nmod:poss	_	_
 3	spørsmål	spørsmål	NOUN	subst	Definite=Ind|Gender=Neut	7	nsubj	_	_
 4	til	til	ADP	prep	_	5	case	_	_
 5	representanten	representant	NOUN	subst	Gender=Masc	3	nmod	_	_
@@ -29285,7 +29285,7 @@
 4	tråd	tråd	NOUN	subst	Definite=Ind|Gender=Masc	0	root	_	_
 5	med	med	ADP	prep	_	8	case	_	_
 6	Regjeringa	Regjeringa	PROPN	subst	_	7	obl	_	_
-7	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	8	det	_	_
+7	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	8	nmod:poss	_	_
 8	politikk	politikk	NOUN	subst	Definite=Ind|Gender=Masc	4	nmod	_	_
 9	og	og	CCONJ	konj	_	13	cc	_	_
 10	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	13	cop	_	_
@@ -29549,7 +29549,7 @@
 35	pengar	penge	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	34	obj	_	_
 36	sånn	sånn	DET	det	Gender=Masc|PronType=Dem	37	obl	_	_
 37	at	at	SCONJ	sbu	_	40	mark	_	_
-38	dei	dei	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=3|PronType=Prs	40	nsubj	_	_
+38	dei	dei	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=3|PronType=Prs	40	nsubj:pass	_	_
 39	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	40	aux:pass	_	_
 40	bygde	byggje	ADJ	adj	Number=Plur|VerbForm=Part	34	advcl	_	SpaceAfter=No
 41	.	$.	PUNCT	clb	_	22	punct	_	_
@@ -29764,7 +29764,7 @@
 7	på	på	ADV	prep	_	6	advmod	_	_
 8	frå	frå	ADP	prep	_	11	case	_	_
 9	Framstegspartiet	Framstegspartiet	PROPN	subst	Gender=Neut	10	obl	_	_
-10	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	11	det	_	_
+10	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	11	nmod:poss	_	_
 11	side	side	NOUN	subst	Definite=Ind|Gender=Fem	6	obl	_	SpaceAfter=No
 12	,	$,	PUNCT	<komma>	_	16	punct	_	_
 13	sånn	sånn	DET	det	Gender=Masc|PronType=Dem	14	obl	_	_
@@ -29848,7 +29848,7 @@
 15	politikk	politikk	NOUN	subst	Definite=Ind|Gender=Masc	12	obj	_	_
 16	for	for	ADP	prep	_	19	case	_	_
 17	alle	all	DET	det	Number=Plur|PronType=Tot	19	det	_	_
-18	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	19	det	_	_
+18	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	19	nmod:poss	_	_
 19	hav-	hav-	NOUN	subst	_	15	nmod	_	_
 20	og	og	CCONJ	konj	_	21	cc	_	_
 21	kystområde	kystområde	NOUN	subst	Definite=Ind|Gender=Neut|Number=Plur	19	conj	_	SpaceAfter=No
@@ -29870,7 +29870,7 @@
 12	følgja	følgje	VERB	verb	VerbForm=Inf	7	acl:relcl	_	_
 13	opp	opp	ADV	prep	_	12	advmod	_	_
 14	FN	FN	PROPN	subst	Abbr=Yes	15	obl	_	_
-15	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	16	det	_	_
+15	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	16	nmod:poss	_	_
 16	konvensjon	konvensjon	NOUN	subst	Definite=Ind|Gender=Masc	12	obj	_	_
 17	om	om	ADP	prep	_	19	case	_	_
 18	biologisk	biologisk	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	19	amod	_	_
@@ -29988,7 +29988,7 @@
 4	fleirtal	fleirtal	NOUN	subst	Definite=Ind|Gender=Neut	10	nsubj	_	_
 5	i	i	ADP	prep	_	8	case	_	_
 6	FN	FN	PROPN	subst	Abbr=Yes	7	obl	_	_
-7	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	8	det	_	_
+7	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	8	nmod:poss	_	_
 8	klimapanel	klimapanel	NOUN	subst	Definite=Ind|Gender=Neut	4	nmod	_	_
 9	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	10	cop	_	_
 10	overtydd	overtyde	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
@@ -30057,7 +30057,7 @@
 4	som	som	SCONJ	sbu	_	7	mark	_	_
 5	no	no	ADV	adv	_	7	advmod	_	_
 6	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	7	cop	_	_
-7	påviste	påvise	ADJ	adj	Number=Plur|VerbForm=Part	3	amod	_	SpaceAfter=No
+7	påviste	påvise	ADJ	adj	Number=Plur|VerbForm=Part	3	acl:relcl	_	SpaceAfter=No
 8	,	$,	PUNCT	<komma>	_	11	punct	_	_
 9	m.a.	m.a.	ADV	prep	Abbr=Yes	11	advmod	_	_
 10	i	i	ADP	prep	_	11	case	_	_
@@ -30252,7 +30252,7 @@
 18	ansvaret	ansvar	NOUN	subst	Gender=Neut	14	obl	_	_
 19	vi	vi	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=1|PronType=Prs	21	nsubj	_	_
 20	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	21	cop	_	_
-21	pålagde	påleggje	ADJ	adj	Number=Plur|VerbForm=Part	18	amod	_	SpaceAfter=No
+21	pålagde	påleggje	ADJ	adj	Number=Plur|VerbForm=Part	18	acl:relcl	_	SpaceAfter=No
 22	.	$.	PUNCT	clb	_	5	punct	_	_
 
 # sent_id = 015728
@@ -30271,7 +30271,7 @@
 # text = – Naturen si tolegrense må ikkje overskridast.
 1	–	$–	PUNCT	<strek>	_	7	punct	_	_
 2	Naturen	natur	NOUN	subst	Gender=Masc	3	obl	_	_
-3	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	4	det	_	_
+3	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	4	nmod:poss	_	_
 4	tolegrense	tolegrense	NOUN	subst	Definite=Ind|Gender=Fem	7	nsubj	_	_
 5	må	måtte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	7	aux	_	_
 6	ikkje	ikkje	ADV	adv	_	7	advmod	_	_
@@ -30421,7 +30421,7 @@
 5	kr	kr	NOUN	subst	Abbr=Yes	10	obl	_	_
 6	som	som	SCONJ	sbu	_	8	mark	_	_
 7	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	8	cop	_	_
-8	løyvde	løyve	ADJ	adj	Number=Plur|VerbForm=Part	5	amod	_	SpaceAfter=No
+8	løyvde	løyve	ADJ	adj	Number=Plur|VerbForm=Part	5	acl:relcl	_	SpaceAfter=No
 9	,	$,	PUNCT	<komma>	_	5	punct	_	_
 10	ligg	liggje	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 11	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	10	expl	_	_
@@ -30478,7 +30478,7 @@
 11	,	$,	PUNCT	<komma>	_	15	punct	_	_
 12	og	og	CCONJ	konj	_	15	cc	_	_
 13	komiteen	komité	NOUN	subst	Gender=Masc	14	obl	_	_
-14	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	15	det	_	_
+14	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	15	nmod:poss	_	_
 15	behandling	behandling	NOUN	subst	Definite=Ind|Gender=Fem	5	conj	_	_
 16	som	som	SCONJ	sbu	_	18	mark	_	_
 17	skal	skulle	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	18	aux	_	_
@@ -30548,7 +30548,7 @@
 
 # sent_id = 015742
 # text = Kulturminnefondet blir tilført avkasting frå fondet på 6,5 mill. kr.
-1	Kulturminnefondet	Kulturminnefondet	PROPN	subst	_	3	nsubj	_	_
+1	Kulturminnefondet	Kulturminnefondet	PROPN	subst	_	3	nsubj:pass	_	_
 2	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	3	aux:pass	_	_
 3	tilført	tilføre	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
 4	avkasting	avkasting	NOUN	subst	Definite=Ind|Gender=Fem	3	obj	_	_
@@ -30591,7 +30591,7 @@
 3	for	for	ADP	prep	_	4	case	_	_
 4	2003	2003	NUM	det	Number=Plur|NumType=Card	2	nmod	_	_
 5	har	ha	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	13	aux	_	_
-6	Norsk	Norsk	PROPN	subst	_	13	nsubj	_	_
+6	Norsk	Norsk	PROPN	subst	_	13	nsubj:pass	_	_
 7	Vasskraft-	Vasskraft-	PROPN	subst	_	6	flat:name	_	_
 8	og	og	CCONJ	konj	_	6	flat:name	_	_
 9	Industristadmusem	Industristadmusem	PROPN	subst	_	6	flat:name	_	_
@@ -30620,7 +30620,7 @@
 14	Miljøverndepartementet	Miljøverndepartementet	PROPN	subst	_	10	conj	_	SpaceAfter=No
 15	,	$,	PUNCT	<komma>	_	3	punct	_	_
 16	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	21	aux:pass	_	_
-17	restaureringsarbeidet	restaureringsarbeid	NOUN	subst	Gender=Neut	21	nsubj	_	_
+17	restaureringsarbeidet	restaureringsarbeid	NOUN	subst	Gender=Neut	21	nsubj:pass	_	_
 18	ved	ved	ADP	prep	_	20	case	_	_
 19	dette	dette	DET	det	Gender=Neut|PronType=Dem	20	det	_	_
 20	museet	museum	NOUN	subst	Gender=Neut	17	nmod	_	_
@@ -30649,7 +30649,7 @@
 8	arbeidet	arbeid	NOUN	subst	Gender=Neut	5	obj	_	_
 9	som	som	SCONJ	sbu	_	11	mark	_	_
 10	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	11	cop	_	_
-11	utført	utføre	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	8	amod	_	_
+11	utført	utføre	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	8	acl:relcl	_	_
 12	lokalt	lokal	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	11	advmod	_	SpaceAfter=No
 13	,	$,	PUNCT	<komma>	_	19	punct	_	_
 14	slik	slik	ADV	adv	_	15	advmod	_	_
@@ -30678,7 +30678,7 @@
 37	utnyttinga	utnytting	NOUN	subst	Gender=Fem	27	appos	_	_
 38	av	av	ADP	prep	_	39	case	_	_
 39	vassressursane	vassressurs	NOUN	subst	Gender=Masc|Number=Plur	37	nmod	_	_
-40	våre	vår	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	39	det	_	_
+40	våre	vår	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	39	nmod:poss	_	_
 41	til	til	ADP	prep	_	42	case	_	_
 42	energiproduksjon	energiproduksjon	NOUN	subst	Definite=Ind|Gender=Masc	39	nmod	_	SpaceAfter=No
 43	.	$.	PUNCT	clb	_	5	punct	_	_
@@ -30714,7 +30714,7 @@
 11	vi	vi	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=1|PronType=Prs	12	nsubj	_	_
 12	baserer	basere	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	7	advcl	_	_
 13	energiproduksjonen	energiproduksjon	NOUN	subst	Gender=Masc	12	obj	_	_
-14	vår	vår	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	13	det	_	_
+14	vår	vår	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	13	nmod:poss	_	_
 15	i	i	ADP	prep	_	16	case	_	_
 16	hovudsak	hovudsak	NOUN	subst	Definite=Ind|Gender=Fem	12	obl	_	_
 17	på	på	ADP	prep	_	18	case	_	_
@@ -30820,7 +30820,7 @@
 16	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	17	expl	_	_
 17	gjeld	gjelde	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	14	advcl	_	_
 18	elforbruket	elforbruk	NOUN	subst	Gender=Neut	17	obj	_	_
-19	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	18	det	_	SpaceAfter=No
+19	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	18	nmod:poss	_	SpaceAfter=No
 20	.	$.	PUNCT	clb	_	4	punct	_	_
 
 # sent_id = 015754
@@ -30864,7 +30864,7 @@
 7	Noreg	Noreg	PROPN	subst	_	8	nsubj	_	_
 8	bruka	bruke	VERB	verb	VerbForm=Inf	0	root	_	_
 9	potensialet	potensiale	NOUN	subst	Gender=Neut	8	obj	_	_
-10	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	9	det	_	_
+10	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	9	nmod:poss	_	_
 11	til	til	ADP	prep	_	13	case	_	_
 12	å	å	PART	inf-merke	_	13	mark	_	_
 13	bli	bli	VERB	verb	VerbForm=Inf	8	advcl	_	_
@@ -30884,7 +30884,7 @@
 5	prioriteringane	prioritering	NOUN	subst	Gender=Fem|Number=Plur	12	nsubj	_	_
 6	som	som	SCONJ	sbu	_	8	mark	_	_
 7	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	8	aux:pass	_	_
-8	vedtekne	vedta	ADJ	adj	Number=Plur|VerbForm=Part	5	amod	_	_
+8	vedtekne	vedta	ADJ	adj	Number=Plur|VerbForm=Part	5	acl:relcl	_	_
 9	i	i	ADP	prep	_	10	case	_	_
 10	dag	dag	NOUN	subst	Definite=Ind|Gender=Masc	8	obl	_	SpaceAfter=No
 11	,	$,	PUNCT	<komma>	_	5	punct	_	_
@@ -30905,7 +30905,7 @@
 26	for	for	ADP	prep	_	28	case	_	_
 27	å	å	PART	inf-merke	_	28	mark	_	_
 28	realisera	realisere	VERB	verb	VerbForm=Inf	25	acl	_	_
-29	vår	vår	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	31	det	_	_
+29	vår	vår	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	31	nmod:poss	_	_
 30	målmedvitne	målmedviten	ADJ	adj	Degree=Pos	31	amod	_	_
 31	satsing	satsing	NOUN	subst	Definite=Ind|Gender=Fem	28	obj	_	_
 32	på	på	ADP	prep	_	34	case	_	_
@@ -30995,12 +30995,12 @@
 47	som	som	SCONJ	sbu	_	50	mark	_	_
 48	no	no	ADV	adv	_	50	advmod	_	_
 49	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	50	cop	_	_
-50	kome	kome	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	46	amod	_	_
+50	kome	kome	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	46	acl:relcl	_	_
 51	frå	frå	ADP	prep	_	56	case	_	_
 52	Regjeringa	Regjeringa	PROPN	subst	_	55	obl	_	_
 53	og	og	CCONJ	konj	_	54	cc	_	_
 54	stortingsfleirtalet	stortingsfleirtal	NOUN	subst	Gender=Neut	52	conj	_	_
-55	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	56	det	_	_
+55	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	56	nmod:poss	_	_
 56	side	side	NOUN	subst	Definite=Ind|Gender=Fem	50	obl	_	SpaceAfter=No
 57	,	$,	PUNCT	<komma>	_	40	punct	_	_
 58	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	66	cop	_	_
@@ -31008,7 +31008,7 @@
 60	som	som	SCONJ	sbu	_	63	mark	_	_
 61	no	no	ADV	adv	_	63	advmod	_	_
 62	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	63	aux:pass	_	_
-63	vedtekne	vedta	ADJ	adj	Number=Plur|VerbForm=Part	59	amod	_	SpaceAfter=No
+63	vedtekne	vedta	ADJ	adj	Number=Plur|VerbForm=Part	59	acl:relcl	_	SpaceAfter=No
 64	,	$,	PUNCT	<komma>	_	59	punct	_	_
 65	faktisk	faktisk	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	66	advmod	_	_
 66	større	stor	ADJ	adj	Degree=Cmp	36	ccomp	_	SpaceAfter=No
@@ -31424,7 +31424,7 @@
 4	sak	sak	NOUN	subst	Definite=Ind|Gender=Fem	18	nsubj:outer	_	_
 5	påsketuristar	påsketurist	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	10	nsubj	_	_
 6	i	i	ADP	prep	_	8	case	_	_
-7	vårt	vår	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	8	det	_	_
+7	vårt	vår	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	8	nmod:poss	_	_
 8	område	område	NOUN	subst	Definite=Ind|Gender=Neut	5	nmod	_	_
 9	må	måtte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	10	aux	_	_
 10	vita	vite	VERB	verb	VerbForm=Inf	4	acl:relcl	_	SpaceAfter=No
@@ -31458,7 +31458,7 @@
 14	som	som	SCONJ	sbu	_	17	mark	_	_
 15	òg	òg	ADV	adv	_	17	advmod	_	_
 16	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	17	cop	_	_
-17	oppført	oppføre	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	13	amod	_	_
+17	oppført	oppføre	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	13	acl:relcl	_	_
 18	på	på	ADP	prep	_	19	case	_	_
 19	telefonlista	telefonliste	NOUN	subst	Gender=Fem	17	obl	_	SpaceAfter=No
 20	,	$,	PUNCT	<komma>	_	3	punct	_	_
@@ -31542,7 +31542,7 @@
 5	for	for	ADP	prep	_	9	case	_	_
 6	Raude	Raude	PROPN	subst	_	8	obl	_	_
 7	Kross	Kross	PROPN	subst	_	6	flat:name	_	_
-8	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	9	det	_	_
+8	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	9	nmod:poss	_	_
 9	arbeid	arbeid	NOUN	subst	Definite=Ind|Gender=Neut	4	nmod	_	_
 10	som	som	ADP	prep	_	11	case	_	_
 11	hjelpar	hjelpar	NOUN	subst	Definite=Ind|Gender=Masc	9	nmod	_	_
@@ -31698,7 +31698,7 @@
 5	hadde	ha	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
 6	i	i	ADP	prep	_	7	case	_	_
 7	oppgåva	oppgåve	NOUN	subst	Gender=Fem	5	obl	_	_
-8	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	7	det	_	_
+8	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	7	nmod:poss	_	_
 9	å	å	PART	inf-merke	_	10	mark	_	_
 10	arbeide	arbeide	VERB	verb	VerbForm=Inf	5	xcomp	_	_
 11	med	med	ADP	prep	_	12	case	_	_
@@ -31770,7 +31770,7 @@
 12	å	å	PART	inf-merke	_	13	mark	_	_
 13	sjå	sjå	VERB	verb	VerbForm=Inf	7	advcl	_	_
 14	korleis	korleis	ADV	adv	_	17	advmod	_	_
-15	eg	eg	PRON	pron	Animacy=Hum|Case=Nom|Person=1|PronType=Prs	17	nsubj	_	_
+15	eg	eg	PRON	pron	Animacy=Hum|Case=Nom|Person=1|PronType=Prs	17	nsubj:pass	_	_
 16	blei	bli	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	17	aux:pass	_	_
 17	mottatt	motta	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	13	xcomp	_	_
 18	og	og	CCONJ	konj	_	21	cc	_	_
@@ -31900,7 +31900,7 @@
 2	var	vere	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	cop	_	_
 3	der	der	ADV	prep	_	8	ccomp	_	_
 4	på	på	ADP	prep	_	6	case	_	_
-5	deira	deira	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	6	det	_	_
+5	deira	deira	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	6	nmod:poss	_	_
 6	premissar	premiss	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	3	obl	_	SpaceAfter=No
 7	,	$,	PUNCT	<komma>	_	3	punct	_	_
 8	seier	seie	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
@@ -31984,7 +31984,7 @@
 10	for	for	CCONJ	konj	_	15	cc	_	_
 11	då	då	ADV	adv	_	15	advmod	_	_
 12	ha	ha	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	15	aux	_	_
-13	eg	eg	PRON	pron	Animacy=Hum|Case=Nom|Person=1|PronType=Prs	15	nsubj	_	_
+13	eg	eg	PRON	pron	Animacy=Hum|Case=Nom|Person=1|PronType=Prs	15	nsubj:pass	_	_
 14	blitt	bli	AUX	verb	VerbForm=Part	15	aux:pass	_	_
 15	hiven	hive	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	4	conj	_	_
 16	ut	ut	ADV	prep	_	15	advmod	_	SpaceAfter=No
@@ -32217,7 +32217,7 @@
 1	Det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	3	expl	_	_
 2	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	3	cop	_	_
 3	der	der	ADV	prep	_	0	root	_	_
-4	visitortenesta	visitorteneste	NOUN	subst	Gender=Fem	6	nsubj	_	_
+4	visitortenesta	visitorteneste	NOUN	subst	Gender=Fem	6	nsubj:pass	_	_
 5	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	6	aux:pass	_	_
 6	utført	utføre	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	3	advcl	_	SpaceAfter=No
 7	.	$.	PUNCT	clb	_	3	punct	_	_
@@ -32830,7 +32830,7 @@
 7	medmenneske	medmenneske	NOUN	subst	Definite=Ind|Gender=Neut	3	ccomp	_	_
 8	som	som	SCONJ	sbu	_	10	mark	_	_
 9	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	10	aux:pass	_	_
-10	sett	setje	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	7	amod	_	_
+10	sett	setje	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	7	acl:relcl	_	_
 11	pris	pris	NOUN	subst	Definite=Ind|Gender=Masc	10	obj	_	_
 12	på	på	ADP	prep	_	11	nmod	_	SpaceAfter=No
 13	.	$.	PUNCT	clb	_	3	punct	_	_
@@ -33264,12 +33264,12 @@
 5	vere	vere	AUX	verb	VerbForm=Inf	7	cop	_	_
 6	ein	ein	DET	det	Gender=Masc|PronType=Art	7	det	_	_
 7	fordel	fordel	NOUN	subst	Definite=Ind|Gender=Masc	2	xcomp	_	SpaceAfter=No
-8	,	$,	PUNCT	<komma>	_	12	punct	_	_
-9	sidan	sidan	SCONJ	sbu	_	12	mark	_	_
-10	han	han	PRON	pron	Case=Nom|Gender=Masc|Person=3|PronType=Prs	12	nsubj	_	_
+8	,	$,	PUNCT	<komma>	_	13	punct	_	_
+9	sidan	sidan	SCONJ	sbu	_	13	mark	_	_
+10	han	han	PRON	pron	Case=Nom|Gender=Masc|Person=3|PronType=Prs	13	nsubj:pass	_	_
 11	då	då	ADV	adv	_	13	advmod	_	_
-12	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	7	advcl	_	_
-13	pressa	presse	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	12	ccomp	_	_
+12	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	13	aux:pass	_	_
+13	pressa	presse	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	7	advcl	_	_
 14	til	til	ADP	prep	_	16	case	_	_
 15	å	å	PART	inf-merke	_	16	mark	_	_
 16	lære	lære	VERB	verb	VerbForm=Inf	13	advcl	_	_
@@ -33434,7 +33434,7 @@
 6	ta	ta	VERB	verb	VerbForm=Inf	4	xcomp	_	_
 7	heile	heil	ADJ	adj	Degree=Pos	8	amod	_	_
 8	utdanninga	utdanning	NOUN	subst	Gender=Fem	6	obj	_	_
-9	mi	min	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	8	det	_	_
+9	mi	min	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	8	nmod:poss	_	_
 10	i	i	ADP	prep	_	11	case	_	_
 11	England	England	PROPN	subst	_	6	obl	_	SpaceAfter=No
 12	,	$,	PUNCT	<komma>	_	15	punct	_	_
@@ -33453,7 +33453,7 @@
 # sent_id = 015889
 # text = Målet mitt er eigentleg å kunne kommunisere endå betre på engelsk enn på norsk, sidan engelsk er verdsspråket, seier Kristian.
 1	Målet	mål	NOUN	subst	Gender=Neut	7	nsubj	_	_
-2	mitt	min	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	1	det	_	_
+2	mitt	min	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	1	nmod:poss	_	_
 3	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	7	cop	_	_
 4	eigentleg	eigentleg	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	7	advmod	_	_
 5	å	å	PART	inf-merke	_	7	mark	_	_
@@ -33553,7 +33553,7 @@
 16	dekker	dekke	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	3	conj	_	_
 17	halve	halv	ADJ	adj	Degree=Pos	18	amod	_	_
 18	opphaldet	opphald	NOUN	subst	Gender=Neut	16	obj	_	_
-19	hans	hans	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	18	det	_	_
+19	hans	hans	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	18	nmod:poss	_	_
 20	på	på	ADP	prep	_	22	case	_	_
 21	to	to	NUM	det	Number=Plur|NumType=Card	22	nummod	_	_
 22	år	år	NOUN	subst	Definite=Ind|Gender=Neut|Number=Plur	18	nmod	_	SpaceAfter=No
@@ -33588,7 +33588,7 @@
 6	stipendet	stipend	NOUN	subst	Gender=Neut	5	obj	_	_
 7	som	som	SCONJ	sbu	_	9	mark	_	_
 8	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	9	cop	_	_
-9	verdt	verd	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	6	amod	_	_
+9	verdt	verd	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	6	acl:relcl	_	_
 10	rundt	rundt	ADP	prep	_	11	case	_	_
 11	200.000	200.000	NUM	det	Number=Plur|NumType=Card	9	obl	_	SpaceAfter=No
 12	,	$,	PUNCT	<komma>	_	16	punct	_	_
@@ -33637,7 +33637,7 @@
 # sent_id = 015897
 # text = Kristian si vidaregåande utdanning tek to år, medan Joakim skal vere i Rouen i Normandie i tre år.
 1	Kristian	Kristian	PROPN	subst	Gender=Masc	2	obl	_	_
-2	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	4	det	_	_
+2	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	4	nmod:poss	_	_
 3	vidaregåande	vidaregåande	ADJ	adj	Degree=Pos	4	amod	_	_
 4	utdanning	utdanning	NOUN	subst	Definite=Ind|Gender=Fem	5	nsubj	_	_
 5	tek	ta	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
@@ -33706,7 +33706,7 @@
 4	Fylkesmannen	Fylkesmannen	PROPN	subst	_	7	obl	_	_
 5	i	i	ADP	prep	_	6	case	_	_
 6	Vest-Agder	Vest-Agder	PROPN	subst	_	4	nmod	_	_
-7	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	8	det	_	_
+7	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	8	nmod:poss	_	_
 8	internasjonaliseringsprogram	internasjonaliseringsprogram	NOUN	subst	Definite=Ind|Gender=Neut	2	obl	_	_
 9	(	$(	PUNCT	<parentes-beg>	_	10	punct	_	SpaceAfter=No
 10	FIVAI	FIVAI	PROPN	subst	_	8	appos	_	SpaceAfter=No
@@ -33768,7 +33768,7 @@
 10	å	å	PART	inf-merke	_	11	mark	_	_
 11	utvikle	utvikle	VERB	verb	VerbForm=Inf	7	advcl	_	_
 12	språkkunnskapane	språkkunnskap	NOUN	subst	Gender=Masc|Number=Plur	11	obj	_	_
-13	mine	min	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	12	det	_	SpaceAfter=No
+13	mine	min	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	12	nmod:poss	_	SpaceAfter=No
 14	,	$,	PUNCT	<komma>	_	2	punct	_	_
 15	seier	seie	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 16	han	han	PRON	pron	Case=Nom|Gender=Masc|Person=3|PronType=Prs	15	nsubj	_	SpaceAfter=No
@@ -33899,7 +33899,7 @@
 8	straks	straks	ADV	adv	_	7	advmod	_	_
 9	etter	etter	ADP	prep	_	13	case	_	_
 10	at	at	SCONJ	sbu	_	13	mark	_	_
-11	klaga	klage	NOUN	subst	Gender=Fem	13	nsubj	_	_
+11	klaga	klage	NOUN	subst	Gender=Fem	13	nsubj:pass	_	_
 12	blei	bli	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	13	aux:pass	_	_
 13	avvist	avvise	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	7	advcl	_	SpaceAfter=No
 14	.	$.	PUNCT	clb	_	3	punct	_	_
@@ -33923,7 +33923,7 @@
 15	om	om	ADP	prep	_	21	case	_	_
 16	at	at	SCONJ	sbu	_	21	mark	_	_
 17	dottera	dotter	NOUN	subst	Gender=Fem	21	nsubj	_	_
-18	hennar	hennar	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	17	det	_	_
+18	hennar	hennar	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	17	nmod:poss	_	_
 19	ikkje	ikkje	ADV	adv	_	21	advmod	_	_
 20	får	få	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	21	aux	_	_
 21	gå	gå	VERB	verb	VerbForm=Inf	14	acl	_	_
@@ -34950,7 +34950,7 @@
 14	at	at	SCONJ	sbu	_	17	mark	_	_
 15	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	17	expl	_	_
 16	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	17	cop	_	_
-17	høgare	høg	ADJ	adj	Degree=Cmp	12	amod	_	_
+17	høgare	høg	ADJ	adj	Degree=Cmp	12	acl	_	_
 18	under	under	ADP	prep	_	19	case	_	_
 19	taket	tak	NOUN	subst	Gender=Neut	17	obl	_	_
 20	her	her	ADV	prep	_	17	advmod	_	SpaceAfter=No
@@ -34970,7 +34970,7 @@
 
 # sent_id = 015962
 # text = Instrumentet blei opphavleg bygd til Flatdal kyrkje i 1922 av orgelbyggeriet Olsen & Jørgensen.
-1	Instrumentet	instrument	NOUN	subst	Gender=Neut	4	nsubj	_	_
+1	Instrumentet	instrument	NOUN	subst	Gender=Neut	4	nsubj:pass	_	_
 2	blei	bli	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	4	aux:pass	_	_
 3	opphavleg	opphavleg	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	4	advmod	_	_
 4	bygd	byggje	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
@@ -34988,7 +34988,7 @@
 
 # sent_id = 015963
 # text = Instrumentet blei demontert og flytta frå Flatdal til Kviteseid hausten 2002.
-1	Instrumentet	instrument	NOUN	subst	Gender=Neut	3	nsubj	_	_
+1	Instrumentet	instrument	NOUN	subst	Gender=Neut	3	nsubj:pass	_	_
 2	blei	bli	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	aux:pass	_	_
 3	demontert	demontere	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	0	root	_	_
 4	og	og	CCONJ	konj	_	5	cc	_	_
@@ -35012,7 +35012,7 @@
 7	piperekkjer	piperekkje	NOUN	subst	Definite=Ind|Gender=Fem|Number=Plur	2	obl	_	_
 8	i	i	ADP	prep	_	11	case	_	_
 9	kvar	kvar	DET	det	Gender=Masc|PronType=Tot	11	det	_	_
-10	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	11	det	_	_
+10	sin	sin	PRON	det	Gender=Masc|Poss=Yes|PronType=Prs	11	nmod:poss	_	_
 11	klangfarge	klangfarge	NOUN	subst	Definite=Ind|Gender=Masc	7	xcomp	_	SpaceAfter=No
 12	.	$.	PUNCT	clb	_	2	punct	_	_
 
@@ -35382,9 +35382,9 @@
 7	ein	ein	DET	det	Gender=Masc|PronType=Art	0	root	_	_
 8	av	av	ADP	prep	_	9	case	_	_
 9	dei	dei	PRON	pron	Animacy=Hum|Case=Acc|Number=Plur|Person=3|PronType=Prs	7	nmod	_	_
-10	som	som	SCONJ	sbu	_	11	mark	_	_
-11	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	9	acl:relcl	_	_
-12	valde	velje	ADJ	adj	Number=Plur|VerbForm=Part	11	ccomp	_	_
+10	som	som	SCONJ	sbu	_	12	mark	_	_
+11	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	12	aux:pass	_	_
+12	valde	velje	ADJ	adj	Number=Plur|VerbForm=Part	9	acl:relcl	_	_
 13	inn	inn	ADP	prep	_	15	case	_	_
 14	i	i	ADP	prep	_	15	case	_	_
 15	nemnda	nemnd	NOUN	subst	Gender=Fem	12	obl	_	_
@@ -35694,11 +35694,11 @@
 3	var	vere	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	5	cop	_	_
 4	i	i	ADP	prep	_	5	case	_	_
 5	1958	1958	NUM	det	Number=Plur|NumType=Card	0	root	_	_
-6	då	då	SCONJ	sbu	_	9	mark	_	_
-7	Kilen	Kilen	PROPN	subst	_	9	nsubj	_	_
+6	då	då	SCONJ	sbu	_	10	mark	_	_
+7	Kilen	Kilen	PROPN	subst	_	10	nsubj:pass	_	_
 8	kapell	kapell	NOUN	subst	Definite=Ind|Gender=Neut	7	flat:name	_	_
-9	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	5	advcl	_	_
-10	vigsla	vigsle	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	9	ccomp	_	SpaceAfter=No
+9	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	10	aux:pass	_	_
+10	vigsla	vigsle	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	5	advcl	_	SpaceAfter=No
 11	.	$.	PUNCT	clb	_	5	punct	_	_
 
 # sent_id = 016000
@@ -35800,7 +35800,7 @@
 # sent_id = 016004
 # text = Fjellkyrkja sitt mandat er å vere ei levande kyrkje og ein sosial møteplass.
 1	Fjellkyrkja	Fjellkyrkja	PROPN	subst	_	2	obl	_	_
-2	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	3	det	_	_
+2	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	3	nmod:poss	_	_
 3	mandat	mandat	NOUN	subst	Definite=Ind|Gender=Neut	9	nsubj	_	_
 4	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	9	cop	_	_
 5	å	å	PART	inf-merke	_	9	mark	_	_
@@ -35952,23 +35952,23 @@
 
 # sent_id = 016014
 # text = Staden vart mellom anna nytta til dumping av daude dyr.
-1	Staden	stad	NOUN	subst	Gender=Masc	2	nsubj	_	_
-2	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
+1	Staden	stad	NOUN	subst	Gender=Masc	5	nsubj:pass	_	_
+2	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	5	aux:pass	_	_
 3	mellom	mellom	ADP	prep	_	4	case	_	_
 4	anna	annan	DET	det	Definite=Ind|Gender=Neut|PronType=Dem	5	obl	_	_
-5	nytta	nytte	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	2	ccomp	_	_
+5	nytta	nytte	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	0	root	_	_
 6	til	til	ADP	prep	_	7	case	_	_
 7	dumping	dumping	NOUN	subst	Definite=Ind|Gender=Fem	5	obl	_	_
 8	av	av	ADP	prep	_	10	case	_	_
 9	daude	daud	ADJ	adj	Degree=Pos|Number=Plur	10	amod	_	_
 10	dyr	dyr	NOUN	subst	Definite=Ind|Gender=Neut|Number=Plur	7	nmod	_	SpaceAfter=No
-11	.	$.	PUNCT	clb	_	2	punct	_	_
+11	.	$.	PUNCT	clb	_	5	punct	_	_
 
 # sent_id = 016015
 # text = Avfallsplassen vart stengt då avrenninga gjekk rett i vassdraget like nedanfor.
-1	Avfallsplassen	avfallsplass	NOUN	subst	Gender=Masc	2	nsubj	_	_
-2	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
-3	stengt	stenge	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	2	ccomp	_	_
+1	Avfallsplassen	avfallsplass	NOUN	subst	Gender=Masc	3	nsubj:pass	_	_
+2	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	aux:pass	_	_
+3	stengt	stenge	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	0	root	_	_
 4	då	då	SCONJ	sbu	_	6	mark	_	_
 5	avrenninga	avrenning	NOUN	subst	Gender=Fem	6	nsubj	_	_
 6	gjekk	gå	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	advcl	_	_
@@ -35977,7 +35977,7 @@
 9	vassdraget	vassdrag	NOUN	subst	Gender=Neut	6	obl	_	_
 10	like	like	ADV	adv	_	11	advmod	_	_
 11	nedanfor	nedanfor	ADP	prep	_	9	nmod	_	SpaceAfter=No
-12	.	$.	PUNCT	clb	_	2	punct	_	_
+12	.	$.	PUNCT	clb	_	3	punct	_	_
 
 # newpar
 # sent_id = 016016
@@ -36001,7 +36001,7 @@
 
 # sent_id = 016017
 # text = Staden har blitt brukt til å kvitte seg med trerøter og store steinar frå anleggsverksemder i nærområdet.
-1	Staden	stad	NOUN	subst	Gender=Masc	4	nsubj	_	_
+1	Staden	stad	NOUN	subst	Gender=Masc	4	nsubj:pass	_	_
 2	har	ha	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	4	aux	_	_
 3	blitt	bli	AUX	verb	VerbForm=Part	4	aux:pass	_	_
 4	brukt	bruke	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	0	root	_	_
@@ -36475,7 +36475,7 @@
 # text = I tala si la konsul Carlsten vekt på at dei to eldsjelene i fellesskap har bygd opp ein kulturinstitusjon både Vinje, Noreg og Litauen kan vere stolte av.
 1	I	i	ADP	prep	_	2	case	_	_
 2	tala	tale	NOUN	subst	Gender=Fem	4	obl	_	_
-3	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	2	det	_	_
+3	si	sin	PRON	det	Gender=Fem|Poss=Yes|PronType=Prs	2	nmod:poss	_	_
 4	la	leggje	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
 5	konsul	konsul	NOUN	subst	Definite=Ind|Gender=Masc	6	nmod	_	_
 6	Carlsten	Carlsten	PROPN	subst	_	4	nsubj	_	_
@@ -36500,7 +36500,7 @@
 25	Litauen	Litauen	PROPN	subst	_	21	conj	_	_
 26	kan	kunne	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	28	aux	_	_
 27	vere	vere	AUX	verb	VerbForm=Inf	28	cop	_	_
-28	stolte	stolt	ADJ	adj	Degree=Pos|Number=Plur	19	amod	_	_
+28	stolte	stolt	ADJ	adj	Degree=Pos|Number=Plur	19	acl:relcl	_	_
 29	av	av	ADV	prep	_	28	advmod	_	SpaceAfter=No
 30	.	$.	PUNCT	clb	_	4	punct	_	_
 
@@ -36532,7 +36532,7 @@
 24	konsulatet	konsulat	NOUN	subst	Gender=Neut	27	obl	_	_
 25	og	og	CCONJ	konj	_	26	cc	_	_
 26	ambassaden	ambassade	NOUN	subst	Gender=Masc	24	conj	_	_
-27	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	28	det	_	_
+27	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	28	nmod:poss	_	_
 28	framlegg	framlegg	NOUN	subst	Definite=Ind|Gender=Neut	21	obl	_	_
 29	til	til	ADP	prep	_	30	case	_	_
 30	prisvinnarar	prisvinnar	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	28	nmod	_	SpaceAfter=No
@@ -36548,7 +36548,7 @@
 6	heilt	heil	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	4	conj	_	_
 7	bak	bak	ADP	prep	_	11	case	_	_
 8	Carlsten	Carlsten	PROPN	subst	_	9	obl	_	_
-9	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	11	det	_	_
+9	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	11	nmod:poss	_	_
 10	rosande	rose	ADJ	adj	VerbForm=Part	11	amod	_	_
 11	ord	ord	NOUN	subst	Definite=Ind|Gender=Neut|Number=Plur	2	obl	_	_
 12	til	til	ADP	prep	_	13	case	_	_
@@ -37006,7 +37006,7 @@
 # text = No blir båten, som er ein klassisk gentlemansyacht, sett i rute frå og med 3. juli.
 1	No	no	ADV	adv	_	11	advmod	_	_
 2	blir	bli	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	11	aux:pass	_	_
-3	båten	båt	NOUN	subst	Gender=Masc	11	nsubj	_	SpaceAfter=No
+3	båten	båt	NOUN	subst	Gender=Masc	11	nsubj:pass	_	SpaceAfter=No
 4	,	$,	PUNCT	<komma>	_	9	punct	_	_
 5	som	som	SCONJ	sbu	_	9	mark	_	_
 6	er	vere	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	9	cop	_	_
