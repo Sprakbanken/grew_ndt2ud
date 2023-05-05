@@ -244,7 +244,7 @@ rule determiner_possessive {
 }
 
 rule determiner {
-  pattern {DEP [upos=DET|PRON]; e: GOV -[DET]-> DEP; }
+  pattern {DEP [upos=DET|PRON, !Poss]; e: GOV -[DET]-> DEP; }
   commands { e.label = det }
 }
 
