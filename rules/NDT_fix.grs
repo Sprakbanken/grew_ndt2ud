@@ -293,11 +293,12 @@ rule fix_non_projective_punctuation_3 {
 }
 
 % 004431: "Krafta burde gått til det føremålet ho var tenkt , og avtalen burde ha falle bort da Union vart nedlagt."
+% 016563: "Mange er nok overraska over at Odd-Bjørn Hjelmeset (Fjellhug/Vereide-Hyen) ikkje vart utteken i dag."
 rule adjectival_participle {
-    global { sent_id = "004431" }
+    global { sent_id = "004431" | "016563" }
     pattern {
         V [ lemma = "verte" ];
-        A [ form = "nedlagt", upos = ADJ, !VerbForm];
+        A [ form = "nedlagt"|"utteken", upos = ADJ, !VerbForm];
         V -[INFV]-> A;
     }
     commands { A.VerbForm = Part }

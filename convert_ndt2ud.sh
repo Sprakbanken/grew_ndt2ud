@@ -1,8 +1,8 @@
 
 # Treebank file names
 
-#PARTITION=dev
-PARTITION=train
+PARTITION=dev
+#PARTITION=train
 #PARTITION=test
 
 #LANG=nb
@@ -74,5 +74,5 @@ for METRIC in UAS LAS; do
 done
 
 # VISUALISATION
-#echo "--- Visualize converted treebank ---"
-#java -jar dist-20141005/lib/MaltEval.jar -g $MALTGOLD -s $TEMPFILE -v 1
+echo "--- Visualize converted treebank ---"
+java -jar dist-20141005/lib/MaltEval.jar -g $MALTGOLD -s $TEMPFILE -v 1
