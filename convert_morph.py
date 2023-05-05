@@ -11,7 +11,7 @@ from parse_conllu import parse_conll_file, CONLLFIELDS, write_conll
 symbols = ['$', '£', '%', ':(', ':)', '+', '-', '/', '>=']
 
 auxlemmas = [
-    "bli", "burde", "få", "ha", "kunne", "vilje",
+    "bli", "verte", "burde", "få", "ha", "kunne", "vilje",
     "måtte", "skulle", "tørre", "ville", "være", "vere"
 ]
 

@@ -1070,7 +1070,7 @@
 3	seia	seie	VERB	verb	VerbForm=Inf	2	INFV	_	_
 4	heile	heil	ADJ	adj	Degree=Pos	5	ATR	_	_
 5	verdikjeda	verdikjede	NOUN	subst	Gender=Fem	6	SUBJ	_	_
-6	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	FINV	_	_
+6	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	FINV	_	_
 7	no	no	ADV	adv	_	8	ADV	_	_
 8	flagga	flagge	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	6	INFV	_	_
 9	ut	ut	ADP	prep	_	8	ADV	_	SpaceAfter=No
@@ -1863,13 +1863,13 @@
 20	sosial	sosial	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	21	ATR	_	_
 21	rørsle	rørsle	NOUN	subst	Definite=Ind|Gender=Fem	18	PUTFYLL	_	_
 22	som	som	SCONJ	sbu	_	23	SBU	_	_
-23	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	21	ATR	_	_
+23	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	21	ATR	_	_
 24	dana	dane	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	23	INFV	_	_
 25	og	og	CCONJ	konj	_	29	KONJ	_	_
 26	i	i	ADP	prep	_	30	ADV	_	_
 27	sterk	sterk	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	28	ATR	_	_
 28	grad	grad	NOUN	subst	Definite=Ind|Gender=Fem	26	PUTFYLL	_	_
-29	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	23	KOORD	_	_
+29	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	23	KOORD	_	_
 30	halden	halde	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	29	INFV	_	_
 31	oppe	oppe	ADP	prep	_	30	ADV	_	_
 32	av	av	ADP	prep	_	30	ADV	_	_
@@ -2032,7 +2032,7 @@
 3	har	ha	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	FINV	_	_
 4	ei	ein	DET	det	Gender=Fem|PronType=Art	5	DET	_	_
 5	sak	sak	NOUN	subst	Definite=Ind|Gender=Fem	3	SUBJ	_	_
-6	vorte	verte	VERB	verb	VerbForm=Part	3	INFV	_	_
+6	vorte	verte	AUX	verb	VerbForm=Part	3	INFV	_	_
 7	så	så	ADV	adv	_	8	ADV	_	_
 8	godt	god	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	9	ADV	_	_
 9	argumentert	argumentere	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	6	INFV	_	_
@@ -2354,7 +2354,7 @@
 # sent_id = 016215
 # text = Aper vart tidlegare nytta i forsking på ei rekkje universitet over heile Storbritannia.
 1	Aper	ape	NOUN	subst	Definite=Ind|Gender=Fem|Number=Plur	2	SUBJ	_	_
-2	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+2	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 3	tidlegare	tidleg	ADJ	adj	Degree=Cmp	4	ADV	_	_
 4	nytta	nytte	ADJ	adj	Number=Plur|VerbForm=Part	2	INFV	_	_
 5	i	i	ADP	prep	_	4	ADV	_	_
@@ -2584,7 +2584,7 @@
 # text = Som det vert sagt:
 1	Som	som	SCONJ	sbu	_	3	SBU	_	_
 2	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	3	SUBJ	_	_
-3	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	FINV	_	_
+3	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	FINV	_	_
 4	sagt	seie	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	3	INFV	_	SpaceAfter=No
 5	:	$:	PUNCT	clb	_	3	IP	_	_
 
@@ -3502,7 +3502,7 @@
 12	til	til	ADP	prep	_	11	ATR	_	_
 13	at	at	SCONJ	sbu	_	15	SBU	_	_
 14	Stein	Stein	PROPN	subst	Gender=Masc	15	SUBJ	_	_
-15	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	12	PUTFYLL	_	_
+15	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	12	PUTFYLL	_	_
 16	hata	hate	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	15	INFV	_	_
 17	av	av	ADP	prep	_	16	ADV	_	_
 18	dyrerettsaktivistar	dyrerettsaktivist	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	17	PUTFYLL	_	SpaceAfter=No
@@ -3705,7 +3705,7 @@
 11	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	8	DOBJ	_	_
 12	som	som	SCONJ	sbu	_	14	SBU	_	_
 13	no	no	ADV	adv	_	15	ADV	_	_
-14	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	11	ATR	_	_
+14	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	11	ATR	_	_
 15	kalla	kalle	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	14	INFV	_	_
 16	MPTP	MPTP	PROPN	subst	_	15	OPRED	_	SpaceAfter=No
 17	.	$.	PUNCT	clb	_	2	IP	_	_
@@ -3865,7 +3865,7 @@
 13	i	i	ADP	prep	_	12	ATR	_	_
 14	hjernen	hjerne	NOUN	subst	Gender=Masc	13	PUTFYLL	_	SpaceAfter=No
 15	,	$,	PUNCT	<komma>	_	6	IK	_	_
-16	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	DOBJ	_	_
+16	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	DOBJ	_	_
 17	øydelagde	øydeleggje	ADJ	adj	Number=Plur|VerbForm=Part	16	INFV	_	SpaceAfter=No
 18	.	$.	PUNCT	clb	_	3	IP	_	_
 
@@ -4034,7 +4034,7 @@
 2	om	om	SCONJ	sbu	_	4	SBU	_	_
 3	Parkinsons-pasientar	Parkinsons-pasient	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	4	SUBJ	_	_
 4	kan	kunne	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	12	ADV	_	_
-5	verta	verte	VERB	verb	VerbForm=Inf	4	INFV	_	_
+5	verta	verte	AUX	verb	VerbForm=Inf	4	INFV	_	_
 6	hjelpte	hjelpe	ADJ	adj	Number=Plur|VerbForm=Part	5	INFV	_	_
 7	ved	ved	ADP	prep	_	6	ADV	_	_
 8	bruk	bruk	NOUN	subst	Definite=Ind|Gender=Masc	7	PUTFYLL	_	_
@@ -4480,7 +4480,7 @@
 11	kattungar	kattunge	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	10	PUTFYLL	_	_
 12	når	når	SCONJ	sbu	_	14	SBU	_	_
 13	dei	dei	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=3|PronType=Prs	14	SUBJ	_	_
-14	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	7	ADV	_	_
+14	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	7	ADV	_	_
 15	fødde	føde	ADJ	adj	Number=Plur|VerbForm=Part	14	INFV	_	SpaceAfter=No
 16	.	$.	PUNCT	clb	_	5	IP	_	_
 
@@ -4488,7 +4488,7 @@
 # text = Då stinga vart fjerna, var kattane blinde for resten av livet.
 1	Då	då	SCONJ	sbu	_	3	SBU	_	_
 2	stinga	sting	NOUN	subst	Gender=Neut|Number=Plur	3	SUBJ	_	_
-3	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	6	ADV	_	_
+3	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	6	ADV	_	_
 4	fjerna	fjerne	ADJ	adj	Number=Plur|VerbForm=Part	3	INFV	_	SpaceAfter=No
 5	,	$,	PUNCT	<komma>	_	3	IK	_	_
 6	var	vere	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
@@ -4617,7 +4617,7 @@
 10	HIV-infiserte	HIV-infisere	ADJ	adj	Number=Plur|VerbForm=Part	11	ATR	_	_
 11	barberblad	barberblad	NOUN	subst	Definite=Ind|Gender=Neut|Number=Plur	9	PUTFYLL	_	_
 12	har	ha	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	2	KOORD	_	_
-13	vorte	verte	VERB	verb	VerbForm=Part	12	INFV	_	_
+13	vorte	verte	AUX	verb	VerbForm=Part	12	INFV	_	_
 14	lagde	leggje	ADJ	adj	Number=Plur|VerbForm=Part	13	INFV	_	_
 15	i	i	ADP	prep	_	14	ADV	_	_
 16	postkassa	postkasse	NOUN	subst	Gender=Fem	15	PUTFYLL	_	SpaceAfter=No
@@ -4639,7 +4639,7 @@
 3	1990-åra	1990-år	NOUN	subst	Gender=Neut|Number=Plur	1	PUTFYLL	_	_
 4	har	ha	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	FINV	_	_
 5	han	han	PRON	pron	Case=Nom|Gender=Masc|Person=3|PronType=Prs	4	SUBJ	_	_
-6	vorte	verte	VERB	verb	VerbForm=Part	4	INFV	_	_
+6	vorte	verte	AUX	verb	VerbForm=Part	4	INFV	_	_
 7	trakassert	trakassere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	6	INFV	_	_
 8	og	og	CCONJ	konj	_	9	KONJ	_	_
 9	utsett	utsetje	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	7	KOORD	_	_
@@ -4666,7 +4666,7 @@
 # text = I 1998 vart aktivisten fengsla i atten år for ei rad bilbombingar.
 1	I	i	ADP	prep	_	5	ADV	_	_
 2	1998	1998	NUM	det	Number=Plur|NumType=Card	1	PUTFYLL	_	_
-3	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+3	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 4	aktivisten	aktivist	NOUN	subst	Gender=Masc	3	SUBJ	_	_
 5	fengsla	fengsle	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	3	INFV	_	_
 6	i	i	ADP	prep	_	5	ADV	_	_
@@ -5114,7 +5114,7 @@
 3	hovudet	hovud	NOUN	subst	Gender=Neut	1	DOBJ	_	_
 4	opp	opp	ADP	prep	_	1	ADV	_	SpaceAfter=No
 5	,	$,	PUNCT	<komma>	_	1	IK	_	_
-6	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	FINV	_	_
+6	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	FINV	_	_
 7	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	6	SUBJ	_	_
 8	kutta	kutte	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	6	INFV	_	_
 9	av	av	ADP	prep	_	8	ADV	_	SpaceAfter=No
@@ -5126,7 +5126,7 @@
 2	på	på	ADP	prep	_	6	ADV	_	_
 3	si	si	NOUN	subst	_	4	DET	_	_
 4	side	side	NOUN	subst	Definite=Ind|Gender=Fem	2	PUTFYLL	_	_
-5	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	FINV	_	_
+5	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	FINV	_	_
 6	utsette	utsetje	ADJ	adj	Number=Plur|VerbForm=Part	5	INFV	_	_
 7	for	for	ADP	prep	_	6	ADV	_	_
 8	eit	ein	DET	det	Gender=Neut|PronType=Art	10	DET	_	_
@@ -5243,7 +5243,7 @@
 13	,	$,	PUNCT	<komma>	_	2	IK	_	_
 14	og	og	CCONJ	konj	_	15	KONJ	_	_
 15	hadde	ha	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	2	KOORD	_	_
-16	vorte	verte	VERB	verb	VerbForm=Part	15	INFV	_	_
+16	vorte	verte	AUX	verb	VerbForm=Part	15	INFV	_	_
 17	undervist	undervise	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	16	INFV	_	_
 18	i	i	ADP	prep	_	17	ADV	_	_
 19	mellom	mellom	ADP	prep	_	21	ATR	_	_
@@ -5260,7 +5260,7 @@
 5	ein	ein	DET	det	Gender=Masc|PronType=Art	6	DET	_	_
 6	kafé	kafé	NOUN	subst	Definite=Ind|Gender=Masc	4	PUTFYLL	_	SpaceAfter=No
 7	,	$,	PUNCT	<komma>	_	3	IK	_	_
-8	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+8	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 9	ein	ein	DET	det	Gender=Masc|PronType=Art	8	SUBJ	_	_
 10	av	av	ADP	prep	_	9	ATR	_	_
 11	dei	dei	DET	det	Number=Plur|PronType=Dem	13	DET	_	_
@@ -5715,7 +5715,7 @@
 15	få	få	ADJ	adj	Degree=Pos|Number=Plur	16	ATR	_	_
 16	menneske	menneske	NOUN	subst	Definite=Ind|Gender=Neut|Number=Plur	17	SUBJ	_	_
 17	vil	vilje	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	14	ATR	_	_
-18	verta	verte	VERB	verb	VerbForm=Inf	17	INFV	_	_
+18	verta	verte	AUX	verb	VerbForm=Inf	17	INFV	_	_
 19	utsette	utsetje	ADJ	adj	Number=Plur|VerbForm=Part	18	INFV	_	_
 20	for	for	ADP	prep	_	19	ADV	_	SpaceAfter=No
 21	.	$.	PUNCT	clb	_	2	IP	_	_
@@ -6074,7 +6074,7 @@
 10	som	som	SCONJ	sbu	_	13	SBU	_	_
 11	i	i	ADP	prep	_	14	ADV	_	_
 12	1950-åra	1950-år	NOUN	subst	Gender=Neut|Number=Plur	11	PUTFYLL	_	_
-13	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	9	ATR	_	_
+13	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	9	ATR	_	_
 14	skubba	skubbe	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	13	INFV	_	_
 15	ut	ut	ADP	prep	_	14	ADV	_	_
 16	av	av	ADP	prep	_	15	PUTFYLL	_	_
@@ -7475,7 +7475,7 @@
 5	utanfor	utanfor	ADP	prep	_	4	ATR	_	_
 6	alt	alt	PRON	pron	Gender=Neut|Person=3|PronType=Prs	5	PUTFYLL	_	_
 7	som	som	SCONJ	sbu	_	8	SBU	_	_
-8	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	6	ATR	_	_
+8	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	6	ATR	_	_
 9	godteke	godta	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	8	INFV	_	_
 10	i	i	ADP	prep	_	9	ADV	_	_
 11	norsk	norsk	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	12	ATR	_	_
@@ -8882,7 +8882,7 @@
 4	frå	frå	ADP	prep	_	1	ATR	_	_
 5	Vik	Vik	PROPN	subst	_	4	PUTFYLL	_	_
 6	IL	IL	PROPN	subst	_	5	FLAT	_	_
-7	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+7	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 8	teken	ta	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	7	INFV	_	_
 9	ut	ut	ADP	prep	_	8	ADV	_	_
 10	i	i	ADP	prep	_	8	ADV	_	_
@@ -8949,7 +8949,7 @@
 12	Vereide-Hyen	Vereide-Hyen	PROPN	subst	_	10	KOORD	_	SpaceAfter=No
 13	)	$)	PUNCT	<parentes-slutt>	_	10	IK	_	_
 14	ikkje	ikkje	ADV	adv	_	16	ADV	_	_
-15	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	5	PUTFYLL	_	_
+15	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	5	PUTFYLL	_	_
 16	utteken	utteken	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Masc	15	INFV	_	_
 17	i	i	ADP	prep	_	16	ADV	_	_
 18	dag	dag	NOUN	subst	Definite=Ind|Gender=Masc	17	PUTFYLL	_	SpaceAfter=No
@@ -10069,7 +10069,7 @@
 7	at	at	SCONJ	sbu	_	10	SBU	_	_
 8	denne	denne	DET	det	Gender=Masc|PronType=Dem	9	DET	_	_
 9	kunsten	kunst	NOUN	subst	Gender=Masc	10	SUBJ	_	_
-10	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	2	PSUBJ	_	_
+10	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	2	PSUBJ	_	_
 11	teken	ta	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	10	INFV	_	_
 12	vare	vare	NOUN	subst	_	11	DOBJ	_	_
 13	på	på	ADP	prep	_	12	ATR	_	_
@@ -10303,7 +10303,7 @@
 10	på	på	ADP	prep	_	5	ATR	_	_
 11	E16	E16	PROPN	subst	_	10	PUTFYLL	_	SpaceAfter=No
 12	,	$,	PUNCT	<komma>	_	2	IK	_	_
-13	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+13	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 14	trailersjåføren	trailersjåfør	NOUN	subst	Gender=Masc	13	SUBJ	_	_
 15	stoppa	stoppe	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	13	INFV	_	_
 16	av	av	ADP	prep	_	15	ADV	_	_
@@ -10540,7 +10540,7 @@
 1	24.	24.	ADJ	adj	Number=Plur	2	ATR	_	_
 2	oktober	oktober	NOUN	subst	Definite=Ind|Gender=Masc	6	ADV	_	_
 3	1996	1996	NUM	det	Number=Plur|NumType=Card	2	ATR	_	_
-4	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+4	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 5	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	4	FSUBJ	_	_
 6	oppdaga	oppdage	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	4	INFV	_	_
 7	gyrosmitte	gyrosmitte	NOUN	subst	Definite=Ind|Gender=Masc	6	DOBJ	_	_
@@ -10552,7 +10552,7 @@
 # text = I 1997 vart elva behandla med rotenon.
 1	I	i	ADP	prep	_	5	ADV	_	_
 2	1997	1997	NUM	det	Number=Plur|NumType=Card	1	PUTFYLL	_	_
-3	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+3	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 4	elva	elv	NOUN	subst	Gender=Fem	3	SUBJ	_	_
 5	behandla	behandle	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	3	INFV	_	_
 6	med	med	ADP	prep	_	5	ADV	_	_
@@ -11086,7 +11086,7 @@
 # text = Men dei vart nekta fordi den aktuelle klassen, media og kommunikasjon, hadde mest jenter.
 1	Men	men	CCONJ	konj	_	3	KONJ	_	_
 2	dei	dei	PRON	pron	Animacy=Hum|Case=Nom|Number=Plur|Person=3|PronType=Prs	3	SUBJ	_	_
-3	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+3	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 4	nekta	nekte	ADJ	adj	Number=Plur|VerbForm=Part	3	INFV	_	_
 5	fordi	fordi	SCONJ	sbu	_	14	SBU	_	_
 6	den	den	DET	det	Gender=Masc|PronType=Dem	8	DET	_	_
@@ -11253,7 +11253,7 @@
 12	og	og	CCONJ	konj	_	15	KONJ	_	_
 13	at	at	SCONJ	sbu	_	15	SBU	_	_
 14	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	15	FSUBJ	_	_
-15	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	4	KOORD	_	_
+15	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	4	KOORD	_	_
 16	gjeve	gje	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	15	INFV	_	_
 17	beskjed	beskjed	NOUN	subst	Definite=Ind|Gender=Fem	16	DOBJ	_	_
 18	så	så	ADV	adv	_	19	ADV	_	_
@@ -11405,7 +11405,7 @@
 # text = - Det vart ikkje vurdert som forsvarleg, seier han.
 1	-	$-	PUNCT	<strek>	_	3	IK	_	_
 2	Det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	3	SUBJ	_	_
-3	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+3	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 4	ikkje	ikkje	ADV	adv	_	5	ADV	_	_
 5	vurdert	vurdere	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	3	INFV	_	_
 6	som	som	ADP	prep	_	5	FSPRED	_	_
@@ -11457,7 +11457,7 @@
 # text = To ungdommar vart ikkje køyrt til døra via ordninga Heim for ein 50-lapp.
 1	To	to	NUM	det	Number=Plur|NumType=Card	2	DET	_	_
 2	ungdommar	ungdom	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	3	SUBJ	_	_
-3	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+3	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 4	ikkje	ikkje	ADV	adv	_	5	ADV	_	_
 5	køyrt	køyre	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	3	INFV	_	_
 6	til	til	ADP	prep	_	5	ADV	_	_
@@ -12162,7 +12162,7 @@
 1	I	i	ADP	prep	_	7	ADV	_	_
 2	denne	denne	DET	det	Gender=Masc|PronType=Dem	3	DET	_	_
 3	tildelingsrunden	tildelingsrunde	NOUN	subst	Gender=Masc	1	PUTFYLL	_	_
-4	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+4	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 5	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	4	FSUBJ	_	_
 6	totalt	total	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	7	ADV	_	_
 7	tildelt	tildele	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	4	INFV	_	_
@@ -12182,7 +12182,7 @@
 # text = Av dette vart kr 1 475 000 løyvd til dei ovannemnde prosjekta i Sogn og Fjordane, ifølgje fylkeskommunens pressemelding.
 1	Av	av	ADP	prep	_	8	ADV	_	_
 2	dette	dette	PRON	pron	Gender=Neut|Person=3|PronType=Prs	1	PUTFYLL	_	_
-3	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+3	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 4	kr	kr	NOUN	subst	Abbr=Yes	7	ADV	_	_
 5	1	1	NUM	det	Number=Plur|NumType=Card	7	FLAT	_	_
 6	475	475	NUM	det	Number=Plur|NumType=Card	7	FLAT	_	_
@@ -13534,7 +13534,7 @@
 # text = I fjor vart det i snitt meld frå om 4 bilskadar dagleg til forsikringsbransjen i Førde.
 1	I	i	ADP	prep	_	7	ADV	_	_
 2	fjor	fjor	NOUN	subst	_	1	PUTFYLL	_	_
-3	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+3	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 4	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	3	FSUBJ	_	_
 5	i	i	ADP	prep	_	7	ADV	_	_
 6	snitt	snitt	NOUN	subst	Definite=Ind|Gender=Neut	5	PUTFYLL	_	_
@@ -13839,7 +13839,7 @@
 9	hyppigheiten	hyppigheit	NOUN	subst	Gender=Fem	12	SUBJ	_	_
 10	på	på	ADP	prep	_	9	ATR	_	_
 11	bilskadar	bilskade	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	10	PUTFYLL	_	_
-12	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	5	DOBJ	_	_
+12	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	5	DOBJ	_	_
 13	fordobla	fordoble	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	12	INFV	_	SpaceAfter=No
 14	.	$.	PUNCT	clb	_	5	IP	_	_
 
@@ -14722,7 +14722,7 @@
 3	,	$,	PUNCT	<komma>	_	2	IK	_	_
 4	Sarah	Sarah	PROPN	subst	Gender=Fem	2	APP	_	SpaceAfter=No
 5	,	$,	PUNCT	<komma>	_	4	IK	_	_
-6	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+6	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 7	tvangsinnlagd	tvangsinnleggje	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	6	INFV	_	_
 8	etter	etter	ADP	prep	_	7	ADV	_	_
 9	sitt	sin	PRON	det	Gender=Neut|Poss=Yes|PronType=Prs	10	DET	_	_
@@ -15438,7 +15438,7 @@
 21	for	for	ADP	prep	_	20	ADV	_	_
 22	godt	god	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	21	PUTFYLL	_	SpaceAfter=No
 23	,	$,	PUNCT	<komma>	_	20	IK	_	_
-24	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+24	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 25	pensjonane	pensjon	NOUN	subst	Gender=Masc|Number=Plur	24	SUBJ	_	_
 26	i	i	ADP	prep	_	25	ATR	_	_
 27	Tyskland	Tyskland	PROPN	subst	_	26	PUTFYLL	_	_
@@ -15451,7 +15451,7 @@
 34	for	for	ADP	prep	_	42	ADV	_	_
 35	fyrste	fyrste	ADJ	adj	Degree=Pos	36	ATR	_	_
 36	gong	gong	NOUN	subst	Definite=Ind|Gender=Masc	34	PUTFYLL	_	_
-37	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	24	KOORD	_	_
+37	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	24	KOORD	_	_
 38	ei	ein	DET	det	Gender=Fem|PronType=Art	39	DET	_	_
 39	sjukeforsikring	sjukeforsikring	NOUN	subst	Definite=Ind|Gender=Fem	37	SUBJ	_	_
 40	for	for	ADP	prep	_	39	ATR	_	_
@@ -15471,7 +15471,7 @@
 8	ein	ein	DET	det	Gender=Masc|PronType=Art	10	DET	_	_
 9	stor	stor	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Fem,Masc	10	ATR	_	_
 10	del	del	NOUN	subst	Definite=Ind|Gender=Masc	7	PUTFYLL	_	_
-11	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	2	APP	_	_
+11	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	2	APP	_	_
 12	utbygd	utbyggje	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	11	INFV	_	_
 13	under	under	ADP	prep	_	12	ADV	_	_
 14	det	det	DET	det	Gender=Neut|PronType=Dem	16	DET	_	_
@@ -15567,7 +15567,7 @@
 6	ljos	ljos	NOUN	subst	Definite=Ind|Gender=Neut	5	DOBJ	_	_
 7	over	over	ADP	prep	_	5	ADV	_	_
 8	emnet	emne	NOUN	subst	Gender=Neut	7	PUTFYLL	_	_
-9	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+9	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 10	makulerte	makulere	ADJ	adj	Number=Plur|VerbForm=Part	9	INFV	_	_
 11	i	i	ADP	prep	_	10	ADV	_	_
 12	1976	1976	NUM	det	Number=Plur|NumType=Card	11	PUTFYLL	_	SpaceAfter=No
@@ -15688,7 +15688,7 @@
 14	utgifter	utgift	NOUN	subst	Definite=Ind|Gender=Fem|Number=Plur	1	KOORD	_	_
 15	til	til	ADP	prep	_	14	ATR	_	_
 16	okkupasjonen	okkupasjon	NOUN	subst	Gender=Masc	15	PUTFYLL	_	_
-17	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+17	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 18	betalt	betale	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	17	INFV	_	_
 19	i	i	ADP	prep	_	18	ADV	_	_
 20	det	det	DET	det	Gender=Neut|PronType=Dem	22	DET	_	_
@@ -15708,7 +15708,7 @@
 6	tredeler	tredel	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	9	SUBJ	_	_
 7	av	av	ADP	prep	_	6	ATR	_	_
 8	krigføringa	krigføring	NOUN	subst	Gender=Fem	7	PUTFYLL	_	_
-9	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	PUTFYLL	_	_
+9	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	PUTFYLL	_	_
 10	finansiert	finansiere	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	9	INFV	_	_
 11	på	på	ADP	prep	_	10	ADV	_	_
 12	denne	denne	DET	det	Gender=Masc|PronType=Dem	13	DET	_	_
@@ -15763,7 +15763,7 @@
 2	delar	del	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	5	SUBJ	_	_
 3	av	av	ADP	prep	_	2	ATR	_	_
 4	okkupasjonen	okkupasjon	NOUN	subst	Gender=Masc	3	PUTFYLL	_	_
-5	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+5	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 6	betalt	betale	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	5	INFV	_	_
 7	med	med	ADP	prep	_	6	ADV	_	_
 8	nytrykte	nytrykkje	ADJ	adj	Number=Plur|VerbForm=Part	10	ATR	_	_
@@ -15858,7 +15858,7 @@
 6	resten	rest	NOUN	subst	Gender=Masc	2	KOORD	_	_
 7	av	av	ADP	prep	_	6	ATR	_	_
 8	Vest-Europa	Vest-Europa	PROPN	subst	_	7	PUTFYLL	_	_
-9	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+9	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 10	varehus	varehus	NOUN	subst	Definite=Ind|Gender=Neut|Number=Plur	9	SUBJ	_	_
 11	tømte	tømme	ADJ	adj	Number=Plur|VerbForm=Part	9	INFV	_	_
 12	av	av	ADP	prep	_	11	ADV	_	_
@@ -16011,7 +16011,7 @@
 10	til	til	ADP	prep	_	9	ATR	_	_
 11	jødar	jøde	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	10	PUTFYLL	_	_
 12	som	som	SCONJ	sbu	_	13	SBU	_	_
-13	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	11	ATR	_	_
+13	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	11	ATR	_	_
 14	deporterte	deportere	ADJ	adj	Number=Plur|VerbForm=Part	13	INFV	_	_
 15	til	til	ADP	prep	_	14	ADV	_	_
 16	dødsleirane	dødsleir	NOUN	subst	Gender=Masc|Number=Plur	15	PUTFYLL	_	_
@@ -16097,7 +16097,7 @@
 5	at	at	SCONJ	sbu	_	8	SBU	_	_
 6	jødar	jøde	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	8	SUBJ	_	_
 7	ofte	ofte	ADJ	adj	Degree=Pos	9	ADV	_	_
-8	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	2	DOBJ	_	_
+8	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	2	DOBJ	_	_
 9	deporterte	deportere	ADJ	adj	Number=Plur|VerbForm=Part	8	INFV	_	_
 10	i	i	ADP	prep	_	9	ADV	_	_
 11	hopetal	hopetal	NOUN	subst	Definite=Ind|Gender=Neut|Number=Plur	10	PUTFYLL	_	_
@@ -16634,7 +16634,7 @@
 # sent_id = 016977
 # text = Boka vart lansert i midten av mars, og påstandane om ein nærast symbiotisk samanheng mellom sosialstat, utplyndring og folkemord har fått mykje merksemd.
 1	Boka	bok	NOUN	subst	Gender=Fem	2	SUBJ	_	_
-2	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+2	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 3	lansert	lansere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	2	INFV	_	_
 4	i	i	ADP	prep	_	3	ADV	_	_
 5	midten	midt	NOUN	subst	Gender=Masc	4	PUTFYLL	_	_
@@ -16723,7 +16723,7 @@
 1	I	i	ADP	prep	_	9	ADV	_	_
 2	Die	Die	PROPN	subst	_	1	PUTFYLL	_	_
 3	Tageszeitung	Tageszeitung	PROPN	subst	_	2	FLAT	_	_
-4	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	FINV	_	_
+4	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	FINV	_	_
 5	Aly	Aly	PROPN	subst	_	6	ADV	_	_
 6	sine	sin	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	8	DET	_	_
 7	berande	bere	ADJ	adj	VerbForm=Part	8	ATR	_	_
@@ -16846,7 +16846,7 @@
 14	korleis	korleis	ADV	adv	_	18	ADV	_	_
 15	tyske	tysk	ADJ	adj	Degree=Pos|Number=Plur	16	ATR	_	_
 16	arbeidarar	arbeidar	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	17	SUBJ	_	_
-17	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	13	DOBJ	_	_
+17	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	13	DOBJ	_	_
 18	utnytta	utnytte	ADJ	adj	Number=Plur|VerbForm=Part	17	INFV	_	_
 19	av	av	ADP	prep	_	18	ADV	_	_
 20	Hitler-regimet	Hitler-regime	NOUN	subst	Gender=Neut	19	PUTFYLL	_	SpaceAfter=No
@@ -16895,7 +16895,7 @@
 # sent_id = 016988
 # text = Leiarartikkelen vart møtt med massivt raseri, og vart slik eit frampeik mot den debatten Götz Aly har sett i gang i Tyskland no.
 1	Leiarartikkelen	leiarartikkel	NOUN	subst	Gender=Masc	2	SUBJ	_	_
-2	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+2	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 3	møtt	møte	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	2	INFV	_	_
 4	med	med	ADP	prep	_	3	ADV	_	_
 5	massivt	massiv	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	6	ATR	_	_
@@ -17072,7 +17072,7 @@
 3	tiåra	tiår	NOUN	subst	Gender=Neut|Number=Plur	8	ADV	_	_
 4	etter	etter	ADP	prep	_	3	ATR	_	_
 5	1945	1945	NUM	det	Number=Plur|NumType=Card	4	PUTFYLL	_	_
-6	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+6	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 7	Noreg	Noreg	PROPN	subst	_	6	SUBJ	_	_
 8	regjert	regjere	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	6	INFV	_	_
 9	av	av	ADP	prep	_	8	ADV	_	_
@@ -17098,7 +17098,7 @@
 # sent_id = 016999
 # text = Menneska vart sett på som byggjeklossar og instrument meir enn som frie individ.
 1	Menneska	menneske	NOUN	subst	Gender=Neut|Number=Plur	2	SUBJ	_	_
-2	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+2	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 3	sett	sjå	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	2	INFV	_	_
 4	på	på	ADP	prep	_	3	ADV	_	_
 5	som	som	ADP	prep	_	3	SPRED	_	_
@@ -17230,7 +17230,7 @@
 1	Det	det	DET	det	Gender=Neut|PronType=Dem	3	DET	_	_
 2	sosialdemokratiske	sosialdemokratisk	ADJ	adj	Degree=Pos	3	ATR	_	_
 3	styringsverket	styringsverk	NOUN	subst	Gender=Neut	4	SUBJ	_	_
-4	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+4	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 5	feid	feie	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	4	INFV	_	_
 6	over	over	ADP	prep	_	5	ADV	_	_
 7	ende	ende	NOUN	subst	Definite=Ind|Gender=Masc	6	PUTFYLL	_	SpaceAfter=No
@@ -17494,7 +17494,7 @@
 9	andre	annan	DET	det	Number=Plur|PronType=Dem	10	DET	_	_
 10	forskingsarbeida	forskingsarbeid	NOUN	subst	Gender=Neut|Number=Plur	7	PUTFYLL	_	_
 11	ikkje	ikkje	ADV	adv	_	13	ADV	_	_
-12	vorte	verte	VERB	verb	VerbForm=Part	3	INFV	_	_
+12	vorte	verte	AUX	verb	VerbForm=Part	3	INFV	_	_
 13	grave	grave	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	12	INFV	_	_
 14	djupt	djup	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	13	ADV	_	_
 15	nok	nok	ADV	adv	_	14	ADV	_	_
@@ -17659,7 +17659,7 @@
 5	dei	dei	DET	det	Number=Plur|PronType=Dem	7	DET	_	_
 6	to	to	NUM	det	Number=Plur|NumType=Card	7	DET	_	_
 7	tema	tema	NOUN	subst	Gender=Neut|Number=Plur	4	PUTFYLL	_	_
-8	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	FINV	_	_
+8	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	FINV	_	_
 9	så	så	ADV	adv	_	10	ADV	_	_
 10	brukte	bruke	ADJ	adj	Number=Plur|VerbForm=Part	8	INFV	_	_
 11	til	til	ADP	prep	_	10	ADV	_	_
@@ -18146,7 +18146,7 @@
 15	den	den	DET	det	Gender=Masc|PronType=Dem	16	DET	_	_
 16	politikken	politikk	NOUN	subst	Gender=Masc	14	DOBJ	_	_
 17	som	som	SCONJ	sbu	_	18	SBU	_	_
-18	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	16	ATR	_	_
+18	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	16	ATR	_	_
 19	ført	føre	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	18	INFV	_	SpaceAfter=No
 20	?	$?	PUNCT	clb	_	1	IP	_	_
 
@@ -18179,7 +18179,7 @@
 2	det	det	DET	det	Gender=Neut|PronType=Dem	4	DET	_	_
 3	norske	norsk	ADJ	adj	Degree=Pos	4	ATR	_	_
 4	samfunnet	samfunn	NOUN	subst	Gender=Neut	5	SUBJ	_	_
-5	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+5	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 6	deregulert	deregulere	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	5	INFV	_	SpaceAfter=No
 7	.	$.	PUNCT	clb	_	5	IP	_	_
 
@@ -18308,7 +18308,7 @@
 # text = For Benum vert politikkendringa, at marknadstenkinga vann større innpass og at avstanden til Høgre vart mindre, sett i samanheng med framveksten av det han kallar eit sosialdemokratisk storborgarskap.
 1	For	for	ADP	prep	_	19	ADV	_	_
 2	Benum	Benum	PROPN	subst	_	1	PUTFYLL	_	_
-3	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	FINV	_	_
+3	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	FINV	_	_
 4	politikkendringa	politikkendring	NOUN	subst	Gender=Fem	3	SUBJ	_	SpaceAfter=No
 5	,	$,	PUNCT	<komma>	_	4	IK	_	_
 6	at	at	SCONJ	sbu	_	8	SBU	_	_
@@ -18658,7 +18658,7 @@
 13	blikk	blikk	NOUN	subst	Definite=Ind|Gender=Neut	10	PUTFYLL	_	_
 14	før	før	SCONJ	sbu	_	16	SBU	_	_
 15	politikken	politikk	NOUN	subst	Gender=Masc	16	SUBJ	_	_
-16	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	9	ADV	_	_
+16	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	9	ADV	_	_
 17	karakterisert	karakterisere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	16	INFV	_	_
 18	normativt-politisk	normativt-politisk	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	17	ADV	_	SpaceAfter=No
 19	.	$.	PUNCT	clb	_	2	IP	_	_
@@ -18907,7 +18907,7 @@
 # text = Sosialdemokratiets styringsreiskapar vart utforma for å verke innanfor ein nasjonal kontekst.
 1	Sosialdemokratiets	sosialdemokrati	NOUN	subst	Case=Gen|Gender=Neut	2	DET	_	_
 2	styringsreiskapar	styringsreiskap	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	3	SUBJ	_	_
-3	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+3	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 4	utforma	utforme	ADJ	adj	Number=Plur|VerbForm=Part	3	INFV	_	_
 5	for	for	ADP	prep	_	4	ADV	_	_
 6	å	å	PART	inf-merke	_	5	PUTFYLL	_	_
@@ -19059,7 +19059,7 @@
 # sent_id = 017093
 # text = Dermed vart maktbalansen forskyvd i kapitalens retning, og fordelingsrettferda lét seg ikkje gjennomføre like sterkt som før.
 1	Dermed	dermed	ADV	adv	_	4	ADV	_	_
-2	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+2	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 3	maktbalansen	maktbalanse	NOUN	subst	Gender=Masc	2	SUBJ	_	_
 4	forskyvd	forskyve	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	2	INFV	_	_
 5	i	i	ADP	prep	_	4	ADV	_	_
@@ -19405,7 +19405,7 @@
 7	ein	ein	DET	det	Gender=Masc|PronType=Art	8	DET	_	_
 8	månad	månad	NOUN	subst	Definite=Ind|Gender=Masc	5	PUTFYLL	_	_
 9	sidan	sidan	ADV	adv	_	8	ATR	_	_
-10	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	ATR	_	_
+10	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	3	ATR	_	_
 11	myrda	myrde	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	10	INFV	_	_
 12	på	på	ADP	prep	_	11	ADV	_	_
 13	veg	veg	NOUN	subst	Definite=Ind|Gender=Masc	12	PUTFYLL	_	_
@@ -19828,7 +19828,7 @@
 3	av	av	ADP	prep	_	2	ATR	_	_
 4	hennar	hennar	PRON	det	Number=Plur|Poss=Yes|PronType=Prs	5	DET	_	_
 5	publikasjonar	publikasjon	NOUN	subst	Definite=Ind|Gender=Masc|Number=Plur	3	PUTFYLL	_	_
-6	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+6	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 7	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	6	FSUBJ	_	_
 8	reist	reise	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	6	INFV	_	_
 9	39	39	NUM	det	Number=Plur|NumType=Card	10	DET	_	_
@@ -20106,7 +20106,7 @@
 19	ferd	ferd	NOUN	subst	Definite=Ind|Gender=Fem	18	PUTFYLL	_	_
 20	med	med	ADP	prep	_	19	ATR	_	_
 21	å	å	PART	inf-merke	_	20	PUTFYLL	_	_
-22	verta	verte	VERB	verb	VerbForm=Inf	21	INFV	_	_
+22	verta	verte	AUX	verb	VerbForm=Inf	21	INFV	_	_
 23	innskrenka	innskrenke	ADJ	adj	Number=Plur|VerbForm=Part	22	INFV	_	SpaceAfter=No
 24	,	$,	PUNCT	<komma>	_	17	IK	_	_
 25	at	at	SCONJ	sbu	_	28	SBU	_	_
@@ -20121,7 +20121,7 @@
 34	av	av	ADP	prep	_	33	ATR	_	_
 35	styresmaktene	styresmakt	NOUN	subst	Gender=Fem|Number=Plur	34	PUTFYLL	_	_
 36	ofte	ofte	ADJ	adj	Degree=Pos	38	ADV	_	_
-37	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	17	KOORD	_	_
+37	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	17	KOORD	_	_
 38	oppfatta	oppfatte	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	37	INFV	_	_
 39	som	som	ADP	prep	_	38	SPRED	_	_
 40	regimeundergraving	regimeundergraving	NOUN	subst	Definite=Ind|Gender=Fem	39	PUTFYLL	_	_
@@ -20567,7 +20567,7 @@
 6	Novosti	Novosti	PROPN	subst	_	5	FLAT	_	SpaceAfter=No
 7	,	$,	PUNCT	<komma>	_	5	IK	_	_
 8	som	som	SCONJ	sbu	_	9	SBU	_	_
-9	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	5	ATR	_	_
+9	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	5	ATR	_	_
 10	kjøpt	kjøpe	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	9	INFV	_	_
 11	opp	opp	ADP	prep	_	10	ADV	_	_
 12	av	av	ADP	prep	_	10	ADV	_	_
@@ -20655,7 +20655,7 @@
 13	13.	13.	ADJ	adj	Number=Plur	14	ATR	_	_
 14	journalisten	journalist	NOUN	subst	Gender=Masc	10	SPRED	_	_
 15	som	som	SCONJ	sbu	_	16	SBU	_	_
-16	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	14	ATR	_	_
+16	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	14	ATR	_	_
 17	drepen	drepe	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	16	INFV	_	_
 18	i	i	ADP	prep	_	17	ADV	_	_
 19	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	18	PUTFYLL	_	_
@@ -21355,7 +21355,7 @@
 24	i	i	ADP	prep	_	23	ATR	_	_
 25	Russland	Russland	PROPN	subst	_	24	PUTFYLL	_	_
 26	alltid	alltid	ADV	adv	_	28	ADV	_	_
-27	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	16	DOBJ	_	_
+27	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	16	DOBJ	_	_
 28	avløyst	avløyse	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	27	INFV	_	_
 29	av	av	ADP	prep	_	28	ADV	_	_
 30	ein	ein	DET	det	Gender=Masc|PronType=Art	32	DET	_	_
@@ -21402,7 +21402,7 @@
 1	*	*	PUNCT	symb	_	4	IK	_	_
 2	7.	7.	ADJ	adj	Number=Plur	3	ATR	_	_
 3	oktober	oktober	NOUN	subst	Definite=Ind|Gender=Masc	7	ADV	_	_
-4	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+4	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 5	Anna	Anna	PROPN	subst	Gender=Fem	4	SUBJ	_	_
 6	Politkovskaja	Politkovskaja	PROPN	subst	_	5	FLAT	_	_
 7	drepen	drepe	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	4	INFV	_	_
@@ -21796,7 +21796,7 @@
 14	kor	kor	ADV	adv	_	18	ADV	_	_
 15	Siv	Siv	PROPN	subst	_	17	SUBJ	_	_
 16	Jensen	Jensen	PROPN	subst	_	15	FLAT	_	_
-17	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	10	ATR	_	_
+17	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	10	ATR	_	_
 18	konfrontert	konfrontere	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	17	INFV	_	_
 19	med	med	ADP	prep	_	18	ADV	_	_
 20	misnøgde	misnøgd	ADJ	adj	Degree=Pos|Number=Plur	21	ATR	_	_
@@ -22236,7 +22236,7 @@
 6	ein	ein	DET	det	Gender=Masc|PronType=Art	7	DET	_	_
 7	modell	modell	NOUN	subst	Definite=Ind|Gender=Masc	5	PUTFYLL	_	_
 8	som	som	SCONJ	sbu	_	9	SBU	_	_
-9	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	7	ATR	_	_
+9	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	7	ATR	_	_
 10	foreslått	foreslå	ADJ	adj	Definite=Ind|Gender=Fem,Masc|VerbForm=Part	9	INFV	_	_
 11	av	av	ADP	prep	_	10	ADV	_	_
 12	det	det	DET	det	Gender=Neut|PronType=Dem	13	DET	_	_
@@ -22298,7 +22298,7 @@
 # sent_id = 017253
 # text = Det vart også opplyst at to styremedlemmer hadde streka under at det ikkje burde gå lang tid før ein vurderte å oppretta eit femte fagråd for «minoritetsspråksituasjonen.»
 1	Det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	2	SUBJ	_	_
-2	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
+2	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	0	FINV	_	_
 3	også	også	ADV	adv	_	4	ADV	_	_
 4	opplyst	opplyse	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	2	INFV	_	_
 5	at	at	SCONJ	sbu	_	8	SBU	_	_
@@ -23154,7 +23154,7 @@
 8	det	det	PRON	pron	Gender=Neut|Person=3|PronType=Prs	11	FSUBJ	_	_
 9	mellom	mellom	ADP	prep	_	12	ADV	_	_
 10	anna	annan	DET	det	Definite=Ind|Gender=Neut|PronType=Dem	9	PUTFYLL	_	_
-11	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	7	ADV	_	_
+11	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	7	ADV	_	_
 12	uttrykt	uttrykkje	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	11	INFV	_	_
 13	i	i	ADP	prep	_	12	ADV	_	_
 14	det	det	DET	det	Gender=Neut|PronType=Dem	15	DET	_	_
@@ -23271,7 +23271,7 @@
 33	prinsippet	prinsipp	NOUN	subst	Gender=Neut	32	PUTFYLL	_	_
 34	altomfattande	altomfattande	ADJ	adj	Definite=Ind|Degree=Pos|Gender=Neut	35	ATR	_	_
 35	arbeidsområde	arbeidsområde	NOUN	subst	Definite=Ind|Gender=Neut	30	PUTFYLL	_	_
-36	vart	verte	VERB	verb	Mood=Ind|Tense=Past|VerbForm=Fin	23	PSUBJ	_	_
+36	vart	verte	AUX	verb	Mood=Ind|Tense=Past|VerbForm=Fin	23	PSUBJ	_	_
 37	erstatta	erstatte	ADJ	adj	Definite=Ind|Gender=Neut|VerbForm=Part	36	INFV	_	_
 38	av	av	ADP	prep	_	37	ADV	_	_
 39	fire	fire	NUM	det	Number=Plur|NumType=Card	41	DET	_	_
@@ -26187,7 +26187,7 @@
 2	i	i	ADP	prep	_	1	ATR	_	_
 3	Vinje	Vinje	PROPN	subst	_	2	PUTFYLL	_	_
 4	kommune	kommune	NOUN	subst	Definite=Ind|Gender=Masc	3	FLAT	_	_
-5	vert	verte	VERB	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	FINV	_	_
+5	vert	verte	AUX	verb	Mood=Ind|Tense=Pres|VerbForm=Fin	0	FINV	_	_
 6	inviterte	invitere	ADJ	adj	Number=Plur|VerbForm=Part	5	INFV	_	_
 7	til	til	ADP	prep	_	6	ADV	_	_
 8	temabaserte	temabasere	ADJ	adj	Number=Plur|VerbForm=Part	9	ATR	_	_
