@@ -449,7 +449,7 @@ rule only_psubj_vb {
 % "være" and "ha" can both be temporal auxiliaries in a passive construction, but only "bli" gets the "aux:pass" relation
 rule passive_lex_aux_bli {
   pattern {
-    A [ upos=AUX, lemma="bli" ];
+    A [ upos=AUX, lemma="bli"|"verte" ];
     V [ upos=VERB|ADJ, VerbForm=Part ];
     e: V -> A;  % after the lexical verb is already the head
   }
@@ -477,7 +477,7 @@ rule temporal_aux_vare_ha { %problematic when it is changing cop to aux
 rule passive_subject_verbform {
   pattern {
     V [ upos=VERB, Voice=Pass, form=re".*s" ];
-    e: V -[ 1=nsubj|csubj, 2<>pass|outer]-> S;
+    e: V -[ nsubj|csubj]-> S;
   }
   commands {
     e.2 = pass;
@@ -489,7 +489,7 @@ rule passive_subject_periphrastic {
   pattern {
     V [ VerbForm=Part ];
     V -[1=aux, 2=pass]-> *;
-    e: V -[ 1=nsubj|csubj, 2<>pass|outer]-> S;
+    e: V -[nsubj|csubj]-> S;
   }
   commands {
     e.2 = pass;
