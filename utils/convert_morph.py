@@ -165,7 +165,6 @@ ud_feattypes = [
     'Tense',
     'VerbForm',
     'Voice',
-    '_'
 ]
 
 ### UTILITY FUNCTIONS
