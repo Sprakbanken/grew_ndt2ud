@@ -168,5 +168,5 @@ dist-20141005/*
 **/sentences/all.conll
 data/UD_v2-11/*
 
-**/tmp.conllu
+**/tmp*.conllu
 malt_input.conllu
