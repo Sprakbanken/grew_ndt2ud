@@ -27,7 +27,7 @@ TMP2=deleteme.conllu
 echo "--- Convert $LANG $PARTITION treebank ---"
 
 echo "--- Morphology: feats and pos-tags ---"
-python convert_morph.py -f $NDT_FILE -o $TEMPFILE
+python utils/convert_morph.py -f $NDT_FILE -o $TEMPFILE
 
 echo "--- Add MISC annotation 'SpaceAfter=No' ---"
 cat $TEMPFILE | udapy -s ud.SetSpaceAfterFromText  > $TMP2 && mv $TMP2 $TEMPFILE
@@ -56,16 +56,16 @@ grew transform \
 echo "--- Validate treebank with UD validation script ---"
 python ../tools/validate.py --max-err 0 --lang no $CONVERTED 2>&1 | tee $REPORTFILE
 
-python extract_errorlines.py \
+python utils/extract_errorlines.py \
     -f $REPORTFILE \
     #-e right-to-left-appos  # hent ut linjene for en spesifikk feilmeldingstype (-e errortype) fra valideringsrapporten
 
 
 echo "--- Remove comment lines for MaltEval ---"
-python parse_conllu.py -rc -f $CONVERTED -o $TEMPFILE
+python utils/parse_conllu.py -rc -f $CONVERTED -o $TEMPFILE
 MALTGOLD=malt_input.conllu
 #python parse_conllu.py -rc -f $NDT_FILE -o $MALTGOLD
-python parse_conllu.py -rc -f $UD_OFFICIAL -o $MALTGOLD
+python utils/parse_conllu.py -rc -f $UD_OFFICIAL -o $MALTGOLD
 
 echo "--- Validate treebank with MaltEval ---"
 
