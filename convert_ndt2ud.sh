@@ -1,32 +1,41 @@
 
 # Treebank file names
 
-PARTITION=dev
+#PARTITION=dev
 #PARTITION=train
 #PARTITION=test
+PARTITION=gull
 
-#LANG=nb
+LANG=nb
 #NAME=bokmaal
-LANG=nn
-NAME=nynorsk
+#LANG=nn
+#NAME=nynorsk
 
-NDT_FILE=data/ndt_${LANG}_${PARTITION}_udmorph.conllu
-#CONVERTED=data/grew_output_${LANG}_${PARTITION}.conllu
-CONVERTED=data/converted/no_${NAME}-ud-${PARTITION}.conllu
+#NDT_FILE=data/ndt_${LANG}_${PARTITION}.conllu
+#CONVERTED=data/converted/no_${NAME}-ud-${PARTITION}.conllu
 TEMPFILE=tmp.conllu
 REPORTFILE=validation-report_ndt2ud_${LANG}_${PARTITION}.txt
-UD_OFFICIAL=data/${LANG}-ud-${PARTITION}_uten_hash.conllu
+#UD_OFFICIAL=data/${LANG}-ud-${PARTITION}_uten_hash.conllu
 
-# File names for testing
-#NDT_FILE=data/sentences/testsents.conllu
-#CONVERTED=OUTPUT.conllu
-#TEMPFILE=deleteme.conllu
+# File names for testing against the gold standard
+NDT_FILE=data/gullkorpus/2019_gullkorpus_ndt.conllu
+CONVERTED=gull_konvertert.conllu
+UD_OFFICIAL=data/gullkorpus/2023_gullkorpus_ud.conllu
+TMP2=deleteme.conllu
 
 # START CONVERSION
 echo "--- Convert $LANG $PARTITION treebank ---"
 
+echo "--- Morphology: feats and pos-tags ---"
+python convert_morph.py -f $NDT_FILE -o $TEMPFILE
+
+echo "--- Add MISC annotation 'SpaceAfter=No' ---"
+cat $TEMPFILE | udapy -s ud.SetSpaceAfterFromText  > $TMP2 && mv $TMP2 $TEMPFILE
+
+
+echo "--- Dependency relations ---"
 grew transform \
-    -i  $NDT_FILE \
+    -i  $TEMPFILE \
     -o  $CONVERTED \
     -grs  rules/NDT_to_UD.grs \
     -strat "main_$LANG" \
@@ -55,21 +64,22 @@ python extract_errorlines.py \
 echo "--- Remove comment lines for MaltEval ---"
 python parse_conllu.py -rc -f $CONVERTED -o $TEMPFILE
 MALTGOLD=malt_input.conllu
-python parse_conllu.py -rc -f $NDT_FILE -o $MALTGOLD
+#python parse_conllu.py -rc -f $NDT_FILE -o $MALTGOLD
+python parse_conllu.py -rc -f $UD_OFFICIAL -o $MALTGOLD
 
 echo "--- Validate treebank with MaltEval ---"
 
 for METRIC in UAS LAS; do
     java -jar dist-20141005/lib/MaltEval.jar \
-        -s tmp.conllu \
-        -g $UD_OFFICIAL \
+        -s $TEMPFILE \
+        -g $MALTGOLD  \
         --GroupBy Deprel \
         --Metric $METRIC \
     > conversion_stats_${LANG}_${PARTITION}_${METRIC}.txt
 
     java -jar dist-20141005/lib/MaltEval.jar \
-        -s tmp.conllu \
-        -g $UD_OFFICIAL \
+        -s $TEMPFILE \
+        -g $MALTGOLD  \
         --Metric $METRIC
 done
 
