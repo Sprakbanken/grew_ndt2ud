@@ -426,11 +426,8 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument("-rc", "--remove_comments", action="store_false")
-    parser.add_argument("-f", "--file", nargs="*")
+    parser.add_argument("-f", "--file")
     parser.add_argument("-o", "--outputfile", default=None)
     args = parser.parse_args()
 
-    print("Konverterer morfologiske trekk og POS-tag")
-    for filename in args.file:
-        print("FIL: ",filename)
-        process_file(filename, args.outputfile, args.remove_comments)
+    process_file(args.file, args.outputfile, args.remove_comments)
