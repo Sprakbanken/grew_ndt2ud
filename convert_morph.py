@@ -396,7 +396,8 @@ def convert_morphology(data):
         converted = []
         for token in sentence:
             token["UPOS"] = convert_pos(token, sentence)
-            token["FEATS"] = convert_feats(token)
+            if not all(is_ud_feat(f) for f in token["FEATS"].split("|")):
+                token["FEATS"] = convert_feats(token)
             converted.append(token)
         s["tokens"] = converted
     return conll_data
