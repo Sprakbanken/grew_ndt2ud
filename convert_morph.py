@@ -147,7 +147,32 @@ featsmap = {
     'unorm': '_'  # feat Typo?
 }
 
+ud_feattypes = [
+    'Abbr',
+    'Animacy',
+    'Case',
+    'Definite',
+    'Degree',
+    'Gender',
+    'Mood',
+    'NumType',
+    'Number',
+    'Person',
+    'Polarity',
+    'Poss',
+    'PronType',
+    'Reflex',
+    'Tense',
+    'VerbForm',
+    'Voice',
+    '_'
+]
+
 ### UTILITY FUNCTIONS
+
+def is_ud_feat(feat):
+    feattype = feat.split("=")[0]
+    return feattype in ud_feattypes
 
 
 def split_token(line: str) -> list:
@@ -376,19 +401,23 @@ def convert_morphology(data):
         s["tokens"] = converted
     return conll_data
 
-def process_file(filename, add_comments):
+
+def process_file(filename, outputfile, add_comments):
     # Konverter alle splittene av retokenisert ndt data
     fpath = Path(filename)
     data = parse_conll_file(fpath)
     morphdata = convert_morphology(data)
-    output = fpath.parent / f"{fpath.stem}_udmorph{fpath.suffix}"
-    write_conll(morphdata, output, add_comments=add_comments)
+    if outputfile is None:
+       outputfile = fpath.parent / f"{fpath.stem}_udmorph{fpath.suffix}"
+    write_conll(morphdata, Path(outputfile), add_comments=add_comments)
 
 
 def process_ndt():
     for part in ["train", "test", "dev"]:
         for lang in ["nb", "nn"]:
-            process_file(f"data/ndt_{lang}_{part}.conllu", add_comments=True)
+            infile = f"data/ndt_{lang}_{part}.conllu"
+            outfile = f"data/ndt_{lang}_{part}_udmorph.conllu",
+            process_file(infile, outfile, add_comments=True)
 
 
 if __name__ == "__main__":
@@ -397,9 +426,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-rc", "--remove_comments", action="store_false")
     parser.add_argument("-f", "--file", nargs="*")
+    parser.add_argument("-o", "--outputfile", default=None)
     args = parser.parse_args()
 
     print("Konverterer morfologiske trekk og POS-tag")
     for filename in args.file:
         print("FIL: ",filename)
-        process_file(filename, args.remove_comments)
+        process_file(filename, args.outputfile, args.remove_comments)
