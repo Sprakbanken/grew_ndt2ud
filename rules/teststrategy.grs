@@ -5,7 +5,7 @@ import "grew_example_rules.grs"
 
 strat test {
   Seq (
-    Onf(grew_example_rules),
+    Onf (grew_example_rules),
     Onf (testrules)
  )
 }

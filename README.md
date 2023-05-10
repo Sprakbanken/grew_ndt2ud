@@ -29,15 +29,16 @@ Regelfilene er skrevet for [Grew](https://grew.fr/), som må [installeres](https
 
 ## Konverter trebanken
 
+
 ``` shell
-./convert_ndt2ud.sh -l nn -p dev -v
+./convert_ndt2ud.sh -v
 ```
 
 Skriptet tar tre valgfrie argumenter:
 
 | flagg | gyldige verdier | beskrivelse |
 | ---|---|---|
-| `-l` | `nb`, `nn` | Språkkode på 2 bokstaver |
+| `-l` | `nb`, `nn` | Språkkode på 2 bokstaver. Default er `nb`. |
 | `-p` | `dev`, `test`, `train`, `gold` | Datasett-splitt (partisjon). Default er `gold`, dvs. gullstandardutvalget på 200 manuelt korrigerte setninger. |
 | `-v` |  | Visualiser forskjellene mellom siste offisielle versjon av UD og den nye konverteringen med MaltEval. |
 
@@ -97,16 +98,18 @@ Skriptet tar tre valgfrie argumenter:
    a. Statistikk over relasjoner
 
       ```shell
-      METRIC=UAS # Unlabelled Accuracy Score: whether a directed relation R(x,y) exists between the same nodes x, y in the other treebank
-      #METRIC=LAS # Labelled Accuracy Score: whether the labelled, directed relation R(x,y) exists between nodes x,y
-      UD_OFFICIAL=data/no_bokmaal-ud-${PARTITION}_uten_hash.conllu
+      # UAS / Unlabelled Accuracy Score: whether a directed relation R(x,y) exists between the same nodes x, y in the other treebank
+      # LAS / Labelled Accuracy Score: whether the labelled, directed relation R(x,y) exists between nodes x,y
+      METRIC=LAS
+      #METRIC=UAS
+      UD_OFFICIAL=data/${LANG}-ud-${PARTITION}_uten_hash.conllu
 
       java -jar dist-20141005/lib/MaltEval.jar \
         -s tmp.conllu \
         -g $UD_OFFICIAL \
         --GroupBy Deprel \
         --Metric $METRIC \
-      > conversion_stats_${METRIC}.txt
+      > conversion_stats_${LANG}_${PARTITION}_${METRIC}.txt
       ```
 
       Bytt ut `METRIC`-variabelen og kjør kommandoen på nytt for å få begge statistikkene.
@@ -119,27 +122,45 @@ Skriptet tar tre valgfrie argumenter:
 
 ### Skriv grew-regler
 
-- Legg inn regel i en grs-fil i [rules/](./rules/) (Se [grew dokumentasjon](https://grew.fr/doc/rule/))
+- Legg inn regel i en grs-fil i [rules-mappen](./rules/) (Se [grew dokumentasjon](https://grew.fr/doc/rule/))
 - Legg inn referanse til regelsett eller regel i [NDT_to_UD.grs](rules/NDT_to_UD.grs)
 
 ### Match setninger med grew-mønstre
 
-``` shell
-grew grep -request rules/testpattern.req -i data/ndt_nb_dev_udmorph.conllu > match_pattern.json
+Søk f.eks. etter et adjektiv-attributt som kommer rett etter substantivet det står til:
+
+``` txt
+% rules/testpattern.req
+
+pattern {
+  H [upos=NOUN];
+  D [upos=ADJ];
+  e: H -[ATR]-> D;
+}
+with { H < D }
 ```
 
-### Teststrategi
+Skriv søketreffene til `pattern_matches.json`:
+``` shell
+grew grep -request rules/testpattern.req -i $NDT_FILE > pattern_matches.json
+```
 
-Samle alle eksempelsetningene fra `data/sentences` i én fil, eller oppgi hvilken setningsfil du vil konvertere.
+### Datautvalg
+
+For bestemte fenomener har vi samlet noen eksempelsetninger i `data/sentences`-mappen, og testet enkeltregler og ulike regelstrategier på disse.
+
+Setningene som listes i `pattern_matches.json` kan skrives til en egen `conllu`-fil. Se eksempelkode for å gjøre dette i [`process_NDT.ipynb`](process_NDT.ipynb)
+
+Man kan også samle setningene fra alle eksempelfilene i én fil:
 
 ```shell
 INPUT=data/sentences/all.conll
 cat data/sentences/* > $INPUT
 ```
 
-Test reglene som brukes i `rules/teststrategy.grs`.
-Filtrer regler/pakker/strategier fra `Seq()`-lista i `strat test`-strategien med kommentarsymbolet `%`
+### Teststrategi
 
+Prøv ut ulike regelsett, rekkefølger, enkeltregler og strategier i [`rules/teststrategy.grs`](rules/teststrategy.grs) og [`rules/testrules.grs`](rules/testrules.grs). Se [Grew-dokumentasjon](https://grew.fr/doc/grs/) for syntaks.
 
 ```shell
 grew transform \
@@ -154,7 +175,7 @@ grew transform \
 
 - Filen [`2023_gullkorpus_ud.conllu`](./data/gullkorpus/2023_gullkorpus_ud.conllu) inneholder 200 setninger fra den norske UD-trebanken for bokmål. Setningene er blitt rettet manuelt og kan brukes til å teste konverteringen av NDT.
 
-- Notebooken `notebooks/process_NDT.ipynb` er det kode for å hente ut UD-partisjonene fra gullkorpuset.
+- Notebooken `process_NDT.ipynb` har kode for å hente ut spesifikke setninger med setningsID-er, konvertere morfologiske trekk, og utforske dataene.
 
 - `utils/convert_morph.py` konverterer conllu-feltene "feats" og "upos" fra NDT sine merkelapper til UD sine.
 
@@ -165,7 +186,7 @@ grew transform \
 - Modulen `utils/parse_conllu.py` har et flagg `-rc` som fjerner kommentarlinjene fra Conll-filen.
 
   ``` shell
-  python utils/parse_conllu.py -rc -f gullkorpus/2019_gullkorpus_ndt.conllu -o gullkorpus/2019_gullkorpus_ndt_uten_hash.conllu
+  python utils/parse_conllu.py -rc -f data/gullkorpus/2019_gullkorpus_ndt.conllu -o data/gullkorpus/2019_gullkorpus_ndt_uten_hash.conllu
   ```
 
 - Fiks tegnsetting, terminalnoder, og skift hoder fra høyre til venstre  i conlldata med [udapi](https://udapi.github.io/):
