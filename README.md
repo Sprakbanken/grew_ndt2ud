@@ -1,25 +1,55 @@
 # Konvertering av NDT til UD med GREW
 
-## Innhold
+Repoet inneholder skript og regelfiler for å konvertere syntaktiske og morfologiske annotasjoner fra Norsk dependenstrebank ([NDT](https://www.nb.no/sprakbanken/ressurskatalog/oai-nb-no-sbr-10/)) til Universal Dependencies ([UD](https://universaldependencies.org/)).
 
-- [Arbeidsflyt](#arbeidsflyt)
-- [Eksempeldrevet arbeidsflyt](#eksempeldrevet-arbeidsflyt)
-- [Hjelpeskript](#hjelpeskript)
-- [Referanser](#referanser)
-- [Filstruktur](#filstruktur)
+Regelfilene er skrevet for [Grew](https://grew.fr/), som må [installeres](https://grew.fr/usage/install/) før konverteringsskriptet kan kjøres.
 
-## Arbeidsflyt
+## Oppsett
 
-Alle stegene under kjøres med ett shell-skript fra terminalen (*OBS! Siste linje i skriptet spinner opp GUI-et til MaltEval*):
+- [Python](https://www.python.org/downloads/)
+- [Grew installation](https://grew.fr/usage/install/)
+- [udapi](https://udapi.github.io/):
+
+  ``` shell
+  pip3 install --user --upgrade udapi
+  ```
+
+- [MaltEval](https://www.maltparser.org/malteval.html):
+
+  ``` shell
+  unzip utils/MaltEval-dist.zip
+  ```
+
+- [UD tools](https://github.com/UniversalDependencies/tools/):
+
+  ``` shell
+  cd ..
+  git clone git@github.com:UniversalDependencies/tools.git
+  ```
+
+## Konverter trebanken
 
 ``` shell
-./convert_ndt2ud.sh
+./convert_ndt2ud.sh -l nn -p dev -v
 ```
 
-1. Kjør reglene vi allerede har på et av datasettene:
+Skriptet tar tre valgfrie argumenter:
+
+| flagg | gyldige verdier | beskrivelse |
+| ---|---|---|
+| `-l` | `nb`, `nn` | Språkkode på 2 bokstaver |
+| `-p` | `dev`, `test`, `train`, `gold` | Datasett-splitt (partisjon). Default er `gold`, dvs. gullstandardutvalget på 200 manuelt korrigerte setninger. |
+| `-v` |  | Visualiser forskjellene mellom siste offisielle versjon av UD og den nye konverteringen med MaltEval. |
+
+
+## Arbeidsprosess
+
+
+1. Kjør reglene på et av datasettene med grew:
 
     ```shell
-    PARTITION=train #dev
+    LANG=nb
+    PARTITION=dev #train
     NDT_FILE=data/ndt_nb_${PARTITION}_udmorph.conllu
     CONVERTED=data/grew_output_${PARTITION}.conllu
 
@@ -27,23 +57,33 @@ Alle stegene under kjøres med ett shell-skript fra terminalen (*OBS! Siste linj
       -i  $NDT_FILE \
       -o  $CONVERTED \
       -grs  rules/NDT_to_UD.grs \
-      -strat main \
+      -strat "main_$LANG" \
       -safe_commands
     ```
 
 2. Fiks tegnsetting:
 
-   Vi bruker [udapi](https://udapi.github.io/) for å fikse setningsintern tegnsetting.
+   Vi bruker [udapi](https://udapi.github.io/) + egne post-prosesseringsregler for å fikse setningsintern tegnsetting.
 
    ``` shell
-   cat $CONVERTED | udapy -s ud.FixPunct > tmp.conllu  && mv tmp.conllu $CONVERTED
+   cat $CONVERTED | udapy -s ud.FixPunct > tmp.conllu
+
+   grew transform \
+    -i tmp.conllu \
+    -o $CONVERTED \
+    -grs rules/NDT_to_UD.grs \
+    -strat "postfix" \
+    -safe_commands
+
+   # Remove comment line with column names
+   sed -i 1d $CONVERTED
    ```
 
 3. Valider utdata med [UD's valideringsskript](https://github.com/UniversalDependencies/tools/blob/master/validate.py):
 
    ``` shell
    python ../tools/validate.py --max-err 0 --lang no $CONVERTED 2>&1 | tee validation-report_ndt2ud.txt
-   python extract_errorlines.py -f validation-report_ndt2ud.txt
+   python utils/extract_errorlines.py -f validation-report_ndt2ud.txt
    ```
 
 4. Sammenlign resultatet med tidligere versjon av UD
@@ -51,17 +91,14 @@ Alle stegene under kjøres med ett shell-skript fra terminalen (*OBS! Siste linj
    Fjern kommentarlinjer fra utdata før du kjører [MaltEval](https://www.maltparser.org/malteval.html), som forventer [CONLL-X-formatet](https://aclanthology.org/W06-2920.pdf):
 
     ```shell
-    python parse_conllu.py -rc -f $CONVERTED -o tmp.conllu
+    python utils/parse_conllu.py -rc -f $CONVERTED -o tmp.conllu
     ```
 
    a. Statistikk over relasjoner
 
-      I hvor stor grad matcher relasjonene i konversjonen ift. UD på
-      - at relasjonen `R(x,y)` finnes i den andre trebanken, med samme etikett, og mellom de samme nodene? --> Sett `METRIC=LAS` (Labelled Accuracy Score) i kommandoen under.
-      - at det finnes en relasjon `R(x,y)` mellom nodene `x` og `y` (uavhengig av etikett)? --> Sett `METRIC=UAS`
-
       ```shell
-      METRIC=UAS
+      METRIC=UAS # Unlabelled Accuracy Score: whether a directed relation R(x,y) exists between the same nodes x, y in the other treebank
+      #METRIC=LAS # Labelled Accuracy Score: whether the labelled, directed relation R(x,y) exists between nodes x,y
       UD_OFFICIAL=data/no_bokmaal-ud-${PARTITION}_uten_hash.conllu
 
       java -jar dist-20141005/lib/MaltEval.jar \
@@ -74,34 +111,24 @@ Alle stegene under kjøres med ett shell-skript fra terminalen (*OBS! Siste linj
 
       Bytt ut `METRIC`-variabelen og kjør kommandoen på nytt for å få begge statistikkene.
 
-   b. Se visuell sammenligning av setningsgrafene i MaltEval
+   b. Visualiser og sammenlign setningsgrafene med MaltEval
 
       ```shell
       java -jar dist-20141005/lib/MaltEval.jar -s tmp.conllu -g $UD_OFFICIAL -v 1
       ```
 
-   c. Valider conll-fil med egendefinerte pos-tags og deprel:
+### Skriv grew-regler
 
-      ```shell
-      java -jar MaltEval.jar -s parser.conll -g gold.conll --postag gold.postag --deprel gold.deprel
-      ```
+- Legg inn regel i en grs-fil i [rules/](./rules/) (Se [grew dokumentasjon](https://grew.fr/doc/rule/))
+- Legg inn referanse til regelsett eller regel i [NDT_to_UD.grs](rules/NDT_to_UD.grs)
 
-5. Skriv regler som håndterer de høyfrekvente feilene
-
-     - Legg inn regel i en grs-fil i [rules/](./rules/) (Se [grew dokumentasjon](https://grew.fr/doc/rule/))
-     - Legg inn referanse til regelsett eller regel i [mainstrategy.grs](./rules/mainstrategy.grs)
-
-
-## Eksempeldrevet arbeidsflyt
-
-### Matche setninger med grew-mønstre
+### Match setninger med grew-mønstre
 
 ``` shell
-grew grep -request rules/testpattern.req -i data/ndt_nb_dev_udmorph.conllu > match_dev.json
+grew grep -request rules/testpattern.req -i data/ndt_nb_dev_udmorph.conllu > match_pattern.json
 ```
 
 ### Teststrategi
-
 
 Samle alle eksempelsetningene fra `data/sentences` i én fil, eller oppgi hvilken setningsfil du vil konvertere.
 
@@ -111,52 +138,46 @@ cat data/sentences/* > $INPUT
 ```
 
 Test reglene som brukes i `rules/teststrategy.grs`.
+Filtrer regler/pakker/strategier fra `Seq()`-lista i `strat test`-strategien med kommentarsymbolet `%`
+
 
 ```shell
 grew transform \
   -i  $INPUT \
   -o  data/output.conll \
   -grs  rules/teststrategy.grs \
-  -strat main \
+  -strat test \
   -safe_commands
 ```
 
-I `rules/teststrategy.grs`: filtrer regler/pakker/strategier fra `Seq()`-lista i `strat test`-strategien med kommentarsymbolet `%`
+### Hjelpeskript
 
-## Hjelpeskript
+- Filen [`2023_gullkorpus_ud.conllu`](./data/gullkorpus/2023_gullkorpus_ud.conllu) inneholder 200 setninger fra den norske UD-trebanken for bokmål. Setningene er blitt rettet manuelt og kan brukes til å teste konverteringen av NDT.
 
-Filen [`2023_gullkorpus_ud.conllu`](./data/gullkorpus/2023_gullkorpus_ud.conllu) inneholder 200 setninger fra den norske UD-trebanken for bokmål. Setningene er blitt rettet manuelt og kan brukes til å teste konverteringen av NDT.
+- Notebooken `notebooks/process_NDT.ipynb` er det kode for å hente ut UD-partisjonene fra gullkorpuset.
 
-1. I notebooken `process_NDT.ipynb` er det kode for å hente ut UD-partisjonene fra gullkorpuset.
-
-2. `convert_morph.py` konverterer conll-feltene "feats" og "upos" fra NDT sine merkelapper til UD sine.
+- `utils/convert_morph.py` konverterer conllu-feltene "feats" og "upos" fra NDT sine merkelapper til UD sine.
 
   ```shell
-  python convert_morph.py -f 'data/gullkorpus/2019_gullkorpus_ndt.conllu' -o 'data/gullkorpus/2019_gullkorpus_ndt_udmorph.conllu'
+  python utils/convert_morph.py -f 'data/gullkorpus/2019_gullkorpus_ndt.conllu' -o 'data/gullkorpus/2019_gullkorpus_ndt_udmorph.conllu'
   ```
 
-3. Modulen "parse_conllu.py" har et flagg `-rc` som fjerner kommentarlinjene fra Conll-filen.
+- Modulen `utils/parse_conllu.py` har et flagg `-rc` som fjerner kommentarlinjene fra Conll-filen.
 
-  ```shell
-  python parse_conllu.py -rc -f $FILENAME
+  ``` shell
+  python utils/parse_conllu.py -rc -f gullkorpus/2019_gullkorpus_ndt.conllu -o gullkorpus/2019_gullkorpus_ndt_uten_hash.conllu
   ```
 
-4. Fiks tegnsetting, terminalnoder, og skift hoder fra høyre til venstre  i conlldata med [udapi](https://udapi.github.io/):
+- Fiks tegnsetting, terminalnoder, og skift hoder fra høyre til venstre  i conlldata med [udapi](https://udapi.github.io/):
 
 ```
 cat $CONVERTED | udapy -s ud.FixPunct ud.FixRightheaded ud.FixLeaf > out.conllu
 ```
 
-
-## OBS: Feilretting NDT
-
-dev-splitten av NDT har en setning der et punktum henger igjen på et ord slik at det ser ut som en forkortelse, og POS-taggen er X.
-
-Denne regelen fjerner punktumet fra ordformen, endrer pos-taggen, og legger til en ny node for punktumet + legger til "SpaceAfter=No" i MISC-feltet til ordet.
-Det gjøres for "originalfilen" før resten av konverteringsprosessen, fordi MaltEval ikke takler sammenligning av filer med ulikt antall rader / token.
-
 ## Referanser
 
+- [UD retningslinjer](https://universaldependencies.org/guidelines.html)
+- [NDT retningslinjer](https://www.nb.no/sbfil/dok/20140314_guidelines_ndt_english.pdf) (engelsk)
 - [Starting a new treebank? Go SUD!](https://aclanthology.org/2021.depling-1.4) (Gerdes et al., DepLing 2021)
 - [Graph Matching and Graph Rewriting: GREW tools for corpus exploration, maintenance and conversion](https://aclanthology.org/2021.eacl-demos.21) (Guillaume, EACL 2021)
 - [Dependency Parsing with Graph Rewriting](https://aclanthology.org/W15-2204) (Guillaume & Perrier, 2015)

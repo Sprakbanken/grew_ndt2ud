@@ -1,31 +1,11 @@
 % import rules from other grs files, which are treated as packages:
 
 import "testrules.grs"
-import "relabel_NDT_to_UD_deprel.grs"
-import "shift_root.grs"
-import "reverse_heads.grs"
-
+import "grew_example_rules.grs"
 
 strat test {
   Seq (
-
-    %%% restructure graph
-    Onf (reverse_heads),
-    %Onf (testrules),
-    Onf (shift_root),
-    shift_root.shift_copula_SPRED_head,  % <- already a sequence strategy
-
-    %%% relabel edges
-    Onf (relabel_NDT_to_UD_deprel),
-
+    Onf(grew_example_rules),
+    Onf (testrules)
  )
 }
-
-strat singletest {
-  Seq (
-    Onf (reverse_heads),
-    Onf (relabel_NDT_to_UD_deprel)
-  )
-}
-
-strat main { singletest }
