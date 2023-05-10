@@ -30,7 +30,15 @@ rule flat_punct {
 }
 
 rule flat_foreign {
-  pattern {GOV [upos=X]; e: GOV -[ FLAT ]-> DEP }
+  pattern {GOV [upos=X]; e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
+  commands {
+    e.1 = flat;
+    e.2 = foreign;
+  }
+}
+
+rule flat_foreign_2 {
+  pattern { DEP [upos=X]; e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
   commands {
     e.1 = flat;
     e.2 = foreign;
@@ -39,6 +47,7 @@ rule flat_foreign {
 
 rule flat_name_propn {
   pattern {GOV [upos=PROPN|NOUN]; e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
+  without { DEP [upos=X] }
   commands {
     e.1 = flat;
     e.2 = name;
@@ -46,7 +55,7 @@ rule flat_name_propn {
 }
 
 rule flat_name_propn_2 {
-  pattern { GOV [upos=ADJ]; DEP[upos=PROPN]; e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
+  pattern { GOV [upos=ADJ|ADV]; DEP[upos=PROPN]; e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
   commands {
     e.1 = flat;
     e.2 = name;
@@ -55,7 +64,7 @@ rule flat_name_propn_2 {
 
 rule flat_name_clause_title {
   pattern { H [upos=NOUN|PROPN]; H -> GOV; e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
-  without { GOV [upos=NUM]; DEP [upos=NUM]; }
+  without { GOV [upos=NUM|X]; DEP [upos=NUM|X]; }
   commands {
     e.1 = flat;
     e.2 = name;
