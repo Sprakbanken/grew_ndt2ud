@@ -29,7 +29,6 @@ The rules are written with [Grew](https://grew.fr/) which needs to be [installed
 
 ## Convert the treebank
 
-
 ``` shell
 ./convert_ndt2ud.sh -v
 ```
@@ -41,7 +40,6 @@ The script can take three optional arguments:
 | `-l` | `nb`, `nn` | 2 letter language code. Default is `nb`. |
 | `-p` | `dev`, `test`, `train`, `gold` | Dataset split (partition). Default is `gold`, ie. the gold corpus selection of 200 manually corrected  sentences. |
 | `-v` |  | Visualize the differences between the last official UD version and the new converted conllu file with MaltEval. |
-
 
 ## Development process
 
@@ -170,7 +168,7 @@ python utils/parse_conllu.py -rc -f data/gullkorpus/2019_gullkorpus_ndt.conllu -
 
 - [udapi](https://udapi.github.io/) is used to add `SpaceAfter=No` to the `MISC` field, fix projectivity and punctuation issues, etc:
 
-```
+``` shell
 cat $CONVERTED | udapy -s ud.SetSpaceAfterFromText ud.FixPunct ud.FixRightheaded ud.FixLeaf > out.conllu
 ```
 
