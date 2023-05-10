@@ -114,7 +114,7 @@ Skriptet tar tre valgfrie argumenter:
 
       Bytt ut `METRIC`-variabelen og kjør kommandoen på nytt for å få begge statistikkene.
 
-   b. Visualiser og sammenlign setningsgrafene med MaltEval
+   b. Visualiser og sammenlign setningsgrafene i MaltEval
 
       ```shell
       java -jar dist-20141005/lib/MaltEval.jar -s tmp.conllu -g $UD_OFFICIAL -v 1
