@@ -182,7 +182,7 @@ def split_token(line: str) -> list:
 def is_neg(token):
     lemma = get_field(token,"LEMMA")
     deprel = get_field(token,"DEPREL")
-    return (lemma in ["ikke", "ikkje"]) or (lemma == "ingen" and deprel == "DET")
+    return (lemma == "ikke" or (lemma == "ingen" and deprel == "DET"))
 
 
 def is_copula(token, deps):
@@ -320,7 +320,7 @@ def convert_pos(token, sentence):
         'verb': convert_verb_pos(), #'VERB' or 'AUX',
         'det': convert_det_pos(), #'DET', 'PRON', 'NUM'
         'adj': 'ADJ',
-        'adv': "PART" if lemma in ["ikke", "ikkje", "ei"] else "ADV", #'ADV',
+        'adv': "PART" if lemma in ["ikke", "ei"] else "ADV", #'ADV',
         'clb': "PUNCT",
         'prep': convert_prep_pos(), #'ADP',"PRON", 'ADV'
         'pron': 'PRON',
