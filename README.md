@@ -123,7 +123,7 @@ The rules were developed with the following step-by-step approach.
 
 The [rules-folder](./rules/) contains `grs`-files with [rules](https://grew.fr/doc/rule/) and [strategies](https://grew.fr/doc/grs/) which are applied in a certain order, as defined in the `main_nb` and `main_nn` strategies in [NDT_to_UD.grs](rules/NDT_to_UD.grs).
 
-See the Grew documentation on [grs](https://grew.fr/doc/grs/) and [rules](https://grew.fr/doc/rule/) for more information.
+See also the Grew documentation on [commands](https://grew.fr/doc/commands/) for more information.
 
 ### Match sentences with Grew pattens
 
@@ -158,7 +158,7 @@ grew transform \
 
 ```shell
 python utils/convert_morph.py -f 'data/gullkorpus/2019_gullkorpus_ndt.conllu' -o 'data/gullkorpus/2019_gullkorpus_ndt_udmorph.conllu'
-  ```
+```
 
 - [`utils/parse_conllu.py`](utils/convert_morph.py) can be run with the flag `-rc` to remove comment lines from a conllu file.
 

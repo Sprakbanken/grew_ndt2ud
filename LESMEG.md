@@ -29,7 +29,6 @@ Regelfilene er skrevet for [Grew](https://grew.fr/), som må [installeres](https
 
 ## Konverter trebanken
 
-
 ``` shell
 ./convert_ndt2ud.sh -v
 ```
@@ -42,9 +41,9 @@ Skriptet tar tre valgfrie argumenter:
 | `-p` | `dev`, `test`, `train`, `gold` | Datasett-splitt (partisjon). Default er `gold`, dvs. gullstandardutvalget på 200 manuelt korrigerte setninger. |
 | `-v` |  | Visualiser forskjellene mellom siste offisielle versjon av UD og den nye konverteringen med MaltEval. |
 
-
 ## Arbeidsprosess
 
+Regelfilene ble utviklet med følgende fremgangsmåte.
 
 1. Kjør reglene på et av datasettene med grew:
 
@@ -120,27 +119,16 @@ Skriptet tar tre valgfrie argumenter:
       java -jar dist-20141005/lib/MaltEval.jar -s tmp.conllu -g $UD_OFFICIAL -v 1
       ```
 
-### Skriv grew-regler
+### Grew-regler
 
-- Legg inn regel i en grs-fil i [rules-mappen](./rules/) (Se [grew dokumentasjon](https://grew.fr/doc/rule/))
-- Legg inn referanse til regelsett eller regel i [NDT_to_UD.grs](rules/NDT_to_UD.grs)
+[rules-mappen](./rules/) inneholder `grs`-filer med [regler](https://grew.fr/doc/rule/) og [strategier](https://grew.fr/doc/grs/) som datasettet kjøres gjennom. Rekkefølgen reglene appliseres i er definert i strategiene `main_nn` og `main_nb` i [NDT_to_UD.grs](rules/NDT_to_UD.grs)
+
+Se også Grew-dokumentasjonen om [kommandoer](https://grew.fr/doc/commands/).
 
 ### Match setninger med grew-mønstre
 
-Søk f.eks. etter et adjektiv-attributt som kommer rett etter substantivet det står til:
+Vi brukte også `grew grep` for å søke etter setninger og utvikle [mønstre for grew requests](https://grew.fr/doc/request/).
 
-``` txt
-% rules/testpattern.req
-
-pattern {
-  H [upos=NOUN];
-  D [upos=ADJ];
-  e: H -[ATR]-> D;
-}
-with { H < D }
-```
-
-Skriv søketreffene til `pattern_matches.json`:
 ``` shell
 grew grep -request rules/testpattern.req -i $NDT_FILE > pattern_matches.json
 ```
@@ -149,18 +137,9 @@ grew grep -request rules/testpattern.req -i $NDT_FILE > pattern_matches.json
 
 For bestemte fenomener har vi samlet noen eksempelsetninger i `data/sentences`-mappen, og testet enkeltregler og ulike regelstrategier på disse.
 
-Setningene som listes i `pattern_matches.json` kan skrives til en egen `conllu`-fil. Se eksempelkode for å gjøre dette i [`process_NDT.ipynb`](process_NDT.ipynb)
-
-Man kan også samle setningene fra alle eksempelfilene i én fil:
-
-```shell
-INPUT=data/sentences/all.conll
-cat data/sentences/* > $INPUT
-```
+Setningene som listes i `pattern_matches.json` kan skrives til en egen `conllu`-fil. Se eksempelkode for å gjøre dette i [`process_NDT.ipynb`](process_NDT.ipynb).
 
 ### Teststrategi
-
-Prøv ut ulike regelsett, rekkefølger, enkeltregler og strategier i [`rules/teststrategy.grs`](rules/teststrategy.grs) og [`rules/testrules.grs`](rules/testrules.grs). Se [Grew-dokumentasjon](https://grew.fr/doc/grs/) for syntaks.
 
 ```shell
 grew transform \
@@ -173,25 +152,25 @@ grew transform \
 
 ### Hjelpeskript
 
-- Filen [`2023_gullkorpus_ud.conllu`](./data/gullkorpus/2023_gullkorpus_ud.conllu) inneholder 200 setninger fra den norske UD-trebanken for bokmål. Setningene er blitt rettet manuelt og kan brukes til å teste konverteringen av NDT.
+- [`2023_gullkorpus_ud.conllu`](./data/gullkorpus/2023_gullkorpus_ud.conllu) inneholder 200 setninger fra den norske UD-trebanken for bokmål. Setningene er blitt rettet manuelt og kan brukes til å teste konverteringen av NDT.
 
-- Notebooken `process_NDT.ipynb` har kode for å hente ut spesifikke setninger med setningsID-er, konvertere morfologiske trekk, og utforske dataene.
+- Notebooken [`process_NDT.ipynb`](process_NDT.ipynb) har kode for å hente ut spesifikke setninger med setningsID-er, konvertere morfologiske trekk, og utforske dataene.
 
 - `utils/convert_morph.py` konverterer conllu-feltene "feats" og "upos" fra NDT sine merkelapper til UD sine.
 
-  ```shell
-  python utils/convert_morph.py -f 'data/gullkorpus/2019_gullkorpus_ndt.conllu' -o 'data/gullkorpus/2019_gullkorpus_ndt_udmorph.conllu'
-  ```
+```shell
+python utils/convert_morph.py -f 'data/gullkorpus/2019_gullkorpus_ndt.conllu' -o 'data/gullkorpus/2019_gullkorpus_ndt_udmorph.conllu'
+```
 
 - Modulen `utils/parse_conllu.py` har et flagg `-rc` som fjerner kommentarlinjene fra Conll-filen.
 
-  ``` shell
-  python utils/parse_conllu.py -rc -f data/gullkorpus/2019_gullkorpus_ndt.conllu -o data/gullkorpus/2019_gullkorpus_ndt_uten_hash.conllu
-  ```
+``` shell
+python utils/parse_conllu.py -rc -f data/gullkorpus/2019_gullkorpus_ndt.conllu -o data/gullkorpus/2019_gullkorpus_ndt_uten_hash.conllu
+```
 
 - Fiks tegnsetting, terminalnoder, og skift hoder fra høyre til venstre  i conlldata med [udapi](https://udapi.github.io/):
 
-```
+``` shell
 cat $CONVERTED | udapy -s ud.FixPunct ud.FixRightheaded ud.FixLeaf > out.conllu
 ```
 
