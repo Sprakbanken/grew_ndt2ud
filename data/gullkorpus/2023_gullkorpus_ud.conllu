@@ -98,7 +98,7 @@
 5	fylle	fylle	VERB	_	VerbForm=Inf	3	csubj	_	_
 6	hennes	hennes	PRON	_	Number=Plur|Poss=Yes|PronType=Prs	7	nmod:poss	_	_
 7	sko	sko	NOUN	_	Definite=Ind|Gender=Masc|Number=Plur	5	obj	_	SpaceAfter=No
-8	,	$,	PUNCT	_	_	9	punct	_	_
+8	,	$,	PUNCT	_	_	3	punct	_	_
 9	sier	si	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 10	Lee	Lee	PROPN	_	_	9	nsubj	_	_
 11	til	til	ADP	_	_	12	case	_	_
@@ -347,9 +347,9 @@
 
 # sent_id = 006168
 # text = - Spørsmålet er om de personene som har deltatt i meningsmålingene på delstatsnivå virkelig møter opp i valglokalene, sier Melby.
-1	-	$-	PUNCT	_	_	3	punct	_	_
-2	Spørsmålet	spørsmål	NOUN	_	Definite=Def|Gender=Neut|Number=Sing	3	nsubj	_	_
-3	er	være	AUX	_	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
+1	-	$-	PUNCT	_	_	15	punct	_	_
+2	Spørsmålet	spørsmål	NOUN	_	Definite=Def|Gender=Neut|Number=Sing	15	nsubj:outer	_	_
+3	er	være	AUX	_	Mood=Ind|Tense=Pres|VerbForm=Fin	15	cop	_	_
 4	om	om	SCONJ	_	_	15	mark	_	_
 5	de	de	DET	_	Number=Plur|PronType=Dem	6	det	_	_
 6	personene	person	NOUN	_	Definite=Def|Gender=Masc|Number=Plur	15	nsubj	_	_
@@ -361,14 +361,14 @@
 12	på	på	ADP	_	_	13	case	_	_
 13	delstatsnivå	delstatsnivå	NOUN	_	Definite=Ind|Gender=Neut|Number=Sing	11	nmod	_	_
 14	virkelig	virkelig	ADJ	_	Definite=Ind|Degree=Pos|Gender=Neut|Number=Sing	15	advmod	_	_
-15	møter	møte	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	3	ccomp	_	_
+15	møter	møte	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	20	ccomp	_	_
 16	opp	opp	ADP	_	_	15	compound:prt	_	_
 17	i	i	ADP	_	_	18	case	_	_
 18	valglokalene	valglokale	NOUN	_	Definite=Def|Gender=Neut|Number=Plur	15	obl	_	SpaceAfter=No
-19	,	$,	PUNCT	_	_	20	punct	_	_
-20	sier	si	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	3	parataxis	_	_
+19	,	$,	PUNCT	_	_	15	punct	_	_
+20	sier	si	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 21	Melby	Melby	PROPN	_	_	20	nsubj	_	SpaceAfter=No
-22	.	$.	PUNCT	_	_	3	punct	_	_
+22	.	$.	PUNCT	_	_	20	punct	_	_
 
 # newpar
 # sent_id = 004617
@@ -603,12 +603,12 @@
 9	for	for	ADP	_	_	10	case	_	_
 10	dubbing	dubbing	NOUN	_	Definite=Ind|Gender=Fem|Number=Sing	8	nmod	_	_
 11	har	ha	AUX	_	Mood=Ind|Tense=Pres|VerbForm=Fin	12	aux	_	_
-12	bidratt	bidra	VERB	_	VerbForm=Part	0	root	_	_
+12	bidratt	bidra	VERB	_	VerbForm=Part	17	ccomp	_	_
 13	til	til	ADP	_	_	14	case	_	_
 14	språkforståelsen	språkforståelse	NOUN	_	Definite=Def|Gender=Masc|Number=Sing	12	obl	_	_
 15	vår	vår	PRON	_	Gender=Masc|Number=Sing|Poss=Yes|PronType=Prs	14	nmod:poss	_	SpaceAfter=No
-16	,	$,	PUNCT	_	_	17	punct	_	_
-17	sier	si	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	12	parataxis	_	_
+16	,	$,	PUNCT	_	_	12	punct	_	_
+17	sier	si	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 18	daglig	daglig	ADJ	_	Definite=Ind|Degree=Pos|Number=Sing	19	amod	_	_
 19	leder	leder	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	17	nsubj	_	_
 20	for	for	ADP	_	_	21	case	_	_
@@ -618,7 +618,7 @@
 24	,	$,	PUNCT	_	_	19	punct	_	_
 25	Morten	Morten	PROPN	_	Gender=Masc	19	appos	_	_
 26	Davidsen	Davidsen	PROPN	_	_	25	flat:name	_	SpaceAfter=No
-27	.	$.	PUNCT	_	_	12	punct	_	_
+27	.	$.	PUNCT	_	_	17	punct	_	_
 
 # sent_id = 013110
 # text = Sommerstid kan imidlertid enkelte turister ta seg i land fra båter når værforholdene tillater det.
@@ -1063,9 +1063,9 @@
 3	operasjonen	operasjon	NOUN	_	Definite=Def|Gender=Masc|Number=Sing	6	nsubj	_	_
 4	har	ha	AUX	_	Mood=Ind|Tense=Pres|VerbForm=Fin	6	aux	_	_
 5	vært	være	AUX	_	VerbForm=Part	6	cop	_	_
-6	vellykket	vellykket	ADJ	_	Definite=Ind|Degree=Pos|Number=Sing	0	root	_	SpaceAfter=No
-7	,	$,	PUNCT	_	_	8	punct	_	_
-8	sier	si	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	6	parataxis	_	_
+6	vellykket	vellykket	ADJ	_	Definite=Ind|Degree=Pos|Number=Sing	8	ccomp	_	SpaceAfter=No
+7	,	$,	PUNCT	_	_	6	punct	_	_
+8	sier	si	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 9	ordførerens	ordfører	NOUN	_	Case=Gen|Definite=Def|Gender=Masc|Number=Sing	10	nmod	_	_
 10	bror	bror	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	8	nsubj	_	_
 11	Pål	Pål	PROPN	_	Gender=Masc	10	flat:name	_	_
@@ -1075,7 +1075,7 @@
 15	Tønsbergs	Tønsbergs	PROPN	_	_	17	nmod	_	_
 16	Blads	Blad	PROPN	_	Case=Gen	15	flat:name	_	_
 17	nettutgave	nettutgave	NOUN	_	Definite=Ind|Gender=Fem|Number=Sing	8	obl	_	SpaceAfter=No
-18	.	$.	PUNCT	_	_	6	punct	_	_
+18	.	$.	PUNCT	_	_	8	punct	_	_
 
 # newpar
 # sent_id = 012752
@@ -1312,7 +1312,7 @@
 # text = Det må være en etisk refleksjon før man ytrer seg, sier Rieber-Mohn, som også poengterer viktigheten av debatt og diskusjon om presseetiske spørsmål.
 1	Det	det	PRON	_	Gender=Neut|Number=Sing|Person=3|PronType=Prs	3	expl	_	_
 2	må	måtte	AUX	_	Mood=Ind|Tense=Pres|VerbForm=Fin	3	aux	_	_
-3	være	være	VERB	_	VerbForm=Inf	0	root	_	_
+3	være	være	VERB	_	VerbForm=Inf	12	ccomp	_	_
 4	en	en	DET	_	Gender=Masc|Number=Sing|PronType=Art	6	det	_	_
 5	etisk	etisk	ADJ	_	Definite=Ind|Degree=Pos|Number=Sing	6	amod	_	_
 6	refleksjon	refleksjon	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	3	nsubj	_	_
@@ -1320,8 +1320,8 @@
 8	man	man	PRON	_	Animacy=Hum|Case=Nom|Number=Sing|PronType=Prs	9	nsubj	_	_
 9	ytrer	ytre	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	3	advcl	_	_
 10	seg	seg	PRON	_	Case=Acc|PronType=Prs|Reflex=Yes	9	obj	_	SpaceAfter=No
-11	,	$,	PUNCT	_	_	12	punct	_	_
-12	sier	si	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	3	parataxis	_	_
+11	,	$,	PUNCT	_	_	3	punct	_	_
+12	sier	si	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 13	Rieber-Mohn	Rieber-Mohn	PROPN	_	_	12	nsubj	_	SpaceAfter=No
 14	,	$,	PUNCT	_	_	17	punct	_	_
 15	som	som	SCONJ	_	PronType=Rel	17	mark	_	_
@@ -1335,7 +1335,7 @@
 23	om	om	ADP	_	_	25	case	_	_
 24	presseetiske	presseetisk	ADJ	_	Degree=Pos|Number=Plur	25	amod	_	_
 25	spørsmål	spørsmål	NOUN	_	Definite=Ind|Gender=Neut|Number=Plur	22	nmod	_	SpaceAfter=No
-26	.	$.	PUNCT	_	_	3	punct	_	_
+26	.	$.	PUNCT	_	_	12	punct	_	_
 
 # sent_id = 006645
 # text = Flere medier har spekulert på om det kan ligge en bredere sammensvergelse bak lekkasjene av pavens dokumenter, uten at noen har klart å bevise det.
@@ -1414,13 +1414,13 @@
 2	hvor	hvor	ADV	_	_	5	advmod	_	_
 3	disse	disse	DET	_	Number=Plur|PronType=Dem	4	det	_	_
 4	glidningene	glidning	NOUN	_	Definite=Def|Gender=Fem|Number=Plur	5	nsubj	_	_
-5	går	gå	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
+5	går	gå	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	9	ccomp	_	_
 6	for	for	ADV	_	_	7	advmod	_	_
 7	langt	lang	ADJ	_	Definite=Ind|Degree=Pos|Gender=Neut|Number=Sing	5	advmod	_	SpaceAfter=No
-8	,	$,	PUNCT	_	_	9	punct	_	_
-9	avslutter	avslutte	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	5	parataxis	_	_
+8	,	$,	PUNCT	_	_	5	punct	_	_
+9	avslutter	avslutte	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 10	Ekern	Ekern	PROPN	_	_	9	nsubj	_	SpaceAfter=No
-11	.	$.	PUNCT	_	_	5	punct	_	_
+11	.	$.	PUNCT	_	_	9	punct	_	_
 
 # sent_id = 008099
 # text = Om å komme seg videre hva du enn har opplevd, eller mistet.
@@ -1600,12 +1600,12 @@
 
 # sent_id = 007125
 # text = - Det var da journalistene fikk nyss i brevet fra Det hvite hus at de fattet interesse for det vi hadde gjort, og det ble en del oppstyr og skriverier, sier Olav Johansen.
-1	-	$-	PUNCT	_	_	3	punct	_	_
-2	Det	det	PRON	_	Gender=Neut|Number=Sing|Person=3|PronType=Prs	3	expl	_	_
-3	var	være	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
+1	-	$-	PUNCT	_	_	6	punct	_	_
+2	Det	det	PRON	_	Gender=Neut|Number=Sing|Person=3|PronType=Prs	6	expl	_	_
+3	var	være	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	6	cop	_	_
 4	da	da	SCONJ	_	_	6	mark	_	_
 5	journalistene	journalist	NOUN	_	Definite=Def|Gender=Masc|Number=Plur	6	nsubj	_	_
-6	fikk	få	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	3	ccomp	_	_
+6	fikk	få	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	33	ccomp	_	_
 7	nyss	nyss	NOUN	_	Definite=Ind|Gender=Neut|Number=Sing	6	obj	_	_
 8	i	i	ADP	_	_	9	case	_	_
 9	brevet	brev	NOUN	_	Definite=Def|Gender=Neut|Number=Sing	7	nmod	_	_
@@ -1631,11 +1631,11 @@
 29	oppstyr	oppstyr	NOUN	_	Definite=Ind|Gender=Neut|Number=Sing	26	nsubj	_	_
 30	og	og	CCONJ	_	_	31	cc	_	_
 31	skriverier	skriveri	NOUN	_	Definite=Ind|Gender=Neut|Number=Plur	29	conj	_	SpaceAfter=No
-32	,	$,	PUNCT	_	_	33	punct	_	_
-33	sier	si	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	6	parataxis	_	_
+32	,	$,	PUNCT	_	_	6	punct	_	_
+33	sier	si	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 34	Olav	Olav	PROPN	_	Gender=Masc	33	nsubj	_	_
 35	Johansen	Johansen	PROPN	_	_	34	flat:name	_	SpaceAfter=No
-36	.	$.	PUNCT	_	_	3	punct	_	_
+36	.	$.	PUNCT	_	_	33	punct	_	_
 
 # sent_id = 012633
 # text = I dette ligger både en rett til tankefrihet og til åpent å kunne utøve sin tro eller ikketro.
@@ -1669,7 +1669,7 @@
 # sent_id = 017099
 # text = Han har et ekstremt fokus og vet at bare det beste og vondeste er nok, avslutter Bjørn Svindal.
 1	Han	han	PRON	_	Animacy=Hum|Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	nsubj	_	_
-2	har	ha	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
+2	har	ha	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	17	ccomp	_	_
 3	et	en	DET	_	Gender=Neut|Number=Sing|PronType=Art	5	det	_	_
 4	ekstremt	ekstrem	ADJ	_	Definite=Ind|Degree=Pos|Gender=Neut|Number=Sing	5	amod	_	_
 5	fokus	fokus	NOUN	_	Definite=Ind|Gender=Neut|Number=Sing	2	obj	_	_
@@ -1683,11 +1683,11 @@
 13	vondeste	vond	ADJ	_	Definite=Def|Degree=Sup	11	conj	_	_
 14	er	være	AUX	_	Mood=Ind|Tense=Pres|VerbForm=Fin	15	cop	_	_
 15	nok	nok	ADV	_	_	7	ccomp	_	SpaceAfter=No
-16	,	$,	PUNCT	_	_	17	punct	_	_
-17	avslutter	avslutte	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	2	parataxis	_	_
+16	,	$,	PUNCT	_	_	2	punct	_	_
+17	avslutter	avslutte	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 18	Bjørn	Bjørn	PROPN	_	Gender=Masc	17	nsubj	_	_
 19	Svindal	Svindal	PROPN	_	_	18	flat:name	_	SpaceAfter=No
-20	.	$.	PUNCT	_	_	2	punct	_	_
+20	.	$.	PUNCT	_	_	17	punct	_	_
 
 # sent_id = 009292
 # text = Jo større samfunn, desto mer makt.
@@ -2757,7 +2757,7 @@
 3	liv	liv	NOUN	_	Definite=Ind|Gender=Neut|Number=Sing	6	nsubj	_	_
 4	kan	kunne	AUX	_	Mood=Ind|Tense=Pres|VerbForm=Fin	6	aux	_	_
 5	kanskje	kanskje	ADV	_	_	6	advmod	_	_
-6	bidra	bidra	VERB	_	VerbForm=Inf	0	root	_	_
+6	bidra	bidra	VERB	_	VerbForm=Inf	31	ccomp	_	_
 7	til	til	SCONJ	_	_	9	mark	_	_
 8	å	å	PART	_	_	9	mark	_	_
 9	utvikle	utvikle	VERB	_	VerbForm=Inf	6	advcl	_	_
@@ -2781,8 +2781,8 @@
 27	med	med	ADP	_	_	29	case	_	_
 28	andre	annen	DET	_	Number=Plur|PronType=Dem	29	det	_	_
 29	mennesker	menneske	NOUN	_	Definite=Ind|Gender=Neut|Number=Plur	26	nmod	_	SpaceAfter=No
-30	,	$,	PUNCT	_	_	31	punct	_	_
-31	sier	si	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	6	parataxis	_	_
+30	,	$,	PUNCT	_	_	6	punct	_	_
+31	sier	si	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 32	Vinje	Vinje	PROPN	_	_	31	nsubj	_	SpaceAfter=No
 33	,	$,	PUNCT	_	_	35	punct	_	_
 34	som	som	SCONJ	_	PronType=Rel	35	mark	_	_
@@ -2804,7 +2804,7 @@
 50	skade	skade	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	49	obj	_	_
 51	av	av	ADP	_	_	52	case	_	_
 52	dataspill	dataspill	NOUN	_	Definite=Ind|Gender=Neut|Number=Plur	49	obl	_	SpaceAfter=No
-53	.	$.	PUNCT	_	_	6	punct	_	_
+53	.	$.	PUNCT	_	_	31	punct	_	_
 
 # sent_id = 005737
 # text = Formelpreget og full av feil
@@ -2934,13 +2934,13 @@
 2	Hva	hva	PRON	_	PronType=Int	5	obj	_	_
 3	må	måtte	AUX	_	Mood=Ind|Tense=Pres|VerbForm=Fin	5	aux	_	_
 4	du	du	PRON	_	Animacy=Hum|Case=Nom|Number=Sing|Person=2|PronType=Prs	5	nsubj	_	_
-5	trene	trene	VERB	_	VerbForm=Inf	0	root	_	_
+5	trene	trene	VERB	_	VerbForm=Inf	9	ccomp	_	_
 6	på	på	ADP	_	_	5	compound:prt	_	_
 7	da	da	ADV	_	_	5	advmod	_	SpaceAfter=No
 8	?	$?	PUNCT	_	_	5	punct	_	_
-9	spør	spørre	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	5	parataxis	_	_
+9	spør	spørre	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 10	pappa	pappa	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	9	nsubj	_	SpaceAfter=No
-11	.	$.	PUNCT	_	_	5	punct	_	_
+11	.	$.	PUNCT	_	_	9	punct	_	_
 
 # sent_id = 016903
 # text = Han mente barneloven var skrevet av og for forrige generasjon - noe han mente særlig gikk ut over far, som etter hans mening er den svake part i barnefordelingssaker.
@@ -3336,13 +3336,13 @@
 4	en	en	DET	_	Gender=Masc|Number=Sing|PronType=Art	7	det	_	_
 5	helt	hel	ADJ	_	Definite=Ind|Degree=Pos|Gender=Neut|Number=Sing	6	advmod	_	_
 6	ny	ny	ADJ	_	Definite=Ind|Degree=Pos|Number=Sing	7	amod	_	_
-7	verden	verden	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	0	root	_	_
+7	verden	verden	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	11	ccomp	_	_
 8	for	for	ADP	_	_	9	case	_	_
 9	meg	jeg	PRON	_	Animacy=Hum|Case=Acc|Number=Sing|Person=1|PronType=Prs	7	obl	_	SpaceAfter=No
-10	,	$,	PUNCT	_	_	11	punct	_	_
-11	sier	si	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	7	parataxis	_	_
+10	,	$,	PUNCT	_	_	7	punct	_	_
+11	sier	si	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 12	Øien	Øien	PROPN	_	_	11	nsubj	_	SpaceAfter=No
-13	.	$.	PUNCT	_	_	7	punct	_	_
+13	.	$.	PUNCT	_	_	11	punct	_	_
 
 # sent_id = 007298
 # text = Hvem kunne ha gjort noe?
