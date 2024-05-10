@@ -317,3 +317,15 @@ rule article_determiners {
     }
 }
 
+rule singular_article_determiners_lemma {
+    pattern {
+      X [
+          upos = DET,
+          Number=Sing,
+          lemma = "Det"|"Den"|"Dét"|"Dén"|"De"|"de"|"D."|"det"|"dét"|"dén"|"d."
+      ]
+    }
+    commands {
+      X.lemma = "den";
+    }
+}
