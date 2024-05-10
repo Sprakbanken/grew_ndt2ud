@@ -304,3 +304,16 @@ rule adjectival_participle {
     commands { A.VerbForm = Part }
 }
 
+rule article_determiners {
+    pattern {
+      X [
+          upos = DET,
+          PronType=Dem,
+          form = "Det"|"Den"|"Dét"|"Dén"|"De"|"Dem"|"D."|"det"|"den"|"dét"|"dén"|"de"|"dem"|"d."
+      ]
+    }
+    commands {
+      X.PronType = Art;
+    }
+}
+
