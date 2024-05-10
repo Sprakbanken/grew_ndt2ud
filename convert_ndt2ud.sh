@@ -43,8 +43,12 @@ else
 echo "Invalid argument: $PARTITION" >&2; exit 1
 fi
 
-TEMPFILE=tmp.conllu
-TMP2=tmp2.conllu
+# Create temporary directory
+TEMPDIR=tmp
+mkdir -p $TEMPDIR
+
+#TEMPFILE=tmp.conllu
+#TMP2=tmp2.conllu
 REPORTFILE=validation-report_ndt2ud_${LANG}_${PARTITION}.txt
 
 echo "--- CONVERT TREEBANK ---"
@@ -56,31 +60,47 @@ echo "Output will be written to '$CONVERTED' and '$REPORTFILE'"
 
 # START CONVERSION
 echo "--- Convert morphology: feats and pos-tags ---"
+TEMPFILE=$TEMPDIR/01_convert_morph_output.conllu
 python utils/convert_morph.py -f $NDT_FILE -o $TEMPFILE
 
 # Add MISC annotation 'SpaceAfter=No'
-cat $TEMPFILE | udapy -s ud.SetSpaceAfterFromText  > $TMP2 && mv $TMP2 $TEMPFILE
+TEMPOUT=$TEMPDIR/02_udapy_spaceafter.conllu
+cat $TEMPFILE | udapy -s ud.SetSpaceAfterFromText  > $TEMPOUT
+TEMPFILE=$TEMPOUT
+
 
 echo "--- Convert dependency relations ---"
+TEMPOUT=$TEMPDIR/03_grew_transform_deprels.conllu
+
 grew transform \
     -i  $TEMPFILE \
-    -o  $CONVERTED \
+    -o  $TEMPOUT \
     -grs  rules/NDT_to_UD.grs \
     -strat "main_$LANG" \
     -safe_commands
 
-echo "--- Fix punctuation ---"
-cat $CONVERTED | udapy -s ud.FixPunct  > $TEMPFILE
+TEMPFILE=$TEMPOUT
 
+echo "--- Fix punctuation ---"
+TEMPOUT=$TEMPDIR/04_udapy_fixpunct.conllu
+cat $TEMPFILE | udapy -s ud.FixPunct  > $TEMPOUT
+TEMPFILE=$TEMPOUT
+
+echo "--- Fix errors introduced by udapy ---"
+TEMPOUT=$TEMPDIR/05_grew_transform_postfix.conllu
 grew transform \
     -i $TEMPFILE \
-    -o $CONVERTED \
+    -o $TEMPOUT \
     -grs rules/NDT_to_UD.grs \
     -strat "postfix" \
     -safe_commands
+TEMPFILE=$TEMPOUT
 
-# Remove comment line with column names
-sed -i 1d $CONVERTED
+# Remove comment line with column names and replace invalid newpar lines
+TEMPOUT=$TEMPDIR/06_replace_newpar.conllu
+sed -e 's/\#  = \# newpar/\# newpar/g' -e 1d $TEMPFILE > $TEMPOUT
+TEMPFILE=$TEMPOUT
+cp $TEMPFILE $CONVERTED
 
 # EVALUATION
 echo "--- Validate treebank with UD validation script ---"
@@ -91,8 +111,11 @@ python utils/extract_errorlines.py \
 
 
 echo "--- Remove comment lines for MaltEval ---"
-python utils/parse_conllu.py -rc -f $CONVERTED -o $TEMPFILE
-MALTGOLD=malt_input.conllu
+TEMPOUT=$TEMPDIR/07_remove_comments.conllu
+python utils/parse_conllu.py -rc -f $TEMPFILE -o $TEMPOUT
+TEMPFILE=$TEMPOUT
+
+MALTGOLD=malt_ud_official.conllu
 #python utils/parse_conllu.py -rc -f $NDT_FILE -o $MALTGOLD
 python utils/parse_conllu.py -rc -f $UD_OFFICIAL -o $MALTGOLD
 
@@ -117,3 +140,7 @@ if [ "$VISUALIZE" = 1 ]; then
     echo "--- Visualize converted treebank ---"
     java -jar dist-20141005/lib/MaltEval.jar -g $MALTGOLD -s $TEMPFILE -v 1
 fi
+
+
+echo "--- Conversion finished ---"
+echo rm -rf $TEMPDIR
