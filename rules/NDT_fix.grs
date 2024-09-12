@@ -358,4 +358,16 @@ rule plural_pronoun_lemma {
     }
 }
 
+rule nynorsk_determiner_pronoun_lemma {
+    pattern {
+      X [
+          upos = DET|PRON,
+          Number=Plur,
+          lemma = "dei"|"Dei"
+      ]
+    }
+    commands {
+      X.lemma = "dei";
+    }
+}
 
