@@ -36,7 +36,7 @@ UD_OFFICIAL=data/gullkorpus/2023_gullkorpus_ud.conllu
 LANG=nb
 elif [ $PARTITION = "dev" ] || [ $PARTITION = "train" ] || [ $PARTITION = "test" ]; then
 # Convert one of the splits and compare with the previously released UD version
-NDT_FILE=data/ndt_${LANG}_${PARTITION}.conllu
+NDT_FILE=data/ndt_aligned_with_ud/ndt_${LANG}_${PARTITION}.conllu
 CONVERTED=data/converted/no_${NAME}-ud-${PARTITION}.conllu
 UD_OFFICIAL=data/${LANG}-ud-${PARTITION}_uten_hash.conllu
 else
@@ -44,7 +44,7 @@ echo "Invalid argument: $PARTITION" >&2; exit 1
 fi
 
 # Create temporary directory
-TEMPDIR=tmp
+TEMPDIR="tmp"
 mkdir -p $TEMPDIR
 
 #TEMPFILE=tmp.conllu
