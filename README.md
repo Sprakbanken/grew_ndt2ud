@@ -50,7 +50,7 @@ The rules were developed with the following step-by-step approach.
     ```shell
     LANG=nb
     PARTITION=dev #train
-    NDT_FILE=data/ndt_nb_${PARTITION}_udmorph.conllu
+    NDT_FILE=data/ndt_${LANG}_${PARTITION}_udmorph.conllu
     CONVERTED=data/grew_output_${PARTITION}.conllu
 
     grew transform \
@@ -141,7 +141,7 @@ We gathered a few example sentences in the [`data/sentences`](data/sentences/) f
 
 ```shell
 grew transform \
-  -i  data/sentences/a \
+  -i  data/sentences/ \
   -o  data/output.conll \
   -grs  rules/teststrategy.grs \
   -strat test \
