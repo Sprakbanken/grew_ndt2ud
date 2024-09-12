@@ -11,7 +11,7 @@ The rules are written with [Grew](https://grew.fr/) which needs to be [installed
 - [udapi](https://udapi.github.io/):
 
   ``` shell
-  pip3 install --user --upgrade udapi
+  pip install --upgrade -r requirements.txt
   ```
 
 - [MaltEval](https://www.maltparser.org/malteval.html):
