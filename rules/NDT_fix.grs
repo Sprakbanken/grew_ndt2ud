@@ -363,7 +363,7 @@ rule nynorsk_determiner_pronoun_lemma {
       X [
           upos = DET|PRON,
           Number=Plur,
-          lemma = "dei"|"Dei"
+          lemma = "Dei"
       ]
     }
     commands {
