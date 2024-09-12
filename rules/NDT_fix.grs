@@ -317,10 +317,10 @@ rule article_determiners {
     }
 }
 
-rule singular_article_determiners_lemma {
+rule singular_determiners_pronoun_lemma {
     pattern {
       X [
-          upos = DET,
+          upos = DET|PRON,
           Number=Sing,
           lemma = "Det"|"Den"|"Dét"|"Dén"|"D."|"det"|"dét"|"dén"|"d."
       ]
@@ -343,3 +343,5 @@ rule plural_article_determiner_lemma {
       X.lemma = "de";
     }
 }
+
+
