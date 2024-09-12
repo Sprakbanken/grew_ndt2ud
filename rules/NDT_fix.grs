@@ -322,10 +322,24 @@ rule singular_article_determiners_lemma {
       X [
           upos = DET,
           Number=Sing,
-          lemma = "Det"|"Den"|"Dét"|"Dén"|"De"|"de"|"D."|"det"|"dét"|"dén"|"d."
+          lemma = "Det"|"Den"|"Dét"|"Dén"|"D."|"det"|"dét"|"dén"|"d."
       ]
     }
     commands {
       X.lemma = "den";
+    }
+}
+
+
+rule plural_article_determiner_lemma {
+    pattern {
+      X [
+          upos = DET,
+          Number=Plur,
+          lemma = "De"|"de"|"Dem"|"dem"|"d."|"D."
+      ]
+    }
+    commands {
+      X.lemma = "de";
     }
 }
