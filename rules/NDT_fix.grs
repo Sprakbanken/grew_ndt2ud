@@ -350,7 +350,7 @@ rule plural_pronoun_lemma {
           upos = PRON,
           Number=Plur,
           Person=3,
-          lemma = "De"|"de"|"Dem"|"dem"|"d."|"D."
+          lemma = "De"|"Dem"|"dem"|"d."|"D."
       ]
     }
     commands {
