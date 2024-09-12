@@ -66,7 +66,7 @@ python utils/convert_morph.py -f $NDT_FILE -o $TEMPFILE
 # Add MISC annotation 'SpaceAfter=No'
 TEMPOUT="${TEMPDIR}/02_udapy_spaceafter.conllu"
 #cat $TEMPFILE | udapy -s ud.SetSpaceAfterFromText  > $TEMPOUT
-python utils/udapi_tools.py -i $TEMPFILE -o $TEMPOUT
+python utils/udapi_tools.py -i $TEMPFILE -o $TEMPOUT -p space
 TEMPFILE=$TEMPOUT
 
 
@@ -84,7 +84,8 @@ TEMPFILE=$TEMPOUT
 
 echo "--- Fix punctuation ---"
 TEMPOUT=$TEMPDIR/04_udapy_fixpunct.conllu
-cat $TEMPFILE | udapy -s ud.FixPunct  > $TEMPOUT
+#cat $TEMPFILE | udapy -s ud.FixPunct  > $TEMPOUT
+python utils/udapi_tools.py -i $TEMPFILE -o $TEMPOUT -p punct
 TEMPFILE=$TEMPOUT
 
 echo "--- Fix errors introduced by udapy ---"
