@@ -336,7 +336,7 @@ rule plural_determiners_lemma {
       X [
           upos = DET,
           Number=Plur,
-          lemma = "De"|"de"|"Dem"|"dem"|"d."|"D."
+          lemma = "De"|"Dem"|"dem"|"d."|"D."
       ]
     }
     commands {
