@@ -331,10 +331,10 @@ rule singular_determiners_pronoun_lemma {
 }
 
 
-rule plural_article_determiner_lemma {
+rule plural_determiners_pronoun_lemma {
     pattern {
       X [
-          upos = DET,
+          upos = DET|PRON,
           Number=Plur,
           lemma = "De"|"de"|"Dem"|"dem"|"d."|"D."
       ]
