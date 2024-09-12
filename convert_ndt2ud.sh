@@ -60,12 +60,13 @@ echo "Output will be written to '$CONVERTED' and '$REPORTFILE'"
 
 # START CONVERSION
 echo "--- Convert morphology: feats and pos-tags ---"
-TEMPFILE=$TEMPDIR/01_convert_morph_output.conllu
+TEMPFILE="${TEMPDIR}/01_convert_morph_output.conllu"
 python utils/convert_morph.py -f $NDT_FILE -o $TEMPFILE
 
 # Add MISC annotation 'SpaceAfter=No'
-TEMPOUT=$TEMPDIR/02_udapy_spaceafter.conllu
-cat $TEMPFILE | udapy -s ud.SetSpaceAfterFromText  > $TEMPOUT
+TEMPOUT="${TEMPDIR}/02_udapy_spaceafter.conllu"
+#cat $TEMPFILE | udapy -s ud.SetSpaceAfterFromText  > $TEMPOUT
+python utils/udapi_tools.py -i $TEMPFILE -o $TEMPOUT
 TEMPFILE=$TEMPOUT
 
 
