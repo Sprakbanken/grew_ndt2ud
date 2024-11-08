@@ -76,7 +76,7 @@ The rules were developed with the following step-by-step approach.
     -safe_commands
 
    # Remove comment line with column names
-   sed -i 1d $CONVERTED
+   tail -n +2  $CONVERTED > tmp.conllu && mv tmp.conllu $CONVERTED
    ```
 
 3. Validate the output with [UD's validation script](https://github.com/UniversalDependencies/tools/blob/master/validate.py):
@@ -130,7 +130,7 @@ See also the Grew documentation on [commands](https://grew.fr/doc/commands/) for
 We also used `grew grep` to match sentences and develop [request patterns](https://grew.fr/doc/request/) for the rules, to ensure we targeted the correct structures.
 
 ``` shell
-grew grep -request rules/testpattern.req -i $NDT_FILE > pattern_matches.json
+grew grep -request rules/testpattern.req -i $NDT_FILE -html -dep_dir data/search_results > data/search_results/pattern_matches.json
 ```
 
 ### Data selection
@@ -141,7 +141,7 @@ We gathered a few example sentences in the [`data/sentences`](data/sentences/) f
 
 ```shell
 grew transform \
-  -i  data/sentences/a \
+  -i  data/sentences/testsents.conllu \
   -o  data/output.conll \
   -grs  rules/teststrategy.grs \
   -strat test \
