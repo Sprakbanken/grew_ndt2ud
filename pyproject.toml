@@ -1,0 +1,19 @@
+
+[project]
+dependencies = [
+    "pandas==2.2.2",
+    "udapi==0.3.0",
+    "regex==2024.9.11",
+]
+requires-python = "==3.12.*"
+name = "grew_ndt2ud"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Ingerid Dale", email = "ingerid.dale@nb.no"},
+]
+readme = "README.md"
+license = {text = "MIT"}
+
+[tool.pdm]
+distribution = false
