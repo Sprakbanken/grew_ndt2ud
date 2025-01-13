@@ -101,7 +101,7 @@ strat main_nn {
 }
 
 
-strat postfix {
+strat postprocess {
   Seq (
     Onf(post_udapy_fixes)
   )
