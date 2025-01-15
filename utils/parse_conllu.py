@@ -12,7 +12,6 @@ write conllu files with selected metadata (sent_id, text)
 
 from pathlib import Path
 import re
-import sys
 import pandas as pd
 from csv import QUOTE_NONE
 
