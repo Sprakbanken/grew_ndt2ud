@@ -172,3 +172,4 @@ data/UD_v2-11/*
 malt_input.conllu
 validation-report*
 conversion_stats_*
+data/search_results/*
