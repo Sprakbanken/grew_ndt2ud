@@ -6,13 +6,22 @@ The rules are written with [Grew](https://grew.fr/) which needs to be [installed
 
 ## Setup
 
-- [Python](https://www.python.org/downloads/)
-- [Grew installation](https://grew.fr/usage/install/)
-- [udapi](https://udapi.github.io/):
+1. Install the command line tool Grew: [Grew installation](https://grew.fr/usage/install/)
 
-  ``` shell
-  pip install --upgrade -r requirements.txt
-  ```
+2. Create a virtual environment and install the project dependencies. You can use pdm, uv or the python module venv:
+
+```shell
+# Option: python venv
+python -m venv .venv 
+source .venv/bin/activate 
+pip install -r requirements.txt 
+
+# Option: pdm 
+pdm install 
+
+# Optionpython: uv
+uv sync 
+```
 
 - [MaltEval](https://www.maltparser.org/malteval.html):
 
@@ -44,12 +53,12 @@ The script can take three optional arguments:
 | `-p` | `dev`, `test`, `train`, `gold` | Dataset split (partition). Default is `gold`, ie. the gold corpus selection of 200 manually corrected  sentences. |
 | `-v` |  | Visualize the differences between the last official UD version and the new converted conllu file with MaltEval. |
 
-### Alternative 2: Jupyter Notebook (python + shell)
+### Alternative 2: Step by step
 
-The conversion can also be run step-by-step in the jupyter notebook [`process_NDT.ipynb`](process_NDT.ipynb).
+The conversion can also be run step-by-step in the terminal. 
 
 
-## Development process
+#### Development process
 
 The rules were developed with the following step-by-step approach.
 
