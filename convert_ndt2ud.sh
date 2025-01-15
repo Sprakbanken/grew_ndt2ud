@@ -38,13 +38,14 @@ elif [ $PARTITION = "dev" ] || [ $PARTITION = "train" ] || [ $PARTITION = "test"
 # Convert one of the splits and compare with the previously released UD version
 NDT_FILE=data/ndt_aligned_with_ud/ndt_${LANG}_${PARTITION}.conllu
 CONVERTED=data/converted/no_${NAME}-ud-${PARTITION}.conllu
-UD_OFFICIAL=data/${LANG}-ud-${PARTITION}_uten_hash.conllu
+#UD_OFFICIAL=data/${LANG}-ud-${PARTITION}_uten_hash.conllu
+UD_OFFICIAL=data/UD_official/no_${NAME}-ud-${PARTITION}.conllu
 else
 echo "Invalid argument: $PARTITION" >&2; exit 1
 fi
 
 # Create temporary directory
-TEMPDIR=tmp
+TEMPDIR="tmp"
 mkdir -p $TEMPDIR
 
 #TEMPFILE=tmp.conllu
@@ -60,12 +61,13 @@ echo "Output will be written to '$CONVERTED' and '$REPORTFILE'"
 
 # START CONVERSION
 echo "--- Convert morphology: feats and pos-tags ---"
-TEMPFILE=$TEMPDIR/01_convert_morph_output.conllu
+TEMPFILE="${TEMPDIR}/01_convert_morph_output.conllu"
 python utils/convert_morph.py -f $NDT_FILE -o $TEMPFILE
 
 # Add MISC annotation 'SpaceAfter=No'
-TEMPOUT=$TEMPDIR/02_udapy_spaceafter.conllu
-cat $TEMPFILE | udapy -s ud.SetSpaceAfterFromText  > $TEMPOUT
+TEMPOUT="${TEMPDIR}/02_udapy_spaceafter.conllu"
+#cat $TEMPFILE | udapy -s ud.SetSpaceAfterFromText  > $TEMPOUT
+python utils/udapi_tools.py -i $TEMPFILE -o $TEMPOUT -p space
 TEMPFILE=$TEMPOUT
 
 
@@ -83,16 +85,17 @@ TEMPFILE=$TEMPOUT
 
 echo "--- Fix punctuation ---"
 TEMPOUT=$TEMPDIR/04_udapy_fixpunct.conllu
-cat $TEMPFILE | udapy -s ud.FixPunct  > $TEMPOUT
+#cat $TEMPFILE | udapy -s ud.FixPunct  > $TEMPOUT
+python utils/udapi_tools.py -i $TEMPFILE -o $TEMPOUT -p punct
 TEMPFILE=$TEMPOUT
 
 echo "--- Fix errors introduced by udapy ---"
-TEMPOUT=$TEMPDIR/05_grew_transform_postfix.conllu
+TEMPOUT=$TEMPDIR/05_grew_transform_postprocess.conllu
 grew transform \
     -i $TEMPFILE \
     -o $TEMPOUT \
     -grs rules/NDT_to_UD.grs \
-    -strat "postfix" \
+    -strat "postprocess" \
     -safe_commands
 TEMPFILE=$TEMPOUT
 
@@ -104,7 +107,7 @@ cp $TEMPFILE $CONVERTED
 
 # EVALUATION
 echo "--- Validate treebank with UD validation script ---"
-python ../tools/validate.py --max-err 0 --lang no $CONVERTED 2>&1 | tee $REPORTFILE
+python tools/validate.py --max-err 0 --lang no $CONVERTED 2>&1 | tee $REPORTFILE
 
 python utils/extract_errorlines.py \
     -f $REPORTFILE #-e right-to-left-appos  # hent ut linjene for en spesifikk feilmeldingstype (-e errortype) fra valideringsrapporten

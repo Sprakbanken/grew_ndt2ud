@@ -6,28 +6,40 @@ The rules are written with [Grew](https://grew.fr/) which needs to be [installed
 
 ## Setup
 
-- [Python](https://www.python.org/downloads/)
-- [Grew installation](https://grew.fr/usage/install/)
-- [udapi](https://udapi.github.io/):
+1. Install the command line tool Grew: [Grew installation](https://grew.fr/usage/install/)
 
-  ``` shell
-  pip3 install --user --upgrade udapi
+2. Create a virtual environment and install the project dependencies. You can use pdm, uv or the python module venv:
+
+  ```shell
+  # Option: python venv
+  python -m venv .venv 
+  source .venv/bin/activate 
+  pip install -r requirements.txt 
+
+  # Option: pdm 
+  pdm install 
+
+  # Option: uv
+  uv sync 
   ```
 
-- [MaltEval](https://www.maltparser.org/malteval.html):
+3. Extract the java tool [MaltEval](https://www.maltparser.org/malteval.html) from the zipped file in `./utils/`
 
   ``` shell
   unzip utils/MaltEval-dist.zip
   ```
 
-- [UD tools](https://github.com/UniversalDependencies/tools/):
+4. Clone the official [UD tools](https://github.com/UniversalDependencies/tools/) repo for validating UD conllu files.
 
   ``` shell
-  cd ..
   git clone git@github.com:UniversalDependencies/tools.git
   ```
 
 ## Convert the treebank
+
+### Alternative 1: Shell script
+
+The whole conversion pipeline can be run with a single shell script:
 
 ``` shell
 ./convert_ndt2ud.sh -v
@@ -41,7 +53,12 @@ The script can take three optional arguments:
 | `-p` | `dev`, `test`, `train`, `gold` | Dataset split (partition). Default is `gold`, ie. the gold corpus selection of 200 manually corrected  sentences. |
 | `-v` |  | Visualize the differences between the last official UD version and the new converted conllu file with MaltEval. |
 
-## Development process
+### Alternative 2: Step by step
+
+The conversion can also be run step-by-step in the terminal. 
+
+
+#### Development process
 
 The rules were developed with the following step-by-step approach.
 
@@ -72,7 +89,7 @@ The rules were developed with the following step-by-step approach.
     -i tmp.conllu \
     -o $CONVERTED \
     -grs rules/NDT_to_UD.grs \
-    -strat "postfix" \
+    -strat "postprocess" \
     -safe_commands
 
    # Remove comment line with column names
@@ -82,7 +99,7 @@ The rules were developed with the following step-by-step approach.
 3. Validate the output with [UD's validation script](https://github.com/UniversalDependencies/tools/blob/master/validate.py):
 
    ``` shell
-   python ../tools/validate.py --max-err 0 --lang no $CONVERTED 2>&1 | tee validation-report_ndt2ud.txt
+   python tools/validate.py --max-err 0 --lang no $CONVERTED 2>&1 | tee validation-report_ndt2ud.txt
    python utils/extract_errorlines.py -f validation-report_ndt2ud.txt
    ```
 

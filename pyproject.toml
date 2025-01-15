@@ -9,10 +9,10 @@ authors = [
 dependencies = [
     "regex>=2024.11.6",
     "udapi>=0.3.0",
+    "pandas>=2.2.3",
 ]
 readme = "README.md"
 license = {text = "MIT"}
-
 
 [tool.pdm]
 distribution = false
