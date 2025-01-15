@@ -50,7 +50,7 @@ The rules were developed with the following step-by-step approach.
     ```shell
     LANG=nb
     PARTITION=dev #train
-    NDT_FILE=data/ndt_nb_${PARTITION}_udmorph.conllu
+    NDT_FILE=data/ndt_${LANG}_${PARTITION}_udmorph.conllu
     CONVERTED=data/grew_output_${PARTITION}.conllu
 
     grew transform \
