@@ -101,7 +101,7 @@ TEMPFILE=$TEMPOUT
 
 # Remove comment line with column names and replace invalid newpar lines
 TEMPOUT=$TEMPDIR/06_replace_newpar.conllu
-sed -e 's/\#  = \# newpar/\# newpar/g' -e 1d $TEMPFILE > $TEMPOUT
+sed -e 's/\#  = \# newpar/\# newpar/g' -E 's/\# global.columns .*//' $TEMPFILE > $TEMPOUT
 TEMPFILE=$TEMPOUT
 cp $TEMPFILE $CONVERTED
 

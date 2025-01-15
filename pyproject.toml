@@ -1,16 +1,15 @@
-
 [project]
-dependencies = [
-    "pandas>=2.2.3",
-    "udapi>=0.3.0",
-    "regex>=2024.11.6",
-]
-requires-python = "==3.12.*"
 name = "grew_ndt2ud"
 version = "0.1.0"
-description = "Default template for PDM package"
+requires-python = ">=3.12"
+description = "Code to convert the Norwegian Dependency Treebank (NDT) to Universal Dependencies (UD)"
 authors = [
-    {name = "Ingerid Dale", email = "ingerid.dale@nb.no"},
+    {name = "Ingerid Dale", email = "sprakbanken@nb.no"},
+]
+dependencies = [
+    "regex>=2024.11.6",
+    "udapi>=0.3.0",
+    "pandas>=2.2.3",
 ]
 readme = "README.md"
 license = {text = "MIT"}
