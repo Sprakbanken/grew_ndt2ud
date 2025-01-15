@@ -1,9 +1,9 @@
 
 [project]
 dependencies = [
-    "pandas==2.2.2",
-    "udapi==0.3.0",
-    "regex==2024.9.11",
+    "pandas>=2.2.3",
+    "udapi>=0.3.0",
+    "regex>=2024.11.6",
 ]
 requires-python = "==3.12.*"
 name = "grew_ndt2ud"
