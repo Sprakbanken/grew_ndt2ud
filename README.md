@@ -10,26 +10,26 @@ The rules are written with [Grew](https://grew.fr/) which needs to be [installed
 
 2. Create a virtual environment and install the project dependencies. You can use pdm, uv or the python module venv:
 
-```shell
-# Option: python venv
-python -m venv .venv 
-source .venv/bin/activate 
-pip install -r requirements.txt 
+  ```shell
+  # Option: python venv
+  python -m venv .venv 
+  source .venv/bin/activate 
+  pip install -r requirements.txt 
 
-# Option: pdm 
-pdm install 
+  # Option: pdm 
+  pdm install 
 
-# Optionpython: uv
-uv sync 
-```
+  # Option: uv
+  uv sync 
+  ```
 
-- [MaltEval](https://www.maltparser.org/malteval.html):
+3. Extract the java tool [MaltEval](https://www.maltparser.org/malteval.html) from the zipped file in `./utils/`
 
   ``` shell
   unzip utils/MaltEval-dist.zip
   ```
 
-- [UD tools](https://github.com/UniversalDependencies/tools/):
+4. Clone the official [UD tools](https://github.com/UniversalDependencies/tools/) repo for validating UD conllu files.
 
   ``` shell
   git clone git@github.com:UniversalDependencies/tools.git
