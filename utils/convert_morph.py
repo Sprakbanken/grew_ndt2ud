@@ -3,7 +3,7 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 import pandas as pd
-from utils.parse_conllu import parse_conll_file, CONLLFIELDS, write_conll
+from parse_conllu import parse_conll_file, CONLLFIELDS, write_conll
 
 
 ##### CONSTANTS
