@@ -1,0 +1,18 @@
+[project]
+name = "grew_ndt2ud"
+version = "0.1.0"
+requires-python = ">=3.12"
+description = "Code to convert the Norwegian Dependency Treebank (NDT) to Universal Dependencies (UD)"
+authors = [
+    {name = "Ingerid Dale", email = "sprakbanken@nb.no"},
+]
+dependencies = [
+    "regex>=2024.11.6",
+    "udapi>=0.3.0",
+    "pandas>=2.2.3",
+]
+readme = "README.md"
+license = {text = "MIT"}
+
+[tool.pdm]
+distribution = false

@@ -304,3 +304,70 @@ rule adjectival_participle {
     commands { A.VerbForm = Part }
 }
 
+rule article_determiners {
+    pattern {
+      X [
+          upos = DET,
+          PronType=Dem,
+          form = "Det"|"Den"|"Dét"|"Dén"|"De"|"Dem"|"D."|"det"|"den"|"dét"|"dén"|"de"|"dem"|"d."|"Dei"|"dei"
+      ]
+    }
+    commands {
+      X.PronType = Art;
+    }
+}
+
+rule singular_determiners_pronoun_lemma {
+    pattern {
+      X [
+          upos = DET|PRON,
+          Number=Sing,
+          lemma = "Det"|"Den"|"Dét"|"Dén"|"D."|"det"|"dét"|"dén"|"d."
+      ]
+    }
+    commands {
+      X.lemma = "den";
+    }
+}
+
+
+rule plural_determiners_lemma {
+    pattern {
+      X [
+          upos = DET,
+          Number=Plur,
+          lemma = "De"|"Dem"|"dem"|"d."|"D."
+      ]
+    }
+    commands {
+      X.lemma = "de";
+    }
+}
+
+rule plural_pronoun_lemma {
+    pattern {
+      X [
+          upos = PRON,
+          Number=Plur,
+          Person=3,
+          lemma = "De"|"Dem"|"dem"|"d."|"D."
+      ]
+    }
+    commands {
+      X.lemma = "de";
+    }
+}
+
+rule nynorsk_determiner_pronoun_lemma {
+    pattern {
+      X [
+          upos = DET|PRON,
+          Number=Plur,
+          lemma = "Dei"
+      ]
+    }
+    commands {
+      X.lemma = "dei";
+    }
+}
+

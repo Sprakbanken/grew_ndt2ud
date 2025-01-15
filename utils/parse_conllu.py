@@ -12,7 +12,6 @@ write conllu files with selected metadata (sent_id, text)
 
 from pathlib import Path
 import re
-import sys
 import pandas as pd
 from csv import QUOTE_NONE
 
@@ -57,9 +56,9 @@ def validate_conll_lines(lines: list) -> list:
     '''
     invalid_lines = []
     validlines = True
-    for i, l in enumerate(lines):
+    for i, line in enumerate(lines):
         validline = any(
-            pattern.match(l) for pattern in [
+            pattern.match(line) for pattern in [
                 COMMENTPATTERN,
                 NEWPARDOCPATTERN,
                 EMPTYLINEPATTERN,
@@ -67,7 +66,7 @@ def validate_conll_lines(lines: list) -> list:
             ])
         if not validline:
             validlines = False
-            invalid_lines.append(f'line: {i}, text: {l}')
+            invalid_lines.append(f'line: {i}, text: {line}')
     try:
         assert validlines
         return lines
