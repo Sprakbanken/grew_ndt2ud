@@ -49,7 +49,7 @@ The script can take three optional arguments:
 
 | flag | valid arguments | description |
 | ---|---|---|
-| `-l` | `nb`, `nn` | 2 letter language code. Default is `nb`. |
+| `-l` | `nb`, `nn` | 2 letter language code for bokmål and nynorsk. Default is `nb`. |
 | `-p` | `dev`, `test`, `train`, `gold` | Dataset split (partition). Default is `dev`, ie. the development set with approx. 2400 sentences. |
 | `-v` |  | Visualize the differences between the last official UD version and the new converted conllu file with MaltEval. |
 
