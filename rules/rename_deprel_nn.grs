@@ -29,24 +29,34 @@ rule flat_punct {
   commands { e.label = punct }
 }
 
+% relabel FLAT to flat:foreign
+% set feature Foreign=Yes for both head and dependent node 
+% set POS-tag to X for child node
 rule flat_foreign {
-  pattern {GOV [upos=X]; e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
+  pattern {GOV [upos=X]; e: GOV -[ FLAT ]-> DEP; GOV << DEP; }
   commands {
+    GOV.Foreign = Yes;
+    DEP.Foreign = Yes;
+    DEP.upos = X;
     e.1 = flat;
     e.2 = foreign;
   }
 }
 
+
 rule flat_foreign_2 {
-  pattern { DEP [upos=X]; e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
+  pattern { DEP [upos=X]; e: GOV -[ FLAT ]-> DEP; GOV << DEP; }
   commands {
+    GOV.Foreign = Yes;
+    GOV.upos = X;
+    DEP.Foreign = Yes;
     e.1 = flat;
     e.2 = foreign;
   }
 }
 
 rule flat_name_propn {
-  pattern {GOV [upos=PROPN|NOUN]; e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
+  pattern {GOV [upos=PROPN|NOUN]; e: GOV -[ FLAT ]-> DEP; GOV << DEP; }
   without { DEP [upos=X] }
   commands {
     e.1 = flat;
@@ -55,7 +65,7 @@ rule flat_name_propn {
 }
 
 rule flat_name_propn_2 {
-  pattern { GOV [upos=ADJ|ADV]; DEP[upos=PROPN]; e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
+  pattern { GOV [upos=ADJ|ADV]; DEP[upos=PROPN]; e: GOV -[ FLAT ]-> DEP; GOV << DEP; }
   commands {
     e.1 = flat;
     e.2 = name;
@@ -63,7 +73,12 @@ rule flat_name_propn_2 {
 }
 
 rule flat_name_clause_title {
-  pattern { H [upos=NOUN|PROPN]; H -> GOV; e: GOV -[ FLAT ]-> DEP; DEP >> GOV; }
+  pattern {
+    H [upos=NOUN|PROPN]; 
+    H -> GOV; 
+    e: GOV -[ FLAT ]-> DEP; 
+    GOV << DEP;
+  }
   without { GOV [upos=NUM|X]; DEP [upos=NUM|X]; }
   commands {
     e.1 = flat;
