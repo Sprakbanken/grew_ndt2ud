@@ -34,6 +34,7 @@ rule flat_punct {
 % set POS-tag to X for child node
 rule flat_foreign {
   pattern {GOV [upos=X]; e: GOV -[ FLAT ]-> DEP; GOV << DEP; }
+  without {DEP [upos=PUNCT]}
   commands {
     GOV.Foreign = Yes;
     DEP.Foreign = Yes;
