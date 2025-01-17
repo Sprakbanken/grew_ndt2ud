@@ -259,6 +259,49 @@ rule fix_non_projective_punctuation {
     }
 }
 
+% 002382:  «Det legemeldte sykefraværet gikk opp med 2,8 prosent fra 2. kvartal 2010 til 2. kvartal 2011», skriv NAV i ei pressemelding som nett vart send ut.
+% Fix warning [L3 Warning flat-foreign-upos-feats] The child of a flat:foreign relation should have UPOS X and Foreign=Yes (but no other features).
+rule make_bokmaal_citation_ukjent_1 {
+    global { sent_id = "002382" }
+    pattern {
+        GOV  -[FLAT]-> DEP;
+        DEP [ upos = ADJ, Number ];
+    }
+    commands {
+        DEP.upos = X;
+        del_feat DEP.Number;
+    }
+}
+
+% 002382:  «Det legemeldte sykefraværet gikk opp med 2,8 prosent fra 2. kvartal 2010 til 2. kvartal 2011», skriv NAV i ei pressemelding som nett vart send ut.
+rule make_bokmaal_citation_ukjent_2 {
+    global { sent_id = "002382" }
+    pattern {
+        GOV  -[FLAT]-> DEP;
+        DEP [ upos=NUM, NumType, Number ];
+    }
+    commands {
+        DEP.upos = X;
+        del_feat DEP.NumType;
+        del_feat DEP.Number;
+    }
+}
+
+% 010781:  Viktige aspekter ved dette er at Språkrådet må ha hele samfunnet som operasjonsfelt, og at det skal legges opp til samarbeid med aktuelle aktører over et bredt spekter, dessuten at observasjon og analyse må utgjøre en basis for arbeidet.»
+rule make_bokmaal_citation_ukjent_3 {
+    global { sent_id = "010781" }
+    pattern {
+        DEP [ upos=NOUN, Definite, Gender ];
+        GOV -[FLAT]-> DEP;
+    }
+    commands {
+        DEP.upos = X;
+        del_feat DEP.Definite;
+        del_feat DEP.Gender;
+    }
+}
+
+
 % 010128:	 Kanskje gjentek serien seg sjølv ( Ralles nye kjærast Danuta ( eg nektar å tru at det blir dei to til slutt ! ) ...) ...
 rule fix_non_projective_punctuation_2 {
     global { sent_id = "010128" }
