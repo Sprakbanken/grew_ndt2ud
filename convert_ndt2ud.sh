@@ -101,7 +101,7 @@ TEMPFILE=$TEMPOUT
 
 # Remove comment line with column names and replace invalid newpar lines
 TEMPOUT=$TEMPDIR/06_replace_newpar.conllu
-sed -e 's/\#  = \# newpar/\# newpar/g' -E 's/\# global.columns .*//' $TEMPFILE > $TEMPOUT
+sed -e 's/\#  = \# newpar/\# newpar/g' $TEMPFILE > $TEMPOUT
 TEMPFILE=$TEMPOUT
 cp $TEMPFILE $CONVERTED
 
@@ -119,7 +119,6 @@ python utils/parse_conllu.py -rc -f $TEMPFILE -o $TEMPOUT
 TEMPFILE=$TEMPOUT
 
 MALTGOLD=malt_ud_official.conllu
-#python utils/parse_conllu.py -rc -f $NDT_FILE -o $MALTGOLD
 python utils/parse_conllu.py -rc -f $UD_OFFICIAL -o $MALTGOLD
 
 echo "--- Validate treebank with MaltEval ---"
