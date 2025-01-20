@@ -173,7 +173,7 @@ dist-20141005/*
 **/sentences/all.conll
 data/UD_v2-11/*
 
-**/tmp*.conllu
+tmp
 malt_input.conllu
 validation-report*
 conversion_stats_*
