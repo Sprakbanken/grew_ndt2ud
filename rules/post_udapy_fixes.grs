@@ -106,3 +106,23 @@ rule appos_to_conj {
   }
 }
 
+
+% 007590
+% Hver for seg går jentene til en de tror kan hjelpe dem, setter seg ned i kontorstolen hos fastlegen sin, og forteller.
+rule change_det_to_obl {
+    global { sent_id = "007590" }
+    pattern {
+        X [upos=DET]; 
+        Y [upos=ADP]; 
+        Z [upos=PRON]; 
+        ROT -[nsubj]-> NOM;
+        e: NOM -[det]-> X; 
+        X-[nmod]-> Z; 
+        Z -[case]-> Y;
+    }
+    commands {
+      add_edge f: ROT -> X; 
+      f.label = obl;
+      del_edge e;
+    }
+}
