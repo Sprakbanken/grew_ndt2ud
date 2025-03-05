@@ -126,3 +126,40 @@ rule change_det_to_obl {
       del_edge e;
     }
 }
+
+
+rule conj_left_to_right {
+  global { sent_id <> "015775" }
+  pattern {
+      HEAD -> N1;
+      e: HEAD -[conj]-> N2; 
+      N2 -[cc]-> C;
+      N1 << N2;
+      N1 < C;
+      N2 << HEAD;
+  }
+  commands {
+    add_edge f: N1 -> N2;
+    f.label = conj; 
+    del_edge e;
+  }
+}
+
+rule conj_left_to_right_with_dashes {
+  global { sent_id <> "015775" }
+  pattern {
+      HEAD -> N1;
+      e: HEAD -[conj]-> N2; 
+      N2 -[cc]-> C;
+      N1 << N2;
+      P [upos=PUNCT];
+      P < C;
+      N1 < P;
+      N2 << HEAD;
+  }
+  commands {
+    add_edge f: N1 -> N2;
+    f.label = conj; 
+    del_edge e;
+  }
+}
