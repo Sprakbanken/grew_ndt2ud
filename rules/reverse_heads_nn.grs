@@ -174,6 +174,20 @@ package shift_sentence_internal {
       del_edge e;
     }
   }
+
+  rule det_should_not_have_children {
+    pattern {
+      H -[DET]-> DEP;
+      DEP [upos = DET];
+      e: DEP -> Y; 
+    }
+    commands {
+      add_edge f: H -> Y;
+      f.label = e.label;
+      del_edge e;
+    }
+  }
+
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 package comma {
