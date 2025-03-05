@@ -179,3 +179,4 @@ validation-report*
 conversion_stats_*
 tools
 data/search_results/*
+tmp*.conllu
