@@ -1,0 +1,15 @@
+  rule leaf_cc_not_expected_to_have_children {
+    pattern {
+        H-[cc]->CONJ;
+        e: CONJ-> DEP;
+    }
+    commands {
+        add_edge f: H->DEP;
+        f.label=e.label;
+        del_edge e;
+    }
+  }
+
+strat main {
+    Onf (leaf_cc_not_expected_to_have_children)
+}
