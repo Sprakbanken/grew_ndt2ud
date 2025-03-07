@@ -1,3 +1,4 @@
+# global.columns = ID FORM LEMMA UPOS XPOS FEATS HEAD DEPREL DEPS MISC
 # sent_id = 003413
 # text = vi spør først når dette her begynte for alvor og kva slags bil du hadde å køyre med .
 # dialect: eidsberg speakerid: eidsberg_uio_03
@@ -78,7 +79,7 @@
 7	måtte	måtte	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	9	aux	_	_
 8	eg	eg	PRON	_	Animacy=Hum|Case=Nom|Number=Sing|Person=1|PronType=Prs	9	nsubj	_	_
 9	bytte	byte	ADJ	_	Definite=Ind|Gender=Neut|Number=Sing	2	conj	_	_
-10	#	#	PUNCT	_	_	11	punct	_	_
+10	#	#	PUNCT	_	_	13	punct	_	_
 11	og	og	CCONJ	_	_	13	cc	_	_
 12	eg	eg	PRON	_	Animacy=Hum|Case=Nom|Number=Sing|Person=1|PronType=Prs	13	nsubj	_	_
 13	hadde	ha	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	2	conj	_	_
@@ -166,7 +167,7 @@
 2	på	på	ADP	_	_	3	case	_	_
 3	Lundeby	Lundeby	PROPN	_	_	0	root	_	_
 4	og	og	CCONJ	_	_	9	cc	_	_
-5	#	#	PUNCT	_	_	4	punct	_	_
+5	#	#	PUNCT	_	_	9	punct	_	_
 6	oppi	oppi	ADP	_	_	9	reparandum	_	_
 7	ha-	ha-	X	_	_	9	discourse:filler	_	_
 8	opp	opp	ADP	_	_	9	case	_	_
@@ -417,7 +418,7 @@
 6	litt-	litt-	X	_	_	7	discourse:filler	_	_
 7	eitt	ein	DET	_	Gender=Neut|Number=Sing|PronType=Art	8	det	_	_
 8	hus	hus	NOUN	_	Definite=Ind|Gender=Neut|Number=Sing	3	nsubj	_	_
-9	#	#	PUNCT	_	_	10	punct	_	_
+9	#	#	PUNCT	_	_	12	punct	_	_
 10	og	og	CCONJ	_	_	12	cc	_	_
 11	det	det	PRON	_	Gender=Neut|Number=Sing|Person=3|PronType=Prs	12	nsubj	_	_
 12	stod	stå	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	3	conj	_	_
@@ -481,7 +482,7 @@
 # text = men # så gjekk det etter kvart så bygde dei # opp # og bygde opp og bygde opp og fekk ein flott mottakelse .
 # dialect: eidsberg speakerid: eidsberg_uio_03
 1	men	men	CCONJ	_	_	4	cc	_	_
-2	#	#	PUNCT	_	_	1	punct	_	_
+2	#	#	PUNCT	_	_	4	punct	_	_
 3	så	så	ADV	_	_	4	advmod	_	_
 4	gjekk	gå	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
 5	det	det	PRON	_	Gender=Neut|Number=Sing|Person=3|PronType=Prs	4	expl	_	_
@@ -492,7 +493,7 @@
 10	dei	dei	PRON	_	Animacy=Hum|Case=Nom|Number=Plur|Person=3|PronType=Prs	9	nsubj	_	_
 11	#	#	PUNCT	_	_	12	punct	_	_
 12	opp	opp	ADP	_	_	9	compound:prt	_	_
-13	#	#	PUNCT	_	_	14	punct	_	_
+13	#	#	PUNCT	_	_	15	punct	_	_
 14	og	og	CCONJ	_	_	15	cc	_	_
 15	bygde	bygge	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	4	conj	_	_
 16	opp	opp	ADP	_	_	15	compound:prt	_	_
@@ -853,7 +854,7 @@
 3	lest	lesse	VERB	_	VerbForm=Part	0	root	_	_
 4	opp	opp	ADP	_	_	3	compound:prt	_	_
 5	mjølka	mjølk	NOUN	_	Definite=Def|Gender=Fem|Number=Sing	3	obj	_	_
-6	#	#	PUNCT	_	_	7	punct	_	_
+6	#	#	PUNCT	_	_	3	punct	_	_
 7	og	og	CCONJ	_	_	3	cc	_	_
 8	e	e	X	_	_	3	discourse:filler	_	_
 9	.	$.	PUNCT	_	_	3	punct	_	_
@@ -1094,7 +1095,7 @@
 8	ifrå	ifrå	ADP	_	_	9	case	_	_
 9	Askim	Askim	PROPN	_	_	5	nmod	_	_
 10	og	og	CCONJ	_	_	13	cc	_	_
-11	#	#	PUNCT	_	_	10	punct	_	_
+11	#	#	PUNCT	_	_	13	punct	_	_
 12	heilt	heil	ADJ	_	Definite=Ind|Degree=Pos|Gender=Neut|Number=Sing	13	advmod	_	_
 13	til	til	ADP	_	_	9	conj	_	_
 14	ge-	ge-	X	_	_	13	discourse:filler	_	_
@@ -1137,7 +1138,7 @@
 5	der	der	ADV	_	_	0	root	_	_
 6	ein	ein	DET	_	Gender=Masc|Number=Sing|PronType=Art	7	det	_	_
 7	månad	månad	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	5	obl	_	_
-8	#	#	PUNCT	_	_	9	punct	_	_
+8	#	#	PUNCT	_	_	11	punct	_	_
 9	og	og	CCONJ	_	_	11	cc	_	_
 10	så	så	ADV	_	_	11	advmod	_	_
 11	kom	komme	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	5	conj	_	_
@@ -1250,7 +1251,7 @@
 3	måtte	måtte	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	5	aux	_	_
 4	vi	vi	PRON	_	Animacy=Hum|Case=Nom|Number=Plur|Person=1|PronType=Prs	5	nsubj	_	_
 5	samanslutte	samanslutte	VERB	_	VerbForm=Inf	0	root	_	_
-6	#	#	PUNCT	_	_	7	punct	_	_
+6	#	#	PUNCT	_	_	8	punct	_	_
 7	og	og	CCONJ	_	_	8	cc	_	_
 8	begynte	begynne	ADJ	_	Number=Plur	5	conj	_	_
 9	da	da	ADV	_	_	8	advmod	_	_
@@ -1717,7 +1718,7 @@
 6	Hevrøya	Hevrøya	PROPN	_	_	4	obl	_	_
 7	den	den	DET	_	Gender=Masc|Number=Sing|PronType=Dem	8	det	_	_
 8	vinteren	vinter	NOUN	_	Definite=Def|Gender=Masc|Number=Sing	4	obl	_	_
-9	#	#	PUNCT	_	_	10	punct	_	_
+9	#	#	PUNCT	_	_	12	punct	_	_
 10	men	men	CCONJ	_	_	12	cc	_	_
 11	det	det	PRON	_	Gender=Neut|Number=Sing|Person=3|PronType=Prs	12	expl	_	_
 12	vart	bli	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	4	conj	_	_
@@ -2203,7 +2204,7 @@
 13	innblanding	innblanding	NOUN	_	Definite=Ind|Gender=Fem|Number=Sing	9	obj	_	_
 14	av	av	ADP	_	_	15	case	_	_
 15	svensk	svensk	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	13	nmod	_	_
-16	#	#	PUNCT	_	_	17	punct	_	_
+16	#	#	PUNCT	_	_	19	punct	_	_
 17	og	og	CCONJ	_	_	19	cc	_	_
 18	dei	dei	PRON	_	Animacy=Hum|Case=Nom|Number=Plur|Person=3|PronType=Prs	19	nsubj	_	_
 19	har	ha	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	9	conj	_	_
@@ -2334,7 +2335,7 @@
 14	nokon	nokon	DET	_	Number=Plur|PronType=Ind	15	det	_	_
 15	ord	ord	NOUN	_	Definite=Ind|Gender=Neut|Number=Plur	12	nmod	_	_
 16	lenger	lenger	ADV	_	_	11	advmod	_	_
-17	#	#	PUNCT	_	_	18	punct	_	_
+17	#	#	PUNCT	_	_	20	punct	_	_
 18	og	og	CCONJ	_	_	20	cc	_	_
 19	det	det	PRON	_	Gender=Neut|Number=Sing|Person=3|PronType=Prs	24	nsubj	_	_
 20	trur	tru	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	2	conj	_	_
@@ -2549,7 +2550,7 @@
 8	som	som	PRON	_	PronType=Rel	9	nsubj	_	_
 9	hadde	ha	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	7	acl:relcl	_	_
 10	ho	ho	PRON	_	Case=Acc|Gender=Fem|Number=Sing|Person=3|PronType=Prs	9	obj	_	_
-11	#	#	PUNCT	_	_	12	punct	_	_
+11	#	#	PUNCT	_	_	16	punct	_	_
 12	for	for	CCONJ	_	_	16	cc	_	_
 13	han	han	PRON	_	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	16	nsubj	_	_
 14	òg	òg	ADV	_	_	16	advmod	_	_
@@ -2598,7 +2599,7 @@
 4	da	da	ADV	_	_	3	advmod	_	_
 5	nokre	nokon	DET	_	Number=Plur|PronType=Ind	6	det	_	_
 6	år	år	NOUN	_	Definite=Ind|Gender=Neut|Number=Plur	3	obj	_	_
-7	#	#	PUNCT	_	_	8	punct	_	_
+7	#	#	PUNCT	_	_	11	punct	_	_
 8	og	og	CCONJ	_	_	11	cc	_	_
 9	ikkje	ikkje	PART	_	Polarity=Neg	11	advmod	_	_
 10	så	så	ADV	_	_	11	advmod	_	_
@@ -2649,7 +2650,7 @@
 14	skulle	skulle	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	15	aux	_	_
 15	ta	ta	VERB	_	VerbForm=Inf	10	advcl	_	_
 16	han	han	PRON	_	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs	15	obj	_	_
-17	#	#	PUNCT	_	_	18	punct	_	_
+17	#	#	PUNCT	_	_	22	punct	_	_
 18	og	og	CCONJ	_	_	22	cc	_	_
 19	det	det	PRON	_	Gender=Neut|Number=Sing|Person=3|PronType=Prs	22	expl	_	_
 20	var	vere	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	22	cop	_	_
@@ -3058,7 +3059,7 @@
 2	heiter	heite	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 3	farsund_uib_0201	farsund_uib_0201	PROPN	_	_	2	xcomp	_	_
 4	og	og	CCONJ	_	_	6	cc	_	_
-5	#	#	PUNCT	_	_	4	punct	_	_
+5	#	#	PUNCT	_	_	6	punct	_	_
 6	bur	bu	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	2	conj	_	_
 7	på	på	ADP	_	_	8	case	_	_
 8	Vatne	Vatne	PROPN	_	_	6	obl	_	_
@@ -3381,7 +3382,7 @@
 # text = ja # eller nesten .
 # dialect: farsund speakerid: farsund_uib_02
 1	ja	ja	INTJ	_	_	0	root	_	_
-2	#	#	PUNCT	_	_	3	punct	_	_
+2	#	#	PUNCT	_	_	4	punct	_	_
 3	eller	eller	CCONJ	_	_	4	cc	_	_
 4	nesten	nesten	ADV	_	_	1	advmod	_	_
 5	.	$.	PUNCT	_	_	1	punct	_	_
@@ -3626,7 +3627,7 @@
 13	kvart	kvart	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	10	conj	_	_
 14	over	over	ADP	_	_	15	case	_	_
 15	eitt	ein	DET	_	Gender=Neut|Number=Sing|PronType=Art	13	nmod	_	_
-16	#	#	PUNCT	_	_	17	punct	_	_
+16	#	#	PUNCT	_	_	21	punct	_	_
 17	så	så	CCONJ	_	_	21	cc	_	_
 18	etter	etter	ADP	_	_	21	compound:prt	_	_
 19	da	da	ADV	_	_	21	advmod	_	_
@@ -3704,7 +3705,7 @@
 1	ja	ja	INTJ	_	_	9	discourse	_	_
 2	#	#	PUNCT	_	_	1	punct	_	_
 3	for	for	ADP	_	_	9	compound:prt	_	_
-4	d-	d-	X	_	_	5	discourse:filler	_	_
+4	d-	d-	X	_	_	9	discourse:filler	_	_
 5	men	men	CCONJ	_	_	9	cc	_	_
 6	em	em	X	_	_	9	discourse:filler	_	_
 7	#	#	PUNCT	_	_	6	punct	_	_
@@ -3763,7 +3764,7 @@
 13	sånt	sånn	DET	_	Gender=Neut|Number=Sing|PronType=Dem	15	det	_	_
 14	halvårig	halvårig	ADJ	_	Definite=Ind|Degree=Pos|Gender=Neut|Number=Sing	15	amod	_	_
 15	kurs	kurs	NOUN	_	Definite=Ind|Gender=Neut|Number=Sing	2	conj	_	_
-16	#	#	PUNCT	_	_	17	punct	_	_
+16	#	#	PUNCT	_	_	21	punct	_	_
 17	men	men	CCONJ	_	_	21	cc	_	_
 18	så	så	ADV	_	_	21	advmod	_	_
 19	#	#	PUNCT	_	_	18	punct	_	_
@@ -3799,9 +3800,9 @@
 16	få	få	ADJ	_	Degree=Pos|Number=Plur	17	amod	_	_
 17	søkarar	søkar	NOUN	_	Definite=Ind|Gender=Masc|Number=Plur	13	obl	_	_
 18	#	#	PUNCT	_	_	19	punct	_	_
-19	så	så	CCONJ	_	_	22	reparandum	_	_
+19	så	så	CCONJ	_	_	25	reparandum	_	_
 20	eg	eg	PRON	_	Animacy=Hum|Case=Nom|Number=Sing|Person=1|PronType=Prs	23	reparandum	_	_
-21	#	#	PUNCT	_	_	22	punct	_	_
+21	#	#	PUNCT	_	_	25	punct	_	_
 22	så	så	CCONJ	_	_	25	cc	_	_
 23	eg	eg	PRON	_	Animacy=Hum|Case=Nom|Number=Sing|Person=1|PronType=Prs	25	nsubj	_	_
 24	måtte	måtte	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	25	aux	_	_
@@ -3823,9 +3824,9 @@
 4	mest	mykje	ADJ	_	Definite=Ind|Degree=Sup	3	advmod	_	_
 5	det	det	DET	_	Gender=Neut|Number=Sing|PronType=Dem	6	det	_	_
 6	same	same	DET	_	Definite=Def|PronType=Dem	3	xcomp	_	_
-7	##	##	PUNCT	_	_	8	punct	_	_
+7	##	##	PUNCT	_	_	12	punct	_	_
 8	men	men	CCONJ	_	_	12	cc	_	_
-9	#	#	PUNCT	_	_	8	punct	_	_
+9	#	#	PUNCT	_	_	12	punct	_	_
 10	eg	eg	PRON	_	Animacy=Hum|Case=Nom|Number=Sing|Person=1|PronType=Prs	12	nsubj	_	_
 11	skulle	skulle	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	12	aux	_	_
 12	prøve	prøve	VERB	_	VerbForm=Inf	3	conj	_	_
@@ -3874,7 +3875,7 @@
 8	berre	berre	ADV	_	_	6	advmod	_	_
 9	for	for	ADP	_	_	10	case	_	_
 10	å	å	PART	_	_	6	advmod	_	_
-11	#	#	PUNCT	_	_	12	punct	_	_
+11	#	#	PUNCT	_	_	16	punct	_	_
 12	for	for	CCONJ	_	_	16	cc	_	_
 13	eg	eg	PRON	_	Animacy=Hum|Case=Nom|Number=Sing|Person=1|PronType=Prs	16	nsubj	_	_
 14	skulle	skulle	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	16	aux	_	_
@@ -3885,7 +3886,7 @@
 19	folkehøgskole	folkehøgskole	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	16	obl	_	_
 20	#	#	PUNCT	_	_	21	punct	_	_
 21	nå	nå	ADV	_	_	16	advmod	_	_
-22	#	#	PUNCT	_	_	23	punct	_	_
+22	#	#	PUNCT	_	_	28	punct	_	_
 23	men	men	CCONJ	_	_	28	cc	_	_
 24	så	så	ADV	_	_	28	advmod	_	_
 25	var	vere	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	28	cop	_	_
@@ -4039,7 +4040,7 @@
 13	ein	ein	DET	_	Gender=Masc|Number=Sing|PronType=Art	14	det	_	_
 14	time	time	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	7	obl	_	_
 15	og	og	CCONJ	_	_	17	cc	_	_
-16	#	#	PUNCT	_	_	15	punct	_	_
+16	#	#	PUNCT	_	_	17	punct	_	_
 17	der	der	ADV	_	_	11	conj	_	_
 18	omkring	omkring	ADP	_	_	17	nmod	_	_
 19	.	$.	PUNCT	_	_	7	punct	_	_
@@ -4176,7 +4177,7 @@
 2	#	#	PUNCT	_	_	1	punct	_	_
 3	det	det	PRON	_	Gender=Neut|Number=Sing|Person=3|PronType=Prs	4	expl	_	_
 4	var	vere	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
-5	både	både	CCONJ	_	_	6	cc	_	_
+5	både	både	CCONJ	_	_	4	cc	_	_
 6	og	og	CCONJ	_	_	4	cc	_	_
 7	.	$.	PUNCT	_	_	4	punct	_	_
 
@@ -4292,7 +4293,7 @@
 3	så	så	ADV	_	_	5	advmod	_	_
 4	svært	svær	ADJ	_	Definite=Ind|Degree=Pos|Gender=Neut|Number=Sing	5	advmod	_	_
 5	mange	mange	ADJ	_	Degree=Pos|Number=Plur	8	advmod	_	_
-6	men	men	CCONJ	_	_	7	reparandum	_	_
+6	men	men	CCONJ	_	_	8	reparandum	_	_
 7	men	men	CCONJ	_	_	8	cc	_	_
 8	forekom	forekomme	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
 9	jo	jo	ADV	_	_	8	advmod	_	_
@@ -4368,7 +4369,7 @@
 42	i	i	ADP	_	_	43	case	_	_
 43	land	land	NOUN	_	Definite=Ind|Gender=Neut|Number=Plur	41	obl	_	_
 44	og	og	CCONJ	_	_	46	cc	_	_
-45	#	#	PUNCT	_	_	44	punct	_	_
+45	#	#	PUNCT	_	_	46	punct	_	_
 46	omkom	omkomme	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	41	conj	_	_
 47	på	på	ADP	_	_	49	case	_	_
 48	den	den	DET	_	Gender=Masc|Number=Sing|PronType=Dem	49	det	_	_
@@ -4454,7 +4455,7 @@
 22	#	#	PUNCT	_	_	21	punct	_	_
 23	stemte	stemme	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	19	advcl	_	_
 24	så	så	ADV	_	_	29	parataxis:deletion	_	_
-25	eller	eller	CCONJ	_	_	27	reparandum	_	_
+25	eller	eller	CCONJ	_	_	29	reparandum	_	_
 26	når	når	SCONJ	_	_	29	parataxis:deletion	_	_
 27	men	men	CCONJ	_	_	29	cc	_	_
 28	vi	vi	PRON	_	Animacy=Hum|Case=Nom|Number=Plur|Person=1|PronType=Prs	29	nsubj	_	_
@@ -4540,7 +4541,7 @@
 8	gjorde	gjere	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	3	conj	_	_
 9	det	det	PRON	_	Gender=Neut|Number=Sing|Person=3|PronType=Prs	8	obj	_	_
 10	ikkje	ikkje	PART	_	Polarity=Neg	8	advmod	_	_
-11	#	#	PUNCT	_	_	12	punct	_	_
+11	#	#	PUNCT	_	_	13	punct	_	_
 12	men	men	CCONJ	_	_	13	cc	_	_
 13	gjekk	gå	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	8	conj	_	_
 14	jo	jo	ADV	_	_	13	advmod	_	_
@@ -4954,7 +4955,7 @@
 # dialect: vardoe speakerid: vardoe_uio_01
 1	tysk	tysk	ADJ	_	Definite=Ind|Degree=Pos|Number=Sing	5	advmod	_	_
 2	og	og	CCONJ	_	_	4	cc	_	_
-3	#	#	PUNCT	_	_	2	punct	_	_
+3	#	#	PUNCT	_	_	4	punct	_	_
 4	russisk	russisk	ADJ	_	Definite=Ind|Degree=Pos|Number=Sing	1	advmod	_	_
 5	trur	tru	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 6	det	det	PRON	_	Gender=Neut|Number=Sing|Person=3|PronType=Prs	10	nsubj	_	_
@@ -5356,10 +5357,10 @@
 4	#	#	PUNCT	_	_	3	punct	_	_
 5	teiknarbåtar	teiknarbåt	NOUN	_	Definite=Ind|Gender=Masc|Number=Plur	1	obl	_	_
 6	og	og	CCONJ	_	_	8	cc	_	_
-7	#	#	PUNCT	_	_	6	punct	_	_
+7	#	#	PUNCT	_	_	8	punct	_	_
 8	berekning	berekning	NOUN	_	Definite=Ind|Gender=Fem|Number=Sing	5	conj	_	_
 9	og	og	CCONJ	_	_	11	cc	_	_
-10	#	#	PUNCT	_	_	9	punct	_	_
+10	#	#	PUNCT	_	_	11	punct	_	_
 11	forskjellig	forskjellig	ADJ	_	Definite=Ind|Degree=Pos|Gender=Neut|Number=Sing	8	conj	_	_
 12	sånn	sånn	ADV	_	_	11	advmod	_	_
 13	.	$.	PUNCT	_	_	1	punct	_	_
@@ -5414,7 +5415,7 @@
 11	#	#	PUNCT	_	_	10	punct	_	_
 12	dimensjonering	dimensjonering	NOUN	_	Definite=Ind|Gender=Fem|Number=Sing	0	root	_	_
 13	og	og	CCONJ	_	_	15	cc	_	_
-14	#	#	PUNCT	_	_	13	punct	_	_
+14	#	#	PUNCT	_	_	15	punct	_	_
 15	utrekning	utrekning	NOUN	_	Definite=Ind|Gender=Fem|Number=Sing	12	conj	_	_
 16	og	og	CCONJ	_	_	12	cc	_	_
 17	.	$.	PUNCT	_	_	12	punct	_	_
@@ -5545,7 +5546,7 @@
 3	to	to	NUM	_	Number=Plur|NumType=Card	4	nummod	_	_
 4	år	år	NOUN	_	Definite=Ind|Gender=Neut|Number=Plur	0	root	_	_
 5	og	og	CCONJ	_	_	9	cc	_	_
-6	#	#	PUNCT	_	_	5	punct	_	_
+6	#	#	PUNCT	_	_	9	punct	_	_
 7	når	når	SCONJ	_	_	9	mark	_	_
 8	du	du	PRON	_	Animacy=Hum|Case=Nom|Number=Sing|Person=2|PronType=Prs	9	nsubj	_	_
 9	har	ha	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	4	conj	_	_
@@ -5765,7 +5766,7 @@
 16	#	#	PUNCT	_	_	15	punct	_	_
 17	underbemanna	underbemanna	ADJ	_	Gender=Neut	6	conj	_	_
 18	eller	eller	CCONJ	_	_	21	cc	_	_
-19	#	#	PUNCT	_	_	18	punct	_	_
+19	#	#	PUNCT	_	_	21	punct	_	_
 20	eg	eg	PRON	_	Animacy=Hum|Case=Nom|Number=Sing|Person=1|PronType=Prs	21	nsubj	_	_
 21	trur	tru	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	6	conj	_	_
 22	ikkje	ikkje	PART	_	Polarity=Neg	21	advmod	_	_
@@ -6993,7 +6994,7 @@
 2	med	med	ADP	_	_	4	case	_	_
 3	#	#	PUNCT	_	_	2	punct	_	_
 4	giske_uib_0202	giske_uib_0202	PROPN	_	_	1	nmod	_	_
-5	#	#	PUNCT	_	_	6	punct	_	_
+5	#	#	PUNCT	_	_	7	punct	_	_
 6	og	og	CCONJ	_	_	7	cc	_	_
 7	giske_uib_0201	giske_uib_0201	PROPN	_	_	1	conj	_	_
 8	.	$.	PUNCT	_	_	1	punct	_	_
@@ -7192,7 +7193,7 @@
 5	vi	vi	PRON	_	Animacy=Hum|Case=Nom|Number=Plur|Person=1|PronType=Prs	6	nsubj	_	_
 6	kallar	kalle	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	3	acl:relcl	_	_
 7	det	det	PRON	_	Gender=Neut|Number=Sing|Person=3|PronType=Prs	6	obj	_	_
-8	#	#	PUNCT	_	_	9	punct	_	_
+8	#	#	PUNCT	_	_	10	punct	_	_
 9	og	og	CCONJ	_	_	10	cc	_	_
 10	Svinefeltet	Svinefeltet	PROPN	_	_	3	conj	_	_
 11	.	$.	PUNCT	_	_	3	punct	_	_
@@ -7209,11 +7210,11 @@
 7	frå	frå	ADP	_	_	9	case	_	_
 8	heile	heil	ADJ	_	Definite=Def|Degree=Pos|Number=Sing	9	amod	_	_
 9	landet	land	NOUN	_	Definite=Def|Gender=Neut|Number=Sing	6	nmod	_	_
-10	#	#	PUNCT	_	_	11	punct	_	_
+10	#	#	PUNCT	_	_	13	punct	_	_
 11	både	både	CCONJ	_	_	13	cc	_	_
-12	#	#	PUNCT	_	_	11	punct	_	_
+12	#	#	PUNCT	_	_	13	punct	_	_
 13	nordantilfrå	nordantilfrå	ADP	_	_	3	compound:prt	_	_
-14	#	#	PUNCT	_	_	15	punct	_	_
+14	#	#	PUNCT	_	_	16	punct	_	_
 15	og	og	CCONJ	_	_	16	cc	_	_
 16	sørantilfrå	sørantilfrå	ADP	_	_	13	conj	_	_
 17	.	$.	PUNCT	_	_	3	punct	_	_
@@ -7493,7 +7494,7 @@
 2	del	del	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	0	root	_	_
 3	til	til	ADP	_	_	4	case	_	_
 4	ising	ising	NOUN	_	Definite=Ind|Gender=Fem|Number=Sing	2	nmod	_	_
-5	#	#	PUNCT	_	_	6	punct	_	_
+5	#	#	PUNCT	_	_	9	punct	_	_
 6	og	og	CCONJ	_	_	9	cc	_	_
 7	ein	ein	DET	_	Gender=Masc|Number=Sing|PronType=Art	8	det	_	_
 8	del	del	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	9	nsubj	_	_
@@ -7586,7 +7587,7 @@
 13	midten	midt	NOUN	_	Definite=Def|Gender=Masc|Number=Sing	10	obl	_	_
 14	av	av	ADP	_	_	15	case	_	_
 15	januar	januar	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	13	nmod	_	_
-16	#	#	PUNCT	_	_	17	punct	_	_
+16	#	#	PUNCT	_	_	19	punct	_	_
 17	og	og	CCONJ	_	_	19	cc	_	_
 18	uti	uti	ADP	_	_	19	case	_	_
 19	slutten	slutt	NOUN	_	Definite=Def|Gender=Masc|Number=Sing	13	conj	_	_
@@ -7631,9 +7632,9 @@
 9	sildegarna	sildegarn	NOUN	_	Definite=Def|Gender=Neut|Number=Plur	8	obj	_	_
 10	på	på	ADP	_	_	11	case	_	_
 11	land	land	NOUN	_	Definite=Ind|Gender=Neut|Number=Sing	9	nmod	_	_
-12	#	#	PUNCT	_	_	13	punct	_	_
+12	#	#	PUNCT	_	_	15	punct	_	_
 13	og	og	CCONJ	_	_	15	cc	_	_
-14	#	#	PUNCT	_	_	13	punct	_	_
+14	#	#	PUNCT	_	_	15	punct	_	_
 15	ha	ha	VERB	_	VerbForm=Inf	8	conj	_	_
 16	om	om	ADP	_	_	17	case	_	_
 17	bord	bord	NOUN	_	Definite=Ind|Gender=Neut|Number=Sing	15	obl	_	_
@@ -7737,7 +7738,7 @@
 12	som	som	PRON	_	PronType=Rel	13	nsubj	_	_
 13	kom	komme	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	5	acl:cleft	_	_
 14	her	her	ADV	_	_	13	advmod	_	_
-15	e	e	X	_	_	16	discourse:filler	_	_
+15	e	e	X	_	_	17	discourse:filler	_	_
 16	og	og	CCONJ	_	_	17	cc	_	_
 17	begynte	begynne	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	13	conj	_	_
 18	med	med	SCONJ	_	_	20	mark	_	_
@@ -7946,7 +7947,7 @@
 3	blir	bli	AUX	_	Mood=Ind|Tense=Pres|VerbForm=Fin	5	aux:pass	_	_
 4	e	e	X	_	_	5	discourse:filler	_	_
 5	salta	salte	VERB	_	VerbForm=Part	0	root	_	_
-6	#	#	PUNCT	_	_	7	punct	_	_
+6	#	#	PUNCT	_	_	11	punct	_	_
 7	og	og	CCONJ	_	_	11	cc	_	_
 8	ein	ein	DET	_	Gender=Masc|Number=Sing|PronType=Art	9	det	_	_
 9	del	del	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	11	nsubj:pass	_	_
@@ -7989,7 +7990,7 @@
 17	etter	etter	ADP	_	_	18	case	_	_
 18	småsei	småsei	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	16	nmod	_	_
 19	eller	eller	CCONJ	_	_	21	cc	_	_
-20	#	#	PUNCT	_	_	19	punct	_	_
+20	#	#	PUNCT	_	_	21	punct	_	_
 21	pale	pale	NOUN	_	Definite=Ind|Gender=Fem|Number=Sing	18	conj	_	_
 22	#	#	PUNCT	_	_	23	punct	_	_
 23	her	her	ADV	_	_	16	advmod	_	_
@@ -8099,7 +8100,7 @@
 18	kunne	kunne	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	16	aux	_	_
 19	vere	vere	VERB	_	VerbForm=Inf	16	cop	_	_
 20	men	men	CCONJ	_	_	11	cc	_	_
-21	e	e	X	_	_	20	discourse:filler	_	_
+21	e	e	X	_	_	11	discourse:filler	_	_
 22	.	$.	PUNCT	_	_	2	punct	_	_
 
 # sent_id = 003967
@@ -8113,7 +8114,7 @@
 6	halv	halv	ADJ	_	Definite=Ind|Degree=Pos|Number=Sing	3	advmod	_	_
 7	kilo	kilo	NOUN	_	Definite=Ind|Gender=Masc|Number=Plur	13	obj	_	_
 8	eller	eller	CCONJ	_	_	13	cc	_	_
-9	#	#	PUNCT	_	_	8	punct	_	_
+9	#	#	PUNCT	_	_	13	punct	_	_
 10	noko	nokon	DET	_	Gender=Neut|Number=Sing|PronType=Ind	11	det	_	_
 11	slikt	slikt	PRON	_	Case=Acc|Gender=Neut|Number=Sing|Person=3|PronType=Prs	13	obl	_	_
 12	#	#	PUNCT	_	_	11	punct	_	_
@@ -8178,8 +8179,8 @@
 # sent_id = 003971
 # text = og e # og fiska # e # sånn pale eller # skallesei .
 # dialect: giske speakerid: giske_uib_02
-1	og	og	CCONJ	_	_	4	reparandum	_	_
-2	e	e	X	_	_	4	discourse:filler	_	_
+1	og	og	CCONJ	_	_	5	reparandum	_	_
+2	e	e	X	_	_	5	discourse:filler	_	_
 3	#	#	PUNCT	_	_	2	punct	_	_
 4	og	og	CCONJ	_	_	5	cc	_	_
 5	fiska	fiske	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
@@ -8189,7 +8190,7 @@
 9	sånn	sånn	DET	_	Gender=Fem|Number=Sing|PronType=Dem	10	det	_	_
 10	pale	pale	NOUN	_	Definite=Ind|Gender=Fem|Number=Sing	5	obj	_	_
 11	eller	eller	CCONJ	_	_	13	cc	_	_
-12	#	#	PUNCT	_	_	11	punct	_	_
+12	#	#	PUNCT	_	_	13	punct	_	_
 13	skallesei	skallesei	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	10	conj	_	_
 14	.	$.	PUNCT	_	_	10	punct	_	_
 
@@ -8198,7 +8199,7 @@
 # dialect: giske speakerid: giske_uib_02
 1	jaha	jaha	INTJ	_	_	14	discourse	_	_
 2	#	#	PUNCT	_	_	1	punct	_	_
-3	em	em	X	_	_	4	discourse:filler	_	_
+3	em	em	X	_	_	14	discourse:filler	_	_
 4	men	men	CCONJ	_	_	14	cc	_	_
 5	em	em	X	_	_	9	discourse:filler	_	_
 6	#	#	PUNCT	_	_	5	punct	_	_
@@ -8359,7 +8360,7 @@
 6	lange	lange	NOUN	_	Definite=Ind|Gender=Fem|Number=Sing	3	obj	_	_
 7	og	og	CCONJ	_	_	8	cc	_	_
 8	brosme	brosme	NOUN	_	Definite=Ind|Gender=Fem|Number=Sing	6	conj	_	_
-9	#	#	PUNCT	_	_	10	punct	_	_
+9	#	#	PUNCT	_	_	11	punct	_	_
 10	og	og	CCONJ	_	_	11	cc	_	_
 11	kveite	kveite	NOUN	_	Definite=Ind|Gender=Fem|Number=Sing	8	conj	_	_
 12	.	$.	PUNCT	_	_	3	punct	_	_
@@ -8411,7 +8412,7 @@
 5	#	#	PUNCT	_	_	7	punct	_	_
 6	på	på	ADP	_	_	7	case	_	_
 7	Tampen	Tampen	PROPN	_	_	4	obl	_	_
-8	#	#	PUNCT	_	_	9	punct	_	_
+8	#	#	PUNCT	_	_	10	punct	_	_
 9	og	og	CCONJ	_	_	10	cc	_	_
 10	Sjetland	Sjetland	PROPN	_	_	7	conj	_	_
 11	og	og	CCONJ	_	_	12	cc	_	_
@@ -8437,7 +8438,7 @@
 6	oppi	oppi	ADP	_	_	8	case	_	_
 7	ein	ein	DET	_	Gender=Masc|Number=Sing|PronType=Art	8	det	_	_
 8	månad	månad	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	5	obl	_	_
-9	og	og	CCONJ	_	_	11	reparandum	_	_
+9	og	og	CCONJ	_	_	12	reparandum	_	_
 10	#	#	PUNCT	_	_	9	punct	_	_
 11	og	og	CCONJ	_	_	12	cc	_	_
 12	enda	enda	ADV	_	_	8	conj	_	_
@@ -8533,8 +8534,8 @@
 # sent_id = 003989
 # text = og e # og e # lenger utpå # Tampen # Shetland og Færøyane og ein del av båtane går til Island .
 # dialect: giske speakerid: giske_uib_02
-1	og	og	CCONJ	_	_	4	reparandum	_	_
-2	e	e	X	_	_	4	discourse:filler	_	_
+1	og	og	CCONJ	_	_	10	reparandum	_	_
+2	e	e	X	_	_	10	discourse:filler	_	_
 3	#	#	PUNCT	_	_	2	punct	_	_
 4	og	og	CCONJ	_	_	10	cc	_	_
 5	e	e	X	_	_	7	discourse:filler	_	_
@@ -8597,9 +8598,9 @@
 8	dei	dei	PRON	_	Animacy=Hum|Case=Nom|Number=Plur|Person=3|PronType=Prs	9	nsubj	_	_
 9	fiskar	fiske	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	4	conj	_	_
 10	kveite	kveite	NOUN	_	Definite=Ind|Gender=Fem|Number=Sing	9	obj	_	_
-11	#	#	PUNCT	_	_	15	punct	_	_
-12	og	og	CCONJ	_	_	15	reparandum	_	_
-13	e	e	X	_	_	15	discourse:filler	_	_
+11	#	#	PUNCT	_	_	16	punct	_	_
+12	og	og	CCONJ	_	_	16	reparandum	_	_
+13	e	e	X	_	_	16	discourse:filler	_	_
 14	#	#	PUNCT	_	_	13	punct	_	_
 15	og	og	CCONJ	_	_	16	cc	_	_
 16	torsk	torsk	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	10	conj	_	_
@@ -8641,7 +8642,7 @@
 4	da	da	ADV	_	_	3	advmod	_	_
 5	på	på	ADP	_	_	6	case	_	_
 6	Island	Island	PROPN	_	_	3	obl	_	_
-7	e	e	X	_	_	9	discourse:filler	_	_
+7	e	e	X	_	_	10	discourse:filler	_	_
 8	#	#	PUNCT	_	_	7	punct	_	_
 9	og	og	CCONJ	_	_	10	cc	_	_
 10	fiskar	fiske	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	3	conj	_	_
@@ -8736,7 +8737,7 @@
 3	er	vere	AUX	_	Mood=Ind|Tense=Pres|VerbForm=Fin	5	cop	_	_
 4	ein	ein	DET	_	Gender=Masc|Number=Sing|PronType=Art	5	det	_	_
 5	kveitetur	kveitetur	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	0	root	_	_
-6	#	#	PUNCT	_	_	7	punct	_	_
+6	#	#	PUNCT	_	_	10	punct	_	_
 7	og	og	CCONJ	_	_	10	cc	_	_
 8	dei	dei	PRON	_	Animacy=Hum|Case=Nom|Number=Plur|Person=3|PronType=Prs	10	nsubj	_	_
 9	ikkje	ikkje	PART	_	Polarity=Neg	10	advmod	_	_
@@ -8827,7 +8828,7 @@
 3	med	med	ADP	_	_	4	case	_	_
 4	seg	seg	PRON	_	Case=Acc|PronType=Prs|Reflex=Yes	2	obl	_	_
 5	is	is	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	2	obj	_	_
-6	#	#	PUNCT	_	_	7	punct	_	_
+6	#	#	PUNCT	_	_	8	punct	_	_
 7	og	og	CCONJ	_	_	8	cc	_	_
 8	isar	ise	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	2	conj	_	_
 9	kveita	kveite	NOUN	_	Definite=Def|Gender=Fem|Number=Sing	8	obj	_	_
@@ -9203,8 +9204,8 @@
 # dialect: giske speakerid: giske_uib_02
 1	jaha	jaha	INTJ	_	_	11	discourse	_	_
 2	#	#	PUNCT	_	_	1	punct	_	_
-3	em	em	X	_	_	6	discourse:filler	_	_
-4	e	e	X	_	_	6	discourse:filler	_	_
+3	em	em	X	_	_	11	discourse:filler	_	_
+4	e	e	X	_	_	11	discourse:filler	_	_
 5	#	#	PUNCT	_	_	4	punct	_	_
 6	og	og	CCONJ	_	_	11	cc	_	_
 7	så	så	ADV	_	_	11	advmod	_	_
@@ -9278,7 +9279,7 @@
 4	dei	dei	PRON	_	Animacy=Hum|Case=Nom|Number=Plur|Person=3|PronType=Prs	3	nsubj	_	_
 5	eit	ein	DET	_	Gender=Neut|Number=Sing|PronType=Art	6	det	_	_
 6	opphald	opphald	NOUN	_	Definite=Ind|Gender=Neut|Number=Sing	3	obj	_	_
-7	#	#	PUNCT	_	_	8	punct	_	_
+7	#	#	PUNCT	_	_	15	punct	_	_
 8	og	og	CCONJ	_	_	15	cc	_	_
 9	det	det	PRON	_	Gender=Neut|Number=Sing|Person=3|PronType=Prs	15	nsubj	_	_
 10	er	vere	AUX	_	Mood=Ind|Tense=Pres|VerbForm=Fin	15	cop	_	_
@@ -9324,7 +9325,7 @@
 3	da	da	ADV	_	_	2	advmod	_	_
 4	garna	garn	NOUN	_	Definite=Def|Gender=Neut|Number=Plur	2	obj	_	_
 5	sine	sin	PRON	_	Number=Plur|Poss=Yes|PronType=Prs	4	nmod	_	_
-6	#	#	PUNCT	_	_	7	punct	_	_
+6	#	#	PUNCT	_	_	10	punct	_	_
 7	og	og	CCONJ	_	_	10	cc	_	_
 8	e	e	X	_	_	10	discourse:filler	_	_
 9	#	#	PUNCT	_	_	8	punct	_	_
@@ -9359,7 +9360,7 @@
 7	forholdsvis	forholdsvis	ADV	_	_	9	advmod	_	_
 8	#	#	PUNCT	_	_	7	punct	_	_
 9	rolege	roleg	ADJ	_	Degree=Pos|Number=Plur	2	xcomp	_	_
-10	og	og	CCONJ	_	_	12	reparandum	_	_
+10	og	og	CCONJ	_	_	13	reparandum	_	_
 11	#	#	PUNCT	_	_	10	punct	_	_
 12	og	og	CCONJ	_	_	13	cc	_	_
 13	gode	god	ADJ	_	Degree=Pos|Number=Plur	9	conj	_	_
@@ -9433,7 +9434,7 @@
 10	slutten	slutt	NOUN	_	Definite=Def|Gender=Masc|Number=Sing	6	obl	_	_
 11	av	av	ADP	_	_	12	case	_	_
 12	mai	mai	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	10	nmod	_	_
-13	#	#	PUNCT	_	_	14	punct	_	_
+13	#	#	PUNCT	_	_	15	punct	_	_
 14	og	og	CCONJ	_	_	15	cc	_	_
 15	varer	vare	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	6	conj	_	_
 16	til	til	ADP	_	_	22	case	_	_
@@ -9485,7 +9486,7 @@
 5	seie	seie	VERB	_	VerbForm=Inf	0	root	_	_
 6	det	det	PRON	_	Gender=Neut|Number=Sing|Person=3|PronType=Prs	7	nsubj	_	_
 7	var	vere	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	5	ccomp	_	_
-8	#	#	PUNCT	_	_	9	punct	_	_
+8	#	#	PUNCT	_	_	12	punct	_	_
 9	men	men	CCONJ	_	_	12	cc	_	_
 10	e	e	X	_	_	11	discourse:filler	_	_
 11	svært	svær	ADJ	_	Definite=Ind|Degree=Pos|Gender=Neut|Number=Sing	12	advmod	_	_
@@ -9553,7 +9554,7 @@
 7	eg	eg	PRON	_	Animacy=Hum|Case=Nom|Number=Sing|Person=1|PronType=Prs	8	nsubj	_	_
 8	hugsar	hugse	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	6	acl:cleft	_	_
 9	best	god	ADJ	_	Definite=Ind|Degree=Sup	8	advmod	_	_
-10	#	#	PUNCT	_	_	11	punct	_	_
+10	#	#	PUNCT	_	_	19	punct	_	_
 11	for	for	CCONJ	_	_	19	cc	_	_
 12	det	det	PRON	_	Gender=Neut|Number=Sing|Person=3|PronType=Prs	19	nsubj	_	_
 13	var	vere	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	19	cop	_	_
@@ -9581,7 +9582,7 @@
 7	e	e	X	_	_	8	discourse:filler	_	_
 8	inniblant	inniblant	ADP	_	_	6	compound:prt	_	_
 9	og	og	CCONJ	_	_	15	cc	_	_
-10	#	#	PUNCT	_	_	9	punct	_	_
+10	#	#	PUNCT	_	_	15	punct	_	_
 11	om	om	SCONJ	_	_	15	mark	_	_
 12	det	det	PRON	_	Gender=Neut|Number=Sing|Person=3|PronType=Prs	15	nsubj	_	_
 13	er	vere	AUX	_	Mood=Ind|Tense=Pres|VerbForm=Fin	15	cop	_	_
@@ -9613,7 +9614,7 @@
 # text = men # eg må kanskje få tenkt meg om litt i blant .
 # dialect: gol speakerid: gol_uio_01
 1	men	men	CCONJ	_	_	7	cc	_	_
-2	#	#	PUNCT	_	_	1	punct	_	_
+2	#	#	PUNCT	_	_	7	punct	_	_
 3	eg	eg	PRON	_	Animacy=Hum|Case=Nom|Number=Sing|Person=1|PronType=Prs	7	nsubj	_	_
 4	må	måtte	AUX	_	Mood=Ind|Tense=Pres|VerbForm=Fin	7	aux	_	_
 5	kanskje	kanskje	ADV	_	_	6	advmod	_	_
@@ -9688,8 +9689,8 @@
 6	svært	svær	ADJ	_	Definite=Ind|Degree=Pos|Gender=Neut|Number=Sing	7	advmod	_	_
 7	liten	liten	ADJ	_	Definite=Ind|Degree=Pos|Gender=Masc|Number=Sing	2	xcomp	_	_
 8	heller	heller	ADV	_	_	2	advmod	_	_
-9	#	#	PUNCT	_	_	11	punct	_	_
-10	e	e	X	_	_	11	discourse:filler	_	_
+9	#	#	PUNCT	_	_	16	punct	_	_
+10	e	e	X	_	_	16	discourse:filler	_	_
 11	for	for	CCONJ	_	_	16	cc	_	_
 12	eg	eg	PRON	_	Animacy=Hum|Case=Nom|Number=Sing|Person=1|PronType=Prs	16	nsubj	_	_
 13	hadde	ha	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	16	aux	_	_
@@ -9793,7 +9794,7 @@
 # sent_id = 004049
 # text = e # for jordet vårt # er gjekk e nedåt åa # Hemsil .
 # dialect: gol speakerid: gol_uio_01
-1	e	e	X	_	_	3	discourse:filler	_	_
+1	e	e	X	_	_	8	discourse:filler	_	_
 2	#	#	PUNCT	_	_	1	punct	_	_
 3	for	for	CCONJ	_	_	8	cc	_	_
 4	jordet	jorde	NOUN	_	Definite=Def|Gender=Neut|Number=Sing	8	nsubj	_	_
@@ -9827,9 +9828,9 @@
 14	å	å	PART	_	_	15	mark	_	_
 15	passe	passe	VERB	_	VerbForm=Inf	11	xcomp	_	_
 16	dei	dei	PRON	_	Animacy=Hum|Case=Acc|Number=Plur|Person=3|PronType=Prs	15	obj	_	_
-17	for	for	CCONJ	_	_	20	reparandum	_	_
+17	for	for	CCONJ	_	_	22	reparandum	_	_
 18	det	det	PRON	_	Gender=Neut|Number=Sing|Person=3|PronType=Prs	21	reparandum	_	_
-19	#	#	PUNCT	_	_	20	punct	_	_
+19	#	#	PUNCT	_	_	22	punct	_	_
 20	for	for	CCONJ	_	_	22	cc	_	_
 21	det	det	PRON	_	Gender=Neut|Number=Sing|Person=3|PronType=Prs	22	obj	_	_
 22	passar	passe	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	3	conj	_	_
@@ -9994,7 +9995,7 @@
 8	mas	mas	NOUN	_	Definite=Ind|Gender=Neut|Number=Plur	0	root	_	_
 9	og	og	CCONJ	_	_	10	cc	_	_
 10	strid	strid	NOUN	_	Definite=Ind|Gender=Fem|Number=Sing	8	conj	_	_
-11	#	#	PUNCT	_	_	12	punct	_	_
+11	#	#	PUNCT	_	_	16	punct	_	_
 12	for	for	CCONJ	_	_	16	cc	_	_
 13	det	det	PRON	_	Gender=Neut|Number=Sing|Person=3|PronType=Prs	16	nsubj	_	_
 14	var	vere	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	16	cop	_	_
@@ -10043,7 +10044,7 @@
 # text = så ## var der ennå ## slik skikk på kyrkjegarden .
 # dialect: flakstad speakerid: flakstad_uib_04
 1	så	så	CCONJ	_	_	8	cc	_	_
-2	##	##	PUNCT	_	_	1	punct	_	_
+2	##	##	PUNCT	_	_	8	punct	_	_
 3	var	vere	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	8	cop	_	_
 4	der	der	PRON	_	PronType=Prs	8	expl	_	_
 5	ennå	ennå	ADV	_	_	8	advmod	_	_
@@ -10111,7 +10112,7 @@
 7	vere	vere	VERB	_	VerbForm=Inf	5	acl	_	_
 8	til	til	ADP	_	_	9	case	_	_
 9	stades	stad	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	7	obl	_	_
-10	##	##	PUNCT	_	_	11	punct	_	_
+10	##	##	PUNCT	_	_	12	punct	_	_
 11	og	og	CCONJ	_	_	12	cc	_	_
 12	halde	halde	VERB	_	VerbForm=Inf	14	reparandum	_	_
 13	og	og	CCONJ	_	_	14	cc	_	_
@@ -10195,7 +10196,7 @@
 8	der	der	ADV	_	_	3	advmod	_	_
 9	#	#	PUNCT	_	_	10	punct	_	_
 10	nedpå	nedpå	ADP	_	_	3	compound:prt	_	_
-11	p-	p-	X	_	_	12	discourse:filler	_	_
+11	p-	p-	X	_	_	15	discourse:filler	_	_
 12	for	for	CCONJ	_	_	15	cc	_	_
 13	den	den	PRON	_	Case=Nom|Number=Sing|Person=3|PronType=Prs	15	nsubj	_	_
 14	skulle	skulle	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	15	aux	_	_
@@ -10550,8 +10551,8 @@
 # dialect: flakstad speakerid: flakstad_uib_04
 1	ja	ja	INTJ	_	_	10	discourse	_	_
 2	#	#	PUNCT	_	_	1	punct	_	_
-3	og	og	CCONJ	_	_	6	reparandum	_	_
-4	e	e	X	_	_	6	discourse:filler	_	_
+3	og	og	CCONJ	_	_	10	reparandum	_	_
+4	e	e	X	_	_	10	discourse:filler	_	_
 5	##	##	PUNCT	_	_	4	punct	_	_
 6	og	og	CCONJ	_	_	10	cc	_	_
 7	så	så	ADV	_	_	8	advmod	_	_
@@ -10711,7 +10712,7 @@
 2	eg	eg	PRON	_	Animacy=Hum|Case=Nom|Number=Sing|Person=1|PronType=Prs	4	nsubj	_	_
 3	har	ha	AUX	_	Mood=Ind|Tense=Pres|VerbForm=Fin	4	aux	_	_
 4	høyrt	høyre	VERB	_	VerbForm=Part	12	nmod	_	_
-5	#	#	PUNCT	_	_	6	punct	_	_
+5	#	#	PUNCT	_	_	10	punct	_	_
 6	og	og	CCONJ	_	_	10	cc	_	_
 7	e	e	X	_	_	10	discourse:filler	_	_
 8	#	#	PUNCT	_	_	7	punct	_	_
@@ -10995,7 +10996,7 @@
 5	ned	ned	ADP	_	_	7	case	_	_
 6	i	i	ADP	_	_	7	case	_	_
 7	fembøringen	fembøring	NOUN	_	Definite=Def|Gender=Masc|Number=Sing	4	obl	_	_
-8	og	og	CCONJ	_	_	10	reparandum	_	_
+8	og	og	CCONJ	_	_	11	reparandum	_	_
 9	#	#	PUNCT	_	_	8	punct	_	_
 10	og	og	CCONJ	_	_	11	cc	_	_
 11	pumpe	pumpe	VERB	_	VerbForm=Inf	4	conj	_	_
@@ -11046,7 +11047,7 @@
 7	##	##	PUNCT	_	_	6	punct	_	_
 8	e	e	X	_	_	9	discourse:filler	_	_
 9	overtrøya	overtrøye	NOUN	_	Definite=Def|Gender=Fem|Number=Sing	2	obj	_	_
-10	##	##	PUNCT	_	_	11	punct	_	_
+10	##	##	PUNCT	_	_	2	punct	_	_
 11	og	og	CCONJ	_	_	2	cc	_	_
 12	e	e	X	_	_	2	discourse:filler	_	_
 13	.	$.	PUNCT	_	_	2	punct	_	_
@@ -11091,7 +11092,7 @@
 6	er	vere	AUX	_	Mood=Ind|Tense=Pres|VerbForm=Fin	8	cop	_	_
 7	i	i	ADP	_	_	8	case	_	_
 8	båten	båt	NOUN	_	Definite=Def|Gender=Masc|Number=Sing	0	root	_	_
-9	og	og	CCONJ	_	_	11	reparandum	_	_
+9	og	og	CCONJ	_	_	12	reparandum	_	_
 10	##	##	PUNCT	_	_	9	punct	_	_
 11	og	og	CCONJ	_	_	12	cc	_	_
 12	auser	ause	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	8	conj	_	_
@@ -11102,7 +11103,7 @@
 # dialect: flakstad speakerid: flakstad_uib_04
 1	eller	eller	CCONJ	_	_	4	cc	_	_
 2	og	og	CCONJ	_	_	4	cc	_	_
-3	#	#	PUNCT	_	_	2	punct	_	_
+3	#	#	PUNCT	_	_	4	punct	_	_
 4	pumpar	pumpe	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	_	_
 5	så	så	ADV	_	_	4	advmod	_	_
 6	#	#	PUNCT	_	_	7	punct	_	_
@@ -11155,7 +11156,7 @@
 4	#	#	PUNCT	_	_	3	punct	_	_
 5	rom	rom	ADJ	_	Definite=Ind|Degree=Pos|Number=Sing	6	amod	_	_
 6	vind	vind	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	2	obj	_	_
-7	og	og	CCONJ	_	_	9	reparandum	_	_
+7	og	og	CCONJ	_	_	11	reparandum	_	_
 8	##	##	PUNCT	_	_	7	punct	_	_
 9	og	og	CCONJ	_	_	11	cc	_	_
 10	reint	rein	ADJ	_	Definite=Ind|Degree=Pos|Gender=Neut|Number=Sing	11	amod	_	_
@@ -11223,7 +11224,7 @@
 9	var	vere	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	11	cop	_	_
 10	altså	altså	ADV	_	_	11	advmod	_	_
 11	natt	natt	NOUN	_	Definite=Ind|Gender=Fem|Number=Sing	2	conj	_	_
-12	##	##	PUNCT	_	_	13	punct	_	_
+12	##	##	PUNCT	_	_	15	punct	_	_
 13	og	og	CCONJ	_	_	15	cc	_	_
 14	så	så	ADV	_	_	15	advmod	_	_
 15	seglde	segle	ADJ	_	Number=Plur	11	conj	_	_
@@ -11481,8 +11482,8 @@
 # sent_id = 004154
 # text = og e og at dei ikkje fann igjen dei hadde gjort nokre vel nokre anstrengelser # der hen at det skulle liksom sjå ut som at dei leitte etter han .
 # dialect: flakstad speakerid: flakstad_uib_04
-1	og	og	CCONJ	_	_	3	reparandum	_	_
-2	e	e	X	_	_	3	discourse:filler	_	_
+1	og	og	CCONJ	_	_	7	reparandum	_	_
+2	e	e	X	_	_	7	discourse:filler	_	_
 3	og	og	CCONJ	_	_	7	cc	_	_
 4	at	at	SCONJ	_	_	7	mark	_	_
 5	dei	dei	PRON	_	Animacy=Hum|Case=Nom|Number=Plur|Person=3|PronType=Prs	7	nsubj	_	_
@@ -11538,7 +11539,7 @@
 14	presten	prest	NOUN	_	Definite=Def|Gender=Masc|Number=Sing	11	obl	_	_
 15	på	på	ADP	_	_	16	case	_	_
 16	Buksnes	Buksnes	PROPN	_	_	14	nmod	_	_
-17	##	##	PUNCT	_	_	18	punct	_	_
+17	##	##	PUNCT	_	_	19	punct	_	_
 18	og	og	CCONJ	_	_	19	cc	_	_
 19	få	få	VERB	_	VerbForm=Inf	11	conj	_	_
 20	han	han	PRON	_	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs	19	obj	_	_
@@ -11568,7 +11569,7 @@
 8	seg	seg	PRON	_	Case=Acc|PronType=Prs|Reflex=Yes	7	iobj	_	_
 9	ein	ein	DET	_	Gender=Masc|Number=Sing|PronType=Art	10	det	_	_
 10	dram	dram	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	7	obj	_	_
-11	##	##	PUNCT	_	_	12	punct	_	_
+11	##	##	PUNCT	_	_	19	punct	_	_
 12	og	og	CCONJ	_	_	19	cc	_	_
 13	så	så	ADV	_	_	19	advmod	_	_
 14	var	vere	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	19	cop	_	_
@@ -11663,7 +11664,7 @@
 # text = og e ## men så hadde han teke seg ein tår over tørsten .
 # dialect: flakstad speakerid: flakstad_uib_04
 1	og	og	CCONJ	_	_	8	cc	_	_
-2	e	e	X	_	_	4	discourse:filler	_	_
+2	e	e	X	_	_	8	discourse:filler	_	_
 3	##	##	PUNCT	_	_	2	punct	_	_
 4	men	men	CCONJ	_	_	8	cc	_	_
 5	så	så	ADV	_	_	8	advmod	_	_
@@ -11710,7 +11711,7 @@
 3	han	han	PRON	_	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	4	nsubj	_	_
 4	sovna	sovne	VERB	_	VerbForm=Part	0	root	_	_
 5	av	av	ADP	_	_	4	compound:prt	_	_
-6	##	##	PUNCT	_	_	7	punct	_	_
+6	##	##	PUNCT	_	_	9	punct	_	_
 7	og	og	CCONJ	_	_	9	cc	_	_
 8	der	der	ADV	_	_	9	advmod	_	_
 9	stod	stå	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	4	conj	_	_
@@ -11745,7 +11746,7 @@
 # text = og # da han hadde vore i bua # da blei dei skilde med mannen .
 # dialect: flakstad speakerid: flakstad_uib_04
 1	og	og	CCONJ	_	_	13	cc	_	_
-2	#	#	PUNCT	_	_	1	punct	_	_
+2	#	#	PUNCT	_	_	13	punct	_	_
 3	da	da	SCONJ	_	_	6	mark	_	_
 4	han	han	PRON	_	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	6	nsubj	_	_
 5	hadde	ha	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	6	aux	_	_
@@ -12174,7 +12175,7 @@
 8	av	av	ADP	_	_	10	case	_	_
 9	ein	ein	DET	_	Gender=Masc|Number=Sing|PronType=Art	10	det	_	_
 10	mannslengde	mannslengde	NOUN	_	Definite=Ind|Gender=Fem|Number=Sing	7	obl	_	_
-11	##	##	PUNCT	_	_	12	punct	_	_
+11	##	##	PUNCT	_	_	15	punct	_	_
 12	og	og	CCONJ	_	_	15	cc	_	_
 13	svært	svær	ADJ	_	Definite=Ind|Degree=Pos|Gender=Neut|Number=Sing	15	advmod	_	_
 14	e	e	X	_	_	15	discourse:filler	_	_
@@ -12329,7 +12330,7 @@
 15	mann	mann	NOUN	_	Definite=Ind|Gender=Masc|Number=Sing	10	obj	_	_
 16	i	i	ADP	_	_	17	case	_	_
 17	han	han	PRON	_	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs	10	obl	_	_
-18	##	##	PUNCT	_	_	19	punct	_	_
+18	##	##	PUNCT	_	_	23	punct	_	_
 19	og	og	CCONJ	_	_	23	cc	_	_
 20	så	så	ADV	_	_	23	advmod	_	_
 21	ein	ein	DET	_	Gender=Masc|Number=Sing|PronType=Art	22	det	_	_
@@ -12400,7 +12401,7 @@
 7	har	ha	AUX	_	Mood=Ind|Tense=Pres|VerbForm=Fin	8	aux	_	_
 8	blitt	bli	VERB	_	VerbForm=Part	3	conj	_	_
 9	abnorme	abnorm	ADJ	_	Degree=Pos|Number=Plur	8	xcomp	_	_
-10	##	##	PUNCT	_	_	11	punct	_	_
+10	##	##	PUNCT	_	_	14	punct	_	_
 11	og	og	CCONJ	_	_	14	cc	_	_
 12	alt	all	DET	_	Gender=Neut|Number=Sing|PronType=Tot	14	obl	_	_
 13	#	#	PUNCT	_	_	12	punct	_	_
@@ -12481,7 +12482,7 @@
 # text = og # eit åndssvakt barn er der født innan den familien .
 # dialect: flakstad speakerid: flakstad_uib_04
 1	og	og	CCONJ	_	_	8	cc	_	_
-2	#	#	PUNCT	_	_	1	punct	_	_
+2	#	#	PUNCT	_	_	8	punct	_	_
 3	eit	ein	DET	_	Gender=Neut|Number=Sing|PronType=Art	5	det	_	_
 4	åndssvakt	åndssvak	ADJ	_	Definite=Ind|Degree=Pos|Gender=Neut|Number=Sing	5	amod	_	_
 5	barn	barn	NOUN	_	Definite=Ind|Gender=Neut|Number=Sing	8	nsubj	_	_
@@ -12644,7 +12645,7 @@
 11	om	om	ADP	_	_	12	case	_	_
 12	skrømt	skrømt	NOUN	_	Definite=Ind|Gender=Neut|Number=Plur	10	nmod	_	_
 13	og	og	CCONJ	_	_	16	cc	_	_
-14	#	#	PUNCT	_	_	13	punct	_	_
+14	#	#	PUNCT	_	_	16	punct	_	_
 15	elles	elles	ADV	_	_	16	advmod	_	_
 16	gjengangarar	gjengangar	NOUN	_	Definite=Ind|Gender=Masc|Number=Plur	12	conj	_	_
 17	bortsett	bortsett	ADJ	_	Definite=Ind|Degree=Pos|Gender=Neut|Number=Sing	8	advmod	_	_
@@ -12781,7 +12782,7 @@
 11	eg	eg	PRON	_	Animacy=Hum|Case=Nom|Number=Sing|Person=1|PronType=Prs	6	appos	_	_
 12	ser	sjå	VERB	_	Mood=Ind|Tense=Pres|VerbForm=Fin	9	parataxis	_	_
 13	du	du	PRON	_	Animacy=Hum|Case=Nom|Number=Sing|Person=2|PronType=Prs	12	nsubj	_	_
-14	##	##	PUNCT	_	_	15	punct	_	_
+14	##	##	PUNCT	_	_	16	punct	_	_
 15	og	og	CCONJ	_	_	16	cc	_	_
 16	kjøpt	kjøpe	VERB	_	VerbForm=Part	9	conj	_	_
 17	##	##	PUNCT	_	_	18	punct	_	_
@@ -12841,7 +12842,7 @@
 6	var	vere	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	8	cop	_	_
 7	oppå	oppå	ADP	_	_	8	case	_	_
 8	Vestlandet	Vestlandet	PROPN	_	_	2	conj	_	_
-9	og	og	CCONJ	_	_	10	reparandum	_	_
+9	og	og	CCONJ	_	_	11	reparandum	_	_
 10	og	og	CCONJ	_	_	11	cc	_	_
 11	kjøpte	kjøpe	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	8	conj	_	_
 12	opp	opp	ADP	_	_	11	compound:prt	_	_
@@ -12910,9 +12911,9 @@
 24	var	vere	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	25	cop	_	_
 25	hestar	hest	NOUN	_	Definite=Ind|Gender=Masc|Number=Plur	15	advcl	_	_
 26	eller	eller	CCONJ	_	_	28	cc	_	_
-27	#	#	PUNCT	_	_	26	punct	_	_
+27	#	#	PUNCT	_	_	28	punct	_	_
 28	kyr	ku	NOUN	_	Definite=Ind|Gender=Fem|Number=Plur	25	conj	_	_
-29	eller	eller	CCONJ	_	_	30	reparandum	_	_
+29	eller	eller	CCONJ	_	_	31	reparandum	_	_
 30	eller	eller	CCONJ	_	_	31	cc	_	_
 31	sauer	sau	NOUN	_	Definite=Ind|Gender=Masc|Number=Plur	28	conj	_	_
 32	.	$.	PUNCT	_	_	3	punct	_	_
@@ -13081,7 +13082,7 @@
 13	vestantil	vestantil	ADP	_	_	9	compound:prt	_	_
 14	#	#	PUNCT	_	_	15	punct	_	_
 15	ja	ja	INTJ	_	_	9	discourse	_	_
-16	##	##	PUNCT	_	_	17	punct	_	_
+16	##	##	PUNCT	_	_	18	punct	_	_
 17	og	og	CCONJ	_	_	18	cc	_	_
 18	selde	selje	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	9	conj	_	_
 19	her	her	ADV	_	_	18	advmod	_	_
@@ -13313,7 +13314,7 @@
 9	e	e	X	_	_	11	discourse:filler	_	_
 10	til	til	ADP	_	_	11	case	_	_
 11	Drammen	Drammen	PROPN	_	_	6	obl	_	_
-12	##	##	PUNCT	_	_	13	punct	_	_
+12	##	##	PUNCT	_	_	14	punct	_	_
 13	og	og	CCONJ	_	_	14	cc	_	_
 14	somme	somme	PRON	_	Case=Nom|Number=Plur|Person=3|PronType=Prs	6	conj	_	_
 15	ned	ned	ADP	_	_	17	case	_	_
@@ -13423,11 +13424,11 @@
 # sent_id = 004277
 # text = og så ## og så dei som ville kjøpe krøtter så kom dei åt hamna # der vi hadde krøttera da .
 # dialect: aal speakerid: aal_uio_02
-1	og	og	CCONJ	_	_	4	reparandum	_	_
+1	og	og	CCONJ	_	_	6	reparandum	_	_
 2	så	så	ADV	_	_	1	advmod	_	_
 3	##	##	PUNCT	_	_	1	punct	_	_
 4	og	og	CCONJ	_	_	6	cc	_	_
-5	så	så	ADV	_	_	4	advmod	_	_
+5	så	så	ADV	_	_	6	advmod	_	_
 6	dei	dei	PRON	_	Animacy=Hum|Case=Nom|Number=Plur|Person=3|PronType=Prs	13	nmod	_	_
 7	som	som	PRON	_	PronType=Rel	9	nsubj	_	_
 8	ville	vilje	AUX	_	Mood=Ind|Tense=Past|VerbForm=Fin	9	aux	_	_
@@ -13548,7 +13549,7 @@
 # sent_id = 004284
 # text = og # og leverte det atti ## ja .
 # dialect: aal speakerid: aal_uio_02
-1	og	og	CCONJ	_	_	3	reparandum	_	_
+1	og	og	CCONJ	_	_	4	reparandum	_	_
 2	#	#	PUNCT	_	_	1	punct	_	_
 3	og	og	CCONJ	_	_	4	cc	_	_
 4	leverte	levere	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
@@ -13596,7 +13597,7 @@
 5	var	vere	VERB	_	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
 6	vel	vel	ADV	_	_	5	advmod	_	_
 7	det	det	PRON	_	Gender=Neut|Number=Sing|Person=3|PronType=Prs	5	obj	_	_
-8	##	##	PUNCT	_	_	9	punct	_	_
+8	##	##	PUNCT	_	_	5	punct	_	_
 9	men	men	CCONJ	_	_	5	cc	_	_
 10	e	e	X	_	_	5	discourse:filler	_	_
 11	.	$.	PUNCT	_	_	5	punct	_	_
