@@ -10,6 +10,28 @@
     }
   }
 
+  rule multiple_subjects_copula {
+    global {sent_id = "004340"}
+    pattern {
+      e: cop -[nsubj]-> pred;
+      cop[upos=VERB,form="var"];
+      pred[form="greier"];
+      D[form="det"];
+      cop-[nsubj]->D;
+    }
+    commands {
+      del_edge e;
+      shift cop ==> pred; 
+      cop.upos=AUX;
+      add_edge g: pred -> cop;
+      g.label=cop;
+    }
+  }
+
 strat main {
-    Onf (leaf_cc_not_expected_to_have_children)
+  Seq( 
+    Onf (leaf_cc_not_expected_to_have_children),
+    Onf (multiple_subjects_copula)
+  )
+
 }
