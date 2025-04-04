@@ -39,7 +39,7 @@
       e.2 = outer;
     }
   }
-  % 003610, 003891, 003949, 004039, 004109
+  % dev: 003610, 003891, 003949, 004039, 004109
   rule leaf_aux_cop_no_children {
     
     pattern {
@@ -57,12 +57,46 @@
     }
   }
 
+  % DEV: 003592, 003939, 003986
+  rule mark_should_not_have_children_reattach_discourse {
+    pattern {
+      N -[discourse]-> M; 
+      HEAD -[mark]-> N; 
+    }
+    commands {
+
+    }
+  }
+
+  rule verb_particle_attaches_to_wrong_head {
+    global { sent_id = "003600" }
+    pattern {
+      R [upos=VERB];
+      P [lemma="på", upos=ADP];
+      e: D -[case]-> P;
+      f: P -> V; 
+    } 
+    without { f.label = punct; }
+    with { * -[root]->R;}
+    commands {
+      add_edge vp: R  -> P;
+      vp.label = e.label; 
+      del_edge e;
+      del_edge f; 
+      add_edge r: R -> V; 
+      r.label = ccomp;
+
+    }
+  }
+
+
 strat main {
   Seq( 
     Onf (leaf_cc_not_expected_to_have_children),
     Onf (multiple_subjects_to_copula_with_predicate),
     Onf(multiple_subjects_with_outer),
-    Onf(leaf_aux_cop_no_children)
+    Onf(leaf_aux_cop_no_children),
+    Onf(verb_particle_attaches_to_wrong_head),
   )
 
 }
