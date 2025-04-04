@@ -10,7 +10,7 @@
     }
   }
 
-  rule multiple_subjects_copula {
+  rule multiple_subjects_to_copula_with_predicate {
     pattern {
       e: cop -[nsubj]-> pred;
       cop[upos=VERB,lemma="vere"];
@@ -27,10 +27,24 @@
     }
   }
 
+  rule multiple_subjects_with_outer {
+    pattern {
+      e: PRED -[nsubj]-> DUMMY_SUBJ;
+      PRED -[cop]-> VERE;
+      PRED -[nsubj]-> SUBJ;
+      DUMMY_SUBJ << SUBJ;
+    }
+    commands {
+      e.1 = nsubj;
+      e.2 = outer;
+    }
+  }
+
 strat main {
   Seq( 
     Onf (leaf_cc_not_expected_to_have_children),
-    Onf (multiple_subjects_copula)
+    Onf (multiple_subjects_to_copula_with_predicate),
+    Onf(multiple_subjects_with_outer)
   )
 
 }
