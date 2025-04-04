@@ -58,14 +58,27 @@
   }
 
   % DEV: 003592, 003939, 003986
-  rule mark_should_not_have_children_reattach_discourse {
+  rule mark_should_not_have_children {
     pattern {
-      N -[discourse]-> M; 
       HEAD -[mark]-> N; 
     }
+    with { N -> *; }
+    without { N -[punct|reparandum | advmod | obl]-> *;}
     commands {
-
+      shift_out N ==> HEAD;
     }
+  }
+
+  rule case_should_not_have_children {
+    pattern {
+      HEAD -[case]-> N; 
+    }
+    with { N -> *; }
+    without { N -[punct|reparandum]-> *;}
+    commands {
+      shift_out N ==> HEAD;
+    }
+
   }
 
   rule verb_particle_attaches_to_wrong_head {
@@ -115,6 +128,8 @@ strat main {
     Onf(leaf_aux_cop_no_children),
     Onf(verb_particle_attaches_to_wrong_head),
     Onf(shift_case_childrens_head_with_reparandum),
+    Onf(case_should_not_have_children), 
+    Onf(mark_should_not_have_children)
   )
 
 }
