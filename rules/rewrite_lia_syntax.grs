@@ -39,12 +39,30 @@
       e.2 = outer;
     }
   }
+  % 003610, 003891, 003949, 004039, 004109
+  rule leaf_aux_cop_no_children {
+    
+    pattern {
+      AUX [upos = AUX];
+      e: AUX -> N;
+      N [upos <> PUNCT];
+      f: HEAD -> AUX;
+    }
+    commands {
+      add_edge g: HEAD -> N; 
+      g.label = e.label; 
+      del_edge e;
+      shift_out AUX ==> HEAD;
+
+    }
+  }
 
 strat main {
   Seq( 
     Onf (leaf_cc_not_expected_to_have_children),
     Onf (multiple_subjects_to_copula_with_predicate),
-    Onf(multiple_subjects_with_outer)
+    Onf(multiple_subjects_with_outer),
+    Onf(leaf_aux_cop_no_children)
   )
 
 }
