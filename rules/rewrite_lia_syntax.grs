@@ -89,6 +89,23 @@
     }
   }
 
+  rule shift_case_childrens_head_with_reparandum {
+    global {sent_id = "003684" }
+    pattern {      
+      P[form="i"];
+      R [form="nittenniogtjue"]; 
+      N [form = "niogtjue", upos= NUM];
+
+      e2: P -[nmod]-> N; 
+      
+    }
+    commands { 
+      add_edge f1: N -> R; 
+      f1.label = reparandum;
+      del_edge e2; 
+      shift_in R ==> N; 
+    }
+  }
 
 strat main {
   Seq( 
@@ -97,6 +114,7 @@ strat main {
     Onf(multiple_subjects_with_outer),
     Onf(leaf_aux_cop_no_children),
     Onf(verb_particle_attaches_to_wrong_head),
+    Onf(shift_case_childrens_head_with_reparandum),
   )
 
 }
