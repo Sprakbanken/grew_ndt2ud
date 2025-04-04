@@ -11,12 +11,11 @@
   }
 
   rule multiple_subjects_copula {
-    global {sent_id = "004340"}
     pattern {
       e: cop -[nsubj]-> pred;
-      cop[upos=VERB,form="var"];
-      pred[form="greier"];
-      D[form="det"];
+      cop[upos=VERB,lemma="vere"];
+      pred[upos=NOUN];
+      D[lemma="det"];
       cop-[nsubj]->D;
     }
     commands {
