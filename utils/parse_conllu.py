@@ -39,7 +39,7 @@ NEWPARDOCPATTERN = re.compile(r"^# (newpar|newdoc)(?: id = )?(.*)?$")
 EMPTYLINEPATTERN = re.compile(r"^$")
 # TOKENLINEPATTERN = re.compile(r"^\d+\t([^\s]+?\t){8}[^\s]+?$")
 TOKENLINEPATTERN = re.compile(
-    r"^(?P<index>\d+)\t(?P<form>[-«»…\w?#]+?)\t(?P<lemma>[-«»…\w?#]*?)\t(?P<POS>[-?\w-]+?)\t(?P<xpos>.*?)\t(?P<feats>.*?)\t(?P<head>\d+?)\s(?P<DEPREL>[A-Z]+?)\t(?P<extra>.*?)\t(?P<misc>[a-z]+?)$"
+    r"^(?P<index>\d+)\t(?P<form>.+?)\t(?P<lemma>.*?)\t(?P<UPOS>.+?)\t(?P<xpos>.*?)\t(?P<feats>.*?)\t(?P<head>\d+?)\s(?P<DEPREL>.+?)\t(?P<extra>.*?)\t(?P<misc>.*?)$"
 )
 DIALECTPATTERN = re.compile(r"^# dialect:\s*(.*)$")
 
