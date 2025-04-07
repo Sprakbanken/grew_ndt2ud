@@ -465,7 +465,10 @@ rule temporal_aux_vare_ha { %problematic when it is changing cop to aux
 rule passive_subject_verbform {
   pattern {
     V [ upos=VERB, Voice=Pass, form=re".*s" ];
-    e: V -[ 1=nsubj|csubj, 2<>pass|outer]-> S;
+    e: V -[ 1=nsubj|csubj ]-> S;
+  }
+  without {
+    e.2 = pass;
   }
   commands {
     e.2 = pass;
@@ -545,10 +548,10 @@ rule error_og_adv {
 
 rule multiple_subjects_predicate_clause {
   pattern {
-    e: GOV -[nsubj | csubj | nsubj:pass | csubj:pass]-> D1;
+    e: GOV -[nsubj | csubj ]-> D1;
   }
   with {
-    GOV -[nsubj | csubj | nsubj:pass | csubj:pass]-> D2;
+    GOV -[nsubj | csubj ]-> D2;
     D1 << D2
   }
   without {
