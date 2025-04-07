@@ -1,4 +1,3 @@
-
 from collections import defaultdict
 from pathlib import Path
 import pandas as pd
@@ -7,65 +6,102 @@ from parse_conllu import parse_conll_file, CONLLFIELDS, write_conll
 
 ##### CONSTANTS
 
-symbols = ['$', '£', '%', ':(', ':)', '+', '-', '/', '>=']
+symbols = ["$", "£", "%", ":(", ":)", "+", "-", "/", ">="]
 
 auxlemmas = [
-    "bli", "verte", "burde", "få", "ha", "kunne", "vilje",
-    "måtte", "skulle", "tørre", "ville", "være", "vere"
+    "bli",
+    "verte",
+    "burde",
+    "få",
+    "ha",
+    "kunne",
+    "vilje",
+    "måtte",
+    "skulle",
+    "tørre",
+    "ville",
+    "være",
+    "vere",
 ]
 
 
 quantifiers = [
-    "all", "alt", "alle", "en", "ein", "et", "ei", "eit", "enhver", "einkvar",
-    "ethvert", "einkvan", "hver", "hvert", "kvar", "ingen", "noe", "noen", "nokon",
-    "samtlige", "samtleg","begge"
+    "all",
+    "alt",
+    "alle",
+    "en",
+    "ein",
+    "et",
+    "ei",
+    "eit",
+    "enhver",
+    "einkvar",
+    "ethvert",
+    "einkvan",
+    "hver",
+    "hvert",
+    "kvar",
+    "ingen",
+    "noe",
+    "noen",
+    "nokon",
+    "samtlige",
+    "samtleg",
+    "begge",
 ]
 
 
 possessivepronouns = [
-    "min", "din", "sin", "hans",
-    "hennes", "hennar", "dens", "dets", "vår", "deres"
+    "min",
+    "din",
+    "sin",
+    "hans",
+    "hennes",
+    "hennar",
+    "dens",
+    "dets",
+    "vår",
+    "deres",
 ]
 
 
 pron_det_lemma_feats_map = {
-        "en": "art",
-        "ein": "art",
-        "seg": "pers",
-        "noen": "ind",
-        "noe": "ind",
-        "nokon": "ind",
-        "endel": "ind",
-        "ingen": "negpron|neg",
-        "ingenting": "negpron|neg",
-        "alle": "tot",
-        "all": "tot",
-        "hver": "tot",
-        "kvar": "tot",
-        "enhver": "tot",
-        "ethvert": "tot",
-        "einkvar": "tot",
-        "einkvan": "tot",
-        "begge": "tot",
-        "samtlige": "tot",
-        "samtleg": "tot",
-        "selv": "pers",
-        "selve": "pers",
-        "sjølv": "pers",
-        "egen": "pers",
-        "eigen": "pers",
-        "som": "rel",
+    "en": "art",
+    "ein": "art",
+    "seg": "pers",
+    "noen": "ind",
+    "noe": "ind",
+    "nokon": "ind",
+    "endel": "ind",
+    "ingen": "negpron|neg",
+    "ingenting": "negpron|neg",
+    "alle": "tot",
+    "all": "tot",
+    "hver": "tot",
+    "kvar": "tot",
+    "enhver": "tot",
+    "ethvert": "tot",
+    "einkvar": "tot",
+    "einkvan": "tot",
+    "begge": "tot",
+    "samtlige": "tot",
+    "samtleg": "tot",
+    "selv": "pers",
+    "selve": "pers",
+    "sjølv": "pers",
+    "egen": "pers",
+    "eigen": "pers",
+    "som": "rel",
 }
 
 
-pron_det_lemma_feats_map.update(
-    {posspron: "pers" for posspron in possessivepronouns})
+pron_det_lemma_feats_map.update({posspron: "pers" for posspron in possessivepronouns})
 
 
-pron_feats = ['pers', 'dem', 'sp', 'res','art', 'ind', 'negpron', 'tot', 'rel']
+pron_feats = ["pers", "dem", "sp", "res", "art", "ind", "negpron", "tot", "rel"]
 
 
-verb_feats = ['pres', 'pret', 'perf-part', 'imp', 'inf', 'pres-part']
+verb_feats = ["pres", "pret", "perf-part", "imp", "inf", "pres-part"]
 
 
 posmap = {
@@ -86,87 +122,88 @@ posmap = {
 }
 
 featsmap = {
-    '1': {'Person': '1'},
-    '2': {'Person': '2'},
-    '3': {'Person': '3'},
-    '<adj>': '_',  # POS = ADJ
-    '<adv>': '_',  # POS=ADV
-    '<ikke-clb>': '_',  # Not Clause boundary
-    '<kolon>': '_',  # Colon, POS=PUNCT
-    '<ordenstall>': {'NumType': 'Ord'}, # lagt til 2.12
-    '<perf-part>': {'VerbForm': 'Part'},
-    '<pres-part>': {'VerbForm': 'Part'},
-    '<punkt>': '_',  #tegnsetting, POS=PUNCT
-    '<s-verb>': '_',
-    '<spm>': '_', # Spørsmålstegn, POS=PUNCT
-    '<utrop>': '_',  #! POS=PUNCT
-    'akk': {'Case': 'Acc'},
-    'appell': '_', # Common noun, POS=NOUN
-    'art': {'PronType': 'Art'},
-    'be': {'Definite': 'Def'},
-    'card': {'NumType': 'Card'},
-    'clb': '_',  #Clause Boundary
-    'dem': {'PronType': 'Dem'},
-    'ent': {'Number': 'Sing'},
-    'fem': {'Gender': 'Fem'},
-    'fl': {'Number': 'Plur'},
-    'fork': {'Abbr': 'Yes'},
-    'forst': '_',  # eg. selv, egen
-    'gen': {'Case': 'Gen'},
-    'hum': {'Animacy': 'Hum'},
-    'imp': {'Mood': 'Imp', 'VerbForm': 'Fin'},
-    'ind': {'PronType': 'Ind'},
-    'inf': {'VerbForm': 'Inf'},
-    'komp': {'Degree': 'Cmp'},
-    'kvant': '_',  #quantifier (POS=DET)
-    'm/f': {'Gender': 'Fem,Masc'},   # New 2.12
-    'mask': {'Gender': 'Masc'},
-    'neg': {'Polarity': 'Neg'},
-    'negpron': {'PronType': 'Neg'},
-    'nom': {'Case': 'Nom'},
-    'nøyt': {'Gender': 'Neut'},
-    'pass': {'Voice': 'Pass'},
-    'perf-part': {'VerbForm': 'Part'},
-    'pers': {'PronType': 'Prs'},
-    'pos': {'Degree': 'Pos'},
-    'poss': {'Poss': 'Yes'},
-    'pres': {'Mood': 'Ind', 'Tense': 'Pres', 'VerbForm': 'Fin'},
-    'pret': {'Mood': 'Ind', 'Tense': 'Past', 'VerbForm': 'Fin'},
-    'prop': '_',  # Egennavn, POS = PROPN
-    'refl': {'Reflex': 'Yes'},
-    'rel': {'PronType': 'Rel'},
-    'res': {'PronType': 'Rcp'},
-    'samset': '_',  #? DEPREL=compound? flat? fixed?
-    'sp': {'PronType': 'Int'},
-    'sup': {'Degree': 'Sup'},
-    'tot': {'PronType': 'Tot'},
-    'ub': {'Definite': 'Ind'},
-    'ubøy': '_',  # Uninflected
-    'ufl': '_',  #Incomplete
-    'unorm': '_'  # feat Typo?
+    "1": {"Person": "1"},
+    "2": {"Person": "2"},
+    "3": {"Person": "3"},
+    "<adj>": "_",  # POS = ADJ
+    "<adv>": "_",  # POS=ADV
+    "<ikke-clb>": "_",  # Not Clause boundary
+    "<kolon>": "_",  # Colon, POS=PUNCT
+    "<ordenstall>": {"NumType": "Ord"},  # lagt til 2.12
+    "<perf-part>": {"VerbForm": "Part"},
+    "<pres-part>": {"VerbForm": "Part"},
+    "<punkt>": "_",  # tegnsetting, POS=PUNCT
+    "<s-verb>": "_",
+    "<spm>": "_",  # Spørsmålstegn, POS=PUNCT
+    "<utrop>": "_",  #! POS=PUNCT
+    "akk": {"Case": "Acc"},
+    "appell": "_",  # Common noun, POS=NOUN
+    "art": {"PronType": "Art"},
+    "be": {"Definite": "Def"},
+    "card": {"NumType": "Card"},
+    "clb": "_",  # Clause Boundary
+    "dem": {"PronType": "Dem"},
+    "ent": {"Number": "Sing"},
+    "fem": {"Gender": "Fem"},
+    "fl": {"Number": "Plur"},
+    "fork": {"Abbr": "Yes"},
+    "forst": "_",  # eg. selv, egen
+    "gen": {"Case": "Gen"},
+    "hum": {"Animacy": "Hum"},
+    "imp": {"Mood": "Imp", "VerbForm": "Fin"},
+    "ind": {"PronType": "Ind"},
+    "inf": {"VerbForm": "Inf"},
+    "komp": {"Degree": "Cmp"},
+    "kvant": "_",  # quantifier (POS=DET)
+    "m/f": {"Gender": "Com"},  # New 2.16
+    "mask": {"Gender": "Masc"},
+    "neg": {"Polarity": "Neg"},
+    "negpron": {"PronType": "Neg"},
+    "nom": {"Case": "Nom"},
+    "nøyt": {"Gender": "Neut"},
+    "pass": {"Voice": "Pass"},
+    "perf-part": {"VerbForm": "Part"},
+    "pers": {"PronType": "Prs"},
+    "pos": {"Degree": "Pos"},
+    "poss": {"Poss": "Yes"},
+    "pres": {"Mood": "Ind", "Tense": "Pres", "VerbForm": "Fin"},
+    "pret": {"Mood": "Ind", "Tense": "Past", "VerbForm": "Fin"},
+    "prop": "_",  # Egennavn, POS = PROPN
+    "refl": {"Reflex": "Yes"},
+    "rel": {"PronType": "Rel"},
+    "res": {"PronType": "Rcp"},
+    "samset": "_",  # ? DEPREL=compound? flat? fixed?
+    "sp": {"PronType": "Int"},
+    "sup": {"Degree": "Sup"},
+    "tot": {"PronType": "Tot"},
+    "ub": {"Definite": "Ind"},
+    "ubøy": "_",  # Uninflected
+    "ufl": "_",  # Incomplete
+    "unorm": "_",  # feat Typo?
 }
 
 ud_feattypes = [
-    'Abbr',
-    'Animacy',
-    'Case',
-    'Definite',
-    'Degree',
-    'Gender',
-    'Mood',
-    'NumType',
-    'Number',
-    'Person',
-    'Polarity',
-    'Poss',
-    'PronType',
-    'Reflex',
-    'Tense',
-    'VerbForm',
-    'Voice',
+    "Abbr",
+    "Animacy",
+    "Case",
+    "Definite",
+    "Degree",
+    "Gender",
+    "Mood",
+    "NumType",
+    "Number",
+    "Person",
+    "Polarity",
+    "Poss",
+    "PronType",
+    "Reflex",
+    "Tense",
+    "VerbForm",
+    "Voice",
 ]
 
 ### UTILITY FUNCTIONS
+
 
 def is_ud_feat(feat):
     feattype = feat.split("=")[0]
@@ -174,20 +211,19 @@ def is_ud_feat(feat):
 
 
 def split_token(line: str) -> list:
-    #return line.strip().split('\t')
+    # return line.strip().split('\t')
     return line.rstrip("\n").split("\t")
 
 
 def is_neg(token):
-    lemma = get_field(token,"LEMMA")
-    deprel = get_field(token,"DEPREL")
+    lemma = get_field(token, "LEMMA")
+    deprel = get_field(token, "DEPREL")
     return (lemma in ["ikke", "ikkje"]) or (lemma == "ingen" and deprel == "DET")
 
 
 def is_copula(token, deps):
-    return (
-        get_field(token, "LEMMA") in ("være", "vere") and
-        has_dep_label("SPRED", deps)
+    return get_field(token, "LEMMA") in ("være", "vere") and has_dep_label(
+        "SPRED", deps
     )
 
 
@@ -195,8 +231,7 @@ def has_dep_label(deprel, deps):
     if not deps:
         return False
     labels = [get_field(dep, "DEPREL") for dep in deps]
-    return (deprel in labels)
-
+    return deprel in labels
 
 
 def field_is_empty(field):
@@ -220,7 +255,6 @@ def split_batch_samples(filename, sample_size: int = 200000):
     length = len(lines)
 
     def split_samples(start):
-
         remaining_length = length - start
         end = start + sample_size if sample_size < remaining_length else length
 
@@ -239,11 +273,10 @@ def split_batch_samples(filename, sample_size: int = 200000):
     idx = 0
     for i in range(iterations):
         idx, sample = split_samples(idx)
-        path = filepath.parent / f"sample{i+1}_{filepath.name}"
+        path = filepath.parent / f"sample{i + 1}_{filepath.name}"
         with open(path, "w+") as sf:
             for line in sample:
                 sf.write(line + "\n")
-
 
 
 ########## NEW CONVERSION FUNCTIONS ######
@@ -253,16 +286,22 @@ def split_batch_samples(filename, sample_size: int = 200000):
 
 # Utils
 
+
 def overlaps(actual_values, qualifying_values):
     return any(feat in qualifying_values for feat in actual_values)
 
+
 # Konverter POS-taggene
 
+
 def get_dependents(sentence, token):
-    return [token_i for token_i in sentence if get_field(token,"ID") == token_i.get("HEAD")] # token.get("ID") != token_i.get("ID") ]
+    return [
+        token_i for token_i in sentence if get_field(token, "ID") == token_i.get("HEAD")
+    ]  # token.get("ID") != token_i.get("ID") ]
+
 
 def get_labels(tokens):
-    return [get_field(t,"DEPREL") for t in tokens]
+    return [get_field(t, "DEPREL") for t in tokens]
 
 
 def get_field(token, field):
@@ -276,9 +315,9 @@ def get_field(token, field):
 
 
 def convert_pos(token, sentence):
-    pos = get_field(token,"UPOS")
-    lemma = get_field(token,"LEMMA")
-    feats = get_field(token,"FEATS").split("|")
+    pos = get_field(token, "UPOS")
+    lemma = get_field(token, "LEMMA")
+    feats = get_field(token, "FEATS").split("|")
 
     # direct mapping
     def convert_verb_pos():
@@ -288,13 +327,12 @@ def convert_pos(token, sentence):
         if (
             "INFV" in labels and lemma in auxlemmas
             # token is a modal auxiliary verb
-            ) or (
+        ) or (
             "SPRED" in labels and lemma in ("være", "vere")
             # token is a copular verb
-            ):
+        ):
             return "AUX"
         return "VERB"
-
 
     def convert_det_pos():
         if "poss" in feats:
@@ -308,7 +346,7 @@ def convert_pos(token, sentence):
     def convert_prep_pos():
         if lemma == "der" and get_field(token, "DEPREL") in ["FSUBJ", "FOBJ"]:
             return "PRON"
-        elif lemma in ['her', 'her', 'der', 'herfra', 'derfra', 'hit', 'dit']:
+        elif lemma in ["her", "her", "der", "herfra", "derfra", "hit", "dit"]:
             return "ADV"
         return "ADP"
 
@@ -316,29 +354,28 @@ def convert_pos(token, sentence):
     pos_conversion = {
         "subst": "PROPN" if "prop" in feats else "NOUN",
         "symb": "PUNCT" if lemma == "*" else "SYM",
-        'verb': convert_verb_pos(), #'VERB' or 'AUX',
-        'det': convert_det_pos(), #'DET', 'PRON', 'NUM'
-        'adj': 'ADJ',
-        'adv': "PART" if lemma in ["ikke", "ikkje", "ei"] else "ADV", #'ADV',
-        'clb': "PUNCT",
-        'prep': convert_prep_pos(), #'ADP',"PRON", 'ADV'
-        'pron': 'PRON',
-        '<komma>': 'PUNCT',
-        'konj': 'CCONJ',
-        'inf-merke': 'PART',
-        '<anf>': 'PUNCT',
-        'sbu': 'SCONJ',
-        '<strek>': 'PUNCT',
-        'ukjent': 'X', # feat: Foreign=Yes
-        '<parentes-beg>': 'PUNCT',
-        '<parentes-slutt>': 'PUNCT',
-        'interj': 'INTJ'
+        "verb": convert_verb_pos(),  #'VERB' or 'AUX',
+        "det": convert_det_pos(),  #'DET', 'PRON', 'NUM'
+        "adj": "ADJ",
+        "adv": "PART" if lemma in ["ikke", "ikkje", "ei"] else "ADV",  #'ADV',
+        "clb": "PUNCT",
+        "prep": convert_prep_pos(),  #'ADP',"PRON", 'ADV'
+        "pron": "PRON",
+        "<komma>": "PUNCT",
+        "konj": "CCONJ",
+        "inf-merke": "PART",
+        "<anf>": "PUNCT",
+        "sbu": "SCONJ",
+        "<strek>": "PUNCT",
+        "ukjent": "X",  # feat: Foreign=Yes
+        "<parentes-beg>": "PUNCT",
+        "<parentes-slutt>": "PUNCT",
+        "interj": "INTJ",
     }
     return pos_conversion.get(pos, pos)
 
 
 # Konverter feats
-
 
 
 def add_feats(token):
@@ -359,7 +396,7 @@ def add_feats(token):
         if overlaps(feats, verb_feats):
             return feats
         new_feats.append("pres")
-    return replace_placeholder(feats,new_feats)
+    return replace_placeholder(feats, new_feats)
 
 
 def convert_feats(token):
@@ -375,7 +412,7 @@ def map_feats(feats):
     for feat in mapped:
         if not isinstance(feat, dict):
             continue
-        for (feattype, val) in feat.items():
+        for feattype, val in feat.items():
             newfeats[feattype].add(val)
     formatted = [format_ud_feat(*feat) for feat in newfeats.items()]
     return formatted
@@ -385,7 +422,9 @@ def format_ud_feat(feat_type, feat_val):
     value = ",".join(sorted(feat_val, key=str.lower))
     return f"{feat_type}={value}"
 
+
 # Konverter POS og  morfologiske trekk fra NDT til UD
+
 
 def convert_morphology(data):
     conll_data = data.copy()
@@ -407,16 +446,8 @@ def process_file(filename, outputfile, add_comments):
     data = parse_conll_file(fpath)
     morphdata = convert_morphology(data)
     if outputfile is None:
-       outputfile = fpath.parent / f"{fpath.stem}_udmorph{fpath.suffix}"
+        outputfile = fpath.parent / f"{fpath.stem}_udmorph{fpath.suffix}"
     write_conll(morphdata, Path(outputfile), add_comments=add_comments)
-
-
-def process_ndt():
-    for part in ["train", "test", "dev"]:
-        for lang in ["nb", "nn"]:
-            infile = f"data/ndt_{lang}_{part}.conllu"
-            outfile = f"data/ndt_{lang}_{part}_udmorph.conllu",
-            process_file(infile, outfile, add_comments=True)
 
 
 if __name__ == "__main__":
