@@ -241,17 +241,17 @@ rule determiner_genitive {
 }
 
 rule determiner_flat_name_genitive {
-  pattern {DEP [upos=PROPN]; DEP2[Case=Gen]; e: GOV -[DET]-> DEP; DEP -[FLAT|flat]-> DEP2;}
-  commands { e.label = nmod }
+  pattern {DEP [upos=PROPN]; DEP2[Case=Gen]; e: GOV -[DET]-> DEP; DEP -[1=FLAT|flat]-> DEP2;}
+  commands { e.1 = nmod; e.2 =poss }
 }
 
 rule determiner_possessive {
   pattern {DEP [Poss=Yes]; e: GOV -[DET]-> DEP; }
-  commands { e.label = nmod }
+  commands { e.1 = nmod; e.2 = poss }
 }
 
 rule determiner {
-  pattern {DEP [upos=DET|PRON]; e: GOV -[DET]-> DEP; }
+  pattern {DEP [upos=DET|PRON, !Poss]; e: GOV -[DET]-> DEP; }
   commands { e.label = det }
 }
 
