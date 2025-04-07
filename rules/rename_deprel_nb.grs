@@ -465,10 +465,7 @@ rule temporal_aux_vare_ha { %problematic when it is changing cop to aux
 rule passive_subject_verbform {
   pattern {
     V [ upos=VERB, Voice=Pass, form=re".*s" ];
-    e: V -[ 1=nsubj|csubj ]-> S;
-  }
-  without {
-    e.2 = pass;
+    e: V -[ 1=nsubj|csubj, !2]-> S;
   }
   commands {
     e.2 = pass;
@@ -480,7 +477,7 @@ rule passive_subject_periphrastic {
   pattern {
     V [ VerbForm=Part ];
     V -[1=aux, 2=pass]-> *;
-    e: V -[ 1=nsubj|csubj, 2<>pass|outer]-> S;
+    e: V -[ 1=nsubj|csubj, !2]-> S;
   }
   commands {
     e.2 = pass;
@@ -490,7 +487,7 @@ rule passive_subject_periphrastic {
 rule inf_obj_control {
   pattern { DEP [ VerbForm=Inf|Part ];
             e: GOV -[ DOBJ | POBJ ]-> DEP; }
-  without {e2: DEP -[nsubj | csubj | nsubj:pass | csubj:pass ]-> SUB;}
+  without {e2: DEP -[1 = nsubj | csubj ]-> SUB;}
   commands { e.label = xcomp }
 }
 
@@ -498,7 +495,7 @@ rule inf_obj_control_aux {
   pattern { D2 [ VerbForm=Inf ];
             e1: GOV -[ DOBJ | POBJ ]-> D1;
             e2: D1 -[cop|aux|aux:pass]-> D2;}
-  without {e3: D1 -[nsubj | csubj | nsubj:pass | csubj:pass ]-> SUB;}
+  without {e3: D1 -[ 1 = nsubj | csubj ]-> SUB;}
   commands { e1.label = xcomp }
 }
 
@@ -548,15 +545,26 @@ rule error_og_adv {
 
 rule multiple_subjects_predicate_clause {
   pattern {
-    e: GOV -[nsubj | csubj ]-> D1;
+    e: GOV -[1 = nsubj | csubj, !2 ]-> D1;
   }
   with {
-    GOV -[nsubj | csubj ]-> D2;
+    GOV -[ 1 = nsubj | csubj ]-> D2;
     D1 << D2
   }
-  without {
+  commands {
     e.2 = outer;
   }
+}
+
+rule multiple_passive_subjects_predicate_clause {
+  pattern {
+    e: GOV -[1 = nsubj | csubj, 2 <> outer]-> D1;
+  }
+  with {
+    GOV -[ 1 = nsubj | csubj ]-> D2;
+    D1 << D2
+  }
+  without { e.2 = outer; }
   commands {
     e.2 = outer;
   }
