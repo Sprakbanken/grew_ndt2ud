@@ -1,30 +1,37 @@
 #!/bin/bash
 
-while getopts "i:l:" opt; do
+# Handle user input arguments
+while getopts "i:l:o:r:" opt; do
  case $opt in
     i) INPUT_FILE=$OPTARG ;;
-    l) LANG=$OPTARG ;;          # Must be nb or nn
+    l) L=$OPTARG ;;          # Must be nb or nn
+    o) OUTPUT_FILE=$OPTARG ;;
+    r) REPORTFILE=$OPTARG ;;
     \?) echo "Invalid option: -$OPTARG" >&2; exit 1 ;;
     :) echo "Option -$OPTARG requires an argument." >&2; exit 1 ;;
   esac
 done
 
-#LIA_FILE = /home/ingeridd/prosjekter/trebank/spoken_norwegian_resources/treebanks/Norwegian-NynorskLIA/aal_uio_02.conll
+: "${INPUT_FILE:?Need to set input file}"
+: "${L:?Need to set language with -l nb or -l nn}"
+: "${OUTPUT_FILE:=UD_output.conllu}"  # Set default output file name if not provided
+: "${REPORTFILE:=validation-report.txt}"  # Set default report file name if not provided
 
 # Create temporary directory
 TEMPDIR="tmp"
 mkdir -p $TEMPDIR
 
-OUTPUT_FILE="output.conllu"
-REPORTFILE="validation-report.txt"
-
-echo "--- CONVERT TREEBANK ---"
-echo "Language: $LANG"
-echo "Input file: $INPUT_FILE"
-echo "Output will be written to $OUTPUT_FILE and $REPORTFILE"
-
+echo "--- CONVERT NDT TREEBANK to UD ---"
+echo ""
+echo "--- Input parameters ---"
+echo "  Language: $L"
+echo "  Input NDT file: $INPUT_FILE"
+echo "  Output UD file: $OUTPUT_FILE"
+echo "  Validation report: $REPORTFILE"
+echo ""
 
 # START CONVERSION
+
 echo "--- Convert morphology: feats and pos-tags ---"
 TEMPFILE="${TEMPDIR}/01_convert_morph_output.conllu"
 python utils/convert_morph.py -f $INPUT_FILE -o $TEMPFILE
@@ -43,7 +50,7 @@ grew transform \
     -i  $TEMPFILE \
     -o  $TEMPOUT \
     -grs  rules/NDT_to_UD.grs \
-    -strat "main_$LANG" \
+    -strat "main_$L" \
     -safe_commands
 
 TEMPFILE=$TEMPOUT
