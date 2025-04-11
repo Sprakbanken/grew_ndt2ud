@@ -151,7 +151,7 @@
 # newpar
 # sent_id = 014188
 # text = ½ ts tørka timian
-1	½	½	det	det	_	2	DET	_	_
+1	½	½	det	det	kvant|fl	2	DET	_	_
 2	ts	ts	subst	subst	fork|appell	4	DET	_	_
 3	tørka	tørke	adj	adj	<perf-part>|m/f|ub|eint	4	ATR	_	_
 4	timian	timian	subst	subst	mask|appell|ub|eint	0	FRAG	_	_
