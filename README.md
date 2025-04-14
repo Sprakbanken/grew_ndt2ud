@@ -42,16 +42,17 @@ The rules are written with [Grew](https://grew.fr/) which needs to be [installed
 The whole conversion pipeline can be run with a single shell script:
 
 ``` shell
-./convert_ndt2ud.sh -v
+./convert_ndt2ud.sh -v -l nb -i path/to/input_file.conllu
 ```
 
 The script can take three optional arguments:
 
-| flag | valid arguments | description |
-| ---|---|---|
-| `-l` | `nb`, `nn` | 2 letter language code for bokmål and nynorsk. Default is `nb`. |
-| `-p` | `dev`, `test`, `train`, `gold` | Dataset split (partition). Default is `dev`, ie. the development set with approx. 2400 sentences. |
-| `-v` |  | Visualize the differences between the last official UD version and the new converted conllu file with MaltEval. |
+| flag | description |
+| --- | --- |
+| `-l` | Written language standard to convert for, either bokmål (`nb`) or nynorsk (`nn`). |
+| `-i` | Path to input file in conllu format. |
+| `-o` | (Optional) Path to output file. If not provided, write to `output.conllu` |
+| `-r` | (Optional) Path to validation report. If not provided, write to `validation_report.txt` |
 
 ### Alternative 2: Step by step
 
