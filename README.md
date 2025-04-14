@@ -56,8 +56,7 @@ The script can take three optional arguments:
 
 ### Alternative 2: Step by step
 
-The conversion can also be run step-by-step in the terminal. 
-
+The conversion can also be run step-by-step in the terminal.
 
 #### Development process
 
