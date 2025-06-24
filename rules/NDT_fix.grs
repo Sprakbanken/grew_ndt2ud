@@ -374,6 +374,20 @@ rule singular_determiners_pronoun_lemma {
 }
 
 
+rule singular_abbreviated_pronoun_lemma {
+    pattern {
+      X [
+          upos = PRON,
+          Abbr=Yes,
+          lemma = "D."|"d."
+      ]
+    }
+    commands {
+      X.lemma = "den";
+    }
+}
+
+
 rule plural_determiners_lemma {
     pattern {
       X [
