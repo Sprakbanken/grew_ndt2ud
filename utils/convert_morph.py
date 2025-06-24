@@ -4,7 +4,7 @@ import pandas as pd
 from parse_conllu import parse_conll_file, CONLLFIELDS, write_conll
 
 
-##### CONSTANTS
+# CONSTANTS
 
 symbols = ["$", "£", "%", ":(", ":)", "+", "-", "/", ">="]
 
@@ -95,10 +95,12 @@ pron_det_lemma_feats_map = {
 }
 
 
-pron_det_lemma_feats_map.update({posspron: "pers" for posspron in possessivepronouns})
+pron_det_lemma_feats_map.update(
+    {posspron: "pers" for posspron in possessivepronouns})
 
 
-pron_feats = ["pers", "dem", "sp", "res", "art", "ind", "negpron", "tot", "rel"]
+pron_feats = ["pers", "dem", "sp", "res",
+              "art", "ind", "negpron", "tot", "rel"]
 
 
 verb_feats = ["pres", "pret", "perf-part", "imp", "inf", "pres-part"]
@@ -135,7 +137,7 @@ featsmap = {
     "<punkt>": "_",  # tegnsetting, POS=PUNCT
     "<s-verb>": "_",
     "<spm>": "_",  # Spørsmålstegn, POS=PUNCT
-    "<utrop>": "_",  #! POS=PUNCT
+    "<utrop>": "_",  # ! POS=PUNCT
     "akk": {"Case": "Acc"},
     "appell": "_",  # Common noun, POS=NOUN
     "art": {"PronType": "Art"},
@@ -202,7 +204,7 @@ ud_feattypes = [
     "Voice",
 ]
 
-### UTILITY FUNCTIONS
+# UTILITY FUNCTIONS
 
 
 def is_ud_feat(feat):
@@ -354,12 +356,12 @@ def convert_pos(token, sentence):
     pos_conversion = {
         "subst": "PROPN" if "prop" in feats else "NOUN",
         "symb": "PUNCT" if lemma == "*" else "SYM",
-        "verb": convert_verb_pos(),  #'VERB' or 'AUX',
-        "det": convert_det_pos(),  #'DET', 'PRON', 'NUM'
+        "verb": convert_verb_pos(),  # 'VERB' or 'AUX',
+        "det": convert_det_pos(),  # 'DET', 'PRON', 'NUM'
         "adj": "ADJ",
-        "adv": "PART" if lemma in ["ikke", "ikkje", "ei"] else "ADV",  #'ADV',
+        "adv": "PART" if lemma in ["ikke", "ikkje", "ei"] else "ADV",  # 'ADV',
         "clb": "PUNCT",
-        "prep": convert_prep_pos(),  #'ADP',"PRON", 'ADV'
+        "prep": convert_prep_pos(),  # 'ADP',"PRON", 'ADV'
         "pron": "PRON",
         "<komma>": "PUNCT",
         "konj": "CCONJ",
@@ -424,8 +426,6 @@ def format_ud_feat(feat_type, feat_val):
 
 
 # Konverter POS og  morfologiske trekk fra NDT til UD
-
-
 def convert_morphology(data):
     conll_data = data.copy()
     for s in conll_data.get("sentences"):
