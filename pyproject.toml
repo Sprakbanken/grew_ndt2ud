@@ -8,8 +8,8 @@ authors = [
 ]
 dependencies = [
     "regex>=2024.11.6",
-    "udapi>=0.3.0",
-    "pandas>=2.2.3",
+    "udapi>=0.4.0",
+    "pandas>=2.3.0",
 ]
 readme = "README.md"
 license = {text = "MIT"}

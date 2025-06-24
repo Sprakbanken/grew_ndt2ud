@@ -1,4 +1,4 @@
-# Convert NDT to UD with Grew
+# Convert Norwegian Dependency Treebanks to Universal Dependency treebanks with Grew
 
 This repo contains scripts and rule files to convert syntactic and morphological annotations from the Norwegian dependency treebank [NDT](https://www.nb.no/sprakbanken/en/resource-catalogue/oai-nb-no-sbr-10/) to Universal Dependencies [UD](https://universaldependencies.org/).
 
@@ -8,16 +8,11 @@ The rules are written with [Grew](https://grew.fr/) which needs to be [installed
 
 1. Install the command line tool Grew: [Grew installation](https://grew.fr/usage/install/)
 
-2. Create a virtual environment and install the project dependencies. You can use pdm, uv or the python module venv:
+2. Create a virtual environment and install the project dependencies. You can use pdm or uv:
 
   ```shell
-  # Option: python venv
-  python -m venv .venv 
-  source .venv/bin/activate 
-  pip install -r requirements.txt 
-
   # Option: pdm 
-  pdm install 
+  pdm install
 
   # Option: uv
   uv sync 
