@@ -95,12 +95,10 @@ pron_det_lemma_feats_map = {
 }
 
 
-pron_det_lemma_feats_map.update(
-    {posspron: "pers" for posspron in possessivepronouns})
+pron_det_lemma_feats_map.update({posspron: "pers" for posspron in possessivepronouns})
 
 
-pron_feats = ["pers", "dem", "sp", "res",
-              "art", "ind", "negpron", "tot", "rel"]
+pron_feats = ["pers", "dem", "sp", "res", "art", "ind", "negpron", "tot", "rel"]
 
 
 verb_feats = ["pres", "pret", "perf-part", "imp", "inf", "pres-part"]

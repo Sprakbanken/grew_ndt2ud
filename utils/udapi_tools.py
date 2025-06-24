@@ -15,6 +15,7 @@ def process_document(input_file, output_file, processor):
     # Write the modified document to an output file
     doc.store_conllu(output_file)
 
+
 # %%
 if __name__ == "__main__":
     import argparse

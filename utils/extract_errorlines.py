@@ -3,8 +3,7 @@ import pandas as pd
 import re
 
 
-def report_errors(fpath: str ="validation-report_ndt2ud.txt", etype: str = None):
-
+def report_errors(fpath: str = "validation-report_ndt2ud.txt", etype: str = None):
     rows = Path(fpath).read_text(encoding="utf-8").split("\n")
 
     error_info_regx = re.compile(
@@ -46,7 +45,13 @@ if __name__ == "__main__":
 
     argparser = ArgumentParser()
     argparser.add_argument("-e", "--errortype_name", type=str, required=False)
-    argparser.add_argument("-f", "--filename", type=str, default="validation-report_ndt2ud.txt", required=False)
+    argparser.add_argument(
+        "-f",
+        "--filename",
+        type=str,
+        default="validation-report_ndt2ud.txt",
+        required=False,
+    )
     args = argparser.parse_args()
 
     report_errors(args.filename, args.errortype_name)
