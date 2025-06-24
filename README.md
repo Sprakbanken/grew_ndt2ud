@@ -42,7 +42,11 @@ The rules are written with [Grew](https://grew.fr/) which needs to be [installed
 The whole conversion pipeline can be run with a single shell script:
 
 ``` shell
-./convert_ndt2ud.sh -v -l nb -i path/to/input_file.conllu
+./convert_ndt2ud.sh -l nb -i path/to/input_file.conllu
+```
+
+```python
+pdm|uv run python convert_treebank_to_UD.py  -l nn -i input_file.conllu  -o output_file.conllu
 ```
 
 The script can take three optional arguments:
