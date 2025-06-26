@@ -2,7 +2,12 @@ from collections import defaultdict
 from pathlib import Path
 
 import pandas as pd
-from parse_conllu import CONLLFIELDS, parse_conll_file, write_conll
+
+from grew_ndt2ud.src.grew_ndt2ud.parse_conllu import (
+    CONLLFIELDS,
+    parse_conll_file,
+    write_conll,
+)
 
 ##### CONSTANTS
 
