@@ -6,9 +6,9 @@ import subprocess
 from pathlib import Path
 from subprocess import CompletedProcess
 
+from grew_ndt2ud import utils
 from grew_ndt2ud.morphological_features import convert_morphology
 from grew_ndt2ud.parse_conllu import parse_conll_file, write_conll
-from grew_ndt2ud.utils import udapi_fixes
 
 logging.basicConfig(level=logging.INFO)
 
@@ -50,7 +50,7 @@ def convert_ndt_to_ud(
 
     # Add MISC annotation 'SpaceAfter=No'
     temp_out = temp_dir / "02_udapy_spaceafter.conllu"
-    udapi_fixes(str(temp_file), str(temp_out))
+    utils.udapi_fixes(str(temp_file), str(temp_out))
     temp_file = temp_out
 
     print("--- Convert dependency relations ---")
@@ -75,7 +75,7 @@ def convert_ndt_to_ud(
 
     print("--- Fix punctuation ---")
     temp_out = temp_dir / "04_udapy_fixpunct.conllu"
-    udapi_fixes(str(temp_file), str(temp_out))
+    utils.udapi_fixes(str(temp_file), str(temp_out))
     temp_file = temp_out
 
     print("--- Fix errors introduced by udapy ---")
@@ -104,6 +104,29 @@ def convert_ndt_to_ud(
         for line in infile:
             outfile.write(line.replace("#  = # newpar", "# newpar"))
     shutil.copy(temp_out, output_file)
+
+
+def validate(
+    treebank_file: Path, report_file: Path, path_to_script: str = "validate.py"
+):
+    """Run the UD tools/validate.py script on a UD treebank"""
+    if not Path(path_to_script).exists:
+        utils.download_validation_script(path_to_script)
+    validation_process = subprocess.run(
+        [
+            "python",
+            path_to_script,
+            "--max-err",
+            "0",  # output all errors
+            "--lang",
+            "no",
+            treebank_file,
+        ],
+        capture_output=True,
+        text=True,
+    )
+    # TODO: experiment with writing either stderr or stdout
+    report_file.write_text(validation_process.stdout)
 
 
 def convert():
