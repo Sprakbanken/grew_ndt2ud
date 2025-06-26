@@ -10,8 +10,6 @@ from grew_ndt2ud import utils
 from grew_ndt2ud.morphological_features import convert_morphology
 from grew_ndt2ud.parse_conllu import parse_conll_file, write_conll
 
-logging.basicConfig(level=logging.INFO)
-
 
 def validate_language(value: str) -> str:
     """Validate that language is either 'nb' or 'nn'."""
@@ -26,34 +24,23 @@ def run_command(cmd: str | list, shell=False) -> CompletedProcess[bytes]:
     return subprocess.run(cmd, shell=shell, check=True)
 
 
-def convert_ndt_to_ud(
-    input_file: Path, language, output_file: Path, report_file: Path
-) -> None:
+def convert_ndt_to_ud(input_file: Path, language: str, output_file: Path) -> None:
     """Convert NDT treebank format to UD format."""
     temp_dir = Path("tmp")
     temp_dir.mkdir(exist_ok=True)
 
-    print("--- CONVERT NDT TREEBANK to UD ---")
-    print("")
-    print("--- Input parameters ---")
-    print(f"  Language: {language}")
-    print(f"  Input NDT file: {input_file}")
-    print(f"  Output UD file: {output_file}")
-    print(f"  Validation report: {report_file}")
-    print("")
-
-    print("--- Convert morphology: feats and pos-tags ---")
+    print("-01- Convert morphology: feats and pos-tags")
     temp_file = temp_dir / "01_convert_morph_output.conllu"
     conllu_data = parse_conll_file(input_file)
     morphdata = convert_morphology(conllu_data)
     write_conll(morphdata, temp_file, drop_comments=False)
 
-    # Add MISC annotation 'SpaceAfter=No'
+    print("-02- Add MISC annotation 'SpaceAfter=No'")
     temp_out = temp_dir / "02_udapy_spaceafter.conllu"
     utils.udapi_fixes(str(temp_file), str(temp_out))
     temp_file = temp_out
 
-    print("--- Convert dependency relations ---")
+    print("-03- Convert dependency relations")
     temp_out = temp_dir / "03_grew_transform_deprels.conllu"
 
     run_command(
@@ -73,12 +60,12 @@ def convert_ndt_to_ud(
     )
     temp_file = temp_out
 
-    print("--- Fix punctuation ---")
+    print("-04- Fix punctuation with udapy")
     temp_out = temp_dir / "04_udapy_fixpunct.conllu"
     utils.udapi_fixes(str(temp_file), str(temp_out))
     temp_file = temp_out
 
-    print("--- Fix errors introduced by udapy ---")
+    print("-05- Postprocess with Grew to fix errors introduced by udapy")
     temp_out = temp_dir / "05_grew_transform_postprocess.conllu"
 
     run_command(
@@ -98,7 +85,7 @@ def convert_ndt_to_ud(
     )
     temp_file = temp_out
 
-    # replace invalid newpar lines
+    print("-06- Replace invalid newpar lines ---")
     temp_out = temp_dir / "06_replace_newpar.conllu"
     with open(temp_file, "r") as infile, open(temp_out, "w") as outfile:
         for line in infile:
@@ -154,8 +141,29 @@ def convert():
         "-r",
         "--report",
         default="validation-report.txt",
+        type=Path,
         help="Validation report file (default: validation-report.txt)",
     )
 
     args = parser.parse_args()
-    convert_ndt_to_ud(args.input, args.language, args.output, args.report)
+
+    logging.basicConfig(
+        level=logging.ERROR,
+        format="%(levelname)s | %(asctime)s | %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
+    )
+    logging.info(
+        """START converting NDT treebank to UD
+    Input NDT file: %s
+    Output UD file: %s
+    Language: %s
+    Validation report: %s
+    """,
+        args.input,
+        args.output,
+        args.language,
+        args.report,
+    )
+
+    convert_ndt_to_ud(args.input, args.language, args.output)
+    # validate(args.output,  args.report)
