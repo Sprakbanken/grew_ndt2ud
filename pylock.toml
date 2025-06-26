@@ -50,6 +50,46 @@ dependencies = [
 ]
 
 [[packages]]
+name = "pre-commit"
+version = "4.2.0"
+requires-python = ">=3.9"
+sdist = {name = "pre_commit-4.2.0.tar.gz", url = "https://files.pythonhosted.org/packages/08/39/679ca9b26c7bb2999ff122d50faa301e49af82ca9c066ec061cfbc0c6784/pre_commit-4.2.0.tar.gz", hashes = {sha256 = "601283b9757afd87d40c4c4a9b2b5de9637a8ea02eaff7adc2d0fb4e04841146"}}
+wheels = [
+    {name = "pre_commit-4.2.0-py2.py3-none-any.whl",url = "https://files.pythonhosted.org/packages/88/74/a88bf1b1efeae488a0c0b7bdf71429c313722d1fc0f377537fbe554e6180/pre_commit-4.2.0-py2.py3-none-any.whl",hashes = {sha256 = "a009ca7205f1eb497d10b845e52c838a98b6cdd2102a6c8e4540e94ee75c58bd"}},
+]
+marker = "\"default\" in dependency_groups"
+
+[packages.tool.pdm]
+dependencies = [
+    "cfgv>=2.0.0",
+    "identify>=1.0.0",
+    "nodeenv>=0.11.1",
+    "pyyaml>=5.1",
+    "virtualenv>=20.10.0",
+]
+
+[[packages]]
+name = "pytest"
+version = "8.4.1"
+requires-python = ">=3.9"
+sdist = {name = "pytest-8.4.1.tar.gz", url = "https://files.pythonhosted.org/packages/08/ba/45911d754e8eba3d5a841a5ce61a65a685ff1798421ac054f85aa8747dfb/pytest-8.4.1.tar.gz", hashes = {sha256 = "7c67fd69174877359ed9371ec3af8a3d2b04741818c51e5e99cc1742251fa93c"}}
+wheels = [
+    {name = "pytest-8.4.1-py3-none-any.whl",url = "https://files.pythonhosted.org/packages/29/16/c8a903f4c4dffe7a12843191437d7cd8e32751d5de349d45d3fe69544e87/pytest-8.4.1-py3-none-any.whl",hashes = {sha256 = "539c70ba6fcead8e78eebbf1115e8b589e7565830d7d006a8723f19ac8a0afb7"}},
+]
+marker = "\"default\" in dependency_groups"
+
+[packages.tool.pdm]
+dependencies = [
+    "colorama>=0.4; sys_platform == \"win32\"",
+    "exceptiongroup>=1; python_version < \"3.11\"",
+    "iniconfig>=1",
+    "packaging>=20",
+    "pluggy<2,>=1.5",
+    "pygments>=2.7.2",
+    "tomli>=1; python_version < \"3.11\"",
+]
+
+[[packages]]
 name = "regex"
 version = "2024.11.6"
 requires-python = ">=3.8"
@@ -108,23 +148,17 @@ dependencies = [
 ]
 
 [[packages]]
-name = "pre-commit"
-version = "4.2.0"
+name = "pluggy"
+version = "1.6.0"
 requires-python = ">=3.9"
-sdist = {name = "pre_commit-4.2.0.tar.gz", url = "https://files.pythonhosted.org/packages/08/39/679ca9b26c7bb2999ff122d50faa301e49af82ca9c066ec061cfbc0c6784/pre_commit-4.2.0.tar.gz", hashes = {sha256 = "601283b9757afd87d40c4c4a9b2b5de9637a8ea02eaff7adc2d0fb4e04841146"}}
+sdist = {name = "pluggy-1.6.0.tar.gz", url = "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz", hashes = {sha256 = "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"}}
 wheels = [
-    {name = "pre_commit-4.2.0-py2.py3-none-any.whl",url = "https://files.pythonhosted.org/packages/88/74/a88bf1b1efeae488a0c0b7bdf71429c313722d1fc0f377537fbe554e6180/pre_commit-4.2.0-py2.py3-none-any.whl",hashes = {sha256 = "a009ca7205f1eb497d10b845e52c838a98b6cdd2102a6c8e4540e94ee75c58bd"}},
+    {name = "pluggy-1.6.0-py3-none-any.whl",url = "https://files.pythonhosted.org/packages/54/20/4d324d65cc6d9205fabedc306948156824eb9f0ee1633355a8f7ec5c66bf/pluggy-1.6.0-py3-none-any.whl",hashes = {sha256 = "e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746"}},
 ]
 marker = "\"default\" in dependency_groups"
 
 [packages.tool.pdm]
-dependencies = [
-    "cfgv>=2.0.0",
-    "identify>=1.0.0",
-    "nodeenv>=0.11.1",
-    "pyyaml>=5.1",
-    "virtualenv>=20.10.0",
-]
+dependencies = []
 
 [[packages]]
 name = "cfgv"
@@ -140,12 +174,38 @@ marker = "\"default\" in dependency_groups"
 dependencies = []
 
 [[packages]]
+name = "colorama"
+version = "0.4.6"
+requires-python = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
+sdist = {name = "colorama-0.4.6.tar.gz", url = "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz", hashes = {sha256 = "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"}}
+wheels = [
+    {name = "colorama-0.4.6-py2.py3-none-any.whl",url = "https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl",hashes = {sha256 = "4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"}},
+]
+marker = "\"default\" in dependency_groups"
+
+[packages.tool.pdm]
+dependencies = []
+
+[[packages]]
 name = "identify"
 version = "2.6.12"
 requires-python = ">=3.9"
 sdist = {name = "identify-2.6.12.tar.gz", url = "https://files.pythonhosted.org/packages/a2/88/d193a27416618628a5eea64e3223acd800b40749a96ffb322a9b55a49ed1/identify-2.6.12.tar.gz", hashes = {sha256 = "d8de45749f1efb108badef65ee8386f0f7bb19a7f26185f74de6367bffbaf0e6"}}
 wheels = [
     {name = "identify-2.6.12-py2.py3-none-any.whl",url = "https://files.pythonhosted.org/packages/7a/cd/18f8da995b658420625f7ef13f037be53ae04ec5ad33f9b718240dcfd48c/identify-2.6.12-py2.py3-none-any.whl",hashes = {sha256 = "ad9672d5a72e0d2ff7c5c8809b62dfa60458626352fb0eb7b55e69bdc45334a2"}},
+]
+marker = "\"default\" in dependency_groups"
+
+[packages.tool.pdm]
+dependencies = []
+
+[[packages]]
+name = "iniconfig"
+version = "2.1.0"
+requires-python = ">=3.8"
+sdist = {name = "iniconfig-2.1.0.tar.gz", url = "https://files.pythonhosted.org/packages/f2/97/ebf4da567aa6827c909642694d71c9fcf53e5b504f2d96afea02718862f3/iniconfig-2.1.0.tar.gz", hashes = {sha256 = "3abbd2e30b36733fee78f9c7f7308f2d0050e88f0087fd25c2645f63c773e1c7"}}
+wheels = [
+    {name = "iniconfig-2.1.0-py3-none-any.whl",url = "https://files.pythonhosted.org/packages/2c/e1/e6716421ea10d38022b952c159d5161ca1193197fb744506875fbb87ea7b/iniconfig-2.1.0-py3-none-any.whl",hashes = {sha256 = "9deba5723312380e77435581c6bf4935c94cbfab9b1ed33ef8d238ea168eb760"}},
 ]
 marker = "\"default\" in dependency_groups"
 
@@ -206,6 +266,32 @@ wheels = [
     {name = "numpy-2.3.1-cp312-cp312-win_arm64.whl",url = "https://files.pythonhosted.org/packages/04/a8/8a5e9079dc722acf53522b8f8842e79541ea81835e9b5483388701421073/numpy-2.3.1-cp312-cp312-win_arm64.whl",hashes = {sha256 = "7be91b2239af2658653c5bb6f1b8bccafaf08226a258caf78ce44710a0160d30"}},
 ]
 marker = "python_version >= \"3.12\" and \"default\" in dependency_groups"
+
+[packages.tool.pdm]
+dependencies = []
+
+[[packages]]
+name = "packaging"
+version = "25.0"
+requires-python = ">=3.8"
+sdist = {name = "packaging-25.0.tar.gz", url = "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz", hashes = {sha256 = "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"}}
+wheels = [
+    {name = "packaging-25.0-py3-none-any.whl",url = "https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl",hashes = {sha256 = "29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484"}},
+]
+marker = "\"default\" in dependency_groups"
+
+[packages.tool.pdm]
+dependencies = []
+
+[[packages]]
+name = "pygments"
+version = "2.19.2"
+requires-python = ">=3.8"
+sdist = {name = "pygments-2.19.2.tar.gz", url = "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz", hashes = {sha256 = "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"}}
+wheels = [
+    {name = "pygments-2.19.2-py3-none-any.whl",url = "https://files.pythonhosted.org/packages/c7/21/705964c7812476f378728bdf590ca4b771ec72385c533964653c68e86bdc/pygments-2.19.2-py3-none-any.whl",hashes = {sha256 = "86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b"}},
+]
+marker = "\"default\" in dependency_groups"
 
 [packages.tool.pdm]
 dependencies = []
@@ -350,19 +436,6 @@ marker = "\"default\" in dependency_groups"
 dependencies = []
 
 [[packages]]
-name = "colorama"
-version = "0.4.6"
-requires-python = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
-sdist = {name = "colorama-0.4.6.tar.gz", url = "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz", hashes = {sha256 = "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"}}
-wheels = [
-    {name = "colorama-0.4.6-py2.py3-none-any.whl",url = "https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl",hashes = {sha256 = "4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"}},
-]
-marker = "\"default\" in dependency_groups"
-
-[packages.tool.pdm]
-dependencies = []
-
-[[packages]]
 name = "termcolor"
 version = "3.1.0"
 requires-python = ">=3.9"
@@ -376,7 +449,7 @@ marker = "\"default\" in dependency_groups"
 dependencies = []
 
 [tool.pdm]
-hashes = {sha256 = "59c4500cc91754d679fae7771bcdbd61b5b9004a5965430ccae790bda46505ce"}
+hashes = {sha256 = "d4272f1bf7e4f809a3aec7086819bc304f8f1dad6006b094e88acef2b42a069b"}
 strategy = ["inherit_metadata", "static_urls"]
 
 [[tool.pdm.targets]]
