@@ -117,7 +117,7 @@ ipython_config.py
 #   install all needed dependencies.
 #Pipfile.lock
 
-# pdm 
+# pdm
 .pdm-python
 pdm.lock
 
@@ -180,3 +180,5 @@ conversion_stats_*
 tools
 data/search_results/*
 tmp*.conllu
+
+spoken_norwegian_resources
