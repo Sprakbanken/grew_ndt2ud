@@ -90,15 +90,21 @@ def convert_ndt_to_ud(input_file: Path, language: str, output_file: Path) -> Non
     with open(temp_file, "r") as infile, open(temp_out, "w") as outfile:
         for line in infile:
             outfile.write(line.replace("#  = # newpar", "# newpar"))
+
     shutil.copy(temp_out, output_file)
+    print(f"Done! UD treebank written to {output_file}")
 
 
 def validate(
-    treebank_file: Path, report_file: Path, path_to_script: str = "validate.py"
+    treebank_file: Path, report_file: Path, path_to_script: str = "tools/validate.py"
 ):
     """Run the UD tools/validate.py script on a UD treebank"""
-    if not Path(path_to_script).exists:
-        utils.download_validation_script(path_to_script)
+    if not Path(path_to_script).exists():
+        logging.error(
+            "Can't find the path to the validation script. "
+            "Clone the UniversalDependencies tools repo:\n\n"
+            "\tgit clone https://github.com/UniversalDependencies/tools.git"
+        )
     validation_process = subprocess.run(
         [
             "python",
@@ -112,11 +118,11 @@ def validate(
         capture_output=True,
         text=True,
     )
-    # TODO: experiment with writing either stderr or stdout
-    report_file.write_text(validation_process.stdout)
+    report_file.write_text(validation_process.stderr)
+    utils.report_errors(report_file)
 
 
-def convert():
+def convert_and_validate():
     import argparse
 
     parser = argparse.ArgumentParser(description="Convert NDT treebank to UD format")
@@ -149,7 +155,8 @@ def convert():
 
     logging.basicConfig(
         level=logging.ERROR,
-        format="%(levelname)s | %(asctime)s | %(message)s",
+        format="%(levelname)s | %(asctime)s | %(name)s | %(message)s",
+        filename="log.txt",
         datefmt="%Y-%m-%d %H:%M:%S",
     )
     logging.info(
@@ -165,5 +172,5 @@ def convert():
         args.report,
     )
 
-    convert_ndt_to_ud(args.input, args.language, args.output)
-    # validate(args.output,  args.report)
+    # convert_ndt_to_ud(args.input, args.language, args.output)
+    validate(args.output, args.report)

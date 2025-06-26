@@ -1,3 +1,3 @@
-from grew_ndt2ud import convert
+from grew_ndt2ud import convert_and_validate
 
-convert()
+convert_and_validate()
