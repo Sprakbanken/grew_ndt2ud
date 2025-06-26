@@ -202,7 +202,7 @@ def add_commentlines(sentence: dict) -> Generator:
 def write_conll(data: dict, conllu_filepath: str | Path, drop_comments: bool = False):
     """Format a dict with treebank data to conllu strings."""
 
-    def format_conllu_lines(sentences) -> Generator[str]:
+    def format_conllu_lines(sentences) -> Generator:
         for sentence in sentences:
             if not drop_comments:
                 yield from add_commentlines(sentence)

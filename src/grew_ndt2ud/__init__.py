@@ -50,7 +50,7 @@ def convert_ndt_to_ud(
 
     # Add MISC annotation 'SpaceAfter=No'
     temp_out = temp_dir / "02_udapy_spaceafter.conllu"
-    udapi_fixes(temp_file, temp_out)
+    udapi_fixes(str(temp_file), str(temp_out))
     temp_file = temp_out
 
     print("--- Convert dependency relations ---")
@@ -61,9 +61,9 @@ def convert_ndt_to_ud(
             "grew",
             "transform",
             "-i",
-            temp_file,
+            str(temp_file),
             "-o",
-            temp_out,
+            str(temp_out),
             "-grs",
             "rules/NDT_to_UD.grs",
             "-strat",
@@ -110,7 +110,9 @@ def convert():
     import argparse
 
     parser = argparse.ArgumentParser(description="Convert NDT treebank to UD format")
-    parser.add_argument("-i", "--input", required=True, help="Input NDT file")
+    parser.add_argument(
+        "-i", "--input", required=True, type=Path, help="Input NDT file"
+    )
     parser.add_argument(
         "-l",
         "--language",
@@ -122,6 +124,7 @@ def convert():
         "-o",
         "--output",
         default="UD_output.conllu",
+        type=Path,
         help="Output UD file (default: UD_output.conllu)",
     )
     parser.add_argument(

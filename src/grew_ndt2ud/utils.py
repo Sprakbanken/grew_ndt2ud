@@ -14,7 +14,7 @@ from udapi.block.ud.fixrightheaded import FixRightheaded
 from udapi.block.ud.setspaceafterfromtext import SetSpaceAfterFromText
 
 
-def udapi_fixes(input_file, output_file):
+def udapi_fixes(input_file: str, output_file: str):
     """Apply udapi block functions to a full treebank document."""
     doc = Document(filename=input_file)
 
