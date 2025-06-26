@@ -46,29 +46,6 @@ def download_validation_script(local_path: str | Path = "validate.py"):
     urllib.request.urlretrieve(raw_script_url, local_path)
 
 
-def validate_UD_treebank(
-    treebank_file: Path, report_file: Path, path_to_script: str = "validate.py"
-):
-    """Run the UD tools/validate.py script on a UD treebank"""
-    if not Path(path_to_script).exists:
-        download_validation_script(path_to_script)
-    validation_process = subprocess.run(
-        [
-            "python",
-            path_to_script,
-            "--max-err",
-            "0",  # output all errors
-            "--lang",
-            "no",
-            treebank_file,
-        ],
-        capture_output=True,
-        text=True,
-    )
-    # TODO: experiment with writing either stderr or stdout
-    report_file.write_text(validation_process.stdout)
-
-
 def report_errors(report_file: Path, error_type: str | None = None) -> None:
     """Parse the error report from the UniversalDependencies/tools/validate.py script,
     and print a compressed report with the sum of each error type.
