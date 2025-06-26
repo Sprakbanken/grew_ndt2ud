@@ -172,5 +172,5 @@ def convert_and_validate():
         args.report,
     )
 
-    # convert_ndt_to_ud(args.input, args.language, args.output)
+    convert_ndt_to_ud(args.input, args.language, args.output)
     validate(args.output, args.report)
