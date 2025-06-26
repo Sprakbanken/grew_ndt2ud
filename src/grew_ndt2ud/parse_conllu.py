@@ -190,7 +190,7 @@ def partition_by_sent_ids(data, id_files):
 
 
 # Skriv CONLLU-filer med eller uten kommentarlinjer
-def add_commentlines(sentence: dict) -> Generator[str]:
+def add_commentlines(sentence: dict) -> Generator:
     """Format comment lines with sentence metadata"""
     for meta, value in sentence.items():
         if meta in ("newpar", "newdoc"):
