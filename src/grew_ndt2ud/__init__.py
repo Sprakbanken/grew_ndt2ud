@@ -75,7 +75,7 @@ def convert_ndt_to_ud(
 
     print("--- Fix punctuation ---")
     temp_out = temp_dir / "04_udapy_fixpunct.conllu"
-    udapi_fixes(temp_file, temp_out)
+    udapi_fixes(str(temp_file), str(temp_out))
     temp_file = temp_out
 
     print("--- Fix errors introduced by udapy ---")
@@ -86,9 +86,9 @@ def convert_ndt_to_ud(
             "grew",
             "transform",
             "-i",
-            temp_file,
+            str(temp_file),
             "-o",
-            temp_out,
+            str(temp_out),
             "-grs",
             "rules/NDT_to_UD.grs",
             "-strat",
