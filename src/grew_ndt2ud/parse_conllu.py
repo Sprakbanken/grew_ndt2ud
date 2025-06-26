@@ -10,11 +10,11 @@ Below are additional functions to filter sentences on ids, load the parsed conll
 write conllu files with selected metadata (sent_id, text)
 """
 
-from pathlib import Path
 import re
-import pandas as pd
 from csv import QUOTE_NONE
+from pathlib import Path
 
+import pandas as pd
 
 # Conll fields
 

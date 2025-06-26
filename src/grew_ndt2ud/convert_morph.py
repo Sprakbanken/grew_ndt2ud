@@ -1,8 +1,8 @@
 from collections import defaultdict
 from pathlib import Path
-import pandas as pd
-from parse_conllu import parse_conll_file, CONLLFIELDS, write_conll
 
+import pandas as pd
+from parse_conllu import CONLLFIELDS, parse_conll_file, write_conll
 
 ##### CONSTANTS
 

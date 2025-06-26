@@ -1,6 +1,6 @@
 # %%
-from udapi.block.ud.setspaceafterfromtext import SetSpaceAfterFromText
 from udapi.block.ud.fixpunct import FixPunct
+from udapi.block.ud.setspaceafterfromtext import SetSpaceAfterFromText
 from udapi.core.document import Document
 
 
@@ -14,6 +14,7 @@ def process_document(input_file, output_file, processor):
 
     # Write the modified document to an output file
     doc.store_conllu(output_file)
+
 
 # %%
 if __name__ == "__main__":
