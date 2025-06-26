@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from grew_ndt2ud.src.grew_ndt2ud.parse_conllu import (
+from grew_ndt2ud.parse_conllu import (
     CONLLFIELDS,
     parse_conll_file,
     write_conll,
