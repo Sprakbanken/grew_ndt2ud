@@ -83,25 +83,28 @@ def validate_conll_lines(lines: list) -> list:
             print(invalidline.strip())
 
 
-def parse_line(conline: str) -> dict:
+def parse_line(conll_line: str) -> dict:
     """Parses a string containing a valid conll line and returns a dict
     with the UD field names as keys and values from the split string.
     ID and HEAD values are integers and '_' is replaced with None
 
     Parameter
     ----------
-    conline: str
+    conll_line: str
         a valid conll-formatted line
     """
 
-    vals = conline.strip().split("\t")
-    conlldict = dict(zip(CONLLFIELDS, vals))
+    vals = conll_line.strip().split("\t")
+    token = dict(zip(CONLLFIELDS, vals))
+    parsed = token.copy()
 
-    for k, v in conlldict.items():
+    for k, v in token.items():
         if k in ["ID", "HEAD"]:
-            conlldict[k] = int(v)
+            parsed[k] = int(v)  # type: ignore
+        if v is None or v == "":
+            v = "_"
 
-    return conlldict
+    return parsed
 
 
 def parse_conll_file(filepath: Path) -> dict:
