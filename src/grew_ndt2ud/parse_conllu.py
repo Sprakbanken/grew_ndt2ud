@@ -13,6 +13,7 @@ write conllu files with selected metadata (sent_id, text)
 import re
 from csv import QUOTE_NONE
 from pathlib import Path
+from typing import Generator
 
 import pandas as pd
 
@@ -188,33 +189,29 @@ def partition_by_sent_ids(data, id_files):
     return parts
 
 
-# Skriv CONLLU-filer med og uten kommentarlinjer
+# Skriv CONLLU-filer med eller uten kommentarlinjer
+def add_commentlines(sentence: dict) -> Generator[str]:
+    """Format comment lines with sentence metadata"""
+    for meta, value in sentence.items():
+        if meta in ("newpar", "newdoc"):
+            yield f"# {meta}\n"
+        elif meta in ("sent_id", "text", "dialect", "newpar id", "newdoc id"):
+            yield f"# {meta} = {value}\n"
 
 
-def add_commentlines(datadict, metadatafields):
-    for meta in metadatafields:
-        value = datadict.get(meta)
-        if not value:
-            continue
-        yield f"# {meta}\n" if meta in ["newpar", "newdoc"] else f"# {meta} = {value}\n"
+def write_conll(data: dict, conllu_filepath: str | Path, drop_comments: bool = False):
+    """Format a dict with treebank data to conllu strings."""
 
+    def format_conllu_lines(sentences) -> Generator[str]:
+        for sentence in sentences:
+            if not drop_comments:
+                yield from add_commentlines(sentence)
+            for token in sentence.get("tokens"):
+                yield "\t".join(map(str, token.values())) + "\n"
+            yield "\n"
 
-def iterate_conll_data_dict(data, add_comments=False):
-    for sentence in data.get("sentences"):
-        if add_comments:
-            # Can be 'sent_id', 'text', 'newpar' or 'newpar id', 'newdoc' or 'newdoc id'
-            for line in add_commentlines(sentence, ["newpar", "sent_id", "text"]):
-                yield line
-        for token in sentence.get("tokens"):
-            yield "\t".join(map(str, token.values())) + "\n"
-        yield "\n"
-    return "\n"
-
-
-def write_conll(data, path: Path, add_comments=False):
-    print(f"Write conll data to {path.name}")
-    output_data = iterate_conll_data_dict(data, add_comments=add_comments)
-    with open(path, "w+", encoding="utf-8") as fp:
+    output_data = format_conllu_lines(data["sentences"])
+    with open(conllu_filepath, "w+", encoding="utf-8") as fp:
         fp.writelines(output_data)
 
 
@@ -260,23 +257,3 @@ def write_df_to_conll(totaldf, path=None, add_comments=False):
         with Path(path).open(mode="w") as filepath:
             filepath.write(mystring)
     return mystring
-
-
-if __name__ == "__main__":
-    import argparse
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-rc", "--remove_comments", action="store_false")
-    parser.add_argument("-f", "--file", action="extend", nargs="+", type=str)
-    parser.add_argument("-o", "--outputfile", type=str, required=False)
-    args = parser.parse_args()
-
-    for filename in args.file:
-        outfile = args.outputfile if args.outputfile is not None else filename
-        write_conll(
-            parse_conll_file(Path(filename)),
-            Path(outfile),
-            add_comments=args.remove_comments,
-        )
-
-    print("Done.")
