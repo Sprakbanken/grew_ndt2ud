@@ -453,25 +453,3 @@ def convert_morphology(data: dict) -> dict:
             converted.append(token)
         s["tokens"] = converted
     return conll_data
-
-
-def process_file(filename, outputfile, add_comments):
-    # Konverter alle splittene av retokenisert ndt data
-    fpath = Path(filename)
-    data = parse_conll_file(fpath)
-    morphdata = convert_morphology(data)
-    if outputfile is None:
-        outputfile = fpath.parent / f"{fpath.stem}_udmorph{fpath.suffix}"
-    write_conll(morphdata, Path(outputfile), add_comments=add_comments)
-
-
-if __name__ == "__main__":
-    import argparse
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-rc", "--remove_comments", action="store_false")
-    parser.add_argument("-f", "--file")
-    parser.add_argument("-o", "--outputfile", default=None)
-    args = parser.parse_args()
-
-    process_file(args.file, args.outputfile, args.remove_comments)
