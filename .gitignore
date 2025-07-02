@@ -121,7 +121,7 @@ ipython_config.py
 
 # pdm
 .pdm-python
-pdm.lock
+*.lock
 
 
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow
