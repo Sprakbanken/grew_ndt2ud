@@ -6,9 +6,14 @@ import subprocess
 from pathlib import Path
 from subprocess import CompletedProcess
 
+import grewpy
+from grewpy import GRS, Corpus, CorpusDraft, Request
+
 from grew_ndt2ud import utils
 from grew_ndt2ud.morphological_features import convert_morphology
 from grew_ndt2ud.parse_conllu import parse_conll_file, write_conll
+
+grewpy.set_config("ud")
 
 
 def validate_language(value: str) -> str:
@@ -18,75 +23,51 @@ def validate_language(value: str) -> str:
     return value
 
 
-def run_command(cmd: str | list, shell=False) -> CompletedProcess[bytes]:
-    """Run a shell command and return the exit code."""
-    logging.info(f"Running: {cmd if isinstance(cmd, str) else ' '.join(cmd)}")
-    return subprocess.run(cmd, shell=shell, check=True)
-
-
-def convert_ndt_to_ud(input_file: Path, language: str, output_file: Path) -> None:
+def convert_ndt_to_ud(input_file: str, language: str, output_file: str) -> None:
     """Convert NDT treebank format to UD format."""
-    temp_dir = Path("tmp")
-    temp_dir.mkdir(exist_ok=True)
+    temp_dir = "tmp"
+    Path(temp_dir).mkdir(exist_ok=True)
 
     print("-01- Convert morphology: feats and pos-tags")
-    temp_file = temp_dir / "01_convert_morph_output.conllu"
-    conllu_data = parse_conll_file(input_file)
+    temp_file = f"{temp_dir}/01_convert_morph_output.conllu"
+    conllu_data = parse_conll_file(Path(input_file))
     morphdata = convert_morphology(conllu_data)
     write_conll(morphdata, temp_file, drop_comments=False)
 
     print("-02- Add MISC annotation 'SpaceAfter=No'")
-    temp_out = temp_dir / "02_udapy_spaceafter.conllu"
-    utils.udapi_fixes(str(temp_file), str(temp_out))
+    temp_out = f"{temp_dir}/02_udapy_spaceafter.conllu"
+    utils.udapi_fixes(temp_file, temp_out)
     temp_file = temp_out
 
     print("-03- Convert dependency relations")
-    temp_out = temp_dir / "03_grew_transform_deprels.conllu"
+    temp_out = f"{temp_dir}/03_grew_transform_deprels.conllu"
+    grs_file = "rules/NDT_to_UD.grs"
 
-    run_command(
-        [
-            "grew",
-            "transform",
-            "-i",
-            str(temp_file),
-            "-o",
-            str(temp_out),
-            "-grs",
-            "rules/NDT_to_UD.grs",
-            "-strat",
-            f"main_{language}",
-            "-safe_commands",
-        ]
-    )
+    corpus = Corpus(temp_file)
+    grs = GRS(grs_file)
+    corpus.apply(grs, strat=f"main_{language}")
+
+    with Path(temp_out).open("w") as fp:
+        fp.write(corpus.to_conll())
     temp_file = temp_out
 
     print("-04- Fix punctuation with udapy")
-    temp_out = temp_dir / "04_udapy_fixpunct.conllu"
-    utils.udapi_fixes(str(temp_file), str(temp_out))
+    temp_out = f"{temp_dir}/04_udapy_fixpunct.conllu"
+    utils.udapi_fixes(temp_file, temp_out)
     temp_file = temp_out
 
     print("-05- Postprocess with Grew to fix errors introduced by udapy")
-    temp_out = temp_dir / "05_grew_transform_postprocess.conllu"
+    temp_out = f"{temp_dir}/05_grew_transform_postprocess.conllu"
+    corpus = Corpus(temp_file)
+    grs = GRS(grs_file)
+    corpus.apply(grs, strat="postprocess")
 
-    run_command(
-        [
-            "grew",
-            "transform",
-            "-i",
-            str(temp_file),
-            "-o",
-            str(temp_out),
-            "-grs",
-            "rules/NDT_to_UD.grs",
-            "-strat",
-            "postprocess",
-            "-safe_commands",
-        ]
-    )
+    with Path(temp_out).open("w") as fp:
+        fp.write(corpus.to_conll())
     temp_file = temp_out
 
     print("-06- Replace invalid newpar lines ---")
-    temp_out = temp_dir / "06_replace_newpar.conllu"
+    temp_out = f"{temp_dir}/06_replace_newpar.conllu"
     with open(temp_file, "r") as infile, open(temp_out, "w") as outfile:
         for line in infile:
             outfile.write(line.replace("#  = # newpar", "# newpar"))

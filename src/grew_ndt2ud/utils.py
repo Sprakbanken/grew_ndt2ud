@@ -1,6 +1,5 @@
 import logging
 import re
-import subprocess
 import urllib.request
 from pathlib import Path
 
@@ -12,6 +11,7 @@ from udapi.block.ud.fixmultisubjects import FixMultiSubjects
 from udapi.block.ud.fixpunct import FixPunct
 from udapi.block.ud.fixrightheaded import FixRightheaded
 from udapi.block.ud.setspaceafterfromtext import SetSpaceAfterFromText
+from udapi.block.util.normalize import Normalize
 
 
 def udapi_fixes(input_file: str, output_file: str):
@@ -22,28 +22,26 @@ def udapi_fixes(input_file: str, output_file: str):
     spaceafter = SetSpaceAfterFromText()
     spaceafter.run(document=doc)
 
-    fixpunct = FixPunct(check_paired_punct_upos=True)
-    fixpunct.run(document=doc)
-
-    fix_chain = FixChain()
-    fix_chain.run(document=doc)
-
     fix_multisubj = FixMultiSubjects()
     fix_multisubj.run(document=doc)
-
-    fix_right = FixRightheaded()
-    fix_right.run(document=doc)
 
     fix_leaf = FixLeaf(deprels="aux,cop,case,mark,cc,det")
     fix_leaf.run(document=doc)
 
+    fix_chain = FixChain()
+    fix_chain.run(document=doc)
+
+    fix_right = FixRightheaded()
+    fix_right.run(document=doc)
+
+    fixpunct = FixPunct(check_paired_punct_upos=True)
+    fixpunct.run(document=doc)
+
+    normalize_order = Normalize()
+    normalize_order.run(document=doc)
+
     # Write the modified document to an output file
     doc.store_conllu(output_file)
-
-
-def download_validation_script(local_path: str | Path = "validate.py"):
-    raw_script_url = "https://raw.githubusercontent.com/UniversalDependencies/tools/refs/heads/master/validate.py"
-    urllib.request.urlretrieve(raw_script_url, local_path)
 
 
 def report_errors(report_file: Path, error_type: str | None = None) -> None:
@@ -65,7 +63,7 @@ def report_errors(report_file: Path, error_type: str | None = None) -> None:
     for row in rows:
         m = error_info_regx.fullmatch(row)
         if m is None:
-            logging.error("Couldn't match this with the regex pattern: %s", row)
+            logging.debug("Couldn't match this with the regex pattern: %s", row)
             continue
         errors.append(m.groups())
 
@@ -88,5 +86,5 @@ def report_errors(report_file: Path, error_type: str | None = None) -> None:
 
     type_counts = df.errortype.value_counts()
 
-    print("Report summary:")
-    print(type_counts)
+    print("Validation report summary:")
+    print(type_counts.sort_index())
