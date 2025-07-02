@@ -13,12 +13,19 @@ dependencies = [
     "pre-commit>=4.2.0",
     "pytest>=8.4.1",
     "grewpy>=0.6.0",
+    "ruff>=0.12.1"
 ]
 readme = "README.md"
 license = {text = "MIT"}
 
 [tool.pdm]
 distribution = true
+
+[tool.ruff]
+line-length = 100  # default is 88
+
+[tool.ruff.lint]
+select = ["I"]
 
 [build-system]
 requires = ["pdm-backend"]
