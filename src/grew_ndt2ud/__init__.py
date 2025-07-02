@@ -5,6 +5,7 @@ import shutil
 import subprocess
 from pathlib import Path
 
+import grewpy
 from grewpy import GRS, Corpus, CorpusDraft, Request
 
 from grew_ndt2ud import utils
@@ -44,9 +45,8 @@ def convert_ndt_to_ud(input_file: str, language: str, output_file: str) -> None:
     corpus = Corpus(temp_file)
     grs = GRS(grs_file)
     corpus.apply(grs, strat=f"main_{language}")
-
-    with Path(temp_out).open("w") as fp:
-        fp.write(corpus.to_conll())
+    conll = corpus.to_conll()
+    Path(temp_out).write_text(conll)  # type: ignore
     temp_file = temp_out
 
     print("-04- Fix punctuation with udapy")
@@ -59,9 +59,8 @@ def convert_ndt_to_ud(input_file: str, language: str, output_file: str) -> None:
     corpus = Corpus(temp_file)
     grs = GRS(grs_file)
     corpus.apply(grs, strat="postprocess")
-
-    with Path(temp_out).open("w") as fp:
-        fp.write(corpus.to_conll())
+    conll = corpus.to_conll()
+    Path(temp_out).write_text(conll)  # type: ignore
     temp_file = temp_out
 
     print("-06- Replace invalid newpar lines ---")
@@ -133,9 +132,9 @@ def convert_and_validate():
     args = parser.parse_args()
 
     logging.basicConfig(
-        level=logging.ERROR,
+        level=logging.DEBUG,
         format="%(levelname)s | %(asctime)s | %(name)s | %(message)s",
-        filename="log.txt",
+        filename="conversion.log",
         datefmt="%Y-%m-%d %H:%M:%S",
     )
     logging.info(
