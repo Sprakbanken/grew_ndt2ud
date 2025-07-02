@@ -227,9 +227,7 @@ def is_neg(token):
 
 
 def is_copula(token, deps):
-    return get_field(token, "LEMMA") in ("være", "vere") and has_dep_label(
-        "SPRED", deps
-    )
+    return get_field(token, "LEMMA") in ("være", "vere") and has_dep_label("SPRED", deps)
 
 
 def has_dep_label(deprel, deps):

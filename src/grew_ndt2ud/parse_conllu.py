@@ -164,9 +164,7 @@ def fetch_ids(datafile):
 
 
 def extract_partition(data, id_list):
-    partition = [
-        sent for sent in data.get("sentences") if sent.get("sent_id") in id_list
-    ]
+    partition = [sent for sent in data.get("sentences") if sent.get("sent_id") in id_list]
     return sorted(partition, key=lambda x: x.get("sent_id"))
 
 

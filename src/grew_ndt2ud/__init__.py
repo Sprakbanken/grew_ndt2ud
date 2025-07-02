@@ -4,9 +4,7 @@ import logging
 import shutil
 import subprocess
 from pathlib import Path
-from subprocess import CompletedProcess
 
-import grewpy
 from grewpy import GRS, Corpus, CorpusDraft, Request
 
 from grew_ndt2ud import utils
@@ -77,7 +75,9 @@ def convert_ndt_to_ud(input_file: str, language: str, output_file: str) -> None:
 
 
 def validate(
-    treebank_file: Path, report_file: Path, path_to_script: str = "tools/validate.py"
+    treebank_file: Path,
+    report_file: Path,
+    path_to_script: str = "tools/validate.py",
 ):
     """Run the UD tools/validate.py script on a UD treebank"""
     if not Path(path_to_script).exists():
@@ -107,9 +107,7 @@ def convert_and_validate():
     import argparse
 
     parser = argparse.ArgumentParser(description="Convert NDT treebank to UD format")
-    parser.add_argument(
-        "-i", "--input", required=True, type=Path, help="Input NDT file"
-    )
+    parser.add_argument("-i", "--input", required=True, type=Path, help="Input NDT file")
     parser.add_argument(
         "-l",
         "--language",
