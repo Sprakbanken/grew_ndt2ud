@@ -1,5 +1,5 @@
 [project]
-name = "grew_ndt2ud"
+name = "ndt2ud"
 version = "0.1.0"
 requires-python = ">=3.12"
 description = "Code to convert the Norwegian Dependency Treebank (NDT) to Universal Dependencies (UD)"
@@ -21,8 +21,8 @@ license = {text = "MIT"}
 [tool.pdm]
 distribution = true
 
-[tool.ruff]
-line-length = 100  # default is 88
+[project.scripts]
+ndt2ud = "ndt2ud:convert_and_validate"
 
 [tool.ruff.lint]
 select = ["I"]

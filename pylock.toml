@@ -62,25 +62,6 @@ dependencies = [
 ]
 
 [[packages]]
-name = "pre-commit"
-version = "4.2.0"
-requires-python = ">=3.9"
-sdist = {name = "pre_commit-4.2.0.tar.gz", url = "https://files.pythonhosted.org/packages/08/39/679ca9b26c7bb2999ff122d50faa301e49af82ca9c066ec061cfbc0c6784/pre_commit-4.2.0.tar.gz", hashes = {sha256 = "601283b9757afd87d40c4c4a9b2b5de9637a8ea02eaff7adc2d0fb4e04841146"}}
-wheels = [
-    {name = "pre_commit-4.2.0-py2.py3-none-any.whl",url = "https://files.pythonhosted.org/packages/88/74/a88bf1b1efeae488a0c0b7bdf71429c313722d1fc0f377537fbe554e6180/pre_commit-4.2.0-py2.py3-none-any.whl",hashes = {sha256 = "a009ca7205f1eb497d10b845e52c838a98b6cdd2102a6c8e4540e94ee75c58bd"}},
-]
-marker = "\"default\" in dependency_groups"
-
-[packages.tool.pdm]
-dependencies = [
-    "cfgv>=2.0.0",
-    "identify>=1.0.0",
-    "nodeenv>=0.11.1",
-    "pyyaml>=5.1",
-    "virtualenv>=20.10.0",
-]
-
-[[packages]]
 name = "pytest"
 version = "8.4.1"
 requires-python = ">=3.9"
@@ -144,22 +125,6 @@ marker = "\"default\" in dependency_groups"
 dependencies = []
 
 [[packages]]
-name = "udapi"
-version = "0.4.0"
-requires-python = ">=3.9"
-sdist = {name = "udapi-0.4.0.tar.gz", url = "https://files.pythonhosted.org/packages/1e/91/28e87d32d01a34a557fe05d64ffe550935f842c88990669bdbc69d782dba/udapi-0.4.0.tar.gz", hashes = {sha256 = "2763ad818d89279c1954c243117db3dbdf1968d1749e84a1108c3d9a2058ddf5"}}
-wheels = [
-    {name = "udapi-0.4.0-py3-none-any.whl",url = "https://files.pythonhosted.org/packages/d7/50/66ea15b5a243d15e2ea772f9536ec1fcefa0330db6b678863e8101242542/udapi-0.4.0-py3-none-any.whl",hashes = {sha256 = "bcc5899d88bc0545ab2fde15cf1fdeb51f9a1787658d31cbfbf4e5e175d88a39"}},
-]
-marker = "\"default\" in dependency_groups"
-
-[packages.tool.pdm]
-dependencies = [
-    "colorama",
-    "termcolor",
-]
-
-[[packages]]
 name = "ruff"
 version = "0.12.1"
 requires-python = ">=3.7"
@@ -187,6 +152,41 @@ marker = "\"default\" in dependency_groups"
 
 [packages.tool.pdm]
 dependencies = []
+
+[[packages]]
+name = "udapi"
+version = "0.4.0"
+requires-python = ">=3.9"
+sdist = {name = "udapi-0.4.0.tar.gz", url = "https://files.pythonhosted.org/packages/1e/91/28e87d32d01a34a557fe05d64ffe550935f842c88990669bdbc69d782dba/udapi-0.4.0.tar.gz", hashes = {sha256 = "2763ad818d89279c1954c243117db3dbdf1968d1749e84a1108c3d9a2058ddf5"}}
+wheels = [
+    {name = "udapi-0.4.0-py3-none-any.whl",url = "https://files.pythonhosted.org/packages/d7/50/66ea15b5a243d15e2ea772f9536ec1fcefa0330db6b678863e8101242542/udapi-0.4.0-py3-none-any.whl",hashes = {sha256 = "bcc5899d88bc0545ab2fde15cf1fdeb51f9a1787658d31cbfbf4e5e175d88a39"}},
+]
+marker = "\"default\" in dependency_groups"
+
+[packages.tool.pdm]
+dependencies = [
+    "colorama",
+    "termcolor",
+]
+
+[[packages]]
+name = "pre-commit"
+version = "4.2.0"
+requires-python = ">=3.9"
+sdist = {name = "pre_commit-4.2.0.tar.gz", url = "https://files.pythonhosted.org/packages/08/39/679ca9b26c7bb2999ff122d50faa301e49af82ca9c066ec061cfbc0c6784/pre_commit-4.2.0.tar.gz", hashes = {sha256 = "601283b9757afd87d40c4c4a9b2b5de9637a8ea02eaff7adc2d0fb4e04841146"}}
+wheels = [
+    {name = "pre_commit-4.2.0-py2.py3-none-any.whl",url = "https://files.pythonhosted.org/packages/88/74/a88bf1b1efeae488a0c0b7bdf71429c313722d1fc0f377537fbe554e6180/pre_commit-4.2.0-py2.py3-none-any.whl",hashes = {sha256 = "a009ca7205f1eb497d10b845e52c838a98b6cdd2102a6c8e4540e94ee75c58bd"}},
+]
+marker = "\"default\" in dependency_groups"
+
+[packages.tool.pdm]
+dependencies = [
+    "cfgv>=2.0.0",
+    "identify>=1.0.0",
+    "nodeenv>=0.11.1",
+    "pyyaml>=5.1",
+    "virtualenv>=20.10.0",
+]
 
 [[packages]]
 name = "pluggy"

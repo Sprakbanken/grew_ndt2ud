@@ -80,7 +80,9 @@ def report_errors(report_file: Path, error_type: str | None = None) -> None:
         ],
     )
     if error_type is not None:
-        df[df.errortype.str.contains(error_type)].to_csv(f"error_{error_type}.csv", index=False)
+        df[df.errortype.str.contains(error_type)].to_csv(
+            f"error_{error_type}.csv", index=False
+        )
 
     type_counts = df.errortype.value_counts()
 

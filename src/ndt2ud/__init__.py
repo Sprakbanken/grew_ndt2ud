@@ -8,9 +8,9 @@ from pathlib import Path
 import grewpy
 from grewpy import GRS, Corpus, CorpusDraft, Request
 
-from grew_ndt2ud import utils
-from grew_ndt2ud.morphological_features import convert_morphology
-from grew_ndt2ud.parse_conllu import parse_conll_file, write_conll
+from ndt2ud import utils
+from ndt2ud.morphological_features import convert_morphology
+from ndt2ud.parse_conllu import parse_conll_file, write_conll
 
 grewpy.set_config("ud")
 
@@ -106,7 +106,9 @@ def convert_and_validate():
     import argparse
 
     parser = argparse.ArgumentParser(description="Convert NDT treebank to UD format")
-    parser.add_argument("-i", "--input", required=True, type=Path, help="Input NDT file")
+    parser.add_argument(
+        "-i", "--input", required=True, type=Path, help="Input NDT file"
+    )
     parser.add_argument(
         "-l",
         "--language",

@@ -3,13 +3,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from grew_ndt2ud.parse_conllu import (
-    CONLLFIELDS,
-    parse_conll_file,
-    write_conll,
-)
-
-##### CONSTANTS
+from ndt2ud.parse_conllu import CONLLFIELDS
 
 symbols = ["$", "£", "%", ":(", ":)", "+", "-", "/", ">="]
 
@@ -140,7 +134,7 @@ featsmap = {
     "<punkt>": "_",  # tegnsetting, POS=PUNCT
     "<s-verb>": "_",
     "<spm>": "_",  # Spørsmålstegn, POS=PUNCT
-    "<utrop>": "_",  #! POS=PUNCT
+    "<utrop>": "_",  # ! POS=PUNCT
     "akk": {"Case": "Acc"},
     "appell": "_",  # Common noun, POS=NOUN
     "art": {"PronType": "Art"},
@@ -207,7 +201,7 @@ ud_feattypes = [
     "Voice",
 ]
 
-### UTILITY FUNCTIONS
+# UTILITY FUNCTIONS
 
 
 def is_ud_feat(feat):
@@ -227,7 +221,9 @@ def is_neg(token):
 
 
 def is_copula(token, deps):
-    return get_field(token, "LEMMA") in ("være", "vere") and has_dep_label("SPRED", deps)
+    return get_field(token, "LEMMA") in ("være", "vere") and has_dep_label(
+        "SPRED", deps
+    )
 
 
 def has_dep_label(deprel, deps):
@@ -365,12 +361,12 @@ def convert_pos(token, sentence) -> str:
     pos_conversion = {
         "subst": "PROPN" if "prop" in feats else "NOUN",
         "symb": "PUNCT" if (lemma == "*") else "SYM",
-        "verb": convert_verb_pos(),  #'VERB' or 'AUX',
-        "det": convert_det_pos(),  #'DET', 'PRON', 'NUM'
+        "verb": convert_verb_pos(),  # 'VERB' or 'AUX',
+        "det": convert_det_pos(),  # 'DET', 'PRON', 'NUM'
         "adj": "ADJ",
-        "adv": "PART" if lemma in ["ikke", "ikkje", "ei"] else "ADV",  #'ADV',
+        "adv": "PART" if lemma in ["ikke", "ikkje", "ei"] else "ADV",  # 'ADV',
         "clb": "PUNCT",
-        "prep": convert_prep_pos(),  #'ADP',"PRON", 'ADV'
+        "prep": convert_prep_pos(),  # 'ADP',"PRON", 'ADV'
         "pron": "PRON",
         "<komma>": "PUNCT",
         "konj": "CCONJ",
@@ -434,11 +430,8 @@ def format_ud_feat(feat_type, feat_val):
     return f"{feat_type}={value}"
 
 
-# Konverter POS og  morfologiske trekk fra NDT til UD
-
-
 def convert_morphology(data: dict) -> dict:
-    """Iterate through the sentences of a treebank and convert the POS tags and morphological features."""
+    """Convert the POS tags and morphological features from NDT to UD."""
     conll_data = data.copy()
     for s in conll_data["sentences"]:
         sentence = s["tokens"]
