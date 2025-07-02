@@ -8,19 +8,14 @@ The rules are written with [Grew](https://grew.fr/) which needs to be [installed
 
 1. Install the command line tool Grew: [Grew installation](https://grew.fr/usage/install/)
 
-2. Create a virtual environment and install the project dependencies. You can use pdm, uv or the python module venv:
+2. Create a virtual environment and install the project dependencies. You can use pdm or uv to manage the project installation:
 
   ```shell
-  # Option: python venv
-  python -m venv .venv 
-  source .venv/bin/activate 
-  pip install -r requirements.txt 
-
-  # Option: pdm 
-  pdm install 
+  # Option: pdm
+  pdm install
 
   # Option: uv
-  uv sync 
+  uv sync
   ```
 
 3. Extract the java tool [MaltEval](https://www.maltparser.org/malteval.html) from the zipped file in `./utils/`
@@ -37,104 +32,55 @@ The rules are written with [Grew](https://grew.fr/) which needs to be [installed
 
 ## Convert the treebank
 
-### Alternative 1: Shell script
-
-The whole conversion pipeline can be run with a single shell script:
+The whole conversion pipeline can be run with a single python script:
 
 ``` shell
-./convert_ndt2ud.sh -v -l nb -i path/to/input_file.conllu
+❯ pdm run python -m grew_ndt2ud -h
+connected to port: 33783
+usage: __main__.py [-h] -i INPUT -l LANGUAGE [-o OUTPUT] [-r REPORT]
+
+Convert NDT treebank to UD format
+
+options:
+  -h, --help            show this help message and exit
+  -i, --input INPUT     Input NDT file
+  -l, --language LANGUAGE
+                        Language (must be nb or nn)
+  -o, --output OUTPUT   Output UD file (default: UD_output.conllu)
+  -r, --report REPORT   Validation report file (default: validation-report.txt)
 ```
 
-The script can take three optional arguments:
+## Visualize and evaluate the treebank with MaltEval
 
-| flag | description |
-| --- | --- |
-| `-l` | Written language standard to convert for, either bokmål (`nb`) or nynorsk (`nn`). |
-| `-i` | Path to input file in conllu format. |
-| `-o` | (Optional) Path to output file. If not provided, write to `output.conllu` |
-| `-r` | (Optional) Path to validation report. If not provided, write to `validation_report.txt` |
+Compare the result with a previous version of UD
 
-### Alternative 2: Step by step
+1. Remove comment lines from the file before running it through [MaltEval](https://www.maltparser.org/malteval.html).
 
-The conversion can also be run step-by-step in the terminal.
+```shell
+python utils/parse_conllu.py -rc -f $CONVERTED -o tmp.conllu
+```
 
-#### Development process
+2. Evaluate relation statistics
 
-The rules were developed with the following step-by-step approach.
+  **UAS / Unlabelled Accuracy Score**: whether a directed relation R(x,y) exists between the same nodes x, y in the other treebank
+  **LAS / Labelled Accuracy Score**: whether the labelled, directed relation R(x,y) exists between nodes x,y
 
-1. Run Grew with the main strategy file:
+Score the relation accuracy with (`--Metric LAS`) or without (`--Metric UAS`) dependency labels.
 
-    ```shell
-    LANG=nb
-    PARTITION=dev #train
-    NDT_FILE=data/ndt_${LANG}_${PARTITION}_udmorph.conllu
-    CONVERTED=data/grew_output_${PARTITION}.conllu
+```shell
+java -jar dist-20141005/lib/MaltEval.jar \
+  -s {PATH_TO_CONVERTED_TREEBANK} \
+  -g {PATH_TO_GOLD_STANDARD} \
+  --GroupBy Deprel \
+  --Metric LAS #or UAS \
+> conversion_stats.txt
+```
 
-    grew transform \
-      -i  $NDT_FILE \
-      -o  $CONVERTED \
-      -grs  rules/NDT_to_UD.grs \
-      -strat "main_$LANG" \
-      -safe_commands
-    ```
+3. Visualize and compare sentence graphs in MaltEval
 
-2. Fix punctuation:
-
-   We use udapi  [udapi](https://udapi.github.io/) + our own post processing rules to fix head attachment and direction of relations to the sentence internal punctuations.
-
-   ``` shell
-   cat $CONVERTED | udapy -s ud.FixPunct > tmp.conllu
-
-   grew transform \
-    -i tmp.conllu \
-    -o $CONVERTED \
-    -grs rules/NDT_to_UD.grs \
-    -strat "postprocess" \
-    -safe_commands
-
-   # Remove comment line with column names
-   tail -n +2  $CONVERTED > tmp.conllu && mv tmp.conllu $CONVERTED
-   ```
-
-3. Validate the output with [UD's validation script](https://github.com/UniversalDependencies/tools/blob/master/validate.py):
-
-   ``` shell
-   python tools/validate.py --max-err 0 --lang no $CONVERTED 2>&1 | tee validation-report_ndt2ud.txt
-   python utils/extract_errorlines.py -f validation-report_ndt2ud.txt
-   ```
-
-4. Compare the result with a previous version of UD
-
-   Remove comment lines from the file before running it through [MaltEval](https://www.maltparser.org/malteval.html).
-
-    ```shell
-    python utils/parse_conllu.py -rc -f $CONVERTED -o tmp.conllu
-    ```
-
-   a. Relation statistics
-
-      Swap the commented `METRIC` line to score the relation accuracy with or without dependency labels.
-
-      ```shell
-      # UAS / Unlabelled Accuracy Score: whether a directed relation R(x,y) exists between the same nodes x, y in the other treebank
-      # LAS / Labelled Accuracy Score: whether the labelled, directed relation R(x,y) exists between nodes x,y
-      METRIC=LAS
-      #METRIC=UAS
-      UD_OFFICIAL=data/${LANG}-ud-${PARTITION}_uten_hash.conllu
-
-      java -jar dist-20141005/lib/MaltEval.jar \
-        -s tmp.conllu \
-        -g $UD_OFFICIAL \
-        --GroupBy Deprel \
-        --Metric $METRIC \
-      > conversion_stats_${LANG}_${PARTITION}_${METRIC}.txt
-      ```
-
-   b. Visualize and compare sentence graphs in MaltEval
-
-      ```shell
-      java -jar dist-20141005/lib/MaltEval.jar -s tmp.conllu -g $UD_OFFICIAL -v 1
-      ```
+```shell
+java -jar dist-20141005/lib/MaltEval.jar -s {PATH_TO_CONVERTED_TREEBANK} -g {PATH_TO_GOLD_STANDARD} -v 1
+```
 
 ## Grew rules
 
@@ -150,20 +96,6 @@ We also used `grew grep` to match sentences and develop [request patterns](https
 grew grep -request rules/testpattern.req -i $NDT_FILE -html -dep_dir data/search_results > data/search_results/pattern_matches.json
 ```
 
-### Data selection
-
-We gathered a few example sentences in the [`data/sentences`](data/sentences/) folder to try out the effects of different patterns, rules and strategies. Example code to extract the matched sentences in `pattern_matches.json` from NDT to a separate conllu file can be found in the jupyter notebook [`process_NDT.ipynb`](process_NDT.ipynb).
-
-### Test strategy
-
-```shell
-grew transform \
-  -i  data/sentences/testsents.conllu \
-  -o  data/output.conll \
-  -grs  rules/teststrategy.grs \
-  -strat test \
-  -safe_commands
-```
 
 ### Utilities
 
