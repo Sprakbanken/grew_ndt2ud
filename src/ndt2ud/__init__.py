@@ -105,7 +105,9 @@ def validate(
 def convert_and_validate():
     import argparse
 
-    parser = argparse.ArgumentParser(description="Convert NDT treebank to UD format")
+    parser = argparse.ArgumentParser(
+        prog="ndt2ud", description="Convert NDT treebank to UD format"
+    )
     parser.add_argument(
         "-i", "--input", required=True, type=Path, help="Input NDT file"
     )
