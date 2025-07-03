@@ -13,6 +13,8 @@ from udapi.block.ud.fixrightheaded import FixRightheaded
 from udapi.block.ud.setspaceafterfromtext import SetSpaceAfterFromText
 from udapi.block.util.normalize import Normalize
 
+from ndt2ud.parse_conllu import parse_conll_file, write_conll
+
 
 def udapi_fixes(input_file: str, output_file: str):
     """Apply udapi block functions to a full treebank document."""
@@ -88,3 +90,17 @@ def report_errors(report_file: Path, error_type: str | None = None) -> None:
 
     print("Validation report summary:")
     print(type_counts.sort_index())
+
+
+def remove_comments(conllu_file: str | Path, output_file: str | Path | None = None):
+    """Remove commented lines with sentence metadata.
+
+    Write data to `{conllu_file}_without_metadata.conllu` by default,
+    otherwise `output_file` if provided.
+    """
+    conllu_file = Path(conllu_file)
+    conllu_data = parse_conll_file(conllu_file)
+
+    if output_file is None:
+        output_file = conllu_file.parent / f"{conllu_file.stem}_without_metadata.conllu"
+    write_conll(conllu_data, output_file, drop_comments=True)
