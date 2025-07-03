@@ -131,12 +131,13 @@ def parse_conll_file(filepath: Path) -> dict:
             conlldict["sentences"].append(sentdict)
             sentdict = {"tokens": []}
         elif matchobj := NEWPARDOCPATTERN.match(line):
-            sentdict[matchobj.group(1)] = True
+            metadata = matchobj.group(1)
+            sentdict[metadata] = True  # type: ignore
         elif matchobj := COMMENTPATTERN.match(line):
             metadata = matchobj.group(1)
             if metadata == "ud_id" or metadata == "id":
                 metadata = "sent_id"
-            sentdict[metadata] = matchobj.group(2)
+            sentdict[metadata] = matchobj.group(2)  # type: ignore
 
         elif TOKENLINEPATTERN.match(line):
             sentdict["tokens"].append(parse_line(line))
