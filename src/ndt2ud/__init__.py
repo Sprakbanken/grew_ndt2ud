@@ -109,14 +109,14 @@ def convert_and_validate():
         prog="ndt2ud", description="Convert NDT treebank to UD format"
     )
     parser.add_argument(
-        "-i", "--input", required=True, type=Path, help="Input NDT file"
-    )
-    parser.add_argument(
         "-l",
         "--language",
         required=True,
         type=validate_language,
         help="Language (must be nb or nn)",
+    )
+    parser.add_argument(
+        "-i", "--input", required=True, type=Path, help="Input NDT file"
     )
     parser.add_argument(
         "-o",
