@@ -92,15 +92,7 @@ def report_errors(report_file: Path, error_type: str | None = None) -> None:
     print(type_counts.sort_index())
 
 
-def remove_comments(conllu_file: str | Path, output_file: str | Path | None = None):
-    """Remove commented lines with sentence metadata.
-
-    Write data to `{conllu_file}_without_metadata.conllu` by default,
-    otherwise `output_file` if provided.
-    """
-    conllu_file = Path(conllu_file)
-    conllu_data = parse_conll_file(conllu_file)
-
-    if output_file is None:
-        output_file = conllu_file.parent / f"{conllu_file.stem}_without_metadata.conllu"
-    write_conll(conllu_data, output_file, drop_comments=True)
+def remove_comment_lines(input_file: str, output_file: str):
+    """Remove all lines starting with `#` from a file."""
+    with open(input_file, "r") as infile, open(output_file, "w") as outfile:
+        outfile.writelines(line for line in infile if not line.startswith("#"))
