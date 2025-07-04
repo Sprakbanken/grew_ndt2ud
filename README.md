@@ -21,7 +21,7 @@ The rules are written with [Grew](https://grew.fr/) which needs to be [installed
 3. Extract the java tool [MaltEval](https://www.maltparser.org/malteval.html) from the zipped file in `./utils/`
 
   ``` shell
-  unzip utils/MaltEval-dist.zip
+  unzip MaltEval-dist.zip
   ```
 
 4. Clone the official [UD tools](https://github.com/UniversalDependencies/tools/) repo for validating UD conllu files.
@@ -32,97 +32,71 @@ The rules are written with [Grew](https://grew.fr/) which needs to be [installed
 
 ## Convert the treebank
 
-The whole conversion pipeline can be run with a single python script:
+The conversion pipeline can be run with the CLI script `ndt2ud`:
 
 ``` shell
-❯ pdm run python -m grew_ndt2ud -h
-connected to port: 33783
-usage: __main__.py [-h] -i INPUT -l LANGUAGE [-o OUTPUT] [-r REPORT]
+❯ python -m ndt2ud -h
+connected to port: XXX
+usage: ndt2ud [-h] -l LANGUAGE -i INPUT [-o OUTPUT] [-r REPORT]
 
 Convert NDT treebank to UD format
 
 options:
   -h, --help            show this help message and exit
-  -i, --input INPUT     Input NDT file
   -l, --language LANGUAGE
                         Language (must be nb or nn)
+  -i, --input INPUT     Input NDT file
   -o, --output OUTPUT   Output UD file (default: UD_output.conllu)
   -r, --report REPORT   Validation report file (default: validation-report.txt)
 ```
 
-## Visualize and evaluate the treebank with MaltEval
+## Evaluate the treebanks dependency relations
 
-Compare the result with a previous version of UD
+Compare the conversion result with a previous version of UD with [MaltEval](https://www.maltparser.org/malteval.html). See the [User Guide pdf](dist-20141005/doc/MaltEvalUserGuide.pdf) for more info.
 
-1. Remove comment lines from the file before running it through [MaltEval](https://www.maltparser.org/malteval.html).
+Score the dependency relation accuracy with (`--Metric LAS`) or without (`--Metric UAS`) dependency labels.
 
-```shell
-python utils/parse_conllu.py -rc -f $CONVERTED -o tmp.conllu
-```
-
-2. Evaluate relation statistics
-
-  **UAS / Unlabelled Accuracy Score**: whether a directed relation R(x,y) exists between the same nodes x, y in the other treebank
-  **LAS / Labelled Accuracy Score**: whether the labelled, directed relation R(x,y) exists between nodes x,y
-
-Score the relation accuracy with (`--Metric LAS`) or without (`--Metric UAS`) dependency labels.
+- **UAS / Unlabelled Accuracy Score**: whether a directed relation R(x,y) exists between the same nodes x, y in the other treebank
+- **LAS / Labelled Accuracy Score**: whether the labelled, directed relation R(x,y) exists between nodes x,y
 
 ```shell
+# Remove commented lines
+grep -v '^#' {PATH_TO_CONVERTED_TREEBANK} > {PATH_TO_TREEBANK_WITHOUT_COMMENTS}
+
+# Run the evaluation
 java -jar dist-20141005/lib/MaltEval.jar \
-  -s {PATH_TO_CONVERTED_TREEBANK} \
+  -s {PATH_TO_TREEBANK_WITHOUT_COMMENTS} \
   -g {PATH_TO_GOLD_STANDARD} \
   --GroupBy Deprel \
-  --Metric LAS #or UAS \
+  --Metric LAS \
 > conversion_stats.txt
 ```
 
-3. Visualize and compare sentence graphs in MaltEval
+## Visualize sentence graphs
 
 ```shell
-java -jar dist-20141005/lib/MaltEval.jar -s {PATH_TO_CONVERTED_TREEBANK} -g {PATH_TO_GOLD_STANDARD} -v 1
+# Remove commented lines
+grep -v '^#' {PATH_TO_CONVERTED_TREEBANK} > {PATH_TO_TREEBANK_WITHOUT_COMMENTS}
+
+# Run viewer tool
+java -jar dist-20141005/lib/MaltEval.jar \
+  -v 1 \
+  -s {PATH_TO_TREEBANK_WITHOUT_COMMENTS} \
+  -g {PATH_TO_GOLD_STANDARD}
 ```
 
 ## Grew rules
 
-The [rules-folder](./rules/) contains `grs`-files with [rules](https://grew.fr/doc/rule/) and [strategies](https://grew.fr/doc/grs/) which are applied in a certain order, as defined in the `main_nb` and `main_nn` strategies in [NDT_to_UD.grs](rules/NDT_to_UD.grs).
+The [`rules`](./rules)-folder contains `grs`-files with [`grew` rules](https://grew.fr/doc/rule/) and [strategies](https://grew.fr/doc/grs/) which are applied in a certain order.
+The `main_nb` (bokmål) and `main_nn` (nynorsk) strategies in [`rules/NDT_to_UD.grs`](rules/NDT_to_UD.grs) define the respective pipelines that modify the sentence graphs in the treebank.
 
-See also the Grew documentation on [commands](https://grew.fr/doc/commands/) for more information.
+See the notebook [`notebooks/rule_workflow.ipynb`](notebooks/rule_workflow.ipynb) (in Norwegian, with python) for a step-by-step approach to writing rules.
 
-### Match sentences with Grew pattens
+See also the Grew documentation on [requests](https://grew.fr/doc/request/) and [commands](https://grew.fr/doc/commands/) for more information about the syntax.
 
-We also used `grew grep` to match sentences and develop [request patterns](https://grew.fr/doc/request/) for the rules, to ensure we targeted the correct structures.
+## Resources
 
-``` shell
-grew grep -request rules/testpattern.req -i $NDT_FILE -html -dep_dir data/search_results > data/search_results/pattern_matches.json
-```
-
-
-### Utilities
-
-- [`2023_gullkorpus_ud.conllu`](./data/gullkorpus/2023_gullkorpus_ud.conllu) contains 200 manually corrected sententes from the Norwegian bokmål UD treebank. This gold standard is used to evaluate the conversion.
-
-- The jupyter notebook [`process_NDT.ipynb`](process_NDT.ipynb) was used for data exploration and to develop intermediate processing steps.
-
-- [`utils/convert_morph.py`](utils/convert_morph.py) converts the conllu columns `FEATS` and `UPOS` from NDT to UD labels.
-
-```shell
-python utils/convert_morph.py -f 'data/gullkorpus/2019_gullkorpus_ndt.conllu' -o 'data/gullkorpus/2019_gullkorpus_ndt_udmorph.conllu'
-```
-
-- [`utils/parse_conllu.py`](utils/convert_morph.py) can be run with the flag `-rc` to remove comment lines from a conllu file.
-
-``` shell
-python utils/parse_conllu.py -rc -f data/gullkorpus/2019_gullkorpus_ndt.conllu -o data/gullkorpus/2019_gullkorpus_ndt_uten_hash.conllu
-```
-
-- [udapi](https://udapi.github.io/) is used to add `SpaceAfter=No` to the `MISC` field, fix projectivity and punctuation issues, etc:
-
-``` shell
-cat $CONVERTED | udapy -s ud.SetSpaceAfterFromText ud.FixPunct ud.FixRightheaded ud.FixLeaf > out.conllu
-```
-
-## References
-
+- [`data/2023_gullkorpus_ud.conllu`](./data/gullkorpus/2023_gullkorpus_ud.conllu) contains 200 manually corrected sententes from the Norwegian bokmål UD treebank. This gold standard is used to evaluate the conversion.
 - [UD annotation guidelines](https://universaldependencies.org/guidelines.html)
 - [NDT annotation guidelines](https://www.nb.no/sbfil/dok/20140314_guidelines_ndt_english.pdf)
 - [Starting a new treebank? Go SUD!](https://aclanthology.org/2021.depling-1.4) (Gerdes et al., DepLing 2021)
