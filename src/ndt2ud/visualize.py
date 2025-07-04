@@ -13,15 +13,17 @@ def visualize_graph_displacy(
     nlp: ConllParser | None = None,
     output_name: str | None = None,
 ) -> str:
-    if nlp is None:
-        nlp = ConllParser(init_parser("nb_core_news_lg", "spacy"))
-
     conllstr = graph.to_conll()
+
+    if "nlp" not in globals():
+        if nlp is None:
+            nlp = ConllParser(init_parser("nb_core_news_md", "spacy"))
+
     doc = nlp.parse_conll_text_as_spacy(conllstr)  # type:ignore
-    svg = displacy.render(doc, style="dep", jupyter=False)
+    visual_graph = displacy.render(doc, style="dep", jupyter=False)
     if output_name is not None:
-        Path(f"{output_name}.svg").write_text(svg)
-    return svg
+        Path(f"{output_name}.svg").write_text(visual_graph)
+    return visual_graph
 
 
 def visualize_treebank_displacy(
