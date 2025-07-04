@@ -13,13 +13,14 @@ dependencies = [
     "pre-commit>=4.2.0",
     "pytest>=8.4.1",
     "grewpy>=0.6.0",
-    "ruff>=0.12.1"
+    "ruff>=0.12.1",
+    "grew>=0.5.1",
+    "spacy>=3.8.7",
+    "spacy-conll>=4.0.1",
+    "pyconll>=3.2.0"
 ]
 readme = "README.md"
 license = {text = "MIT"}
-
-[tool.pdm]
-distribution = true
 
 [project.scripts]
 ndt2ud = "ndt2ud:convert_and_validate"
@@ -27,6 +28,15 @@ ndt2ud = "ndt2ud:convert_and_validate"
 [tool.ruff.lint]
 select = ["I"]
 
+[tool.pdm]
+distribution = true
+
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+    "pip>=25.1.1",
+]
