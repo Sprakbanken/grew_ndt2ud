@@ -40,13 +40,13 @@ package spoken {
   % TODO: conj:dicto should be reverserd when change into reparandum: the rule below builds non projective punct, it should be refined!
   %  rule conjdicto {
   %    pattern { e: N -[conj:dicto]-> M; }
-  %    commands { 
-  %      del_edge e; 
+  %    commands {
+  %      del_edge e;
   %      shift_in N ==> M;   % reparandum should be reversed (see: https://surfacesyntacticud.github.io/guidelines/u/oral_language/conj_dicto/)
   %      shift_out N =[punct]=> M;
   %      add_edge M -[reparandum]-> N; }
   %  }
-  
+
   rule no_dep_on_cc {
     pattern { H -[cc]-> C; e:  C -[^reparandum|conj:dicto|conj]-> N }
     without { e.label = unk; N.InIdiom=Yes } % Except UD "fixed"
@@ -459,7 +459,7 @@ package sub_relations {
     commands {e.1=ccomp}
   }
 
-  % a Scrapped SCONJ is considered as verbal 
+  % a Scrapped SCONJ is considered as verbal
   % Ex: "et il se dit que…" [Rhap_M0023-19]
   rule ccomp_scrap{
     pattern { e:H -[1=comp, 2=obj]-> D; D[upos=SCONJ,Scrap=Yes]}
@@ -846,9 +846,9 @@ rule remove_UDplus_subtypes {
 rule non_projective_punct {
   % track invalid UD structure "Punctuation must not cause non-projectivity"
   pattern { e: A -[punct]-> B; f: C -> D; e >< f; B << f }
-  commands { 
-    del_edge e; 
-    add_edge C -[punct]-> B; 
+  commands {
+    del_edge e;
+    add_edge C -[punct]-> B;
   }
 }
 

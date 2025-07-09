@@ -16,4 +16,3 @@ rule successive_same_label {
     }
     commands {add_edge D1 -[new_label]-> D2;}
 }
-

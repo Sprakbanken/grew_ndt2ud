@@ -112,16 +112,16 @@ rule appos_to_conj {
 rule change_det_to_obl {
     global { sent_id = "007590" }
     pattern {
-        X [upos=DET]; 
-        Y [upos=ADP]; 
-        Z [upos=PRON]; 
+        X [upos=DET];
+        Y [upos=ADP];
+        Z [upos=PRON];
         ROT -[nsubj]-> NOM;
-        e: NOM -[det]-> X; 
-        X-[nmod]-> Z; 
+        e: NOM -[det]-> X;
+        X-[nmod]-> Z;
         Z -[case]-> Y;
     }
     commands {
-      add_edge f: ROT -> X; 
+      add_edge f: ROT -> X;
       f.label = obl;
       del_edge e;
     }
@@ -132,7 +132,7 @@ rule conj_left_to_right {
   global { sent_id <> "015775" }
   pattern {
       HEAD -> N1;
-      e: HEAD -[conj]-> N2; 
+      e: HEAD -[conj]-> N2;
       N2 -[cc]-> C;
       N1 << N2;
       N1 < C;
@@ -140,7 +140,7 @@ rule conj_left_to_right {
   }
   commands {
     add_edge f: N1 -> N2;
-    f.label = conj; 
+    f.label = conj;
     del_edge e;
   }
 }
@@ -149,7 +149,7 @@ rule conj_left_to_right_with_dashes {
   global { sent_id <> "015775" }
   pattern {
       HEAD -> N1;
-      e: HEAD -[conj]-> N2; 
+      e: HEAD -[conj]-> N2;
       N2 -[cc]-> C;
       N1 << N2;
       P [upos=PUNCT];
@@ -159,7 +159,7 @@ rule conj_left_to_right_with_dashes {
   }
   commands {
     add_edge f: N1 -> N2;
-    f.label = conj; 
+    f.label = conj;
     del_edge e;
   }
 }

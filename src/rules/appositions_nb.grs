@@ -25,7 +25,7 @@ package restructuring_1 {
 
     rule abbreviations_APP_to_FLAT {
         pattern {
-            TITLE [Abbr];
+            TITLE [upos=NOUN, Abbr];
             NAME  [upos=PROPN];
             e: NAME -[ APP ]-> TITLE;
             TITLE < NAME;
@@ -34,7 +34,6 @@ package restructuring_1 {
             TITLE -[DET]-> *;
         }
         commands {
-            TITLE.nom=y;
             del_edge e;
             shift NAME ==> TITLE;
             add_edge f: TITLE -> NAME;
@@ -185,23 +184,13 @@ package relabelling {
     % Eksempel 8692: "- Det gjelder både kostymene og det at de [V=løfter] hverandre, [N=noe] som ikke er lov i konkurranser."
     rule V-APP-N_to_dislocated {
         pattern {
-            N [nom=y];
+            N [nom=Y];
             V [upos=VERB|AUX];
             e: V -[APP]-> N;
         }
         commands {
             e.label = dislocated;
         }
-    }
-
-    % Adjectival predicate to separated element --> dislocated
-    rule ADJ_predicate_APP_to_dislocated {
-        pattern {
-            N [nom=y];
-            P [upos=ADJ];
-            e: P -[APP]-> N;
-        }
-        commands { e.label = dislocated; }
     }
 
     % 7: Verbal elements --> KOORD
@@ -214,7 +203,9 @@ package relabelling {
             e: V1 -[APP]-> V2;
             V1 << V2;
         }
-        commands { e.label = KOORD; }
+        commands {
+            e.label = KOORD;
+        }
     }
 }
 
@@ -226,22 +217,13 @@ rule APP_to_dislocated_fallback {
         e: GOV -[APP]-> DEP;
         H -> GOV;
     }
-    without { H [!upos] }  % Ensure H is a node in the sentence tree
     commands {
         del_edge e;
         add_edge f: H -> DEP;
         f.label = dislocated;
+        f.fallback=y;
     }
 }
-
-rule non_nominal_root_dislocated {
-    pattern { e: H -[APP]-> D; }
-    without { H[upos=NOUN|PROPN] }
-    without { D[upos=NOUN|PROPN] }
-    with {R -> H; R[!upos] }
-    commands { e.label = dislocated }
-}
-
 
 % clean up additional features
 package clean_up {
@@ -261,8 +243,6 @@ strat main_ {
         restructuring,
         Onf (relabelling),
         Onf (APP_to_dislocated_fallback),
-        Onf (non_nominal_root_dislocated),
         Onf (clean_up),
     )
 }
-
