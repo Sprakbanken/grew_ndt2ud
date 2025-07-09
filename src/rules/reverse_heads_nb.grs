@@ -3,7 +3,7 @@ package copula {
   % cop: reverser hodet i (ledd)setninger der "være" er hodet, med SPRED, men uten PSUBJ. Predikativet er ny rot.
   rule focustype_head_SPRED_copula {
     pattern {
-      H [ lemma="være"|"vere", upos <> ADJ ];
+      H [ lemma="være" ];
       e: H -[SPRED | INFV ]-> D; % Mulig at vi skal ha en egen behandling av tilfeller med INFV
     }
     without {
@@ -20,7 +20,7 @@ package copula {
   % Setningsantisiperende: Predikativet blir hode, PSUBJ-leddsetning blir csubj, "være" blir kopula på predikativet.
   rule clause_anticipating_copula {
     pattern {
-      H [ lemma="være"|"vere", upos <> ADJ];
+      H [ lemma="være" ];
       e1: H -[SPRED]-> D1;
       e2: H -[PSUBJ]-> D2;
       D2 [upos <> NOUN|PRON|PROPN];
@@ -37,7 +37,7 @@ package copula {
   % kombinasjoner av hjelpeverb og kopula
   rule reverse_cop_aux {
     pattern {
-      COP [lemma="være"|"vere"];
+      COP [lemma="være"];
       AUX [upos=AUX];
       e1: AUX -[ INFV ]-> COP;
       e2: COP -[ SPRED ]-> SPRED;
@@ -56,7 +56,7 @@ package copula {
 
   rule reverse_cop_aux_aux {
     pattern {
-      COP [lemma="være"|"vere" ];
+      COP [lemma="være"];
       AUX1 [upos=AUX];
       AUX2 [upos=AUX];
       e1: AUX1 -[ INFV ]-> AUX2;
@@ -87,14 +87,14 @@ package shift_sentence_internal {
   rule reverse_lex_aux_verbs {
     pattern {
       H [upos=AUX];
-      D [upos=VERB|ADJ, VerbForm];
+      D [upos=VERB];
       e: H -[INFV]-> D;
     }
     commands {
       del_edge e;
       shift H ==> D;
       add_edge f: D -> H;
-      f.1 = aux;
+      f.label = aux;
     }
   }
 
@@ -117,15 +117,12 @@ package shift_sentence_internal {
   }
 
   % hvis ikke ... ("if not")
-  rule hvis_ikke_adv {
+  rule hvis_adv {
     pattern {
-      DEP [ lemma="hvis"|"viss"|"om"|"dersom" ];
-      N1 [form="ikke"|"ikkje"];
+      DEP [ lemma="hvis" ];
+      N1 [form="ikke"];
       e: GOV -[ ADV ]-> DEP;
       e2: DEP -> N1;
-    }
-    without {
-      DEP -> N2; N2 [upos <> PUNCT];
     }
     commands {
       del_edge e;
@@ -136,61 +133,26 @@ package shift_sentence_internal {
 
       add_edge f2: GOV -> N1;
       f2.label = advcl;
-    }
-  }
-
-  % nynorsk: om ikkje ... ("if not...")
-  rule om_ikkje_adj {
-    pattern {
-      DEP [ lemma="om", upos=SCONJ ];
-      N1 [form="ikke"|"ikkje"];
-      N2 [upos=ADJ|PRON];
-      e: GOV -[ ADV ]-> DEP;
-      e2: DEP -[ADV]-> N1;
-      e3: DEP -> N2;
-      DEP < N1; N1 << N2;
-    }
-    commands {
-      add_edge f: GOV -> N2; f.label = e.label;  % should this be e3.label instead?
-      add_edge f2: N2 -> DEP; f2.label = mark;
-      add_edge f3: N2 -> N1; f3.label = advmod;
-
-      del_edge e;
-      del_edge e2;
-      del_edge e3;
-    }
-  }
-
-  % 014423 "Ja , dei rike må byrja å betala skatt , og ja , gresk og søreuropeisk økonomi (...)"
-  rule coordinated_interjection {
-    pattern {
-      I [upos=INTJ];
-      N [upos=CCONJ];
-      H -[KONJ]-> N;
-      e: N -[INTERJ]-> I;
-    }
-    commands {
-      add_edge f: H -> I; f.label = e.label;
-      del_edge e;
-    }
+      }
   }
 
   rule det_should_not_have_children {
-    pattern {
-      H -[DET]-> DEP;
-      DEP [upos = DET];
-      e: DEP -> Y; 
-    }
-    commands {
-      add_edge f: H -> Y;
-      f.label = e.label;
-      del_edge e;
-    }
+  pattern {
+    H -[DET]-> DEP;
+    DEP [upos = DET];
+    e: DEP -> Y;
   }
-
+  commands {
+    add_edge f: H -> Y;
+    f.label = e.label;
+    del_edge e;
+  }
 }
+}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-package comma {
+package coordination {
 
   rule shift_komma_fst_conj {
     pattern {
@@ -231,134 +193,48 @@ package comma {
         f3.label = punct;
     }
   }
-}
 
-% The symbol "/" between units of measurements is a "case" dependent on the unit it precedes.
-% F.eks. 000779: "Det tyske miljømerket Blå Engel går enda lenger og krever 0,6 watt / kg , (...)"
-rule shift_case_symbol_units {
-  pattern {
-      SYMBOL [ upos=SYM, form="/" ];
-      UNIT1 [ upos=NOUN|PROPN ];
-      UNIT2 [ upos=NOUN|PROPN ];
-      NUMBER [ upos= NUM ];
-      e1: UNIT1 -[ IK ]-> SYMBOL;
-      UNIT1 -> NUMBER;
-      e2: NUMBER -> UNIT2;
-  }
-  with {
-      SYMBOL >> UNIT1;
-      UNIT2 >> SYMBOL;
-  }
-  commands {
-      del_edge e1;
-      add_edge f: UNIT2 -> SYMBOL;
-      f.label = case;
-      del_edge e2;
-      add_edge f2: UNIT1 -> UNIT2;
-      f2.label = nmod;
-      shift_out UNIT1 ==> UNIT2;
-  }
-}
-
-
-% 4311	"... ( sjå Språknytt nr. 2 / 1997 )."
-rule shift_case_symbol {
-  pattern {
-      N1 [upos=NUM];
-      N2[upos=NUM];
-      S [upos=SYM];
-      e: N1 -[IK]-> S;
-      N1 -[ATR]-> N2;
-  }
-  commands {
-    del_edge e;
-    add_edge f: N2 -> S;
-    f.label = case;
-  }
-}
-
-
-% 000231: (...) "ein større organisasjon / tradisjon / fellesskap / kyrkje " (...)
-rule coord_symbol_1 {
-  pattern {
-      S1[upos=SYM];
-      S2[upos=SYM];
-      S3[upos=SYM];
-      N1[];
-      N2[];
-      N3[];
-      N4[];
-      e1: N1 -[IK]-> S1;
-      e2: N2 -[IK]-> S2;
-      e3: N3 -[IK]-> S3;
-      * -[KOORD]-> N2;
-      * -[KOORD]-> N3;
-      * -[KOORD]-> N4;
-      N1 << N2;
-      N2 << N3;
-      N3 << N4;
+  % The symbol "/" between units of measurements is a "case" dependent on the unit it precedes.
+  % F.eks. 000779: "Det tyske miljømerket Blå Engel går enda lenger og krever 0,6 watt / kg , (...)"
+  rule shift_case_symbol {
+    pattern {
+        SYMBOL [ upos=SYM, form="/" ];
+        UNIT1 [ upos=NOUN|PROPN ];
+        UNIT2 [ upos=NOUN|PROPN ];
+        NUMBER [ upos= NUM ];
+        e1: UNIT1 -[ IK ]-> SYMBOL;
+        UNIT1 -> NUMBER;
+        e2: NUMBER -> UNIT2;
     }
-  commands {
-    del_edge e1;
-    del_edge e2;
-    del_edge e3;
-    add_edge N2 -[cc]-> S1;
-    add_edge N3 -[cc]-> S2;
-    add_edge N4 -[cc]-> S3;
+    with {
+        SYMBOL >> UNIT1;
+        UNIT2 >> SYMBOL;
+    }
+    commands {
+        del_edge e1;
+        add_edge f: UNIT2 -> SYMBOL;
+        f.label = case;
+        del_edge e2;
+        add_edge f2: UNIT1 -> UNIT2;
+        f2.label = nmod;
+        shift_out UNIT1 ==> UNIT2;
+    }
   }
-}
 
-% 005598: "(...) poliklinikk for øyre / nase / hals (...)"
-% 006450	"- Vi flyttar i år festivalområdet til Rådhusplassen / Trovikkaia / Trovikbakken!"
-rule coord_symbol_2 {
-  global { sent_id = "005598" | "006450" }
-  pattern {
-    S1[upos=SYM];
-    S2[upos=SYM];
-    e1: N1 -[IK]-> S1;
-    e2: N2 -[IK]-> S2;
-    N1 -[KOORD]-> N2;
-    N1 -[KOORD]-> N3;
+  rule shift_coordinating_sym {
+    pattern {
+        SYMBOL [upos=SYM];
+        e: H -[IK]-> SYMBOL;
+        conj: H -[KOORD]-> KNJ ;
+        H << SYMBOL; SYMBOL << KNJ;
+        SYMBOL << conj;
+    }
+    commands {
+        del_edge e;
+        add_edge f: KNJ -> SYMBOL;
+        f.label = cc;
+    }
   }
-  commands {
-    del_edge e1;
-    del_edge e2;
-    add_edge N2 -[cc]-> S1;
-    add_edge N3 -[cc]-> S2;
-  }
-}
-
-rule coord_symbol_3 {
-  pattern {
-      SYMBOL [upos=SYM];
-      e: H -[IK]-> SYMBOL;
-      H -[KOORD]-> KNJ ;
-      H << SYMBOL; SYMBOL << KNJ;
-  }
-  without {
-    KNJ2 [upos=CCONJ];
-    KNJ -[KONJ|cc]-> KNJ2;
-  }
-  without {
-    KNJ2 []; H -[KOORD]-> KNJ2;
-    SYMBOL << KNJ2; KNJ2 << KNJ;
-  }
-  commands {
-    del_edge e;
-    add_edge f: KNJ -> SYMBOL;
-    f.label = cc;
-  }
-}
-
-strat coordinating_symbols {
-  Seq (
-    Onf (comma),
-    Onf (shift_case_symbol_units),
-    Onf (shift_case_symbol),
-    Onf (coord_symbol_1),
-    Onf (coord_symbol_2),
-    Onf (coord_symbol_3),
-  )
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -366,7 +242,7 @@ package shift_root {
 
   rule rev_root_modal_aux_to_lexical_verb {
     pattern {
-      AUX [lemma="ville"|"vilje"|"kunne"|"måtte"|"skulle"|"burde"|"ha"];
+      AUX [lemma="ville"|"kunne"|"måtte"|"skulle"|"burde"|"ha"];
       LEX [upos=VERB];
       r1: R -[FINV]-> AUX;
       e: AUX -[INFV]-> LEX;
@@ -382,7 +258,7 @@ package shift_root {
 
   rule rev_modal_aux_chain_to_lexical {
     pattern {
-      A1 [upos=AUX, lemma="ville"|"vilje"|"kunne"|"måtte"|"skulle"|"burde"|"ha"];
+      A1 [upos=AUX, lemma="ville"|"kunne"|"måtte"|"skulle"|"burde"|"ha"];
       A2 [upos=AUX];
       A3 [upos=AUX];
       e1: A1 -[INFV]-> A2;
@@ -408,7 +284,7 @@ package shift_root {
 
         % nodes
         H[upos=AUX];
-        AUX[upos=AUX, lemma="være"|"vere"];
+        AUX[upos=AUX, lemma="være"];
 
         % dependencies
         r: R -[FINV]-> H;
@@ -465,7 +341,7 @@ rule shift_root_copula_predicate {
     pattern {
 
         % nodes
-        AUX[upos=AUX, lemma="være"|"vere"];
+        AUX[upos=AUX, lemma="være"];
         % dependencies
         r: R -[FINV]-> AUX;
         e: AUX -[SPRED]-> PRED;
@@ -540,12 +416,9 @@ package adhoc_fixes {
       DEP [upos=VERB];
     }
     without { P1 [form="("]; P2 [form=")"]; P1 << DEP; DEP << P2;  }
-    without { P1 [form=","]; P2 [form=","]; P1 << DEP; DEP << P2;  }
-    without { GOV -> N; N << DEP; DEP << GOV; }
     commands {
       del_edge e;
       shift_in GOV ==> DEP;
-      shift_out GOV =[IP]=> DEP;
       add_edge f: DEP -> GOV; f.label = ccomp;
     }
   }
@@ -556,7 +429,7 @@ strat main_ {
     Onf(adhoc_fixes),
     Onf (copula),
     Onf (shift_sentence_internal),
-    coordinating_symbols,
+    Onf (coordination),
     Onf (shift_root),
     Onf (bouquet),
     Onf (rev_PUTFYLL_bouquet_head),

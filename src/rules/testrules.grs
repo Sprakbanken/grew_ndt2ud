@@ -59,4 +59,3 @@ rule chain2bouquet_same_label {
     del_edge e2;
   }
 }
-

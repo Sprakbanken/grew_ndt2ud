@@ -413,4 +413,3 @@ rule nynorsk_determiner_pronoun_lemma {
       X.lemma = "dei";
     }
 }
-

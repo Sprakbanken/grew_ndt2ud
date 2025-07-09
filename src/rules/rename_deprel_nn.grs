@@ -29,11 +29,12 @@ rule flat_punct {
   commands { e.label = punct }
 }
 
-% relabel FLAT relations between foreign words to flat:foreign
-% where the head precedes the dependent node
-% Set nodes' feature Foreign=Yes and child's upos to X. 
+% relabel FLAT to flat:foreign
+% set feature Foreign=Yes for both head and dependent node
+% set POS-tag to X for child node
 rule flat_foreign {
   pattern {GOV [upos=X]; e: GOV -[ FLAT ]-> DEP; GOV << DEP; }
+  without {DEP [upos=PUNCT]}
   commands {
     GOV.Foreign = Yes;
     DEP.Foreign = Yes;
@@ -43,7 +44,7 @@ rule flat_foreign {
   }
 }
 
-% Set nodes' feature Foreign=Yes and parent's upos to X. 
+
 rule flat_foreign_2 {
   pattern { DEP [upos=X]; e: GOV -[ FLAT ]-> DEP; GOV << DEP; }
   commands {
@@ -55,8 +56,6 @@ rule flat_foreign_2 {
   }
 }
 
-% relabel FLAT relations between proper nouns or nouns to flat:name
-% where the head precedes the dependent node
 rule flat_name_propn {
   pattern {GOV [upos=PROPN|NOUN]; e: GOV -[ FLAT ]-> DEP; GOV << DEP; }
   without { DEP [upos=X] }
@@ -75,7 +74,12 @@ rule flat_name_propn_2 {
 }
 
 rule flat_name_clause_title {
-  pattern { H [upos=NOUN|PROPN]; H -> GOV; e: GOV -[ FLAT ]-> DEP; GOV << DEP; }
+  pattern {
+    H [upos=NOUN|PROPN];
+    H -> GOV;
+    e: GOV -[ FLAT ]-> DEP;
+    GOV << DEP;
+  }
   without { GOV [upos=NUM|X]; DEP [upos=NUM|X]; }
   commands {
     e.1 = flat;
@@ -231,8 +235,14 @@ rule det_noun {
 }
 
 rule det_adj {
-  pattern {DEP [upos=ADJ]; e: GOV -[DET]-> DEP; }
+  pattern {GOV [nom]; DEP [upos=ADJ ]; e: GOV -[DET]-> DEP; }
+  without { DEP -[1=cop|aux]-> *;}
   commands { e.label = amod }
+}
+
+rule det_adv {
+  pattern {DEP [upos=ADV]; e: GOV -[DET]-> DEP; }
+  commands { e.label = advmod }
 }
 
 rule determiner_genitive {
@@ -268,15 +278,18 @@ rule aclrel_verbal {
 }
 
 rule aclrel_aux {
-  pattern {e1: GOV -[ ATR ]-> D1;
-            e2: D1 -[cop|aux|aux:pass]-> D2;
-          }
-    without {
+  pattern {
+    e1: GOV -[ ATR ]-> D1;
+    e2: D1 -[1=cop|aux]-> D2;
+  }
+  without {
     D3 [lemma="at"|"å"];
     e3: D1 -> D3;
     }
-  commands {e1.label = acl;
-            e1.2 = relcl;}
+  commands {
+    e1.1 = acl;
+    e1.2 = relcl;
+  }
 }
 
 rule acl_verbal {
@@ -295,7 +308,7 @@ rule acl_aux {
   pattern {
     D3 [lemma="at"|"å"];
     e1: GOV -[ ATR ]-> D1;
-    e2: D1 -[cop|aux|aux:pass]-> D2;
+    e2: D1 -[1=cop|aux]-> D2;
     e3: D1 -> D3;
   }
   commands {
@@ -304,7 +317,8 @@ rule acl_aux {
 }
 
 rule adjectival_modifier {
-  pattern {DEP [upos=ADJ]; e: GOV -[ ATR ]-> DEP; }
+  pattern {DEP [ upos=ADJ]; e: GOV -[ ATR|APP ]-> DEP; }
+  without { DEP -[1=cop|aux]-> *;}
   commands { e.label = amod }
 }
 
@@ -363,6 +377,12 @@ rule adverbial_cl_modifier_aux {
   commands { e1.label = advcl }
 }
 
+rule adverbial_clause_ellipsis {
+  pattern {DEP [upos=SCONJ]; e: GOV -[ADV]-> DEP;}
+  without {DEP -> *}
+  commands { e.label = advcl }
+}
+
 rule oblique_nominal {
   pattern {
     DEP [ upos= NOUN|PROPN|PRON|X|SYM|DET|NUM ];
@@ -377,6 +397,14 @@ rule oblique_adpositional {
     e: GOV -[ADV]-> DEP;
   }
   with { DEP -[PUTFYLL]-> * }
+  commands { e.label = obl }
+}
+
+rule oblique_interjection {
+  pattern {
+    DEP [ upos= INTJ  ];
+    e: GOV -[ADV]-> DEP;
+  }
   commands { e.label = obl }
 }
 
@@ -437,19 +465,19 @@ rule only_psubj_vb {
 % "være" and "ha" can both be temporal auxiliaries in a passive construction, but only "bli" gets the "aux:pass" relation
 rule passive_lex_aux_bli {
   pattern {
-    A [ upos=AUX, lemma="bli" ];
-    V [ upos=VERB, VerbForm=Part ];
+    A [ upos=AUX, lemma="bli"|"verte" ];
+    V [ upos=VERB|ADJ, VerbForm=Part ];
     e: V -> A;  % after the lexical verb is already the head
   }
-  without { e.2 = pass; }
+  without { e.1 = aux; e.2 = pass; }
   commands {
-    e.2 = pass;
+    e.label = "aux:pass";
   }
 }
 
 rule temporal_aux_vare_ha { %problematic when it is changing cop to aux
   pattern {
-    A [ upos=AUX, lemma="være"|"ha" ];
+    A [ upos=AUX, lemma="være"|"vere"|"ha" ];
     V [ upos=VERB|AUX, VerbForm=Part ];
     e: V -> A;
   }
@@ -465,7 +493,7 @@ rule temporal_aux_vare_ha { %problematic when it is changing cop to aux
 rule passive_subject_verbform {
   pattern {
     V [ upos=VERB, Voice=Pass, form=re".*s" ];
-    e: V -[ 1=nsubj|csubj, !2]-> S;
+    e: V -[ nsubj|csubj]-> S;
   }
   commands {
     e.2 = pass;
@@ -477,7 +505,7 @@ rule passive_subject_periphrastic {
   pattern {
     V [ VerbForm=Part ];
     V -[1=aux, 2=pass]-> *;
-    e: V -[ 1=nsubj|csubj, !2]-> S;
+    e: V -[nsubj|csubj]-> S;
   }
   commands {
     e.2 = pass;
@@ -487,7 +515,7 @@ rule passive_subject_periphrastic {
 rule inf_obj_control {
   pattern { DEP [ VerbForm=Inf|Part ];
             e: GOV -[ DOBJ | POBJ ]-> DEP; }
-  without {e2: DEP -[1 = nsubj | csubj ]-> SUB;}
+  without {e2: DEP -[nsubj | csubj | nsubj:pass | csubj:pass ]-> SUB;}
   commands { e.label = xcomp }
 }
 
@@ -495,7 +523,7 @@ rule inf_obj_control_aux {
   pattern { D2 [ VerbForm=Inf ];
             e1: GOV -[ DOBJ | POBJ ]-> D1;
             e2: D1 -[cop|aux|aux:pass]-> D2;}
-  without {e3: D1 -[ 1 = nsubj | csubj ]-> SUB;}
+  without {e3: D1 -[nsubj | csubj | nsubj:pass | csubj:pass ]-> SUB;}
   commands { e1.label = xcomp }
 }
 
@@ -535,8 +563,8 @@ rule relable_infv_ccomp {
 
 rule error_og_adv {
   pattern {
-    DEP [ lemma="og"|"for", upos=CCONJ ];
-    e: GOV -[ ADV ]-> DEP;
+    DEP [ lemma="og"|"for"|"pluss", upos=CCONJ ];
+    e: GOV -[ ADV|ATR ]-> DEP;
   }
   commands {
     e.label = cc
@@ -545,26 +573,15 @@ rule error_og_adv {
 
 rule multiple_subjects_predicate_clause {
   pattern {
-    e: GOV -[1 = nsubj | csubj, !2 ]-> D1;
+    e: GOV -[nsubj | csubj | nsubj:pass | csubj:pass]-> D1;
   }
   with {
-    GOV -[ 1 = nsubj | csubj ]-> D2;
+    GOV -[nsubj | csubj | nsubj:pass | csubj:pass]-> D2;
     D1 << D2
   }
-  commands {
+  without {
     e.2 = outer;
   }
-}
-
-rule multiple_passive_subjects_predicate_clause {
-  pattern {
-    e: GOV -[1 = nsubj | csubj, 2 <> outer]-> D1;
-  }
-  with {
-    GOV -[ 1 = nsubj | csubj ]-> D2;
-    D1 << D2
-  }
-  without { e.2 = outer; }
   commands {
     e.2 = outer;
   }

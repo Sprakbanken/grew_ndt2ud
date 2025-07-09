@@ -1,7 +1,7 @@
 global { sent_id <> "015775" }
 pattern {
     HEAD -> N1;
-    e: HEAD -[conj]-> N2; 
+    e: HEAD -[conj]-> N2;
     N2 -[cc]-> C;
     N1 << N2;
     P [upos=PUNCT];
@@ -9,4 +9,3 @@ pattern {
     N1 < P;
     N2 << HEAD;
 }
-
