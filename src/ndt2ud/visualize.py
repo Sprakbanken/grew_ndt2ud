@@ -39,10 +39,6 @@ def visualize_treebank_displacy(
         yield displacy.render(sent, style="dep", jupyter=False)
 
 
-def visualize_treebank_malteval(conll_file: str):
-    pass
-
-
 def visualize_graph_dot(graph: grewpy.graph.Graph, output_name: str) -> str | None:
     """Save as DOT file and convert to SVG"""
     if hasattr(graph, "to_dot"):
@@ -50,7 +46,7 @@ def visualize_graph_dot(graph: grewpy.graph.Graph, output_name: str) -> str | No
         dot_file = f"{output_name}.dot"
         with open(dot_file, "w") as f:
             f.write(dot_content)  # type: ignore
-        print(f"✓ Saved DOT file: {dot_file}")
+        # print(f"✓ Saved DOT file: {dot_file}")
 
         # Convert DOT to SVG using graphviz
 
@@ -59,7 +55,7 @@ def visualize_graph_dot(graph: grewpy.graph.Graph, output_name: str) -> str | No
             ["dot", "-Tsvg", dot_file, "-o", svg_file], capture_output=True, text=True
         )
         if result.returncode == 0:
-            print(f"✓ Converted to SVG: {svg_file}")
+            # print(f"✓ Converted to SVG: {svg_file}")
             return svg_file
         else:
             print(f"✗ DOT to SVG conversion failed: {result.stderr}")
@@ -86,15 +82,3 @@ def text_representation_graph(graph: grewpy.graph.Graph, output_name: str):
 
     print("Tokens:", " ".join(tokens))
     return "text_representation"
-
-
-def visualize_graph(graph, output_name="graph_viz"):
-    """
-    Alternative visualization when graph.to_svg() fails
-    """
-    # output_name += "_sentence_" + graph.meta["sent_id"]
-    try:
-        svg_file = visualize_graph_dot(graph, output_name)
-        return svg_file
-    except Exception as e:
-        print(f"✗ DOT method failed: {e}")
