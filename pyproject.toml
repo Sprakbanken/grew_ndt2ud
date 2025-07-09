@@ -1,18 +1,42 @@
 [project]
-name = "grew_ndt2ud"
+name = "ndt2ud"
 version = "0.1.0"
 requires-python = ">=3.12"
 description = "Code to convert the Norwegian Dependency Treebank (NDT) to Universal Dependencies (UD)"
 authors = [
-    {name = "Ingerid Dale", email = "sprakbanken@nb.no"},
+    {name = "Språkbanken", email = "sprakbanken@nb.no"},
 ]
 dependencies = [
     "regex>=2024.11.6",
-    "udapi>=0.3.0",
-    "pandas>=2.2.3",
+    "udapi>=0.4.0",
+    "pandas>=2.3.0",
+    "pre-commit>=4.2.0",
+    "pytest>=8.4.1",
+    "grewpy>=0.6.0",
+    "ruff>=0.12.1",
+    "grew>=0.5.1",
+    "spacy>=3.8.7",
+    "spacy-conll>=4.0.1",
+    "pyconll>=3.2.0"
 ]
 readme = "README.md"
 license = {text = "MIT"}
 
+[project.scripts]
+ndt2ud = "ndt2ud:convert_and_validate"
+
+[tool.ruff.lint]
+select = ["I"]
+
 [tool.pdm]
-distribution = false
+distribution = true
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+    "pip>=25.1.1",
+]

@@ -1,10 +1,9 @@
 from collections import defaultdict
 from pathlib import Path
+
 import pandas as pd
-from parse_conllu import parse_conll_file, CONLLFIELDS, write_conll
 
-
-##### CONSTANTS
+from ndt2ud.parse_conllu import CONLLFIELDS
 
 symbols = ["$", "£", "%", ":(", ":)", "+", "-", "/", ">="]
 
@@ -135,7 +134,7 @@ featsmap = {
     "<punkt>": "_",  # tegnsetting, POS=PUNCT
     "<s-verb>": "_",
     "<spm>": "_",  # Spørsmålstegn, POS=PUNCT
-    "<utrop>": "_",  #! POS=PUNCT
+    "<utrop>": "_",  # ! POS=PUNCT
     "akk": {"Case": "Acc"},
     "appell": "_",  # Common noun, POS=NOUN
     "art": {"PronType": "Art"},
@@ -202,7 +201,7 @@ ud_feattypes = [
     "Voice",
 ]
 
-### UTILITY FUNCTIONS
+# UTILITY FUNCTIONS
 
 
 def is_ud_feat(feat):
@@ -238,7 +237,8 @@ def field_is_empty(field):
     if isinstance(field, list):
         return (len(field) == 1 and field[0] == "_") or (field == [])
     elif isinstance(field, str):
-        return field == "_"
+        return (field == "_") or (field == "")
+    return field is None
 
 
 def replace_placeholder(feats: list, addendum: list):
@@ -300,27 +300,34 @@ def get_dependents(sentence, token):
     ]  # token.get("ID") != token_i.get("ID") ]
 
 
-def get_labels(tokens):
+def get_labels(tokens: list) -> list:
     return [get_field(t, "DEPREL") for t in tokens]
 
 
-def get_field(token, field):
+def get_field(token: dict, field: str) -> str:
     field = field.upper()
     if isinstance(token, dict):
-        return token.get(field)
+        return token[field]
     elif isinstance(token, pd.DataFrame):
         return token[field]
     elif isinstance(token, list):
         return token[CONLLFIELDS.index(field)]
 
 
-def convert_pos(token, sentence):
+def fill_xpos(token: dict) -> str:
+    xpos = get_field(token, "XPOS")
+    if field_is_empty(xpos):
+        return "_"
+    return xpos
+
+
+def convert_pos(token, sentence) -> str:
     pos = get_field(token, "UPOS")
     lemma = get_field(token, "LEMMA")
     feats = get_field(token, "FEATS").split("|")
 
     # direct mapping
-    def convert_verb_pos():
+    def convert_verb_pos() -> str:
         deps = get_dependents(sentence, token)
         labels = get_labels(deps) if deps else []
 
@@ -334,7 +341,7 @@ def convert_pos(token, sentence):
             return "AUX"
         return "VERB"
 
-    def convert_det_pos():
+    def convert_det_pos() -> str:
         if "poss" in feats:
             return "PRON"
         if "romertall" in feats:
@@ -343,8 +350,8 @@ def convert_pos(token, sentence):
             return "DET" if lemma in quantifiers else "NUM"
         return "DET"
 
-    def convert_prep_pos():
-        if lemma == "der" and get_field(token, "DEPREL") in ["FSUBJ", "FOBJ"]:
+    def convert_prep_pos() -> str:
+        if (lemma == "der") and (get_field(token, "DEPREL") in ["FSUBJ", "FOBJ"]):
             return "PRON"
         elif lemma in ["her", "her", "der", "herfra", "derfra", "hit", "dit"]:
             return "ADV"
@@ -353,13 +360,13 @@ def convert_pos(token, sentence):
     # special cases
     pos_conversion = {
         "subst": "PROPN" if "prop" in feats else "NOUN",
-        "symb": "PUNCT" if lemma == "*" else "SYM",
-        "verb": convert_verb_pos(),  #'VERB' or 'AUX',
-        "det": convert_det_pos(),  #'DET', 'PRON', 'NUM'
+        "symb": "PUNCT" if (lemma == "*") else "SYM",
+        "verb": convert_verb_pos(),  # 'VERB' or 'AUX',
+        "det": convert_det_pos(),  # 'DET', 'PRON', 'NUM'
         "adj": "ADJ",
-        "adv": "PART" if lemma in ["ikke", "ikkje", "ei"] else "ADV",  #'ADV',
+        "adv": "PART" if lemma in ["ikke", "ikkje", "ei"] else "ADV",  # 'ADV',
         "clb": "PUNCT",
-        "prep": convert_prep_pos(),  #'ADP',"PRON", 'ADV'
+        "prep": convert_prep_pos(),  # 'ADP',"PRON", 'ADV'
         "pron": "PRON",
         "<komma>": "PUNCT",
         "konj": "CCONJ",
@@ -372,7 +379,7 @@ def convert_pos(token, sentence):
         "<parentes-slutt>": "PUNCT",
         "interj": "INTJ",
     }
-    return pos_conversion.get(pos, pos)
+    return pos_conversion.get(pos, pos)  # type: ignore
 
 
 # Konverter feats
@@ -423,40 +430,17 @@ def format_ud_feat(feat_type, feat_val):
     return f"{feat_type}={value}"
 
 
-# Konverter POS og  morfologiske trekk fra NDT til UD
-
-
-def convert_morphology(data):
+def convert_morphology(data: dict) -> dict:
+    """Convert the POS tags and morphological features from NDT to UD."""
     conll_data = data.copy()
-    for s in conll_data.get("sentences"):
-        sentence = s.get("tokens")
+    for s in conll_data["sentences"]:
+        sentence = s["tokens"]
         converted = []
         for token in sentence:
             token["UPOS"] = convert_pos(token, sentence)
+            token["XPOS"] = fill_xpos(token)
             if not all(is_ud_feat(f) for f in token["FEATS"].split("|")):
                 token["FEATS"] = convert_feats(token)
             converted.append(token)
         s["tokens"] = converted
     return conll_data
-
-
-def process_file(filename, outputfile, add_comments):
-    # Konverter alle splittene av retokenisert ndt data
-    fpath = Path(filename)
-    data = parse_conll_file(fpath)
-    morphdata = convert_morphology(data)
-    if outputfile is None:
-        outputfile = fpath.parent / f"{fpath.stem}_udmorph{fpath.suffix}"
-    write_conll(morphdata, Path(outputfile), add_comments=add_comments)
-
-
-if __name__ == "__main__":
-    import argparse
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-rc", "--remove_comments", action="store_false")
-    parser.add_argument("-f", "--file")
-    parser.add_argument("-o", "--outputfile", default=None)
-    args = parser.parse_args()
-
-    process_file(args.file, args.outputfile, args.remove_comments)
