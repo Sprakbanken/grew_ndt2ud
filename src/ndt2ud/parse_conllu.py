@@ -17,8 +17,6 @@ from typing import Generator
 
 import pandas as pd
 
-# Conll fields
-
 CONLLFIELDS = [
     "ID",
     "FORM",
@@ -38,13 +36,10 @@ CONLLFIELDS = [
 COMMENTPATTERN = re.compile(r"^# (.+?) = (.+?)$")
 NEWPARDOCPATTERN = re.compile(r"^# (newpar|newdoc)(?: id = )?(.*)?$")
 EMPTYLINEPATTERN = re.compile(r"^$")
-# TOKENLINEPATTERN = re.compile(r"^\d+\t([^\s]+?\t){8}[^\s]+?$")
 TOKENLINEPATTERN = re.compile(
     r"^(?P<index>\d+)\t(?P<form>.+?)\t(?P<lemma>.*?)\t(?P<UPOS>.+?)\t(?P<xpos>.*?)\t(?P<feats>.*?)\t(?P<head>\d+?)\s(?P<DEPREL>.+?)\t(?P<extra>.*?)\t(?P<misc>.*?)$"
 )
 DIALECTPATTERN = re.compile(r"^# dialect:\s*(.*)$")
-
-# Functions
 
 
 def validate_conll_lines(lines: list) -> list:
@@ -59,7 +54,6 @@ def validate_conll_lines(lines: list) -> list:
         conll-formated data
     """
     invalid_lines = []
-    validlines = True
     for i, line in enumerate(lines):
         validline = any(
             pattern.match(line)
@@ -72,21 +66,18 @@ def validate_conll_lines(lines: list) -> list:
             ]
         )
         if not validline:
-            validlines = False
             invalid_lines.append(f"line: {i}, text: {line}")
-    try:
-        assert validlines
-        return lines
-    except AssertionError:
+    if invalid_lines:
         print("Error: There are invalid line(s):")
         for invalidline in invalid_lines:
             print(invalidline.strip())
+    return lines
 
 
 def parse_line(conll_line: str) -> dict:
     """Parses a string containing a valid conll line and returns a dict
     with the UD field names as keys and values from the split string.
-    ID and HEAD values are integers and '_' is replaced with None
+    ID and HEAD values are integers.
 
     Parameter
     ----------
@@ -101,8 +92,8 @@ def parse_line(conll_line: str) -> dict:
     for k, v in token.items():
         if k in ["ID", "HEAD"]:
             parsed[k] = int(v)  # type: ignore
-        if v is None or v == "":
-            v = "_"
+        if (v is None) or (v == ""):
+            parsed[k] = "_"
 
     return parsed
 
@@ -151,48 +142,6 @@ def filereadlines(id_file):
     return Path(id_file).read_text().splitlines()
 
 
-# Filter data by ids
-
-
-def fetch_ids(datafile):
-    for line in filereadlines(datafile):
-        if (matchobj := COMMENTPATTERN.match(line)) and matchobj.group(1) in [
-            "ud_id",
-            "sent_id",
-            "id",
-        ]:
-            yield matchobj.group(2)
-
-
-def extract_partition(data, id_list):
-    partition = [
-        sent for sent in data.get("sentences") if sent.get("sent_id") in id_list
-    ]
-    return sorted(partition, key=lambda x: x.get("sent_id"))
-
-
-def gather_partition_idlists():
-    partitions = {
-        "test": Path("data/ndt_nb_test.conllu"),
-        "dev": Path("data/ndt_nb_dev.conllu"),
-        "train": Path("data/ndt_nb_train.conllu"),
-    }
-
-    for part, part_data in partitions.items():
-        part_ids = list(fetch_ids(part_data))
-        Path(f"data/{part}_ids.txt").write_text("\n".join(part_ids))
-
-
-def partition_by_sent_ids(data, id_files):
-    parts = {}
-    for id_file in id_files:
-        part = re.match(r".*[_-]?(\w+)_ids.txt", id_file).group(1)
-        print(f"Extract partition '{part}' from data")
-        ids = filereadlines(id_file)
-        parts[part] = extract_partition(data, ids)
-    return parts
-
-
 # Skriv CONLLU-filer med eller uten kommentarlinjer
 def add_commentlines(sentence: dict) -> Generator:
     """Format comment lines with sentence metadata"""
@@ -206,7 +155,7 @@ def add_commentlines(sentence: dict) -> Generator:
 def write_conll(data: dict, conllu_filepath: str | Path, drop_comments: bool = False):
     """Format a dict with treebank data to conllu strings."""
 
-    def format_conllu_lines(sentences) -> Generator:
+    def format_conllu_lines(sentences: list) -> Generator:
         for sentence in sentences:
             if not drop_comments:
                 yield from add_commentlines(sentence)
@@ -219,9 +168,10 @@ def write_conll(data: dict, conllu_filepath: str | Path, drop_comments: bool = F
         fp.writelines(output_data)
 
 
-def load_conll_to_df(conlldict):
+def load_conll_to_df(conll: dict) -> pd.DataFrame:
+    """Load a dictionary with conlldata into a pandas dataframe"""
     dfs = []
-    for idx, sentence in enumerate(conlldict.get("sentences")):
+    for idx, sentence in enumerate(conll["sentences"]):
         sent_df = pd.DataFrame(sentence.get("tokens"))
         for col in sentence.keys():
             if col == "tokens":
@@ -233,7 +183,8 @@ def load_conll_to_df(conlldict):
     return pd.concat(dfs, ignore_index=True).fillna(False)
 
 
-def get_conll_csv(df):
+def get_conll_tsv(df: pd.DataFrame) -> str:
+    """Turn a dataframe with conll data into a tsv-formatted string"""
     return df[CONLLFIELDS].to_csv(
         sep="\t",
         header=False,
@@ -245,19 +196,16 @@ def get_conll_csv(df):
     )
 
 
-def write_df_to_conll(totaldf, path=None, add_comments=False):
+def df_to_conll(totaldf: pd.DataFrame, drop_comments: bool = False):
     """Produce conllu string from a pandas dataframe."""
     gb = totaldf.groupby("idx")
     mystring = ""
     ids = gb.groups.keys()
     for id in ids:
         df = gb.get_group(id).copy()
-        if add_comments:
-            for line in add_commentlines(df.iloc[0], ["newpar", "sent_id", "text"]):
+        if not drop_comments:
+            for line in add_commentlines(df.iloc[0].to_dict()):
                 mystring += line
-        mystring += get_conll_csv(df)
+        mystring += get_conll_tsv(df)
         mystring += "\n"
-    if path is not None:
-        with Path(path).open(mode="w") as filepath:
-            filepath.write(mystring)
     return mystring
