@@ -20,10 +20,8 @@ from ndt2ud.parse_conllu import parse_conll_file, write_conll
 def set_spaceafter_from_text(graph: grewpy.Graph):
     """Implementation of udapi's SetSpaceAfterFromText Block with grewpy.Graph instead"""
     text = graph.meta["text"]
-    if text is None:
-        raise ValueError(
-            "Tree %s has no text, cannot use ud.SetSpaceAfterFromText" % graph
-        )
+    if text is None or not text:
+        raise ValueError("Tree %s has no text: " % graph.meta["sent_id"])
 
     for node_id in graph:
         if node_id == "0":
