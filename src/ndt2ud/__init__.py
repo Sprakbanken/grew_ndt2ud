@@ -6,7 +6,7 @@ import subprocess
 from pathlib import Path
 
 import grewpy
-from grewpy import GRS, Corpus
+from grewpy import GRS, Corpus, CorpusDraft
 
 from ndt2ud import utils
 from ndt2ud.morphological_features import convert_morphology
@@ -39,7 +39,10 @@ def convert_ndt_to_ud(
 
     print("-02- Add MISC annotation 'SpaceAfter=No'")
     temp_out = f"{temp_dir}/02_udapy_spaceafter.conllu"
-    utils.udapi_fixes(temp_file, temp_out)
+    draft = CorpusDraft(temp_file)
+    draft.map(utils.set_spaceafter_from_text, in_place=True)
+    conll = Corpus(draft).to_conll()
+    Path(temp_out).write_text(conll)  # type: ignore
     temp_file = temp_out
 
     print("-03- Convert dependency relations")
