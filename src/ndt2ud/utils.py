@@ -3,6 +3,7 @@ import re
 import urllib.request
 from pathlib import Path
 
+import grewpy
 import pandas as pd
 from udapi import Document
 from udapi.block.ud.fixchain import FixChain
@@ -14,6 +15,32 @@ from udapi.block.ud.setspaceafterfromtext import SetSpaceAfterFromText
 from udapi.block.util.normalize import Normalize
 
 from ndt2ud.parse_conllu import parse_conll_file, write_conll
+
+
+def set_spaceafter_from_text(graph: grewpy.Graph):
+    """Implementation of udapi's SetSpaceAfterFromText Block with grewpy.Graph instead"""
+    text = graph.meta["text"]
+    if text is None or not text:
+        raise ValueError("Tree %s has no text: " % graph.meta["sent_id"])
+
+    for node_id in graph:
+        if node_id == "0":
+            continue
+        node = graph[node_id]
+        if text.startswith(node["form"]):
+            text = text[len(node["form"]) :]
+            if not text or text[0].isspace():
+                if "SpaceAfter" in node:
+                    del node["SpaceAfter"]
+                text = text.lstrip()
+            else:
+                node["SpaceAfter"] = "No"
+        else:
+            logging.warning('Node %s does not match text "%s"', node, text[:20])
+            return
+    if text:
+        logging.warning('Extra text "%s" in tree %s', text, graph.meta["sent_id"])
+    return graph
 
 
 def udapi_fixes(input_file: str, output_file: str):
