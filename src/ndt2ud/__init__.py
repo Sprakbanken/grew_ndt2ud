@@ -6,7 +6,7 @@ import subprocess
 from pathlib import Path
 
 import grewpy
-from grewpy import GRS, Corpus, CorpusDraft, Request
+from grewpy import GRS, Corpus
 
 from ndt2ud import utils
 from ndt2ud.morphological_features import convert_morphology
@@ -18,11 +18,15 @@ grewpy.set_config("ud")
 def validate_language(value: str) -> str:
     """Validate that language is either 'nb' or 'nn'."""
     if value not in ["nb", "nn"]:
-        raise argparse.ArgumentTypeError("Language must be either 'nb' or 'nn'")
+        raise argparse.ArgumentTypeError(
+            "Language must be either 'nb' for bokmål or 'nn' for nynorsk"
+        )
     return value
 
 
-def convert_ndt_to_ud(input_file: str, language: str, output_file: str) -> None:
+def convert_ndt_to_ud(
+    input_file: str, language: str, output_file: str, grs_path: str
+) -> None:
     """Convert NDT treebank format to UD format."""
     temp_dir = "tmp"
     Path(temp_dir).mkdir(exist_ok=True)
@@ -40,18 +44,17 @@ def convert_ndt_to_ud(input_file: str, language: str, output_file: str) -> None:
 
     print("-03- Convert dependency relations")
     temp_out = f"{temp_dir}/03_grew_transform_deprels.conllu"
-    grs_file = "rules/NDT_to_UD.grs"
 
     corpus = Corpus(temp_file)
-    if Path(grs_file).exists():
-        print(f"Using Grew rules from {Path(grs_file)}")
+    if Path(grs_path).exists():
+        print(f"Using Grew rules from {Path(grs_path)}")
     else:
         logging.error(
-            f"Grew rules file   {Path(grs_file).absolute()} not found. "
+            f"Grew rules file   {Path(grs_path).absolute()} not found. "
             "Please ensure the rules are available in the specified path."
         )
         return
-    grs = GRS(grs_file)
+    grs = GRS(str(grs_path))
 
     corpus.apply(grs, strat=f"main_{language}")
     conll = corpus.to_conll()
@@ -66,18 +69,20 @@ def convert_ndt_to_ud(input_file: str, language: str, output_file: str) -> None:
     print("-05- Postprocess with Grew to fix errors introduced by udapy")
     temp_out = f"{temp_dir}/05_grew_transform_postprocess.conllu"
     corpus = Corpus(temp_file)
-    grs = GRS(grs_file)
+    grs = GRS(str(grs_path))
     corpus.apply(grs, strat="postprocess")
     conll = corpus.to_conll()
     Path(temp_out).write_text(conll)  # type: ignore
     temp_file = temp_out
 
-    print("-06- Replace invalid newpar lines ---")
+    print("-06- Replace invalid newpar lines")
     temp_out = f"{temp_dir}/06_replace_newpar.conllu"
     with open(temp_file, "r") as infile, open(temp_out, "w") as outfile:
         for line in infile:
             outfile.write(line.replace("#  = # newpar", "# newpar"))
 
+    output_path = Path(output_file)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy(temp_out, output_file)
     print(f"Done! UD treebank written to {output_file}")
 
@@ -115,6 +120,7 @@ def convert_and_validate():
     import argparse
 
     workspace_root = Path(__file__).parent.parent.parent
+    src_root = Path(__file__).parent.parent
 
     parser = argparse.ArgumentParser(
         prog="ndt2ud", description="Convert NDT treebank to UD format"
@@ -143,6 +149,20 @@ def convert_and_validate():
         type=Path,
         help="Validation report file (default: validation-report.txt)",
     )
+    parser.add_argument(
+        "-val",
+        "--validation_script",
+        default=workspace_root / "tools" / "validate.py",
+        type=Path,
+        help="path to the UD tools validation script",
+    )
+    parser.add_argument(
+        "-g",
+        "--grew_rules",
+        default=src_root / "rules" / "NDT_to_UD.grs",
+        type=Path,
+        help="File path to the grew GRS file with rules to convert the treebank with.",
+    )
 
     args = parser.parse_args()
 
@@ -158,11 +178,13 @@ def convert_and_validate():
     Output UD file: %s
     Language: %s
     Validation report: %s
+    Grew rules: %s
     """,
         args.input,
         args.output,
         args.language,
         args.report,
+        args.grew_rules,
     )
 
     if args.input.is_dir():
@@ -172,14 +194,16 @@ def convert_and_validate():
         if not output_dir.exists():
             output_dir.mkdir(parents=True)
         for file in input_files:
-            convert_ndt_to_ud(file, args.language, output_dir / file.name)
+            convert_ndt_to_ud(
+                file, args.language, output_dir / file.name, args.grew_rules
+            )
             logging.info("Converted %s to %s", file, output_dir / file.name)
         if not input_files:
             logging.error("No .conllu files found in the specified directory.")
             return
         # validate
         for file in output_dir.glob("*.conllu"):
-            validate(file, args.report)
+            validate(file, args.report, args.validation_script)
             logging.info(
                 "Validation report written to %s for file %s",
                 args.report,
@@ -192,5 +216,5 @@ def convert_and_validate():
             return
         input_files = [args.input]
 
-    convert_ndt_to_ud(args.input, args.language, args.output)
-    validate(args.output, args.report)
+        convert_ndt_to_ud(args.input, args.language, args.output, args.grew_rules)
+        validate(args.output, args.report, args.validation_script)
