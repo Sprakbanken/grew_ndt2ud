@@ -94,6 +94,7 @@ def validate(
     treebank_file: Path,
     report_file: Path,
     path_to_script: str = "tools/validate.py",
+    overwrite: bool = True,
 ):
     """Run the UD tools/validate.py script on a UD treebank"""
     if not Path(path_to_script).exists():
@@ -115,7 +116,9 @@ def validate(
         capture_output=True,
         text=True,
     )
-    report_file.write_text(validation_process.stderr)
+    write_mode = "w" if overwrite else "a"
+    with open(report_file, write_mode) as f:
+        f.write(validation_process.stderr)
     utils.report_errors(report_file)
 
 
@@ -197,16 +200,16 @@ def convert_and_validate():
         if not output_dir.exists():
             output_dir.mkdir(parents=True)
         for file in input_files:
-            # convert_ndt_to_ud(
-            #    file, args.language, output_dir / file.name, args.grew_rules
-            # )
+            convert_ndt_to_ud(
+                file, args.language, output_dir / file.name, args.grew_rules
+            )
             logging.info("Converted %s to %s", file, output_dir / file.name)
         if not input_files:
             logging.error("No .conllu files found in the specified directory.")
             return
         # validate
         for file in output_dir.glob("*.conll*"):
-            validate(file, args.report, args.validation_script)
+            validate(file, args.report, args.validation_script, overwrite=False)
             logging.info(
                 "Validation report written to %s for file %s",
                 args.report,
