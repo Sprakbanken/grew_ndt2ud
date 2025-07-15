@@ -192,20 +192,20 @@ def convert_and_validate():
 
     if args.input.is_dir():
         # If input is a directory, process all .conllu files in it
-        input_files = list(args.input.glob("*.conll"))
+        input_files = list(args.input.glob("*.conll*"))
         output_dir = args.output.parent
         if not output_dir.exists():
             output_dir.mkdir(parents=True)
         for file in input_files:
-            convert_ndt_to_ud(
-                file, args.language, output_dir / file.name, args.grew_rules
-            )
+            # convert_ndt_to_ud(
+            #    file, args.language, output_dir / file.name, args.grew_rules
+            # )
             logging.info("Converted %s to %s", file, output_dir / file.name)
         if not input_files:
             logging.error("No .conllu files found in the specified directory.")
             return
         # validate
-        for file in output_dir.glob("*.conllu"):
+        for file in output_dir.glob("*.conll*"):
             validate(file, args.report, args.validation_script)
             logging.info(
                 "Validation report written to %s for file %s",
