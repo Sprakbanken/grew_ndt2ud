@@ -586,3 +586,14 @@ rule multiple_subjects_predicate_clause {
     e.2 = outer;
   }
 }
+
+rule rename_IK {
+  pattern {
+    e: HEAD -[IK]-> symbol;
+    symbol[upos=pause];
+  }
+  commands {
+    e.label = discourse;
+    symbol.upos = X;
+  }
+}
