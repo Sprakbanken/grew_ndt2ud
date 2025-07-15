@@ -17,6 +17,18 @@ from udapi.block.util.normalize import Normalize
 from ndt2ud.parse_conllu import parse_conll_file, write_conll
 
 
+def add_SyntacticLevel_misc_annotation(graph: grewpy.Graph):
+    """Special handling of MISC-annotations in LIA that refer to syntactic level: hov, led and inf"""
+    for _, features in graph.features.items():
+        misc_key = "__RAW_MISC__"
+        if misc_key in features:
+            annotation = features[misc_key]
+            if annotation in ["hov", "led", "inf"]:
+                del features[misc_key]
+                features["SyntacticLevel"] = annotation
+    return graph
+
+
 def set_spaceafter_from_text(graph: grewpy.Graph):
     """Implementation of udapi's SetSpaceAfterFromText Block with grewpy.Graph instead"""
     text = graph.meta["text"]
