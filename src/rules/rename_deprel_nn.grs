@@ -609,3 +609,12 @@ rule rename_nol {
     N.upos = INTJ;
   }
 }
+
+rule rename_reparandum {
+  pattern {
+    e: H -[REP]-> N
+    }
+  commands {
+    e.label = reparandum
+  }
+}
