@@ -587,14 +587,14 @@ rule multiple_subjects_predicate_clause {
   }
 }
 
-rule rename_IK {
+rule rename_anf_pause_IK {
   pattern {
-    e: HEAD -[IK]-> symbol;
-    symbol[upos=pause];
+    N [ upos=anf|pause, form="«"|"»"|"#"|"##"];
+    e: H -[IK]-> N
   }
   commands {
-    e.label = discourse;
-    symbol.upos = X;
+    e.label = punct;
+    N.upos = PUNCT
   }
 }
 
@@ -607,6 +607,15 @@ rule rename_nol {
     e.1 = discourse;
     e.2 = filler;
     N.upos = INTJ;
+  }
+}
+
+rule rename_reparandum {
+  pattern {
+    e: H -[REP]-> N
+    }
+  commands {
+    e.label = reparandum
   }
 }
 
