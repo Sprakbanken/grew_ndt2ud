@@ -23,7 +23,7 @@ readme = "README.md"
 license = {text = "MIT"}
 
 [project.scripts]
-ndt2ud = "ndt2ud:convert_and_validate"
+ndt2ud = "ndt2ud:main"
 
 [tool.ruff.lint]
 select = ["I"]

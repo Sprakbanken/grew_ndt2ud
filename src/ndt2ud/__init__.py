@@ -121,7 +121,7 @@ def validate(
         f.write(validation_process.stderr)
 
 
-def convert_and_validate():
+def main():
     import argparse
 
     workspace_root = Path(__file__).parent.parent.parent

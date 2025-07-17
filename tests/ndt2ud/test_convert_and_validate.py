@@ -134,7 +134,7 @@ def test_convert_and_validate_file(
         "-g",
         str(fake_grs_file),
     ]
-    run_with_args(args, ndt2ud_init.convert_and_validate)
+    run_with_args(args, ndt2ud_init.main)
     assert output_file.exists()
     assert report_file.exists()
     assert "# dummy conll" in output_file.read_text()
@@ -173,7 +173,7 @@ def test_convert_and_validate_directory(
         "-g",
         str(fake_grs_file),
     ]
-    run_with_args(args, ndt2ud_init.convert_and_validate)
+    run_with_args(args, ndt2ud_init.main)
     # Output files should exist for each input
     out_dir = output_file.parent
     assert (out_dir / "a.conllu").exists()
@@ -205,4 +205,4 @@ def test_convert_and_validate_missing_input(
         "-val",
         str(fake_validate_script),
     ]
-    run_with_args(args, ndt2ud_init.convert_and_validate)
+    run_with_args(args, ndt2ud_init.main)
