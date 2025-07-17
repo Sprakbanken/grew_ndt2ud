@@ -204,7 +204,9 @@ def convert_and_validate():
             )
             logging.info("Converted %s to %s", file, output_dir / file.name)
         if not input_files:
-            logging.error("No .conllu files found in the specified directory.")
+            logging.error(
+                "No .conll or .conllu files found in the specified directory."
+            )
             return
         # validate
         for file in output_dir.glob("*.conll*"):
