@@ -51,7 +51,7 @@ def convert_ndt_to_ud(
     grs = GRS(str(grs_path))
 
     corpus = grs.apply(corpus, strat=f"main_{language}")
-https://github.com/Sprakbanken/grew_ndt2ud/blob/main/notebooks/workflow.ipynb    conll = corpus.to_conll()  # type: ignore
+    conll = corpus.to_conll()  # type: ignore
     Path(temp_out).write_text(conll)  # type: ignore
     temp_file = temp_out
 
