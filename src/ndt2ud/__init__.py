@@ -59,7 +59,7 @@ def convert_ndt_to_ud(
         return
     grs = GRS(str(grs_path))
 
-    corpus.apply(grs, strat=f"main_{language}")
+    corpus = grs.apply(corpus, strat=f"main_{language}")
     conll = corpus.to_conll()
     Path(temp_out).write_text(conll)  # type: ignore
     temp_file = temp_out
@@ -73,7 +73,7 @@ def convert_ndt_to_ud(
     temp_out = f"{temp_dir}/05_grew_transform_postprocess.conllu"
     corpus = Corpus(temp_file)
     grs = GRS(str(grs_path))
-    corpus.apply(grs, strat="postprocess")
+    corpus = grs.apply(corpus, strat="postprocess")
     conll = corpus.to_conll()
     Path(temp_out).write_text(conll)  # type: ignore
     temp_file = temp_out
