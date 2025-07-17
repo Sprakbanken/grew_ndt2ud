@@ -60,7 +60,7 @@ def convert_ndt_to_ud(
     grs = GRS(str(grs_path))
 
     corpus = grs.apply(corpus, strat=f"main_{language}")
-    conll = corpus.to_conll()
+    conll = corpus.to_conll()  # type: ignore
     Path(temp_out).write_text(conll)  # type: ignore
     temp_file = temp_out
 
@@ -74,7 +74,7 @@ def convert_ndt_to_ud(
     corpus = Corpus(temp_file)
     grs = GRS(str(grs_path))
     corpus = grs.apply(corpus, strat="postprocess")
-    conll = corpus.to_conll()
+    conll = corpus.to_conll()  # type: ignore
     Path(temp_out).write_text(conll)  # type: ignore
     temp_file = temp_out
 
@@ -119,7 +119,6 @@ def validate(
     write_mode = "w" if overwrite else "a"
     with open(report_file, write_mode) as f:
         f.write(validation_process.stderr)
-    utils.report_errors(report_file)
 
 
 def convert_and_validate():
