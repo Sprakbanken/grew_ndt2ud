@@ -609,3 +609,14 @@ rule rename_nol {
     N.upos = INTJ;
   }
 }
+
+rule rename_FYLL {
+  pattern {
+    e: H -[FYLL]-> N;
+    N [upos=ufullst]
+  }
+  commands {
+    e.label = reparandum;
+    N.upos = X
+  }
+}
