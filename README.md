@@ -37,7 +37,7 @@ The conversion pipeline can be run with the CLI script `ndt2ud`:
 ``` shell
 ❯ python -m ndt2ud -h
 connected to port: XXX
-usage: ndt2ud [-h] -l LANGUAGE -i INPUT [-o OUTPUT] [-r REPORT]
+usage: ndt2ud [-h] -l LANGUAGE -i INPUT [-o OUTPUT] [-r REPORT] [-val VALIDATION_SCRIPT] [-g GREW_RULES]
 
 Convert NDT treebank to UD format
 
@@ -45,9 +45,13 @@ options:
   -h, --help            show this help message and exit
   -l, --language LANGUAGE
                         Language (must be nb or nn)
-  -i, --input INPUT     Input NDT file
+  -i, --input INPUT     Input NDT file or folder
   -o, --output OUTPUT   Output UD file (default: UD_output.conllu)
   -r, --report REPORT   Validation report file (default: validation-report.txt)
+  -val, --validation_script VALIDATION_SCRIPT
+                        path to the UD tools validation script
+  -g, --grew_rules GREW_RULES
+                        File path to the grew GRS file with rules to convert the treebank with.
 ```
 
 ## Evaluate the treebanks dependency relations
