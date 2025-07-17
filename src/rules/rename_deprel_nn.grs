@@ -618,3 +618,14 @@ rule rename_reparandum {
     e.label = reparandum
   }
 }
+
+rule rename_FYLL {
+  pattern {
+    e: H -[FYLL]-> N;
+    N [upos=ufullst]
+  }
+  commands {
+    e.label = reparandum;
+    N.upos = X
+  }
+}
