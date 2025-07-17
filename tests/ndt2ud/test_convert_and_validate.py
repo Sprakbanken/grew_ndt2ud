@@ -21,7 +21,13 @@ def patch_logging(monkeypatch):
 @pytest.fixture
 def fake_grs_file(tmp_path):
     grs_file = tmp_path / "NDT_to_UD.grs"
-    grs_file.write_text("dummy rules")
+    grs_file.write_text(
+        """strat main {Onf(Alt(dummy_rule))}
+        rule dummy_rule {
+            pattern {X [upos=dummy]}
+            commands {X.upos=DUMMY}}
+        """
+    )
     return grs_file
 
 
@@ -118,7 +124,7 @@ def test_convert_and_validate_file(
     patch_parse_conll,
     patch_subprocess,
 ):
-    output_file = tmp_path / "out.conllu"
+    output_file = tmp_path / "input_output.conllu"
     report_file = tmp_path / "report.txt"
     args = [
         "-l",
@@ -176,8 +182,8 @@ def test_convert_and_validate_directory(
     run_with_args(args, ndt2ud_init.main)
     # Output files should exist for each input
     out_dir = output_file.parent
-    assert (out_dir / "a.conllu").exists()
-    assert (out_dir / "b.conll").exists()
+    assert (out_dir / "a_output.conllu").exists()
+    assert (out_dir / "b_output.conllu").exists()
     assert report_file.exists()
     assert "validation error" in report_file.read_text()
 

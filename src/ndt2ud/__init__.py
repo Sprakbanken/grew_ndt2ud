@@ -284,6 +284,7 @@ def main():
             + "\n".join(f"\t{name}: {value}" for name, value in args._get_kwargs())
         )
     )
+    print(args)
 
     args.func(args)
 
