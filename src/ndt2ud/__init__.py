@@ -278,13 +278,13 @@ def main():
             logging.FileHandler("ndt2ud.log", mode="w"),
         ],
     )
+    logging.info("START converting NDT treebank to UD")
     logging.info(
         (
             "Parameters: \n"
             + "\n".join(f"\t{name}: {value}" for name, value in args._get_kwargs())
         )
     )
-    print(args)
 
     args.func(args)
 
