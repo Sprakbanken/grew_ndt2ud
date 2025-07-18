@@ -174,7 +174,7 @@ def main():
         "--report",
         nargs="?",
         const=workspace_root / "validation-report.txt",
-        help="Validation report file (default: validation-report.txt)",
+        help="Validation report file",
     )
     parser_validate.add_argument(
         "-val",
@@ -238,14 +238,13 @@ def main():
         input_files = [args.input]
 
     output_dir = args.output.parent
-    if not output_dir.exists():
-        output_dir.mkdir(parents=True)
 
     for file in input_files:
         output_file = output_dir / (file.stem + "_output.conllu")
         convert_ndt_to_ud(file, args.language, output_file, args.grew_rules)
 
     if args.report:
+        Path(args.report).write_text("")
         for file in output_dir.glob("*.conll*"):
             validate(file, args.report, args.validation_script, overwrite=False)
         if args.summarize:

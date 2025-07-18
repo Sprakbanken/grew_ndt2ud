@@ -23,14 +23,6 @@ def temp_workspace(tmp_path):
     return workspace
 
 
-@pytest.fixture
-def fake_conll_file(tmp_path):
-    file = tmp_path / "input.conllu"
-    file.write_text("# sent_id = 1\n1\tDette\t_\t_\t_\t_\t0\troot\t_\t_")
-    return file
-
-
-@pytest.mark.xfail()
 @mock.patch("ndt2ud.__init__.convert_ndt_to_ud")
 @mock.patch("ndt2ud.__init__.validate")
 @mock.patch("ndt2ud.__init__.utils.report_errors")
@@ -40,6 +32,7 @@ def test_main_single_file_conversion(
     mock_convert_ndt_to_ud,
     temp_workspace,
     fake_conll_file,
+    ud_file,
 ):
     # Patch __file__ to simulate running from src/ndt2ud/__init__.py
     with mock.patch.object(
@@ -52,7 +45,7 @@ def test_main_single_file_conversion(
             "-i",
             str(fake_conll_file),
             "-o",
-            str(temp_workspace / "data" / "UD_output" / "UD.conllu"),
+            str(ud_file),
             "-g",
             str(temp_workspace / "src" / "ndt2ud" / "rules" / "NDT_to_UD.grs"),
             "-r",
