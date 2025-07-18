@@ -31,13 +31,13 @@ def convert_ndt_to_ud(
     temp_dir = "tmp"
     Path(temp_dir).mkdir(exist_ok=True)
 
-    print("-01- Convert morphology: feats and pos-tags")
+    logging.info("-01- Convert morphology: feats and pos-tags")
     temp_file = f"{temp_dir}/01_convert_morph_output.conllu"
     conllu_data = parse_conll_file(Path(input_file))
     morphdata = convert_morphology(conllu_data)
     write_conll(morphdata, temp_file, drop_comments=False)
 
-    print("-02- Add MISC annotation 'SpaceAfter=No'")
+    logging.info("-02- Add MISC annotation 'SpaceAfter=No'")
     temp_out = f"{temp_dir}/02_udapy_spaceafter.conllu"
     draft = CorpusDraft(temp_file)
     draft.map(utils.set_spaceafter_from_text, in_place=True)
@@ -45,15 +45,14 @@ def convert_ndt_to_ud(
     Path(temp_out).write_text(conll)  # type: ignore
     temp_file = temp_out
 
-    print("-03- Convert dependency relations")
+    logging.info("-03- Convert dependency relations")
     temp_out = f"{temp_dir}/03_grew_transform_deprels.conllu"
-
     corpus = Corpus(temp_file)
     if Path(grs_path).exists():
-        print(f"Using Grew rules from {Path(grs_path)}")
+        logging.debug(f"Using Grew rules from {Path(grs_path)}")
     else:
         logging.error(
-            f"Grew rules file   {Path(grs_path).absolute()} not found. "
+            f"Grew rules file {Path(grs_path).absolute()} not found. "
             "Please ensure the rules are available in the specified path."
         )
         return
@@ -64,12 +63,12 @@ def convert_ndt_to_ud(
     Path(temp_out).write_text(conll)  # type: ignore
     temp_file = temp_out
 
-    print("-04- Fix punctuation with udapy")
+    logging.info("-04- Fix punctuation with udapy")
     temp_out = f"{temp_dir}/04_udapy_fixpunct.conllu"
     utils.udapi_fixes(temp_file, temp_out)
     temp_file = temp_out
 
-    print("-05- Postprocess with Grew to fix errors introduced by udapy")
+    logging.info("-05- Postprocess with Grew to fix errors introduced by udapy")
     temp_out = f"{temp_dir}/05_grew_transform_postprocess.conllu"
     corpus = Corpus(temp_file)
     grs = GRS(str(grs_path))
@@ -78,7 +77,7 @@ def convert_ndt_to_ud(
     Path(temp_out).write_text(conll)  # type: ignore
     temp_file = temp_out
 
-    print("-06- Replace invalid newpar lines")
+    logging.info("-06- Replace invalid newpar lines")
     temp_out = f"{temp_dir}/06_replace_newpar.conllu"
     with open(temp_file, "r") as infile, open(temp_out, "w") as outfile:
         for line in infile:
@@ -87,7 +86,7 @@ def convert_ndt_to_ud(
     output_path = Path(output_file)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy(temp_out, output_file)
-    print(f"Done! UD treebank written to {output_file}")
+    logging.info(f"UD treebank written to {output_file}")
 
 
 def validate(
@@ -119,6 +118,11 @@ def validate(
     write_mode = "w" if overwrite else "a"
     with open(report_file, write_mode) as f:
         f.write(validation_process.stderr)
+    logging.info(
+        "Validation report written to %s for file %s",
+        report_file,
+        treebank_file,
+    )
 
 
 def main():
@@ -170,7 +174,6 @@ def main():
         "--report",
         nargs="?",
         const=workspace_root / "validation-report.txt",
-        # type=Path,
         help="Validation report file (default: validation-report.txt)",
     )
     parser_validate.add_argument(
@@ -190,31 +193,38 @@ def main():
             " and store the summary in a new file."
         ),
     )
+    parser.add_argument(
+        "-v",
+        "--verbose",
+        action="count",
+        dest="log_level",
+        help=(
+            "-v will set the logging level to INFO and -vv to DEBUG. Defaults to ERROR."
+        ),
+        default=0,
+    )
 
     args = parser.parse_args()
+    log_levels = [logging.ERROR, logging.INFO, logging.DEBUG]
 
     logging.basicConfig(
-        level=logging.DEBUG,
+        level=log_levels[min(args.log_level, len(log_levels) - 1)],
         format="%(levelname)s | %(asctime)s | %(name)s | %(message)s",
-        filename="conversion.log",
         datefmt="%Y-%m-%d %H:%M:%S",
+        handlers=[
+            logging.StreamHandler(),
+            logging.FileHandler("conversion.log", mode="w"),
+        ],
     )
+    logging.info("START converting NDT treebank to UD")
     logging.info(
-        """START converting NDT treebank to UD
-    Input NDT file: %s
-    Output UD file: %s
-    Language: %s
-    Grew rules: %s
-    """,
-        args.input,
-        args.output,
-        args.language,
-        args.grew_rules,
+        (
+            "Parameters: \n"
+            + "\n".join(f"\t{name}: {value}" for name, value in args._get_kwargs())
+        )
     )
-    print(args)
 
     if args.input.is_dir():
-        # If input is a directory, process all .conllu files in it
         input_files = list(args.input.glob("*.conll*"))
         if not input_files:
             logging.error(
@@ -222,7 +232,6 @@ def main():
             )
             return
     else:
-        # If input is a file, ensure it exists
         if not args.input.exists():
             logging.error(f"Input file {args.input} does not exist.")
             return
@@ -235,15 +244,11 @@ def main():
     for file in input_files:
         output_file = output_dir / (file.stem + "_output.conllu")
         convert_ndt_to_ud(file, args.language, output_file, args.grew_rules)
-        logging.info("Converted %s to %s", file, output_dir / file.name)
 
     if args.report:
         for file in output_dir.glob("*.conll*"):
             validate(file, args.report, args.validation_script, overwrite=False)
-            logging.info(
-                "Validation report written to %s for file %s",
-                args.report,
-                file,
-            )
         if args.summarize:
             utils.report_errors(args.report)
+
+    print("Done!")
