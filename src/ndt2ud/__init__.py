@@ -174,7 +174,6 @@ def main():
         "-v",
         "--verbose",
         action="count",
-        dest="log_level",
         help=(
             "-v will set the logging level to INFO and -vv to DEBUG. "
             "Defaults to only show logging ERROR messages."
@@ -271,7 +270,7 @@ def main():
     log_levels = [logging.ERROR, logging.INFO, logging.DEBUG]
 
     logging.basicConfig(
-        level=log_levels[min(args.log_level, len(log_levels) - 1)],
+        level=log_levels[min(args.verbose, len(log_levels) - 1)],
         format="%(levelname)s | %(asctime)s | %(name)s | %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
         handlers=[
