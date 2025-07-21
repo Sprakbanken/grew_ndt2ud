@@ -15,21 +15,13 @@ from ndt2ud.parse_conllu import parse_conll_file, write_conll
 grewpy.set_config("ud")
 
 
-def validate_language(value: str) -> str:
-    """Validate that language is either 'nb' or 'nn'."""
-    if value not in ["nb", "nn"]:
-        raise argparse.ArgumentTypeError(
-            "Language must be either 'nb' for bokmål or 'nn' for nynorsk"
-        )
-    return value
-
-
 def convert_ndt_to_ud(
     input_file: str, language: str, output_file: str, grs_path: str
 ) -> None:
     """Convert NDT treebank format to UD format."""
     temp_dir = "tmp"
     Path(temp_dir).mkdir(exist_ok=True)
+    logging.info("START converting NDT treebank to UD")
 
     logging.info("-01- Convert morphology: feats and pos-tags")
     temp_file = f"{temp_dir}/01_convert_morph_output.conllu"
@@ -68,7 +60,7 @@ def convert_ndt_to_ud(
     utils.udapi_fixes(temp_file, temp_out)
     temp_file = temp_out
 
-    logging.info("-05- Postprocess with Grew to fix errors introduced by udapy")
+    logging.info("-05- Fix errors introduced by udapy")
     temp_out = f"{temp_dir}/05_grew_transform_postprocess.conllu"
     corpus = Corpus(temp_file)
     grs = GRS(str(grs_path))
@@ -89,91 +81,173 @@ def convert_ndt_to_ud(
     logging.info(f"UD treebank written to {output_file}")
 
 
+def convert(args):
+    """Execute CLI subcommand to convert the NDT treebank to UD."""
+    if args.ndt_file.is_dir():
+        input_files = list(args.ndt_file.glob("*.conll*"))
+        if not input_files:
+            logging.error(
+                "No .conll or .conllu files found in the specified directory."
+            )
+            return
+    else:
+        if not args.ndt_file.exists():
+            logging.error(f"Input file {args.ndt_file} does not exist.")
+            return
+        input_files = [args.ndt_file]
+
+    output_dir = args.output
+    generated_files = []
+    for file in input_files:
+        output_file = output_dir / (file.stem + "_output.conllu")
+        generated_files.append(output_file)
+        convert_ndt_to_ud(file, args.language, output_file, args.grew_rules)
+    if args.validate:
+        print("Run the validation on the output.")
+        args.ud_path = generated_files
+        _validate(args)
+
+
+def _validate(args):
+    """Wrapper for the CLI call."""
+    validate(
+        ud_path=args.ud_path,
+        report_file=args.report_file,
+        validation_script=args.validation_script,
+        summarize=bool(args.summarize),
+    )
+
+
 def validate(
-    treebank_file: Path,
+    ud_path: Path | list[Path],
     report_file: Path,
-    path_to_script: str = "tools/validate.py",
-    overwrite: bool = True,
+    validation_script: str = "tools/validate.py",
+    summarize: bool = True,
 ):
     """Run the UD tools/validate.py script on a UD treebank"""
-    if not Path(path_to_script).exists():
+    if not Path(validation_script).exists():
         logging.error(
             "Can't find the path to the validation script. "
             "Clone the UniversalDependencies tools repo:\n\n"
             "\tgit clone https://github.com/UniversalDependencies/tools.git"
         )
+    if isinstance(ud_path, list):
+        input_files = [str(file.absolute()) for file in ud_path]
+    elif isinstance(ud_path, Path) and ud_path.is_dir():
+        input_files = [str(file.absolute()) for file in ud_path.glob("*.conll*")]
+    elif isinstance(ud_path, Path) and ud_path.is_file():
+        input_files = [str(ud_path.absolute())]
+    else:
+        input_files = [ud_path]
+
     validation_process = subprocess.run(
         [
             "python",
-            path_to_script,
+            validation_script,
             "--max-err",
             "0",  # output all errors
             "--lang",
             "no",
-            treebank_file,
-        ],
+        ]
+        + input_files,
         capture_output=True,
         text=True,
     )
-    write_mode = "w" if overwrite else "a"
-    with open(report_file, write_mode) as f:
+    with open(report_file, "w") as f:
         f.write(validation_process.stderr)
     logging.info(
-        "Validation report written to %s for file %s",
+        "Validation report written to %s",
         report_file,
-        treebank_file,
     )
+    if summarize:
+        utils.report_errors(report_file)
 
 
 def main():
     import argparse
 
-    workspace_root = Path(__file__).parent.parent.parent
     src_root = Path(__file__).parent.parent
+    workspace_root = src_root.parent
 
+    parent_parser = argparse.ArgumentParser(add_help=False)
+    parent_parser.add_argument(
+        "-v",
+        "--verbose",
+        action="count",
+        dest="log_level",
+        help=(
+            "-v will set the logging level to INFO and -vv to DEBUG. "
+            "Defaults to only show logging ERROR messages."
+        ),
+        default=0,
+    )
     parser = argparse.ArgumentParser(
         prog="ndt2ud",
         description=(
-            "Convert Norwegian Dependency Treebank (NDT) annotations to "
-            "Universal Dependencies (UD) annotations in CONLL-U-formatted files."
+            "Convert Norwegian Dependency Treebank (NDT) annotations "
+            "to Universal Dependencies (UD) annotations "
+            "in CONLL-U-formatted files and validate the output."
         ),
     )
-    # subparsers = parser.add_subparsers(title="Subcommands", dest='subcommand')
-    parser_convert = parser.add_argument_group("convert")
+    subparsers = parser.add_subparsers()
+    # Subcommand options for conversion
+    parser_convert = subparsers.add_parser(
+        "convert", parents=[parent_parser], description="Convert NDT to UD"
+    )
     parser_convert.add_argument(
         "-l",
         "--language",
         required=True,
-        type=validate_language,
+        choices=["nb", "nn"],
         help="Language (must be nb or nn)",
     )
     parser_convert.add_argument(
-        "-i", "--input", required=True, type=Path, help="Input NDT file or folder"
+        "-i", "--ndt_file", required=True, type=Path, help="Input NDT file or folder"
     )
     parser_convert.add_argument(
         "-o",
         "--output",
-        default=workspace_root / "data" / "UD_output" / "UD.conllu",
+        default=workspace_root / "data" / "UD_output",
         type=Path,
-        help="Output UD file (default: UD_output.conllu)",
+        help="Output folder where UD conllu files are written.",
     )
     parser_convert.add_argument(
         "-g",
         "--grew_rules",
         default=src_root / "rules" / "NDT_to_UD.grs",
         type=Path,
-        help="File path to the grew GRS file with treebank conversion rules.",
+        help="Grew GRS file with treebank conversion rules.",
+    )
+    parser_convert.add_argument(
+        "--validate",
+        action="store_true",
+        help="Run the UD validation script on the output.",
+    )
+    parser_convert.set_defaults(
+        func=convert,
+        report_file=workspace_root / "validation-report.txt",
+        validation_script=workspace_root / "tools" / "validate.py",
+        summarize="validation_summary.txt",
     )
 
-    parser_validate = parser.add_argument_group(
-        "validate", description="Run the UD tools validation script on conllu-files"
+    # Subcommand options for validation
+    parser_validate = subparsers.add_parser(
+        "validate",
+        parents=[parent_parser],
+        description="Run the UD tools validation script on conllu-files",
     )
-
+    parser_validate.add_argument(
+        "-i",
+        "--ud_path",
+        type=Path,
+        required=True,
+        help="Path UD conllu files or folder to validate",
+    )
     parser_validate.add_argument(
         "-r",
-        "--report",
+        "--report_file",
         nargs="?",
-        const=workspace_root / "validation-report.txt",
+        default=workspace_root / "validation-report.txt",
         help="Validation report file",
     )
     parser_validate.add_argument(
@@ -188,23 +262,12 @@ def main():
         "--summarize",
         nargs="?",
         const="validation_error_summary.txt",
-        help=(
-            "Aggregate the error types in the validation report"
-            " and store the summary in a new file."
-        ),
+        help=("Sum up the error types in the validation report."),
     )
-    parser.add_argument(
-        "-v",
-        "--verbose",
-        action="count",
-        dest="log_level",
-        help=(
-            "-v will set the logging level to INFO and -vv to DEBUG. Defaults to ERROR."
-        ),
-        default=0,
-    )
+    parser_validate.set_defaults(func=_validate)
 
     args = parser.parse_args()
+
     log_levels = [logging.ERROR, logging.INFO, logging.DEBUG]
 
     logging.basicConfig(
@@ -213,10 +276,9 @@ def main():
         datefmt="%Y-%m-%d %H:%M:%S",
         handlers=[
             logging.StreamHandler(),
-            logging.FileHandler("conversion.log", mode="w"),
+            logging.FileHandler("ndt2ud.log", mode="w"),
         ],
     )
-    logging.info("START converting NDT treebank to UD")
     logging.info(
         (
             "Parameters: \n"
@@ -224,30 +286,6 @@ def main():
         )
     )
 
-    if args.input.is_dir():
-        input_files = list(args.input.glob("*.conll*"))
-        if not input_files:
-            logging.error(
-                "No .conll or .conllu files found in the specified directory."
-            )
-            return
-    else:
-        if not args.input.exists():
-            logging.error(f"Input file {args.input} does not exist.")
-            return
-        input_files = [args.input]
-
-    output_dir = args.output.parent
-
-    for file in input_files:
-        output_file = output_dir / (file.stem + "_output.conllu")
-        convert_ndt_to_ud(file, args.language, output_file, args.grew_rules)
-
-    if args.report:
-        Path(args.report).write_text("")
-        for file in output_dir.glob("*.conll*"):
-            validate(file, args.report, args.validation_script, overwrite=False)
-        if args.summarize:
-            utils.report_errors(args.report)
+    args.func(args)
 
     print("Done!")
