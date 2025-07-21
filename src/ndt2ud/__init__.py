@@ -260,7 +260,7 @@ def main():
         "-s",
         "--summarize",
         nargs="?",
-        const="validation_error_summary.txt",
+        const="validation_summary.txt",
         help=("Sum up the error types in the validation report."),
     )
     parser_validate.set_defaults(func=_validate)
