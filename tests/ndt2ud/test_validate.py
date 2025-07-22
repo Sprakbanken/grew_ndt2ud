@@ -27,9 +27,7 @@ def test_validate_runs_and_writes_report(monkeypatch, ud_file, tmp_path):
 
     monkeypatch.setattr(ndt2ud.subprocess, "run", lambda *a, **kw: DummyCompleted())
 
-    ndt2ud.validate(
-        ud_file, report_file, validation_script=str(script_file), summarize="-"
-    )
+    ndt2ud.validate(ud_file, report_file, validation_script=str(script_file))
     # Check that report file was written
     assert report_file.exists()
     assert report_file.read_text() == "validation error"
@@ -37,7 +35,6 @@ def test_validate_runs_and_writes_report(monkeypatch, ud_file, tmp_path):
 
 def test_validate_missing_script_logs_error(monkeypatch, ud_file, tmp_path):
     report_file = tmp_path / "report.txt"
-    summary_file = tmp_path / "summary.txt"
     script_file = tmp_path / "missing_validate.py"
 
     # Patch Path.exists to False for script path
@@ -62,14 +59,8 @@ def test_validate_missing_script_logs_error(monkeypatch, ud_file, tmp_path):
         ndt2ud.logging, "error", lambda msg, *a, **kw: called.setdefault("error", msg)
     )
 
-    ndt2ud.validate(
-        ud_file,
-        report_file,
-        validation_script=str(script_file),
-        summarize=str(summary_file),
-    )
+    ndt2ud.validate(ud_file, report_file, validation_script=str(script_file))
     assert "Can't find the path to the validation script" in called.get("error", "")
     # Should still write the report file
     assert report_file.exists()
     assert report_file.read_text() == "validation error"
-    assert summary_file.exists()
