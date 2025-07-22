@@ -114,7 +114,7 @@ def _validate(args):
         ud_path=args.ud_path,
         report_file=args.report_file,
         validation_script=args.validation_script,
-        summarize=bool(args.summarize),
+        summarize=args.summarize,
     )
 
 
@@ -122,7 +122,7 @@ def validate(
     ud_path: Path | list[Path],
     report_file: Path,
     validation_script: str = "tools/validate.py",
-    summarize: bool = True,
+    summarize: str | None = None,
 ):
     """Run the UD tools/validate.py script on a UD treebank"""
     if not Path(validation_script).exists():
@@ -159,8 +159,8 @@ def validate(
         "Validation report written to %s",
         report_file,
     )
-    if summarize:
-        utils.report_errors(report_file)
+    if summarize is not None:
+        utils.report_errors(report_file, output_file=summarize)
 
 
 def main():
@@ -260,8 +260,8 @@ def main():
         "-s",
         "--summarize",
         nargs="?",
-        const="validation_summary.txt",
-        help=("Sum up the error types in the validation report."),
+        const="error_summary.txt",
+        help="Sum up the error types in the validation report.",
     )
     parser_validate.set_defaults(func=_validate)
 

@@ -73,7 +73,9 @@ def udapi_fixes(input_file: str, output_file: str):
     doc.store_conllu(output_file)
 
 
-def report_errors(report_file: Path, error_type: str | None = None) -> None:
+def report_errors(
+    report_file: Path, error_type: str | None = None, output_file: str | Path = "-"
+) -> None:
     """Parse the error report from the UniversalDependencies/tools/validate.py script,
     and print a compressed report with the sum of each error type.
 
@@ -81,6 +83,7 @@ def report_errors(report_file: Path, error_type: str | None = None) -> None:
         filepath: Path to the validation report file. Should be a Path for a txt-file.
         error_type: specific error type to filter on.
             The error messages for the given type are printed to a csv file.
+        output_file: Path to write output report to. Default is -, which means it'll just print to the terminal window.
     """
     rows = report_file.read_text(encoding="utf-8").splitlines()
 
@@ -88,6 +91,7 @@ def report_errors(report_file: Path, error_type: str | None = None) -> None:
         r"^\[Line (\d+)(?: Sent )?(\d+)?(?: Node )?(\d+)?\]\: \[(L.*)\] (.*)(\[[0-9]*, [0-9]*\])?(.*)?$",
         flags=re.DOTALL,
     )
+
     errors = []
     for row in rows:
         m = error_info_regx.fullmatch(row)
@@ -115,8 +119,11 @@ def report_errors(report_file: Path, error_type: str | None = None) -> None:
 
     type_counts = df.errortype.value_counts()
 
-    print("Validation report summary:")
-    print(type_counts.sort_index())
+    if output_file.startswith("-"):
+        print("Validation report summary:")
+        print(type_counts)
+    else:
+        type_counts.to_csv(output_file)
 
 
 def remove_comment_lines(input_file: str, output_file: str):
