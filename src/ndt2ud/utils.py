@@ -1,9 +1,8 @@
-# %%
 import logging
 import re
+from dataclasses import dataclass, field
 from pathlib import Path
 
-# %%
 import grewpy
 import pandas as pd
 from udapi import Document
@@ -72,9 +71,6 @@ def udapi_fixes(input_file: str, output_file: str):
     doc.store_conllu(output_file)
 
 
-# %%
-
-
 def report_errors(report_file: Path, output_file: str | Path = "-") -> pd.DataFrame:
     """Parse the error report from the UniversalDependencies/tools/validate.py script,
     and print a compressed report with the sum of each error type.
@@ -122,10 +118,49 @@ def report_errors(report_file: Path, output_file: str | Path = "-") -> pd.DataFr
     return df
 
 
-def remove_comment_lines(input_file: str, output_file: str):
-    """Remove all lines starting with `#` from a file."""
-    with open(input_file, "r") as infile, open(output_file, "w") as outfile:
-        outfile.writelines(line for line in infile if not line.startswith("#"))
+@dataclass
+class Node:
+    name: str
+    node_id: str | None = None
+    parent: str | None = None
+    children: list | None = None
+    feats: dict = field(default_factory=dict)
+
+    def __post_init__(self):
+        for k, v in self.feats.items():
+            setattr(self, k, v)
+
+    def __setattr__(self, key, value):
+        super().__setattr__(key, value)
+        # Keep feats dict in sync with attribute changes, except for special/private attributes
+        if key not in {
+            "name",
+            "node_id",
+            "parent",
+            "children",
+            "feats",
+        } and not key.startswith("_"):
+            self.feats[key] = value
+
+    def __repr__(self):
+        return f"{self.name} [ {', '.join(feat + '=' + str(value) for feat, value in self.feats.items())} ]"
 
 
-# %%
+@dataclass
+class Edge:
+    source: str
+    target: str
+    label: str = ""
+    name: str = "e"
+
+    def __repr__(self):
+        return f"{self.name}: {self.source} -[{self.label}]-> {self.target}"
+
+
+def strip_feats(token_features: dict):
+    features = token_features.copy()
+    del features["__RAW_MISC__"]
+    del features["textform"]
+    del features["wordform"]
+
+    return features
