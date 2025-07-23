@@ -5,6 +5,7 @@ from pathlib import Path
 
 import grewpy
 import pandas as pd
+from grewpy import Request
 from udapi import Document
 from udapi.block.ud.fixchain import FixChain
 from udapi.block.ud.fixleaf import FixLeaf
@@ -164,3 +165,30 @@ def strip_feats(token_features: dict):
     del features["wordform"]
 
     return features
+
+
+def view_search_results(request: Request, treebank: grewpy.Corpus):
+    """Print the matching results in the treebank"""
+
+    print(f"Antall treff: {treebank.count(request)}")
+    print(request, "\n")
+
+    print("Setninger som matcher mønsteret: ")
+    for occ in treebank.search(request):  # type: ignore
+        sent_id = occ["sent_id"]
+        print(f"{sent_id=}")
+
+        graph = treebank.get(sent_id)
+        text = graph.to_sentence()
+        print(f"{text=}")  # type: ignore
+
+        for node_name, node_id in occ["matching"]["nodes"].items():
+            features = strip_feats(graph.features[node_id])
+            token = Node(name=node_name, node_id=node_id, feats=features)
+            print(f"Node {node_id}: {token}")
+
+        for edge_name, edge in occ["matching"]["edges"].items():
+            e = Edge(name=edge_name, **edge)
+            print(f"Edge {edge_name} ({e.source} -> {e.target}): {e.label}")
+
+        print()
