@@ -184,3 +184,5 @@ tools
 dist-20141005
 udapi-python
 data/UD*
+
+.vscode
