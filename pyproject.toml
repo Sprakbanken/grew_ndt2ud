@@ -17,7 +17,8 @@ dependencies = [
     "grew>=0.5.1",
     "spacy>=3.8.7",
     "spacy-conll>=4.0.1",
-    "pyconll>=3.2.0"
+    "pyconll>=3.2.0",
+    "conllu>=6.0.0"
 ]
 readme = "README.md"
 license = {text = "MIT"}
