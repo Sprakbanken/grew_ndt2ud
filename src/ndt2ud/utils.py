@@ -1,8 +1,9 @@
+# %%
 import logging
 import re
-import urllib.request
 from pathlib import Path
 
+# %%
 import grewpy
 import pandas as pd
 from udapi import Document
@@ -13,8 +14,6 @@ from udapi.block.ud.fixpunct import FixPunct
 from udapi.block.ud.fixrightheaded import FixRightheaded
 from udapi.block.ud.setspaceafterfromtext import SetSpaceAfterFromText
 from udapi.block.util.normalize import Normalize
-
-from ndt2ud.parse_conllu import parse_conll_file, write_conll
 
 
 def set_spaceafter_from_text(graph: grewpy.Graph):
@@ -73,53 +72,60 @@ def udapi_fixes(input_file: str, output_file: str):
     doc.store_conllu(output_file)
 
 
-def report_errors(report_file: Path, error_type: str | None = None) -> None:
+# %%
+
+
+def report_errors(report_file: Path, output_file: str | Path = "-") -> pd.DataFrame:
     """Parse the error report from the UniversalDependencies/tools/validate.py script,
     and print a compressed report with the sum of each error type.
 
     Args:
         filepath: Path to the validation report file. Should be a Path for a txt-file.
-        error_type: specific error type to filter on.
-            The error messages for the given type are printed to a csv file.
+        output_file: Path to write output report to. Default is -, which means it'll just print to the terminal window.
     """
     rows = report_file.read_text(encoding="utf-8").splitlines()
 
     error_info_regx = re.compile(
-        r"^\[Line (\d+)(?: Sent )?(\d+)?(?: Node )?(\d+)?\]\: \[(L.*)\] (.*)(\[[0-9]*, [0-9]*\])?(.*)?$",
-        flags=re.DOTALL,
+        r"^\["
+        + r"(?:File )?(?P<file>[^ ]+)?\s*"
+        + r"(?:Line )?(?P<line>\d+)?\s*"
+        + r"(?:Sent )?(?P<sent>\d+)?\s*"
+        + r"(?:Node )?(?P<node>\d+)?"
+        + r"\]: \["
+        + r"(?P<error_level>L[1234])"
+        + " "
+        + r"(?P<error_class>\w+)"
+        + " "
+        + r"(?P<error_name>[\w-]+)"
+        + r"\] "
+        + r"(?P<error_message>.*)"
+        + r"$"
     )
+
     errors = []
     for row in rows:
         m = error_info_regx.fullmatch(row)
         if m is None:
-            logging.debug("Couldn't match this with the regex pattern: %s", row)
+            logging.debug("Row didn't match the error regex pattern: %s", row)
             continue
-        errors.append(m.groups())
+        errors.append(m.groupdict())
 
-    df = pd.DataFrame(
-        errors,
-        columns=[
-            "line",
-            "sent",
-            "node",
-            "errortype",
-            "message",
-            "relevant_nodes",
-            "message2",
-        ],
-    )
-    if error_type is not None:
-        df[df.errortype.str.contains(error_type)].to_csv(
-            f"error_{error_type}.csv", index=False
-        )
+    df = pd.DataFrame(errors)
+    type_counts = df.value_counts(subset=["error_level", "error_class", "error_name"])
 
-    type_counts = df.errortype.value_counts()
+    if str(output_file).startswith("-"):
+        print("## Summary \n")
+        print(type_counts)
+    else:
+        type_counts.to_csv(output_file)
 
-    print("Validation report summary:")
-    print(type_counts.sort_index())
+    return df
 
 
 def remove_comment_lines(input_file: str, output_file: str):
     """Remove all lines starting with `#` from a file."""
     with open(input_file, "r") as infile, open(output_file, "w") as outfile:
         outfile.writelines(line for line in infile if not line.startswith("#"))
+
+
+# %%

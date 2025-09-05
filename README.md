@@ -6,7 +6,7 @@ The rules are written with [Grew](https://grew.fr/) which needs to be [installed
 
 ## Setup
 
-1. Install the command line tool Grew: [Grew installation](https://grew.fr/usage/install/)
+1. Install the command line tool Grew by following their documentation: [Grew installation](https://grew.fr/usage/install/)
 
 2. Create a virtual environment and install the project dependencies. You can use pdm or uv to manage the project installation:
 
@@ -32,22 +32,48 @@ The rules are written with [Grew](https://grew.fr/) which needs to be [installed
 
 ## Convert the treebank
 
-The conversion pipeline can be run with the CLI script `ndt2ud`:
+The conversion pipeline can be run with the CLI script `ndt2ud convert`:
 
 ``` shell
-❯ python -m ndt2ud -h
+❯ python -m ndt2ud convert -h
 connected to port: XXX
-usage: ndt2ud [-h] -l LANGUAGE -i INPUT [-o OUTPUT] [-r REPORT]
+usage: ndt2ud convert [-h] [-v] -l {nb,nn} -i NDT_FILE [-o OUTPUT] [-g GREW_RULES] [--validate]
 
-Convert NDT treebank to UD format
+Convert NDT to UD
 
 options:
   -h, --help            show this help message and exit
-  -l, --language LANGUAGE
+  -v, --verbose         -v will set the logging level to INFO and -vv to DEBUG. Defaults to only show logging ERROR messages.
+  -l, --language {nb,nn}
                         Language (must be nb or nn)
-  -i, --input INPUT     Input NDT file
-  -o, --output OUTPUT   Output UD file (default: UD_output.conllu)
-  -r, --report REPORT   Validation report file (default: validation-report.txt)
+  -i, --ndt_file NDT_FILE
+                        Input NDT file or folder
+  -o, --output OUTPUT   Output folder where UD conllu files are written.
+  -g, --grew_rules GREW_RULES
+                        Grew GRS file with treebank conversion rules.
+  --validate            Run the UD validation script on the output.
+```
+
+You can also run just validation after conversion with `ndt2ud validate`:
+
+```shell
+❯ pdm run ndt2ud validate -h
+connected to port: XXX
+usage: ndt2ud validate [-h] [-v] -i UD_PATH [-r [REPORT_FILE]] [-val VALIDATION_SCRIPT] [-s [SUMMARIZE]]
+
+Run the UD tools validation script on conllu-files
+
+options:
+  -h, --help            show this help message and exit
+  -v, --verbose         -v will set the logging level to INFO and -vv to DEBUG. Defaults to only show logging ERROR messages.
+  -i, --ud_path UD_PATH
+                        Path UD conllu files or folder to validate
+  -r, --report_file [REPORT_FILE]
+                        Validation report file
+  -val, --validation_script VALIDATION_SCRIPT
+                        path to the UD tools validation script
+  -s, --summarize [SUMMARIZE]
+                        Sum up the error types in the validation report.
 ```
 
 ## Evaluate the treebanks dependency relations

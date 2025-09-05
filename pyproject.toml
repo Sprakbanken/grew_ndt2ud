@@ -23,10 +23,11 @@ readme = "README.md"
 license = {text = "MIT"}
 
 [project.scripts]
-ndt2ud = "ndt2ud:convert_and_validate"
+ndt2ud = "ndt2ud:main"
 
 [tool.ruff.lint]
 select = ["I"]
+
 
 [tool.pdm]
 distribution = true
@@ -39,4 +40,16 @@ build-backend = "pdm.backend"
 dev = [
     "ipykernel>=6.29.5",
     "pip>=25.1.1",
+    "pytest-cov>=6.2.1",
+]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+testpaths = [
+    "tests"
+]
+addopts = [
+    "-ra",
+    "--cov", "src",
+    "--import-mode=importlib",
 ]
