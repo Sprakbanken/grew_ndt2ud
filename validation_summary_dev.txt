@@ -1,7 +1,7 @@
 error_level,error_class,error_name,count
-L2,Syntax,invalid-deprel,48
-L4,Syntax,unknown-deprel,48
-L2,Morpho,unknown-upos,17
+L2,Syntax,invalid-deprel,42
+L4,Syntax,unknown-deprel,42
+L2,Morpho,unknown-upos,11
 L3,Syntax,rel-upos-expl,6
 L4,Morpho,feature-value-upos-not-permitted,4
 L3,Syntax,rel-upos-cc,1
