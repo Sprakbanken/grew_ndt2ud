@@ -1,7 +1,7 @@
 error_level,error_class,error_name,count
-L4,Syntax,unknown-deprel,235
-L2,Syntax,invalid-deprel,229
-L2,Morpho,unknown-upos,106
+L4,Syntax,unknown-deprel,184
+L2,Syntax,invalid-deprel,178
+L2,Morpho,unknown-upos,55
 L4,Morpho,feature-upos-not-permitted,28
 L3,Syntax,rel-upos-expl,21
 L3,Warning,pron-det-without-prontype,10
