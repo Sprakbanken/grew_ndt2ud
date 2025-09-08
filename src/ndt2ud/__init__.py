@@ -153,8 +153,8 @@ def validate(
         capture_output=True,
         text=True,
     )
-    with open(report_file, "w") as f:
-        f.write(validation_process.stderr)
+
+    report_file.write_text(validation_process.stderr)
     logging.info(
         "Validation report written to %s",
         report_file,
@@ -245,6 +245,7 @@ def main():
     parser_validate.add_argument(
         "-r",
         "--report_file",
+        type=Path,
         nargs="?",
         default=workspace_root / "validation-report.txt",
         help="Validation report file",
