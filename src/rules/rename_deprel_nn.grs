@@ -589,7 +589,7 @@ rule multiple_subjects_predicate_clause {
 
 rule rename_anf_pause_IK {
   pattern {
-    N [ upos=anf|pause, form="«"|"»"|"#"|"##"];
+    N [ upos=anf|pause|ellipsis, form="«"|"»"|"#"|"##"|"…"];
     e: H -[IK]-> N
   }
   commands {
