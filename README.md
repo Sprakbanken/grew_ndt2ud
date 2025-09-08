@@ -30,6 +30,12 @@ The rules are written with [Grew](https://grew.fr/) which needs to be [installed
   git clone git@github.com:UniversalDependencies/tools.git
   ```
 
+5. Install git large file storage (LFS) to access the dataset partitions in the repo:
+
+    ```shell
+    git lfs install
+    ```
+
 ## Convert the treebank
 
 The conversion pipeline can be run with the CLI script `ndt2ud convert`:
