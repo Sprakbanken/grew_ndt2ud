@@ -160,7 +160,8 @@ class Edge:
 
 def strip_feats(token_features: dict):
     features = token_features.copy()
-    del features["__RAW_MISC__"]
+    if "__RAW_MISC__" in features:
+        del features["__RAW_MISC__"]
     del features["textform"]
     del features["wordform"]
 
