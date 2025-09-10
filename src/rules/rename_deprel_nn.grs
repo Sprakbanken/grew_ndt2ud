@@ -620,17 +620,6 @@ rule rename_ufullst_tall {
   }
 }
 
-rule rename_ufullst_ADV {
-  pattern {
-    N [upos=ufullst];
-    e: H -[ADV]-> N;
-  }
-  commands {
-    N.upos = X;
-    e.label = reparandum;
-  }
-}
-
 rule rename_ufullst_FRAG {
   pattern {
     N [upos=ufullst];
@@ -642,10 +631,10 @@ rule rename_ufullst_FRAG {
   }
 }
 
-rule rename_ufullst_FYLL {
+rule rename_ufullst {
   pattern {
     N [upos=ufullst];
-    e: H -[FYLL|REP|SLETT]-> N;
+    e: H -[FYLL|REP|SLETT|ADV]-> N;
   }
   commands {
     N.upos=X;
