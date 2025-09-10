@@ -644,8 +644,8 @@ rule rename_ufullst_FRAG {
 
 rule rename_ufullst_FYLL {
   pattern {
+    N [upos=ufullst];
     e: H -[FYLL|REP|SLETT]-> N;
-    N [upos=ufullst]
   }
   commands {
     N.upos=X;
