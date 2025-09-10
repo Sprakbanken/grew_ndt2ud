@@ -629,3 +629,23 @@ rule rename_FYLL {
     N.upos = X
   }
 }
+
+rule rename_ufullst {
+  pattern {
+    N [upos=ufullst]
+  }
+  commands {
+    N.upos = X
+  }
+}
+
+rule rename_elipsis_FYLL {
+  pattern {
+    N [upos=ellipsis];
+    e: H -[FYLL]-> N
+  }
+  commands {
+    N.upos = PUNCT;
+    e.label = punct;
+  }
+}
