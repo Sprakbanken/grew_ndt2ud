@@ -612,7 +612,7 @@ rule rename_nol {
 
 rule rename_reparandum {
   pattern {
-    e: H -[REP]-> N
+    e: H -[REP|SLETT]-> N
     }
   commands {
     e.label = reparandum
