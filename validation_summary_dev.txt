@@ -1,5 +1,4 @@
 error_level,error_class,error_name,count
-L2,Morpho,unknown-upos,11
 L3,Syntax,rel-upos-expl,6
 L2,Syntax,invalid-deprel,4
 L4,Syntax,unknown-deprel,4
