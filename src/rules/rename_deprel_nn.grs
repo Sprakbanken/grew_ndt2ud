@@ -587,10 +587,10 @@ rule multiple_subjects_predicate_clause {
   }
 }
 
-rule rename_anf_pause_IK {
+rule rename_IK_FYLL_punctuation {
   pattern {
     N [ upos=anf|pause|ellipsis|ufullst, form="«"|"»"|"#"|"##"|"…"|"-"|"–"|"—"|"−"];
-    e: H -[IK]-> N
+    e: H -[IK|FYLL]-> N
   }
   commands {
     e.label = punct;
@@ -610,22 +610,46 @@ rule rename_nol {
   }
 }
 
+rule rename_ufullst_tall {
+  pattern {
+    N [upos=ufullst];
+    e: H -[DET]-> N;
+  }
+  commands {
+    N.upos = NUM;
+  }
+}
+
+rule rename_ufullst_FRAG {
+  pattern {
+    N [upos=ufullst];
+    e: H -[FRAG]-> N;
+  }
+  commands {
+    N.upos = X;
+    e.label = root;
+  }
+}
+
+rule rename_ufullst {
+  pattern {
+    N [upos=ufullst];
+    e: H -[FYLL|REP|SLETT|ADV]-> N;
+  }
+  commands {
+    N.upos=X;
+    e.label = reparandum;
+  }
+}
+
 rule rename_reparandum {
   pattern {
     e: H -[REP|SLETT]-> N
     }
+  without {
+    N[upos=ufullst]
+  }
   commands {
     e.label = reparandum
-  }
-}
-
-rule rename_FYLL {
-  pattern {
-    e: H -[FYLL]-> N;
-    N [upos=ufullst]
-  }
-  commands {
-    e.label = reparandum;
-    N.upos = X
   }
 }
