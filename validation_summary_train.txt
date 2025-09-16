@@ -3,10 +3,9 @@ L4,Morpho,feature-upos-not-permitted,27
 L4,Syntax,unknown-deprel,24
 L2,Syntax,invalid-deprel,18
 L3,Warning,pron-det-without-prontype,10
-L4,Format,invalid-word-with-space,5
 L4,Morpho,feature-value-upos-not-permitted,5
+L4,Format,invalid-word-with-space,5
 L2,Syntax,root-is-not-0,3
 L3,Syntax,rel-upos-cc,2
 L3,Syntax,too-many-subjects,2
-L3,Syntax,rel-upos-expl,1
 L3,Syntax,right-to-left-conj,1
