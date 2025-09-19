@@ -188,8 +188,7 @@ rule fix_postag_X {
 
 % 004797: Og sjølv om aktørane i boka påfallande ofte seier hø-hø-hø, og nokre gonger hå-hå, er her ikkje eigentleg humor, slik at boka kan forklarast som parodi eller karikatur.
 rule adverbial_formal_subject {
-    global { sent_id = "004797" | "014451" ; }
-    pattern { N [upos=ADV]; e: V -[FSUBJ]-> N;}
+    pattern { N [upos=ADV, form="her"]; e: V -[FSUBJ]-> N;}
     commands { e.label = ADV; }
 }
 

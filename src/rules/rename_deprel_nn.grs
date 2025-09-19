@@ -143,7 +143,13 @@ rule ukjent {
 
 rule expletive_subj {
   pattern { e: GOV -[ FSUBJ ]-> DEP }
+  without {DEP[upos=NOUN]}
   commands { e.label = expl }
+}
+
+rule formal_nsubj {
+  pattern { DEP[upos=NOUN]; e: GOV -[ FSUBJ ]-> DEP }
+  commands { e.label = nsubj }
 }
 
 rule expletive_obj {
