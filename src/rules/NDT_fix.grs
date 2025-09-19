@@ -440,3 +440,21 @@ rule remove_verb_feats_from_adj{
         N.Degree = "Pos";
     }
 }
+
+
+rule fix_verb_features {
+    global {sent_id = "001967"}
+    pattern {
+        N [upos=VERB, Definite, Degree, Gender, Mood, Tense, VerbForm=Fin]
+    }
+    commands {
+        del_feat N.Definite;
+        del_feat N.Degree;
+        del_feat N.Definite;
+        del_feat N.Degree;
+        del_feat N.Gender;
+        del_feat N.Mood;
+        del_feat N.Tense;
+        N.VerbForm = "Part";
+    }
+}

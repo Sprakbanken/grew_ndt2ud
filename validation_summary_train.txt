@@ -1,6 +1,6 @@
 error_level,error_class,error_name,count
 L4,Syntax,unknown-deprel,24
-L4,Morpho,feature-upos-not-permitted,23
+L4,Morpho,feature-upos-not-permitted,22
 L2,Syntax,invalid-deprel,18
 L3,Warning,pron-det-without-prontype,10
 L4,Format,invalid-word-with-space,5
