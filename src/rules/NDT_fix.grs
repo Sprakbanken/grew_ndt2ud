@@ -426,3 +426,17 @@ rule nynorsk_determiner_pronoun_lemma {
       X.lemma = "dei";
     }
 }
+
+
+rule remove_verb_feats_from_adj{
+    global { sent_id = "002192" }
+    pattern {
+        N [upos=ADJ, Mood, Tense, VerbForm];
+    }
+    commands{
+        del_feat N.Mood;
+        del_feat N.Tense;
+        del_feat N.VerbForm;
+        N.Degree = "Pos";
+    }
+}
