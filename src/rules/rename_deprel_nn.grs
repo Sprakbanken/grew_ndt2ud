@@ -659,3 +659,15 @@ rule rename_reparandum {
     e.label = reparandum
   }
 }
+
+
+rule conj_to_parataxis {
+  pattern {
+    * -[root]-> R;
+    e: R -[conj]-> N;
+    N << R
+  }
+  commands {
+    e.label = parataxis
+  }
+}
